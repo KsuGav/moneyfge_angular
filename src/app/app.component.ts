@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
   constructor(public appState: AppState, private userService: User) {}
 
   ngOnInit() {
-    this.userService.getGuestToken();
+    // this.userService.getGuestToken();
   }
 
 }
