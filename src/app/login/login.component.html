@@ -1,0 +1,26 @@
+<header class="login-page">
+  <div class="logo"><img src="assets/img/main-logo.png" alt="Logo" width = '16%'></div>
+  <div class="info-block widget login-widget">
+    <div class="block-header">
+      <h3>Вход</h3>
+    </div>
+    <div class="info-block-content">
+      <form>
+        <label>Ввести телефон</label>
+        <div class="input-group">
+          <input type="text" required class="phone-input-ua" [(ngModel)]="login" name="username" />
+          <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" title="Далеко-далеко за словесными горами в стране, гласных."></i>
+        </div>
+        <label>Ввести пароль</label>
+        <div class="input-group">
+          <i class="fa fa-eye"></i>
+          <input type="password" required [(ngModel)]="password" name="password" />
+          <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" title="Далеко-далеко за словесными горами в стране, гласных."></i>
+        </div>
+        <button type="submit" class="btn btn-accent btn-big" (click) = "nextStep()">Войти</button>
+      </form>
+      <a href="#" class="resend" (click) = "resetPassword()">Восстановление пароля</a><br>
+      <a href="#" class="back"><i class="fa fa-chevron-left"></i> Назад</a>
+    </div>
+  </div>
+</header>

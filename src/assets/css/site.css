@@ -1,0 +1,253 @@
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown, .dropdown-login, .dropdown-lang {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 69px;
+    /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+}
+.dropdown-login .dropdown-content {
+    min-width: 63px;
+    z-index: 5;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-lang .dropdown-content a {
+    padding: 3px 12px;
+    color: #404040;
+    cursor: pointer;
+    overflow: hidden;
+}
+.dropdown-login .dropdown-content a {
+    padding: 6px 19px;
+    background-color: #fff;
+}
+
+/* Change color of dropdown links on hover */
+/*.dropdown-content a:hover {background-color: #f1f1f1}*/
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+    left: 0;
+    top: 58px;
+}
+.dropdown-login:hover .dropdown-content {
+    display: block;
+    left: 0;
+    top: 35px;
+}
+.dropdown-lang:hover .dropdown-content {
+    display: block;
+    left: -1px;
+    top: 32px;
+    z-index: 5;
+    min-width: 165px;
+    border-left: 1px solid #d9d9d9;
+    border-right: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+}
+.dropdown-lang:hover {
+    border-bottom-left-radius: initial;
+    border-bottom-right-radius: initial;
+}
+
+    /* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn, .dropdown-login:hover .dropbtn, .dropdown-lang:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+.dropdown-lang {
+    float: right;
+    background-color: #fff;
+    min-width: 165px;
+    border: 1px solid #d9d9d9;
+    -webkit-border-radius: 16px;
+    border-radius: 16px;
+    padding: 5px 15px;
+    font-size: .875em;
+    font-weight: 300;
+    text-align: left;
+    cursor: pointer;
+    margin-left: 15px;
+}
+.dropdown-lang:after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 17px;
+    margin-top: -3px;
+    border-width: 5px 5px 0;
+    border-color: #333 transparent transparent;
+
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-right: 1px solid #404040;
+    border-bottom: 1px solid #404040;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.dropdown-lang .show-more-lang {
+    font-size: 7.5pt;
+}
+
+.dropdown-lang .dropdown-content {
+    /*border: 1px solid #ffa613;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;*/
+    min-width: 165px;
+    color: #404040;
+    overflow: hidden;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+.dropdown-lang .dropdown-content a:hover {
+    border-radius: 5px;
+    color: #262626;
+}
+
+.errors {
+    color: #ff1e1e;
+    font-size: .875em;
+    text-align: center;
+}
+
+.start-btn {
+    background-color: #F7BD2F;
+}
+.start-btn:hover, .start-btn:active, .start-btn:focus {
+    background-color: #ffc62e;
+}
+
+/*.payment-block {
+    background-image: url(/img/transfer-bg.png);
+    background-repeat: no-repeat;
+}*/
+
+.pay-btn {
+    background-color: #F7BD2F;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    border: 0;
+    padding: 18px 60px;
+    height: 60px;
+    font-size: .875em;
+    font-family: RobotoMedium,sans-serif;
+}
+.pay-btn:hover, .pay-btn:active, .pay-btn:focus {
+    background-color: #ffc62e;
+}
+
+.my-area {
+    height: 160px;
+    background-color: #fff;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    padding: 10px 15px;
+    border: 0;
+    color: #252525;
+}
+
+#feedback_modal .modal-dialog .modal-content {
+    background-color: #f4f4f4;
+}
+
+.top-line .feedback {
+    /*float: left;
+    text-decoration: underline;
+    margin-top: 3px;
+    color: #ffa613;
+    font-size: .875em;*/
+    outline: none;
+}
+
+.modal form .input-wrap {
+    width: 100%;
+}
+
+.result-ok {
+    text-align: center;
+    color: #1f1fe0;
+}
+
+.payment-block input.small-input {
+    width: 87px;
+    height: 46px;
+    background-color: #fff;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    padding: 10px;
+    color: #252525;
+    text-align: center;
+    margin-right: 15px;
+}
+.payment-block input.small-input.fl-right {
+    margin-right: 0;
+}
+
+.cvv-block {
+    display: inline-block;
+    border: 1px solid #8e8e8e;
+    border-radius: 4px;
+    padding: 10px;
+    width: 156px;
+}
+.cvv-block .nums-block {
+
+}
+.cvv-block .nums-block button {
+    padding: 5px;
+    width: 40px;
+    height: 40px;
+    margin: 1px;
+    background-color: #bababa;
+    outline: none;
+}
+.cvv-block .nums-block button.remove {
+    background: #bababa;
+}
+
+.cvv-block .input-code {
+    text-align: center;
+    font-size: 18pt;
+    line-height: 19px;
+    font-weight: bold;
+    border-bottom: 1px solid #8e8e8e;
+    margin-bottom: 8px;
+}
+.cvv-block label {
+
+}
+
+ul.sub-foot-menu li.title a {
+    text-transform: uppercase;
+}
+ul.sub-foot-menu li.title {
+    margin-bottom: 14px;
+}
+
+
