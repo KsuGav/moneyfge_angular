@@ -1,12 +1,17 @@
-import { Component, AfterViewInit, OnInit, OnDestroy } from '@angular/core';
-import { User } from '../services/service.user';
+import { Component, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, OnInit, OnDestroy } from '@angular/core';
+
+import { User } from '../../services/service.user';
 
 declare const $: any;
 
 @Component({
   selector: 'new-selector',
   templateUrl: './home.component.html',
-  styleUrls: []
+  encapsulation: ViewEncapsulation.None,
+  styleUrls: [
+    '../css/home.css'
+  ]
 })
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
@@ -20,7 +25,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngAfterViewInit() {
     this.setupSlider();
-    this.setupDropdownMenu();
   }
 
   ngOnDestroy () {
@@ -74,33 +78,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     $(".sliderContent-0,.sliderContent-1,.sliderContent-2,.sliderContent-3,.sliderContent-4,.sliderContent-5,.sliderContent-6").mouseleave(function () {
       owl.play();
     });
-  }
-
-  setupDropdownMenu() {
-    // Main Menu
-    $(".main-menu li").hover(
-      function() {
-        $(this).addClass( "hover" );
-      }, function() {
-        $(this).removeClass( "hover" );
-      });
-
-    // Mobile Menu
-    $('.main-menu').children().clone().appendTo('.mobile-menu');
-
-    // Burger
-    $("#nav-toggle").click(function() {
-      $(this).toggleClass("active");
-      $(".mobile-menu").toggleClass("active");
-    });
-
-    // Equal Height
-    $(".block-items .block-item").equalHeights();
-    $(".dop-menu a").equalHeights();
-    $(".partner-list-item").equalHeights();
-
-    // Selectize
-    $('select').selectize();
   }
 
 }

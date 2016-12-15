@@ -17,7 +17,10 @@ import { AppState, InternalStateType } from './app.service';
 import { User } from './services/service.user';
 import { LoggedInGuard } from './services/logged-in.guard';
 
-import { HomeComponent } from './home';
+import { HomeComponent } from './home/home';
+import { HomeHeaderComponent } from './home/header';
+import { HomeFooterComponent } from './home/footer';
+import { HomeAboutComponent } from './home/about';
 import { LoginComponent } from './login';
 import { Login1Component } from './login1';
 import { ProfileComponent } from './profile';
@@ -43,6 +46,9 @@ type StoreType = {
   declarations: [
     AppComponent
     , HomeComponent
+    , HomeHeaderComponent
+    , HomeFooterComponent
+    , HomeAboutComponent
     , LoginComponent
     , Login1Component
     , ProfileComponent

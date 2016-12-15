@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AppState } from './app.service';
 import { User } from './services/service.user';
 
@@ -8,7 +8,6 @@ import { User } from './services/service.user';
  */
 @Component({
   selector: 'app',
-  encapsulation: ViewEncapsulation.None,
   styleUrls: [
     './app.component.css'
   ],
@@ -19,7 +18,7 @@ export class AppComponent implements OnInit {
   constructor(public appState: AppState, private userService: User) {}
 
   ngOnInit() {
-    this.userService.guestToken();
+    // this.userService.guestToken();
   }
 
 }
