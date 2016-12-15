@@ -1,0 +1,23 @@
+<header class="login-page">
+  <div class="logo"><img src="assets/img/main-logo.png" alt="Logo"></div>
+  <div class="info-block widget login-widget">
+    <div class="block-header">
+      <h3>Подтверждение входа</h3>
+    </div>
+    <div class="info-block-content">
+      <form (submit)="loginIn1()">
+        <div class="alert alert-danger" *ngIf="errorMsg">
+          {{ errorMsg }}
+        </div>
+        <label>Ввести код из СМС</label>
+        <div class="input-group">
+          <i class="fa fa-eye"></i>
+          <input type="text" name="code" [(ngModel)]="code" required />
+          <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" title="Далеко-далеко за словесными горами в стране, гласных."></i>
+        </div>
+        <button type="submit" class="btn btn-accent btn-big">Войти</button>
+      </form>
+      <a href="#" class="back"><i class="fa fa-chevron-left"></i> Назад</a>
+    </div>
+  </div>
+</header>

@@ -1,24 +1,31 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { User } from '../services/service.user';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { AppState } from '../app.service';
 
 @Component({
   selector: 'login',
   templateUrl: './login.component.html',
   styleUrls: [
-    'css/login.component.css'
-    , 'css/intlTelInput.css'
+    './css/login.component.css'
   ]
 })
 
 export class LoginComponent implements OnInit {
 
-  private login: string;
+  private login: string = '380973427717';
 
-  private password: string;
+  private password: string = '12qwaszx';
 
-  constructor(private userService: User, private route: ActivatedRoute, private router: Router) {
+  private errorMsg: string;
+
+  constructor(
+    private userService: User,
+    private route: ActivatedRoute,
+    private router: Router,
+    private appState: AppState
+  ) {
 
   }
 
@@ -30,11 +37,28 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['en/site/reset-password']);
   }
 
-  nextStep() {
-    // console.log('login is: ' + this.login);
-    // console.log('password is: ' + this.password);
-    this.userService.userLogin(this.login, this.password);
-    // this.router.navigate(['/login2']);
+  loginIn() {
+    this.userService.userLogin(this.login, this.password)
+      .subscribe(
+        (res: any) => {
+          if ('sms' in res) {
+            sessionStorage.setItem('sms', res.sms);
+            sessionStorage.setItem('username', res.username);
+            sessionStorage.setItem('password', res.password);
+
+            this.router.navigate(['user/login1']);
+            return;
+          }
+          if ('error' in res) {
+            this.errorMsg = res.error;
+          }
+          this.router.navigate(['user/profile']);
+        },
+        (err: any) => {
+          this.errorMsg = err.json().message;
+        }
+      )
+    ;
   }
 
 }

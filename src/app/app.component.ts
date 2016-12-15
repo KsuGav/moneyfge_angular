@@ -1,7 +1,5 @@
 import { Component, ViewEncapsulation, OnInit } from '@angular/core';
-
 import { AppState } from './app.service';
-
 import { User } from './services/service.user';
 
 /*
@@ -14,15 +12,14 @@ import { User } from './services/service.user';
   styleUrls: [
     './app.component.css'
   ],
-  templateUrl: './app.component.html',
-  providers: [ User ]
+  templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
 
   constructor(public appState: AppState, private userService: User) {}
 
   ngOnInit() {
-    // this.userService.getGuestToken();
+    this.userService.guestToken();
   }
 
 }

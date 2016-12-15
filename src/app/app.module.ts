@@ -14,9 +14,13 @@ import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
+import { User } from './services/service.user';
+import { LoggedInGuard } from './services/logged-in.guard';
 
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
+import { Login1Component } from './login1';
+import { ProfileComponent } from './profile';
 import { NoContentComponent } from './no-content';
 
 // Application wide providers
@@ -40,6 +44,8 @@ type StoreType = {
     AppComponent
     , HomeComponent
     , LoginComponent
+    , Login1Component
+    , ProfileComponent
     , NoContentComponent
   ],
   imports: [ // import Angular's modules
@@ -50,7 +56,9 @@ type StoreType = {
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
-    APP_PROVIDERS
+    APP_PROVIDERS,
+    User,
+    LoggedInGuard
   ]
 })
 export class AppModule {
