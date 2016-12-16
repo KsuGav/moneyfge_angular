@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { OnInit, OnDestroy } from '@angular/core';
 import { User } from '../services/service.user';
-import { Router, ActivatedRoute, CanActivate } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'profile',
@@ -9,7 +9,7 @@ import { Router, ActivatedRoute, CanActivate } from '@angular/router';
   styleUrls: []
 })
 
-export class ProfileComponent implements OnInit, OnDestroy, CanActivate {
+export class ProfileComponent implements OnInit, OnDestroy {
 
   constructor(
     private userService: User,
@@ -24,10 +24,6 @@ export class ProfileComponent implements OnInit, OnDestroy, CanActivate {
   }
 
   ngOnDestroy() {
-
-  }
-
-  canActivate() {
 
   }
 

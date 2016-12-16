@@ -16,7 +16,6 @@ import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { User } from './services/service.user';
 import { LoggedInGuard } from './services/logged-in.guard';
-
 import { HomeComponent } from './home/home';
 import { HomeHeaderComponent } from './home/header';
 import { HomeFooterComponent } from './home/footer';
@@ -26,6 +25,9 @@ import { LoginConfirmComponent } from './login/confirm';
 import { SiteRecoveryComponent } from './site/recovery';
 import { SiteRegisterComponent } from './site/register';
 import { SiteConfirmComponent } from './site/confirm';
+import { CabinetHeaderComponent } from './cabinet/header';
+import { CabinetFooterComponent } from './cabinet/footer';
+import { CabinetMainComponent } from './cabinet/main';
 import { ProfileComponent } from './profile';
 import { NoContentComponent } from './no-content';
 
@@ -57,6 +59,9 @@ type StoreType = {
     , SiteRecoveryComponent
     , SiteRegisterComponent
     , SiteConfirmComponent
+    , CabinetHeaderComponent
+    , CabinetFooterComponent
+    , CabinetMainComponent
     , ProfileComponent
     , NoContentComponent
   ],
