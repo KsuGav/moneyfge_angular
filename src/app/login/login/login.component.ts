@@ -10,7 +10,8 @@ declare const $: any;
   selector: 'login-component',
   templateUrl: './login.component.html',
   styleUrls: [
-    '../css/login.css'
+    '../css/login.css',
+    '../css/intlTelInput.css'
   ]
 })
 
@@ -97,8 +98,8 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
           $(this).addClass("active");
           change = "text";
         }
-        var rep = $("<input type='" + change + "' />")
-          .attr("id", $input.attr("id"))
+        var rep = $("<input _ngcontent-mrl-13 type='" + change + "' />")
+          .attr("id", 'password')
           .attr("name", $input.attr("name"))
           .attr('class', $input.attr('class'))
           .val($input.val())
