@@ -6,8 +6,8 @@ import { User } from '../services/service.user';
   selector: 'cabinet-component',
   templateUrl: './cabinet.component.html',
   styleUrls: [
-    // 'app/component/cabinet/cabinet.style.css',
-    // 'app/component/cabinet/main.min.css'
+     'app/component/cabinet/cabinet.style.css',
+     'app/component/cabinet/main.min.css'
   ]
 })
 

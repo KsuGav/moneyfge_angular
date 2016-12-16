@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { OnInit, OnDestroy } from '@angular/core';
+import { OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { User } from '../../services/service.user';
 import { AppState } from '../../app.service';
@@ -8,10 +8,13 @@ declare const $: any;
 
 @Component({
   selector: 'login-component',
-  templateUrl: './login.component.html'
+  templateUrl: './login.component.html',
+  styleUrls: [
+    '../css/login.css'
+  ]
 })
 
-export class LoginComponent implements OnInit, OnDestroy {
+export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
 
   private login: string = '380973427717';
 
@@ -25,16 +28,21 @@ export class LoginComponent implements OnInit, OnDestroy {
     private router: Router,
     private appState: AppState
   ) {
-    $('head').append('<link id="login-style" rel="stylesheet" href="assets/css/login.css" type="text/css" />');
+
   }
 
   ngOnInit() {
 
   }
 
+  ngAfterViewInit() {
+
+  }
+
   ngOnDestroy() {
     $('head').children('link#login-style').remove();
   }
+
 
   resetPassword() {
     this.router.navigate(['en/site/reset-password']);

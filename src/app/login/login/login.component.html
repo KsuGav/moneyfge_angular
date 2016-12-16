@@ -2,25 +2,25 @@
   <div class="logo"><img src="assets/img/logo1.png" alt="Logo" style="width:20%!important;"></div>
   <div class="info-block widget login-widget">
     <div class="block-header">
-      <h3>Вход</h3>
+      <h3>Enter</h3>
     </div>
     <div class="info-block-content">
       <form (submit)="loginIn()">
         <div class="alert alert-danger" *ngIf="errorMsg">
           {{ errorMsg }}
         </div>
-        <label>Ввести телефон</label>
+        <label>Enter phone</label>
         <div class="input-group">
           <input type="text" required class="phone-input-ua" [(ngModel)]="login" name="username" />
           <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" title="Далеко-далеко за словесными горами в стране, гласных."></i>
         </div>
-        <label>Ввести пароль</label>
+        <label>Enter password</label>
         <div class="input-group">
           <i class="fa fa-eye"></i>
-          <input type="password" required [(ngModel)]="password" name="password" />
+          <input type="password" id="password" required [(ngModel)]="password" name="password" />
           <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" title="Далеко-далеко за словесными горами в стране, гласных."></i>
         </div>
-        <button type="submit" class="btn btn-accent btn-big">Войти</button>
+        <button type="submit" class="btn btn-accent btn-big">Enter</button>
       </form>
       <a class="resend" [routerLink]="['/en/site/reset-password']">Восстановление пароля</a><br>
       <a class="resend" [routerLink]="['/en/site/register']">Sign up</a><br>
