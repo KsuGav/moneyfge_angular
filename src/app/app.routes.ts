@@ -16,6 +16,7 @@ import { LoginConfirmComponent } from './login/confirm';
 import { SiteRecoveryComponent } from './site/recovery';
 import { SiteRegisterComponent } from './site/register';
 import { SiteConfirmComponent } from './site/confirm';
+import { CabinetComponent } from './cabinet';
 import { CabinetMainComponent } from './cabinet/main';
 import { ProfileComponent } from './profile';
 import { NoContentComponent } from './no-content';
@@ -39,7 +40,13 @@ export const ROUTES: Routes = [
   , { path: 'en/site/reset-password', component: SiteRecoveryComponent }
   , { path: 'en/site/register', component: SiteRegisterComponent }
   , { path: 'en/site/confirm', component: SiteConfirmComponent }
-  , { path: 'en/user/cabinet', component: CabinetMainComponent }
+  , {
+      path: 'en/user/cabinet',
+      component: CabinetComponent,
+      children: [
+        { path: '', component: CabinetMainComponent }
+      ]
+    }
   , { path: 'user/profile', component: ProfileComponent }
   , { path: '**',    component: NoContentComponent }
 ];

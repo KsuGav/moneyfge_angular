@@ -33,6 +33,7 @@ import { LoginConfirmComponent } from './login/confirm';
 import { SiteRecoveryComponent } from './site/recovery';
 import { SiteRegisterComponent } from './site/register';
 import { SiteConfirmComponent } from './site/confirm';
+import { CabinetComponent } from './cabinet';
 import { CabinetHeaderComponent } from './cabinet/header';
 import { CabinetFooterComponent } from './cabinet/footer';
 import { CabinetMainComponent } from './cabinet/main';
@@ -76,6 +77,7 @@ type StoreType = {
     , SiteRecoveryComponent
     , SiteRegisterComponent
     , SiteConfirmComponent
+    , CabinetComponent
     , CabinetHeaderComponent
     , CabinetFooterComponent
     , CabinetMainComponent
