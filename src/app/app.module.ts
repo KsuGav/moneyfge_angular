@@ -21,8 +21,11 @@ import { HomeComponent } from './home/home';
 import { HomeHeaderComponent } from './home/header';
 import { HomeFooterComponent } from './home/footer';
 import { HomeAboutComponent } from './home/about';
-import { LoginComponent } from './login';
-import { Login1Component } from './login1';
+import { LoginComponent } from './login/login';
+import { LoginConfirmComponent } from './login/confirm';
+import { SiteRecoveryComponent } from './site/recovery';
+import { SiteRegisterComponent } from './site/register';
+import { SiteConfirmComponent } from './site/confirm';
 import { ProfileComponent } from './profile';
 import { NoContentComponent } from './no-content';
 
@@ -50,7 +53,10 @@ type StoreType = {
     , HomeFooterComponent
     , HomeAboutComponent
     , LoginComponent
-    , Login1Component
+    , LoginConfirmComponent
+    , SiteRecoveryComponent
+    , SiteRegisterComponent
+    , SiteConfirmComponent
     , ProfileComponent
     , NoContentComponent
   ],
@@ -58,7 +64,7 @@ type StoreType = {
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(ROUTES, { useHash: false, preloadingStrategy: PreloadAllModules })
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,

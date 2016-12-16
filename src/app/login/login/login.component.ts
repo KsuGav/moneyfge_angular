@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { OnInit } from '@angular/core';
-import { User } from '../services/service.user';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AppState } from '../app.service';
+import { User } from '../../services/service.user';
+import { AppState } from '../../app.service';
 
 @Component({
-  selector: 'login',
+  selector: 'login-component',
   templateUrl: './login.component.html',
+  // encapsulation: ViewEncapsulation.None,
   styleUrls: [
-    './css/login.component.css'
+    '../css/login.css'
   ]
 })
 
