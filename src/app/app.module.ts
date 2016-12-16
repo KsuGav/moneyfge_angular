@@ -21,6 +21,14 @@ import { HomeComponent } from './home/home';
 import { HomeHeaderComponent } from './home/header';
 import { HomeFooterComponent } from './home/footer';
 import { HomeAboutComponent } from './home/about';
+import { MobilePaymentsComponent } from './home/mobile-payments';
+import { MoneyTransferComponent } from './home/money-transfer';
+import { CreditPaymentsComponent } from './home/credit-payments';
+import { GamesEntertainmentComponent } from './home/games-entertainment';
+import { InternetTvComponent } from './home/internet-tv';
+import { OnlinePaymentsComponent } from './home/online-payments';
+import { BillsComponent } from './home/bills';
+import { ContactsComponent } from './home/contacts';
 import { LoginComponent } from './login/login';
 import { LoginConfirmComponent } from './login/confirm';
 import { SiteRecoveryComponent } from './site/recovery';
@@ -28,6 +36,7 @@ import { SiteRegisterComponent } from './site/register';
 import { SiteConfirmComponent } from './site/confirm';
 import { ProfileComponent } from './profile';
 import { NoContentComponent } from './no-content';
+import {MoneyTransferComponent} from "./home/money-transfer/money-transfer.component";
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -52,6 +61,14 @@ type StoreType = {
     , HomeHeaderComponent
     , HomeFooterComponent
     , HomeAboutComponent
+    , MobilePaymentsComponent
+    , MoneyTransferComponent
+    , CreditPaymentsComponent
+    , GamesEntertainmentComponent
+    , InternetTvComponent
+    , OnlinePaymentsComponent
+    , BillsComponent
+    , ContactsComponent
     , LoginComponent
     , LoginConfirmComponent
     , SiteRecoveryComponent
