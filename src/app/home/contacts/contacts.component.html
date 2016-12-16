@@ -1,0 +1,93 @@
+<header class="inner-head">
+
+  <home-header-component></home-header-component>
+
+
+</header>
+
+<div class="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h1 class="page-title">Contact information<small>You can contact us Monday through Friday from 8:30 to 18:30</small></h1>
+        <div class="main-text">
+          <h4 class="sub-title">Feedback form</h4>
+
+          <form id="user_form" class="contact-form" action="/en/site/contacts" method="post">
+            <input type="hidden" name="_csrf" value="RUNtaDhFQy4vOgsNfD8maiEEWwV8FSh3DAYdWhVyAGB2FlUfdS8tTQ==">                        <div class="table">
+            <div class="tr">
+              <div class="td">First Name*</div>
+              <div class="td"><input type="text" id="feedbackform-name" name="FeedbackForm[name]" required=""></div>
+            </div>
+            <div class="tr">
+              <div class="td">Email*</div>
+              <div class="td"><input type="text" id="feedbackform-email" name="FeedbackForm[email]" required=""></div>
+            </div>
+            <div class="tr">
+              <div class="td">Phone</div>
+              <div class="td"><input type="text" id="feedbackform-phone" name="FeedbackForm[phone]"></div>
+            </div>
+            <div class="tr">
+              <div class="td">Comment*</div>
+              <div class="td"><textarea id="feedbackform-body" name="FeedbackForm[body]" required=""></textarea></div>
+            </div>
+          </div>
+            <div class="text-center">
+              <button class="btn btn-fill" type="submit">Send</button>
+            </div>
+          </form>                </div>
+      </div>
+
+      <div class="col-md-5">
+        <!--                <div class="boss-info">-->
+        <!--                    <table class="table table-contacts">-->
+        <!--                        <th>--><!--?//= Yii::t('frontend', 'Руководитель') ?--><!--</th>-->
+        <!--                        <th></th>-->
+        <!--                        <tr class="main-info second-tr">-->
+        <!--                            <td>Ismail Tosun</td>-->
+        <!--                            <td></td>-->
+        <!--                        </tr>-->
+        <!--                        <tr class="main-info">-->
+        <!--                            <td><button class="btn btn-fill" type="submit">--><!--?//= Yii::t('frontend', 'Задать вопрос') ?--><!--</button></td>-->
+        <!--                            <td></td>-->
+        <!--                        </tr>-->
+        <!--                    </table>-->
+        <!--                </div>-->
+
+        <table class="table table-contacts">
+          <tbody><tr><th>Contacts</th>
+            <th></th>
+
+          </tr><tr class="main-info second-tr">
+            <td>Email:</td>
+            <td><a href="mailto:info@moneyfge.com">info@moneyfge.com</a></td>
+          </tr>
+
+          <!--                   <tr class="main-info">-->
+          <!--                       <td>--><!--?//= Yii::t('frontend', 'Адрес') ?--><!--:</td>-->
+          <!--                       <td></td>-->
+          <!--                   </tr>-->
+          <tr>
+            <!--                   <tr>-->
+            <!--                       <td>--><!--?//= Yii::t('frontend', 'Телефон') ?--><!--:</td>-->
+            <!--                       <td>+19299991910</td>-->
+            <!--                   </tr>-->
+          </tr><tr>
+            <td>Skype:</td>
+            <td>moneyfge</td>
+          </tr>
+          <tr><td>Working schedule:</td>
+            <td>From Monday to Friday from 8:30AM to 6:30PM</td>
+          </tr>
+          </tbody></table>
+        <!--               <table class="table-contacts details">-->
+        <!--                   <th>--><!--?//= Yii::t('frontend', 'Реквизиты') ?--><!--</th>-->
+        <!--                   <th></th>-->
+        <!---->
+        <!--               </table>-->
+      </div>
+    </div>
+  </div>
+</div>
+
+<home-footer-component></home-footer-component>
