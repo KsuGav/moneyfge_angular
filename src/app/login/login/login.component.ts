@@ -44,35 +44,6 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
     $('head').children('link#login-style').remove();
   }
 
-
-  resetPassword() {
-    this.router.navigate(['en/site/reset-password']);
-  }
-
-  loginIn() {
-    this.userService.userLogin(this.login, this.password)
-      .subscribe(
-        (res: any) => {
-          if ('sms' in res) {
-            sessionStorage.setItem('sms', res.sms);
-            sessionStorage.setItem('username', res.username);
-            sessionStorage.setItem('password', res.password);
-
-            this.router.navigate(['user/login1']);
-            return;
-          }
-          if ('error' in res) {
-            this.errorMsg = res.error;
-          }
-          this.router.navigate(['user/profile']);
-        },
-        (err: any) => {
-          this.errorMsg = err.json().message;
-        }
-      )
-    ;
-  }
-
   setupTelMask() {
     let go = 0;
     $('.phone-input-ua').intlTelInput({
@@ -137,5 +108,35 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
       }).insertAfter($input);
     });
   }
+
+  resetPassword() {
+    this.router.navigate(['en/site/reset-password']);
+  }
+
+  loginIn() {
+    this.userService.userLogin(this.login, this.password)
+      .subscribe(
+        (res: any) => {
+          if ('sms' in res) {
+            sessionStorage.setItem('sms', res.sms);
+            sessionStorage.setItem('username', res.username);
+            sessionStorage.setItem('password', res.password);
+
+            this.router.navigate(['user/login1']);
+            return;
+          }
+          if ('error' in res) {
+            this.errorMsg = res.error;
+          }
+          this.router.navigate(['user/profile']);
+        },
+        (err: any) => {
+          this.errorMsg = err.json().message;
+        }
+      )
+    ;
+  }
+
+
 
 }
