@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { OnInit, OnDestroy } from '@angular/core';
 import { User } from '../../services/service.user';
+import { ModalService } from '../../services/modal.service';
 
 declare const $: any;
 
@@ -12,13 +13,17 @@ declare const $: any;
   ]
 })
 
-export class CabinetFillComponent implements OnInit, OnDestroy {
+export class CabinetFillComponent implements OnInit, AfterViewInit, OnDestroy {
 
-  constructor(private User: User) {
+  constructor(private User: User, private modalService: ModalService) {
 
   }
 
   ngOnInit() {
+  }
+
+  ngAfterViewInit() {
+    this.modalService.showUnderConstruction();
   }
 
   ngOnDestroy() {
