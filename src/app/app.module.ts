@@ -16,6 +16,7 @@ import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { User } from './services/service.user';
 import { ModalService } from './services/modal.service';
+import { AccountService } from './services/account.service';
 
 import { LoggedInGuard } from './services/logged-in.guard';
 import { HomeComponent } from './home/home';
@@ -112,7 +113,8 @@ type StoreType = {
     APP_PROVIDERS,
     User,
     LoggedInGuard,
-    ModalService
+    ModalService,
+    AccountService
   ]
 })
 export class AppModule {

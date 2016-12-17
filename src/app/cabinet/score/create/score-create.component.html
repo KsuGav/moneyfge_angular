@@ -1,11 +1,24 @@
-    <div class="col-lg-9 col-xs-12">
-        <div class="main">
-
-            <div class="block-header">
-                <h3>СОЗДАНИЕ СЧЕТА</h3>
-            </div>
-
-            <div class="info-block">
-                            </div>
-        </div>
+<div class="col-lg-9 col-xs-12">
+  <div class="main">
+    <div class="block-header">
+        <h3>Create account</h3>
     </div>
+
+    <div class="info-block">
+      <form class="mobile-pay-main">
+        <label>Currency</label>
+        <div class="select">
+          <select required="" name="currency" [(ngModel)]="currency">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="UAH">UAH</option>
+            <option value="RUB">RUB</option>
+          </select>
+        </div>
+        <div class="center-sm">
+          <button type="button" class="btn btn-accent" (click)="submitForm()">Create</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
