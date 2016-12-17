@@ -15,6 +15,8 @@ import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { User } from './services/service.user';
+import { ModalService } from './services/modal.service';
+
 import { LoggedInGuard } from './services/logged-in.guard';
 import { HomeComponent } from './home/home';
 import { HomeHeaderComponent } from './home/header';
@@ -33,12 +35,20 @@ import { LoginConfirmComponent } from './login/confirm';
 import { SiteRecoveryComponent } from './site/recovery';
 import { SiteRegisterComponent } from './site/register';
 import { SiteConfirmComponent } from './site/confirm';
+import { CabinetComponent } from './cabinet';
 import { CabinetHeaderComponent } from './cabinet/header';
 import { CabinetFooterComponent } from './cabinet/footer';
 import { CabinetMainComponent } from './cabinet/main';
-import { ProfileComponent } from './profile';
+import { CabinetPaymentComponent } from './cabinet/payment';
+import { CabinetTransferComponent } from './cabinet/transfer';
+import { CabinetFillComponent } from './cabinet/fill';
+import { CabinetScoreComponent } from './cabinet/score';
+import { ScoreIndexComponent } from './cabinet/score/default';
+import { ScoreCreateComponent } from './cabinet/score/create';
+import { CabinetOutmoneyComponent } from './cabinet/outmoney';
+import { OutmoneyDefaultComponent } from './cabinet/outmoney/default';
+import { OutmoneyListComponent } from './cabinet/outmoney/list';
 import { NoContentComponent } from './no-content';
-import {MoneyTransferComponent} from "./home/money-transfer/money-transfer.component";
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -76,10 +86,19 @@ type StoreType = {
     , SiteRecoveryComponent
     , SiteRegisterComponent
     , SiteConfirmComponent
+    , CabinetComponent
     , CabinetHeaderComponent
     , CabinetFooterComponent
     , CabinetMainComponent
-    , ProfileComponent
+    , CabinetPaymentComponent
+    , CabinetTransferComponent
+    , CabinetFillComponent
+    , CabinetScoreComponent
+    , ScoreIndexComponent
+    , ScoreCreateComponent
+    , CabinetOutmoneyComponent
+    , OutmoneyDefaultComponent
+    , OutmoneyListComponent
     , NoContentComponent
   ],
   imports: [ // import Angular's modules
@@ -92,7 +111,8 @@ type StoreType = {
     ENV_PROVIDERS,
     APP_PROVIDERS,
     User,
-    LoggedInGuard
+    LoggedInGuard,
+    ModalService
   ]
 })
 export class AppModule {

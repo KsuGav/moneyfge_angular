@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { OnInit, OnDestroy } from '@angular/core';
+import { OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { User } from '../../services/service.user';
+import { ModalService } from '../../services/modal.service';
 
 declare const $: any;
 
@@ -8,29 +9,26 @@ declare const $: any;
   selector: 'cabinet-main',
   templateUrl: './cabinet-main.component.html',
   styleUrls: [
-    // 'app/component/cabinet/cabinet.style.css',
-    // 'app/component/cabinet/main.min.css',
-    // 'app/component/cabinet/myStyle.css'
+
   ]
 })
 
-export class CabinetMainComponent implements OnInit, OnDestroy {
+export class CabinetMainComponent implements OnInit, AfterViewInit, OnDestroy {
 
-  constructor(private User: User) {
-    $('head').append('<link id="cabinet-style" rel="stylesheet" href="assets/css/cabinet.style.css" type="text/css" />');
-    $('head').append('<link id="main-style" rel="stylesheet" href="assets/css/cabinet/main.min.css" type="text/css" />');
-    $('head').append('<link id="my-style" rel="stylesheet" href="assets/css/myStyle.css" type="text/css" />');
-    $('head').append('<link id="fonts-style" rel="stylesheet" href="assets/css/cabinet/fonts.min.css" type="text/css" />');
+  constructor(private User: User, private modalService: ModalService) {
+
   }
 
   ngOnInit() {
+
+  }
+
+  ngAfterViewInit() {
+    this.modalService.showUnderConstruction();
   }
 
   ngOnDestroy() {
-    $('head').children('link#cabinet-style').remove();
-    $('head').children('link#main-style').remove();
-    $('head').children('link#my-style').remove();
-    $('head').children('link#fonts-style').remove();
+
   }
 
 }

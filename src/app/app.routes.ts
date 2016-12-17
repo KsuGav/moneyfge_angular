@@ -16,8 +16,17 @@ import { LoginConfirmComponent } from './login/confirm';
 import { SiteRecoveryComponent } from './site/recovery';
 import { SiteRegisterComponent } from './site/register';
 import { SiteConfirmComponent } from './site/confirm';
+import { CabinetComponent } from './cabinet';
 import { CabinetMainComponent } from './cabinet/main';
-import { ProfileComponent } from './profile';
+import { CabinetPaymentComponent } from './cabinet/payment';
+import { CabinetTransferComponent } from './cabinet/transfer';
+import { CabinetFillComponent } from './cabinet/fill';
+import { CabinetScoreComponent } from './cabinet/score';
+import { ScoreIndexComponent } from './cabinet/score/default';
+import { ScoreCreateComponent } from './cabinet/score/create';
+import { CabinetOutmoneyComponent } from './cabinet/outmoney';
+import { OutmoneyDefaultComponent } from './cabinet/outmoney/default';
+import { OutmoneyListComponent } from './cabinet/outmoney/list';
 import { NoContentComponent } from './no-content';
 
 import { DataResolver } from './app.resolver';
@@ -39,7 +48,31 @@ export const ROUTES: Routes = [
   , { path: 'en/site/reset-password', component: SiteRecoveryComponent }
   , { path: 'en/site/register', component: SiteRegisterComponent }
   , { path: 'en/site/confirm', component: SiteConfirmComponent }
-  , { path: 'en/user/cabinet', component: CabinetMainComponent }
-  , { path: 'user/profile', component: ProfileComponent }
+  , {
+    path: 'en/user/cabinet',
+    component: CabinetComponent,
+    children: [
+      {path: '', component: CabinetMainComponent},
+      {path: 'categories', component: CabinetPaymentComponent},
+      {path: 'transfer', component: CabinetTransferComponent},
+      {path: 'fill', component: CabinetFillComponent},
+      {
+        path: 'score',
+        component: CabinetScoreComponent,
+        children: [
+          {path: 'index', component: ScoreIndexComponent},
+          {path: 'create', component: ScoreCreateComponent}
+        ]
+      },
+      {
+        path: 'outmoney',
+        component: CabinetOutmoneyComponent,
+        children: [
+          {path: '', component: OutmoneyDefaultComponent},
+          {path: 'list', component: OutmoneyListComponent}
+        ]
+      }
+    ]
+  }
   , { path: '**',    component: NoContentComponent }
 ];

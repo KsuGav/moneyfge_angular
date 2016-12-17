@@ -43,7 +43,7 @@ export class SiteRegisterComponent implements OnInit, AfterViewInit {
       initialCountry: "auto",
       defaultCountry: 'auto',
       customPlaceholder: function (selectedCountryPlaceholder, selectedCountryData) {
-        return "e.g. " + selectedCountryPlaceholder;
+        return selectedCountryPlaceholder;
       },
       geoIpLookup: function (callback) {
         $.get('http://ipinfo.io', function () {
