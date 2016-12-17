@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { AfterViewInit, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import { ModalService } from '../../services/modal.service';
 
 declare const $: any;
 
@@ -14,7 +15,7 @@ export class CabinetHeaderComponent implements OnInit, AfterViewInit, OnDestroy 
 
   private activeLink: string;
 
-  constructor(public router: Router) {
+  constructor(public router: Router, private modalService: ModalService) {
     const initLink = this.router.url.substr(
       this.router.url.lastIndexOf('/') + 1,
       this.router.url.length
@@ -51,6 +52,7 @@ export class CabinetHeaderComponent implements OnInit, AfterViewInit, OnDestroy 
   }
 
   ngAfterViewInit() {
+    this.modalService.showUnderConstruction();
     $(document).ready(function(){
       $("#nav-toggle").click(function () {
         $(this).toggleClass("active");
