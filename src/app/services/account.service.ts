@@ -23,13 +23,23 @@ export class AccountService {
 
     const localData = {
       "currency": currency,
-      "type": types
+      "types": types
     };
 
     const locUrl = `${this.appState.get('apiEndpoint')}/accounts/`;
-    console.log(localData);
     return this.http
       .post(locUrl, JSON.stringify(localData), {headers: headers})
+      .map(res => res.json())
+    ;
+  }
+
+  getAllCard() {
+    var headers = new Headers();
+    headers.append('Authorization', `Bearer ${this.appState.get('aToken')}`);
+
+    var locUrl = `${this.appState.get('apiEndpoint')}/accounts/`;
+    return this.http
+      .get(locUrl, {headers: headers})
       .map(res => res.json())
     ;
   }
