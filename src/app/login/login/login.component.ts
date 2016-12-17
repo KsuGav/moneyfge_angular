@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
       initialCountry: "auto",
       defaultCountry: 'auto',
       customPlaceholder: function (selectedCountryPlaceholder, selectedCountryData) {
-        return "e.g. " + selectedCountryPlaceholder;
+        return selectedCountryPlaceholder;
       },
       geoIpLookup: function (callback) {
         $.get('http://ipinfo.io', function () {
@@ -98,15 +98,8 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
           $(this).addClass("active");
           change = "text";
         }
-        var rep = $("<input _ngcontent-mrl-13 type='" + change + "' />")
-          .attr("id", 'password')
-          .attr("name", $input.attr("name"))
-          .attr('class', $input.attr('class'))
-          .val($input.val())
-          .insertBefore($input);
-        $input.remove();
-        $input = rep;
-      }).insertAfter($input);
+        $input.attr('type', change);
+      });
     });
   }
 

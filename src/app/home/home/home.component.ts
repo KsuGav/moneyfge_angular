@@ -10,7 +10,7 @@ declare const $: any;
   templateUrl: './home.component.html',
   encapsulation: ViewEncapsulation.None,
   styleUrls: [
-    '../css/home.css'
+
   ]
 })
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {

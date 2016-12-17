@@ -103,22 +103,6 @@ export class User {
 
   /*----------------Accounts-------------*/
 
-  createCard(a_token, currency, types) {
-    var headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    headers.append('Authorization', 'Bearer' + a_token);
-
-    var localData = {
-      "currency": currency,
-      "types": types
-    };
-
-    var locURL = this.siteEndpoint + '/api/v1/accounts/';
-    return this.http.post(locURL, JSON.stringify(localData), {headers: headers} ).map(res => {
-      console.log(res.json());
-    });
-  }
-
   getAllCard(a_token, currency) {
     var headers = new Headers();
     headers.append('Authorization', 'Bearer' + a_token);
