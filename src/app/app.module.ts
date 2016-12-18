@@ -51,6 +51,8 @@ import { ScoreCreateComponent } from './cabinet/score/create';
 import { CabinetOutmoneyComponent } from './cabinet/outmoney';
 import { OutmoneyDefaultComponent } from './cabinet/outmoney/default';
 import { OutmoneyListComponent } from './cabinet/outmoney/list';
+import { CabinetSettingsComponent } from './cabinet/settings';
+import { SettingsProfileComponent } from './cabinet/settings/profile';
 import { NoContentComponent } from './no-content';
 
 // Application wide providers
@@ -103,6 +105,8 @@ type StoreType = {
     , CabinetOutmoneyComponent
     , OutmoneyDefaultComponent
     , OutmoneyListComponent
+    , CabinetSettingsComponent
+    , SettingsProfileComponent
     , NoContentComponent
   ],
   imports: [ // import Angular's modules

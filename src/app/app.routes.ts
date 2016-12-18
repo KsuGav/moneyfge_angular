@@ -29,6 +29,8 @@ import { ScoreCreateComponent } from './cabinet/score/create';
 import { CabinetOutmoneyComponent } from './cabinet/outmoney';
 import { OutmoneyDefaultComponent } from './cabinet/outmoney/default';
 import { OutmoneyListComponent } from './cabinet/outmoney/list';
+import { CabinetSettingsComponent} from './cabinet/settings';
+import { SettingsProfileComponent } from './cabinet/settings/profile';
 import { NoContentComponent } from './no-content';
 
 import { DataResolver } from './app.resolver';
@@ -74,6 +76,13 @@ export const ROUTES: Routes = [
         children: [
           {path: '', component: OutmoneyDefaultComponent},
           {path: 'list', component: OutmoneyListComponent}
+        ]
+      },
+      {
+        path: 'settings',
+        component: CabinetSettingsComponent,
+        children: [
+          {path: 'profile', component: SettingsProfileComponent}
         ]
       }
     ]

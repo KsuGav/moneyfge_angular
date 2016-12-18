@@ -64,15 +64,10 @@ export class CabinetHeaderComponent implements OnInit, AfterViewInit, OnDestroy 
   }
 
   ngOnInit() {
-
+    this.getUser();
   }
 
   getUser() {
-    const user = this.appState.get('user');
-    if (user) {
-      this.user = user;
-      return;
-    }
     this.userService
       .getUser()
       .subscribe(
@@ -82,8 +77,6 @@ export class CabinetHeaderComponent implements OnInit, AfterViewInit, OnDestroy 
   }
 
   ngAfterViewInit() {
-    this.getUser();
-
     this.modalService.showUnderConstruction();
     $(document).ready(function(){
       $("#nav-toggle").click(function () {
@@ -93,11 +86,11 @@ export class CabinetHeaderComponent implements OnInit, AfterViewInit, OnDestroy 
         $(".main-menu span").slideToggle()
       });
       if ($(window).width() < 800) {
-        $('.profile .fa-caret-down').click(function () {
+        $('.profile .pay').click(function () {
           $(".profile-menu").toggle();
         });
       } else {
-        $('.profile .fa-caret-down,.profile-menu').hover(function () {
+        $('.profile .pay,.profile-menu').hover(function () {
             $(".profile-menu").show();
           }, function () {
             $(".profile-menu").hide();

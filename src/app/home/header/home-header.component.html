@@ -13,7 +13,7 @@
             </div>
           </div></div>
         <div class="logo">
-          <a [routerLink]="['/en/user/cabinet']"><img src="assets/img/final_logo.png" alt="Finance Group"></a>
+          <a [routerLink]="['']"><img src="assets/img/final_logo.png" alt="Finance Group"></a>
         </div>
       </div>
       <div class="col-md-9 col-sm-8 col-xs-12">
@@ -29,8 +29,7 @@
             </div>
           </div>
           <a class="btn btn-fill reg" [routerLink]="[registerUrl]" (click)="logout($event)">{{registerText}}</a>
-          <!-- <a class="btn btn-fill reg login" [routerLink]="[loginUrl]">{{loginText}}</a> -->
-          <a class="btn btn-fill reg login" [routerLink]="['/en/user/cabinet']">{{loginText}}</a>
+          <a class="btn btn-fill reg login" [routerLink]="[loginUrl]">{{loginText}}</a>
         </div>
       </div>
       <div class="col-xs-12">
