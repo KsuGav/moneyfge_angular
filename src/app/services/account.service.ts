@@ -83,4 +83,40 @@ export class AccountService {
     ;
   }
 
+  createTransactionStep1(fromAccount, toAccount, sum) {
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
+    headers.append('Content-Type', 'application/json');
+
+    const localData = {
+      "CardFrom": fromAccount,
+      "CardTo": toAccount,
+      "Sum": sum
+    };
+
+    const locUrl = `${this.appState.get('apiEndpoint')}/accounts/transaction/1/`;
+    return this.http
+      .post(locUrl, JSON.stringify(localData), {headers: headers})
+      .map(res => res.json())
+    ;
+  }
+
+  createTransactionStep2(sms, info, code) {
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
+    headers.append('Content-Type', 'application/json');
+
+    const localData = {
+      "sms": sms,
+      "info": info,
+      "code": code
+    };
+
+    const locUrl = `${this.appState.get('apiEndpoint')}/accounts/transaction/2/`;
+    return this.http
+      .post(locUrl, JSON.stringify(localData), {headers: headers})
+      .map(res => res.json())
+    ;
+  }
+
 }

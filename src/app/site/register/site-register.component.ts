@@ -45,6 +45,7 @@ export class SiteRegisterComponent implements OnInit, AfterViewInit {
       .subscribe(
         res => {
           this.appState.set('telephone', res.telephone);
+          this.appState.set('sms', res.sms);
           this.router.navigate(['/en/site/confirm']);
           return;
         },

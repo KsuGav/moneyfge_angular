@@ -37,7 +37,7 @@ export class User {
 
     const localData = {
       "telephone": telephone,
-      "reference": '4vqzcqv44t8gkc800000ss0c0w8wgo0'
+      "reference": ''
     };
 
     const locUrl = `${this.appState.get('apiEndpoint')}/users/step/1/`;
@@ -74,7 +74,7 @@ export class User {
       "telephone": telephone
     };
 
-    const locUrl = `${this.appState.get('apiEndpoint')}/users/step/2/`;
+    const locUrl = `${this.appState.get('apiEndpoint')}/users/step/3/`;
     return this.http
       .post(locUrl, JSON.stringify(localData), {headers: headers})
       .map(res => res.json())
@@ -89,7 +89,34 @@ export class User {
     return this.http
       .get(locUrl, {headers: headers})
       .map(res => res.json())
-      .map(res => this.appState.set('user', res))
+      // .map(res => this.appState.set('user', res))
+    ;
+  }
+
+  sendSms(sms) {
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('gToken')}`);
+
+    const locUrl = `${this.appState.get('apiEndpoint')}/sms/${sms}`;
+    return this.http
+      .put(locUrl, {headers: headers})
+      .map(res => res.json())
+    ;
+  }
+
+  ressetPassword(phone) {
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('gToken')}`);
+    headers.append('Content-Type', 'application/json');
+
+    const localData = {
+      "telephone": phone
+    };
+
+    const locUrl = `${this.appState.get('apiEndpoint')}/users/resset/`;
+    return this.http
+      .post(locUrl, JSON.stringify(localData), {headers: headers})
+      .map(res => res.json())
     ;
   }
 
@@ -206,40 +233,6 @@ export class User {
 
     var locURL = this.siteEndpoint + '/api/v1/accounts/history/?currency=' + currency ;
     return this.http.get(locURL, {headers: headers} ).map(res => {
-      console.log(res.json());
-    });
-  }
-
-  createTransactionStep1(a_token, CardFrom, CardTo, Sum) {
-    var headers = new Headers();
-    headers.append('Authorization', 'Bearer' + a_token);
-    headers.append('Content-Type', 'application/json');
-
-    var localData = {
-      "CardFrom": CardFrom,
-      "CardTo": CardTo,
-      "Sum": Sum
-    };
-
-    var locURL = this.siteEndpoint + '/api/v1/accounts/transaction/1';
-    return this.http.post(locURL, JSON.stringify(localData), {headers: headers} ).map(res => {
-      console.log(res.json());
-    });
-  }
-
-  createTransactionStep2(a_token, sms, info, code) {
-    var headers = new Headers();
-    headers.append('Authorization', 'Bearer' + a_token);
-    headers.append('Content-Type', 'application/json');
-
-    var localData = {
-      "sms": sms,
-      "info": info,
-      "code": code
-    };
-
-    var locURL = this.siteEndpoint + '/api/v1/accounts/transaction/2';
-    return this.http.post(locURL, JSON.stringify(localData), {headers: headers} ).map(res => {
       console.log(res.json());
     });
   }

@@ -1,0 +1,28 @@
+<div class="main">
+  <div class="block-header">
+    <h3>Withdrawing money</h3>
+  </div>
+  <div class="info-block">
+    <div class="alert alert-danger" *ngIf="msg">
+      {{ msg }}
+    </div>
+    <form class="mobile-pay-main" style="margin-top:40px" (submit)="submitForm($event)">
+      <label>From Account</label>
+      <div class="select" *ngIf="accs && accs.length > 0">
+        <select required="" [(ngModel)]="fromAccount" name="from-account">
+          <option *ngFor="let acc of accs" [value]="acc.id">{{acc.id}} - {{acc.currency}}</option>
+        </select>
+      </div>
+
+      <label>To Account</label>
+      <input type="text" required="" name="to-account" [(ngModel)]="toAccount" />
+
+      <label>Sum</label>
+      <input type="text" required="" name="sum" [(ngModel)]="sum" />
+
+      <div class="center-sm">
+        <button class="btn btn-accent">Save</button>
+      </div>
+    </form>
+  </div>
+</div>

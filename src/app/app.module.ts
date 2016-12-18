@@ -44,6 +44,8 @@ import { CabinetFooterComponent } from './cabinet/footer';
 import { CabinetMainComponent } from './cabinet/main';
 import { CabinetPaymentComponent } from './cabinet/payment';
 import { CabinetTransferComponent } from './cabinet/transfer';
+import { TransferDefaultComponent } from './cabinet/transfer/default';
+import { TransferAccountComponent } from './cabinet/transfer/account';
 import { CabinetFillComponent } from './cabinet/fill';
 import { CabinetScoreComponent } from './cabinet/score';
 import { ScoreIndexComponent } from './cabinet/score/default';
@@ -98,6 +100,8 @@ type StoreType = {
     , CabinetMainComponent
     , CabinetPaymentComponent
     , CabinetTransferComponent
+    , TransferDefaultComponent
+    , TransferAccountComponent
     , CabinetFillComponent
     , CabinetScoreComponent
     , ScoreIndexComponent

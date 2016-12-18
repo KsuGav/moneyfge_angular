@@ -38,6 +38,7 @@ export class SitePasswordComponent implements OnInit {
       .registStep3(this.password, this.appState.get('telephone'))
       .subscribe(
         res => {
+          this.appState.set('sms', null);
           this.appState.set('telephone', null);
           this.router.navigate(['/en/user/sign-in/login']);
           return;

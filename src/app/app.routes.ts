@@ -22,6 +22,8 @@ import { CabinetComponent } from './cabinet';
 import { CabinetMainComponent } from './cabinet/main';
 import { CabinetPaymentComponent } from './cabinet/payment';
 import { CabinetTransferComponent } from './cabinet/transfer';
+import { TransferDefaultComponent } from './cabinet/transfer/default';
+import { TransferAccountComponent } from './cabinet/transfer/account';
 import { CabinetFillComponent } from './cabinet/fill';
 import { CabinetScoreComponent } from './cabinet/score';
 import { ScoreIndexComponent } from './cabinet/score/default';
@@ -60,7 +62,14 @@ export const ROUTES: Routes = [
     children: [
       {path: '', component: CabinetMainComponent},
       {path: 'categories', component: CabinetPaymentComponent},
-      {path: 'transfer', component: CabinetTransferComponent},
+      {
+        path: 'transfer',
+        component: CabinetTransferComponent,
+        children: [
+          {path: 'index', component: TransferDefaultComponent},
+          {path: 'account', component: TransferAccountComponent}
+        ]
+      },
       {path: 'fill', component: CabinetFillComponent},
       {
         path: 'score',

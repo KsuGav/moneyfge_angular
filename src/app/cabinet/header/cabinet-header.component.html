@@ -6,7 +6,7 @@
           <ul class="main-menu">
             <li [ngClass]="{'active': activeLink === 'cabinet'}"><a [routerLink]="['/en/user/cabinet']" (click)="cabinetClick()"><i class="fa fa-home"></i></a></li>
             <li [ngClass]="{'active': activeLink === 'categories'}"><a [routerLink]="['/en/user/cabinet/categories']" (click)="paymentClick()"><i class="fa fa-credit-card"></i> Payment</a></li>
-            <li [ngClass]="{'active': activeLink === 'transfer'}"><a [routerLink]="['/en/user/cabinet/transfer']" (click)="transferClick()"><i class="fa fa-bars"></i> Transfers</a></li>
+            <li [ngClass]="{'active': activeLink === 'transfer'}"><a [routerLink]="['/en/user/cabinet/transfer/index']" (click)="transferClick()"><i class="fa fa-bars"></i> Transfers</a></li>
             <li [ngClass]="{'active': activeLink === 'fill'}"><a [routerLink]="['/en/user/cabinet/fill']" (click)="fillClick()"><i class="fa fa-dollar"></i> REPLENISHMENT</a></li>
             <li [ngClass]="{'active': activeLink === 'index'}"><a [routerLink]="['/en/user/cabinet/score/index']" (click)="scoreClick()"><i class="fa fa-money"></i> My cards</a></li>
             <li [ngClass]="{'active': activeLink === 'outmoney'}"><a [routerLink]="['/en/user/cabinet/outmoney']" (click)="outmoneyClick()"><i class="fa fa-ticket"></i> Cashouts</a></li>

@@ -14,7 +14,9 @@
           <input type="text" required="" class="phone-input-ua" name="code" [(ngModel)]="code" />
           <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" title="Enter code from SMS"></i>
         </div>
-        <a href="#" class="resend" id="sms_retry_btn"><i class="fa fa-refresh"></i>Send SMS again</a><br />
+        <a href="#" class="resend" id="sms_retry_btn" (click)="resendSms($event)">
+          <i class="fa fa-refresh"></i>Send SMS again <span *ngIf="secs > 0">( {{secs}} )</span>
+        </a><br />
         <button type="submit" class="btn btn-accent btn-big">Continue</button>
       </form>
       <a [routerLink]="['']" class="back"><i class="fa fa-chevron-left"></i> Back</a>

@@ -19,6 +19,8 @@ export class SiteRecoveryComponent implements OnInit,AfterViewInit {
 
   private errorMsg: string;
 
+  private phone: string;
+
   constructor(
     private userService: User,
     private route: ActivatedRoute,
@@ -34,6 +36,17 @@ export class SiteRecoveryComponent implements OnInit,AfterViewInit {
 
   ngAfterViewInit() {
     this.setupTelMask();
+  }
+
+  submitForm(event) {
+    event.preventDefault();
+    this.userService
+      .ressetPassword(this.phone)
+      .subscribe(
+        res => {},
+        err => this.errorMsg = err.json().message
+      )
+    ;
   }
 
   setupTelMask() {
