@@ -5,17 +5,17 @@ import { User } from '../../services/service.user';
 import { AppState } from '../../app.service';
 
 @Component({
-  selector: 'site-confirm-component',
-  templateUrl: './site-confirm.component.html',
+  selector: 'site-password-component',
+  templateUrl: './site-password.component.html',
   // encapsulation: ViewEncapsulation.None,
   styleUrls: [
     '../css/login.css'
   ]
 })
 
-export class SiteConfirmComponent implements OnInit {
+export class SitePasswordComponent implements OnInit {
 
-  private code: string;
+  private password: string;
 
   private errorMsg: string;
 
@@ -35,10 +35,11 @@ export class SiteConfirmComponent implements OnInit {
   register(event) {
     event.preventDefault();
     this.userService
-      .registStep2(this.code, this.appState.get('telephone'))
+      .registStep3(this.password, this.appState.get('telephone'))
       .subscribe(
         res => {
-          this.router.navigate(['/en/site/password']);
+          this.appState.set('telephone', null);
+          this.router.navigate(['/en/user/sign-in/login']);
           return;
         },
         err => this.errorMsg = err.json().message

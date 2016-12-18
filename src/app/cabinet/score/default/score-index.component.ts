@@ -30,6 +30,14 @@ export class ScoreIndexComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
+    this.getAccounts();
+  }
+
+  ngOnDestroy () {
+
+  }
+
+  getAccounts() {
     this.accountService
       .getAllCard()
       .subscribe(
@@ -39,8 +47,41 @@ export class ScoreIndexComponent implements OnInit, AfterViewInit, OnDestroy {
     ;
   }
 
-  ngOnDestroy () {
+  lockAccount(event, accId) {
+    event.preventDefault();
+    if (!confirm('Are you sure?')) {
+      return;
+    }
+    this.accountService
+      .lockAccount(accId)
+      .subscribe(
+        () => this.getAccounts(),
+        err => this.msg = err.json().message
+      )
+    ;
+  }
 
+  unlockAccount(event, accId) {
+    event.preventDefault();
+    this.accountService
+      .unlockAccountStep1(accId)
+      .subscribe(
+        res => {
+          const sms = res.sms;
+          const code = prompt('SMS code');
+          if (code && parseInt(code, 10) !== NaN) {
+            this.accountService
+              .unlockAccountStep2(accId, sms, code)
+              .subscribe(
+                () => this.getAccounts(),
+                err => this.msg = err.json().message
+              )
+            ;
+          }
+        },
+        err => this.msg = err.json().message
+      )
+    ;
   }
 
 }

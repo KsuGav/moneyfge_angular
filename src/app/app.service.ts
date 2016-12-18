@@ -13,9 +13,6 @@ export class AppState {
     this.set('apiEndpoint', `${this.get('siteEndpoint')}/api/v1`);
     this.set('clientId', '3_p08hEG4THmS3TPlOpS9cYqsh9Aj3vxGUYN8XtmxWLjVtfzoqHg');
     this.set('clientSecret', '7LYlYxmWBhyjosH3RvRybyCyogmOODppWo6YTLOgBljujlmHSB');
-    this.set('gToken', 'NzcyN2M5YTBlZmJkMGUyOGI1MzVlMWUwZTI3YmRkOGMzMzg0MzFhMGRkNTYwMzJmOWY0NzIwY2FhODA3MmI2MA');
-    this.set('aToken', 'ZTk5YjkxZTVlMDIwM2YwYzFiODYwYjVmODEyZjhjNjBkNTYwOWU1Y2MxZmJjNDAzNDNkY2IxMzk5ODc5OWNkMw');
-    this.set('loggedIn', true);
   }
 
   // already return a clone of the current state

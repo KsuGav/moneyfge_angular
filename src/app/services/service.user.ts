@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Http, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+import { AppState } from '../app.service';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
@@ -16,21 +18,95 @@ export class User {
 
   private clientSecret: string;
 
-  private loggedIn: boolean;
-
-  constructor(private http: Http) {
+  constructor(
+    private http: Http,
+    private appState: AppState,
+    private router: Router
+  ) {
     this.siteEndpoint = 'http://moneyfge-new.localhost/app_dev.php';
     this.apiEndpoint = `${this.siteEndpoint}/api/v1`;
 
     this.clientId = '3_p08hEG4THmS3TPlOpS9cYqsh9Aj3vxGUYN8XtmxWLjVtfzoqHg';
     this.clientSecret = '7LYlYxmWBhyjosH3RvRybyCyogmOODppWo6YTLOgBljujlmHSB';
-
-    this.loggedIn = !!localStorage.getItem('auth_token');
   }
 
-  isLoggedIn() {
-    return this.loggedIn;
+  registStep1(telephone) {
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('gToken')}`);
+    headers.append('Content-Type', 'application/json');
+
+    const localData = {
+      "telephone": telephone,
+      "reference": '4vqzcqv44t8gkc800000ss0c0w8wgo0'
+    };
+
+    const locUrl = `${this.appState.get('apiEndpoint')}/users/step/1/`;
+    return this.http
+      .post(locUrl, JSON.stringify(localData), {headers: headers})
+      .map(res => res.json())
+    ;
   }
+
+  registStep2(code, telephone) {
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('gToken')}`);
+    headers.append('Content-Type', 'application/json');
+
+    const localData = {
+      "code": code,
+      "telephone": telephone
+    };
+
+    const locUrl = `${this.appState.get('apiEndpoint')}/users/step/2/`;
+    return this.http
+      .post(locUrl, JSON.stringify(localData), {headers: headers})
+      .map(res => res.json())
+    ;
+  }
+
+  registStep3(plainPassword, telephone) {
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('gToken')}`);
+    headers.append('Content-Type', 'application/json');
+
+    const localData = {
+      "plainPassword": plainPassword,
+      "telephone": telephone
+    };
+
+    const locUrl = `${this.appState.get('apiEndpoint')}/users/step/2/`;
+    return this.http
+      .post(locUrl, JSON.stringify(localData), {headers: headers})
+      .map(res => res.json())
+    ;
+  }
+
+  getUser() {
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
+
+    const locUrl = `${this.appState.get('apiEndpoint')}/user/`;
+    return this.http
+      .get(locUrl, {headers: headers})
+      .map(res => res.json())
+      .map(res => this.appState.set('user', res))
+    ;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   getConfig() {
 
@@ -103,16 +179,6 @@ export class User {
 
   /*----------------Accounts-------------*/
 
-  getAllCard(a_token, currency) {
-    var headers = new Headers();
-    headers.append('Authorization', 'Bearer' + a_token);
-
-    var locURL = this.siteEndpoint + '/api/v1/accounts/?currency=' + currency ;
-    return this.http.get(locURL, {headers: headers} ).map(res => {
-      console.log(res.json());
-    });
-  }
-
   getCard(a_token, currency) {
     var headers = new Headers();
     headers.append('Authorization', 'Bearer' + a_token);
@@ -140,42 +206,6 @@ export class User {
 
     var locURL = this.siteEndpoint + '/api/v1/accounts/history/?currency=' + currency ;
     return this.http.get(locURL, {headers: headers} ).map(res => {
-      console.log(res.json());
-    });
-  }
-
-  LockAccount(a_token) {
-    var headers = new Headers();
-    headers.append('Authorization', 'Bearer' + a_token);
-
-    var locURL = this.siteEndpoint + '/api/v1/accounts/lock/10000005/';
-    return this.http.put(locURL, {}, {headers: headers} ).map(res => {
-      console.log(res.json());
-    });
-  }
-
-  unlockCardStep1(a_token) {
-    var headers = new Headers();
-    headers.append('Authorization', 'Bearer' + a_token);
-
-    var locURL = this.siteEndpoint + '/api/v1/accounts/unlock/10000000/1';
-    return this.http.put(locURL, {}, {headers: headers} ).map(res => {
-      console.log(res.json());
-    });
-  }
-
-  unlockCardStep2(a_token, sms, code) {
-    var headers = new Headers();
-    headers.append('Authorization', 'Bearer' + a_token);
-    headers.append('Content-Type', 'application/json');
-
-    var localData = {
-      "sms": sms,
-      "code": code
-    };
-
-    var locURL = this.siteEndpoint + '/api/v1/accounts/unlock/10000000/2';
-    return this.http.put(locURL, JSON.stringify(localData), {headers: headers} ).map(res => {
       console.log(res.json());
     });
   }
@@ -253,90 +283,6 @@ export class User {
 
   /*---------------------------------User----------------------------*/
 
-  guestToken() {
-    const gToken = sessionStorage.getItem('g_token');
-    if (gToken !== null) {
-      return gToken;
-    }
-    const url = `${this.siteEndpoint}/oauth/v2/token?client_id=${this.clientId}&client_secret=${this.clientSecret}&grant_type=client_credentials`;
-    return this.http
-      .get(url)
-      .map(res => res.json())
-      .subscribe(
-        (res: any) => {
-          sessionStorage.setItem('g_token', res.access_token);
-        }
-      )
-      ;
-  }
-
-  userLogin(username, password) {
-    const headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    headers.append('Authorization', `Bearer ${this.guestToken()}`);
-
-    const localData = {
-      "client_id": this.clientId,
-      "client_secret": this.clientSecret,
-      "grant_type": 'password',
-      "username": username,
-      "password": password
-    };
-
-    const locURL = `${this.apiEndpoint}/users/login/1`;
-    return this.http
-      .post(locURL, JSON.stringify(localData), {headers: headers} )
-      .map(res => res.json())
-      .map((response: any) => {
-        if (!('error' in response)) {
-          if (!('sms' in response)) {
-            sessionStorage.setItem('a_token', response.access_token);
-            this.loggedIn = true;
-          }
-        }
-        return response;
-      })
-    ;
-  }
-
-  userLogin1(username, password, sms, code) {
-    const headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    headers.append('Authorization', `Bearer ${this.guestToken()}`);
-
-    const localData = {
-      "client_id": this.clientId,
-      "client_secret": this.clientSecret,
-      "grant_type": 'password',
-      "username": username,
-      "password": password,
-      "sms": sms,
-      "code": code
-    };
-
-    const locURL = `${this.apiEndpoint}/users/login/2`;
-    return this.http
-      .post(locURL, JSON.stringify(localData), {headers: headers} )
-      .map(res => res.json())
-      .map((response: any) => {
-        if (!('error' in response)) {
-          sessionStorage.setItem('a_token', response.access_token);
-          this.loggedIn = true;
-        }
-      })
-      ;
-  }
-
-  getUser(a_token) {
-    var headers = new Headers();
-    headers.append('Authorization', 'Bearer' + a_token);
-
-    var locURL = this.siteEndpoint + '/api/v1/user/';
-    return this.http.get(locURL).map(res => {
-      console.log(res.json());
-    });
-  }
-
   successEmail() {
 
     var locURL = 'http://bigra.git/app_dev.php/email/1/NmU4MDYxYThlMzI4YmVlMmE5NmRkNDZjZjk4YzYyNTYwYzhhODY5N2ViNzY4ZDNhY2NmYjU0M2M2YjlmNGUyMQ';
@@ -355,55 +301,6 @@ export class User {
       console.log(res.json());
     });
 
-  }
-
-  registStep1(a_token, telephone) {
-    var headers = new Headers();
-    headers.append('Authorization', 'Bearer' + a_token);
-    headers.append('Content-Type', 'application/json');
-
-    var localData = {
-      "telephone": telephone,
-      "reference": '4vqzcqv44t8gkc800000ss0c0w8wgo0'
-    };
-
-    var locURL = this.siteEndpoint + '/api/v1/users/step/1/';
-    return this.http.post(locURL, JSON.stringify(localData), {headers: headers} ).map(res => {
-      console.log(res.json());
-    });
-  }
-
-  registStep2(a_token, code, telephone) {
-    var headers = new Headers();
-    headers.append('Authorization', 'Bearer' + a_token);
-    headers.append('Content-Type', 'application/json');
-
-    var localData = {
-      "code": code,
-      "telephone": telephone
-    };
-
-    var locURL = this.siteEndpoint + '/api/v1/users/step/2/';
-    return this.http.post(locURL, JSON.stringify(localData), {headers: headers} ).map(res => {
-      console.log(res.json());
-    });
-  }
-
-
-  registStep3(a_token, plainPassword, telephone) {
-    var headers = new Headers();
-    headers.append('Authorization', 'Bearer' + a_token);
-    headers.append('Content-Type', 'application/json');
-
-    var localData = {
-      "plainPassword": plainPassword,
-      "telephone": telephone
-    };
-
-    var locURL = this.siteEndpoint + '/api/v1/users/step/3/';
-    return this.http.post(locURL, JSON.stringify(localData), {headers: headers} ).map(res => {
-      console.log(res.json());
-    });
   }
 
   updateUser(a_token, firstName, secondName, paspotr, birthday, country, city) {

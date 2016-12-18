@@ -17,8 +17,9 @@ import { AppState, InternalStateType } from './app.service';
 import { User } from './services/service.user';
 import { ModalService } from './services/modal.service';
 import { AccountService } from './services/account.service';
-
+import { OutbidService } from './services/outbid.service';
 import { LoggedInGuard } from './services/logged-in.guard';
+
 import { HomeComponent } from './home/home';
 import { HomeHeaderComponent } from './home/header';
 import { HomeFooterComponent } from './home/footer';
@@ -36,6 +37,7 @@ import { LoginConfirmComponent } from './login/confirm';
 import { SiteRecoveryComponent } from './site/recovery';
 import { SiteRegisterComponent } from './site/register';
 import { SiteConfirmComponent } from './site/confirm';
+import { SitePasswordComponent } from './site/password';
 import { CabinetComponent } from './cabinet';
 import { CabinetHeaderComponent } from './cabinet/header';
 import { CabinetFooterComponent } from './cabinet/footer';
@@ -87,6 +89,7 @@ type StoreType = {
     , SiteRecoveryComponent
     , SiteRegisterComponent
     , SiteConfirmComponent
+    , SitePasswordComponent
     , CabinetComponent
     , CabinetHeaderComponent
     , CabinetFooterComponent
@@ -114,7 +117,8 @@ type StoreType = {
     User,
     LoggedInGuard,
     ModalService,
-    AccountService
+    AccountService,
+    OutbidService
   ]
 })
 export class AppModule {

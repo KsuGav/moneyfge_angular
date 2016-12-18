@@ -28,9 +28,9 @@
             </div>
             </div>
           </div>
-          <a class="btn btn-fill reg" [routerLink]="['/en/site/register']">Registration</a>
-          <!--<a class="btn btn-fill reg login" [routerLink]="['/en/user/sign-in/login']">Login</a>-->
-          <a class="btn btn-fill reg login" [routerLink]="['/en/user/cabinet']">Login</a>
+          <a class="btn btn-fill reg" [routerLink]="[registerUrl]" (click)="logout($event)">{{registerText}}</a>
+          <!-- <a class="btn btn-fill reg login" [routerLink]="[loginUrl]">{{loginText}}</a> -->
+          <a class="btn btn-fill reg login" [routerLink]="['/en/user/cabinet']">{{loginText}}</a>
         </div>
       </div>
       <div class="col-xs-12">

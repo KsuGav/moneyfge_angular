@@ -19,7 +19,7 @@ export class AccountService {
   createCard(currency, types) {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    headers.append('Authorization', `Bearer ${this.appState.get('aToken')}`);
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
 
     const localData = {
       "currency": currency,
@@ -34,12 +34,51 @@ export class AccountService {
   }
 
   getAllCard() {
-    var headers = new Headers();
-    headers.append('Authorization', `Bearer ${this.appState.get('aToken')}`);
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
 
-    var locUrl = `${this.appState.get('apiEndpoint')}/accounts/`;
+    const locUrl = `${this.appState.get('apiEndpoint')}/accounts/`;
     return this.http
       .get(locUrl, {headers: headers})
+      .map(res => res.json())
+    ;
+  }
+
+  lockAccount(accId) {
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
+
+    const locUrl = `${this.appState.get('apiEndpoint')}/accounts/lock/${accId}/`;
+    return this.http
+      .put(locUrl, {}, {headers: headers})
+      .map(res => res.json())
+    ;
+  }
+
+  unlockAccountStep1(accId) {
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
+
+    const locUrl = `${this.appState.get('apiEndpoint')}/accounts/unlock/${accId}/1/`;
+    return this.http
+      .put(locUrl, {}, {headers: headers})
+      .map(res => res.json())
+    ;
+  }
+
+  unlockAccountStep2(accId, sms, code) {
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
+    headers.append('Content-Type', 'application/json');
+
+    const localData = {
+      "sms": sms,
+      "code": code
+    };
+
+    const locUrl = `${this.appState.get('apiEndpoint')}/accounts/unlock/${accId}/2/`;
+    return this.http
+      .put(locUrl, JSON.stringify(localData), {headers: headers})
       .map(res => res.json())
     ;
   }

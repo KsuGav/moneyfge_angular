@@ -17,6 +17,8 @@ declare const $: any;
 
 export class SiteRegisterComponent implements OnInit, AfterViewInit {
 
+  private telephone: string;
+
   private errorMsg: string;
 
   constructor(
@@ -34,6 +36,21 @@ export class SiteRegisterComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.setupTelMask();
+  }
+
+  register(event) {
+    event.preventDefault();
+    this.userService
+      .registStep1(this.telephone)
+      .subscribe(
+        res => {
+          this.appState.set('telephone', res.telephone);
+          this.router.navigate(['/en/site/confirm']);
+          return;
+        },
+        err => this.errorMsg = err.json().message
+      )
+    ;
   }
 
   setupTelMask() {

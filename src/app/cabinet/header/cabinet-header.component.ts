@@ -2,6 +2,9 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { AfterViewInit, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalService } from '../../services/modal.service';
+import { LoggedInGuard } from '../../services/logged-in.guard';
+import { User } from '../../services/service.user';
+import { AppState } from '../../app.service';
 
 declare const $: any;
 
@@ -15,7 +18,15 @@ export class CabinetHeaderComponent implements OnInit, AfterViewInit, OnDestroy 
 
   private activeLink: string;
 
-  constructor(public router: Router, private modalService: ModalService) {
+  private user;
+
+  constructor(
+    public router: Router,
+    private modalService: ModalService,
+    private loggedInGuard: LoggedInGuard,
+    private userService: User,
+    private appState: AppState
+  ) {
     const initLink = this.router.url.substr(
       this.router.url.lastIndexOf('/') + 1,
       this.router.url.length
@@ -47,11 +58,32 @@ export class CabinetHeaderComponent implements OnInit, AfterViewInit, OnDestroy 
     this.activeLink = 'outmoney';
   }
 
+  logout(event) {
+    event.preventDefault();
+    this.loggedInGuard.logout();
+  }
+
   ngOnInit() {
 
   }
 
+  getUser() {
+    const user = this.appState.get('user');
+    if (user) {
+      this.user = user;
+      return;
+    }
+    this.userService
+      .getUser()
+      .subscribe(
+        res => this.user = res
+      )
+    ;
+  }
+
   ngAfterViewInit() {
+    this.getUser();
+
     this.modalService.showUnderConstruction();
     $(document).ready(function(){
       $("#nav-toggle").click(function () {
