@@ -17,8 +17,8 @@ export class AppComponent implements OnInit {
 
   constructor(
     public appState: AppState,
-    private loggedInGuard: LoggedInGuard)
-  {}
+    private loggedInGuard: LoggedInGuard
+  ) {}
 
   ngOnInit() {
     this.loggedInGuard.guestToken();
