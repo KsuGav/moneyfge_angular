@@ -3,6 +3,7 @@ import { OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { User } from '../../services/service.user';
 import { AppState } from '../../app.service';
+import { ModalService } from '../../services/modal.service';
 
 @Component({
   selector: 'site-confirm-component',
@@ -27,7 +28,8 @@ export class SiteConfirmComponent implements OnInit, OnDestroy, AfterViewInit {
     private userService: User,
     private route: ActivatedRoute,
     private router: Router,
-    private appState: AppState
+    private appState: AppState,
+    private modalService: ModalService
   ) {
 
   }
@@ -52,6 +54,7 @@ export class SiteConfirmComponent implements OnInit, OnDestroy, AfterViewInit {
     if (this.secs > 0) {
       return;
     }
+    this.modalService.showLoader('form');
     this.secs = 1;
     this.interval = setInterval(() => {
       if (this.secs === 60) {
@@ -64,8 +67,14 @@ export class SiteConfirmComponent implements OnInit, OnDestroy, AfterViewInit {
     this.userService
       .sendSms(this.appState.get('sms'))
       .subscribe(
-        res => this.appState.set('sms', res.sms),
-        err => this.errorMsg = err.json().message
+        res => {
+          this.appState.set('sms', res.sms);
+
+        },
+        err => {
+          this.modalService.hideLoader('form');
+          this.errorMsg = err.json().message;
+        }
       )
     ;
   }

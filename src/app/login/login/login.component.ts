@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
 
   loginIn(event) {
     event.preventDefault();
-    // this.modalService.showLoader('login-form');
+    this.modalService.showLoader('login-form');
     if (!this.login) {
       return;
     }
@@ -70,7 +70,7 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
           }
           if ('error' in res) {
             this.errorMsg = res.error;
-            // this.modalService.hideLoader('login-form');
+            this.modalService.hideLoader('login-form');
           }
 
           sessionStorage.setItem('aToken', res.access_token);
@@ -81,7 +81,7 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
         },
         (err: any) => {
           this.errorMsg = err.json().message;
-          // this.modalService.hideLoader('login-form');
+          this.modalService.hideLoader('login-form');
         }
       )
     ;
@@ -92,12 +92,12 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
     $('.phone-input-ua').intlTelInput({
       utilsScript: "assets/js/intlTelInput/utils.js?5",
       initialCountry: "auto",
-      defaultCountry: 'auto',
+      defaultCountry: 'tr',
       customPlaceholder: function (selectedCountryPlaceholder, selectedCountryData) {
         return selectedCountryPlaceholder;
       },
       geoIpLookup: function (callback) {
-        $.get('http://ipinfo.io/json', function() {})
+        $.get('https://ipinfo.io/json', function() {})
           .always(function (resp) {
             var countryCode = (resp && resp.country) ? resp.country : "";
             go = 1;
