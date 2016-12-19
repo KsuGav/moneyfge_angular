@@ -99,7 +99,7 @@ export class User {
 
     const locUrl = `${this.appState.get('apiEndpoint')}/sms/${sms}`;
     return this.http
-      .put(locUrl, {headers: headers})
+      .put(locUrl, null, {headers: headers})
       .map(res => res.json())
     ;
   }
@@ -120,6 +120,23 @@ export class User {
     ;
   }
 
+  changePassword(oldPass, newPass, againPass) {
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
+    headers.append('Content-Type', 'application/json');
+
+    const localData = {
+      "oldPassword": oldPass,
+      "plainPassword": [newPass, againPass]
+    };
+
+    const locUrl = `${this.appState.get('apiEndpoint')}/user/password`;
+    return this.http
+      .put(locUrl, JSON.stringify(localData), {headers: headers})
+      .map(res => res.json())
+    ;
+  }
+
 
 
 
@@ -136,7 +153,6 @@ export class User {
 
 
   getConfig() {
-
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
@@ -311,22 +327,6 @@ export class User {
     };
 
     var locURL = this.siteEndpoint + '/oauth/v1/user';
-    return this.http.put(locURL, JSON.stringify(localData), {headers: headers} ).map(res => {
-      console.log(res.json());
-    });
-  }
-
-  changePassword(a_token, oldPassword, plainPassword) {
-    var headers = new Headers();
-    headers.append('Authorization', 'Bearer' + a_token);
-    headers.append('Content-Type', 'application/json');
-
-    var localData = {
-      "oldPassword": oldPassword,
-      "plainPassword": plainPassword
-    };
-
-    var locURL = this.siteEndpoint + '/api/v1/user/password';
     return this.http.put(locURL, JSON.stringify(localData), {headers: headers} ).map(res => {
       console.log(res.json());
     });

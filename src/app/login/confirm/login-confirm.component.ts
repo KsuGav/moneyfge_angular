@@ -1,9 +1,10 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { OnInit } from '@angular/core';
+import { OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { User } from '../../services/service.user';
 import { AppState } from '../../app.service';
 import { LoggedInGuard } from '../../services/logged-in.guard';
+import { ModalService } from '../../services/modal.service';
 
 @Component({
   selector: 'login-confirm-component',
@@ -14,18 +15,23 @@ import { LoggedInGuard } from '../../services/logged-in.guard';
   ]
 })
 
-export class LoginConfirmComponent implements OnInit {
+export class LoginConfirmComponent implements OnInit, OnDestroy {
 
   private code: string;
 
   private errorMsg: string;
+
+  private secs: number = 0;
+
+  private interval;
 
   constructor(
     private loggedInGuard: LoggedInGuard,
     private userService: User,
     private route: ActivatedRoute,
     private router: Router,
-    private appState: AppState
+    private appState: AppState,
+    private modalService: ModalService
   ) {
 
   }
@@ -34,9 +40,36 @@ export class LoginConfirmComponent implements OnInit {
 
   }
 
-  loginIn(event) {
-    console.log(this.appState);
+  ngOnDestroy() {
+    clearInterval(this.interval);
+  }
+
+  resendSms(event) {
     event.preventDefault();
+    if (this.secs > 0) {
+      return;
+    }
+    this.secs = 1;
+    this.interval = setInterval(() => {
+      if (this.secs === 60) {
+        clearInterval(this.interval);
+        this.secs = 0;
+        return;
+      }
+      this.secs += 1;
+    }, 1000);
+    this.userService
+      .sendSms(this.appState.get('sms'))
+      .subscribe(
+        res => this.appState.set('sms', res.sms),
+        err => this.errorMsg = err.json().message
+      )
+    ;
+  }
+
+  loginIn(event) {
+    event.preventDefault();
+    this.modalService.showLoader('form');
     this.loggedInGuard
       .userLoginStep2(
         this.appState.get('username'),
@@ -48,6 +81,8 @@ export class LoginConfirmComponent implements OnInit {
         (res: any) => {
           if ('error' in res) {
             this.errorMsg = res.message;
+            this.modalService.hideLoader('form');
+            return;
           }
 
           sessionStorage.setItem('aToken', res.access_token);
@@ -55,7 +90,10 @@ export class LoginConfirmComponent implements OnInit {
 
           this.router.navigate(['/en/user/cabinet']);
         },
-        err => this.errorMsg = err.json().message
+        err => {
+          this.errorMsg = err.json().message;
+          this.modalService.hideLoader('form');
+        }
       )
     ;
   }

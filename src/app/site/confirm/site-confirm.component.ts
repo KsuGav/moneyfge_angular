@@ -57,6 +57,7 @@ export class SiteConfirmComponent implements OnInit, OnDestroy, AfterViewInit {
       if (this.secs === 60) {
         clearInterval(this.interval);
         this.secs = 0;
+        return;
       }
       this.secs += 1;
     }, 1000);

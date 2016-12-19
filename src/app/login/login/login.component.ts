@@ -3,6 +3,7 @@ import { OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LoggedInGuard } from '../../services/logged-in.guard';
 import { AppState } from '../../app.service';
+import { ModalService } from '../../services/modal.service';
 
 declare const $: any;
 
@@ -27,7 +28,8 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
     private loggedInGuard: LoggedInGuard,
     private route: ActivatedRoute,
     private router: Router,
-    private appState: AppState
+    private appState: AppState,
+    private modalService: ModalService
   ) {
 
   }
@@ -47,6 +49,13 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
 
   loginIn(event) {
     event.preventDefault();
+    this.modalService.showLoader('login-form');
+    if (!this.login) {
+      return;
+    }
+    if (this.login[0] === '+') {
+      this.login = this.login.substring(1);
+    }
     this.loggedInGuard
       .userLoginStep1(this.login, this.password)
       .subscribe(
@@ -61,15 +70,18 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
           }
           if ('error' in res) {
             this.errorMsg = res.error;
+            this.modalService.hideLoader('login-form');
           }
 
           sessionStorage.setItem('aToken', res.access_token);
           sessionStorage.setItem('loggedIn', 'true');
 
           this.router.navigate(['/en/user/cabinet']);
+          return;
         },
         (err: any) => {
           this.errorMsg = err.json().message;
+          this.modalService.hideLoader('login-form');
         }
       )
     ;
@@ -85,13 +97,14 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
         return selectedCountryPlaceholder;
       },
       geoIpLookup: function (callback) {
-        $.get('http://ipinfo.io', function () {
-        }, "jsonp").always(function (resp) {
-          var countryCode = (resp && resp.country) ? resp.country : "";
-          go = 1;
+        $.get('http://ipinfo.io/json', function() {})
+          .always(function (resp) {
+            var countryCode = (resp && resp.country) ? resp.country : "";
+            go = 1;
 
-          callback(countryCode);
-        });
+            callback(countryCode);
+          })
+        ;
       }
     });
     $('.phone-input-ua').focus();

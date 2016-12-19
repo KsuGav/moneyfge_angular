@@ -40,6 +40,12 @@ export class SiteRegisterComponent implements OnInit, AfterViewInit {
 
   register(event) {
     event.preventDefault();
+    if (!this.telephone) {
+      return;
+    }
+    if (this.telephone[0] === '+') {
+      this.telephone = this.telephone.substring(1);
+    }
     this.userService
       .registStep1(this.telephone)
       .subscribe(

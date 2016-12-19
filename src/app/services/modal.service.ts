@@ -20,4 +20,22 @@ export class ModalService {
       })
     });
   }
+
+  showLoader(selector) {
+    $(`#${selector}`).waitMe({
+      effect: 'roundBounce',
+      text: 'Please waiting...',
+      bg: 'rgba(255,255,255,0.7)',
+      color: '#000',
+      sizeW: '',
+      sizeH: '',
+      source: '',
+      onClose: function() {}
+
+    });
+  }
+
+  hideLoader(selector) {
+    $(`#${selector}`).waitMe('hide');
+  }
 }

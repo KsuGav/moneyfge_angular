@@ -3,6 +3,7 @@ import { AfterViewInit, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import * as moment from 'moment';
 import { AccountService } from '../../../services/account.service';
+import { ModalService } from '../../../services/modal.service';
 
 declare const $: any;
 
@@ -20,7 +21,8 @@ export class ScoreIndexComponent implements OnInit, AfterViewInit, OnDestroy {
 
   constructor(
     public router: Router,
-    private accountService: AccountService
+    private accountService: AccountService,
+    private modalService: ModalService
   ) {
 
   }
@@ -30,6 +32,7 @@ export class ScoreIndexComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
+    this.modalService.showLoader('block');
     this.getAccounts();
   }
 
@@ -41,14 +44,25 @@ export class ScoreIndexComponent implements OnInit, AfterViewInit, OnDestroy {
     this.accountService
       .getAllCard()
       .subscribe(
-        res => this.cards = res,
-        err => this.msg = err.json().message
+        res => {
+          this.cards = res;
+          this.modalService.hideLoader('block');
+          this.modalService.hideLoader('active');
+          this.modalService.hideLoader('locked');
+        },
+        err => {
+          this.msg = err.json().message;
+          this.modalService.hideLoader('block');
+          this.modalService.hideLoader('active');
+          this.modalService.hideLoader('locked');
+        }
       )
     ;
   }
 
   lockAccount(event, accId) {
     event.preventDefault();
+    this.modalService.showLoader('active');
     if (!confirm('Are you sure?')) {
       return;
     }
@@ -56,13 +70,17 @@ export class ScoreIndexComponent implements OnInit, AfterViewInit, OnDestroy {
       .lockAccount(accId)
       .subscribe(
         () => this.getAccounts(),
-        err => this.msg = err.json().message
+        err => {
+          this.msg = err.json().message;
+          this.modalService.hideLoader('active');
+        }
       )
     ;
   }
 
   unlockAccount(event, accId) {
     event.preventDefault();
+    this.modalService.showLoader('locked');
     this.accountService
       .unlockAccountStep1(accId)
       .subscribe(
@@ -74,7 +92,10 @@ export class ScoreIndexComponent implements OnInit, AfterViewInit, OnDestroy {
               .unlockAccountStep2(accId, sms, code)
               .subscribe(
                 () => this.getAccounts(),
-                err => this.msg = err.json().message
+                err => {
+                  this.msg = err.json().message;
+                  this.modalService.showLoader('locked');
+                }
               )
             ;
           }

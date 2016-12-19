@@ -55,6 +55,7 @@ import { OutmoneyDefaultComponent } from './cabinet/outmoney/default';
 import { OutmoneyListComponent } from './cabinet/outmoney/list';
 import { CabinetSettingsComponent } from './cabinet/settings';
 import { SettingsProfileComponent } from './cabinet/settings/profile';
+import { SettingsPasswordComponent } from './cabinet/settings/password';
 import { NoContentComponent } from './no-content';
 
 // Application wide providers
@@ -111,6 +112,7 @@ type StoreType = {
     , OutmoneyListComponent
     , CabinetSettingsComponent
     , SettingsProfileComponent
+    , SettingsPasswordComponent
     , NoContentComponent
   ],
   imports: [ // import Angular's modules

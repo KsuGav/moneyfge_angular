@@ -33,6 +33,7 @@ import { OutmoneyDefaultComponent } from './cabinet/outmoney/default';
 import { OutmoneyListComponent } from './cabinet/outmoney/list';
 import { CabinetSettingsComponent} from './cabinet/settings';
 import { SettingsProfileComponent } from './cabinet/settings/profile';
+import { SettingsPasswordComponent } from './cabinet/settings/password';
 import { NoContentComponent } from './no-content';
 
 import { DataResolver } from './app.resolver';
@@ -91,7 +92,8 @@ export const ROUTES: Routes = [
         path: 'settings',
         component: CabinetSettingsComponent,
         children: [
-          {path: 'profile', component: SettingsProfileComponent}
+          {path: 'profile', component: SettingsProfileComponent},
+          {path: 'password', component: SettingsPasswordComponent}
         ]
       }
     ]

@@ -4,7 +4,7 @@
     <div class="block-header">
       <h3>PASSWORD RECOVERY</h3>
     </div>
-    <div class="info-block-content">
+    <div id="recovery-form" class="info-block-content">
       <form (submit)="submitForm($event)">
         <div class="alert alert-danger" *ngIf="errorMsg">
           {{ errorMsg }}

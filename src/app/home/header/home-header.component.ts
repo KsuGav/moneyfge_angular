@@ -2,6 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { AfterViewInit, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoggedInGuard } from '../../services/logged-in.guard';
+import { ModalService } from '../../services/modal.service';
 
 declare const $: any;
 
@@ -23,7 +24,8 @@ export class HomeHeaderComponent implements OnInit, AfterViewInit, OnDestroy {
 
   constructor(
     private router: Router,
-    private loggedInGuard: LoggedInGuard
+    private loggedInGuard: LoggedInGuard,
+    private modalService: ModalService
   ) {
 
   }
@@ -33,6 +35,7 @@ export class HomeHeaderComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
+    this.modalService.showUnderConstruction();
     this.setupDropdownMenu();
     this.buttons();
   }

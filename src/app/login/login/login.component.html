@@ -4,7 +4,7 @@
     <div class="block-header">
       <h3>Login</h3>
     </div>
-    <div class="info-block-content">
+    <div id="login-form" class="info-block-content">
       <form (submit)="loginIn($event)">
         <div class="alert alert-danger" *ngIf="errorMsg">
           {{ errorMsg }}
@@ -17,7 +17,7 @@
         <label>Enter your password</label>
         <div class="input-group">
           <i class="fa fa-eye"></i>
-          <input type="password" id="password" required [(ngModel)]="password" name="password" />
+          <input type="password" id="password" required [(ngModel)]="password" name="password" style="border-radius:0" />
           <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" title="The password must contain numbers (0-9), letters in upper and lower case letters (A-Z, a-z)"></i>
         </div>
         <button type="submit" class="btn btn-accent btn-big">Login</button>
