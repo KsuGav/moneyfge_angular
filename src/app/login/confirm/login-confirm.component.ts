@@ -69,7 +69,7 @@ export class LoginConfirmComponent implements OnInit, OnDestroy {
 
   loginIn(event) {
     event.preventDefault();
-    this.modalService.showLoader('form');
+    // this.modalService.showLoader('form');
     this.loggedInGuard
       .userLoginStep2(
         this.appState.get('username'),
@@ -81,7 +81,7 @@ export class LoginConfirmComponent implements OnInit, OnDestroy {
         (res: any) => {
           if ('error' in res) {
             this.errorMsg = res.message;
-            this.modalService.hideLoader('form');
+            // this.modalService.hideLoader('form');
             return;
           }
 
@@ -92,7 +92,7 @@ export class LoginConfirmComponent implements OnInit, OnDestroy {
         },
         err => {
           this.errorMsg = err.json().message;
-          this.modalService.hideLoader('form');
+          // this.modalService.hideLoader('form');
         }
       )
     ;

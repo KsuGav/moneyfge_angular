@@ -42,7 +42,7 @@ export class SiteRecoveryComponent implements OnInit,AfterViewInit {
 
   submitForm(event) {
     event.preventDefault();
-    this.modalService.showLoader('recovery-form');
+    // this.modalService.showLoader('recovery-form');
     if (!this.phone) {
       return;
     }
@@ -53,12 +53,12 @@ export class SiteRecoveryComponent implements OnInit,AfterViewInit {
       .ressetPassword(this.phone)
       .subscribe(
         res => {
-          this.modalService.hideLoader('recovery-form');
+          // this.modalService.hideLoader('recovery-form');
           this.router.navigate(['/en/user/sign-in/login']);
         },
         err => {
           this.errorMsg = err.json().message;
-          this.modalService.hideLoader('recovery-form');
+          // this.modalService.hideLoader('recovery-form');
         }
       )
     ;

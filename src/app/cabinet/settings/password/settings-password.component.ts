@@ -48,18 +48,17 @@ export class SettingsPasswordComponent implements OnInit, AfterViewInit, OnDestr
       alert('New passwords is not equal');
       return;
     }
-    this.modalService.showLoader('form');
+    // this.modalService.showLoader('form');
     this.userService
       .changePassword(this.oldPass, this.newPass, this.againPass)
       .subscribe(
         res => {
-          this.modalService.hideLoader('form');
+          // this.modalService.hideLoader('form');
         },
         err => {
-          this.modalService.hideLoader('form');
+          // this.modalService.hideLoader('form');
         }
       )
     ;
   }
-//KQ=jcH<(Jy
 }
