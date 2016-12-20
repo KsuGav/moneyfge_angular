@@ -5,12 +5,12 @@
       <h3>Login</h3>
     </div>
     <div id="login-form" class="info-block-content">
-      <form (submit)="loginIn($event)">
+      <form (submit)="loginIn($event)" id="contactForm" >
         <div class="alert alert-danger" *ngIf="errorMsg">
           {{ errorMsg }}
         </div>
         <label>Enter your phone number</label>
-        <div class="input-group">
+        <div class="input-group" >
           <input type="text" required class="phone-input-ua" [(ngModel)]="login" name="username" />
           <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" title="Enter your phone number"></i>
         </div>
