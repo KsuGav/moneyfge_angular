@@ -22,6 +22,8 @@ export class SettingsPasswordComponent implements OnInit, AfterViewInit, OnDestr
 
   private msg: string;
 
+  private msgType: string;
+
   constructor(
     public router: Router,
     private modalService: ModalService,
@@ -31,7 +33,8 @@ export class SettingsPasswordComponent implements OnInit, AfterViewInit, OnDestr
   }
 
   ngOnInit() {
-
+    $('#old-pass').focus();
+    $('[data-toggle="tooltip"]').tooltip();
   }
 
   ngAfterViewInit() {
@@ -44,19 +47,22 @@ export class SettingsPasswordComponent implements OnInit, AfterViewInit, OnDestr
 
   submitForm(event) {
     event.preventDefault();
-    if (this.newPass !== this.againPass) {
-      alert('New passwords is not equal');
-      return;
-    }
-    // this.modalService.showLoader('form');
+    this.modalService.showLoader('form');
     this.userService
       .changePassword(this.oldPass, this.newPass, this.againPass)
       .subscribe(
         res => {
-          // this.modalService.hideLoader('form');
+          this.oldPass = '';
+          this.newPass = '';
+          this.againPass = '';
+          this.msgType = 'success';
+          this.msg = 'Password updated succesfully';
+          this.modalService.hideLoader('form');
         },
         err => {
-          // this.modalService.hideLoader('form');
+          this.msgType = 'danger';
+          this.msg = err.json().message;
+          this.modalService.hideLoader('form');
         }
       )
     ;

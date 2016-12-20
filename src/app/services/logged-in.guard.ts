@@ -6,6 +6,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 import { AppState } from '../app.service';
+import { User } from '../services/service.user';
 
 @Injectable()
 export class LoggedInGuard implements CanActivate {
@@ -13,7 +14,8 @@ export class LoggedInGuard implements CanActivate {
   constructor(
     private appState: AppState,
     private router: Router,
-    private http: Http
+    private http: Http,
+    private userService: User
   ) {}
 
   isLoggedIn() {
@@ -24,6 +26,7 @@ export class LoggedInGuard implements CanActivate {
     if (this.isLoggedIn()) {
       sessionStorage.removeItem('aToken');
       sessionStorage.setItem('loggedIn', 'false');
+      this.appState.set('user', null);
       this.router.navigate(['/en/user/sign-in/login']);
     }
   }
@@ -96,6 +99,7 @@ export class LoggedInGuard implements CanActivate {
         this.appState.set('username', null);
         this.appState.set('password', null);
         this.appState.set('sms', null);
+        this.appState.set('user', res);
         return res;
       })
     ;

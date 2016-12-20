@@ -13,7 +13,7 @@ declare const $: any;
 
 export class CabinetComponent implements OnInit, OnDestroy, AfterViewInit {
 
-  constructor(private User: User) {
+  constructor(private userService: User) {
     $('html').css('display', 'none');
 
     $('head').children('link#home').remove();

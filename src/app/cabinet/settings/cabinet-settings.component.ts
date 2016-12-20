@@ -13,11 +13,25 @@ declare const $: any;
 })
 export class CabinetSettingsComponent implements OnInit, AfterViewInit, OnDestroy {
 
+  private activeLink: string;
+
   constructor(
     public router: Router,
     private modalService: ModalService
   ) {
+    const initLink = this.router.url.substr(
+      this.router.url.lastIndexOf('/') + 1,
+      this.router.url.length
+    );
+    this.activeLink = initLink;
+  }
 
+  profileClick() {
+    this.activeLink = 'profile';
+  }
+
+  passwordClick() {
+    this.activeLink = 'password';
   }
 
   ngOnInit() {

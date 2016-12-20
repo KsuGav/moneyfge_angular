@@ -4,50 +4,73 @@
   </div>
 
   <div class="info-block settings-block">
-    <form>
-      <div class="table">
-        <div class="table-row">
-          <div class="table-cell"><label for="check1">SMS of the deposits and the expenses</label></div>
-          <div class="table-cell">
-            <div class="checkbox">
-              <i class="fa fa-check">
-                <input type="checkbox" id="check1">
-              </i>
+    <div class="alert alert-{{ msgType }}" *ngIf="msg">
+      {{ msg }}
+    </div>
+
+    <div style="margin-top: 40px">
+
+      <form>
+        <div class="table">
+          <div class="table-row">
+            <div class="table-cell">
+              SMS of the deposits and the expenses
             </div>
-            <p class="settings-block-info">Service disabled</p>
-            <a href="/site/under-construct" class="modal_error2">Read more about the service</a>
+            <div class="table-cell">
+              <input type="checkbox" id="check1" />
+            </div>
           </div>
         </div>
-      </div>
-      <div class="table">
-        <div class="table-row">
-          <div class="table-cell">The number of purse <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" title="Далеко-далеко за словесными горами в стране, гласных."></i></div>
-          <div class="table-cell">
-            <input type="text" placeholder="+90 574 382 38 33">
+      </form>
+
+
+      <form>
+        <div class="table">
+          <div class="table-row">
+            <div class="table-cell">
+              The number of purse
+              <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" title="You can change telephone number"></i>
+            </div>
+            <div class="table-cell">
+              <input type="text" placeholder="You telephone" [(ngModel)]="phone" name="telephone" />
+            </div>
+            <div class="table-cell">
+              <button class="btn btn-accent btn-small" style="height: 30px">Save</button>
+            </div>
           </div>
         </div>
-        <div class="table-row">
-          <div class="table-cell"><span>E-mail address <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" title="example@mail.com"></i></span></div>
-          <div class="table-cell">
-            <input type="text" placeholder="example@mail.com">
-            <a href="/site/under-construct" class="modal_error2">Snap email</a>
+      </form>
+
+      <form>
+        <div class="table">
+          <div class="table-row">
+            <div class="table-cell">
+              E-mail address <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" title="You can provide you email address"></i>
+            </div>
+            <div class="table-cell">
+              <input type="text" placeholder="You email address" [(ngModel)]="email" name="email" />
+            </div>
+            <div class="table-cell">
+              <button class="btn btn-accent btn-small" style="height: 30px">Save</button>
+            </div>
           </div>
         </div>
-        <div class="table-row">
-          <div class="table-cell">Social network</div>
-          <div class="table-cell">
-            <ul class="socials">
-              <li><a href="https://www.facebook.com/moneyfge/"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="https://twitter.com/MoneyFGE"><i class="fa fa-twitter"></i></a></li>
-            </ul>
+      </form>
+
+      <form>
+        <div class="table">
+          <div class="table-row">
+            <div class="table-cell">Social network</div>
+            <div class="table-cell">
+              <ul class="socials" style="pargin: 0">
+                <li><a href="https://www.facebook.com/moneyfge/"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://twitter.com/MoneyFGE"><i class="fa fa-twitter"></i></a></li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <button class="btn btn-accent btn-big under-construction">Save</button>
-    </form>
+      </form>
+
+    </div>
   </div>
-
-
-
-
 </div>

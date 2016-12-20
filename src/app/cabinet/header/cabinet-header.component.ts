@@ -32,6 +32,7 @@ export class CabinetHeaderComponent implements OnInit, AfterViewInit, OnDestroy 
       this.router.url.length
     );
     this.activeLink = initLink;
+
   }
 
   cabinetClick() {
@@ -64,10 +65,6 @@ export class CabinetHeaderComponent implements OnInit, AfterViewInit, OnDestroy 
   }
 
   ngOnInit() {
-    this.getUser();
-  }
-
-  getUser() {
     this.userService
       .getUser()
       .subscribe(

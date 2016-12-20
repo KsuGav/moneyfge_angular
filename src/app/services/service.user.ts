@@ -89,7 +89,6 @@ export class User {
     return this.http
       .get(locUrl, {headers: headers})
       .map(res => res.json())
-      // .map(res => this.appState.set('user', res))
     ;
   }
 
