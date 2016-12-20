@@ -1,5 +1,5 @@
 /*
- * International Telephone Input v10.0.1
+ * International Telephone Input v10.0.0
  * https://github.com/jackocnr/intl-tel-input.git
  * Licensed under the MIT license
  */
@@ -39,10 +39,10 @@
         initialCountry: "",
         // don't insert international dial codes
         nationalMode: true,
-        // display only these countries
-        onlyCountries: [],
         // number type to use for placeholders
         placeholderNumberType: "MOBILE",
+        // display only these countries
+        onlyCountries: [],
         // the countries at the top of the list. defaults to united states and united kingdom
         preferredCountries: [ "us", "gb" ],
         // display the country dial code next to the selected flag so it's not part of the typed number
@@ -284,16 +284,16 @@
             var val = this.telInput.val();
             // if we already have a dial code, and it's not a regionlessNanp we can go ahead and set the flag, else fall back to default
             if (this._getDialCode(val) && !this._isRegionlessNanp(val)) {
-                this._updateFlagFromNumber(val);
+                this._updateFlagFromNumber(val, true);
             } else if (this.options.initialCountry !== "auto") {
                 // see if we should select a flag
                 if (this.options.initialCountry) {
-                    this._setFlag(this.options.initialCountry.toLowerCase());
+                    this._setFlag(this.options.initialCountry.toLowerCase(), true);
                 } else {
                     // no dial code and no initialCountry, so default to first in list
                     this.defaultCountry = this.preferredCountries.length ? this.preferredCountries[0].iso2 : this.countries[0].iso2;
                     if (!val) {
-                        this._setFlag(this.defaultCountry);
+                        this._setFlag(this.defaultCountry, true);
                     }
                 }
                 // if empty and no nationalMode and no autoHideDialCode then insert the default dial code
@@ -413,17 +413,13 @@
             // update flag on keyup
             // (keep this listener separate otherwise the setTimeout breaks all the tests)
             this.telInput.on("keyup" + this.ns, function() {
-                if (that._updateFlagFromNumber(that.telInput.val())) {
-                    that._triggerCountryChange();
-                }
+                that._updateFlagFromNumber(that.telInput.val());
             });
             // update flag on cut/paste events (now supported in all major browsers)
             this.telInput.on("cut" + this.ns + " paste" + this.ns, function() {
                 // hack because "paste" event is fired before input is updated
                 setTimeout(function() {
-                    if (that._updateFlagFromNumber(that.telInput.val())) {
-                        that._triggerCountryChange();
-                    }
+                    that._updateFlagFromNumber(that.telInput.val());
                 });
             });
         },
@@ -637,7 +633,7 @@
         },
         // check if need to select a new flag based on the given number
         // Note: called from _setInitialState, keyup handler, setNumber
-        _updateFlagFromNumber: function(number) {
+        _updateFlagFromNumber: function(number, isInit) {
             // if we're in nationalMode and we already have US/Canada selected, make sure the number starts with a +1 so _getDialCode will be able to extract the area code
             // update: if we dont yet have selectedCountryData, but we're here (trying to update the flag from the number), that means we're initialising the plugin with a number that already has a dial code, so fine to ignore this bit
             if (number && this.options.nationalMode && this.selectedCountryData && this.selectedCountryData.dialCode == "1" && number.charAt(0) != "+") {
@@ -671,9 +667,8 @@
                 countryCode = this.defaultCountry;
             }
             if (countryCode !== null) {
-                return this._setFlag(countryCode);
+                this._setFlag(countryCode, isInit);
             }
-            return false;
         },
         // check if the given number is a regionless NANP number
         _isRegionlessNanp: function(number) {
@@ -702,7 +697,7 @@
         },
         // select the given flag, update the placeholder and the active list item
         // Note: called from _setInitialState, _updateFlagFromNumber, _selectListItem, setCountry
-        _setFlag: function(countryCode) {
+        _setFlag: function(countryCode, isInit) {
             var prevCountry = this.selectedCountryData && this.selectedCountryData.iso2 ? this.selectedCountryData : {};
             // do this first as it will throw an error and stop if countryCode is invalid
             this.selectedCountryData = countryCode ? this._getCountryData(countryCode, false, false) : {};
@@ -731,8 +726,10 @@
             if (countryCode) {
                 this.countryListItems.find(".iti-flag." + countryCode).first().closest(".country").addClass("active");
             }
-            // return if the flag has changed or not
-            return prevCountry.iso2 !== countryCode;
+            // on change flag, trigger a custom event
+            if (!isInit && prevCountry.iso2 !== countryCode) {
+                this.telInput.trigger("countrychange", this.selectedCountryData);
+            }
         },
         // update the input placeholder to an example number from the currently selected country
         _updatePlaceholder: function() {
@@ -749,7 +746,7 @@
         // called when the user selects a list item from the dropdown
         _selectListItem: function(listItem) {
             // update selected flag and active list item
-            var flagChanged = this._setFlag(listItem.attr("data-country-code"));
+            this._setFlag(listItem.attr("data-country-code"));
             this._closeDropdown();
             this._updateDialCode(listItem.attr("data-dial-code"), true);
             // focus the input
@@ -758,9 +755,6 @@
             if (this.isGoodBrowser) {
                 var len = this.telInput.val().length;
                 this.telInput[0].setSelectionRange(len, len);
-            }
-            if (flagChanged) {
-                this._triggerCountryChange();
             }
         },
         // close the dropdown and unbind any listeners
@@ -894,13 +888,9 @@
             }
             return this._cap(number);
         },
-        // trigger the 'countrychange' event
-        _triggerCountryChange: function() {
-            this.telInput.trigger("countrychange", this.selectedCountryData);
-        },
-        /**************************
-   *  SECRET PUBLIC METHODS
-   **************************/
+        /********************
+   *  PUBLIC METHODS
+   ********************/
         // this is called when the geoip call returns
         handleAutoCountry: function() {
             if (this.options.initialCountry === "auto") {
@@ -913,21 +903,6 @@
                 this.autoCountryDeferred.resolve();
             }
         },
-        // this is called when the utils request completes
-        handleUtils: function() {
-            // if the request was successful
-            if (window.intlTelInputUtils) {
-                // if there's an initial value in the input, then format it
-                if (this.telInput.val()) {
-                    this._updateValFromNumber(this.telInput.val());
-                }
-                this._updatePlaceholder();
-            }
-            this.utilsScriptDeferred.resolve();
-        },
-        /********************
-   *  PUBLIC METHODS
-   ********************/
         // remove plugin
         destroy: function() {
             if (this.allowDropdown) {
@@ -996,17 +971,25 @@
             if (!this.selectedFlagInner.hasClass(countryCode)) {
                 this._setFlag(countryCode);
                 this._updateDialCode(this.selectedCountryData.dialCode, false);
-                this._triggerCountryChange();
             }
         },
         // set the input value and update the flag
         setNumber: function(number) {
             // we must update the flag first, which updates this.selectedCountryData, which is used for formatting the number before displaying it
-            var flagChanged = this._updateFlagFromNumber(number);
+            this._updateFlagFromNumber(number);
             this._updateValFromNumber(number);
-            if (flagChanged) {
-                this._triggerCountryChange();
+        },
+        // this is called when the utils request completes
+        handleUtils: function() {
+            // if the request was successful
+            if (window.intlTelInputUtils) {
+                // if there's an initial value in the input, then format it
+                if (this.telInput.val()) {
+                    this._updateValFromNumber(this.telInput.val());
+                }
+                this._updatePlaceholder();
             }
+            this.utilsScriptDeferred.resolve();
         }
     };
     // using https://github.com/jquery-boilerplate/jquery-boilerplate/wiki/Extending-jQuery-Boilerplate
@@ -1083,7 +1066,7 @@
         }
     };
     // version
-    $.fn[pluginName].version = "10.0.1";
+    $.fn[pluginName].version = "10.0.0";
     // default options
     $.fn[pluginName].defaults = defaults;
     // Array of country objects for the flag dropdown.

@@ -88,45 +88,76 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   setupTelMask() {
-    let go = 0;
-    $('.phone-input-ua').intlTelInput({
+    let input = $('.phone-input-ua');
+    var countryData = input.intlTelInput("getSelectedCountryData");
+    var isValid = input.intlTelInput("isValidNumber");
+    input.intlTelInput({
       utilsScript: "assets/js/intlTelInput/utils.js?5",
-      initialCountry: "auto",
+      initialCountry: 'auto',
       defaultCountry: 'tr',
-      customPlaceholder: function (selectedCountryPlaceholder, selectedCountryData) {
-        return selectedCountryPlaceholder;
-      },
-      geoIpLookup: function (callback) {
-        $.get('https://ipinfo.io/json', function() {})
-          .always(function (resp) {
-            var countryCode = (resp && resp.country) ? resp.country : "";
-            go = 1;
-
-            callback(countryCode);
-          })
-        ;
+      preferredCountries: ['us','ru','tr','ua'],
+      //customPlaceholder: function (selectedCountryPlaceholder, selectedCountryData) {
+      //  return selectedCountryPlaceholder;
+      //}
+      //,
+      geoIpLookup: function(callback) {
+        $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+          var countryCode = (resp && resp.country) ? resp.country : "";
+          callback(countryCode);
+        });
       }
     });
-    $('.phone-input-ua').focus();
+
+
+    input.focus();
     $(".country").click(function () {
       this_country();
     });
-    let interval1 = setInterval(function () {
-      this_country();
-    }, 100);
 
     function this_country() {
-      if (go == 1) {
-        var countryData = $(".phone-input-ua").intlTelInput("getSelectedCountryData");
-        if (typeof(countryData.dialCode) != 'string') {
-          countryData.dialCode = '';
-        }
-        $('.phone-input-ua').val('+' + countryData.dialCode);
-
-        go = 0;
+      input.val('+' + countryData.dialCode);
         return countryData;
+      };
+
+    input.on('keyup change',function(){
+      var inputName = input.val();
+      var regName = /^([\+0-9-\s]+)$/;
+      var true_name = regName.test(inputName);
+      if(true_name==false) {
+        input.css('box-shadow','0px 0px 4px 0px red')
+        .addClass('error');
+        console.log("It's not correct number!");
+
+      }else{
+        input.css('box-shadow','none').removeClass('error');
       }
-    }
+
+    })
+
+    //$('#contactForm').formValidation({
+    //  //framework: 'bootstrap',
+    //  icon: {
+    //    valid: 'glyphicon glyphicon-ok',
+    //    invalid: 'glyphicon glyphicon-remove',
+    //    validating: 'glyphicon glyphicon-refresh'
+    //  },
+    //  fields: {
+    //    username: {
+    //      validators: {
+    //        callback: {
+    //          message: 'The phone number is not valid',
+    //          callback: function(value, validator, $field) {
+    //            return value === '' || $field.intlTelInput('isValidNumber');
+    //          }
+    //        }
+    //      }
+    //    }
+    //  }
+    //})
+    //// Revalidate the number when changing the country
+    //.on('click', '.country-list', function() {
+    //  $('#contactForm').formValidation('revalidateField', 'username');
+    //});
   }
 
   showHidePassword(){
