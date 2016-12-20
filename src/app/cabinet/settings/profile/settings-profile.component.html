@@ -1,0 +1,76 @@
+<div class="main">
+  <div class="block-header">
+    <h3>Settings</h3>
+  </div>
+
+  <div class="info-block settings-block">
+    <div class="alert alert-{{ msgType }}" *ngIf="msg">
+      {{ msg }}
+    </div>
+
+    <div style="margin-top: 40px">
+
+      <form>
+        <div class="table">
+          <div class="table-row">
+            <div class="table-cell">
+              SMS of the deposits and the expenses
+            </div>
+            <div class="table-cell">
+              <input type="checkbox" id="check1" />
+            </div>
+          </div>
+        </div>
+      </form>
+
+
+      <form>
+        <div class="table">
+          <div class="table-row">
+            <div class="table-cell">
+              The number of purse
+              <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" title="You can change telephone number"></i>
+            </div>
+            <div class="table-cell">
+              <input type="text" placeholder="You telephone" [(ngModel)]="phone" name="telephone" />
+            </div>
+            <div class="table-cell">
+              <button class="btn btn-accent btn-small" style="height: 30px">Save</button>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <form>
+        <div class="table">
+          <div class="table-row">
+            <div class="table-cell">
+              E-mail address <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" title="You can provide you email address"></i>
+            </div>
+            <div class="table-cell">
+              <input type="text" placeholder="You email address" [(ngModel)]="email" name="email" />
+            </div>
+            <div class="table-cell">
+              <button class="btn btn-accent btn-small" style="height: 30px">Save</button>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <form>
+        <div class="table">
+          <div class="table-row">
+            <div class="table-cell">Social network</div>
+            <div class="table-cell">
+              <ul class="socials" style="pargin: 0">
+                <li><a href="https://www.facebook.com/moneyfge/"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://twitter.com/MoneyFGE"><i class="fa fa-twitter"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
