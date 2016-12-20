@@ -4,81 +4,34 @@
                 <h3>Withdrawing money</h3>
             </div>
             <div class="info-block">
-                <form class="mobile-pay-main">
-                    <label>Choose way
-</label>
-                    <div class="select">
-                        <select required="">
-                            <option value="Банковской картой">Bank map</option>
+              <div class="alert alert-danger" *ngIf="msg">
+              {{ msg }}
+              </div>
+                <form class="mobile-pay-main" style="margin-top:40px" (submit)="submitForm($event)">
+                    <label>From Account</label>
+                    <div class="select" *ngIf="accs && accs.length > 0">
+                        <select required="" [(ngModel)]="account" name="account">
+                          <option *ngFor="let acc of accs" [value]="acc.id">{{acc.id}} - {{acc.currency}}</option>
                         </select>
                     </div>
 
-                    <label>Payment card</label>
-                    <div class="card-group">
-                        <label>Enter  your card number</label>
-                        <input type="tel" required="" maxlength="20">
-                        <div class="select" style="min-width: 80px">
-                            <select>
-                                <option disabled="" selected="">yy</option>
-                                <option>2016</option>
-                                <option>2017</option>
-                                <option>2018</option>
-                                <option>2019</option>
-                            </select>
-                        </div>
-                        <div class="select">
-                            <select>
-                                <option disabled="" selected="">mm</option>
-                                <option>01</option>
-                                <option>02</option>
-                                <option>03</option>
-                                <option>04</option>
-                                <option>05</option>
-                                <option>06</option>
-                                <option>07</option>
-                                <option>08</option>
-                                <option>09</option>
-                                <option>10</option>
-                                <option>11</option>
-                                <option>12</option>
-                            </select>
-                        </div>
-                        <input type="tel" class="cvv" placeholder="cvv" maxlength="3">
+                    <label>To System</label>
+                    <div class="select">
+                        <select required="" [(ngModel)]="system" name="system">
+                            <option value="QiWi">QiWi</option>
+                        </select>
                     </div>
-                    <div class="checkbox checked-box">
-                        <i class="square"><i class="fa fa-check"><input type="checkbox" id="check1" checked="checked">
-                            </i>
-                        </i>
-                    </div>
-                    <label for="check1">Link to the map MONEYFGE</label>
-                    <div class="input-group">
-                        <label>Sum
-</label>
-                        <input type="tel" required="">
-                        <div class="select sel-sm">
-                            <select>
-                                <option>TRL</option>
-                                <option>RUB</option>
-                                <option>USD</option>
-                                <option>EUR</option>
-                            </select>
-                        </div>
-                        <div class="info-popover">
-                            <p>Commission: 2,5%</p>
-                            <p>Minimum payment:
-                                10 TRY</p>
-                            <p>Maximum payment                                :100 TRY</p>
-                        </div>
-                    </div>
+
+                    <label>System Account</label>
+                    <input type="text" required="" name="sysacc" [(ngModel)]="systemAccount" />
+
+                    <label>Sum</label>
+                    <input type="text" required="" name="sum" [(ngModel)]="sum" />
+
                     <label>Comment</label>
-                    <textarea></textarea>
+                    <textarea [(ngModel)]="descr" name="descr" required=""></textarea>
                     <div class="center-sm">
-                        <button class="btn btn-accent">Withdrawing money</button>
-                        <ul class="plan-fav">
-                            <li><a href="/site/under-construct" class="modal_error2"><i class="fa fa-calendar"></i> Schedule</a></li>
-                            <li><a href="/site/under-construct" class="modal_error2"><i class="fa fa-star"></i> Add to Favorites</a>
-                            </li>
-                        </ul>
+                        <button class="btn btn-accent">Save</button>
                     </div>
                 </form>
             </div>

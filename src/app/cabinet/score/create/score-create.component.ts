@@ -39,7 +39,6 @@ export class ScoreCreateComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   submitForm() {
-    // console.log(this.currency);
     this.accountService
       .createCard(this.currency, this.types)
       .subscribe(
@@ -47,7 +46,7 @@ export class ScoreCreateComponent implements OnInit, AfterViewInit, OnDestroy {
           this.router.navigate(['/en/user/cabinet/score/index']);
         },
         (error: any) => {
-           this.msg = error.json().message();
+           this.msg = error.json().message;
         }
       )
     ;

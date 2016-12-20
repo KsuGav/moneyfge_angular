@@ -1,8 +1,9 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { User } from '../../services/service.user';
+import { LoggedInGuard } from '../../services/logged-in.guard';
 import { AppState } from '../../app.service';
+import { ModalService } from '../../services/modal.service';
 
 declare const $: any;
 
@@ -17,17 +18,18 @@ declare const $: any;
 
 export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
 
-  private login: string = '380973427717';
+  private login: string;
 
-  private password: string = '12qwaszx';
+  private password: string;
 
   private errorMsg: string;
 
   constructor(
-    private userService: User,
+    private loggedInGuard: LoggedInGuard,
     private route: ActivatedRoute,
     private router: Router,
-    private appState: AppState
+    private appState: AppState,
+    private modalService: ModalService
   ) {
 
   }
@@ -45,23 +47,64 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
     $('head').children('link#login-style').remove();
   }
 
+  loginIn(event) {
+    event.preventDefault();
+    this.modalService.showLoader('login-form');
+    if (!this.login) {
+      return;
+    }
+    if (this.login[0] === '+') {
+      this.login = this.login.substring(1);
+    }
+    this.loggedInGuard
+      .userLoginStep1(this.login, this.password)
+      .subscribe(
+        (res: any) => {
+          if ('sms' in res) {
+            this.appState.set('sms', res.sms);
+            this.appState.set('username', res.username);
+            this.appState.set('password', res.password);
+
+            this.router.navigate(['/en/user/sign-in/confirm']);
+            return;
+          }
+          if ('error' in res) {
+            this.errorMsg = res.error;
+            this.modalService.hideLoader('login-form');
+          }
+
+          sessionStorage.setItem('aToken', res.access_token);
+          sessionStorage.setItem('loggedIn', 'true');
+
+          this.router.navigate(['/en/user/cabinet']);
+          return;
+        },
+        (err: any) => {
+          this.errorMsg = err.json().message;
+          this.modalService.hideLoader('login-form');
+        }
+      )
+    ;
+  }
+
   setupTelMask() {
     let go = 0;
     $('.phone-input-ua').intlTelInput({
       utilsScript: "assets/js/intlTelInput/utils.js?5",
       initialCountry: "auto",
-      defaultCountry: 'auto',
+      defaultCountry: 'tr',
       customPlaceholder: function (selectedCountryPlaceholder, selectedCountryData) {
         return selectedCountryPlaceholder;
       },
       geoIpLookup: function (callback) {
-        $.get('http://ipinfo.io', function () {
-        }, "jsonp").always(function (resp) {
-          var countryCode = (resp && resp.country) ? resp.country : "";
-          go = 1;
+        $.get('https://ipinfo.io/json', function() {})
+          .always(function (resp) {
+            var countryCode = (resp && resp.country) ? resp.country : "";
+            go = 1;
 
-          callback(countryCode);
-        });
+            callback(countryCode);
+          })
+        ;
       }
     });
     $('.phone-input-ua').focus();
@@ -102,35 +145,5 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
       });
     });
   }
-
-  resetPassword() {
-    this.router.navigate(['en/site/reset-password']);
-  }
-
-  loginIn() {
-    this.userService.userLogin(this.login, this.password)
-      .subscribe(
-        (res: any) => {
-          if ('sms' in res) {
-            sessionStorage.setItem('sms', res.sms);
-            sessionStorage.setItem('username', res.username);
-            sessionStorage.setItem('password', res.password);
-
-            this.router.navigate(['user/login1']);
-            return;
-          }
-          if ('error' in res) {
-            this.errorMsg = res.error;
-          }
-          this.router.navigate(['user/profile']);
-        },
-        (err: any) => {
-          this.errorMsg = err.json().message;
-        }
-      )
-    ;
-  }
-
-
 
 }

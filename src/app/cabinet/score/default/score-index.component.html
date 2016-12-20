@@ -2,10 +2,95 @@
         <div class="main">
 
             <div class="block-header">
-                <h3>My cards</h3>
+                <h3>My Accounts</h3>
             </div>
 
-            <div class="info-block">
-                            </div>
+            <div id="block" class="info-block">
+
+              <div class="alert alert-danger" *ngIf="msg">
+                {{ msg }}
+              </div>
+
+              <div *ngIf="cards && cards.active.length > 0">
+                <h3>Active Accounts</h3>
+                <table id="active" class="table">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Account</th>
+                      <th>Created</th>
+                      <th>Currency</th>
+                      <th>Balance</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let card of cards.active; let ind = index;">
+                      <td>{{ ind + 1 }}</td>
+                      <td>{{card.id}}</td>
+                      <td>{{ card.creat | date: 'dd.MM.yyyy' }}</td>
+                      <td>{{ card.currency }}</td>
+                      <td>{{ card.sum.toFixed(2) }}</td>
+                      <td style="font-size: 12px">
+                        <a href="#" (click)="lockAccount($event, card.id)">Lock</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div *ngIf="cards && cards.lock.length > 0">
+                <h3>Lock Accounts</h3>
+                <table id="locked" class="table">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Account</th>
+                      <th>Created</th>
+                      <th>Currency</th>
+                      <th>Balance</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let card of cards.lock; let ind = index;">
+                      <td>{{ ind + 1 }}</td>
+                      <td>{{card.id}}</td>
+                      <td>{{ card.creat | date: 'dd.MM.yyyy' }}</td>
+                      <td>{{ card.currency }}</td>
+                      <td>{{ card.sum.toFixed(2) }}</td>
+                      <td style="font-size: 12px">
+                        <a href="#" (click)="unlockAccount($event, card.id)">Unlock</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div *ngIf="cards && cards.deleted.length > 0">
+                <h3>Deleted Accounts</h3>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Account</th>
+                      <th>Created</th>
+                      <th>Currency</th>
+                      <th>Balance</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let card of cards.deleted; let ind = index;">
+                      <td>{{ ind + 1 }}</td>
+                      <td></td>
+                      <td>{{ card.creat | date: 'dd.MM.yyyy' }}</td>
+                      <td>{{ card.currency }}</td>
+                      <td>{{ card.sum.toFixed(2) }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
         </div>
     </div>

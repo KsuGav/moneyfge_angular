@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AppState } from './app.service';
-import { User } from './services/service.user';
+import { LoggedInGuard } from './services/logged-in.guard';
+
+declare const $: any;
 
 /*
  * App Component
@@ -15,10 +17,16 @@ import { User } from './services/service.user';
 })
 export class AppComponent implements OnInit {
 
-  constructor(public appState: AppState, private userService: User) {}
+  constructor(
+    public appState: AppState,
+    private loggedInGuard: LoggedInGuard
+  ) {
+
+  }
 
   ngOnInit() {
-    // this.userService.guestToken();
+    this.loggedInGuard.guestToken();
+    // $('#body').fadeIn();
   }
 
 }

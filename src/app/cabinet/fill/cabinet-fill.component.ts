@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { OnInit, OnDestroy } from '@angular/core';
+import { OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { User } from '../../services/service.user';
 import { ModalService } from '../../services/modal.service';
 

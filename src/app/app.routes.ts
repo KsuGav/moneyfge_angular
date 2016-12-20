@@ -1,6 +1,7 @@
 import { Routes, RouterModule } from '@angular/router';
 
-// import { LoggedInGuard } from './services/logged-in.guard';
+import { LoggedInGuard } from './services/logged-in.guard';
+
 import { HomeComponent } from './home/home';
 import { HomeAboutComponent } from './home/about';
 import { MobilePaymentsComponent } from './home/mobile-payments';
@@ -16,10 +17,13 @@ import { LoginConfirmComponent } from './login/confirm';
 import { SiteRecoveryComponent } from './site/recovery';
 import { SiteRegisterComponent } from './site/register';
 import { SiteConfirmComponent } from './site/confirm';
+import { SitePasswordComponent } from './site/password';
 import { CabinetComponent } from './cabinet';
 import { CabinetMainComponent } from './cabinet/main';
 import { CabinetPaymentComponent } from './cabinet/payment';
 import { CabinetTransferComponent } from './cabinet/transfer';
+import { TransferDefaultComponent } from './cabinet/transfer/default';
+import { TransferAccountComponent } from './cabinet/transfer/account';
 import { CabinetFillComponent } from './cabinet/fill';
 import { CabinetScoreComponent } from './cabinet/score';
 import { ScoreIndexComponent } from './cabinet/score/default';
@@ -27,6 +31,9 @@ import { ScoreCreateComponent } from './cabinet/score/create';
 import { CabinetOutmoneyComponent } from './cabinet/outmoney';
 import { OutmoneyDefaultComponent } from './cabinet/outmoney/default';
 import { OutmoneyListComponent } from './cabinet/outmoney/list';
+import { CabinetSettingsComponent} from './cabinet/settings';
+import { SettingsProfileComponent } from './cabinet/settings/profile';
+import { SettingsPasswordComponent } from './cabinet/settings/password';
 import { NoContentComponent } from './no-content';
 
 import { DataResolver } from './app.resolver';
@@ -48,13 +55,22 @@ export const ROUTES: Routes = [
   , { path: 'en/site/reset-password', component: SiteRecoveryComponent }
   , { path: 'en/site/register', component: SiteRegisterComponent }
   , { path: 'en/site/confirm', component: SiteConfirmComponent }
+  , { path: 'en/site/password', component: SitePasswordComponent }
   , {
     path: 'en/user/cabinet',
     component: CabinetComponent,
+    canActivate: [ LoggedInGuard ],
     children: [
       {path: '', component: CabinetMainComponent},
       {path: 'categories', component: CabinetPaymentComponent},
-      {path: 'transfer', component: CabinetTransferComponent},
+      {
+        path: 'transfer',
+        component: CabinetTransferComponent,
+        children: [
+          {path: 'index', component: TransferDefaultComponent},
+          {path: 'account', component: TransferAccountComponent}
+        ]
+      },
       {path: 'fill', component: CabinetFillComponent},
       {
         path: 'score',
@@ -70,6 +86,14 @@ export const ROUTES: Routes = [
         children: [
           {path: '', component: OutmoneyDefaultComponent},
           {path: 'list', component: OutmoneyListComponent}
+        ]
+      },
+      {
+        path: 'settings',
+        component: CabinetSettingsComponent,
+        children: [
+          {path: 'profile', component: SettingsProfileComponent},
+          {path: 'password', component: SettingsPasswordComponent}
         ]
       }
     ]

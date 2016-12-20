@@ -19,15 +19,100 @@ export class AccountService {
   createCard(currency, types) {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    headers.append('Authorization', `Bearer ${this.appState.get('aToken')}`);
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
 
     const localData = {
       "currency": currency,
-      "type": types
+      "types": types
     };
 
     const locUrl = `${this.appState.get('apiEndpoint')}/accounts/`;
-    console.log(localData);
+    return this.http
+      .post(locUrl, JSON.stringify(localData), {headers: headers})
+      .map(res => res.json())
+    ;
+  }
+
+  getAllCard() {
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
+
+    const locUrl = `${this.appState.get('apiEndpoint')}/accounts/`;
+    return this.http
+      .get(locUrl, {headers: headers})
+      .map(res => res.json())
+    ;
+  }
+
+  lockAccount(accId) {
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
+
+    const locUrl = `${this.appState.get('apiEndpoint')}/accounts/lock/${accId}/`;
+    return this.http
+      .put(locUrl, {}, {headers: headers})
+      .map(res => res.json())
+    ;
+  }
+
+  unlockAccountStep1(accId) {
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
+
+    const locUrl = `${this.appState.get('apiEndpoint')}/accounts/unlock/${accId}/1/`;
+    return this.http
+      .put(locUrl, {}, {headers: headers})
+      .map(res => res.json())
+    ;
+  }
+
+  unlockAccountStep2(accId, sms, code) {
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
+    headers.append('Content-Type', 'application/json');
+
+    const localData = {
+      "sms": sms,
+      "code": code
+    };
+
+    const locUrl = `${this.appState.get('apiEndpoint')}/accounts/unlock/${accId}/2/`;
+    return this.http
+      .put(locUrl, JSON.stringify(localData), {headers: headers})
+      .map(res => res.json())
+    ;
+  }
+
+  createTransactionStep1(fromAccount, toAccount, sum) {
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
+    headers.append('Content-Type', 'application/json');
+
+    const localData = {
+      "CardFrom": fromAccount,
+      "CardTo": toAccount,
+      "Sum": sum
+    };
+
+    const locUrl = `${this.appState.get('apiEndpoint')}/accounts/transaction/1/`;
+    return this.http
+      .post(locUrl, JSON.stringify(localData), {headers: headers})
+      .map(res => res.json())
+    ;
+  }
+
+  createTransactionStep2(sms, info, code) {
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
+    headers.append('Content-Type', 'application/json');
+
+    const localData = {
+      "sms": sms,
+      "info": info,
+      "code": code
+    };
+
+    const locUrl = `${this.appState.get('apiEndpoint')}/accounts/transaction/2/`;
     return this.http
       .post(locUrl, JSON.stringify(localData), {headers: headers})
       .map(res => res.json())

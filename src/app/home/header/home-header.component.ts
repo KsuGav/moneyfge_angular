@@ -1,5 +1,8 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { AfterViewInit, OnInit, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoggedInGuard } from '../../services/logged-in.guard';
+import { ModalService } from '../../services/modal.service';
 
 declare const $: any;
 
@@ -11,7 +14,19 @@ declare const $: any;
 })
 export class HomeHeaderComponent implements OnInit, AfterViewInit, OnDestroy {
 
-  constructor() {
+  private loginText: string;
+
+  private loginUrl: string;
+
+  private registerText: string;
+
+  private registerUrl: string;
+
+  constructor(
+    private router: Router,
+    private loggedInGuard: LoggedInGuard,
+    private modalService: ModalService
+  ) {
 
   }
 
@@ -20,11 +35,33 @@ export class HomeHeaderComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
+    this.modalService.showUnderConstruction();
     this.setupDropdownMenu();
+    this.buttons();
   }
 
   ngOnDestroy () {
 
+  }
+
+  buttons() {
+    if (this.loggedInGuard.isLoggedIn()) {
+      this.loginText = 'Profile';
+      this.loginUrl = '/en/user/cabinet';
+      this.registerText = 'Sign Out';
+      this.registerUrl = '';
+    } else {
+      this.loginText = 'Login';
+      this.loginUrl = '/en/user/sign-in/login';
+      this.registerText = 'Registration';
+      this.registerUrl = '/en/site/register';
+    }
+  }
+
+  logout(event) {
+    // event.preventDefault();
+    console.log('Logout');
+    this.loggedInGuard.logout();
   }
 
   setupDropdownMenu() {

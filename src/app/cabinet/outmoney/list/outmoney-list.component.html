@@ -5,6 +5,40 @@
             </div>
             <div class="info-block">
 
+              <div class="alert alert-danger" *ngIf="msg">
+                {{ msg }}
+              </div>
+
+              <div *ngIf="outs && outs.length > 0">
+                <h3>Active Accounts</h3>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Account</th>
+                      <th>Sum</th>
+                      <th>Currency</th>
+                      <th>Created</th>
+                      <th>System</th>
+                      <th>System Account</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let out of outs; let ind = index;">
+                      <td>{{ ind + 1 }}</td>
+                      <td>{{ out.account.id }}</td>
+                      <td>{{ out.bid_summ.toFixed(2) }}</td>
+                      <td>{{ out.account.currency }}</td>
+                      <td>{{ out.cr_time | date: 'dd.MM.yyyy' }}</td>
+                      <td>{{ out.system }}</td>
+                      <td>{{ out.sys_number }}</td>
+                      <td>{{ status(out) }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
             </div>
         </div>
     </div>

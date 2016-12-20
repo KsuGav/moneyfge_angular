@@ -3,9 +3,13 @@
     <div class="block-header">
         <h3>Create account</h3>
     </div>
-
     <div class="info-block">
-      <form class="mobile-pay-main">
+
+      <div class="alert alert-danger" *ngIf="msg">
+        {{ msg }}
+      </div>
+
+      <form class="mobile-pay-main" style="margin-top: 40px">
         <label>Currency</label>
         <div class="select">
           <select required="" name="currency" [(ngModel)]="currency">

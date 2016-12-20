@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { AfterViewInit, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import { ModalService } from '../../services/modal.service';
 
 declare const $: any;
 
@@ -12,7 +13,10 @@ declare const $: any;
 })
 export class CabinetScoreComponent implements OnInit, AfterViewInit, OnDestroy {
 
-  constructor(public router: Router) {
+  constructor(
+    public router: Router,
+    private modalService: ModalService
+  ) {
 
   }
 
@@ -21,7 +25,7 @@ export class CabinetScoreComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
-
+    this.modalService.showUnderConstruction();
   }
 
   ngOnDestroy () {

@@ -13,7 +13,7 @@
             </div>
           </div></div>
         <div class="logo">
-          <a [routerLink]="['/en/user/cabinet']"><img src="assets/img/final_logo.png" alt="Finance Group"></a>
+          <a [routerLink]="['']"><img src="assets/img/final_logo.png" alt="Finance Group"></a>
         </div>
       </div>
       <div class="col-md-9 col-sm-8 col-xs-12">
@@ -28,9 +28,8 @@
             </div>
             </div>
           </div>
-          <a class="btn btn-fill reg" [routerLink]="['/en/site/register']">Registration</a>
-          <!--<a class="btn btn-fill reg login" [routerLink]="['/en/user/sign-in/login']">Login</a>-->
-          <a class="btn btn-fill reg login" [routerLink]="['/en/user/cabinet']">Login</a>
+          <a class="btn btn-fill reg" [routerLink]="[registerUrl]" (click)="logout($event)">{{registerText}}</a>
+          <a class="btn btn-fill reg login" [routerLink]="[loginUrl]">{{loginText}}</a>
         </div>
       </div>
       <div class="col-xs-12">
@@ -50,8 +49,8 @@
             </li>
 
             <li><a [routerLink]="['/en/site/contacts']">Contacts</a></li>
-            <li><a href="http://www.worldfge.com/?l=en" target="_blank">WORLD FGE</a></li>
-            <li><a href="https://moneyfge.com/en/current-account/birza">EXCHANGE MARKET FGE</a></li>
+            <li><a href="#" class="under-construction">WORLD FGE</a></li>
+            <li><a href="#" class="under-construction">EXCHANGE MARKET FGE</a></li>
 
           </ul>
         </nav>
