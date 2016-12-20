@@ -1,0 +1,19 @@
+<form (submit)="submitForm($event)">
+  <div class="table">
+    <div class="table-row">
+      <div class="table-cell" style="vertical-align: top">
+        The number of purse
+        <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" title="You can change telephone number"></i>
+      </div>
+      <div class="table-cell">
+        <label>Old number</label><br />
+        <input type="text" placeholder="You telephone" required="required" name="phone-old-number" [(ngModel)]="model.oldNumber" /><br /><br />
+        <label>New number</label><br />
+        <input type="text" placeholder="Provide new number" required="required" name="phone-new-number" [(ngModel)]="model.newNumber" /><br /><br />
+        <label>Password</label><br />
+        <input type="password" placeholder="Provide you password" required="required" name="phone-password" [(ngModel)]="model.password" /><br /><br />
+        <button class="btn btn-accent btn-small" style="height: 30px;">Save</button>
+      </div>
+    </div>
+  </div>
+</form>

@@ -55,6 +55,7 @@ import { OutmoneyDefaultComponent } from './cabinet/outmoney/default';
 import { OutmoneyListComponent } from './cabinet/outmoney/list';
 import { CabinetSettingsComponent } from './cabinet/settings';
 import { SettingsProfileComponent } from './cabinet/settings/profile';
+import { PhoneFormComponent } from './cabinet/settings/profile/phone-form';
 import { SettingsPasswordComponent } from './cabinet/settings/password';
 import { NoContentComponent } from './no-content';
 
@@ -112,6 +113,7 @@ type StoreType = {
     , OutmoneyListComponent
     , CabinetSettingsComponent
     , SettingsProfileComponent
+    , PhoneFormComponent
     , SettingsPasswordComponent
     , NoContentComponent
   ],

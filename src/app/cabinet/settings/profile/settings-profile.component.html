@@ -19,8 +19,8 @@
   </div>
 
   <div id="block" class="info-block settings-block">
-    <div class="alert alert-{{ msgType }}" *ngIf="msg">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <div class="alert alert-{{ msgType }}" [hidden]="isHiddenAlert">
+      <button type="button" class="close" (click)="closeAlert()">
         <span aria-hidden="true">&times;</span>
       </button>
       {{ msg }}
@@ -34,31 +34,32 @@
             SMS of the deposits and the expenses
           </div>
           <div class="table-cell">
-            <input type="checkbox" id="sms-check" [checked]="isCheckSms" (change)="isCheckSmsChange($event)" />
+            <input type="checkbox" id="sms-check" [checked]="isCheckSms" (click)="isCheckSmsChange($event)" />
           </div>
         </div>
       </div>
 
+      <phone-form-component></phone-form-component>
 
-      <!--<form (submit)="phoneSubmitStep1($event)">-->
-        <!--<div class="table">-->
-          <!--<div class="table-row">-->
-            <!--<div class="table-cell" style="vertical-align: top">-->
-              <!--The number of purse-->
-              <!--<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" title="You can change telephone number"></i>-->
-            <!--</div>-->
-            <!--<div class="table-cell">-->
-              <!--<label>Old number</label><br />-->
-              <!--<input type="text" placeholder="You telephone" required="required" [(ngModel)]="phoneModel.oldNumber" name="phone-old-number" /><br /><br />-->
-              <!--<label>New number</label><br />-->
-              <!--<input type="text" placeholder="Provide new number" required="required" [(ngModel)]="phoneModel.newNumber" name="phone-new-number" /><br /><br />-->
-              <!--<label>Password</label><br />-->
-              <!--<input type="password" placeholder="Provide you password" required="required" [(ngModel)]="phoneModel.password" name="phone-password" /><br /><br />-->
-              <!--<button class="btn btn-accent btn-small" style="height: 30px;">Save</button>-->
-            <!--</div>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</form>-->
+<!--       <form (submit)="phoneSubmitStep1($event)">
+        <div class="table">
+          <div class="table-row">
+            <div class="table-cell" style="vertical-align: top">
+              The number of purse
+              <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" title="You can change telephone number"></i>
+            </div>
+            <div class="table-cell">
+              <label>Old number</label><br />
+              <input type="text" placeholder="You telephone" required="required" [(ngModel)]="phoneModel.oldNumber" name="phone-old-number" /><br /><br />
+              <label>New number</label><br />
+              <input type="text" placeholder="Provide new number" required="required" [(ngModel)]="phoneModel.newNumber" name="phone-new-number" /><br /><br />
+              <label>Password</label><br />
+              <input type="password" placeholder="Provide you password" required="required" [(ngModel)]="phoneModel.password" name="phone-password" /><br /><br />
+              <button class="btn btn-accent btn-small" style="height: 30px;">Save</button>
+            </div>
+          </div>
+        </div>
+      </form> -->
 
       <form>
         <div class="table">

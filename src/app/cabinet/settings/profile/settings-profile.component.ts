@@ -31,6 +31,8 @@ export class SettingsProfileComponent implements OnInit, AfterViewInit, OnDestro
 
   private smsDialog;
 
+  private isHiddenAlert: boolean = true;
+
   private phoneModel = new ChangePhoneModel();
 
   constructor(
@@ -67,22 +69,30 @@ export class SettingsProfileComponent implements OnInit, AfterViewInit, OnDestro
 
   }
 
+  closeAlert() {
+    this.isHiddenAlert = true;
+  }
+
   isCheckSmsChange(event) {
+    event.preventDefault();
     this.modalService.showLoader('block');
     this.userService
       .isCheckSms()
       .subscribe(
         (res: any) => {
           this.isCheckSms = res.is_check_sms;
+          event.target.checked = this.isCheckSms;
           this.msgType = 'success';
           this.msg = 'Changes saved successfully';
           this.modalService.hideLoader('block');
+          this.isHiddenAlert = false;
         },
-        err => {
-          event.preventDefault();
+        (err: any) => {
+          event.target.checked = this.isCheckSms;
           this.msgType = 'danger';
           this.msg = err.json().message;
           this.modalService.hideLoader('block');
+          this.isHiddenAlert = false;
         }
       )
     ;

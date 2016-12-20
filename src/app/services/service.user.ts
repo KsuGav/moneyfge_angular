@@ -81,7 +81,14 @@ export class User {
     ;
   }
 
-  getUser() {
+  getUser(refresh: boolean = true) {
+    if (!refresh) {
+      return Observable.create(observer => {
+        observer.onNext(this.appState.get('user'));
+        observer.onError('onError.');
+        observer.onCompleted('onCompleted');
+      });
+    }
     const headers = new Headers();
     headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
 
@@ -140,7 +147,7 @@ export class User {
     const headers = new Headers();
     headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
 
-    const url = `${this.appState.get('apiEndpoint')}/user/sms/`;
+    const url = `${this.appState.get('apiEndpoint')}/user/sms`;
     return this.http
       .patch(url, null, {headers: headers})
       .map(res => res.json())
