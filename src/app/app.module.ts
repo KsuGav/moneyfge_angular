@@ -11,7 +11,6 @@ import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularcla
 import { ENV_PROVIDERS } from './environment';
 import { ROUTES } from './app.routes';
 // App is our top level component
-import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { User } from './services/service.user';
@@ -20,6 +19,7 @@ import { AccountService } from './services/account.service';
 import { OutbidService } from './services/outbid.service';
 import { LoggedInGuard } from './services/logged-in.guard';
 
+import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home';
 import { HomeHeaderComponent } from './home/header';
 import { HomeFooterComponent } from './home/footer';

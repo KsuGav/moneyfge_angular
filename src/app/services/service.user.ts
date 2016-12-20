@@ -136,263 +136,276 @@ export class User {
     ;
   }
 
+  isCheckSms() {
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
 
+    const url = `${this.appState.get('apiEndpoint')}/user/sms/`;
+    return this.http
+      .patch(url, null, {headers: headers})
+      .map(res => res.json())
+    ;
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  getConfig() {
-    var headers = new Headers();
+  changeUserNumberStep1(plainPassword, oldTelephone, telephone) {
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
     headers.append('Content-Type', 'application/json');
 
-    var locURL = this.siteEndpoint + '/api/v1/configs';
-    return this.http.get(locURL, {headers: headers} ).map(res => {
-      console.log(res.json());
-    });
-  }
-
-  getConfigById(a_token) {
-
-    var headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    headers.append('Authorization', 'Bearer' + a_token);
-
-    var locURL = this.siteEndpoint + '/api/v1/configs/2';
-    return this.http.get(locURL, {headers: headers} ).map(res => {
-      console.log(res.json());
-    });
-  }
-
-  updateConfigById(a_token, telephone) {
-    var headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    headers.append('Authorization', 'Bearer' + a_token);
-
-    var localData = {
-      "telephone": telephone
-    };
-
-    var locURL = this.siteEndpoint + '/api/v1/user/1/number/';
-    return this.http.put(locURL, JSON.stringify(localData), {headers: headers} ).map(res => {
-      console.log(res.json());
-    });
-  }
-
-  addConfig(a_token, setting, value, enable) {
-    var headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    headers.append('Authorization', 'Bearer' + a_token);
-
-    var localData = {
-      "setting": setting,
-      "value": value,
-      "enable": enable
-    };
-
-    var locURL = this.siteEndpoint + '/api/v1/configs/';
-    return this.http.post(locURL, JSON.stringify(localData), {headers: headers} ).map(res => {
-      console.log(res.json());
-    });
-  }
-
-
-  lockUnlockConfigById(a_token) {
-    var headers = new Headers();
-    headers.append('Authorization', 'Bearer' + a_token);
-
-    var locURL = this.siteEndpoint + '/api/v1/configs/6';
-    return this.http.delete(locURL).map(res => {
-      console.log(res.json());
-    });
-  }
-
-
-
-
-  /*----------------Accounts-------------*/
-
-  getCard(a_token, currency) {
-    var headers = new Headers();
-    headers.append('Authorization', 'Bearer' + a_token);
-
-    var locURL = this.siteEndpoint + '/api/v1/accounts/10000000/?currency=' + currency ;
-    return this.http.get(locURL, {headers: headers} ).map(res => {
-      console.log(res.json());
-    });
-  }
-
-
-  getHistoryCard(a_token, currency) {
-    var headers = new Headers();
-    headers.append('Authorization', 'Bearer' + a_token);
-
-    var locURL = this.siteEndpoint + '/api/v1/accounts/history/10000000/?currency=' + currency ;
-    return this.http.get(locURL, {headers: headers} ).map(res => {
-      console.log(res.json());
-    });
-  }
-
-  getAllHistoryCard(a_token, currency) {
-    var headers = new Headers();
-    headers.append('Authorization', 'Bearer' + a_token);
-
-    var locURL = this.siteEndpoint + '/api/v1/accounts/history/?currency=' + currency ;
-    return this.http.get(locURL, {headers: headers} ).map(res => {
-      console.log(res.json());
-    });
-  }
-
-  deletedAccount(a_token) {
-    var headers = new Headers();
-    headers.append('Authorization', 'Bearer' + a_token);
-
-    var locURL = this.siteEndpoint + '/api/v1/accounts/10000006/';
-    return this.http.delete(locURL,  {headers: headers} ).map(res => {
-      console.log(res.json());
-    });
-  }
-
-  activeCardStep1(a_token) {
-    var headers = new Headers();
-    headers.append('Authorization', 'Bearer' + a_token);
-
-    var locURL = this.siteEndpoint + '/api/v1/accounts/active/10000006/1/';
-    return this.http.put(locURL, {}, {headers: headers} ).map(res => {
-      console.log(res.json());
-    });
-  }
-
-  activeCardStep2(a_token, sms, code) {
-    var headers = new Headers();
-    headers.append('Authorization', 'Bearer' + a_token);
-    headers.append('Content-Type', 'application/json');
-
-    var localData = {
-      "sms": sms,
-      "code": code
-    };
-
-    var locURL = this.siteEndpoint + '/api/v1/accounts/active/10000006/2/';
-    return this.http.put(locURL, JSON.stringify(localData), {headers: headers} ).map(res => {
-      console.log(res.json());
-    });
-  }
-
-
-  /*---------------------------------User----------------------------*/
-
-  successEmail() {
-
-    var locURL = 'http://bigra.git/app_dev.php/email/1/NmU4MDYxYThlMzI4YmVlMmE5NmRkNDZjZjk4YzYyNTYwYzhhODY5N2ViNzY4ZDNhY2NmYjU0M2M2YjlmNGUyMQ';
-    return this.http.get(locURL).map(res => {
-      console.log(res.json());
-    });
-  }
-
-  getReference(a_token) {
-    var headers = new Headers();
-    headers.append('Authorization', 'Bearer' + a_token);
-    headers.append('Content-Type', 'application/json');
-
-    var locURL = this.siteEndpoint + '/api/v1/users/reference/';
-    return this.http.get(locURL).map(res => {
-      console.log(res.json());
-    });
-
-  }
-
-  updateUser(a_token, firstName, secondName, paspotr, birthday, country, city) {
-    var headers = new Headers();
-    headers.append('Authorization', 'Bearer' + a_token);
-    headers.append('Content-Type', 'application/json');
-
-    var localData = {
-      "firstName": firstName,
-      "secondName": secondName,
-      "paspotr": paspotr,
-      "birthday": birthday,
-      "country": country,
-      "city": city
-    };
-
-    var locURL = this.siteEndpoint + '/oauth/v1/user';
-    return this.http.put(locURL, JSON.stringify(localData), {headers: headers} ).map(res => {
-      console.log(res.json());
-    });
-  }
-
-  changeUserNumber(a_token, plainPassword, oldTelephone, telephone) {
-    var headers = new Headers();
-    headers.append('Authorization', 'Bearer' + a_token);
-    headers.append('Content-Type', 'application/json');
-
-    var localData = {
+    const localData = {
       "plainPassword": plainPassword,
       "oldTelephone": oldTelephone,
       "telephone": telephone
     };
 
-    var locURL = this.siteEndpoint + '/api/v1/user/phone/1';
-    return this.http.put(locURL, JSON.stringify(localData), {headers: headers} ).map(res => {
-      console.log(res.json());
-    });
+    const locUrl = `${this.appState.get('apiEndpoint')}/user/phone/1`;
+    return this.http
+      .put(locUrl, JSON.stringify(localData), {headers: headers})
+      .map(res => res.json())
+    ;
   }
 
-  chnageEmail(a_token, plainPassword, email) {
-    var headers = new Headers();
-    headers.append('Authorization', 'Bearer' + a_token);
-    headers.append('Content-Type', 'application/json');
 
-    var localData = {
-      "plainPassword": plainPassword,
-      "email": email
-    };
 
-    var locURL = this.siteEndpoint + '/api/v1/user/email/1';
-    return this.http.put(locURL, JSON.stringify(localData), {headers: headers} ).map(res => {
-      console.log(res.json());
-    });
-  }
-  changeUserNumberStep2(a_token, plainPassword, email) {
-    var headers = new Headers();
-    headers.append('Authorization', 'Bearer' + a_token);
-    headers.append('Content-Type', 'application/json');
 
-    var localData = {
-      "plainPassword": plainPassword,
-      "email": email
-    };
 
-    var locURL = this.siteEndpoint + '/api/v1/user/email/1';
-    return this.http.patch(locURL, JSON.stringify(localData), {headers: headers} ).map(res => {
-      console.log(res.json());
-    });
-  }
 
-  changeUserEmailStep2(a_token, sms, history, code) {
-    var headers = new Headers();
-    headers.append('Authorization', 'Bearer' + a_token);
-    headers.append('Content-Type', 'application/json');
 
-    var localData = {
-      "sms": sms,
-      "history": history,
-      "code": code
-    };
 
-    var locURL = this.siteEndpoint + '/api/v1/user/email/2';
-    return this.http.patch(locURL, JSON.stringify(localData), {headers: headers} ).map(res => {
-      console.log(res.json());
-    });
-  }
+
+
+
+
+
+
+
+
+  // getConfig() {
+  //   var headers = new Headers();
+  //   headers.append('Content-Type', 'application/json');
+  //
+  //   var locURL = this.siteEndpoint + '/api/v1/configs';
+  //   return this.http.get(locURL, {headers: headers} ).map(res => {
+  //     console.log(res.json());
+  //   });
+  // }
+  //
+  // getConfigById(a_token) {
+  //
+  //   var headers = new Headers();
+  //   headers.append('Content-Type', 'application/json');
+  //   headers.append('Authorization', 'Bearer' + a_token);
+  //
+  //   var locURL = this.siteEndpoint + '/api/v1/configs/2';
+  //   return this.http.get(locURL, {headers: headers} ).map(res => {
+  //     console.log(res.json());
+  //   });
+  // }
+  //
+  // updateConfigById(a_token, telephone) {
+  //   var headers = new Headers();
+  //   headers.append('Content-Type', 'application/json');
+  //   headers.append('Authorization', 'Bearer' + a_token);
+  //
+  //   var localData = {
+  //     "telephone": telephone
+  //   };
+  //
+  //   var locURL = this.siteEndpoint + '/api/v1/user/1/number/';
+  //   return this.http.put(locURL, JSON.stringify(localData), {headers: headers} ).map(res => {
+  //     console.log(res.json());
+  //   });
+  // }
+  //
+  // addConfig(a_token, setting, value, enable) {
+  //   var headers = new Headers();
+  //   headers.append('Content-Type', 'application/json');
+  //   headers.append('Authorization', 'Bearer' + a_token);
+  //
+  //   var localData = {
+  //     "setting": setting,
+  //     "value": value,
+  //     "enable": enable
+  //   };
+  //
+  //   var locURL = this.siteEndpoint + '/api/v1/configs/';
+  //   return this.http.post(locURL, JSON.stringify(localData), {headers: headers} ).map(res => {
+  //     console.log(res.json());
+  //   });
+  // }
+  //
+  //
+  // lockUnlockConfigById(a_token) {
+  //   var headers = new Headers();
+  //   headers.append('Authorization', 'Bearer' + a_token);
+  //
+  //   var locURL = this.siteEndpoint + '/api/v1/configs/6';
+  //   return this.http.delete(locURL).map(res => {
+  //     console.log(res.json());
+  //   });
+  // }
+  //
+  //
+  //
+  //
+  // /*----------------Accounts-------------*/
+  //
+  // getCard(a_token, currency) {
+  //   var headers = new Headers();
+  //   headers.append('Authorization', 'Bearer' + a_token);
+  //
+  //   var locURL = this.siteEndpoint + '/api/v1/accounts/10000000/?currency=' + currency ;
+  //   return this.http.get(locURL, {headers: headers} ).map(res => {
+  //     console.log(res.json());
+  //   });
+  // }
+  //
+  //
+  // getHistoryCard(a_token, currency) {
+  //   var headers = new Headers();
+  //   headers.append('Authorization', 'Bearer' + a_token);
+  //
+  //   var locURL = this.siteEndpoint + '/api/v1/accounts/history/10000000/?currency=' + currency ;
+  //   return this.http.get(locURL, {headers: headers} ).map(res => {
+  //     console.log(res.json());
+  //   });
+  // }
+  //
+  // getAllHistoryCard(a_token, currency) {
+  //   var headers = new Headers();
+  //   headers.append('Authorization', 'Bearer' + a_token);
+  //
+  //   var locURL = this.siteEndpoint + '/api/v1/accounts/history/?currency=' + currency ;
+  //   return this.http.get(locURL, {headers: headers} ).map(res => {
+  //     console.log(res.json());
+  //   });
+  // }
+  //
+  // deletedAccount(a_token) {
+  //   var headers = new Headers();
+  //   headers.append('Authorization', 'Bearer' + a_token);
+  //
+  //   var locURL = this.siteEndpoint + '/api/v1/accounts/10000006/';
+  //   return this.http.delete(locURL,  {headers: headers} ).map(res => {
+  //     console.log(res.json());
+  //   });
+  // }
+  //
+  // activeCardStep1(a_token) {
+  //   var headers = new Headers();
+  //   headers.append('Authorization', 'Bearer' + a_token);
+  //
+  //   var locURL = this.siteEndpoint + '/api/v1/accounts/active/10000006/1/';
+  //   return this.http.put(locURL, {}, {headers: headers} ).map(res => {
+  //     console.log(res.json());
+  //   });
+  // }
+  //
+  // activeCardStep2(a_token, sms, code) {
+  //   var headers = new Headers();
+  //   headers.append('Authorization', 'Bearer' + a_token);
+  //   headers.append('Content-Type', 'application/json');
+  //
+  //   var localData = {
+  //     "sms": sms,
+  //     "code": code
+  //   };
+  //
+  //   var locURL = this.siteEndpoint + '/api/v1/accounts/active/10000006/2/';
+  //   return this.http.put(locURL, JSON.stringify(localData), {headers: headers} ).map(res => {
+  //     console.log(res.json());
+  //   });
+  // }
+  //
+  //
+  // /*---------------------------------User----------------------------*/
+  //
+  // successEmail() {
+  //
+  //   var locURL = 'http://bigra.git/app_dev.php/email/1/NmU4MDYxYThlMzI4YmVlMmE5NmRkNDZjZjk4YzYyNTYwYzhhODY5N2ViNzY4ZDNhY2NmYjU0M2M2YjlmNGUyMQ';
+  //   return this.http.get(locURL).map(res => {
+  //     console.log(res.json());
+  //   });
+  // }
+  //
+  // getReference(a_token) {
+  //   var headers = new Headers();
+  //   headers.append('Authorization', 'Bearer' + a_token);
+  //   headers.append('Content-Type', 'application/json');
+  //
+  //   var locURL = this.siteEndpoint + '/api/v1/users/reference/';
+  //   return this.http.get(locURL).map(res => {
+  //     console.log(res.json());
+  //   });
+  //
+  // }
+  //
+  // updateUser(a_token, firstName, secondName, paspotr, birthday, country, city) {
+  //   var headers = new Headers();
+  //   headers.append('Authorization', 'Bearer' + a_token);
+  //   headers.append('Content-Type', 'application/json');
+  //
+  //   var localData = {
+  //     "firstName": firstName,
+  //     "secondName": secondName,
+  //     "paspotr": paspotr,
+  //     "birthday": birthday,
+  //     "country": country,
+  //     "city": city
+  //   };
+  //
+  //   var locURL = this.siteEndpoint + '/oauth/v1/user';
+  //   return this.http.put(locURL, JSON.stringify(localData), {headers: headers} ).map(res => {
+  //     console.log(res.json());
+  //   });
+  // }
+  //
+  //
+  // chnageEmail(a_token, plainPassword, email) {
+  //   var headers = new Headers();
+  //   headers.append('Authorization', 'Bearer' + a_token);
+  //   headers.append('Content-Type', 'application/json');
+  //
+  //   var localData = {
+  //     "plainPassword": plainPassword,
+  //     "email": email
+  //   };
+  //
+  //   var locURL = this.siteEndpoint + '/api/v1/user/email/1';
+  //   return this.http.put(locURL, JSON.stringify(localData), {headers: headers} ).map(res => {
+  //     console.log(res.json());
+  //   });
+  // }
+  // changeUserNumberStep2(a_token, plainPassword, email) {
+  //   var headers = new Headers();
+  //   headers.append('Authorization', 'Bearer' + a_token);
+  //   headers.append('Content-Type', 'application/json');
+  //
+  //   var localData = {
+  //     "plainPassword": plainPassword,
+  //     "email": email
+  //   };
+  //
+  //   var locURL = this.siteEndpoint + '/api/v1/user/email/1';
+  //   return this.http.patch(locURL, JSON.stringify(localData), {headers: headers} ).map(res => {
+  //     console.log(res.json());
+  //   });
+  // }
+  //
+  // changeUserEmailStep2(a_token, sms, history, code) {
+  //   var headers = new Headers();
+  //   headers.append('Authorization', 'Bearer' + a_token);
+  //   headers.append('Content-Type', 'application/json');
+  //
+  //   var localData = {
+  //     "sms": sms,
+  //     "history": history,
+  //     "code": code
+  //   };
+  //
+  //   var locURL = this.siteEndpoint + '/api/v1/user/email/2';
+  //   return this.http.patch(locURL, JSON.stringify(localData), {headers: headers} ).map(res => {
+  //     console.log(res.json());
+  //   });
+  // }
 }
