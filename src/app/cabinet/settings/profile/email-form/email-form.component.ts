@@ -1,29 +1,29 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { ChangePhoneModel } from './ChangePhoneModel';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { User } from '../../../../services/service.user';
 import { ModalService } from '../../../../services/modal.service';
 import { SubmitResult } from '../SubmitResult';
+import { ChangeEmailModel } from './ChangeEmailModel';
 
 declare const $: any;
 
 @Component({
-  selector: 'phone-form-component',
-  templateUrl: './phone-form.component.html'
+  selector: 'email-form-component',
+  templateUrl: 'email-form.component.html'
 })
-export class PhoneFormComponent implements OnInit {
+export class EmailFormComponent implements OnInit {
 
   @Output()
   submitCompleted: EventEmitter<SubmitResult> = new EventEmitter<SubmitResult>();
 
-  private user;
+  private user: any;
 
   private smsCode: string;
-
-  private model = new ChangePhoneModel();
 
   private smsDialog;
 
   private submitResult: SubmitResult = new SubmitResult();
+
+  private model: ChangeEmailModel = new ChangeEmailModel();
 
   constructor(
     private userService: User,
@@ -31,7 +31,7 @@ export class PhoneFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.smsDialog = $('#phone-sms-dialog');
+    this.smsDialog = $('#email-sms-dialog');
     this.getUser();
   }
 
@@ -41,10 +41,8 @@ export class PhoneFormComponent implements OnInit {
       .subscribe(
         res => {
           this.user = res;
-          this.model.oldNumber = res.telephone;
-          this.model.newNumber = '';
-          this.model.password = '';
-          this.modalService.hideLoader('phone-form');
+          this.model.email = res.email;
+          this.submitCompleted.emit(this.submitResult);
         }
       )
     ;
@@ -52,24 +50,23 @@ export class PhoneFormComponent implements OnInit {
 
   submitForm(event) {
     event.preventDefault();
-    this.modalService.showLoader('phone-form');
+    this.modalService.showLoader('email-form');
     this.userService
-      .changeUserNumberStep1(
+      .changeUserEmailStep1(
         this.model.password,
-        this.model.oldNumber,
-        this.model.newNumber
+        this.model.email
       )
       .subscribe(
         res => {
           this.model.smsId = res.sms;
           this.model.history = res.history;
-          this.modalService.hideLoader('phone-form');
+          this.modalService.hideLoader('email-form');
           this.smsDialog.modal('show');
         },
         err => {
           this.submitResult.type = 'danger';
           this.submitResult.msg = err.json().message;
-          this.modalService.hideLoader('phone-form');
+          this.modalService.hideLoader('email-form');
           this.submitCompleted.emit(this.submitResult);
         }
       )
@@ -81,27 +78,26 @@ export class PhoneFormComponent implements OnInit {
       return;
     }
     this.smsDialog.modal('hide');
-    this.modalService.showLoader('phone-form');  
-    this.model.smsCode = +this.smsCode;
+    this.modalService.showLoader('email-form');
+    this.model.code = +this.smsCode;
     this.userService
-      .changeUserNumberStep2(
+      .changeUserEmailStep2(
         this.model.smsId,
         this.model.history,
-        this.model.smsCode
+        this.model.code
       )
       .subscribe(
         res => {
           this.submitResult.type = 'success';
-          this.submitResult.msg = 'Telephone updated successfully';
-          this.submitCompleted.emit(this.submitResult);
+          this.submitResult.msg = 'Email updated successfully';
+          this.modalService.hideLoader('email-form');
           this.getUser();
         },
         err => {
           this.submitResult.type = 'danger';
           this.submitResult.msg = err.json().message;
-          this.smsDialog.modal('hide');
+          this.modalService.hideLoader('email-form');
           this.submitCompleted.emit(this.submitResult);
-          this.modalService.hideLoader('phone-form');
         }
       )
     ;

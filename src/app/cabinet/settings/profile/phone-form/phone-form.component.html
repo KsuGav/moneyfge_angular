@@ -1,4 +1,19 @@
-<form (submit)="submitForm($event)">
+<div id="phone-sms-dialog" class="" style="display: none;">
+  <div class="modal_beckground">
+    <div class="modal_box">
+      <div class="modal_head">Confirm SMS Code</div>
+      <div class="modal_body text-center">
+        <label>SMS code</label><br />
+        <input type="text" required="required" [(ngModel)]="smsCode" style="text-align:center;" />
+      </div>
+      <div class="modal_footer">
+        <button class="btn btn-accent btn-big" (click)="closeSmsDialog()">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<form id="phone-form" (submit)="submitForm($event)">
   <div class="table">
     <div class="table-row">
       <div class="table-cell" style="vertical-align: top">

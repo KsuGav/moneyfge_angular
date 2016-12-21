@@ -3,7 +3,7 @@ import { AfterViewInit, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalService } from '../../../services/modal.service';
 import { User } from '../../../services/service.user';
-import { ChangePhoneModel } from './ChangePhoneModel';
+import { SubmitResult } from './SubmitResult';
 
 declare const $: any;
 
@@ -17,23 +17,13 @@ export class SettingsProfileComponent implements OnInit, AfterViewInit, OnDestro
 
   private email: string;
 
-  private phone: string;
-
-  private sms: boolean;
-
   private isCheckSms: boolean;
 
   private msg: string;
 
   private msgType: string;
 
-  private code: string;
-
-  private smsDialog;
-
   private isHiddenAlert: boolean = true;
-
-  private phoneModel = new ChangePhoneModel();
 
   constructor(
     public router: Router,
@@ -45,16 +35,13 @@ export class SettingsProfileComponent implements OnInit, AfterViewInit, OnDestro
 
   ngOnInit() {
     $('[data-toggle="tooltip"]').tooltip();
-    this.smsDialog = $('sms-dialog');
     this.modalService.showLoader('block');
     this.userService
       .getUser()
       .subscribe(
         (res: any) => {
           this.user = res;
-          this.phoneModel.oldNumber = res.telephone;
           this.isCheckSms = res.is_check_sms;
-          this.email = res.email;
           this.modalService.hideLoader('block');
         }
       )
@@ -98,33 +85,16 @@ export class SettingsProfileComponent implements OnInit, AfterViewInit, OnDestro
     ;
   }
 
-  phoneSubmitStep1(event) {
-    event.preventDefault();
-    // this.modalService.showLoader('phone-form');
-    // this.userService
-    //   .changeUserNumberStep1(
-    //     this.phoneModel.password,
-    //     this.phoneModel.oldNumber,
-    //     this.phoneModel.newNumber
-    //   )
-    //   .subscribe(
-    //     res => {
-    //       this.phoneModel.smsId = res.sms;
-    //       this.phoneModel.history = res.history;
-    //       this.modalService.hideLoader('phone-form');
-    //       this.smsDialog.open();
-    //     },
-    //     err => {
-    //       this.msgType = 'danger';
-    //       this.msg = err.json().message;
-    //       this.modalService.hideLoader('phone-form');
-    //     }
-    //   )
-    // ;
+  phoneUpdateCompleted(data: SubmitResult) {
+    this.msgType = data.type;
+    this.msg = data.msg;
+    this.isHiddenAlert = false;
   }
 
-  sendCode() {
-
+  emailUpdateCompleted(data: SubmitResult) {
+    this.msgType = data.type;
+    this.msg = data.msg;
+    this.isHiddenAlert = false;
   }
 
 }

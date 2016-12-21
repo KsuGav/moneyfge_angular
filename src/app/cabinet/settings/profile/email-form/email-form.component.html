@@ -1,0 +1,31 @@
+  <div id="email-sms-dialog" class="error_modal" style="display: none;">
+  <div class="modal_beckground">
+    <div class="modal_box">
+      <div class="modal_head">Confirm SMS Code</div>
+      <div class="modal_body text-center">
+        <label>SMS code</label><br />
+        <input type="text" required="required" [(ngModel)]="smsCode" style="text-align:center;" />
+      </div>
+      <div class="modal_footer">
+        <button class="btn btn-accent btn-big" (click)="closeSmsDialog()">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<form id="email-form" (submit)="submitForm($event)">
+  <div class="table">
+    <div class="table-row">
+      <div class="table-cell" style="vertical-align: top;">
+        E-mail address <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" title="You can provide email address"></i>
+      </div>
+      <div class="table-cell">
+        <label>Email</label><br />
+        <input type="email" required="required" placeholder="You email address" [(ngModel)]="model.email" name="email" style="width: 100%;padding: 5px 10px;border: 1px solid #edeef0;" /><br /><br />
+        <label>Password</label><br />
+        <input type="password" required="required" placeholder="You password" [(ngModel)]="model.password" name="password" /><br /><br />
+        <button class="btn btn-accent btn-small" style="height: 30px">Save</button>
+      </div>
+    </div>
+  </div>
+</form>

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { Http, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
@@ -81,14 +81,7 @@ export class User {
     ;
   }
 
-  getUser(refresh: boolean = true) {
-    if (!refresh) {
-      return Observable.create(observer => {
-        observer.onNext(this.appState.get('user'));
-        observer.onError('onError.');
-        observer.onCompleted('onCompleted');
-      });
-    }
+  getUser() {
     const headers = new Headers();
     headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
 
@@ -168,6 +161,59 @@ export class User {
     const locUrl = `${this.appState.get('apiEndpoint')}/user/phone/1`;
     return this.http
       .put(locUrl, JSON.stringify(localData), {headers: headers})
+      .map(res => res.json())
+    ;
+  }
+
+  changeUserNumberStep2(sms, history, code) {
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
+    headers.append('Content-Type', 'application/json');
+  
+    const localData = {
+      "sms": sms,
+      "history": history,
+      "code": code
+    };
+  
+    const locUrl = `${this.appState.get('apiEndpoint')}/user/phone/2`;
+    return this.http
+      .patch(locUrl, JSON.stringify(localData), {headers: headers})
+      .map(res => res.json())
+    ;
+  }
+
+  changeUserEmailStep1(plainPassword, email) {
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
+    headers.append('Content-Type', 'application/json');
+
+    const localData = {
+      "plainPassword": plainPassword,
+      "email": email
+    };
+
+    const locUrl = `${this.appState.get('apiEndpoint')}/user/email/1`;
+    return this.http
+      .put(locUrl, JSON.stringify(localData), {headers: headers})
+      .map(res => res.json())
+    ;
+  }
+
+  changeUserEmailStep2(sms, history, code) {
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
+    headers.append('Content-Type', 'application/json');
+  
+    const localData = {
+      "sms": sms,
+      "history": history,
+      "code": code
+    };
+  
+    const locUrl = `${this.appState.get('apiEndpoint')}/user/email/2`;
+    return this.http
+      .patch(locUrl, JSON.stringify(localData), {headers: headers})
       .map(res => res.json())
     ;
   }
@@ -368,51 +414,5 @@ export class User {
   // }
   //
   //
-  // chnageEmail(a_token, plainPassword, email) {
-  //   var headers = new Headers();
-  //   headers.append('Authorization', 'Bearer' + a_token);
-  //   headers.append('Content-Type', 'application/json');
   //
-  //   var localData = {
-  //     "plainPassword": plainPassword,
-  //     "email": email
-  //   };
-  //
-  //   var locURL = this.siteEndpoint + '/api/v1/user/email/1';
-  //   return this.http.put(locURL, JSON.stringify(localData), {headers: headers} ).map(res => {
-  //     console.log(res.json());
-  //   });
-  // }
-  // changeUserNumberStep2(a_token, plainPassword, email) {
-  //   var headers = new Headers();
-  //   headers.append('Authorization', 'Bearer' + a_token);
-  //   headers.append('Content-Type', 'application/json');
-  //
-  //   var localData = {
-  //     "plainPassword": plainPassword,
-  //     "email": email
-  //   };
-  //
-  //   var locURL = this.siteEndpoint + '/api/v1/user/email/1';
-  //   return this.http.patch(locURL, JSON.stringify(localData), {headers: headers} ).map(res => {
-  //     console.log(res.json());
-  //   });
-  // }
-  //
-  // changeUserEmailStep2(a_token, sms, history, code) {
-  //   var headers = new Headers();
-  //   headers.append('Authorization', 'Bearer' + a_token);
-  //   headers.append('Content-Type', 'application/json');
-  //
-  //   var localData = {
-  //     "sms": sms,
-  //     "history": history,
-  //     "code": code
-  //   };
-  //
-  //   var locURL = this.siteEndpoint + '/api/v1/user/email/2';
-  //   return this.http.patch(locURL, JSON.stringify(localData), {headers: headers} ).map(res => {
-  //     console.log(res.json());
-  //   });
-  // }
 }
