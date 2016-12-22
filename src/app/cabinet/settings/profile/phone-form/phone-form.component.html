@@ -1,4 +1,4 @@
-<div id="phone-sms-dialog" class="" style="display: none;">
+<div id="phone-sms-dialog" class="modal" style="display: none;">
   <div class="modal_beckground">
     <div class="modal_box">
       <div class="modal_head">Confirm SMS Code</div>
@@ -21,13 +21,27 @@
         <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" title="You can change telephone number"></i>
       </div>
       <div class="table-cell">
-        <label>Old number</label><br />
-        <input type="text" placeholder="You telephone" required="required" name="phone-old-number" [(ngModel)]="model.oldNumber" /><br /><br />
-        <label>New number</label><br />
-        <input type="text" placeholder="Provide new number" required="required" name="phone-new-number" [(ngModel)]="model.newNumber" /><br /><br />
-        <label>Password</label><br />
-        <input type="password" placeholder="Provide you password" required="required" name="phone-password" [(ngModel)]="model.password" /><br /><br />
-        <button class="btn btn-accent btn-small" style="height: 30px;">Save</button>
+        <div class="form-group">
+          <label class="control-label" for="phone-old-number">Old number</label>
+          <input id="phone-old-number" type="text" class="form-control" placeholder="You telephone" required="required" name="phone-old-number" [(ngModel)]="model.oldNumber" />
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="phone-new-number">New number</label>
+          <input id="phone-new-number" type="text" class="form-control" placeholder="Provide new number" required="required" name="phone-new-number" [(ngModel)]="model.newNumber" />
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="phone-password">Password</label>
+          <input id="phone-password" type="password" class="form-control" placeholder="Provide you password" required="required" name="phone-password" [(ngModel)]="model.password" />
+        </div>
+<!--         <label>Old number</label><br />
+        <input type="text" placeholder="You telephone" required="required" name="phone-old-number" [(ngModel)]="model.oldNumber" /><br /><br /> -->
+<!--         <label>New number</label><br />
+        <input id="phone-new-number" type="text" placeholder="Provide new number" required="required" name="phone-new-number" [(ngModel)]="model.newNumber" /><br /><br /> -->
+<!--         <label>Password</label><br />
+        <input id="phone-password" type="password" placeholder="Provide you password" required="required" name="phone-password" [(ngModel)]="model.password" /><br /><br /> -->
+        <div class="form-group">
+          <button class="btn btn-accent btn-small" style="height: 30px;">Save</button>
+        </div>
       </div>
     </div>
   </div>
