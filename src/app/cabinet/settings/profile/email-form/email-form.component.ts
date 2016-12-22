@@ -1,8 +1,10 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 import { User } from '../../../../services/service.user';
 import { ModalService } from '../../../../services/modal.service';
 import { SubmitResult } from '../SubmitResult';
 import { ChangeEmailModel } from './ChangeEmailModel';
+
+import { SmsCodeDialogComponent } from '../../../../common/sms-code-dialog/sms-code-dialog.component';
 
 declare const $: any;
 
@@ -24,6 +26,8 @@ export class EmailFormComponent implements OnInit {
   private submitResult: SubmitResult = new SubmitResult();
 
   private model: ChangeEmailModel = new ChangeEmailModel();
+
+  @ViewChild(SmsCodeDialogComponent) phoneCode: SmsCodeDialogComponent;
 
   constructor(
     private userService: User,
@@ -61,7 +65,8 @@ export class EmailFormComponent implements OnInit {
           this.model.smsId = res.sms;
           this.model.history = res.history;
           this.modalService.hideLoader('email-form');
-          this.smsDialog.modal('show');
+          // this.smsDialog.modal('show');
+          this.phoneCode.openCode()
         },
         err => {
           this.submitResult.type = 'danger';
@@ -77,7 +82,7 @@ export class EmailFormComponent implements OnInit {
     if (this.smsCode === '') {
       return;
     }
-    this.smsDialog.modal('hide');
+    // this.smsDialog.modal('hide');
     this.modalService.showLoader('email-form');
     this.model.code = +this.smsCode;
     this.userService

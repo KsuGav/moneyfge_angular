@@ -5,7 +5,7 @@ import { ModalService } from '../../../services/modal.service';
 import { User } from '../../../services/service.user';
 import { SubmitResult } from './SubmitResult';
 
-import { SmsCodeDialogComponent } from '../../../common/sms-code-dialog/sms-code-dialog.component'
+// import { ConfirmDialogComponent } from '../../../common/confirm/confirm-dialog.component'
 
 declare const $: any;
 
@@ -27,7 +27,7 @@ export class SettingsProfileComponent implements OnInit, AfterViewInit, OnDestro
 
   private isHiddenAlert: boolean = true;
 
-  @ViewChild(SmsCodeDialogComponent) phoneCode: SmsCodeDialogComponent;
+  // @ViewChild(ConfirmDialogComponent) confirmDialog: ConfirmDialogComponent;
 
   constructor(
     public router: Router,
@@ -102,11 +102,11 @@ export class SettingsProfileComponent implements OnInit, AfterViewInit, OnDestro
     this.isHiddenAlert = false;
   }
 
-  openCode(){
-    this.phoneCode.openCode()
-  }
+  // openCode(){
+  //   this.confirmDialog.openCode()
+  // }
 
-  showCode(event){
-    console.log(event);
-  }
+  // showCode(event){
+  //   console.log(event);
+  // }
 }

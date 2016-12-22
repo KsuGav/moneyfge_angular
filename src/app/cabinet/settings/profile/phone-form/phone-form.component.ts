@@ -27,7 +27,8 @@ export class PhoneFormComponent implements OnInit {
 
   private submitResult: SubmitResult = new SubmitResult();
 
-  @ViewChild(SmsCodeDialogComponent) phoneCode: SmsCodeDialogComponent;
+  @ViewChild(SmsCodeDialogComponent)
+  phoneCode: SmsCodeDialogComponent;
 
   constructor(
     private userService: User,
@@ -69,6 +70,7 @@ export class PhoneFormComponent implements OnInit {
           this.model.history = res.history;
           this.modalService.hideLoader('phone-form');
           //this.smsDialog.modal('show');
+          this.phoneCode.smsId = res.sms;
           this.phoneCode.openCode()
         },
         err => {
@@ -86,7 +88,7 @@ export class PhoneFormComponent implements OnInit {
       return;
     }
     //this.smsDialog.modal('hide');
-    this.phoneCode.openCode()
+    // this.phoneCode.openCode()
     this.modalService.showLoader('phone-form');
     this.model.smsCode = +this.smsCode;
     this.userService
