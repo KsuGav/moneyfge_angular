@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild  } from '@angular/core';
 import { AfterViewInit, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalService } from '../../../services/modal.service';
 import { User } from '../../../services/service.user';
 import { SubmitResult } from './SubmitResult';
+
+import { SmsCodeDialogComponent } from '../../../common/sms-code-dialog/sms-code-dialog.component'
 
 declare const $: any;
 
@@ -25,10 +27,13 @@ export class SettingsProfileComponent implements OnInit, AfterViewInit, OnDestro
 
   private isHiddenAlert: boolean = true;
 
+  @ViewChild(SmsCodeDialogComponent) phoneCode: SmsCodeDialogComponent;
+
   constructor(
     public router: Router,
     private modalService: ModalService,
     private userService: User
+
   ) {
 
   }
@@ -97,4 +102,11 @@ export class SettingsProfileComponent implements OnInit, AfterViewInit, OnDestro
     this.isHiddenAlert = false;
   }
 
+  openCode(){
+    this.phoneCode.openCode()
+  }
+
+  showCode(event){
+    console.log(event);
+  }
 }

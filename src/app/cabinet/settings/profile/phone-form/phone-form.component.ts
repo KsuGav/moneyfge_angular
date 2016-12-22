@@ -81,7 +81,7 @@ export class PhoneFormComponent implements OnInit {
       return;
     }
     this.smsDialog.modal('hide');
-    this.modalService.showLoader('phone-form');  
+    this.modalService.showLoader('phone-form');
     this.model.smsCode = +this.smsCode;
     this.userService
       .changeUserNumberStep2(

@@ -10,6 +10,9 @@
       {{ msg }}
     </div>
 
+    <button id="test-button" (click)="openCode()">Open code</button>
+    <sms-code-dialog-component (sendCode)="showCode($event)"></sms-code-dialog-component>
+
     <div style="margin-top: 40px">
 
       <div class="table">
