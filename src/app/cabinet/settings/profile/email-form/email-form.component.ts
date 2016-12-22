@@ -80,6 +80,7 @@ export class EmailFormComponent implements OnInit {
     this.smsDialog.modal('hide');
     this.modalService.showLoader('email-form');
     this.model.code = +this.smsCode;
+    this.smsCode = '';
     this.userService
       .changeUserEmailStep2(
         this.model.smsId,
@@ -89,9 +90,11 @@ export class EmailFormComponent implements OnInit {
       .subscribe(
         res => {
           this.submitResult.type = 'success';
-          this.submitResult.msg = 'Email updated successfully';
+          this.submitResult.msg = 'You have to validate you email address. On your email has been sent link.';
           this.modalService.hideLoader('email-form');
+          this.submitCompleted.emit(this.submitResult);
           this.getUser();
+          this.model.password = '';
         },
         err => {
           this.submitResult.type = 'danger';

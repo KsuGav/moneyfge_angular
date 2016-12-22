@@ -3,7 +3,8 @@
     <h3>Settings</h3>
   </div>
   <div id="block" class="info-block settings-block">
-    <div class="alert alert-{{ msgType }}" [hidden]="isHiddenAlert">
+
+    <div class="alert alert-{{ msgType }}" *ngIf="isAlertOpen">
       <button type="button" class="close" (click)="closeAlert()">
         <span aria-hidden="true">&times;</span>
       </button>

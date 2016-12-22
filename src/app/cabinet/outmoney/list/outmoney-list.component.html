@@ -3,6 +3,12 @@
             <div class="block-header">
                 <h3>List outs</h3>
             </div>
+
+            <div class="text-center" *ngIf="outs && outs.length === 0">
+                <h1>You have items here.</h1>
+                <a [routerLink]="['/en/user/cabinet/outmoney']">Create first</a>
+            </div>
+
             <div class="info-block">
 
               <div class="alert alert-danger" *ngIf="msg">
@@ -10,7 +16,7 @@
               </div>
 
               <div *ngIf="outs && outs.length > 0">
-                <h3>Active Accounts</h3>
+                <h3>Out Bids</h3>
                 <table class="table">
                   <thead>
                     <tr>

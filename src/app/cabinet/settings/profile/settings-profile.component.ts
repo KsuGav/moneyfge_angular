@@ -21,9 +21,9 @@ export class SettingsProfileComponent implements OnInit, AfterViewInit, OnDestro
 
   private msg: string;
 
-  private msgType: string;
+  private msgType: string = '';
 
-  private isHiddenAlert: boolean = true;
+  private isAlertOpen: boolean = false;
 
   constructor(
     public router: Router,
@@ -57,7 +57,7 @@ export class SettingsProfileComponent implements OnInit, AfterViewInit, OnDestro
   }
 
   closeAlert() {
-    this.isHiddenAlert = true;
+    this.isAlertOpen = false;
   }
 
   isCheckSmsChange(event) {
@@ -72,14 +72,14 @@ export class SettingsProfileComponent implements OnInit, AfterViewInit, OnDestro
           this.msgType = 'success';
           this.msg = 'Changes saved successfully';
           this.modalService.hideLoader('block');
-          this.isHiddenAlert = false;
+          this.isAlertOpen = true;
         },
         (err: any) => {
           event.target.checked = this.isCheckSms;
           this.msgType = 'danger';
           this.msg = err.json().message;
           this.modalService.hideLoader('block');
-          this.isHiddenAlert = false;
+          this.isAlertOpen = true;
         }
       )
     ;
@@ -88,13 +88,13 @@ export class SettingsProfileComponent implements OnInit, AfterViewInit, OnDestro
   phoneUpdateCompleted(data: SubmitResult) {
     this.msgType = data.type;
     this.msg = data.msg;
-    this.isHiddenAlert = false;
+    this.isAlertOpen = true;
   }
 
   emailUpdateCompleted(data: SubmitResult) {
     this.msgType = data.type;
     this.msg = data.msg;
-    this.isHiddenAlert = false;
+    this.isAlertOpen = true;
   }
 
 }

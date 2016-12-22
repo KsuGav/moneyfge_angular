@@ -3,6 +3,12 @@
             <div class="block-header">
                 <h3>Withdrawing money</h3>
             </div>
+
+            <div class="text-center" *ngIf="accs && accs.length === 0">
+                <h1>You have no accounts yet.</h1>
+                <a [routerLink]="['/en/user/cabinet/score/create']">Create first</a>
+            </div>
+
             <div class="info-block">
               <div class="alert alert-danger" *ngIf="msg">
               {{ msg }}
