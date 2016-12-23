@@ -1,8 +1,11 @@
 import { Component, OnInit, EventEmitter, Output, ViewChild } from '@angular/core';
+
 import { ChangePhoneModel } from './ChangePhoneModel';
 import { User } from '../../../../services/service.user';
 import { ModalService } from '../../../../services/modal.service';
 import { SubmitResult } from '../SubmitResult';
+import { SmsModel } from '../../../../common/sms-code-dialog/sms.model';
+
 
 import { SmsCodeDialogComponent } from '../../../../common/sms-code-dialog/sms-code-dialog.component';
 
@@ -16,6 +19,8 @@ export class PhoneFormComponent implements OnInit {
 
   @Output()
   submitCompleted: EventEmitter<SubmitResult> = new EventEmitter<SubmitResult>();
+
+  private smsModel: SmsModel = new SmsModel();
 
   private user;
 
@@ -70,7 +75,7 @@ export class PhoneFormComponent implements OnInit {
           this.model.history = res.history;
           this.modalService.hideLoader('phone-form');
           //this.smsDialog.modal('show');
-          this.phoneCode.smsId = res.sms;
+          this.smsModel.smsId = res.sms;
           this.phoneCode.openCode()
         },
         err => {

@@ -1,5 +1,5 @@
 
-<sms-code-dialog-component  (sendCode)="showCode($event)"></sms-code-dialog-component>
+<sms-code-dialog-component [sms]="smsModel" (sendCode)="showCode($event)"></sms-code-dialog-component>
 
 <form id="phone-form" (submit)="submitForm($event)">
   <div class="table">

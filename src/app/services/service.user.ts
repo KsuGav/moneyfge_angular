@@ -92,7 +92,7 @@ export class User {
     ;
   }
 
-  sendSms(sms, isAToken = false) {
+  sendSms(sms, isAToken:boolean = false) {
     const headers = new Headers();
     if (isAToken) {
       headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);

@@ -1,6 +1,8 @@
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
+
 import { User } from '../../services/service.user';
 import { AppState } from '../../app.service';
+import { SmsModel} from './sms.model';
 
 declare const $: any;
 
@@ -11,11 +13,14 @@ declare const $: any;
 
 export class SmsCodeDialogComponent implements OnInit {
   @Output()
-  sendCode: EventEmitter<String> = new EventEmitter<String>();
+  sendCode: EventEmitter<SmsModel> = new EventEmitter<SmsModel>();
+
+  @Input()
+  public sms: SmsModel = new SmsModel();
 
   private smsDialog;
 
-  private smsCode;
+  // private smsCode;
 
   private secs: number = 0;
 
@@ -23,8 +28,6 @@ export class SmsCodeDialogComponent implements OnInit {
 
   private errorMsg: string;
 
-  @Input()
-  public smsId: number;
 
   constructor(
     private appState: AppState,
@@ -40,7 +43,7 @@ openCode(){
 }
   closeSmsDialog(){
     this.smsDialog.modal('hide');
-    this.sendCode.emit(this.smsCode);
+    this.sendCode.emit(this.sms);
   }
 
   sendAgain(){
@@ -58,17 +61,11 @@ openCode(){
       this.secs -= 1;
     }, 1000);
 
-    console.log(this.smsId);
     this.userService
-      .sendSms(this.smsId)
+      .sendSms(this.sms.smsId, true)
       .subscribe(
-        res => {
-          this.smsId = res.sms;
-          console.log(this.smsId)
-        },
-        err => {this.errorMsg = err.json().message;
-                console.log(err)
-        }
+        res => this.sms.smsId = res.sms,
+        err => this.errorMsg = err.json().message
       )
 
   }
