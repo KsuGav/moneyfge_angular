@@ -44,15 +44,7 @@ openCode(){
   }
 
   sendAgain(){
-    // if(this.smsId){
-    //
-    // }
-    // console.log(this.smsId)
-    // this.userService
-    //   .sendSms(this.smsId)
-    //   .subscribe(
-    //     res =>
-    //   )
+
     if (this.secs > 0 && this.secs < 60) {
       return;
     }
@@ -65,12 +57,19 @@ openCode(){
       }
       this.secs -= 1;
     }, 1000);
+
+    console.log(this.smsId);
     this.userService
-      .sendSms(this.appState.get('sms'))
+      .sendSms(this.smsId)
       .subscribe(
-        res => this.appState.set('sms', res.sms),
-        err => this.errorMsg = err.json().message
+        res => {
+          this.smsId = res.sms;
+          console.log(this.smsId)
+        },
+        err => {this.errorMsg = err.json().message;
+                console.log(err)
+        }
       )
-    ;
+
   }
 }
