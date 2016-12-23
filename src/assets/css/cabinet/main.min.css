@@ -4097,6 +4097,11 @@ input[type=radio] + label span, input[type=radio]:checked + label span {
     font-size: 16px;
     text-align: center;
 }
+.disabled {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.6;
+}
 
 .modal_footer {
     padding: 15px;

@@ -28,8 +28,6 @@ export class PhoneFormComponent implements OnInit {
 
   private model = new ChangePhoneModel();
 
-  //private smsDialog;
-
   private submitResult: SubmitResult = new SubmitResult();
 
   @ViewChild(SmsCodeDialogComponent)
@@ -41,7 +39,6 @@ export class PhoneFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    //this.smsDialog = $('#phone-sms-dialog');
     this.getUser();
   }
 
@@ -74,7 +71,6 @@ export class PhoneFormComponent implements OnInit {
           this.model.smsId = res.sms;
           this.model.history = res.history;
           this.modalService.hideLoader('phone-form');
-          //this.smsDialog.modal('show');
           this.smsModel.smsId = res.sms;
           this.phoneCode.openCode()
         },
@@ -92,8 +88,6 @@ export class PhoneFormComponent implements OnInit {
     if (this.smsCode === '') {
       return;
     }
-    //this.smsDialog.modal('hide');
-    // this.phoneCode.openCode()
     this.modalService.showLoader('phone-form');
     this.model.smsCode = +this.smsCode;
     this.userService
@@ -112,7 +106,6 @@ export class PhoneFormComponent implements OnInit {
         err => {
           this.submitResult.type = 'danger';
           this.submitResult.msg = err.json().message;
-          //this.smsDialog.modal('hide');
           this.submitCompleted.emit(this.submitResult);
           this.modalService.hideLoader('phone-form');
         }
