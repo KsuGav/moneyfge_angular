@@ -7,7 +7,7 @@
         <input type="text" required="required" style="text-align:center;" [(ngModel)]="sms.smsCode" (keypress)=changeValue($event) />
       </div>
       <div class="modal_footer">
-        <link-counter-component (click)="sendAgain()"></link-counter-component>
+        <link-counter-component (onClick)="sendAgain()"></link-counter-component>
 
         <button class="btn btn-accent btn-big" (click)="closeSmsDialog()">Send</button>
 
