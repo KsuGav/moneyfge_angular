@@ -18,9 +18,10 @@ export class SmsCodeDialogComponent implements OnInit {
   @Input()
   public sms: SmsModel = new SmsModel();
 
-  private smsDialog;
+  @Input()
+  public id: string = 'default';
 
-  // private smsCode;
+  private smsDialog;
 
   private secs: number = 0;
 
@@ -28,19 +29,20 @@ export class SmsCodeDialogComponent implements OnInit {
 
   private errorMsg: string;
 
-
   constructor(
     private appState: AppState,
     private userService: User
   ) { }
 
   ngOnInit() {
-    this.smsDialog = $('#phone-sms-dialog');
+
   }
 
-openCode(){
-  this.smsDialog.modal('show');
-}
+  openCode(){
+    this.smsDialog = $(`#${this.id}-sms-dialog`);
+    this.smsDialog.modal('show');
+  }
+
   closeSmsDialog(){
     this.smsDialog.modal('hide');
     this.sendCode.emit(this.sms);
@@ -64,7 +66,7 @@ openCode(){
     this.userService
       .sendSms(this.sms.smsId, true)
       .subscribe(
-        res => this.sms.smsId = res.sms,
+        (res: any) => this.sms.smsId = res.sms,
         err => this.errorMsg = err.json().message
       )
 

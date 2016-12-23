@@ -24,11 +24,9 @@ export class PhoneFormComponent implements OnInit {
 
   private user;
 
-  private smsCode: string;
+  private phoneValidator: string = '[0-9]+';
 
   private model = new ChangePhoneModel();
-
-  //private smsDialog;
 
   private submitResult: SubmitResult = new SubmitResult();
 
@@ -41,7 +39,6 @@ export class PhoneFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    //this.smsDialog = $('#phone-sms-dialog');
     this.getUser();
   }
 
@@ -54,7 +51,6 @@ export class PhoneFormComponent implements OnInit {
           this.model.oldNumber = res.telephone;
           this.model.newNumber = '';
           this.model.password = '';
-          this.modalService.hideLoader('phone-form');
         }
       )
     ;
@@ -70,11 +66,10 @@ export class PhoneFormComponent implements OnInit {
         this.model.newNumber
       )
       .subscribe(
-        res => {
+        (res: any) => {
           this.model.smsId = res.sms;
           this.model.history = res.history;
           this.modalService.hideLoader('phone-form');
-          //this.smsDialog.modal('show');
           this.smsModel.smsId = res.sms;
           this.phoneCode.openCode()
         },
@@ -89,13 +84,11 @@ export class PhoneFormComponent implements OnInit {
   }
 
   closeSmsDialog() {
-    if (this.smsCode === '') {
+    if (this.smsModel.smsCode === '') {
       return;
     }
-    //this.smsDialog.modal('hide');
-    // this.phoneCode.openCode()
     this.modalService.showLoader('phone-form');
-    this.model.smsCode = +this.smsCode;
+    this.model.smsCode = +this.smsModel.smsCode;
     this.userService
       .changeUserNumberStep2(
         this.model.smsId,
@@ -103,25 +96,21 @@ export class PhoneFormComponent implements OnInit {
         this.model.smsCode
       )
       .subscribe(
-        res => {
+        () => {
           this.submitResult.type = 'success';
           this.submitResult.msg = 'Telephone updated successfully';
           this.submitCompleted.emit(this.submitResult);
-          this.getUser();
+          this.modalService.hideLoader('phone-form');
+          // this.getUser();
         },
         err => {
           this.submitResult.type = 'danger';
           this.submitResult.msg = err.json().message;
-          //this.smsDialog.modal('hide');
           this.submitCompleted.emit(this.submitResult);
           this.modalService.hideLoader('phone-form');
         }
       )
     ;
-  }
-
-  showCode(event){
-    console.log(event);
   }
 
 }

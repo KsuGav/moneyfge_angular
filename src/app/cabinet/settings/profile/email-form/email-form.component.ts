@@ -1,10 +1,11 @@
 import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
+
 import { User } from '../../../../services/service.user';
 import { ModalService } from '../../../../services/modal.service';
 import { SubmitResult } from '../SubmitResult';
 import { ChangeEmailModel } from './ChangeEmailModel';
-
-import { SmsCodeDialogComponent } from '../../../../common/sms-code-dialog/sms-code-dialog.component';
+import { SmsCodeDialogComponent } from '../../../../common/sms-code-dialog';
+import { SmsModel } from '../../../../common/sms-code-dialog/sms.model';
 
 declare const $: any;
 
@@ -19,15 +20,16 @@ export class EmailFormComponent implements OnInit {
 
   private user: any;
 
-  private smsCode: string;
-
-  private smsDialog;
+  private emailValidator: string = '(.+)@(.+){2,}\.(.+){2,}';
 
   private submitResult: SubmitResult = new SubmitResult();
 
   private model: ChangeEmailModel = new ChangeEmailModel();
 
-  @ViewChild(SmsCodeDialogComponent) phoneCode: SmsCodeDialogComponent;
+  private smsModel: SmsModel = new SmsModel();
+
+  @ViewChild(SmsCodeDialogComponent)
+  phoneCode: SmsCodeDialogComponent;
 
   constructor(
     private userService: User,
@@ -35,7 +37,6 @@ export class EmailFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.smsDialog = $('#email-sms-dialog');
     this.getUser();
   }
 
@@ -61,11 +62,11 @@ export class EmailFormComponent implements OnInit {
         this.model.email
       )
       .subscribe(
-        res => {
+        (res: any) => {
           this.model.smsId = res.sms;
           this.model.history = res.history;
           this.modalService.hideLoader('email-form');
-          // this.smsDialog.modal('show');
+          this.smsModel.smsId = res.sms;
           this.phoneCode.openCode()
         },
         err => {
@@ -79,13 +80,11 @@ export class EmailFormComponent implements OnInit {
   }
 
   closeSmsDialog() {
-    if (this.smsCode === '') {
+    if (this.smsModel.smsCode === '') {
       return;
     }
-    // this.smsDialog.modal('hide');
     this.modalService.showLoader('email-form');
-    this.model.code = +this.smsCode;
-    this.smsCode = '';
+    this.model.code = +this.smsModel.smsCode;
     this.userService
       .changeUserEmailStep2(
         this.model.smsId,
@@ -93,13 +92,13 @@ export class EmailFormComponent implements OnInit {
         this.model.code
       )
       .subscribe(
-        res => {
+        () => {
           this.submitResult.type = 'success';
           this.submitResult.msg = 'You have to validate you email address. On your email has been sent link.';
           this.modalService.hideLoader('email-form');
           this.submitCompleted.emit(this.submitResult);
-          this.getUser();
-          this.model.password = '';
+          // this.getUser();
+          // this.model.password = '';
         },
         err => {
           this.submitResult.type = 'danger';

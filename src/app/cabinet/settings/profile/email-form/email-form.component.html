@@ -1,4 +1,4 @@
-<sms-code-dialog-component (sendCode)="showCode($event)"></sms-code-dialog-component>
+<sms-code-dialog-component [id]="'email'" [sms]="smsModel" (sendCode)="closeSmsDialog($event)"></sms-code-dialog-component>
 
 <form id="email-form" (submit)="submitForm($event)">
   <div class="table">
@@ -7,11 +7,25 @@
         E-mail address <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" title="You can provide email address"></i>
       </div>
       <div class="table-cell">
-        <label>Email</label><br />
-        <input type="email" required="required" placeholder="You email address" [(ngModel)]="model.email" name="email" style="width: 100%;padding: 5px 10px;border: 1px solid #edeef0;" /><br /><br />
-        <label>Password</label><br />
-        <input type="password" required="required" placeholder="You password" [(ngModel)]="model.password" name="password" /><br /><br />
-        <button class="btn btn-accent btn-small" style="height: 30px">Save</button>
+        <div [ngClass]="{'form-group': true, 'has-error': !(email.valid || email.pristine)}">
+          <label class="control-label" for="email">
+            Email
+            <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" title="Valid email address"></i>
+          </label>
+          <input id="email" type="email" [required]="true" placeholder="You email address" name="email" class="form-control"
+                 [(ngModel)]="model.email" #email="ngModel" [pattern]="emailValidator" />
+        </div>
+        <div [ngClass]="{'form-group': true, 'has-error': !(password.valid || password.pristine)}">
+          <label class="control-label" for="password">
+            Password
+            <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" title="your password"></i>
+          </label>
+          <input id="password" class="form-control" type="password" [required]="true" placeholder="You password" name="password"
+                 [(ngModel)]="model.password" #password="ngModel" />
+        </div>
+        <div class="form-group">
+          <button class="btn btn-accent btn-small" style="height: 30px">Save</button>
+        </div>
       </div>
     </div>
   </div>

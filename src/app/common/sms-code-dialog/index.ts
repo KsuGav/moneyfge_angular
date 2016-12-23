@@ -1,1 +1,1 @@
-export * from './phone-code.component';
+export * from './sms-code-dialog.component';

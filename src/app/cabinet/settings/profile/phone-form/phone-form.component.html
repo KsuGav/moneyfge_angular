@@ -1,5 +1,4 @@
-
-<sms-code-dialog-component [sms]="smsModel" (sendCode)="showCode($event)"></sms-code-dialog-component>
+<sms-code-dialog-component [id]="'phone'" [sms]="smsModel" (sendCode)="closeSmsDialog($event)"></sms-code-dialog-component>
 
 <form id="phone-form" (submit)="submitForm($event)">
   <div class="table">
@@ -9,18 +8,29 @@
         <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" title="You can change telephone number"></i>
       </div>
       <div class="table-cell">
-        <div class="form-group">
-          <label class="control-label" for="phone-old-number">Old number</label>
-          <input id="phone-old-number" type="text" class="form-control" placeholder="You telephone" required="required" name="phone-old-number" [(ngModel)]="model.oldNumber" />
-          <p class="help-block">Valid phone number</p>
+        <div [ngClass]="{'form-group': true, 'has-error': !(oldNumber.valid || oldNumber.pristine)}">
+          <label class="control-label" for="phone-old-number">
+            Old number
+            <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" title="Valid phone number"></i>
+          </label>
+          <input id="phone-old-number" type="text" class="form-control" placeholder="You telephone" [required]="true" name="phone-old-number"
+                 [(ngModel)]="model.oldNumber" #oldNumber="ngModel" [pattern]="phoneValidator" />
         </div>
-        <div class="form-group">
-          <label class="control-label" for="phone-new-number">New number</label>
-          <input id="phone-new-number" type="text" class="form-control" placeholder="Provide new number" required="required" name="phone-new-number" [(ngModel)]="model.newNumber" />
+        <div [ngClass]="{'form-group': true, 'has-error': !(newNumber.valid || newNumber.pristine)}">
+          <label class="control-label" for="phone-new-number">
+            New number
+            <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" title="Valid phone number"></i>
+          </label>
+          <input id="phone-new-number" type="text" class="form-control" placeholder="Provide new number" [required]="true" name="phone-new-number"
+                 [(ngModel)]="model.newNumber" #newNumber="ngModel" [pattern]="phoneValidator" />
         </div>
-        <div class="form-group">
-          <label class="control-label" for="phone-password">Password</label>
-          <input id="phone-password" type="password" class="form-control" placeholder="Provide you password" required="required" name="phone-password" [(ngModel)]="model.password" />
+        <div [ngClass]="{'form-group': true, 'has-error': !(password.valid || password.pristine)}">
+          <label class="control-label" for="phone-password">
+            Password
+            <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" title="your password"></i>
+          </label>
+          <input id="phone-password" type="password" class="form-control" placeholder="Provide you password" [required]="true" name="phone-password"
+                 [(ngModel)]="model.password"  #password="ngModel" />
         </div>
 <!--         <label>Old number</label><br />
         <input type="text" placeholder="You telephone" required="required" name="phone-old-number" [(ngModel)]="model.oldNumber" /><br /><br /> -->
