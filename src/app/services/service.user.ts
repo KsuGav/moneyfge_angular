@@ -92,9 +92,13 @@ export class User {
     ;
   }
 
-  sendSms(sms) {
+  sendSms(sms, isAToken = false) {
     const headers = new Headers();
-    headers.append('Authorization', `Bearer ${sessionStorage.getItem('gToken')}`);
+    if (isAToken) {
+      headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
+    } else {
+      headers.append('Authorization', `Bearer ${sessionStorage.getItem('gToken')}`);
+    }
 
     const locUrl = `${this.appState.get('apiEndpoint')}/sms/${sms}`;
     return this.http
@@ -169,13 +173,13 @@ export class User {
     const headers = new Headers();
     headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
     headers.append('Content-Type', 'application/json');
-  
+
     const localData = {
       "sms": sms,
       "history": history,
       "code": code
     };
-  
+
     const locUrl = `${this.appState.get('apiEndpoint')}/user/phone/2`;
     return this.http
       .patch(locUrl, JSON.stringify(localData), {headers: headers})
@@ -204,13 +208,13 @@ export class User {
     const headers = new Headers();
     headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
     headers.append('Content-Type', 'application/json');
-  
+
     const localData = {
       "sms": sms,
       "history": history,
       "code": code
     };
-  
+
     const locUrl = `${this.appState.get('apiEndpoint')}/user/email/2`;
     return this.http
       .patch(locUrl, JSON.stringify(localData), {headers: headers})
