@@ -17,7 +17,7 @@
         <button type="submit" class="btn btn-accent btn-big">Login</button>
       </form>
       <a href="#" class="resend" id="sms_retry_btn" (click)="resendSms($event)">
-        <i class="fa fa-refresh"></i>Send SMS again <span *ngIf="secs > 0">( {{secs}} )</span>
+        <i class="fa fa-refresh"></i>Send SMS again <span *ngIf="secs > 0 && secs < 60">( {{secs}} )</span>
       </a><br />
       <a [routerLink]="['']" class="back"><i class="fa fa-chevron-left"></i> Back</a>
     </div>

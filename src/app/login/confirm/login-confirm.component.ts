@@ -46,17 +46,17 @@ export class LoginConfirmComponent implements OnInit, OnDestroy {
 
   resendSms(event) {
     event.preventDefault();
-    if (this.secs > 0) {
+    if (this.secs > 0 && this.secs < 60) {
       return;
     }
-    this.secs = 1;
+    this.secs = 60;
     this.interval = setInterval(() => {
-      if (this.secs === 60) {
+      if (this.secs === 0) {
         clearInterval(this.interval);
-        this.secs = 0;
+        this.secs = 60;
         return;
       }
-      this.secs += 1;
+      this.secs -= 1;
     }, 1000);
     this.userService
       .sendSms(this.appState.get('sms'))

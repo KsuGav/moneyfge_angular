@@ -4,13 +4,10 @@
       <div class="modal_head">Confirm SMS Code</div>
       <div class="modal_body text-center">
         <label>SMS code</label><br />
-        <input type="text" required="required" [(ngModel)]="sms.smsCode" style="text-align:center;" />
+        <input type="text" required="required" style="text-align:center;" [(ngModel)]="sms.smsCode" (keypress)=changeValue($event) />
       </div>
       <div class="modal_footer">
-        <a (click)="sendAgain()" style="font-size: 12px; text-decoration: underline; cursor: pointer; margin-bottom: 13px; color: black">Send again
-          <span *ngIf="secs > 0 && secs < 60 ">( {{secs}} )</span>
-        </a>
-
+        <link-counter-component (click)="sendAgain()"></link-counter-component>
 
         <button class="btn btn-accent btn-big" (click)="closeSmsDialog()">Send</button>
 
@@ -21,3 +18,4 @@
     </div>
   </div>
 </div>
+

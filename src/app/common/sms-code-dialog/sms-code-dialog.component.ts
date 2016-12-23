@@ -23,14 +23,12 @@ export class SmsCodeDialogComponent implements OnInit {
 
   private smsDialog;
 
-  private secs: number = 0;
-
-  private interval;
+  private smsDialogInput;
 
   private errorMsg: string;
 
+
   constructor(
-    private appState: AppState,
     private userService: User
   ) { }
 
@@ -40,6 +38,7 @@ export class SmsCodeDialogComponent implements OnInit {
 
   openCode(){
     this.smsDialog = $(`#${this.id}-sms-dialog`);
+    this.smsDialogInput = $(`#${this.id}-sms-dialog input`);
     this.smsDialog.modal('show');
   }
 
@@ -49,20 +48,6 @@ export class SmsCodeDialogComponent implements OnInit {
   }
 
   sendAgain(){
-
-    if (this.secs > 0 && this.secs < 60) {
-      return;
-    }
-    this.secs = 60;
-    this.interval = setInterval(() => {
-      if (this.secs === 0) {
-        clearInterval(this.interval);
-        this.secs = 60;
-        return;
-      }
-      this.secs -= 1;
-    }, 1000);
-
     this.userService
       .sendSms(this.sms.smsId, true)
       .subscribe(
@@ -71,4 +56,14 @@ export class SmsCodeDialogComponent implements OnInit {
       )
 
   }
+
+  changeValue(event){
+    event.preventDefault();
+    if(!isNaN(event.key)){
+      if(this.smsDialogInput.val().length>=4){ return; }
+      this.smsDialogInput.val(this.smsDialogInput.val() + event.key);
+    }
+
+  }
+
 }
