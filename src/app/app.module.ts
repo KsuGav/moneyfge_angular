@@ -55,6 +55,11 @@ import { OutmoneyDefaultComponent } from './cabinet/outmoney/default';
 import { OutmoneyListComponent } from './cabinet/outmoney/list';
 import { CabinetSettingsComponent } from './cabinet/settings';
 import { SettingsProfileComponent } from './cabinet/settings/profile';
+
+import { SmsCodeDialogComponent } from './common/sms-code-dialog/sms-code-dialog.component';
+import { ConfirmDialogComponent } from './common/confirm/confirm-dialog.component';
+import { AlertDialogComponent } from './common/alert-dialog/alert-dialog.component';
+
 import { PhoneFormComponent } from './cabinet/settings/profile/phone-form';
 import { EmailFormComponent } from './cabinet/settings/profile/email-form';
 import { SettingsPasswordComponent } from './cabinet/settings/password';
@@ -114,6 +119,11 @@ type StoreType = {
     , OutmoneyListComponent
     , CabinetSettingsComponent
     , SettingsProfileComponent
+
+    ,SmsCodeDialogComponent
+    ,ConfirmDialogComponent
+    ,AlertDialogComponent
+
     , PhoneFormComponent
     , EmailFormComponent
     , SettingsPasswordComponent

@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild  } from '@angular/core';
 import { AfterViewInit, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalService } from '../../../services/modal.service';
 import { User } from '../../../services/service.user';
 import { SubmitResult } from './SubmitResult';
+
+// import { ConfirmDialogComponent } from '../../../common/confirm/confirm-dialog.component'
 
 declare const $: any;
 
@@ -25,10 +27,13 @@ export class SettingsProfileComponent implements OnInit, AfterViewInit, OnDestro
 
   private isAlertOpen: boolean = false;
 
+  // @ViewChild(ConfirmDialogComponent) confirmDialog: ConfirmDialogComponent;
+
   constructor(
     public router: Router,
     private modalService: ModalService,
     private userService: User
+
   ) {
 
   }
@@ -97,4 +102,11 @@ export class SettingsProfileComponent implements OnInit, AfterViewInit, OnDestro
     this.isAlertOpen = true;
   }
 
+  // openCode(){
+  //   this.confirmDialog.openCode()
+  // }
+
+  // showCode(event){
+  //   console.log(event);
+  // }
 }

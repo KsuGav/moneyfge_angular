@@ -1,0 +1,23 @@
+<div id="phone-sms-dialog" class="modal" style="display: none;" >
+  <div class="modal_beckground">
+    <div class="modal_box">
+      <div class="modal_head">Confirm SMS Code</div>
+      <div class="modal_body text-center">
+        <label>SMS code</label><br />
+        <input type="text" required="required" [(ngModel)]="sms.smsCode" style="text-align:center;" />
+      </div>
+      <div class="modal_footer">
+        <a (click)="sendAgain()" style="font-size: 12px; text-decoration: underline; cursor: pointer; margin-bottom: 13px; color: black">Send again
+          <span *ngIf="secs > 0 && secs < 60 ">( {{secs}} )</span>
+        </a>
+
+
+        <button class="btn btn-accent btn-big" (click)="closeSmsDialog()">Send</button>
+
+        <div class="alert alert-danger" *ngIf="errorMsg">
+          {{ errorMsg }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

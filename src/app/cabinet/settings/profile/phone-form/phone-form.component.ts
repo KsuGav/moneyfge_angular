@@ -1,8 +1,13 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, ViewChild } from '@angular/core';
+
 import { ChangePhoneModel } from './ChangePhoneModel';
 import { User } from '../../../../services/service.user';
 import { ModalService } from '../../../../services/modal.service';
 import { SubmitResult } from '../SubmitResult';
+import { SmsModel } from '../../../../common/sms-code-dialog/sms.model';
+
+
+import { SmsCodeDialogComponent } from '../../../../common/sms-code-dialog/sms-code-dialog.component';
 
 declare const $: any;
 
@@ -15,15 +20,20 @@ export class PhoneFormComponent implements OnInit {
   @Output()
   submitCompleted: EventEmitter<SubmitResult> = new EventEmitter<SubmitResult>();
 
+  private smsModel: SmsModel = new SmsModel();
+
   private user;
 
   private smsCode: string;
 
   private model = new ChangePhoneModel();
 
-  private smsDialog;
+  //private smsDialog;
 
   private submitResult: SubmitResult = new SubmitResult();
+
+  @ViewChild(SmsCodeDialogComponent)
+  phoneCode: SmsCodeDialogComponent;
 
   constructor(
     private userService: User,
@@ -31,7 +41,7 @@ export class PhoneFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.smsDialog = $('#phone-sms-dialog');
+    //this.smsDialog = $('#phone-sms-dialog');
     this.getUser();
   }
 
@@ -64,7 +74,9 @@ export class PhoneFormComponent implements OnInit {
           this.model.smsId = res.sms;
           this.model.history = res.history;
           this.modalService.hideLoader('phone-form');
-          this.smsDialog.modal('show');
+          //this.smsDialog.modal('show');
+          this.smsModel.smsId = res.sms;
+          this.phoneCode.openCode()
         },
         err => {
           this.submitResult.type = 'danger';
@@ -80,8 +92,9 @@ export class PhoneFormComponent implements OnInit {
     if (this.smsCode === '') {
       return;
     }
-    this.smsDialog.modal('hide');
-    this.modalService.showLoader('phone-form');  
+    //this.smsDialog.modal('hide');
+    // this.phoneCode.openCode()
+    this.modalService.showLoader('phone-form');
     this.model.smsCode = +this.smsCode;
     this.userService
       .changeUserNumberStep2(
@@ -99,12 +112,16 @@ export class PhoneFormComponent implements OnInit {
         err => {
           this.submitResult.type = 'danger';
           this.submitResult.msg = err.json().message;
-          this.smsDialog.modal('hide');
+          //this.smsDialog.modal('hide');
           this.submitCompleted.emit(this.submitResult);
           this.modalService.hideLoader('phone-form');
         }
       )
     ;
+  }
+
+  showCode(event){
+    console.log(event);
   }
 
 }
