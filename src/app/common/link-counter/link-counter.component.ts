@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Input, Output, EventEmitter } from '@angular/core';
 
 declare const $: any;
 
@@ -12,6 +13,9 @@ export class LinkCounterComponent {
   private secs: number = 0;
 
   private interval;
+
+  @Output()
+  private onClick: EventEmitter<String> = new EventEmitter<String>();
 
   counter(){
     if (this.secs > 0 && this.secs < 60) {
@@ -27,7 +31,7 @@ export class LinkCounterComponent {
       this.secs -= 1;
     }, 1000);
 
-
+    this.onClick.emit('go');
   }
 
 }
