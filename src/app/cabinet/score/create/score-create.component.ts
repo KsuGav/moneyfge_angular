@@ -1,7 +1,9 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { AfterViewInit, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+
 import { AccountService } from '../../../services/account.service';
+import { ModalService } from '../../../services/modal.service';
 
 declare const $: any;
 
@@ -21,7 +23,8 @@ export class ScoreCreateComponent implements OnInit, AfterViewInit, OnDestroy {
 
   constructor(
     public router: Router,
-    private accountService: AccountService
+    private accountService: AccountService,
+    private modalService: ModalService
   ) {
 
   }
@@ -39,14 +42,14 @@ export class ScoreCreateComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   submitForm() {
+    this.modalService.showLoader('block');
     this.accountService
       .createCard(this.currency, this.types)
       .subscribe(
-        (response: any) => {
-          this.router.navigate(['/en/user/cabinet/score/index']);
-        },
+        () => this.router.navigate(['/en/user/cabinet/score/index']),
         (error: any) => {
            this.msg = error.json().message;
+           this.modalService.hideLoader('block');
         }
       )
     ;

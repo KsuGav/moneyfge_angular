@@ -1,67 +1,91 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from '../../../services/service.user';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 import { AccountService } from '../../../services/account.service';
 import { ModalService } from '../../../services/modal.service';
-import { AppState } from '../../../app.service';
+import { SmsCodeDialogComponent } from '../../../common/sms-code-dialog';
+import { SmsModel } from '../../../common/sms-code-dialog/sms.model';
+import { AlertComponent } from '../../../common/alert';
 
 declare const $: any;
 
 @Component({
   selector: 'transfer-account-component',
-  templateUrl: './transfer-account.component.html',
-  styleUrls: [
-
-  ]
+  templateUrl: './transfer-account.component.html'
 })
 
 export class TransferAccountComponent implements OnInit, AfterViewInit, OnDestroy {
 
+  @ViewChild(SmsCodeDialogComponent) smsDialog: SmsCodeDialogComponent;
+
+  @ViewChild(AlertComponent) alert: AlertComponent;
+
+  private smsModel: SmsModel = new SmsModel();
+
   private accs;
 
-  private msg;
+  private form: FormGroup;
 
-  private fromAccount: string;
-
-  private toAccount: string;
-
-  private sum: string;
+  private info: number;
 
   constructor(
-    private User: User,
     public router: Router,
     private accountService: AccountService,
     private modalService: ModalService,
-    private appState: AppState
+    private fb: FormBuilder
   ) {
-
+    this.createForm();
   }
 
-  submitForm(event) {
-    event.preventDefault();
+  createForm() {
+    this.form = this.fb.group({
+      from: ['', Validators.required],
+      to: ['', [Validators.required, Validators.pattern('[0-9]+')]],
+      sum: ['', [Validators.required]]
+    });
+  }
+
+  submitForm() {
+    if (!this.form.valid) {
+      return;
+    }
+    this.modalService.showLoader('block');
     this.accountService
       .createTransactionStep1(
-        this.fromAccount,
-        this.toAccount,
-        this.sum
+        this.form.value.from,
+        this.form.value.to,
+        this.form.value.sum
       )
       .subscribe(
-        res => {
-          const code = prompt('Enter SMS code');
-          if (code && parseInt(code, 10) !== NaN) {
-            this.accountService
-              .createTransactionStep2(res.sms, res.info, code)
-              .subscribe(
-                () => {
-                  this.router.navigate(['/en/user/cabinet/score/index'])
-                },
-                err => this.msg = err.json().message
-              )
-            ;
-          }
+        (res: any) => {
+          this.smsModel.smsId = res.sms;
+          this.info = res.info;
+          this.smsDialog.openCode();
         },
-        err => this.msg = err.json().message
+        err => {
+          this.modalService.hideLoader('block');
+          this.alert.show('danger', err.json().message);
+        }
+      )
+    ;
+  }
+
+  closeSmsDialog() {
+    this.modalService.showLoader('block');
+    this.accountService
+      .createTransactionStep2(
+        this.smsModel.smsId,
+        this.info,
+        +this.smsModel.smsCode
+      )
+      .subscribe(
+        () => this.router.navigate(['/en/user/cabinet/score/index']),
+        err => {
+          this.modalService.hideLoader('block');
+          this.alert.show('danger', err.json().message);
+        }
       )
     ;
   }
@@ -72,6 +96,7 @@ export class TransferAccountComponent implements OnInit, AfterViewInit, OnDestro
 
   ngAfterViewInit() {
     this.modalService.showUnderConstruction();
+    this.modalService.showLoader('block');
     this.getAccounts();
   }
 
@@ -83,8 +108,14 @@ export class TransferAccountComponent implements OnInit, AfterViewInit, OnDestro
     this.accountService
       .getAllCard()
       .subscribe(
-        res => this.accs = res.active,
-        err => this.msg = err.json().message
+        res => {
+          this.modalService.hideLoader('block');
+          this.accs = res.active;
+        },
+        err => {
+          this.modalService.hideLoader('block');
+          this.alert.show('danger', err.json().message);
+        }
       )
     ;
   }

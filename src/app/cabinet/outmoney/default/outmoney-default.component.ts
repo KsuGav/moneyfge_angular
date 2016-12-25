@@ -1,40 +1,35 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { AfterViewInit, OnInit, OnDestroy } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+
 import { AccountService } from '../../../services/account.service';
 import { OutbidService } from '../../../services/outbid.service';
-
+import { ModalService } from '../../../services/modal.service';
+import { AlertComponent } from '../../../common/alert';
 
 declare const $: any;
 
 @Component({
   selector: 'outmoney-default-component',
-  templateUrl: './outmoney-default.component.html',
-  encapsulation: ViewEncapsulation.None,
-  styleUrls: []
+  templateUrl: './outmoney-default.component.html'
 })
 export class OutmoneyDefaultComponent implements OnInit, AfterViewInit, OnDestroy {
 
+  @ViewChild(AlertComponent) alert: AlertComponent;
+
   private accs;
 
-  private msg;
-
-  private account;
-
-  private system;
-
-  private systemAccount;
-
-  private descr;
-
-  private sum;
+  private form: FormGroup;
 
   constructor(
     public router: Router,
     private accountService: AccountService,
-    private outbidService: OutbidService
+    private outbidService: OutbidService,
+    private modalService: ModalService,
+    private fb: FormBuilder
   ) {
-
+    this.createForm();
   }
 
   ngOnInit() {
@@ -42,6 +37,7 @@ export class OutmoneyDefaultComponent implements OnInit, AfterViewInit, OnDestro
   }
 
   ngAfterViewInit() {
+    this.modalService.showLoader('block');
     this.getAccounts();
   }
 
@@ -49,23 +45,51 @@ export class OutmoneyDefaultComponent implements OnInit, AfterViewInit, OnDestro
 
   }
 
+  createForm() {
+    this.form = this.fb.group({
+      from: ['', Validators.required],
+      system: ['', Validators.required],
+      to: ['', Validators.required],
+      sum: ['', Validators.required],
+      descr: ['', Validators.required]
+    });
+  }
+
   getAccounts() {
     this.accountService
       .getAllCard()
       .subscribe(
-        res => this.accs = res.active,
-        err => this.msg = err.json().message
+        res => {
+          this.modalService.hideLoader('block');
+          this.accs = res.active;
+        },
+        err => {
+          this.modalService.hideLoader('block');
+          this.alert.show('danger', err.json().message);
+        }
       )
     ;
   }
 
-  submitForm(event) {
-    event.preventDefault();
+  submitForm() {
+    if (!this.form.valid) {
+      return;
+    }
+    this.modalService.showLoader('block');
     this.outbidService
-      .createOutbid(this.sum, this.descr, this.system, this.systemAccount, this.account)
+      .createOutbid(
+        this.form.value.sum,
+        this.form.value.descr,
+        this.form.value.system,
+        this.form.value.to,
+        this.form.value.from
+      )
       .subscribe(
         () => this.router.navigate(['/en/user/cabinet/outmoney/list']),
-        err => this.msg = err.json().message
+        err => {
+          this.alert.show('danger', err.json().message);
+          this.modalService.hideLoader('block');
+        }
       )
     ;
   }

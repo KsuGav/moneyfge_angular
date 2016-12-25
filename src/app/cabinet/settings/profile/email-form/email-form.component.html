@@ -1,32 +1,25 @@
 <sms-code-dialog-component [id]="'email'" [sms]="smsModel" (sendCode)="closeSmsDialog($event)"></sms-code-dialog-component>
 
-<form id="email-form" (submit)="submitForm($event)">
-  <div class="table">
-    <div class="table-row">
-      <div class="table-cell" style="vertical-align: top;">
-        E-mail address <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" title="You can provide email address"></i>
-      </div>
-      <div class="table-cell">
-        <div [ngClass]="{'form-group': true, 'has-error': !(email.valid || email.pristine)}">
-          <label class="control-label" for="email">
-            Email
-            <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" title="Valid email address"></i>
-          </label>
-          <input id="email" type="email" [required]="true" placeholder="You email address" name="email" class="form-control"
-                 [(ngModel)]="model.email" #email="ngModel" [pattern]="emailValidator" />
-        </div>
-        <div [ngClass]="{'form-group': true, 'has-error': !(password.valid || password.pristine)}">
-          <label class="control-label" for="password">
-            Password
-            <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" title="your password"></i>
-          </label>
-          <input id="password" class="form-control" type="password" [required]="true" placeholder="You password" name="password"
-                 [(ngModel)]="model.password" #password="ngModel" />
-        </div>
-        <div class="form-group">
-          <button class="btn btn-accent btn-small" style="height: 30px">Save</button>
-        </div>
-      </div>
-    </div>
+<alert-component></alert-component>
+
+<form id="email-form" (ngSubmit)="submitForm()" [formGroup]="emailForm">
+  <div [ngClass]="{'form-group': true, 'has-error': !(emailForm.controls.email.valid || emailForm.controls.email.pristine)}">
+    <label class="control-label" for="email">
+      Email
+      <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" title="Valid email address"></i>
+    </label>
+    <input id="email" type="email" required="required" placeholder="You email address" name="email" class="form-control"
+           formControlName="email" />
+  </div>
+  <div [ngClass]="{'form-group': true, 'has-error': !(emailForm.controls.password.valid || emailForm.controls.password.pristine)}">
+    <label class="control-label" for="password">
+      Password
+      <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" title="your password"></i>
+    </label>
+    <input id="password" class="form-control" type="password" required="required" placeholder="You password" name="password"
+           formControlName="password" />
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-accent btn-small" style="height: 30px">Save</button>
   </div>
 </form>

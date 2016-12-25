@@ -2,16 +2,16 @@
   <div class="block-header">
     <h3>Settings</h3>
   </div>
+
   <div id="block" class="info-block settings-block">
 
-    <div class="alert alert-{{ msgType }}" *ngIf="isAlertOpen">
+    <div class="alert alert-{{ msgType }}" *ngIf="isAlert">
       <button type="button" class="close" (click)="closeAlert()">
         <span aria-hidden="true">&times;</span>
       </button>
       {{ msg }}
     </div>
 
-    <!--<button id="test-button" (click)="openCode()">Open code</button>-->
     <!--<confirm-dialog-component (sendCode)="showCode($event)" [message]="'Are you sure?'" ></confirm-dialog-component>-->
 
     <div style="margin-top: 40px">
@@ -27,9 +27,29 @@
         </div>
       </div>
 
-      <phone-form-component (submitCompleted)="phoneUpdateCompleted($event)"></phone-form-component>
+      <div class="table">
+        <div class="table-row">
+          <div class="table-cell" style="vertical-align: top">
+            The number of purse
+            <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" title="You can change telephone number"></i>
+          </div>
+          <div class="table-cell">
+            <phone-form-component></phone-form-component>
+          </div>
+        </div>
+      </div>
 
-      <email-form-component (submitCompleted)="emailUpdateCompleted($event)"></email-form-component>
+      <div class="table">
+        <div class="table-row">
+          <div class="table-cell" style="vertical-align: top">
+            E-mail address
+            <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" title="You can provide email address"></i>
+          </div>
+          <div class="table-cell">
+            <email-form-component></email-form-component>
+          </div>
+        </div>
+      </div>
 
       <div class="table">
         <div class="table-row">

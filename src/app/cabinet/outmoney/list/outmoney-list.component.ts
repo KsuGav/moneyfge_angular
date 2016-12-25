@@ -1,25 +1,27 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { AfterViewInit, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+
 import { OutbidService } from '../../../services/outbid.service';
+import { AlertComponent } from '../../../common/alert';
+import { ModalService } from '../../../services/modal.service';
 
 declare const $: any;
 
 @Component({
   selector: 'outmoney-list-component',
-  templateUrl: './outmoney-list.component.html',
-  encapsulation: ViewEncapsulation.None,
-  styleUrls: []
+  templateUrl: './outmoney-list.component.html'
 })
 export class OutmoneyListComponent implements OnInit, AfterViewInit, OnDestroy {
 
-  private outs;
+  @ViewChild(AlertComponent) alert: AlertComponent;
 
-  private msg;
+  private outs;
 
   constructor(
     public router: Router,
-    private outbidService: OutbidService
+    private outbidService: OutbidService,
+    private modalService: ModalService
   ) {
 
   }
@@ -29,6 +31,7 @@ export class OutmoneyListComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
+    this.modalService.showLoader('block');
     this.getAllOuts();
   }
 
@@ -40,8 +43,14 @@ export class OutmoneyListComponent implements OnInit, AfterViewInit, OnDestroy {
     this.outbidService
       .allOutbids()
       .subscribe(
-        res => this.outs = res,
-        err => this.msg = err.json().message
+        res => {
+          this.outs = res;
+          this.modalService.hideLoader('block');
+        },
+        err => {
+          this.alert.show('danger', err.json().message);
+          this.modalService.hideLoader('block');
+        }
       )
   }
 

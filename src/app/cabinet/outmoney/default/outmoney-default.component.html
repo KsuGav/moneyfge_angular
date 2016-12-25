@@ -4,42 +4,60 @@
                 <h3>Withdrawing money</h3>
             </div>
 
-            <div class="text-center" *ngIf="accs && accs.length === 0">
-                <h1>You have no accounts yet.</h1>
-                <a [routerLink]="['/en/user/cabinet/score/create']">Create first</a>
-            </div>
+            <div id="block" class="info-block">
 
-            <div class="info-block">
-              <div class="alert alert-danger" *ngIf="msg">
-              {{ msg }}
-              </div>
-                <form class="mobile-pay-main" style="margin-top:40px" (submit)="submitForm($event)">
-                    <label>From Account</label>
-                    <div class="select" *ngIf="accs && accs.length > 0">
-                        <select required="" [(ngModel)]="account" name="account">
+              <no-account-component [show]="accs && accs.length === 0"></no-account-component>
+
+              <alert-component></alert-component>
+
+              <div *ngIf="accs && accs.length > 0">
+
+                <div class="row">
+
+                  <div class="col-md-4">
+
+                    <form (ngSubmit)="submitForm()" [formGroup]="form">
+
+                      <div [ngClass]="{'form-group': true, 'has-error': !(form.controls.from.valid || form.controls.from.pristine)}">
+                        <label class="control-label" for="from">From Account</label>
+                        <select id="from" required="required" name="from" class="form-control" formControlName="from">
                           <option *ngFor="let acc of accs" [value]="acc.id">{{acc.id}} - {{acc.currency}}</option>
                         </select>
-                    </div>
+                      </div>
 
-                    <label>To System</label>
-                    <div class="select">
-                        <select required="" [(ngModel)]="system" name="system">
-                            <option value="QiWi">QiWi</option>
+                      <div [ngClass]="{'form-group': true, 'has-error': !(form.controls.system.valid || form.controls.system.pristine)}">
+                        <label class="control-label" for="system">To System</label>
+                        <select id="system" required="required" name="system" class="form-control" formControlName="system">
+                          <option value="QiWi">QiWi</option>
                         </select>
-                    </div>
+                      </div>
 
-                    <label>System Account</label>
-                    <input type="text" required="" name="sysacc" [(ngModel)]="systemAccount" />
+                      <div [ngClass]="{'form-group': true, 'has-error': !(form.controls.to.valid || form.controls.to.pristine)}">
+                        <label class="control-label" for="to">System Account</label>
+                        <input id="to" type="text" required="" name="to" class="form-control" formControlName="to" />
+                      </div>
 
-                    <label>Sum</label>
-                    <input type="text" required="" name="sum" [(ngModel)]="sum" />
+                      <div [ngClass]="{'form-group': true, 'has-error': !(form.controls.sum.valid || form.controls.sum.pristine)}">
+                        <label class="control-label" for="sum">Sum</label>
+                        <input id="sum" type="number" required="" name="sum" class="form-control" formControlName="sum" />
+                      </div>
 
-                    <label>Comment</label>
-                    <textarea [(ngModel)]="descr" name="descr" required=""></textarea>
-                    <div class="center-sm">
-                        <button class="btn btn-accent">Save</button>
-                    </div>
-                </form>
+                      <div [ngClass]="{'form-group': true, 'has-error': !(form.controls.descr.valid || form.controls.descr.pristine)}">
+                        <label class="control-label" for="descr">Comment</label>
+                        <textarea id="descr" required="" name="descr" class="form-control" formControlName="descr"></textarea>
+                      </div>
+
+                      <div class="form-group">
+                        <button type="submit" class="btn btn-accent">Save</button>
+                      </div>
+
+                    </form>
+
+                  </div>
+
+                </div>
+
+              </div>
             </div>
         </div>
     </div>

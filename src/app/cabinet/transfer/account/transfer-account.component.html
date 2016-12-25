@@ -1,28 +1,53 @@
+<sms-code-dialog-component [id]="'trans'" [sms]="smsModel" (sendCode)="closeSmsDialog()"></sms-code-dialog-component>
+
 <div class="main">
   <div class="block-header">
     <h3>Withdrawing money</h3>
   </div>
   <div id="block" class="info-block">
-    <div class="alert alert-danger" *ngIf="msg">
-      {{ msg }}
+
+    <no-account-component [show]="accs && accs.length === 0"></no-account-component>
+
+    <alert-component></alert-component>
+
+    <div *ngIf="accs && accs.length > 0">
+
+      <div class="row">
+
+          <div class="col-md-4">
+
+            <form (ngSubmit)="submitForm()" [formGroup]="form">
+
+              <div [ngClass]="{'form-group': true, 'has-error': !(form.controls.from.valid || form.controls.from.pristine)}">
+                <label class="control-label" for="from">From Account</label>
+                <select id="from" required="required" name="from" class="form-control" formControlName="from">
+                  <option *ngFor="let acc of accs" [value]="acc.id">{{acc.id}} - {{acc.currency}}</option>
+                </select>
+              </div>
+
+              <div [ngClass]="{'form-group': true, 'has-error': !(form.controls.to.valid || form.controls.to.pristine)}">
+                <label class="control-label" for="to">To Account</label>
+                <input id="to" type="text" class="form-control" name="to" required="required"
+                       formControlName="to" />
+              </div>
+
+              <div [ngClass]="{'form-group': true, 'has-error': !(form.controls.sum.valid || form.controls.sum.pristine)}">
+                <label class="control-label" for="sum">To Account</label>
+                <input id="sum" type="number" class="form-control" name="sum" required="required"
+                       formControlName="sum" />
+              </div>
+
+              <div class="form-group">
+                <button type="submit" class="btn btn-accent">Save</button>
+              </div>
+
+            </form>
+
+          </div>
+
+      </div>
+
     </div>
-    <form class="mobile-pay-main" style="margin-top:40px" (submit)="submitForm($event)">
-      <label>From Account</label>
-      <div class="select" *ngIf="accs && accs.length > 0">
-        <select required="" [(ngModel)]="fromAccount" name="from-account">
-          <option *ngFor="let acc of accs" [value]="acc.id">{{acc.id}} - {{acc.currency}}</option>
-        </select>
-      </div>
 
-      <label>To Account</label>
-      <input type="text" required="" name="to-account" [(ngModel)]="toAccount" />
-
-      <label>Sum</label>
-      <input type="text" required="" name="sum" [(ngModel)]="sum" />
-
-      <div class="center-sm">
-        <button class="btn btn-accent">Save</button>
-      </div>
-    </form>
   </div>
 </div>

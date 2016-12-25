@@ -1,11 +1,11 @@
-import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { User } from '../../../../services/service.user';
 import { ModalService } from '../../../../services/modal.service';
-import { SubmitResult } from '../SubmitResult';
-import { ChangeEmailModel } from './ChangeEmailModel';
 import { SmsCodeDialogComponent } from '../../../../common/sms-code-dialog';
 import { SmsModel } from '../../../../common/sms-code-dialog/sms.model';
+import { AlertComponent } from '../../../../common/alert';
 
 declare const $: any;
 
@@ -15,29 +15,36 @@ declare const $: any;
 })
 export class EmailFormComponent implements OnInit {
 
-  @Output()
-  submitCompleted: EventEmitter<SubmitResult> = new EventEmitter<SubmitResult>();
-
   private user: any;
-
-  private emailValidator: string = '(.+)@(.+){2,}\.(.+){2,}';
-
-  private submitResult: SubmitResult = new SubmitResult();
-
-  private model: ChangeEmailModel = new ChangeEmailModel();
 
   private smsModel: SmsModel = new SmsModel();
 
-  @ViewChild(SmsCodeDialogComponent)
-  phoneCode: SmsCodeDialogComponent;
+  @ViewChild(SmsCodeDialogComponent) phoneCode: SmsCodeDialogComponent;
+
+  @ViewChild(AlertComponent) alert: AlertComponent;
+
+  private emailForm: FormGroup;
+
+  private history: number;
 
   constructor(
     private userService: User,
-    private modalService: ModalService
-  ) { }
+    private modalService: ModalService,
+    private fb: FormBuilder
+  ) {
+    this.createForm();
+  }
 
   ngOnInit() {
     this.getUser();
+  }
+
+  createForm() {
+    const emailValidator = '(.+)@(.+){2,}\.(.+){2,}';
+    this.emailForm = this.fb.group({
+      email: ['', [Validators.required, Validators.pattern(emailValidator)]],
+      password: ['', Validators.required]
+    });
   }
 
   getUser() {
@@ -46,34 +53,32 @@ export class EmailFormComponent implements OnInit {
       .subscribe(
         res => {
           this.user = res;
-          this.model.email = res.email;
-          this.submitCompleted.emit(this.submitResult);
+          this.emailForm.controls['email'].setValue(res.email);
         }
       )
     ;
   }
 
-  submitForm(event) {
-    event.preventDefault();
+  submitForm() {
+    if (!this.emailForm.valid) {
+      return;
+    }
     this.modalService.showLoader('email-form');
     this.userService
       .changeUserEmailStep1(
-        this.model.password,
-        this.model.email
+        this.emailForm.value.password,
+        this.emailForm.value.email
       )
       .subscribe(
         (res: any) => {
-          this.model.smsId = res.sms;
-          this.model.history = res.history;
-          this.modalService.hideLoader('email-form');
           this.smsModel.smsId = res.sms;
+          this.history = res.history;
+          this.modalService.hideLoader('email-form');
           this.phoneCode.openCode()
         },
         err => {
-          this.submitResult.type = 'danger';
-          this.submitResult.msg = err.json().message;
           this.modalService.hideLoader('email-form');
-          this.submitCompleted.emit(this.submitResult);
+          this.alert.show('danger', err.json().message);
         }
       )
     ;
@@ -84,27 +89,22 @@ export class EmailFormComponent implements OnInit {
       return;
     }
     this.modalService.showLoader('email-form');
-    this.model.code = +this.smsModel.smsCode;
     this.userService
       .changeUserEmailStep2(
-        this.model.smsId,
-        this.model.history,
-        this.model.code
+        this.smsModel.smsId,
+        this.history,
+        +this.smsModel.smsCode
       )
       .subscribe(
         () => {
-          this.submitResult.type = 'success';
-          this.submitResult.msg = 'You have to validate you email address. On your email has been sent link.';
           this.modalService.hideLoader('email-form');
-          this.submitCompleted.emit(this.submitResult);
-          // this.getUser();
-          // this.model.password = '';
+          this.alert.show('success', 'You have to validate you email address. On your email has been sent link.');
+          this.emailForm.reset();
+          this.getUser();
         },
         err => {
-          this.submitResult.type = 'danger';
-          this.submitResult.msg = err.json().message;
           this.modalService.hideLoader('email-form');
-          this.submitCompleted.emit(this.submitResult);
+          this.alert.show('danger', err.json().message);
         }
       )
     ;

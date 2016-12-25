@@ -1,30 +1,31 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { AfterViewInit, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+
 import { AccountService } from '../../../services/account.service';
 import { ModalService } from '../../../services/modal.service';
+import { ConfirmDialogComponent } from '../../../common/confirm-dialog';
+import { SmsCodeDialogComponent } from '../../../common/sms-code-dialog';
+import { SmsModel } from '../../../common/sms-code-dialog/sms.model';
+import { AlertComponent } from '../../../common/alert';
 
 declare const $: any;
 
 @Component({
   selector: 'score-index-component',
-  templateUrl: './score-index.component.html',
-  encapsulation: ViewEncapsulation.None,
-  styleUrls: []
+  templateUrl: './score-index.component.html'
 })
 export class ScoreIndexComponent implements OnInit, AfterViewInit, OnDestroy {
 
-  private smsCode: string;
+  @ViewChild(ConfirmDialogComponent) confirm: ConfirmDialogComponent;
 
-  private smsId: number;
+  @ViewChild(SmsCodeDialogComponent) smsCode: SmsCodeDialogComponent;
 
-  private smsDialog;
+  @ViewChild(AlertComponent) alert: AlertComponent;
 
-  private confirmDialog;
+  private smsModel: SmsModel = new SmsModel();
 
   private cards;
-
-  private msg: string;
 
   private accId: number;
 
@@ -37,8 +38,7 @@ export class ScoreIndexComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.smsDialog = $('#account-sms-dialog');
-    this.confirmDialog = $('#account-confirm-dialog');
+
   }
 
   ngAfterViewInit() {
@@ -61,7 +61,7 @@ export class ScoreIndexComponent implements OnInit, AfterViewInit, OnDestroy {
           this.modalService.hideLoader('locked');
         },
         err => {
-          this.msg = err.json().message;
+          this.alert.show('danger', err.json().message);
           this.modalService.hideLoader('block');
           this.modalService.hideLoader('active');
           this.modalService.hideLoader('locked');
@@ -70,10 +70,24 @@ export class ScoreIndexComponent implements OnInit, AfterViewInit, OnDestroy {
     ;
   }
 
-  lockAccount(event, accId) {
+  openConfirm(event, accId) {
     event.preventDefault();
     this.accId = accId;
-    this.confirmDialog.modal('show');
+    this.confirm.open();
+  }
+
+  lockAccount() {
+    this.modalService.showLoader('active');
+    this.accountService
+      .lockAccount(this.accId)
+      .subscribe(
+        () => this.getAccounts(),
+        err => {
+          this.alert.show('danger', err.json().message);
+          this.modalService.hideLoader('active');
+        }
+      )
+    ;
   }
 
   unlockAccount(event, accId) {
@@ -83,60 +97,33 @@ export class ScoreIndexComponent implements OnInit, AfterViewInit, OnDestroy {
     this.accountService
       .unlockAccountStep1(accId)
       .subscribe(
-        res => {
+        (res: any) => {
           this.modalService.hideLoader('locked');
-          this.smsId = res.sms;
-          this.smsDialog.modal('show');
+          this.smsModel.smsId = res.sms;
+          this.smsCode.openCode();
         },
         err => {
-          this.msg = err.json().message;
+          this.alert.show('danger', err.json().message);
           this.modalService.hideLoader('locked');
         }
       )
     ;
-
-    this.smsDialog.modal('show');
   }
 
   closeSmsDialog() {
-    this.smsDialog.modal('hide');
     this.modalService.showLoader('locked');
-    const code = this.smsCode;
-    this.smsCode = '';
-    if (code && parseInt(code, 10) !== NaN) {
-      this.accountService
-        .unlockAccountStep2(this.accId, this.smsId, +code)
-        .subscribe(
-          () => {
-            this.getAccounts();
-          },
-          err => {
-            this.msg = err.json().message;
-            this.modalService.hideLoader('locked');
-          }
-        )
-      ;
-    }
-
-  }
-
-  closeConfirmDialog() {
-    this.confirmDialog.modal('hide');
-    this.modalService.showLoader('active');
     this.accountService
-      .lockAccount(this.accId)
+      .unlockAccountStep2(this.accId, this.smsModel.smsId, +this.smsModel.smsCode)
       .subscribe(
-        () => this.getAccounts(),
+        () => {
+          this.getAccounts();
+        },
         err => {
-          this.msg = err.json().message;
-          this.modalService.hideLoader('active');
+          this.alert.show('danger', err.json().message);
+          this.modalService.hideLoader('locked');
         }
       )
     ;
-  }
-
-  cancelConfirmDialog() {
-    this.confirmDialog.modal('hide');
   }
 
 }

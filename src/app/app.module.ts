@@ -1,6 +1,6 @@
 import { NgModule, ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
@@ -55,15 +55,18 @@ import { OutmoneyDefaultComponent } from './cabinet/outmoney/default';
 import { OutmoneyListComponent } from './cabinet/outmoney/list';
 import { CabinetSettingsComponent } from './cabinet/settings';
 import { SettingsProfileComponent } from './cabinet/settings/profile';
-
-import { SmsCodeDialogComponent } from './common/sms-code-dialog/sms-code-dialog.component';
-import { ConfirmDialogComponent } from './common/confirm/confirm-dialog.component';
-import { AlertDialogComponent } from './common/alert-dialog/alert-dialog.component';
-import { LinkCounterComponent } from './common/link-counter/link-counter.component';
-
 import { PhoneFormComponent } from './cabinet/settings/profile/phone-form';
 import { EmailFormComponent } from './cabinet/settings/profile/email-form';
 import { SettingsPasswordComponent } from './cabinet/settings/password';
+
+import { NoAccountComponent } from './cabinet/common/no-account';
+
+import { SmsCodeDialogComponent } from './common/sms-code-dialog/sms-code-dialog.component';
+import { ConfirmDialogComponent } from './common/confirm-dialog';
+import { AlertDialogComponent } from './common/alert-dialog/alert-dialog.component';
+import { LinkCounterComponent } from './common/link-counter/link-counter.component';
+import { AlertComponent } from './common/alert';
+
 import { NoContentComponent } from './no-content';
 
 // Application wide providers
@@ -120,20 +123,24 @@ type StoreType = {
     , OutmoneyListComponent
     , CabinetSettingsComponent
     , SettingsProfileComponent
-
-    ,SmsCodeDialogComponent
-    ,ConfirmDialogComponent
-    ,AlertDialogComponent
-    ,LinkCounterComponent
-
     , PhoneFormComponent
     , EmailFormComponent
     , SettingsPasswordComponent
+
+    , SmsCodeDialogComponent
+    , ConfirmDialogComponent
+    , AlertDialogComponent
+    , LinkCounterComponent
+    , AlertComponent
+
+    , NoAccountComponent
+
     , NoContentComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     RouterModule.forRoot(ROUTES, { useHash: false, preloadingStrategy: PreloadAllModules })
   ],

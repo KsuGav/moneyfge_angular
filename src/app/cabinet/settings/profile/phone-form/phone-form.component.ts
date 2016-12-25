@@ -1,12 +1,10 @@
-import { Component, OnInit, EventEmitter, Output, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-import { ChangePhoneModel } from './ChangePhoneModel';
 import { User } from '../../../../services/service.user';
 import { ModalService } from '../../../../services/modal.service';
-import { SubmitResult } from '../SubmitResult';
 import { SmsModel } from '../../../../common/sms-code-dialog/sms.model';
-
-
+import { AlertComponent } from '../../../../common/alert';
 import { SmsCodeDialogComponent } from '../../../../common/sms-code-dialog/sms-code-dialog.component';
 
 declare const $: any;
@@ -17,29 +15,36 @@ declare const $: any;
 })
 export class PhoneFormComponent implements OnInit {
 
-  @Output()
-  submitCompleted: EventEmitter<SubmitResult> = new EventEmitter<SubmitResult>();
+  @ViewChild(SmsCodeDialogComponent) phoneCode: SmsCodeDialogComponent;
+
+  @ViewChild(AlertComponent) alert: AlertComponent;
 
   private smsModel: SmsModel = new SmsModel();
 
+  private history: number;
+
   private user;
 
-  private phoneValidator: string = '[0-9]+';
-
-  private model = new ChangePhoneModel();
-
-  private submitResult: SubmitResult = new SubmitResult();
-
-  @ViewChild(SmsCodeDialogComponent)
-  phoneCode: SmsCodeDialogComponent;
+  private phoneForm: FormGroup;
 
   constructor(
     private userService: User,
-    private modalService: ModalService
-  ) { }
+    private modalService: ModalService,
+    private fb: FormBuilder
+  ) {
+    this.createForm();
+  }
 
   ngOnInit() {
     this.getUser();
+  }
+
+  createForm() {
+    this.phoneForm = this.fb.group({
+      oldNumber: ['', [Validators.required, Validators.pattern('[0-9]+')]],
+      newNumber: ['', [Validators.required, Validators.pattern('[0-9]+')]],
+      password: ['', Validators.required]
+    });
   }
 
   getUser() {
@@ -48,36 +53,34 @@ export class PhoneFormComponent implements OnInit {
       .subscribe(
         res => {
           this.user = res;
-          this.model.oldNumber = res.telephone;
-          this.model.newNumber = '';
-          this.model.password = '';
+          this.phoneForm.controls['oldNumber'].setValue(res.telephone);
         }
       )
     ;
   }
 
   submitForm(event) {
+    if (!this.phoneForm.valid) {
+      return;
+    }
     event.preventDefault();
     this.modalService.showLoader('phone-form');
     this.userService
       .changeUserNumberStep1(
-        this.model.password,
-        this.model.oldNumber,
-        this.model.newNumber
+        this.phoneForm.value.password,
+        this.phoneForm.value.oldNumber,
+        this.phoneForm.value.newNumber
       )
       .subscribe(
         (res: any) => {
-          this.model.smsId = res.sms;
-          this.model.history = res.history;
-          this.modalService.hideLoader('phone-form');
+          this.history = res.history;
           this.smsModel.smsId = res.sms;
+          this.modalService.hideLoader('phone-form');
           this.phoneCode.openCode()
         },
         err => {
-          this.submitResult.type = 'danger';
-          this.submitResult.msg = err.json().message;
           this.modalService.hideLoader('phone-form');
-          this.submitCompleted.emit(this.submitResult);
+          this.alert.show('danger', err.json().message);
         }
       )
     ;
@@ -88,26 +91,22 @@ export class PhoneFormComponent implements OnInit {
       return;
     }
     this.modalService.showLoader('phone-form');
-    this.model.smsCode = +this.smsModel.smsCode;
     this.userService
       .changeUserNumberStep2(
-        this.model.smsId,
-        this.model.history,
-        this.model.smsCode
+        this.smsModel.smsId,
+        this.history,
+        +this.smsModel.smsCode
       )
       .subscribe(
         () => {
-          this.submitResult.type = 'success';
-          this.submitResult.msg = 'Telephone updated successfully';
-          this.submitCompleted.emit(this.submitResult);
           this.modalService.hideLoader('phone-form');
-          // this.getUser();
+          this.alert.show('success', 'Telephone updated successfully');
+          this.phoneForm.reset();
+          this.getUser();
         },
         err => {
-          this.submitResult.type = 'danger';
-          this.submitResult.msg = err.json().message;
-          this.submitCompleted.emit(this.submitResult);
           this.modalService.hideLoader('phone-form');
+          this.alert.show('danger', err.json().message);
         }
       )
     ;

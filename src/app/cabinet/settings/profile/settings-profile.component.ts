@@ -3,9 +3,6 @@ import { AfterViewInit, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalService } from '../../../services/modal.service';
 import { User } from '../../../services/service.user';
-import { SubmitResult } from './SubmitResult';
-
-// import { ConfirmDialogComponent } from '../../../common/confirm/confirm-dialog.component'
 
 declare const $: any;
 
@@ -17,29 +14,27 @@ export class SettingsProfileComponent implements OnInit, AfterViewInit, OnDestro
 
   private user;
 
-  private email: string;
-
   private isCheckSms: boolean;
 
   private msg: string;
 
   private msgType: string = '';
 
-  private isAlertOpen: boolean = false;
-
-  // @ViewChild(ConfirmDialogComponent) confirmDialog: ConfirmDialogComponent;
+  private isAlert: boolean = false;
 
   constructor(
     public router: Router,
     private modalService: ModalService,
     private userService: User
 
-  ) {
-
-  }
+  ) { }
 
   ngOnInit() {
     $('[data-toggle="tooltip"]').tooltip();
+    this.getUser();
+  }
+
+  getUser() {
     this.modalService.showLoader('block');
     this.userService
       .getUser()
@@ -62,7 +57,7 @@ export class SettingsProfileComponent implements OnInit, AfterViewInit, OnDestro
   }
 
   closeAlert() {
-    this.isAlertOpen = false;
+    this.isAlert = false;
   }
 
   isCheckSmsChange(event) {
@@ -77,36 +72,17 @@ export class SettingsProfileComponent implements OnInit, AfterViewInit, OnDestro
           this.msgType = 'success';
           this.msg = 'Changes saved successfully';
           this.modalService.hideLoader('block');
-          this.isAlertOpen = true;
+          this.isAlert = true;
         },
         (err: any) => {
           event.target.checked = this.isCheckSms;
           this.msgType = 'danger';
           this.msg = err.json().message;
           this.modalService.hideLoader('block');
-          this.isAlertOpen = true;
+          this.isAlert = true;
         }
       )
     ;
   }
 
-  phoneUpdateCompleted(data: SubmitResult) {
-    this.msgType = data.type;
-    this.msg = data.msg;
-    this.isAlertOpen = true;
-  }
-
-  emailUpdateCompleted(data: SubmitResult) {
-    this.msgType = data.type;
-    this.msg = data.msg;
-    this.isAlertOpen = true;
-  }
-
-  // openCode(){
-  //   this.confirmDialog.openCode()
-  // }
-
-  // showCode(event){
-  //   console.log(event);
-  // }
 }
