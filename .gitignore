@@ -1,5 +1,8 @@
 # @AngularClass
 
+# translations
+messages.xlf
+
 # Logs
 logs
 *.log

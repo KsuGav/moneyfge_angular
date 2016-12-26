@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="9d1e08c6f5e0b1a5d2b7d74e7f9d8a6a3d085bab" datatype="html">
+        <source>WORLD FGE</source>
+        <target>Мир FGE</target>
+      </trans-unit>
+      <trans-unit id="6875bab07c9bb276ae1e5b940ea339b7dc47adad" datatype="html">
+        <source>EXCHANGE MARKET FGE</source>
+        <target>Рынок обмена FGE</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

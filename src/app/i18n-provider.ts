@@ -6,8 +6,8 @@ export function getTranslationProviders(): Object[]{
 
   //Load messages by webpack
   let translations = {
-    'ru' : require('.locale/messages.ru.xlf'),
-    'ua' : require('.locale/messages.ua.xlf')
+    'ru' : require('./locale/messages.ru.xlf'),
+    'ua' : require('./locale/messages.ua.xlf')
   };
 
   //No locale, no messages, or en: no translation providers
@@ -32,7 +32,8 @@ export function getTranslationProviders(): Object[]{
 
 function detectLocale( available: string[], base: string){
   let w: any = window;
-  let language = w.navigator.userLanguage || w.navigator.language;
+  // console.log(w.location.href);
+  let language = sessionStorage.getItem('locale') || w.navigator.language;
   if(language.indexOf('-') !== -1){
     language = language.split('-')[0];
   }

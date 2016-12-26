@@ -90,4 +90,11 @@ export class HomeHeaderComponent implements OnInit, AfterViewInit, OnDestroy {
     // Selectize
     $('select').selectize();
   }
+
+  changeLang(event, lang) {
+    event.preventDefault();
+    sessionStorage.setItem('locale', lang);
+    window.location.reload();
+    // console.log('Selected: ' + lang);
+  }
 }

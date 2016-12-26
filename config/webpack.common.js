@@ -139,6 +139,15 @@ module.exports = function (options) {
           exclude: [helpers.root('src/index.html')]
         },
 
+        /*
+         * Raw loader support for translations *.xlf files
+         * Returns file content as string
+         */
+        {
+          test: /\.xlf$/,
+          use: 'raw-loader'
+        },
+
         /* File loader for supporting images, for example, in CSS files.
          */
         {
