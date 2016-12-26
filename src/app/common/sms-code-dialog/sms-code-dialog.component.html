@@ -1,15 +1,15 @@
 <div id="{{ id }}-sms-dialog" class="modal" style="display: none;" >
   <div class="modal_beckground">
     <div class="modal_box">
-      <div class="modal_head">Confirm SMS Code</div>
+      <div class="modal_head" i18n>Confirm SMS Code</div>
       <div class="modal_body text-center">
-        <label>SMS code</label><br />
+        <label i18n>SMS code</label><br />
         <input type="text" required="required" style="text-align:center;" [(ngModel)]="sms.smsCode" (keypress)=changeValue($event) />
       </div>
       <div class="modal_footer">
         <link-counter-component (onClick)="sendAgain()"></link-counter-component>
 
-        <button class="btn btn-accent btn-big" (click)="closeSmsDialog()">Send</button>
+        <button class="btn btn-accent btn-big" (click)="closeSmsDialog()" i18n>Send</button>
 
         <div class="alert alert-danger" *ngIf="errorMsg">
           {{ errorMsg }}

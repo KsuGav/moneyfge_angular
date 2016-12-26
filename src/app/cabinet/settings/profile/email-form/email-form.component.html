@@ -5,21 +5,21 @@
 <form id="email-form" (ngSubmit)="submitForm()" [formGroup]="emailForm">
   <div [ngClass]="{'form-group': true, 'has-error': !(emailForm.controls.email.valid || emailForm.controls.email.pristine)}">
     <label class="control-label" for="email">
-      Email
-      <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" title="Valid email address"></i>
+      <span i18n>Email</span>
+      <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" i18n-title title="Valid email address"></i>
     </label>
     <input id="email" type="email" required="required" placeholder="You email address" name="email" class="form-control"
-           formControlName="email" />
+           formControlName="email" i18n-placeholder />
   </div>
   <div [ngClass]="{'form-group': true, 'has-error': !(emailForm.controls.password.valid || emailForm.controls.password.pristine)}">
     <label class="control-label" for="password">
-      Password
-      <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" title="your password"></i>
+      <span i18n>Password</span>
+      <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" i18n-title title="your password"></i>
     </label>
-    <input id="password" class="form-control" type="password" required="required" placeholder="You password" name="password"
+    <input id="password" class="form-control" type="password" required="required" i18n-placeholder placeholder="You password" name="password"
            formControlName="password" />
   </div>
   <div class="form-group">
-    <button type="submit" class="btn btn-accent btn-small" style="height: 30px">Save</button>
+    <button type="submit" class="btn btn-accent btn-small" style="height: 30px" i18n>Save</button>
   </div>
 </form>

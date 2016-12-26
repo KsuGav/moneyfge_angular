@@ -1,31 +1,31 @@
     <div class="col-lg-9 col-xs-12">
         <div class="main">
             <div class="block-header">
-                <h3>List outs</h3>
+                <h3 i18n>List outs</h3>
             </div>
 
             <div id="block" class="info-block">
 
               <div class="text-center" *ngIf="outs && outs.length === 0">
-                <h1>You have no items here.</h1>
-                <a [routerLink]="['/en/user/cabinet/outmoney']">Create first</a>
+                <h1 i18n>You have no items here.</h1>
+                <a [routerLink]="['/en/user/cabinet/outmoney']" i18n>Create first</a>
               </div>
 
               <alert-component></alert-component>
 
               <div *ngIf="outs && outs.length > 0">
-                <h3>Out Bids</h3>
+                <h3 i18n>Out Bids</h3>
                 <table class="table">
                   <thead>
                     <tr>
                       <th>#</th>
-                      <th>Account</th>
-                      <th>Sum</th>
-                      <th>Currency</th>
-                      <th>Created</th>
-                      <th>System</th>
-                      <th>System Account</th>
-                      <th>Status</th>
+                      <th i18n>Account</th>
+                      <th i18n>Sum</th>
+                      <th i18n>Currency</th>
+                      <th i18n>Created</th>
+                      <th i18n>System</th>
+                      <th i18n>System Account</th>
+                      <th i18n>Status</th>
                     </tr>
                   </thead>
                   <tbody>
