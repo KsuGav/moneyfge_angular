@@ -11,6 +11,7 @@
   "homepage": "https://github.com/angularclass/angular2-webpack-starter",
   "license": "MIT",
   "scripts": {
+    "i18n": "ng-xi18n",
     "build:dev": "webpack --config config/webpack.dev.js --progress --profile",
     "build:docker": "npm run build:prod && docker build -t angular2-webpack-start:latest .",
     "build:prod": "webpack --config config/webpack.prod.js  --progress --profile --bail",
@@ -62,6 +63,7 @@
   "dependencies": {
     "@angular/common": "2.2.1",
     "@angular/compiler": "2.2.1",
+    "@angular/compiler-cli": "2.2.1",
     "@angular/core": "2.2.1",
     "@angular/forms": "2.2.1",
     "@angular/http": "2.2.1",
@@ -123,7 +125,7 @@
     "tslint": "~3.15.1",
     "tslint-loader": "^2.1.5",
     "typedoc": "^0.5.0",
-    "typescript": "2.1.1",
+    "typescript": "~2.0.10",
     "url-loader": "^0.5.7",
     "v8-lazy-parse-webpack-plugin": "^0.3.0",
     "webpack": "2.1.0-beta.27",

@@ -39,7 +39,7 @@ export class LoggedInGuard implements CanActivate {
     return false;
   }
 
-  guestToken() {
+  guestToken(): any {
     const gToken = sessionStorage.getItem('gToken');
     if (gToken !== null) {
       return gToken;

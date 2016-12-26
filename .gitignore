@@ -4,6 +4,10 @@
 logs
 *.log
 
+# js
+src/**/*.js*
+src/**/*.metadata.json
+
 # Runtime data
 pids
 *.pid
