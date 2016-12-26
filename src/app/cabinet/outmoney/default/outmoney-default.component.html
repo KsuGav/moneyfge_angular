@@ -1,7 +1,7 @@
     <div class="col-lg-9 col-xs-12">
         <div class="main">
             <div class="block-header">
-                <h3>Withdrawing money</h3>
+                <h3 i18n>Withdrawing money</h3>
             </div>
 
             <div id="block" class="info-block">
@@ -19,36 +19,36 @@
                     <form (ngSubmit)="submitForm()" [formGroup]="form">
 
                       <div [ngClass]="{'form-group': true, 'has-error': !(form.controls.from.valid || form.controls.from.pristine)}">
-                        <label class="control-label" for="from">From Account</label>
+                        <label class="control-label" for="from" i18n>From Account</label>
                         <select id="from" required="required" name="from" class="form-control" formControlName="from">
                           <option *ngFor="let acc of accs" [value]="acc.id">{{acc.id}} - {{acc.currency}}</option>
                         </select>
                       </div>
 
                       <div [ngClass]="{'form-group': true, 'has-error': !(form.controls.system.valid || form.controls.system.pristine)}">
-                        <label class="control-label" for="system">To System</label>
+                        <label class="control-label" for="system" i18n>To System</label>
                         <select id="system" required="required" name="system" class="form-control" formControlName="system">
                           <option value="QiWi">QiWi</option>
                         </select>
                       </div>
 
                       <div [ngClass]="{'form-group': true, 'has-error': !(form.controls.to.valid || form.controls.to.pristine)}">
-                        <label class="control-label" for="to">System Account</label>
+                        <label class="control-label" for="to" i18n>System Account</label>
                         <input id="to" type="text" required="" name="to" class="form-control" formControlName="to" />
                       </div>
 
                       <div [ngClass]="{'form-group': true, 'has-error': !(form.controls.sum.valid || form.controls.sum.pristine)}">
-                        <label class="control-label" for="sum">Sum</label>
+                        <label class="control-label" for="sum" i18n>Sum</label>
                         <input id="sum" type="number" required="" name="sum" class="form-control" formControlName="sum" />
                       </div>
 
                       <div [ngClass]="{'form-group': true, 'has-error': !(form.controls.descr.valid || form.controls.descr.pristine)}">
-                        <label class="control-label" for="descr">Comment</label>
+                        <label class="control-label" for="descr" i18n>Comment</label>
                         <textarea id="descr" required="" name="descr" class="form-control" formControlName="descr"></textarea>
                       </div>
 
                       <div class="form-group">
-                        <button type="submit" class="btn btn-accent">Save</button>
+                        <button type="submit" class="btn btn-accent" i18n>Save</button>
                       </div>
 
                     </form>

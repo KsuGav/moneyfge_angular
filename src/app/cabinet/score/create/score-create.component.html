@@ -1,7 +1,7 @@
 <div class="col-lg-9 col-xs-12">
   <div class="main">
     <div class="block-header">
-        <h3>Create account</h3>
+        <h3 i18n>Create account</h3>
     </div>
     <div id="block" class="info-block">
 
@@ -10,7 +10,7 @@
       </div>
 
       <form class="mobile-pay-main" style="margin-top: 40px">
-        <label>Currency</label>
+        <label i18n>Currency</label>
         <div class="select">
           <select required="" name="currency" [(ngModel)]="currency">
             <option value="USD">USD</option>
@@ -20,7 +20,7 @@
           </select>
         </div>
         <div class="center-sm">
-          <button type="button" class="btn btn-accent" (click)="submitForm()">Create</button>
+          <button type="button" class="btn btn-accent" (click)="submitForm()" i18n>Create</button>
         </div>
       </form>
     </div>

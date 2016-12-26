@@ -22,7 +22,7 @@
     <div class="main">
 
         <div class="block-header">
-            <h3>My Accounts</h3>
+            <h3 i18n>My Accounts</h3>
         </div>
 
         <div id="block" class="info-block">
@@ -32,16 +32,16 @@
           <no-account-component [show]="cards && cards.active.length === 0 && cards.lock.length === 0 && cards.deleted.length === 0"></no-account-component>
 
             <div *ngIf="cards && cards.active.length > 0">
-              <h3>Active Accounts</h3>
+              <h3 i18n>Active Accounts</h3>
               <table id="active" class="table">
                 <thead>
                   <tr>
                     <th>#</th>
-                    <th>Account</th>
-                    <th>Created</th>
-                    <th>Currency</th>
-                    <th>Balance</th>
-                    <th>Actions</th>
+                    <th i18n>Account</th>
+                    <th i18n>Created</th>
+                    <th i18n>Currency</th>
+                    <th i18n>Balance</th>
+                    <th i18n>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -52,7 +52,7 @@
                     <td>{{ card.currency }}</td>
                     <td>{{ card.sum.toFixed(2) }}</td>
                     <td style="font-size: 12px">
-                      <a href="#" (click)="openConfirm($event, card.id)">Lock</a>
+                      <a href="#" (click)="openConfirm($event, card.id)" i18n>Lock</a>
                     </td>
                   </tr>
                 </tbody>
@@ -60,16 +60,16 @@
             </div>
 
             <div *ngIf="cards && cards.lock.length > 0">
-              <h3>Lock Accounts</h3>
+              <h3 i18n>Lock Accounts</h3>
               <table id="locked" class="table">
                 <thead>
                   <tr>
                     <th>#</th>
-                    <th>Account</th>
-                    <th>Created</th>
-                    <th>Currency</th>
-                    <th>Balance</th>
-                    <th>Actions</th>
+                    <th i18n>Account</th>
+                    <th i18n>Created</th>
+                    <th i18n>Currency</th>
+                    <th i18n>Balance</th>
+                    <th i18n>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -80,7 +80,7 @@
                     <td>{{ card.currency }}</td>
                     <td>{{ card.sum.toFixed(2) }}</td>
                     <td style="font-size: 12px">
-                      <a href="#" (click)="unlockAccount($event, card.id)">Unlock</a>
+                      <a href="#" (click)="unlockAccount($event, card.id)" i18n>Unlock</a>
                     </td>
                   </tr>
                 </tbody>
@@ -88,15 +88,15 @@
             </div>
 
             <div *ngIf="cards && cards.deleted.length > 0">
-              <h3>Deleted Accounts</h3>
+              <h3 i18n>Deleted Accounts</h3>
               <table class="table">
                 <thead>
                   <tr>
                     <th>#</th>
-                    <th>Account</th>
-                    <th>Created</th>
-                    <th>Currency</th>
-                    <th>Balance</th>
+                    <th i18n>Account</th>
+                    <th i18n>Created</th>
+                    <th i18n>Currency</th>
+                    <th i18n>Balance</th>
                   </tr>
                 </thead>
                 <tbody>
