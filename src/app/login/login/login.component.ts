@@ -66,7 +66,7 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
             this.appState.set('username', res.username);
             this.appState.set('password', res.password);
 
-            this.router.navigate(['/en/user/sign-in/confirm']);
+            this.router.navigate(['/user/sign-in/confirm']);
             return;
           }
           if ('error' in res) {
@@ -77,7 +77,7 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
           sessionStorage.setItem('aToken', res.access_token);
           sessionStorage.setItem('loggedIn', 'true');
 
-          this.router.navigate(['/en/user/cabinet']);
+          this.router.navigate(['/user/cabinet']);
           return;
         },
         (err: any) => {

@@ -81,7 +81,7 @@ export class TransferAccountComponent implements OnInit, AfterViewInit, OnDestro
         +this.smsModel.smsCode
       )
       .subscribe(
-        () => this.router.navigate(['/en/user/cabinet/score/index']),
+        () => this.router.navigate(['/user/cabinet/score/index']),
         err => {
           this.modalService.hideLoader('block');
           this.alert.show('danger', err.json().message);

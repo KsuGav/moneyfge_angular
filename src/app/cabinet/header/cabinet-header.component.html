@@ -4,12 +4,12 @@
       <div class="row">
         <div class="col-lg-8 col-xs-12">
           <ul class="main-menu">
-            <li [ngClass]="{'active': activeLink === 'cabinet'}"><a [routerLink]="['/en/user/cabinet']" (click)="cabinetClick()"><i class="fa fa-home"></i></a></li>
-            <li [ngClass]="{'active': activeLink === 'categories'}"><a [routerLink]="['/en/user/cabinet/categories']" (click)="paymentClick()"><i class="fa fa-credit-card"></i> <span i18n>Payment</span></a></li>
-            <li [ngClass]="{'active': activeLink === 'transfer'}"><a [routerLink]="['/en/user/cabinet/transfer/index']" (click)="transferClick()"><i class="fa fa-bars"></i> <span i18n>Transfers</span></a></li>
-            <li [ngClass]="{'active': activeLink === 'fill'}"><a [routerLink]="['/en/user/cabinet/fill']" (click)="fillClick()"><i class="fa fa-dollar"></i> <span i18n>Replenishment</span></a></li>
-            <li [ngClass]="{'active': activeLink === 'index'}"><a [routerLink]="['/en/user/cabinet/score/index']" (click)="scoreClick()"><i class="fa fa-money"></i> <span i18n>My cards</span></a></li>
-            <li [ngClass]="{'active': activeLink === 'outmoney'}"><a [routerLink]="['/en/user/cabinet/outmoney']" (click)="outmoneyClick()"><i class="fa fa-ticket"></i> <span i18n>Cashouts</span></a></li>
+            <li [ngClass]="{'active': activeLink === 'cabinet'}"><a [routerLink]="['/user/cabinet']" (click)="cabinetClick()"><i class="fa fa-home"></i></a></li>
+            <li [ngClass]="{'active': activeLink === 'categories'}"><a [routerLink]="['/user/cabinet/categories']" (click)="paymentClick()"><i class="fa fa-credit-card"></i> <span i18n>Payment</span></a></li>
+            <li [ngClass]="{'active': activeLink === 'transfer'}"><a [routerLink]="['/user/cabinet/transfer/index']" (click)="transferClick()"><i class="fa fa-bars"></i> <span i18n>Transfers</span></a></li>
+            <li [ngClass]="{'active': activeLink === 'fill'}"><a [routerLink]="['/user/cabinet/fill']" (click)="fillClick()"><i class="fa fa-dollar"></i> <span i18n>Replenishment</span></a></li>
+            <li [ngClass]="{'active': activeLink === 'index'}"><a [routerLink]="['/user/cabinet/score/index']" (click)="scoreClick()"><i class="fa fa-money"></i> <span i18n>My cards</span></a></li>
+            <li [ngClass]="{'active': activeLink === 'outmoney'}"><a [routerLink]="['/user/cabinet/outmoney']" (click)="outmoneyClick()"><i class="fa fa-ticket"></i> <span i18n>Cashouts</span></a></li>
           </ul>
         </div>
         <div class="col-lg-2 col-sm-4 col-xs-12">
@@ -32,7 +32,7 @@
                   <li><a class="under-construction" href="#"><i class="fa fa-history"></i> <span i18n>History</span></a></li>
                   <li><a class="under-construction" href="#"><i class="fa fa-gift"></i> <span i18n>Bonus</span></a></li>
                   <li><a class="under-construction" href="#"><i class="fa fa-info"></i> <span i18n>Help</span></a></li>
-                  <li><a [routerLink]="['/en/user/cabinet/settings/profile']"><i class="fa fa-gear"></i> <span i18n>Settings</span></a></li>
+                  <li><a [routerLink]="['/user/cabinet/settings/profile']"><i class="fa fa-gear"></i> <span i18n>Settings</span></a></li>
                 </ul>
               </div>
             </div>

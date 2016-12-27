@@ -46,7 +46,7 @@ export class ScoreCreateComponent implements OnInit, AfterViewInit, OnDestroy {
     this.accountService
       .createCard(this.currency, this.types)
       .subscribe(
-        () => this.router.navigate(['/en/user/cabinet/score/index']),
+        () => this.router.navigate(['/user/cabinet/score/index']),
         (error: any) => {
            this.msg = error.json().message;
            this.modalService.hideLoader('block');

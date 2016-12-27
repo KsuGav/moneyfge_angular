@@ -85,7 +85,7 @@ export class SiteConfirmComponent implements OnInit, OnDestroy, AfterViewInit {
       .registStep2(this.code, this.appState.get('telephone'))
       .subscribe(
         res => {
-          this.router.navigate(['/en/site/password']);
+          this.router.navigate(['/site/password']);
           return;
         },
         err => this.errorMsg = err.json().message

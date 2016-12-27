@@ -56,7 +56,7 @@ export class SiteRegisterComponent implements OnInit, AfterViewInit {
           this.modalService.hideLoader('form');
           this.appState.set('telephone', res.telephone);
           this.appState.set('sms', res.sms);
-          this.router.navigate(['/en/site/confirm']);
+          this.router.navigate(['/site/confirm']);
           return;
         },
         err => {

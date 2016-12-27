@@ -27,7 +27,7 @@ export class LoggedInGuard implements CanActivate {
       sessionStorage.removeItem('aToken');
       sessionStorage.setItem('loggedIn', 'false');
       this.appState.set('user', null);
-      this.router.navigate(['/en/user/sign-in/login']);
+      this.router.navigate(['/user/sign-in/login']);
     }
   }
 
@@ -35,7 +35,7 @@ export class LoggedInGuard implements CanActivate {
     if (this.isLoggedIn()) {
       return true;
     }
-    this.router.navigate(['/en/user/sign-in/login']);
+    this.router.navigate(['/user/sign-in/login']);
     return false;
   }
 

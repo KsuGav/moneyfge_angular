@@ -54,7 +54,7 @@ export class SiteRecoveryComponent implements OnInit,AfterViewInit {
       .subscribe(
         res => {
           this.modalService.hideLoader('recovery-form');
-          this.router.navigate(['/en/user/sign-in/login']);
+          this.router.navigate(['/user/sign-in/login']);
         },
         err => {
           this.errorMsg = err.json().message;
