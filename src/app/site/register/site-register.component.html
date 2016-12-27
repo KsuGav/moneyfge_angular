@@ -2,11 +2,11 @@
   <div class="logo"><img src="assets/img/logo1.png" alt="Logo" style="width:20%!important;"></div>
   <div class="info-block widget login-widget">
     <div class="block-header">
-      <h3 i18n>REGISTRATION</h3>
+      <h3 i18n>Registration</h3>
     </div>
     <div id="form" class="info-block-content">
       <form (submit)="register($event)">
-        <div class="alert alert-danger" *ngIf="errorMsg" i18n>
+        <div class="alert alert-danger" *ngIf="errorMsg">
           {{ errorMsg }}
         </div>
         <label i18n>Enter your phone number</label>
@@ -16,7 +16,7 @@
         </div>
         <button type="submit" class="btn btn-accent btn-big" i18n>Continue</button>
       </form>
-      <a [routerLink]="['']" class="back"><i class="fa fa-chevron-left"></i><span i18n> Back</span></a>
+      <a [routerLink]="['']" class="back"><i class="fa fa-chevron-left"></i> <span i18n>Back</span></a>
     </div>
   </div>
 </header>

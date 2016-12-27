@@ -1,4 +1,5 @@
-<a (click)="counter()" [ngClass]="{ disabled : secs > 0 && secs < 60 }" style="font-size: 12px; text-decoration: underline; cursor: pointer; margin-bottom: 13px; color: black" >
+<a (click)="counter()" [ngClass]="{ disabled : secs > 0 && secs < 60 }"
+   style="font-size: 12px; text-decoration: underline; cursor: pointer; margin-bottom: 13px; color: black" >
   <span i18n>Send again</span>
   <span *ngIf=" secs > 0 && secs < 60 ">( {{ secs }} )</span>
   </a>

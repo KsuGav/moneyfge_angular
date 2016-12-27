@@ -12,15 +12,11 @@
       {{ msg }}
     </div>
 
-    <!--<confirm-dialog-component (sendCode)="showCode($event)" [message]="'Are you sure?'" ></confirm-dialog-component>-->
-
     <div style="margin-top: 40px">
 
       <div class="table">
         <div class="table-row">
-          <div class="table-cell" i18n>
-            SMS of the deposits and the expenses
-          </div>
+          <div class="table-cell" i18n>SMS of the deposits and the expenses</div>
           <div class="table-cell">
             <input type="checkbox" id="sms-check" [checked]="isCheckSms" (click)="isCheckSmsChange($event)" />
           </div>

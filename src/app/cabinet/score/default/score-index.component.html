@@ -1,18 +1,3 @@
-<!--<div id="account-sms-dialog" class="modal" style="display: none;">-->
-  <!--<div class="modal_beckground">-->
-    <!--<div class="modal_box">-->
-      <!--<div class="modal_head">Confirm SMS Code</div>-->
-      <!--<div class="modal_body text-center">-->
-        <!--<label>SMS code</label><br />-->
-        <!--<input type="text" required="required" [(ngModel)]="smsCode" style="text-align:center;" />-->
-      <!--</div>-->
-      <!--<div class="modal_footer">-->
-        <!--<button class="btn btn-accent btn-big" (click)="closeSmsDialog()">Send</button>-->
-      <!--</div>-->
-    <!--</div>-->
-  <!--</div>-->
-<!--</div>-->
-
 <sms-code-dialog-component [id]="'unlock'" [sms]="smsModel" (sendCode)="closeSmsDialog()"></sms-code-dialog-component>
 
 <confirm-dialog-component [dialogId]="'lock'" [message]="'Are you sure?'"

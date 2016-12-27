@@ -8,8 +8,8 @@
       <span i18n>Email</span>
       <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" i18n-title title="Valid email address"></i>
     </label>
-    <input id="email" type="email" required="required" placeholder="You email address" name="email" class="form-control"
-           formControlName="email" i18n-placeholder />
+    <input id="email" type="email" required="required" i18n-placeholder placeholder="You email address" name="email" class="form-control"
+           formControlName="email" />
   </div>
   <div [ngClass]="{'form-group': true, 'has-error': !(emailForm.controls.password.valid || emailForm.controls.password.pristine)}">
     <label class="control-label" for="password">
