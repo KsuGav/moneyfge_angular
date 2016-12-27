@@ -8,19 +8,19 @@
       </trans-unit>
       <trans-unit id="1eb444364f1acf2cf51dc0d149b1940578ffaacd" datatype="html">
         <source>Instant online transfers into  more than 140 countries</source>
-        <target>Быстрые&lt;br class="hidden-sm hidden-xs"&gt;онлайн переводы&lt;br class="hidden-sm hidden-xs"&gt;&lt;small&gt;в более чем 140 стран&lt;/small&gt;</target>
+        <target>Швидкі онлайн перекази в більш ніж 140 країн</target>
       </trans-unit>
       <trans-unit id="ab29082293dd21b5d8c560e77c53b320e04f01e3" datatype="html">
         <source>Paying off your credits without visiting a bank branch</source>
-        <target>Быстрое&lt;br class="hidden-sm hidden-xs"&gt;закрытие кредитов&lt;br class="hidden-sm hidden-xs"&gt;&lt;small&gt;без посещения отделения банка&lt;/small&gt;</target>
+        <target>Швидке закриття кредитів без відвідування відділення банку</target>
       </trans-unit>
       <trans-unit id="3edef39f69f0b94b0abb1b9f41087031b6bbc46f" datatype="html">
         <source>Convenient online payments on utility bills</source>
-        <target>Быстрая&lt;br class="hidden-sm hidden-xs"&gt;и удобная онлайн оплата &lt;br class="hidden-sm hidden-xs"&gt;&lt;small&gt;коммунальных платежей&lt;/small&gt;</target>
+        <target>Швидка і зручна оплата комунальних платежів онлайн</target>
       </trans-unit>
       <trans-unit id="fa5739f8d3cf5941d598e6caa4d10d25fd56f3ac" datatype="html">
         <source>More than 1,000 online payment methods available in Turkey and all over the world</source>
-         <target>Более 1000 способов  &lt;br class=&quot;hidden-sm hidden-xs&quot;&gt;онлайн оплаты&lt;br class=&quot;hidden-sm hidden-xs&quot;&gt;&lt;small&gt;в Турции и по всему миру&lt;/small&gt;</target>
+         <target></target>
       </trans-unit>
       <trans-unit id="a67bd3d8a0cc79f96ceea456d75b35c828b778df" datatype="html">
         <source>Payments due</source>
@@ -28,19 +28,19 @@
       </trans-unit>
       <trans-unit id="31364005f20ca564b326d700c4361c0f734b3e72" datatype="html">
         <source>Remittances</source>
-        <target>Денежные &lt;br class="hidden-sm hidden-xs"&gt;переводы</target>
+        <target>Грошові &lt;br class="hidden-sm hidden-xs"&gt;перекази</target>
       </trans-unit>
       <trans-unit id="46f93e44bd44a72c03e2e519e6a076239d1821be" datatype="html">
         <source>Credit payments</source>
-        <target>Погашения кредитов</target>
+        <target>Погашення кредитів</target>
       </trans-unit>
       <trans-unit id="d6e0e791264c6ab64c66a1286ec06a7a292febc3" datatype="html">
         <source>Bills</source>
-        <target>Коммунальные &lt;br class="hidden-sm hidden-xs"&gt;платежи</target>
+        <target>Коммунальні&lt;br class="hidden-sm hidden-xs"&gt;платежі</target>
       </trans-unit>
       <trans-unit id="a258e0741dafbe9aff5e0cef7b90d4a7f8bbefeb" datatype="html">
         <source>Online payments</source>
-        <target>Онлайн платежи</target>
+        <target>Онлайн платежі</target>
       </trans-unit>
       <trans-unit id="f9e44b74ae526bfb145f1c558227603cea99cf01" datatype="html">
         <source>Mobile payments:</source>
@@ -48,7 +48,7 @@
       </trans-unit>
       <trans-unit id="817a402ba80874cba70243a9bf00c0ef77bb6334" datatype="html">
         <source>Mobile Payment Service</source>
-        <target>Услуга оплаты мобильной связи</target>
+        <target>Послуга оплати мобільного зв'язку</target>
       </trans-unit>
       <trans-unit id="464631983f46ccad41bdaa080423325e60710668" datatype="html">
         <source>With this service, you can replenish/recharge your mobile phones accounts when you have access to the Internet, PC and mobile devices. This service can be used by contract customers and prepaid subscribers. All transactions with mobile payment accounts occur within minutes.</source>
@@ -60,11 +60,12 @@
       </trans-unit>
       <trans-unit id="80f4a01fc7c0cfb422f2eb5a3429f1fa9c6118d0" datatype="html">
         <source>Sending and receiving money quickly and securely</source>
-        <target>Передача и получение денежных средств быстро и надёжно</target>
+        <target>Передача і отримання грошових коштів швидко і надійно&#13;
+</target>
       </trans-unit>
       <trans-unit id="42eb50662321f5ff3e443925441c9b4114215838" datatype="html">
         <source>MoneyFGE performs various types of payments and transfers in various currencies and carries deposition and transfer funds. All transactions are done quickly, conveniently and securely. Receive and send money from any  location in  the world. In card or cash. Money transfer reach  destination  within a few minutes.</source>
-        <target>MoneyFGE производит разные виды платежей и переводов в различных валютах, также осуществляет операции по зачислению и переводу денежных средств. Все переводы происходят быстро, удобно и надёжно. Получать и отправлять денежные средства можно в любой точке мира. Это делается с помощью карты, либо наличными. Денежный перевод доступен для получения адресатом через несколько минут после его отправки.</target>
+        <target>MoneyFGE виконує різні види платежів і переказів у різних валютах, також здійснює операції по зарахуванню та переказу грошових коштів. Всі переклади відбуваються швидко, зручно та надійно. Одержувати і відправляти грошові кошти можна в будь-якій точці світу. Це робиться за допомогою картки, або готівкою. Грошовий переказ доступний для одержання адресатом через кілька хвилин після його відправлення.</target>
       </trans-unit>
       <trans-unit id="e02a0235e26fce6cdc2c6e4f6984ec745f501666" datatype="html">
         <source>Credit payments:</source>
@@ -72,11 +73,12 @@
       </trans-unit>
       <trans-unit id="2c3d5b6162df0f8005172c6fe45fa7365345d572" datatype="html">
         <source>To repay loans</source>
-        <target>Возможность погашения кредитов</target>
+        <target>Можливість погашення кредитів</target>
       </trans-unit>
       <trans-unit id="051c289a08b34d5d313cb9e8caf17bb9d487b29a" datatype="html">
         <source>Take advantage of our service of the loan. This is another opportunity for our payment system. Now you can on a monthly basis or to repay Your loan in online mode (interest or principal or other payments that match the terms of the loan agreement). To repay the loan, you can use computer or mobile phone.</source>
-        <target>Воспользуйтесь нашей услугой погашения кредита. Это ещё одна возможность нашей платёжной системы. Теперь вы можете ежемесячно или полностью погасить Ваш кредит в онлайн режиме (процентные начисления или основная часть долга, иные платежи, которые соответствуют условиям кредитного соглашения). Погасить кредит можно с помощью компьютера или мобильного телефона.</target>
+        <target>Скористайтесь нашою послугою погашення кредиту. Це ще одна можливість нашої платіжної системи. Тепер ви можете кожного місяця або повністю погашати кредит в онлайн режимі (процентні нарахування або основна частина боргу, інші платежі, які відповідають умовам кредитної угоди). Погасити кредит можна за допомогою комп’ютера і мобільного телефона, а також доступу до інтернету.&#13;
+</target>
       </trans-unit>
       <trans-unit id="2d6c69dc91bfc6ce365da306152e0631b64b6c30" datatype="html">
         <source>Bills:</source>
@@ -84,11 +86,12 @@
       </trans-unit>
       <trans-unit id="3f7c6fe65534ce468b938b2214795bf0b9369222" datatype="html">
         <source>Utility payments</source>
-        <target>Оплата коммунальных услуг</target>
+        <target>Оплата комунальних послуг</target>
       </trans-unit>
       <trans-unit id="dc351b7f006175be71ed2d9ad17b60b6085a1e54" datatype="html">
         <source>Our billing system allows you to pay your utility bills through the Internet. This can be done from home or office and only requires access to the Internet, no need to go to the bank branch. Operations are conducted instantly and reliably.</source>
-        <target>Наша платёжная система предоставляет возможность оплатить Ваши коммунальные услуги посредством интернета. Это можно сделать, находясь дома или в офисе и имея доступ к интернету, не нужно идти в отделение банка. Операции проводятся мгновенно и надёжно.</target>
+        <target>Наша платіжна система надає можливість оплатити Ваші комунальні послуги за допомогою інтернету. Це можна зробити, перебуваючи вдома або в офісі і маючи доступ до інтернету, не потрібно йти до відділення банку. Операції проводяться миттєво і надійно.&#13;
+</target>
       </trans-unit>
       <trans-unit id="3df669bed0d3658bdb53340c31d355e7363d0cb7" datatype="html">
         <source>Online payments:</source>
@@ -96,7 +99,7 @@
       </trans-unit>
       <trans-unit id="40a0d7237b44048e13ffffa2afa68e518069daec" datatype="html">
         <source>Online Payment Service</source>
-        <target>Услуга онлайн платежей</target>
+        <target>Послуга онлайн платежів </target>
       </trans-unit>
       <trans-unit id="29a431c144b5427194a7bc0acc93cfb5399dc545" datatype="html">
         <source>MoneyFGE payment system provides payment services via the Internet, television, telephony online. You can easily perform these operations without leaving home. This can be done from anywhere in the world with Internet access, a computer or mobile device.</source>
@@ -104,27 +107,27 @@
       </trans-unit>
       <trans-unit id="65005f7502e8b6c0a7fef4fbb314eb8735f6654a" datatype="html">
         <source>Our services</source>
-        <target>Услуги</target>
+        <target>Послуги</target>
       </trans-unit>
       <trans-unit id="abe30f8875230989d34c2768070d3772a313301d" datatype="html">
         <source>Mobile payments</source>
-        <target>Оплата мобильной связи</target>
+        <target>Оплата мобільного зв'язку</target>
       </trans-unit>
       <trans-unit id="e6a7915c03b80d42f34c47f944d3634b26ffe827" datatype="html">
         <source>Money transfer</source>
-        <target>Денежные переводы</target>
+        <target>Грошові перекази</target>
       </trans-unit>
       <trans-unit id="ca36e2bdb8c02d0f7c07a1f19d31d17cba6afbcc" datatype="html">
         <source>Games/Entertainment</source>
-        <target>Игры/Развлечения</target>
+        <target>Ігри/Розваги</target>
       </trans-unit>
       <trans-unit id="2a0260b32aee8fd146cb89015d0d34d5421289d7" datatype="html">
         <source>Internet / TV / Telephone</source>
-        <target>Интернет/ТВ/Телефония</target>
+        <target>Інтернет, ТБ, Телефонія</target>
       </trans-unit>
       <trans-unit id="9b475bb63675494482effde989c7f1f18c232620" datatype="html">
         <source>Contacts</source>
-        <target>Контакты</target>
+        <target>Контакти</target>
       </trans-unit>
       <trans-unit id="9d1e08c6f5e0b1a5d2b7d74e7f9d8a6a3d085bab" datatype="html">
         <source>WORLD FGE</source>
@@ -132,27 +135,27 @@
       </trans-unit>
       <trans-unit id="6875bab07c9bb276ae1e5b940ea339b7dc47adad" datatype="html">
         <source>EXCHANGE MARKET FGE</source>
-        <target>Биржа FGE</target>
+        <target>Біржа FGE</target>
       </trans-unit>
       <trans-unit id="eac5fa31f10a8803f6c2f94e0a8c6200f95c2842" datatype="html">
         <source>Current account</source>
-        <target>Текущий счёт</target>
+        <target>Поточний рахунок</target>
       </trans-unit>
       <trans-unit id="d8b69f5f3ff403286693aa2254adc34de9bf810d" datatype="html">
         <source>Recharge account</source>
-        <target>Пополнение счёта</target>
+        <target>Поповнення рахунку</target>
       </trans-unit>
       <trans-unit id="c484f3e14d47477125b60c977308ce81edc4dc5e" datatype="html">
         <source>Cashouts</source>
-        <target>Вывод средств</target>
+        <target>Вивід коштів</target>
       </trans-unit>
       <trans-unit id="cb949e87525f2b17c5bb7513b7a0a0e401d4a1d6" datatype="html">
         <source>Payment solutions</source>
-        <target>Платежные решения</target>
+        <target>Платіжні рішення</target>
       </trans-unit>
       <trans-unit id="d49a3cef33520010f9db5275721bede84dcda0fc" datatype="html">
         <source>Transfer from card to card</source>
-        <target>Перевод с карты на карту</target>
+        <target>Переказ з карти на карту</target>
       </trans-unit>
       <trans-unit id="2b210f7e594f9dd967e5a9dde43aa12fd685a072" datatype="html">
         <source>© Payment system «MoneyFGE™» 2016 TM is used under license holder MoneyFGE</source>
@@ -164,23 +167,27 @@
       </trans-unit>
       <trans-unit id="464277459576337f90a73c510b5c05d9119323c5" datatype="html">
         <source>About the company</source>
-        <target>О компании</target>
+        <target>Про компанію</target>
       </trans-unit>
       <trans-unit id="cc6bb133dd03bd1640c526665096129eed3025ff" datatype="html">
         <source>MoneyFGE is a  reliable, safe and modern internet platform to make online payments and money transfers.</source>
-        <target>MoneyFGE – надёжная, безопасная и современная интернет-платформа для осуществления онлайн-платежей и денежных переводов.</target>
+        <target>MoneyFGE - надійна, безпечна і сучасна інтернет-платформа для здійснення онлайн-платежів і грошових переказів.&#13;
+</target>
       </trans-unit>
       <trans-unit id="5dc36dc29a3f7b82c45289f60ee870b5365ca43a" datatype="html">
         <source>Our system is a universal payment tool that allows you to  transfer money  to and from your clients and pay for different services in different directions.</source>
-        <target>Наша система – это универсальный платёжный инструмент, который позволяет получать денежные переводы своим клиентам и платить за различные услуги в различных направлениях.</target>
+        <target>Наша система - це універсальний платіжний інструмент, який дозволяє отримувати грошові перекази своїм клієнтам і платити за різні послуги в різних напрямках.&#13;
+</target>
       </trans-unit>
       <trans-unit id="e8e816e0b4bd983971c102ecccba0ad7c1d43872" datatype="html">
         <source>With MoneyFGE is the rapid transfer of funds.</source>
-        <target>С помощью MoneyFGE происходит удобный приём платежей и быстрое зачисление средств.</target>
+        <target>За допомогою MoneyFGE відбувається швидке зарахування коштів.&#13;
+</target>
       </trans-unit>
       <trans-unit id="fd077bf951a87409b5e61b1edc5ec25b8ae8e262" datatype="html">
         <source>Our service is a convenient and easy platform for the transfer of funds to various popular payment methods and various services, including bank cards, mobile and online payments, utilities, repayment of loans, pay for games and entertainment, and more. All this can be done from anywhere in the world.</source>
-        <target>Наш сервис – это удобная и простая платформа для перевода денежных средств различными популярными способами и оплаты различных услуг, включая банковские карты, мобильные и онлайн платежи, оплата коммунальных услуг, погашение кредитов, оплата за игры и развлечения и многое другое. Всё это можно делать из любой точки мира.</target>
+        <target>Наш сервіс - це зручна і проста платформа для переказу грошових коштів різними популярними способами і оплати різних послуг, включаючи банківські карти, мобільні і онлайн платежі, оплату комунальних послуг, погашення кредитів, оплату за ігри та розваги і багато іншого. Все це можна робити з будь-якої точки світу.&#13;
+</target>
       </trans-unit>
       <trans-unit id="222fb65d5108cbf9c423936c626392b54e7d46c4" datatype="html">
         <source>All payment data in our system  is confidential.</source>
@@ -188,31 +195,36 @@
       </trans-unit>
       <trans-unit id="2e290ce9ae3538766d212811b959b2fa588dd973" datatype="html">
         <source>MoneyFGE offers the most favorable terms to its customers and is a handy assistant payments to your business.</source>
-        <target>MoneyFGE предлагает самые выгодные условия своим клиентам и является удобным помощником платежей для Вашего бизнеса.</target>
+        <target>MoneyFGE пропонує найвигідніші умови своїм клієнтам і є зручним помічником платежів для Вашого бізнесу.&#13;
+</target>
       </trans-unit>
       <trans-unit id="f9421eb17bf9a309ff16584b286a6463b2f91f66" datatype="html">
         <source>With this service, you can replenish their accounts of mobile phones when you have access to the Internet, PC and mobile devices. This service can be used by contract customers and prepaid subscribers. All transactions with mobile payment accounts occur within minutes. For the transaction enter your mobile phone number and the amount that you want to update your account with. This service is available to all operators. Use our service for mobile communications, it is convenient and easy!</source>
-        <target>С помощью этой услуги Вы можете пополнять счета мобильных телефонов при наличии доступа в интернет. Данной услугой могут пользоваться абоненты как контрактной, так и предоплаченной связи. Все операции по оплате мобильных счетов происходят в течении нескольких минут. Для осуществления операции достаточно выбрать оператора, ввести номер мобильного телефона и сумму, на которую желаете пополнить счёт. Эта услуга доступна для всех операторов. Воспользуйтесь нашей услугой оплаты мобильной связи, это удобно и просто!</target>
+        <target>З допомогою цієї послуги Ви можете поповнювати рахунки мобільних телефонів при наявності доступу в інтернет, комп'ютера і мобільних пристроїв. Даною послугою можуть користуватися абоненти як контрактні, так і  передплаченого зв'язку. Всі операції з оплати мобільних рахунків відбуваються протягом декількох хвилин. Для здійснення операції достатньо ввести номер мобільного телефону і суму, на яку бажаєте поповнити рахунок. Ця послуга доступна для всіх операторів. Скористайтеся нашою послугою оплати мобільного зв'язку, це зручно та просто!&#13;
+</target>
       </trans-unit>
       <trans-unit id="accae4a6b267c69a8f2cae27bbd2391a2136e718" datatype="html">
         <source>Mobile operators</source>
-        <target>Операторы мобильной связи</target>
+        <target>Оператори мобільного зв'язку</target>
       </trans-unit>
       <trans-unit id="346b5bf63ec25a4031a06bc44711b47d383b5403" datatype="html">
         <source>Commission</source>
-        <target>Комиссия</target>
+        <target>Комісія</target>
       </trans-unit>
       <trans-unit id="04f4ae6e5fe8fde1ea080ff98f967fd02be88c30" datatype="html">
         <source>MoneyFGE performs various types of payments and transfers in various currencies and carries deposition and transfer funds. All transactions are done quickly, conveniently and securely. Receive and send money from any location in the world.  By card or cash. Money transfer is able to reach  destination  within a few minutes. Our payment system offers its customers the optimum scheme of transfer of funds for you, your family and friends. In order to receive money you must have a passport or ID. To get all the information about currency transactions please contact our manager.</source>
-        <target>MoneyFGE выполняет разные виды платежей и переводов в различных валютах. Все переводы происходят быстро, удобно и надёжно. Получать и отправлять денежные средства можно в любой точке мира. Это делается с помощью платёжной карты, либо наличными средствами. Денежный перевод доступен для получения адресатом через несколько минут после его отправки. Наша платёжная система предлагает оптимальную схему перевода денежных средств для Вас, Ваших родных и близких. Для того, чтобы получить денежный перевод необходимо иметь при себе паспорт или документ, который подтверждает особу. Чтобы получить всю необходимую информацию о переводах и получению валюты свяжитесь с нашим менеджером.</target>
+        <target>MoneyFGE виконує різні види платежів і переказів у різних валютах, також здійснює операції по зарахуванню та переказу грошових коштів. Всі переклади відбуваються швидко, зручно та надійно. Одержувати і відправляти грошові кошти можна в будь-якій точці світу. Це робиться за допомогою картки, або готівкою. Грошовий переказ доступний для одержання адресатом через кілька хвилин після його відправлення. Наша платіжна система пропонує для своїх клієнтів оптимальну схему переказу грошових коштів для Вас, Ваших рідних і близьких. Для того, щоб отримати грошовий переказ необхідно мати при собі паспорт або документ, який підтверджує особу. Щоб отримати всю необхідну інформацію про перекладах та отримання валюти зв'яжіться з нашим менеджером.&#13;
+&#13;
+</target>
       </trans-unit>
       <trans-unit id="323511e5abee355aa1bbcd6c1c3d72f0cb852ad9" datatype="html">
         <source>Money transfer system</source>
-        <target>Система денежных переводов</target>
+        <target>Система грошових переказів</target>
       </trans-unit>
       <trans-unit id="6362d3ed071707ab2be66936f0bcfd25db203f91" datatype="html">
         <source>Use our repayment service. This is another opportunity of our payment system. Now you can  pay off any loan monthly or fully online (annual interests or principal of the debt and other payments that meet the conditions of the loan agreement). Pay off the loan by using a computer or mobile phone. Our payment system is available around the world. You have a unique opportunity to conduct any transactions, wherever you are.</source>
-        <target>Воспользуйтесь нашей услугой погашения кредита. Это ещё одна возможность данной платёжной системы. Теперь вы можете ежемесячно или полностью погасить Ваш кредит в онлайн режиме (процентные начисления или основная часть долга, иные платежи, которые соответствуют условиям кредитного соглашения). Погасить кредит можно при наличие платёжной карты. Наша платёжная система доступна круглосуточно. Вы имеете уникальную возможность самостоятельно производить эту операции, где бы Вы не находились.</target>
+        <target>Скористайтеся нашою послугою погашення кредиту. Це ще одна можливість нашої платіжної системи. Тепер ви можете щомісяця або повністю погасити кредит в онлайн режимі (процентні нарахування або основна частина боргу, інші платежі, які відповідають умовам кредитної угоди). Погасити кредит можна за допомогою комп'ютера або мобільного телефону. Наша платіжна система доступна цілодобово. Ви маєте унікальну можливість самостійно проводити будь-які операції, де б Ви не знаходилися.&#13;
+</target>
       </trans-unit>
       <trans-unit id="5ec08749d35eece34b47ca353e6ad0b3d91f8c6a" datatype="html">
         <source>Game payments quickly and easily with MoneyFGE</source>
@@ -220,11 +232,11 @@
       </trans-unit>
       <trans-unit id="d8ee6aa599761eb38b9c2e57bdbcb1f8c3b1fe1d" datatype="html">
         <source>Games, Entertainment</source>
-        <target>Игры, развлечения</target>
+        <target>Ігри, Розваги</target>
       </trans-unit>
       <trans-unit id="e56a7440f99ba8679080d557b17fb3af4e9ed30a" datatype="html">
         <source>MoneyFGE provides services to pay for different types of games and entertainment.</source>
-        <target>MoneyFGE предоставляет услуги по оплате различных видов игр и развлечений.</target>
+        <target>MoneyFGE надає послуги по оплаті різних видів ігор і розваг.</target>
       </trans-unit>
       <trans-unit id="681f904ab183fad02666f952f0fa2d1973898e89" datatype="html">
         <source>Payment for games and entertainment will take very little time to put money into the account can be done  from the computer and at any convenient time of the day or night. You can pay with us all the most popular online games.</source>
@@ -232,11 +244,11 @@
       </trans-unit>
       <trans-unit id="8bb5b2073697f3f4378c44a49b7524934c9268f4" datatype="html">
         <source>For example:</source>
-        <target>Например:</target>
+        <target>Наприклад:</target>
       </trans-unit>
       <trans-unit id="0e6a93b6d39a899de3abb0cb10c51f19057fa547" datatype="html">
         <source>Game</source>
-        <target>Игра</target>
+        <target>Гра</target>
       </trans-unit>
       <trans-unit id="f7f501488f6ff4cec9f61d79bc80dcb89e328263" datatype="html">
         <source>Pay online  for TV, internet, telephone - easily and comfortably, without leaving your home!</source>
@@ -244,27 +256,32 @@
       </trans-unit>
       <trans-unit id="a695d167a2dba69ff2c1a747b87cdd047023151a" datatype="html">
         <source>Service payment for Internet, television, telephones</source>
-        <target>Услуга оплаты за интернет, ТВ, телефонию</target>
+        <target>Послуга оплати за інтернет, ТБ, телефонії&#13;
+</target>
       </trans-unit>
       <trans-unit id="3ffcacf085742c9d5b5fd43edd9adaf8017be45d" datatype="html">
         <source>MoneyFGE payment system provides payment services for Internet, TV and telephony online.</source>
-        <target>Платёжная система MoneyFGE предоставляет оплачивание услуг за интернет, ТВ, телефонию в режиме онлайн.</target>
+        <target>Платіжна система MoneyFGE надає можливість оплати послуг за інтернет, ТВ, телефонію в режимі онлайн.&#13;
+</target>
       </trans-unit>
       <trans-unit id="7c83a3e6f97bdd5eec17ad01e32bb6d7438ca6fe" datatype="html">
         <source>You can easily perform data operations. without leaving home. This can be done from anywhere in the world with Internet access.</source>
-        <target>Вы имеете возможность с легкостью осуществлять данные операции, не выходя из дома. Это можно делать из любой точки мира, имея доступ к интернету, а также мобильное устройство или компьютер.</target>
+        <target>Ви маєте можливість з легкістю виконувати данні операції. не виходячи з дому. Це можна робити з будь-якої точки світу, маючи доступ до інтернету.&#13;
+</target>
       </trans-unit>
       <trans-unit id="b702663d5bea1e79e90c585166da75356f682c65" datatype="html">
         <source>Online payment</source>
-        <target>Платёжные системы</target>
+        <target>Онлайн платежі</target>
       </trans-unit>
       <trans-unit id="73294c064483591113d915e4ee8108bd9934b3ce" datatype="html">
         <source>Payment system  offers a system of payments between financial institutions, Internet users and business organizations for various services via the Internet, including buying and selling.</source>
-        <target>Системы расчётов между финансовыми организациями, интернет-пользователями, бизнес-организациями за разные услуги через интернет, включая покупку и продажу.</target>
+        <target>Платіжні системи - це системи розрахунків між фінансовими організаціями, інтернет-користувачами, бізнес-організаціями за різні послуги через інтернет, включаючи купівлю та продаж.&#13;
+</target>
       </trans-unit>
       <trans-unit id="b80ed8152183f543194d904c66279f12746672b1" datatype="html">
         <source>We work with certain systems such as WebMoney, Paypal, Neteller, eKassir, UnionPay and so on. D. Payment Methods  is a great choice because you can choose the payment system that You need.</source>
-        <target>Мы работаем с определёнными системами, такими как WebMoney, Paypal, Neteller, eKassir, UnionPay и т. д. Способов оплаты большой выбор, поэтому есть возможность выбрать платёжную систему, которая Вам необходима.</target>
+        <target>Ми працюємо з певними системами, такими як WebMoney, Paypal, Neteller, eKassir, UnionPay і т. д. Способів оплати великий вибір, тому є можливість вибрати платіжну систему, яка Вам необхідна.&#13;
+</target>
       </trans-unit>
       <trans-unit id="2cc7883f354607063407159585d206fe9b059f4c" datatype="html">
         <source>Fast and easy online payments of utility bills.</source>
@@ -272,11 +289,12 @@
       </trans-unit>
       <trans-unit id="d608cf1b7d95a0663e65566b595afb45740f5007" datatype="html">
         <source>Our billing system allows you to pay your utility bills through the Internet. This can be done from home or office with access to the Internet, do not need to go to the bank. Operations are conducted instantly and reliably. You have to register at the registration and you can also specify multiple personal accounts. You can customize the service of regular utility bills  will remove a certain amount of money from your card.</source>
-        <target>Наша платёжная система предоставляет возможность оплатить Ваши коммунальные услуги посредством интернета. Это можно сделать, находясь дома или в офисе и имея доступ к интернету, не нужно идти в отделение банка. Операции проводятся мгновенно и надёжно. Вам необходимо зарегистрироваться на сайте и при регистрации Вы также имеете возможность указать несколько лицевых счетов. Вы можете настроить услугу регулярных коммунальных платежей, которая ежемесячно будет снимать с Вашей карты определённую сумму денег за коммунальные платежи.</target>
+        <target>Наша платіжна система надає можливість оплатити Ваші комунальні послуги за допомогою інтернету. Це можна зробити, перебуваючи вдома або в офісі і маючи доступ до інтернету, не потрібно йти до відділення банку. Операції проводяться миттєво і надійно. Вам необхідно зареєструватися на сайті і при реєстрації Ви також маєте можливість вказати кілька особових рахунків. Ви можете налаштувати послугу регулярних комунальних платежів, яка щомісяця буде знімати з Вашої картки певну суму грошей за комунальні платежі.&#13;
+</target>
       </trans-unit>
       <trans-unit id="693d14f486a25e86bc515dfcfc4462d5201217ef" datatype="html">
         <source>Light</source>
-        <target>Свет</target>
+        <target>Світ</target>
       </trans-unit>
       <trans-unit id="e4ef8de89ec37f583998cdc3af19f8d7d01d58b2" datatype="html">
         <source>Gas</source>
@@ -288,7 +306,7 @@
       </trans-unit>
       <trans-unit id="553d10648d6e5f139ed0d4f3ff66e0a7609c1a27" datatype="html">
         <source>Feedback form</source>
-        <target>Форма обратной связи</target>
+        <target>Форма зворотнього зв'язку</target>
       </trans-unit>
       <trans-unit id="eb442c64a84ed7e4f9c9fc4ad041f8b5e5c91933" datatype="html">
         <source>First Name*</source>
@@ -304,7 +322,7 @@
       </trans-unit>
       <trans-unit id="2c5ff8fa9c9aaec93f97e37c9a0edcd797194573" datatype="html">
         <source>Send</source>
-        <target>Отправить</target>
+        <target>Відправити</target>
       </trans-unit>
       <trans-unit id="fbe2a3f23cd1e90c861bfe94efd9c31e21eedf89" datatype="html">
         <source>Working schedule:</source>
@@ -312,15 +330,16 @@
       </trans-unit>
       <trans-unit id="9240073d1f6f5fa0d6594affadd2939f1273c4a1" datatype="html">
         <source>From Monday to Friday from 8:30AM to 6:30PM</source>
-        <target>С понедельника по пятницу&lt;br&gt;c 8:30 до 18:30</target>
+        <target>З понеділка до п'ятниці&lt;br&gt;з 8:30 до 18:30</target>
       </trans-unit>
       <trans-unit id="6765b4c916060f6bc42d9bb69e80377dbcb5e4e9" datatype="html">
         <source>Login</source>
-        <target>Вход</target>
+        <target>Вхід</target>
       </trans-unit>
       <trans-unit id="8988fddbdb2920b1a06627a6e6573e8904dc0aa5" datatype="html">
         <source>Enter your phone number</source>
-        <target>Введете номер телефона</target>
+        <target>Введіть свій номер телефону&#13;
+</target>
       </trans-unit>
       <trans-unit id="df4da340d016d0d3c0884be8ddc025a723c3fb34" datatype="html">
         <source>Enter your password</source>
@@ -328,15 +347,15 @@
       </trans-unit>
       <trans-unit id="e33f875169edc640926d4e90e3f378d9ee8fb9a8" datatype="html">
         <source>The password must contain numbers (0-9), letters in upper and lower case letters (A-Z, a-z)</source>
-        <target>Пароль должен содержать цифры (0-9), латинские буквы в верхнем и нижнем регистре (A-Z, a-z)</target>
+        <target>Пароль повинен містити цифри (0-9), латинські літери у верхньому та нижньому регістрі (A-Z, a-z)</target>
       </trans-unit>
       <trans-unit id="db3c2aa1a1399501be2b6c03071eaac680a68aea" datatype="html">
         <source>Password recovery</source>
-        <target>Востановление пароля</target>
+        <target>Відновлення паролю</target>
       </trans-unit>
       <trans-unit id="c40c132843f349c3aa49730405de1d0ca733aef6" datatype="html">
         <source>Sign up</source>
-        <target>Зарегистрироваться</target>
+        <target>Зареєструватися</target>
       </trans-unit>
       <trans-unit id="8c2e731ee23fd5de9f7fac6bad93993a5f6ba3a8" datatype="html">
         <source> Back</source>
@@ -352,7 +371,8 @@
       </trans-unit>
       <trans-unit id="ac10a3d9b59575640797c1a8e6aea642cf5d5e77" datatype="html">
         <source>Continue</source>
-        <target>Продолжить</target>
+        <target>Продовжити&#13;
+</target>
       </trans-unit>
       <trans-unit id="cda31dbd724cf5f4fa7a4274d9120651490c8a8c" datatype="html">
         <source>Back</source>
@@ -360,15 +380,15 @@
       </trans-unit>
       <trans-unit id="7d6573fb998f3a1cf1356623b85850d9d10edaa9" datatype="html">
         <source>Registration</source>
-        <target>Регистрация</target>
+        <target>Реєстрація</target>
       </trans-unit>
       <trans-unit id="80b1b8a8a06d421dd1a7c1d54856d80dccd3ab92" datatype="html">
         <source>Enter the code from SMS</source>
-        <target>Ввести код из СМС</target>
+        <target>Ввести код з СМС</target>
       </trans-unit>
       <trans-unit id="80f49c67c97ccb561f089e36ecb41266c8c806af" datatype="html">
         <source>Send SMS again</source>
-        <target>Отправить СМС еще раз</target>
+        <target>Відправити СМС повторно</target>
       </trans-unit>
       <trans-unit id="5fa5c05063493603a4bba6c2341641a83fb0be18" datatype="html">
         <source>Enter password</source>
@@ -376,7 +396,7 @@
       </trans-unit>
       <trans-unit id="ccac601bf473fa28c9ac46794f1cd40542f74347" datatype="html">
         <source>Message</source>
-        <target>Сообщение</target>
+        <target>Повідомлення</target>
       </trans-unit>
       <trans-unit id="355ee942f292ef163f1c984e61802bc8d1fbf073" datatype="html">
         <source>Sorry for the inconvenience, this method is on reconstruction.</source>
@@ -384,7 +404,7 @@
       </trans-unit>
       <trans-unit id="f4e529ae5ffd73001d1ff4bbdeeb0a72e342e5c8" datatype="html">
         <source>Close</source>
-        <target>Закрыть</target>
+        <target>Закрити</target>
       </trans-unit>
       <trans-unit id="82ac8ec728fb6d36f85eb9f59d343bc6ea01ab38" datatype="html">
         <source>Payment</source>
@@ -392,7 +412,7 @@
       </trans-unit>
       <trans-unit id="d7a1dba1854c27a3403bd9e7c4e44b4e5cf97211" datatype="html">
         <source>Transfers</source>
-        <target>Переводы</target>
+        <target>Перекази</target>
       </trans-unit>
       <trans-unit id="84b02fb0d4ce4d700f4a7748dcc8252b93770f3f" datatype="html">
         <source>Replenishment</source>
@@ -400,11 +420,11 @@
       </trans-unit>
       <trans-unit id="6540b7f702b8cc4dffd307d8be84a94453493a44" datatype="html">
         <source>My cards</source>
-        <target>Мои счета</target>
+        <target>Мої рахунки</target>
       </trans-unit>
       <trans-unit id="efac3af0b32e953279c25b6519cae256811e0fe8" datatype="html">
         <source>History</source>
-        <target>История</target>
+        <target>Історія</target>
       </trans-unit>
       <trans-unit id="0e2b5b54050202cef420401c7f8af755cbb5a3a5" datatype="html">
         <source>Bonus</source>
@@ -412,11 +432,11 @@
       </trans-unit>
       <trans-unit id="85b79c9064aed1ead31ace985f31aa1363f6bdaf" datatype="html">
         <source>Help</source>
-        <target>Помощь</target>
+        <target>Допомога</target>
       </trans-unit>
       <trans-unit id="121cc5391cd2a5115bc2b3160379ee5b36cd7716" datatype="html">
         <source>Settings</source>
-        <target>Настройки</target>
+        <target>Налаштування</target>
       </trans-unit>
       <trans-unit id="85f9b39c841a93a710e2059756498ffab6ee14d8" datatype="html">
         <source>© Payment system «MoneyFGE™» 2016TM is used under license holder MoneyFGE</source>
@@ -424,7 +444,7 @@
       </trans-unit>
       <trans-unit id="d9e4cf9eeb85c466d32b89f8572e8cce0081eb1b" datatype="html">
         <source>Enter your email</source>
-        <target>Введите email</target>
+        <target>Введіть email</target>
       </trans-unit>
       <trans-unit id="edc78369826830714c6a6a11a1918bccd43b13f9" datatype="html">
         <source>ОК</source>
@@ -432,11 +452,12 @@
       </trans-unit>
       <trans-unit id="16b82b65915bed95bdb5258f476dbb163679b407" datatype="html">
         <source>Popular categories</source>
-        <target>Популярные категории</target>
+        <target>Популярні категорії</target>
       </trans-unit>
       <trans-unit id="4811fe574bff9ca7dcdcae404cf1312958c82d29" datatype="html">
         <source>All categories</source>
-        <target>Все категории</target>
+        <target>Всі категорії&#13;
+</target>
       </trans-unit>
       <trans-unit id="c1300bc6a9069b311772b0114cd29237d748d8f4" datatype="html">
         <source>Additional options</source>
@@ -444,19 +465,20 @@
       </trans-unit>
       <trans-unit id="cef9bee98bcf0fbf36ffb4bb5a9604d4cb1f8145" datatype="html">
         <source>Games / Entertainment</source>
-        <target>Игры / Развлечения</target>
+        <target>Ігри / Розваги</target>
       </trans-unit>
       <trans-unit id="0e0105f53dd5c9635367796a2394d67039feb2f1" datatype="html">
         <source>Making purchases / payments with MONEYFGE you get back up to 30% on your account</source>
-        <target>Возвращайте до 30% на свой счёт, делая покупки/платежи вместе с MONEYFGE</target>
+        <target>Здійснюючи покупки/платежі разом з  MONEYFGE повертайте  до 30% на свій рахунок&#13;
+</target>
       </trans-unit>
       <trans-unit id="854b54794dfb1cc09de84973d098e57c476a2f70" datatype="html">
         <source>All partners</source>
-        <target>Все партнёры</target>
+        <target>Всі партнери</target>
       </trans-unit>
       <trans-unit id="e36774be5979eb483652b1ab5d52ae073a05aa05" datatype="html">
         <source>We offer you</source>
-        <target>Возвращаем</target>
+        <target>Повертаємо</target>
       </trans-unit>
       <trans-unit id="ceb3500aadb2fbb772774a941fd744c9f131976f" datatype="html">
         <source>to 20%</source>
@@ -464,43 +486,45 @@
       </trans-unit>
       <trans-unit id="cd416293c46ec9f8aaec938b723805833c7ae8ad" datatype="html">
         <source>Archive transactions</source>
-        <target>Архив транзакций</target>
+        <target>Архів транзакцій</target>
       </trans-unit>
       <trans-unit id="21a297203e80642266f1a3f866a97ede05dfc6b8" datatype="html">
         <source>Go to archive</source>
-        <target>Перейти в архив</target>
+        <target>Перейти до архіву</target>
       </trans-unit>
       <trans-unit id="7e892ba15f2c6c17e83510e273b3e10fc32ea016" datatype="html">
         <source>Search</source>
-        <target>Поиск</target>
+        <target>Пошук</target>
       </trans-unit>
       <trans-unit id="2aba1e87039819aca3b70faa9aa848c12bf139ca" datatype="html">
         <source>Show</source>
-        <target>Показать</target>
+        <target>Показати</target>
       </trans-unit>
       <trans-unit id="1d0974afae70914072a4fbf19e53328e517bae73" datatype="html">
         <source>News</source>
-        <target>Новости</target>
+        <target>Новини</target>
       </trans-unit>
       <trans-unit id="0d05b49b779578bc05c156f155d723b9898a75fe" datatype="html">
         <source>All news</source>
-        <target>Все новости</target>
+        <target>Всі новини&#13;
+</target>
       </trans-unit>
       <trans-unit id="84b8cedc0d0ec6afba8b02f2711a67b8f35160b7" datatype="html">
         <source>Enter the number</source>
-        <target>Введите номер</target>
+        <target>Введіть номер</target>
       </trans-unit>
       <trans-unit id="a7cb037ae894bbcd5a1953095b813202b2214786" datatype="html">
         <source>Enter amount</source>
-        <target>Введите cумму</target>
+        <target>Ввести суму</target>
       </trans-unit>
       <trans-unit id="1589ce61e1fef403fbab0057325ec0829a5395dc" datatype="html">
         <source>Make regular</source>
-        <target>Сделать регулярным</target>
+        <target>Зробити регулярним&#13;
+</target>
       </trans-unit>
       <trans-unit id="386ea918b3808032a932eaeabf4cd2c9c870cf94" datatype="html">
         <source>Replenish</source>
-        <target>Пополнить</target>
+        <target>Поповнити</target>
       </trans-unit>
       <trans-unit id="5e2fb8ce0ce8df646e4863f33aa1da862582ce39" datatype="html">
         <source>Commission: 2,5%</source>
@@ -520,19 +544,21 @@
       </trans-unit>
       <trans-unit id="c8979c5531af5dfbf7f3e766948db05b8fc75d3c" datatype="html">
         <source>Other services</source>
-        <target>Другие услуги</target>
+        <target>Інші послуги</target>
       </trans-unit>
       <trans-unit id="6c73c1c9f73651d3bc7fcb35821bf467240fdbba" datatype="html">
         <source>Transfers between accounts</source>
-        <target>На другой кошелёк</target>
+        <target>На інший гаманець&#13;
+</target>
       </trans-unit>
       <trans-unit id="832a3a49024a71caab5dae5473d26b9488ccaebe" datatype="html">
         <source>Into the bank account</source>
-        <target>На банковский счёт</target>
+        <target>На банківський рахунок</target>
       </trans-unit>
       <trans-unit id="78d84f42d9548b94b2ca07a6724cbffefe8017cb" datatype="html">
         <source>Withdrawing money</source>
-        <target>Вывести</target>
+        <target>Виведення грошей&#13;
+</target>
       </trans-unit>
       <trans-unit id="a9377fb734975cbf672296eb78be4146c0724480" datatype="html">
         <source>From Account</source>
@@ -544,35 +570,36 @@
       </trans-unit>
       <trans-unit id="3303ac7781c781babc373c112807a3b96fec3814" datatype="html">
         <source>Sum</source>
-        <target>Сумма</target>
+        <target>Сума</target>
       </trans-unit>
       <trans-unit id="52c9a103b812f258bcddc3d90a6e3f46871d25fe" datatype="html">
         <source>Save</source>
-        <target>Сохранить</target>
+        <target>Зберегти</target>
       </trans-unit>
       <trans-unit id="11f4334bbb40a09c78f16d8e11e68cfd01badd4d" datatype="html">
         <source>Terminal</source>
-        <target>Через терминал</target>
+        <target>Через термінал</target>
       </trans-unit>
       <trans-unit id="e17016f035664e639ea7f095e916f6fce027c236" datatype="html">
         <source>Bank card</source>
-        <target>Картой банка</target>
+        <target>Картою банку&#13;
+</target>
       </trans-unit>
       <trans-unit id="a4622d06dd80204e0f93dbd38a94035c6fd7e61d" datatype="html">
         <source>Bank transfer</source>
-        <target>Банковским переводом</target>
+        <target>Банківським переказом</target>
       </trans-unit>
       <trans-unit id="f5116416b10dcbee66716d95983941f376e371e6" datatype="html">
         <source>From  your phone</source>
-        <target>Со счета телефона</target>
+        <target>З балансу телефону</target>
       </trans-unit>
       <trans-unit id="52f9a8ead65a9c2efe158d229ecc2255aca15ce2" datatype="html">
         <source>Online loan</source>
-        <target>Онлайн займом</target>
+        <target>Онлайн позикою</target>
       </trans-unit>
       <trans-unit id="3eb47805cd05ab132d4b181174d7d9d6c4f7a0d7" datatype="html">
         <source>Working with Accounts</source>
-        <target>Работа со счетами</target>
+        <target>Робота з рахунками</target>
       </trans-unit>
       <trans-unit id="d207cc1965ec0c29e594e0e9917f39bfc276ed87" datatype="html">
         <source>Create an account</source>
@@ -592,7 +619,7 @@
       </trans-unit>
       <trans-unit id="f6901d5997e335a1f353ae33150002e61d9fc8ec" datatype="html">
         <source>Money transaction</source>
-        <target>Перевод средств</target>
+        <target>Переказ коштів</target>
       </trans-unit>
       <trans-unit id="31a7496c07c899dfee2d81618f4d6e105ba61072" datatype="html">
         <source>My Accounts</source>
@@ -604,7 +631,7 @@
       </trans-unit>
       <trans-unit id="29881a45dafbe5aa05cd9d0441a4c0c2fb06df92" datatype="html">
         <source>Account</source>
-        <target>Счет</target>
+        <target>Рахунок</target>
       </trans-unit>
       <trans-unit id="1b051734b0ee9021991c91b3ed4e81c244322462" datatype="html">
         <source>Created</source>
@@ -612,11 +639,11 @@
       </trans-unit>
       <trans-unit id="32072c7fb0469aaf82d256a59b3e0d6ecce973b9" datatype="html">
         <source>Currency</source>
-        <target>Валюты</target>
+        <target>Валюти</target>
       </trans-unit>
       <trans-unit id="7e69426bd97a606d8ae6026762858e6e7c86a1fd" datatype="html">
         <source>Balance</source>
-        <target>Пополнение баланса</target>
+        <target>Поповнення балансу</target>
       </trans-unit>
       <trans-unit id="030b4423b92167200e39519599f9b863b4f7c62c" datatype="html">
         <source>Actions</source>
@@ -644,7 +671,7 @@
       </trans-unit>
       <trans-unit id="70a67e04629f6d412db0a12d51820b480788d795" datatype="html">
         <source>Create</source>
-        <target>Создать</target>
+         <target></target>
       </trans-unit>
       <trans-unit id="04c3563becf5b9de9c7dd0e419b8a22379524b26" datatype="html">
         <source>List outs</source>
@@ -660,7 +687,7 @@
       </trans-unit>
       <trans-unit id="5a5d7ee2acbfa9c91ab7f41d26bda9ff0cafe42f" datatype="html">
         <source>Comment</source>
-        <target>Комментарий</target>
+        <target>Коментар</target>
       </trans-unit>
       <trans-unit id="b211a9c475cd391d81fcbe9936357b22728148fa" datatype="html">
         <source>You have no items here.</source>
@@ -684,19 +711,19 @@
       </trans-unit>
       <trans-unit id="015e45e21b86e81108cda9cd0e74a9a0cdd986f0" datatype="html">
         <source>Profile settings</source>
-        <target>Настройки профиля</target>
+        <target>Налаштування профілю</target>
       </trans-unit>
       <trans-unit id="1eecebc91b4c671d43617b559cf3933275492931" datatype="html">
         <source>Account settings</source>
-        <target>Настройки счетов</target>
+        <target>Налаштування рахунків</target>
       </trans-unit>
       <trans-unit id="0b94b5cba32ebc677589f2009e4a4f820e814452" datatype="html">
         <source>SMS of the deposits and the expenses</source>
-        <target>SMS о пополнениях и расходах</target>
+        <target>SMS про поповнення і витрати</target>
       </trans-unit>
       <trans-unit id="310e2d97ff2f6823c7d2a6fa790e4e32ed63a1d3" datatype="html">
         <source>The number of purse</source>
-        <target>Номер кошелька</target>
+        <target>Номер гаманця</target>
       </trans-unit>
       <trans-unit id="ae384db284aba1829833ed48e012373f145024be" datatype="html">
         <source>You can change telephone number</source>
@@ -704,7 +731,7 @@
       </trans-unit>
       <trans-unit id="ab74fc8dba8edad651407e20f87b1b124f532906" datatype="html">
         <source>E-mail address</source>
-        <target>Адрес электронной почты</target>
+        <target>Адреса електронної пошти</target>
       </trans-unit>
       <trans-unit id="15f9d9df5ac0ff1b09f25b2dd4f85a3b520853d7" datatype="html">
         <source>You can provide email address</source>
@@ -712,7 +739,7 @@
       </trans-unit>
       <trans-unit id="81baa3357bebcb29271c8121a87c17915bdbb41f" datatype="html">
         <source>Social network</source>
-        <target>Социальные сети</target>
+        <target>Соціальні мережі</target>
       </trans-unit>
       <trans-unit id="3bb2abd85b39761fcc0d70d2a60d84e7333efe31" datatype="html">
         <source>Old Number</source>
@@ -728,7 +755,7 @@
       </trans-unit>
       <trans-unit id="c32ef07f8803a223a83ed17024b38e8d82292407" datatype="html">
         <source>Password</source>
-        <target>Пароль</target>
+         <target></target>
       </trans-unit>
       <trans-unit id="c2cd691d3ec92f37445b6fc3aac70ea4719f6c78" datatype="html">
         <source>your password</source>
@@ -764,7 +791,7 @@
       </trans-unit>
       <trans-unit id="e70e209561583f360b1e9cefd2cbb1fe434b6229" datatype="html">
         <source>New password</source>
-        <target>Новый пароль</target>
+        <target>Новий пароль</target>
       </trans-unit>
       <trans-unit id="5a3ce7440c3762e8f44b172d1698fa11367b3841" datatype="html">
         <source>Provide your new password</source>
