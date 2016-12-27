@@ -1,812 +1,409 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
   <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
-      <trans-unit id="b39084dad0338d1587fc39af49f910033bc3f945" datatype="html">
-        <source>Easy mobile payments online</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="1eb444364f1acf2cf51dc0d149b1940578ffaacd" datatype="html">
-        <source>Instant online transfers into  more than 140 countries</source>
-        <target>140'tan fazla ülkede hızlı online transferler</target>
-      </trans-unit>
-      <trans-unit id="ab29082293dd21b5d8c560e77c53b320e04f01e3" datatype="html">
-        <source>Paying off your credits without visiting a bank branch</source>
-        <target>Banka şubelerine gitmeden kredilerin hızlı ve kolay ödenmesi</target>
-      </trans-unit>
-      <trans-unit id="3edef39f69f0b94b0abb1b9f41087031b6bbc46f" datatype="html">
-        <source>Convenient online payments on utility bills</source>
-        <target>Faturaların hızlı ve kolay şekilde online ödenmesi</target>
-      </trans-unit>
-      <trans-unit id="fa5739f8d3cf5941d598e6caa4d10d25fd56f3ac" datatype="html">
-        <source>More than 1,000 online payment methods available in Turkey and all over the world</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="a67bd3d8a0cc79f96ceea456d75b35c828b778df" datatype="html">
-        <source>Payments due</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="31364005f20ca564b326d700c4361c0f734b3e72" datatype="html">
-        <source>Remittances</source>
-        <target>Para &lt;br class="hidden-sm hidden-xs"&gt;transferleri</target>
-      </trans-unit>
-      <trans-unit id="46f93e44bd44a72c03e2e519e6a076239d1821be" datatype="html">
-        <source>Credit payments</source>
-        <target>Kredi ödemeleri</target>
-      </trans-unit>
-      <trans-unit id="d6e0e791264c6ab64c66a1286ec06a7a292febc3" datatype="html">
-        <source>Bills</source>
-        <target>Fatura &lt;br class="hidden-sm hidden-xs"&gt;ödemeleri</target>
-      </trans-unit>
-      <trans-unit id="a258e0741dafbe9aff5e0cef7b90d4a7f8bbefeb" datatype="html">
-        <source>Online payments</source>
-        <target>Online ödemeler</target>
-      </trans-unit>
-      <trans-unit id="f9e44b74ae526bfb145f1c558227603cea99cf01" datatype="html">
-        <source>Mobile payments:</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="817a402ba80874cba70243a9bf00c0ef77bb6334" datatype="html">
-        <source>Mobile Payment Service</source>
-        <target>Mobil iletişim ödeme hizmetleri</target>
-      </trans-unit>
-      <trans-unit id="464631983f46ccad41bdaa080423325e60710668" datatype="html">
-        <source>With this service, you can replenish/recharge your mobile phones accounts when you have access to the Internet, PC and mobile devices. This service can be used by contract customers and prepaid subscribers. All transactions with mobile payment accounts occur within minutes.</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="54c028ad959c6c0197ceb8092130f6587f12884d" datatype="html">
-        <source>Money transfer:</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="80f4a01fc7c0cfb422f2eb5a3429f1fa9c6118d0" datatype="html">
-        <source>Sending and receiving money quickly and securely</source>
-        <target>Hizli ve güvenli bir şekilde para gönderme para alma.</target>
-      </trans-unit>
-      <trans-unit id="42eb50662321f5ff3e443925441c9b4114215838" datatype="html">
-        <source>MoneyFGE performs various types of payments and transfers in various currencies and carries deposition and transfer funds. All transactions are done quickly, conveniently and securely. Receive and send money from any  location in  the world. In card or cash. Money transfer reach  destination  within a few minutes.</source>
-        <target>MoneyFGE ile, farklı ülke para birimleri üzerinden her türlü transfer ve ödemeleri, güvenli ve hızlı bir şekilde yapabilirsiniz. Dünyanın her yerinden paranızı gönderebilir ve alabilirsiniz. Bu işlemlerinizi nakit olarak veya bankamatik veya kredi kartı kullanarak apabilirsiniz. Para transferleriniz, gönderildikten birkaç dakika sonra muhatap tarafından kullanılabilir.</target>
-      </trans-unit>
-      <trans-unit id="e02a0235e26fce6cdc2c6e4f6984ec745f501666" datatype="html">
-        <source>Credit payments:</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="2c3d5b6162df0f8005172c6fe45fa7365345d572" datatype="html">
-        <source>To repay loans</source>
-        <target>Kredileri ödemelerinde yenilik.</target>
-      </trans-unit>
-      <trans-unit id="051c289a08b34d5d313cb9e8caf17bb9d487b29a" datatype="html">
-        <source>Take advantage of our service of the loan. This is another opportunity for our payment system. Now you can on a monthly basis or to repay Your loan in online mode (interest or principal or other payments that match the terms of the loan agreement). To repay the loan, you can use computer or mobile phone.</source>
-        <target>Kredi geri ödeme hizmetimizden yararlanabilirsiniz. Kredi taksitlerinizi veya kredinizin tamamını (anapara, borç faizi, kredi sözleşmesinin koşullarına uygun diğer ödemeleri) bilgisayar veya cep telefonu yardımı ile online şekilde kolayca yapabilirsiniz.</target>
-      </trans-unit>
-      <trans-unit id="2d6c69dc91bfc6ce365da306152e0631b64b6c30" datatype="html">
-        <source>Bills:</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="3f7c6fe65534ce468b938b2214795bf0b9369222" datatype="html">
-        <source>Utility payments</source>
-        <target>Ödeme kamu hizmetlerinin</target>
-      </trans-unit>
-      <trans-unit id="dc351b7f006175be71ed2d9ad17b60b6085a1e54" datatype="html">
-        <source>Our billing system allows you to pay your utility bills through the Internet. This can be done from home or office and only requires access to the Internet, no need to go to the bank branch. Operations are conducted instantly and reliably.</source>
-        <target>MoneyFGE ödeme sistemi, internet üzerınden tüm faturalarınızı ödeme imkanı sağlar. Ödemelerinizi herhangi bir banka şubesine gitmeden internet erişimi olan heryerden hızlı ve güvenli bir şekilde yapabilirsiniz. MoneyFGE hesabınızı diğer bankalardaki hesaplarınıza bağlayabilir, bu hesaplarınız üzerinden otomotik ödeme talimatları verebilirsınız.</target>
-      </trans-unit>
-      <trans-unit id="3df669bed0d3658bdb53340c31d355e7363d0cb7" datatype="html">
-        <source>Online payments:</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="40a0d7237b44048e13ffffa2afa68e518069daec" datatype="html">
-        <source>Online Payment Service</source>
-        <target>Hizmet online ödeme </target>
-      </trans-unit>
-      <trans-unit id="29a431c144b5427194a7bc0acc93cfb5399dc545" datatype="html">
-        <source>MoneyFGE payment system provides payment services via the Internet, television, telephony online. You can easily perform these operations without leaving home. This can be done from anywhere in the world with Internet access, a computer or mobile device.</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="65005f7502e8b6c0a7fef4fbb314eb8735f6654a" datatype="html">
-        <source>Our services</source>
-        <target>Hizmetler</target>
-      </trans-unit>
-      <trans-unit id="abe30f8875230989d34c2768070d3772a313301d" datatype="html">
-        <source>Mobile payments</source>
-        <target>Mobil iletişim ödemeleri</target>
-      </trans-unit>
-      <trans-unit id="e6a7915c03b80d42f34c47f944d3634b26ffe827" datatype="html">
-        <source>Money transfer</source>
-        <target>Para transferleri</target>
-      </trans-unit>
-      <trans-unit id="ca36e2bdb8c02d0f7c07a1f19d31d17cba6afbcc" datatype="html">
-        <source>Games/Entertainment</source>
-        <target>Oyun/Eğlence</target>
-      </trans-unit>
-      <trans-unit id="2a0260b32aee8fd146cb89015d0d34d5421289d7" datatype="html">
-        <source>Internet / TV / Telephone</source>
-        <target>Internet/TV/Telefon</target>
-      </trans-unit>
-      <trans-unit id="9b475bb63675494482effde989c7f1f18c232620" datatype="html">
-        <source>Contacts</source>
-        <target>İletişim</target>
-      </trans-unit>
-      <trans-unit id="9d1e08c6f5e0b1a5d2b7d74e7f9d8a6a3d085bab" datatype="html">
-        <source>WORLD FGE</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="6875bab07c9bb276ae1e5b940ea339b7dc47adad" datatype="html">
-        <source>EXCHANGE MARKET FGE</source>
-        <target>FGE borsa</target>
-      </trans-unit>
-      <trans-unit id="eac5fa31f10a8803f6c2f94e0a8c6200f95c2842" datatype="html">
-        <source>Current account</source>
-        <target>Cari hesap</target>
-      </trans-unit>
-      <trans-unit id="d8b69f5f3ff403286693aa2254adc34de9bf810d" datatype="html">
-        <source>Recharge account</source>
-        <target>Hesaba Para Yatırma</target>
-      </trans-unit>
-      <trans-unit id="c484f3e14d47477125b60c977308ce81edc4dc5e" datatype="html">
-        <source>Cashouts</source>
-        <target>Para çekme</target>
-      </trans-unit>
-      <trans-unit id="cb949e87525f2b17c5bb7513b7a0a0e401d4a1d6" datatype="html">
-        <source>Payment solutions</source>
-        <target>ödeme çözümleri</target>
-      </trans-unit>
-      <trans-unit id="d49a3cef33520010f9db5275721bede84dcda0fc" datatype="html">
-        <source>Transfer from card to card</source>
-        <target>Karttan karta aktarma</target>
-      </trans-unit>
-      <trans-unit id="2b210f7e594f9dd967e5a9dde43aa12fd685a072" datatype="html">
-        <source>© Payment system «MoneyFGE™» 2016 TM is used under license holder MoneyFGE</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="02e4ed79f33b1b2b4c47e1dacdf271d72ce84ddc" datatype="html">
-        <source>Do a quick easy online payments</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="464277459576337f90a73c510b5c05d9119323c5" datatype="html">
-        <source>About the company</source>
-        <target>Hakkımızda</target>
-      </trans-unit>
-      <trans-unit id="cc6bb133dd03bd1640c526665096129eed3025ff" datatype="html">
-        <source>MoneyFGE is a  reliable, safe and modern internet platform to make online payments and money transfers.</source>
-        <target>MoneyFGE - online ödeme ve para transferleri için güvenilir, güvenli ve modern internet platformu.</target>
-      </trans-unit>
-      <trans-unit id="5dc36dc29a3f7b82c45289f60ee870b5365ca43a" datatype="html">
-        <source>Our system is a universal payment tool that allows you to  transfer money  to and from your clients and pay for different services in different directions.</source>
-        <target>Bizim sistemi - müşterilerine para transferleri almak ve farklı yönlere çeşitli hizmetler için ödeme yapmanıza olanak tanıyan evrensel ödeme aracı.</target>
-      </trans-unit>
-      <trans-unit id="e8e816e0b4bd983971c102ecccba0ad7c1d43872" datatype="html">
-        <source>With MoneyFGE is the rapid transfer of funds.</source>
-        <target>MoneyFGE ile ödemeler ve hızlı para transferi kullanışlı bir koleksiyon geliyor.</target>
-      </trans-unit>
-      <trans-unit id="fd077bf951a87409b5e61b1edc5ec25b8ae8e262" datatype="html">
-        <source>Our service is a convenient and easy platform for the transfer of funds to various popular payment methods and various services, including bank cards, mobile and online payments, utilities, repayment of loans, pay for games and entertainment, and more. All this can be done from anywhere in the world.</source>
-        <target>Bizim hizmet - banka kartları, mobil ve online ödeme, kamu ödemeleri, kredi geri ödemeleri, oyun, eğlence ve daha fazlası için ödeme de dahil olmak üzere çeşitli popüler yolları ve çeşitli servisler tarafından fon transferi için kullanışlı ve basit bir platformdur. Bütün bu dünyanın her yerinden yapılabilir.</target>
-      </trans-unit>
-      <trans-unit id="222fb65d5108cbf9c423936c626392b54e7d46c4" datatype="html">
-        <source>All payment data in our system  is confidential.</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="2e290ce9ae3538766d212811b959b2fa588dd973" datatype="html">
-        <source>MoneyFGE offers the most favorable terms to its customers and is a handy assistant payments to your business.</source>
-        <target>MoneyFGE müşterilerine en uygun koşulları sunan ve iş ödemeleri için uygun bir yardımcısıdır.</target>
-      </trans-unit>
-      <trans-unit id="f9421eb17bf9a309ff16584b286a6463b2f91f66" datatype="html">
-        <source>With this service, you can replenish their accounts of mobile phones when you have access to the Internet, PC and mobile devices. This service can be used by contract customers and prepaid subscribers. All transactions with mobile payment accounts occur within minutes. For the transaction enter your mobile phone number and the amount that you want to update your account with. This service is available to all operators. Use our service for mobile communications, it is convenient and easy!</source>
-        <target>Bu hizmeti kullanarak, internet erişimi̇ olan bilgisayarlar ve mobil cihazlariniz i̇le cep telefonlariniz i̇çi̇n onli̇ne olarak daki̇ka ve i̇nternet paketleri̇ satin alabi̇li̇rsi̇ni̇z. Bu hi̇zmet, ancak sözleşmeli̇ müşteri̇ler ve ön ödemeli̇ müşteri̇ler tarafindan kullanilabi̇li̇r. Ödeme yapmak i̇çi̇n cep telefon numaranizi gi̇rmeni̇z ve almak i̇stedi̇ği̇ni̇z hi̇zmeti̇ seçmeni̇z yeterli̇di̇r. Bu hizmet tüm operatörler için geçerlidir. MoneyFGE, ödeme kanallarini kullanmak çok kolay ve güvenli̇di̇r.</target>
-      </trans-unit>
-      <trans-unit id="accae4a6b267c69a8f2cae27bbd2391a2136e718" datatype="html">
-        <source>Mobile operators</source>
-        <target>Mobil operatörler</target>
-      </trans-unit>
-      <trans-unit id="346b5bf63ec25a4031a06bc44711b47d383b5403" datatype="html">
-        <source>Commission</source>
-        <target>Komisyon</target>
-      </trans-unit>
-      <trans-unit id="04f4ae6e5fe8fde1ea080ff98f967fd02be88c30" datatype="html">
-        <source>MoneyFGE performs various types of payments and transfers in various currencies and carries deposition and transfer funds. All transactions are done quickly, conveniently and securely. Receive and send money from any location in the world.  By card or cash. Money transfer is able to reach  destination  within a few minutes. Our payment system offers its customers the optimum scheme of transfer of funds for you, your family and friends. In order to receive money you must have a passport or ID. To get all the information about currency transactions please contact our manager.</source>
-        <target>MoneyFGE i̇le, farli ülke para bi̇ri̇mleri̇ üzeri̇nden her türlü transfer ve ödemeleri̇, hizli ve güvenli̇ bi̇r şeki̇lde gerçekleşti̇rebi̇li̇rsi̇ni̇z. Dünyanin her yeri̇nden paranizi gönderebi̇li̇r ve alabi̇li̇rsi̇ni̇z. Para transferleri̇ni̇z, gönderi̇ldi̇kten bi̇rkaç daki̇ka sonra alici tarafindan kullanilabi̇li̇r. MoneyFGE ödeme si̇stemi̇, si̇ze, ai̇leni̇ze, arkadaşlariniza, müşteri̇leri̇ni̇ze en uygun ödeme seçenekleri̇ni̇ sunar. Para göndermek ve para almak i̇çi̇n özel onaylar gereksi̇z belgeler i̇stenmez. Para transferleri̇ i̇le i̇lgi̇li̇ daha fazla bi̇lgi̇ almak i̇çi̇n bi̇zi̇mle i̇rti̇bata geçebi̇li̇rsi̇niz</target>
-      </trans-unit>
-      <trans-unit id="323511e5abee355aa1bbcd6c1c3d72f0cb852ad9" datatype="html">
-        <source>Money transfer system</source>
-        <target>Para transfer sistemi</target>
-      </trans-unit>
-      <trans-unit id="6362d3ed071707ab2be66936f0bcfd25db203f91" datatype="html">
-        <source>Use our repayment service. This is another opportunity of our payment system. Now you can  pay off any loan monthly or fully online (annual interests or principal of the debt and other payments that meet the conditions of the loan agreement). Pay off the loan by using a computer or mobile phone. Our payment system is available around the world. You have a unique opportunity to conduct any transactions, wherever you are.</source>
-        <target>Moneyfge, kredi ödemelerinizde bir yenilik daha sunmamaktadir. Kredi taksitlerinizi veya kredinizin tamamini (anapara, borç faizi, kredi sözleşmesinin koşullarina uygun diğer ödemeler) bilgisayar ve cep telefonu yardimi ile günün her saatinde online şekilde kolayca yapabilirsiniz.  Dünyanin her yerinde, günün her saatinde ödemelerinizi yapabilirsiniz. </target>
-      </trans-unit>
-      <trans-unit id="5ec08749d35eece34b47ca353e6ad0b3d91f8c6a" datatype="html">
-        <source>Game payments quickly and easily with MoneyFGE</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="d8ee6aa599761eb38b9c2e57bdbcb1f8c3b1fe1d" datatype="html">
-        <source>Games, Entertainment</source>
-        <target>Oyun, eğlence</target>
-      </trans-unit>
-      <trans-unit id="e56a7440f99ba8679080d557b17fb3af4e9ed30a" datatype="html">
-        <source>MoneyFGE provides services to pay for different types of games and entertainment.</source>
-        <target>Moneyfge oyun ve eğlence ödemeleriniz için farkli bir sistem içerir.</target>
-      </trans-unit>
-      <trans-unit id="681f904ab183fad02666f952f0fa2d1973898e89" datatype="html">
-        <source>Payment for games and entertainment will take very little time to put money into the account can be done  from the computer and at any convenient time of the day or night. You can pay with us all the most popular online games.</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="8bb5b2073697f3f4378c44a49b7524934c9268f4" datatype="html">
-        <source>For example:</source>
-        <target>Örnek:</target>
-      </trans-unit>
-      <trans-unit id="0e6a93b6d39a899de3abb0cb10c51f19057fa547" datatype="html">
-        <source>Game</source>
-        <target>Oyun</target>
-      </trans-unit>
-      <trans-unit id="f7f501488f6ff4cec9f61d79bc80dcb89e328263" datatype="html">
-        <source>Pay online  for TV, internet, telephone - easily and comfortably, without leaving your home!</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="a695d167a2dba69ff2c1a747b87cdd047023151a" datatype="html">
-        <source>Service payment for Internet, television, telephones</source>
-        <target>İnternet, televizyon, telefon ödemeleri.</target>
-      </trans-unit>
-      <trans-unit id="3ffcacf085742c9d5b5fd43edd9adaf8017be45d" datatype="html">
-        <source>MoneyFGE payment system provides payment services for Internet, TV and telephony online.</source>
-        <target>Money FGE  ödeme sistemi, internet, televizyon, telefon hizmetleri için online ödeme yapma imkani sunar.</target>
-      </trans-unit>
-      <trans-unit id="7c83a3e6f97bdd5eec17ad01e32bb6d7438ca6fe" datatype="html">
-        <source>You can easily perform data operations. without leaving home. This can be done from anywhere in the world with Internet access.</source>
-        <target>Evinizden çikmadan tüm fatura ödemelerinizi yapmak için moneyfge de bir hesabiniz ve internet erişimi olan bilgisayar veya mobil cihaziniz yeterli olacaktir. </target>
-      </trans-unit>
-      <trans-unit id="b702663d5bea1e79e90c585166da75356f682c65" datatype="html">
-        <source>Online payment</source>
-        <target>Ödeme sistemleri</target>
-      </trans-unit>
-      <trans-unit id="73294c064483591113d915e4ee8108bd9934b3ce" datatype="html">
-        <source>Payment system  offers a system of payments between financial institutions, Internet users and business organizations for various services via the Internet, including buying and selling.</source>
-        <target>Alim-satim dahil olmak üzere internet üzerinden farkli hizmetler için finansal kurumlar, internet kullanicilari, ticari kuruluşlar arasindaki sistemleri yerleşim.</target>
-      </trans-unit>
-      <trans-unit id="b80ed8152183f543194d904c66279f12746672b1" datatype="html">
-        <source>We work with certain systems such as WebMoney, Paypal, Neteller, eKassir, UnionPay and so on. D. Payment Methods  is a great choice because you can choose the payment system that You need.</source>
-        <target>Biz webmoney, paypal, neteller, ekassir, unionpay gibi bazi sistemleri ile çalişmak ve size gereken ödeme sistemini seçebilmesi vb. D. Yollari, büyük bir seçim ödemek zorunda.</target>
-      </trans-unit>
-      <trans-unit id="2cc7883f354607063407159585d206fe9b059f4c" datatype="html">
-        <source>Fast and easy online payments of utility bills.</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="d608cf1b7d95a0663e65566b595afb45740f5007" datatype="html">
-        <source>Our billing system allows you to pay your utility bills through the Internet. This can be done from home or office with access to the Internet, do not need to go to the bank. Operations are conducted instantly and reliably. You have to register at the registration and you can also specify multiple personal accounts. You can customize the service of regular utility bills  will remove a certain amount of money from your card.</source>
-        <target>Moneyfge ödeme sistemi, internet üzerinden tüm faturalarinizi ödeme imkani sağlar.  Ödemelerinizi herhangi bir banka şubesine gitmeden internet erişimi olan heryerden hizli ve güvenli bir şekilde yapabilirsiniz. Eğer ayni zamanda kişisel hesaplar sayisini belirtmek için seçeneğiniz vardir, sitede kayit ve giriş yapmaniz gerekiyor. Sen kamu hizmetleri için aylik kartindan para belirli bir miktar silinecektir düzenli faturalar, hizmet özelleştirebilirsiniz.</target>
-      </trans-unit>
-      <trans-unit id="693d14f486a25e86bc515dfcfc4462d5201217ef" datatype="html">
-        <source>Light</source>
-        <target>Işık</target>
-      </trans-unit>
-      <trans-unit id="e4ef8de89ec37f583998cdc3af19f8d7d01d58b2" datatype="html">
-        <source>Gas</source>
-        <target>Gaz</target>
-      </trans-unit>
-      <trans-unit id="e7a9a9610cda6079e8fb9e967c7184eee388b401" datatype="html">
-        <source>Water</source>
-        <target>Su</target>
-      </trans-unit>
-      <trans-unit id="553d10648d6e5f139ed0d4f3ff66e0a7609c1a27" datatype="html">
-        <source>Feedback form</source>
-        <target>İletişim formu</target>
-      </trans-unit>
-      <trans-unit id="eb442c64a84ed7e4f9c9fc4ad041f8b5e5c91933" datatype="html">
-        <source>First Name*</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="6934d8edd276d59e050006fe91b695ebad0218f8" datatype="html">
-        <source>Phone</source>
-        <target>Telefon</target>
-      </trans-unit>
-      <trans-unit id="9c58852f6befc7bbcd3e31bf5ae00edd05492ed5" datatype="html">
-        <source>Comment*</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="2c5ff8fa9c9aaec93f97e37c9a0edcd797194573" datatype="html">
-        <source>Send</source>
-        <target>Gönder</target>
-      </trans-unit>
-      <trans-unit id="fbe2a3f23cd1e90c861bfe94efd9c31e21eedf89" datatype="html">
-        <source>Working schedule:</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="9240073d1f6f5fa0d6594affadd2939f1273c4a1" datatype="html">
-        <source>From Monday to Friday from 8:30AM to 6:30PM</source>
-        <target>Hafta içi hergün 08:30 - 18:30 &#13;
-</target>
-      </trans-unit>
-      <trans-unit id="6765b4c916060f6bc42d9bb69e80377dbcb5e4e9" datatype="html">
-        <source>Login</source>
-        <target>Giriş</target>
-      </trans-unit>
-      <trans-unit id="8988fddbdb2920b1a06627a6e6573e8904dc0aa5" datatype="html">
-        <source>Enter your phone number</source>
-        <target>Telefon numaranızı girin</target>
-      </trans-unit>
-      <trans-unit id="df4da340d016d0d3c0884be8ddc025a723c3fb34" datatype="html">
-        <source>Enter your password</source>
-        <target>Şifre girişi</target>
-      </trans-unit>
-      <trans-unit id="e33f875169edc640926d4e90e3f378d9ee8fb9a8" datatype="html">
-        <source>The password must contain numbers (0-9), letters in upper and lower case letters (A-Z, a-z)</source>
-        <target>Şifreniz (0-9) sayılarından ve  (A-Z, a-z) latin harflerden oluşmalıdır</target>
-      </trans-unit>
-      <trans-unit id="db3c2aa1a1399501be2b6c03071eaac680a68aea" datatype="html">
-        <source>Password recovery</source>
-        <target>Şifre kurtarma</target>
-      </trans-unit>
-      <trans-unit id="c40c132843f349c3aa49730405de1d0ca733aef6" datatype="html">
-        <source>Sign up</source>
-        <target>Kayıt</target>
-      </trans-unit>
-      <trans-unit id="8c2e731ee23fd5de9f7fac6bad93993a5f6ba3a8" datatype="html">
-        <source> Back</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="aad781c465596635c51c74128a3c70a3d32ee456" datatype="html">
-        <source>Enter code from SMS</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="1e85d13bc8171a908046ff1a98d6c8c5a0b1f729" datatype="html">
-        <source>Send SMS again </source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="ac10a3d9b59575640797c1a8e6aea642cf5d5e77" datatype="html">
-        <source>Continue</source>
-        <target>Devam</target>
-      </trans-unit>
-      <trans-unit id="cda31dbd724cf5f4fa7a4274d9120651490c8a8c" datatype="html">
-        <source>Back</source>
-        <target>Geri</target>
-      </trans-unit>
-      <trans-unit id="7d6573fb998f3a1cf1356623b85850d9d10edaa9" datatype="html">
-        <source>Registration</source>
-        <target>Kayıt</target>
-      </trans-unit>
-      <trans-unit id="80b1b8a8a06d421dd1a7c1d54856d80dccd3ab92" datatype="html">
-        <source>Enter the code from SMS</source>
-        <target>SMS kodunu girin</target>
-      </trans-unit>
-      <trans-unit id="80f49c67c97ccb561f089e36ecb41266c8c806af" datatype="html">
-        <source>Send SMS again</source>
-        <target>Tekrar SMS kodu gönder</target>
-      </trans-unit>
-      <trans-unit id="5fa5c05063493603a4bba6c2341641a83fb0be18" datatype="html">
-        <source>Enter password</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="ccac601bf473fa28c9ac46794f1cd40542f74347" datatype="html">
-        <source>Message</source>
-        <target>Mesaj</target>
-      </trans-unit>
-      <trans-unit id="355ee942f292ef163f1c984e61802bc8d1fbf073" datatype="html">
-        <source>Sorry for the inconvenience, this method is on reconstruction.</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="f4e529ae5ffd73001d1ff4bbdeeb0a72e342e5c8" datatype="html">
-        <source>Close</source>
-        <target>Kapat</target>
-      </trans-unit>
-      <trans-unit id="82ac8ec728fb6d36f85eb9f59d343bc6ea01ab38" datatype="html">
-        <source>Payment</source>
-        <target>Ödemeler</target>
-      </trans-unit>
-      <trans-unit id="d7a1dba1854c27a3403bd9e7c4e44b4e5cf97211" datatype="html">
-        <source>Transfers</source>
-        <target>Havaleler</target>
-      </trans-unit>
-      <trans-unit id="84b02fb0d4ce4d700f4a7748dcc8252b93770f3f" datatype="html">
-        <source>Replenishment</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="6540b7f702b8cc4dffd307d8be84a94453493a44" datatype="html">
-        <source>My cards</source>
-        <target>Hesaplarım</target>
-      </trans-unit>
-      <trans-unit id="efac3af0b32e953279c25b6519cae256811e0fe8" datatype="html">
-        <source>History</source>
-        <target>Tarih</target>
-      </trans-unit>
-      <trans-unit id="0e2b5b54050202cef420401c7f8af755cbb5a3a5" datatype="html">
-        <source>Bonus</source>
-        <target>Bonus</target>
-      </trans-unit>
-      <trans-unit id="85b79c9064aed1ead31ace985f31aa1363f6bdaf" datatype="html">
-        <source>Help</source>
-        <target>Yardım</target>
-      </trans-unit>
-      <trans-unit id="121cc5391cd2a5115bc2b3160379ee5b36cd7716" datatype="html">
-        <source>Settings</source>
-        <target>Ayarlar</target>
-      </trans-unit>
-      <trans-unit id="85f9b39c841a93a710e2059756498ffab6ee14d8" datatype="html">
-        <source>© Payment system «MoneyFGE™» 2016TM is used under license holder MoneyFGE</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="d9e4cf9eeb85c466d32b89f8572e8cce0081eb1b" datatype="html">
-        <source>Enter your email</source>
-        <target>E-posta girin</target>
-      </trans-unit>
-      <trans-unit id="edc78369826830714c6a6a11a1918bccd43b13f9" datatype="html">
-        <source>ОК</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="16b82b65915bed95bdb5258f476dbb163679b407" datatype="html">
-        <source>Popular categories</source>
-        <target>En iyi kategoriler</target>
-      </trans-unit>
-      <trans-unit id="4811fe574bff9ca7dcdcae404cf1312958c82d29" datatype="html">
-        <source>All categories</source>
-        <target>Tüm kategoriler</target>
-      </trans-unit>
-      <trans-unit id="c1300bc6a9069b311772b0114cd29237d748d8f4" datatype="html">
-        <source>Additional options</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="cef9bee98bcf0fbf36ffb4bb5a9604d4cb1f8145" datatype="html">
-        <source>Games / Entertainment</source>
-        <target>Oyun / Eğlence</target>
-      </trans-unit>
-      <trans-unit id="0e0105f53dd5c9635367796a2394d67039feb2f1" datatype="html">
-        <source>Making purchases / payments with MONEYFGE you get back up to 30% on your account</source>
-        <target>MONEYFGE ile alım/ödeme yaparak hesabınıza % 30'a varan miktarı geri alın</target>
-      </trans-unit>
-      <trans-unit id="854b54794dfb1cc09de84973d098e57c476a2f70" datatype="html">
-        <source>All partners</source>
-        <target>Tüm ortaklar</target>
-      </trans-unit>
-      <trans-unit id="e36774be5979eb483652b1ab5d52ae073a05aa05" datatype="html">
-        <source>We offer you</source>
-        <target>Geri ödüyoruz</target>
-      </trans-unit>
-      <trans-unit id="ceb3500aadb2fbb772774a941fd744c9f131976f" datatype="html">
-        <source>to 20%</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="cd416293c46ec9f8aaec938b723805833c7ae8ad" datatype="html">
-        <source>Archive transactions</source>
-        <target>Geçmiş işlemler</target>
-      </trans-unit>
-      <trans-unit id="21a297203e80642266f1a3f866a97ede05dfc6b8" datatype="html">
-        <source>Go to archive</source>
-        <target>Arşive git</target>
-      </trans-unit>
-      <trans-unit id="7e892ba15f2c6c17e83510e273b3e10fc32ea016" datatype="html">
-        <source>Search</source>
-        <target>Arama</target>
-      </trans-unit>
-      <trans-unit id="2aba1e87039819aca3b70faa9aa848c12bf139ca" datatype="html">
-        <source>Show</source>
-        <target>Göster</target>
-      </trans-unit>
-      <trans-unit id="1d0974afae70914072a4fbf19e53328e517bae73" datatype="html">
-        <source>News</source>
-        <target>Haberler</target>
-      </trans-unit>
-      <trans-unit id="0d05b49b779578bc05c156f155d723b9898a75fe" datatype="html">
-        <source>All news</source>
-        <target>Tüm haberler</target>
-      </trans-unit>
-      <trans-unit id="84b8cedc0d0ec6afba8b02f2711a67b8f35160b7" datatype="html">
-        <source>Enter the number</source>
-        <target>Numarayı girin</target>
-      </trans-unit>
-      <trans-unit id="a7cb037ae894bbcd5a1953095b813202b2214786" datatype="html">
-        <source>Enter amount</source>
-        <target>Tutarı girin</target>
-      </trans-unit>
-      <trans-unit id="1589ce61e1fef403fbab0057325ec0829a5395dc" datatype="html">
-        <source>Make regular</source>
-        <target>Kolay işlemler</target>
-      </trans-unit>
-      <trans-unit id="386ea918b3808032a932eaeabf4cd2c9c870cf94" datatype="html">
-        <source>Replenish</source>
-        <target>Yükleme</target>
-      </trans-unit>
-      <trans-unit id="5e2fb8ce0ce8df646e4863f33aa1da862582ce39" datatype="html">
-        <source>Commission: 2,5%</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="a778d7eeb75d87ed73c3b4b4d25b7b2a71737fdc" datatype="html">
-        <source>Minimum payment: 10 TRY</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="2eefba06c43476ee1fcc0fd5aa00366a1c0f21ce" datatype="html">
-        <source>Maximum payment: 10000 TRY</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="c9c42a415f18fa1e6ce2ac7f887e8d597c07ad07" datatype="html">
-        <source>Maximum amount: 10000 TRY</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="c8979c5531af5dfbf7f3e766948db05b8fc75d3c" datatype="html">
-        <source>Other services</source>
-        <target>Diğer hizmetler</target>
-      </trans-unit>
-      <trans-unit id="6c73c1c9f73651d3bc7fcb35821bf467240fdbba" datatype="html">
-        <source>Transfers between accounts</source>
-        <target>Başka hesaba </target>
-      </trans-unit>
-      <trans-unit id="832a3a49024a71caab5dae5473d26b9488ccaebe" datatype="html">
-        <source>Into the bank account</source>
-        <target>Banka hesabına</target>
-      </trans-unit>
-      <trans-unit id="78d84f42d9548b94b2ca07a6724cbffefe8017cb" datatype="html">
-        <source>Withdrawing money</source>
-        <target>Para çekme</target>
-      </trans-unit>
-      <trans-unit id="a9377fb734975cbf672296eb78be4146c0724480" datatype="html">
-        <source>From Account</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="e6a0156afb757d0a2ea410daf2f3a717ea6ebe37" datatype="html">
-        <source>To Account</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="3303ac7781c781babc373c112807a3b96fec3814" datatype="html">
-        <source>Sum</source>
-        <target>Miktar</target>
-      </trans-unit>
-      <trans-unit id="52c9a103b812f258bcddc3d90a6e3f46871d25fe" datatype="html">
-        <source>Save</source>
-        <target>Kaydet</target>
-      </trans-unit>
-      <trans-unit id="11f4334bbb40a09c78f16d8e11e68cfd01badd4d" datatype="html">
-        <source>Terminal</source>
-        <target>Terminal ile</target>
-      </trans-unit>
-      <trans-unit id="e17016f035664e639ea7f095e916f6fce027c236" datatype="html">
-        <source>Bank card</source>
-        <target>Banka kartı ile</target>
-      </trans-unit>
-      <trans-unit id="a4622d06dd80204e0f93dbd38a94035c6fd7e61d" datatype="html">
-        <source>Bank transfer</source>
-        <target>Banka havalesiyle</target>
-      </trans-unit>
-      <trans-unit id="f5116416b10dcbee66716d95983941f376e371e6" datatype="html">
-        <source>From  your phone</source>
-        <target>Telefon hesabı üzerinden</target>
-      </trans-unit>
-      <trans-unit id="52f9a8ead65a9c2efe158d229ecc2255aca15ce2" datatype="html">
-        <source>Online loan</source>
-        <target>Online krediyle</target>
-      </trans-unit>
-      <trans-unit id="3eb47805cd05ab132d4b181174d7d9d6c4f7a0d7" datatype="html">
-        <source>Working with Accounts</source>
-        <target>Hesaplar ile çalışma</target>
-      </trans-unit>
-      <trans-unit id="d207cc1965ec0c29e594e0e9917f39bfc276ed87" datatype="html">
-        <source>Create an account</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="27e550abc8f53c9ddc6ca8d1091d75b00b1c5c86" datatype="html">
-        <source>Order card</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="225a0f112f18cea917f3276598d0937b458a080a" datatype="html">
-        <source>Orders of cards</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="5aadfc464c8a1e111b98ef1454cabdbfcd59731b" datatype="html">
-        <source>Activate card</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="f6901d5997e335a1f353ae33150002e61d9fc8ec" datatype="html">
-        <source>Money transaction</source>
-        <target>Para transferi</target>
-      </trans-unit>
-      <trans-unit id="31a7496c07c899dfee2d81618f4d6e105ba61072" datatype="html">
-        <source>My Accounts</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="b94cd68970c76c91db0dfd3d881828b3f88fe0cf" datatype="html">
-        <source>Active Accounts</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="29881a45dafbe5aa05cd9d0441a4c0c2fb06df92" datatype="html">
-        <source>Account</source>
-        <target>Hesap</target>
-      </trans-unit>
-      <trans-unit id="1b051734b0ee9021991c91b3ed4e81c244322462" datatype="html">
-        <source>Created</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="32072c7fb0469aaf82d256a59b3e0d6ecce973b9" datatype="html">
-        <source>Currency</source>
-        <target>Alım / satım</target>
-      </trans-unit>
-      <trans-unit id="7e69426bd97a606d8ae6026762858e6e7c86a1fd" datatype="html">
-        <source>Balance</source>
-        <target>Yükleme</target>
-      </trans-unit>
-      <trans-unit id="030b4423b92167200e39519599f9b863b4f7c62c" datatype="html">
-        <source>Actions</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="f94863641b9244f0298732da591eca94d474d41a" datatype="html">
-        <source>Lock</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="5660a255705213dcc119fbba55ac96d61859a6aa" datatype="html">
-        <source>Lock Accounts</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="aac99820b81b63dd081ef9449080e545df8b03cd" datatype="html">
-        <source>Unlock</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="69a7a9e0ea787a1247872323260576b64095b34f" datatype="html">
-        <source>Deleted Accounts</source>
-         <target></target>
-      </trans-unit>
+      <trans-unit id="b39084dad0338d1587fc39af49f910033bc3f945" datatype="html" approved="yes">
+        <source>Easy mobile payments online</source> <target state="translated">Kolay ödeme online cep</target> </trans-unit>
+      <trans-unit id="1eb444364f1acf2cf51dc0d149b1940578ffaacd" datatype="html" approved="yes">
+        <source>Instant online transfers into more than 140 countries</source> <target state="translated">140'tan fazla ülkede hızlı online transferler</target> </trans-unit>
+      <trans-unit id="ab29082293dd21b5d8c560e77c53b320e04f01e3" datatype="html" approved="yes">
+        <source>Paying off your credits without visiting a bank branch</source> <target state="translated">Banka şubelerine gitmeden kredilerin hızlı ve kolay ödenmesi</target> </trans-unit>
+      <trans-unit id="3edef39f69f0b94b0abb1b9f41087031b6bbc46f" datatype="html" approved="yes">
+        <source>Convenient online payments on utility bills</source> <target state="translated">Faturaların hızlı ve kolay şekilde online ödenmesi</target> </trans-unit>
+      <trans-unit id="fa5739f8d3cf5941d598e6caa4d10d25fd56f3ac" datatype="html" approved="yes">
+        <source>More than 1,000 online payment methods available in Turkey and all over the world</source> <target state="translated">Türkiye'de ve dünyada binden fazla online ödeme seçeneği</target> </trans-unit>
+      <trans-unit id="a67bd3d8a0cc79f96ceea456d75b35c828b778df" datatype="html" approved="yes">
+        <source>Payments due</source> <target state="translated">Vadesi gelen ödemeler</target> </trans-unit>
+      <trans-unit id="31364005f20ca564b326d700c4361c0f734b3e72" datatype="html" approved="yes">
+        <source>Remittances</source> <target state="translated">Para &lt;br class="hidden-sm hidden-xs"&gt;transferleri</target> </trans-unit>
+      <trans-unit id="46f93e44bd44a72c03e2e519e6a076239d1821be" datatype="html" approved="yes">
+        <source>Credit payments</source> <target state="translated">Kredi ödemeleri</target> </trans-unit>
+      <trans-unit id="d6e0e791264c6ab64c66a1286ec06a7a292febc3" datatype="html" approved="yes">
+        <source>Bills</source> <target state="translated">Fatura &lt;br class="hidden-sm hidden-xs"&gt;ödemeleri</target> </trans-unit>
+      <trans-unit id="a258e0741dafbe9aff5e0cef7b90d4a7f8bbefeb" datatype="html" approved="yes">
+        <source>Online payments</source> <target state="translated">Online ödemeler</target> </trans-unit>
+      <trans-unit id="f9e44b74ae526bfb145f1c558227603cea99cf01" datatype="html" approved="yes">
+        <source>Mobile payments:</source> <target state="translated">Mobil iletişim ödemeleri:</target> </trans-unit>
+      <trans-unit id="817a402ba80874cba70243a9bf00c0ef77bb6334" datatype="html" approved="yes">
+        <source>Mobile Payment Service</source> <target state="translated">Mobil iletişim ödeme hizmetleri</target> </trans-unit>
+      <trans-unit id="464631983f46ccad41bdaa080423325e60710668" datatype="html" approved="yes">
+        <source>With this service, you can replenish/recharge your mobile phones accounts when you have access to the Internet, PC and mobile devices. This service can be used by contract customers and prepaid subscribers. All transactions with mobile payment accounts occur within minutes.</source> <target state="translated">Bu hizmeti kullanarak, internet erişimi olan bilgisayarınız ve mobil cihazlarınız ile cep telefonlarınız için online olarak, dakika, internet paketleri alabilirsiniz. Bu hizmet, ancak sözleşmeli müşteriler ve ön ödemeli müşterilerimiz tarafından kullanılabilir.</target> </trans-unit>
+      <trans-unit id="54c028ad959c6c0197ceb8092130f6587f12884d" datatype="html" approved="yes">
+        <source>Money transfer:</source> <target state="translated">Para transferleri:</target> </trans-unit>
+      <trans-unit id="80f4a01fc7c0cfb422f2eb5a3429f1fa9c6118d0" datatype="html" approved="yes">
+        <source>Sending and receiving money quickly and securely</source> <target state="translated">Hizli ve güvenli bir şekilde para gönderme para alma.</target> </trans-unit>
+      <trans-unit id="42eb50662321f5ff3e443925441c9b4114215838" datatype="html" approved="yes">
+        <source>MoneyFGE performs various types of payments and transfers in various currencies and carries deposition and transfer funds. All transactions are done quickly, conveniently and securely. Receive and send money from any location in the world. In card or cash. Money transfer reach destination within a few minutes.</source> <target state="translated">MoneyFGE i̇le, farli ülke para bi̇ri̇mleri̇ üzeri̇nden her türlü transfer ve ödemeleri̇, hizli ve güvenli̇ bi̇r şeki̇lde gerçekleşti̇rebi̇li̇rsi̇ni̇z. Dünyanin her yeri̇nden paranizi gönderebi̇li̇r ve alabi̇li̇rsi̇ni̇z. Para transferleri̇ni̇z, gönderi̇ldi̇kten bi̇rkaç daki̇ka sonra alici tarafindan kullanilabi̇li̇r.</target> </trans-unit>
+      <trans-unit id="e02a0235e26fce6cdc2c6e4f6984ec745f501666" datatype="html" approved="yes">
+        <source>Credit payments:</source> <target state="translated">Kredi ödemeleri</target> </trans-unit>
+      <trans-unit id="2c3d5b6162df0f8005172c6fe45fa7365345d572" datatype="html" approved="yes">
+        <source>To repay loans</source> <target state="translated">Kredileri ödemelerinde yenilik.</target> </trans-unit>
+      <trans-unit id="051c289a08b34d5d313cb9e8caf17bb9d487b29a" datatype="html" approved="yes">
+        <source>Take advantage of our service of the loan. This is another opportunity for our payment system. Now you can on a monthly basis or to repay Your loan in online mode (interest or principal or other payments that match the terms of the loan agreement). To repay the loan, you can use computer or mobile phone.</source> <target state="translated">Kredi geri ödeme hizmetimizden yararlanabilirsiniz. Kredi taksitlerinizi veya kredinizin tamamını(anapara, borç faizi, kredi sözleşmesinin koşullarına uygun diğer ödemeleri) bilgisayar veya cep telefonu yardımı ile online şekilde kolayca yapabilirsiniz.</target> </trans-unit>
+      <trans-unit id="2d6c69dc91bfc6ce365da306152e0631b64b6c30" datatype="html" approved="yes">
+        <source>Bills:</source> <target state="translated">Fatura &lt;br class="hidden-sm hidden-xs"&gt;ödemeleri</target> </trans-unit>
+      <trans-unit id="3f7c6fe65534ce468b938b2214795bf0b9369222" datatype="html" approved="yes">
+        <source>Utility payments</source> <target state="translated">Ödeme kamu hizmetlerinin</target> </trans-unit>
+      <trans-unit id="dc351b7f006175be71ed2d9ad17b60b6085a1e54" datatype="html" approved="yes">
+        <source>Our billing system allows you to pay your utility bills through the Internet. This can be done from home or office and only requires access to the Internet, no need to go to the bank branch. Operations are conducted instantly and reliably.</source> <target state="translated">Moneyfge ödeme sistemi, internet üzerinden tüm faturalarinizi ödeme imkani sağlar.  Ödemelerinizi herhangi bir banka şubesine gitmeden internet erişimi olan heryerden hizli ve güvenli bir şekilde yapabilirsiniz.</target> </trans-unit>
+      <trans-unit id="3df669bed0d3658bdb53340c31d355e7363d0cb7" datatype="html" approved="yes">
+        <source>Online payments:</source> <target state="translated">Online ödemeler</target> </trans-unit>
+      <trans-unit id="40a0d7237b44048e13ffffa2afa68e518069daec" datatype="html" approved="yes">
+        <source>Online Payment Service</source> <target state="translated">Hizmet online ödeme</target> </trans-unit>
+      <trans-unit id="29a431c144b5427194a7bc0acc93cfb5399dc545" datatype="html" approved="yes">
+        <source>MoneyFGE payment system provides payment services via the Internet, television, telephony online. You can easily perform these operations without leaving home. This can be done from anywhere in the world with Internet access, a computer or mobile device.</source> <target state="translated">MoneyFGE, hızlı ve güvenli bir ödeme uygulamasıdır. Her gün, binlerce kişi, günün her saatınde tüm mali operasyonları için bizi tercih etmektedir. MoneyFGE, kişisel verilerinizin korunması için en üst düzeyde güvenlik derecesine sahip sistemler kullanmaktadır.</target> </trans-unit>
+      <trans-unit id="65005f7502e8b6c0a7fef4fbb314eb8735f6654a" datatype="html" approved="yes">
+        <source>Our services</source> <target state="translated">Hizmetler</target> </trans-unit>
+      <trans-unit id="abe30f8875230989d34c2768070d3772a313301d" datatype="html" approved="yes">
+        <source>Mobile payments</source> <target state="signed-off">Mobil iletişim ödemeleri</target> </trans-unit>
+      <trans-unit id="e6a7915c03b80d42f34c47f944d3634b26ffe827" datatype="html" approved="yes">
+        <source>Money transfer</source> <target state="translated">Para transferleri</target> </trans-unit>
+      <trans-unit id="ca36e2bdb8c02d0f7c07a1f19d31d17cba6afbcc" datatype="html" approved="yes">
+        <source>Games/Entertainment</source> <target state="translated">Oyun/Eğlence</target> </trans-unit>
+      <trans-unit id="2a0260b32aee8fd146cb89015d0d34d5421289d7" datatype="html" approved="yes">
+        <source>Internet / TV / Telephone</source> <target state="translated">Internet / TV / Telefon</target> </trans-unit>
+      <trans-unit id="9b475bb63675494482effde989c7f1f18c232620" datatype="html" approved="yes">
+        <source>Contacts</source> <target state="translated">İletişim</target> </trans-unit>
+      <trans-unit id="9d1e08c6f5e0b1a5d2b7d74e7f9d8a6a3d085bab" datatype="html" approved="yes">
+        <source>WORLD FGE</source> <target state="translated">DÜNYA FGE</target> </trans-unit>
+      <trans-unit id="6875bab07c9bb276ae1e5b940ea339b7dc47adad" datatype="html" approved="yes">
+        <source>EXCHANGE MARKET FGE</source> <target state="translated">FGE borsa</target> </trans-unit>
+      <trans-unit id="eac5fa31f10a8803f6c2f94e0a8c6200f95c2842" datatype="html" approved="yes">
+        <source>Current account</source> <target state="translated">Cari hesap</target> </trans-unit>
+      <trans-unit id="d8b69f5f3ff403286693aa2254adc34de9bf810d" datatype="html" approved="yes">
+        <source>Recharge account</source> <target state="translated">Hesaba Para Yatırma</target> </trans-unit>
+      <trans-unit id="c484f3e14d47477125b60c977308ce81edc4dc5e" datatype="html" approved="yes">
+        <source>Cashouts</source> <target state="translated">Para çekme</target> </trans-unit>
+      <trans-unit id="cb949e87525f2b17c5bb7513b7a0a0e401d4a1d6" datatype="html" approved="yes">
+        <source>Payment solutions</source> <target state="translated">Ödeme çözümleri</target> </trans-unit>
+      <trans-unit id="d49a3cef33520010f9db5275721bede84dcda0fc" datatype="html" approved="yes">
+        <source>Transfer from card to card</source> <target state="translated">Karttan karta aktarma</target> </trans-unit>
+      <trans-unit id="2b210f7e594f9dd967e5a9dde43aa12fd685a072" datatype="html" approved="yes">
+        <source>© Payment system «MoneyFGE™» 2016 TM is used under license holder MoneyFGE</source> <target state="translated">© Ödeme sistemi «MoneyFGE ™» 2016 TM, lisans sahibi MoneyFGE ile kullanılır</target> </trans-unit>
+      <trans-unit id="02e4ed79f33b1b2b4c47e1dacdf271d72ce84ddc" datatype="html" approved="yes">
+        <source>Do a quick easy online payments</source> <target state="translated">Hızlı bir kolay çevrimiçi ödeme yapın</target> </trans-unit>
+      <trans-unit id="464277459576337f90a73c510b5c05d9119323c5" datatype="html" approved="yes">
+        <source>About the company</source> <target state="translated">Hakkımızda</target> </trans-unit>
+      <trans-unit id="cc6bb133dd03bd1640c526665096129eed3025ff" datatype="html" approved="yes">
+        <source>MoneyFGE is a reliable, safe and modern internet platform to make online payments and money transfers.</source> <target state="translated">MoneyFGE - online ödeme ve para transferleri için güvenilir, güvenli ve modern internet platformu.</target> </trans-unit>
+      <trans-unit id="5dc36dc29a3f7b82c45289f60ee870b5365ca43a" datatype="html" approved="yes">
+        <source>Our system is a universal payment tool that allows you to transfer money to and from your clients and pay for different services in different directions.</source> <target state="translated">Bizim sistemi - müşterilerine para transferleri almak ve farklı yönlere çeşitli hizmetler için ödeme yapmanıza olanak tanıyan evrensel ödeme aracı.</target> </trans-unit>
+      <trans-unit id="e8e816e0b4bd983971c102ecccba0ad7c1d43872" datatype="html" approved="yes">
+        <source>With MoneyFGE is the rapid transfer of funds.</source> <target state="translated">MoneyFGE ile ödemeler ve hızlı para transferi kullanışlı bir koleksiyon geliyor.</target> </trans-unit>
+      <trans-unit id="fd077bf951a87409b5e61b1edc5ec25b8ae8e262" datatype="html" approved="yes">
+        <source>Our service is a convenient and easy platform for the transfer of funds to various popular payment methods and various services, including bank cards, mobile and online payments, utilities, repayment of loans, pay for games and entertainment, and more. All this can be done from anywhere in the world.</source> <target state="translated">Bizim hizmet - banka kartları, mobil ve online ödeme, kamu ödemeleri, kredi geri ödemeleri, oyun, eğlence ve daha fazlası için ödeme de dahil olmak üzere çeşitli popüler yolları ve çeşitli servisler tarafından fon transferi için kullanışlı ve basit bir platformdur. Bütün bu dünyanın her yerinden yapılabilir.</target> </trans-unit>
+      <trans-unit id="222fb65d5108cbf9c423936c626392b54e7d46c4" datatype="html" approved="yes">
+        <source>All payment data in our system is confidential.</source> <target state="translated">Sistemimizde tüm ödeme bilgileri gizlidir ve güvenlidir.</target> </trans-unit>
+      <trans-unit id="2e290ce9ae3538766d212811b959b2fa588dd973" datatype="html" approved="yes">
+        <source>MoneyFGE offers the most favorable terms to its customers and is a handy assistant payments to your business.</source> <target state="translated">MoneyFGE müşterilerine en uygun koşulları sunan ve iş ödemeleri için uygun bir yardımcısıdır.</target> </trans-unit>
+      <trans-unit id="f9421eb17bf9a309ff16584b286a6463b2f91f66" datatype="html" approved="yes">
+        <source>With this service, you can replenish their accounts of mobile phones when you have access to the Internet, PC and mobile devices. This service can be used by contract customers and prepaid subscribers. All transactions with mobile payment accounts occur within minutes. For the transaction enter your mobile phone number and the amount that you want to update your account with. This service is available to all operators. Use our service for mobile communications, it is convenient and easy!</source> <target state="translated">Bu hizmeti kullanarak, internet erişimi̇ olan bilgisayarlar ve mobil cihazlariniz i̇le cep telefonlariniz i̇çi̇n onli̇ne olarak daki̇ka ve i̇nternet paketleri̇ satin alabi̇li̇rsi̇ni̇z. Bu hi̇zmet, ancak sözleşmeli̇ müşteri̇ler ve ön ödemeli̇ müşteri̇ler tarafindan kullanilabi̇li̇r. Ödeme yapmak i̇çi̇n cep telefon numaranizi gi̇rmeni̇z ve almak i̇stedi̇ği̇ni̇z hi̇zmeti̇ seçmeni̇z yeterli̇di̇r. Bu hizmet tüm operatörler için geçerlidir. MoneyFGE, ödeme kanallarini kullanmak çok kolay ve güvenli̇di̇r.</target> </trans-unit>
+      <trans-unit id="accae4a6b267c69a8f2cae27bbd2391a2136e718" datatype="html" approved="yes">
+        <source>Mobile operators</source> <target state="translated">Mobil operatörler</target> </trans-unit>
+      <trans-unit id="346b5bf63ec25a4031a06bc44711b47d383b5403" datatype="html" approved="yes">
+        <source>Commission</source> <target state="translated">Komisyon</target> </trans-unit>
+      <trans-unit id="04f4ae6e5fe8fde1ea080ff98f967fd02be88c30" datatype="html" approved="yes">
+        <source>MoneyFGE performs various types of payments and transfers in various currencies and carries deposition and transfer funds. All transactions are done quickly, conveniently and securely. Receive and send money from any location in the world. By card or cash. Money transfer is able to reach destination within a few minutes. Our payment system offers its customers the optimum scheme of transfer of funds for you, your family and friends. In order to receive money you must have a passport or ID. To get all the information about currency transactions please contact our manager.</source> <target state="translated">MoneyFGE i̇le, farli ülke para bi̇ri̇mleri̇ üzeri̇nden her türlü transfer ve ödemeleri̇, hizli ve güvenli̇ bi̇r şeki̇lde gerçekleşti̇rebi̇li̇rsi̇ni̇z. Dünyanin her yeri̇nden paranizi gönderebi̇li̇r ve alabi̇li̇rsi̇ni̇z. Para transferleri̇ni̇z, gönderi̇ldi̇kten bi̇rkaç daki̇ka sonra alici tarafindan kullanilabi̇li̇r. MoneyFGE ödeme si̇stemi̇, si̇ze, ai̇leni̇ze, arkadaşlariniza, müşteri̇leri̇ni̇ze en uygun ödeme seçenekleri̇ni̇ sunar. Para göndermek ve para almak i̇çi̇n özel onaylar gereksi̇z belgeler i̇stenmez. Para transferleri̇ i̇le i̇lgi̇li̇ daha fazla bi̇lgi̇ almak i̇çi̇n bi̇zi̇mle i̇rti̇bata geçebi̇li̇rsi̇niz</target> </trans-unit>
+      <trans-unit id="323511e5abee355aa1bbcd6c1c3d72f0cb852ad9" datatype="html" approved="yes">
+        <source>Money transfer system</source> <target state="translated">Havale sistemi</target> </trans-unit>
+      <trans-unit id="6362d3ed071707ab2be66936f0bcfd25db203f91" datatype="html" approved="yes">
+        <source>Use our repayment service. This is another opportunity of our payment system. Now you can pay off any loan monthly or fully online (annual interests or principal of the debt and other payments that meet the conditions of the loan agreement). Pay off the loan by using a computer or mobile phone. Our payment system is available around the world. You have a unique opportunity to conduct any transactions, wherever you are.</source> <target state="translated">Moneyfge, kredi ödemelerinizde bir yenilik daha sunmamaktadir. Kredi taksitlerinizi veya kredinizin tamamini (anapara, borç faizi, kredi sözleşmesinin koşullarina uygun diğer ödemeler) bilgisayar ve cep telefonu yardimi ile günün her saatinde online şekilde kolayca yapabilirsiniz. Dünyanin her yerinde, günün her saatinde ödemelerinizi yapabilirsiniz.</target> </trans-unit>
+      <trans-unit id="5ec08749d35eece34b47ca353e6ad0b3d91f8c6a" datatype="html" approved="yes">
+        <source>Game payments quickly and easily with MoneyFGE</source> <target state="translated">MoneyFGE ile hızlı ve kolay oyun ödemeleri</target> </trans-unit>
+      <trans-unit id="d8ee6aa599761eb38b9c2e57bdbcb1f8c3b1fe1d" datatype="html" approved="yes">
+        <source>Games, Entertainment</source> <target state="translated">Oyun, Eğlence</target> </trans-unit>
+      <trans-unit id="e56a7440f99ba8679080d557b17fb3af4e9ed30a" datatype="html" approved="yes">
+        <source>MoneyFGE provides services to pay for different types of games and entertainment.</source> <target state="translated">Moneyfge oyun ve eğlence ödemeleriniz için farkli bir sistem içerir.</target> </trans-unit>
+      <trans-unit id="681f904ab183fad02666f952f0fa2d1973898e89" datatype="html" approved="yes">
+        <source>Payment for games and entertainment will take very little time to put money into the account can be done from the computer and at any convenient time of the day or night. You can pay with us all the most popular online games.</source> <target state="translated">Nakit ödemeli oyunlar için hesabinizdan ödeme yapmak çok kolay. Bilgisayarinizin başinda, eğlencenize ara vermeden günün her saatinde tüm oyunlar için online ödeme yapabilirsiniz.</target> </trans-unit>
+      <trans-unit id="8bb5b2073697f3f4378c44a49b7524934c9268f4" datatype="html" approved="yes">
+        <source>For example:</source> <target state="translated">Örnek:</target> </trans-unit>
+      <trans-unit id="0e6a93b6d39a899de3abb0cb10c51f19057fa547" datatype="html" approved="yes">
+        <source>Game</source> <target state="translated">Oyun</target> </trans-unit>
+      <trans-unit id="f7f501488f6ff4cec9f61d79bc80dcb89e328263" datatype="html" approved="yes">
+        <source>Pay online for TV, internet, telephone - easily and comfortably, without leaving your home!</source> <target state="translated">Evinizden çıkmadan tv,&amp;lt;br class=&amp;quot;hidden-sm hidden-xs&amp;quot;&amp;gt; internet, cep telefonu&amp;lt;br class=&amp;quot;hidden-sm hidden-xs&amp;quot;&amp;gt;&amp;lt;small&amp;gt; ödemelerinizi online - olarak rahat ve kolayca yapabilirsiniz!&amp;lt;/small&amp;gt;</target> </trans-unit>
+      <trans-unit id="a695d167a2dba69ff2c1a747b87cdd047023151a" datatype="html" approved="yes">
+        <source>Service payment for Internet, television, telephones</source> <target state="translated">İnternet, televizyon, telefon ödemeleri.</target> </trans-unit>
+      <trans-unit id="3ffcacf085742c9d5b5fd43edd9adaf8017be45d" datatype="html" approved="yes">
+        <source>MoneyFGE payment system provides payment services for Internet, TV and telephony online.</source> <target state="translated">Money FGE ödeme sistemi, internet, televizyon, telefon hizmetleri için online ödeme yapma imkani sunar.</target> </trans-unit>
+      <trans-unit id="7c83a3e6f97bdd5eec17ad01e32bb6d7438ca6fe" datatype="html" approved="yes">
+        <source>You can easily perform data operations. without leaving home. This can be done from anywhere in the world with Internet access.</source> <target state="translated">Evinizden çikmadan tüm fatura ödemelerinizi yapmak için moneyfge de bir hesabiniz ve internet erişimi olan bilgisayar veya mobil cihaziniz yeterli olacaktir.</target> </trans-unit>
+      <trans-unit id="b702663d5bea1e79e90c585166da75356f682c65" datatype="html" approved="yes">
+        <source>Online payment</source> <target state="translated">Ödeme sistemleri</target> </trans-unit>
+      <trans-unit id="73294c064483591113d915e4ee8108bd9934b3ce" datatype="html" approved="yes">
+        <source>Payment system offers a system of payments between financial institutions, Internet users and business organizations for various services via the Internet, including buying and selling.</source> <target state="translated">Alim-satim dahil olmak üzere internet üzerinden farkli hizmetler için finansal kurumlar, internet kullanicilari, ticari kuruluşlar arasindaki sistemleri yerleşim.</target> </trans-unit>
+      <trans-unit id="b80ed8152183f543194d904c66279f12746672b1" datatype="html" approved="yes">
+        <source>We work with certain systems such as WebMoney, Paypal, Neteller, eKassir, UnionPay and so on. D. Payment Methods is a great choice because you can choose the payment system that You need.</source> <target state="translated">Biz webmoney, paypal, neteller, ekassir, unionpay gibi bazi sistemleri ile çalişmak ve size gereken ödeme sistemini seçebilmesi vb. D. Yollari, büyük bir seçim ödemek zorunda.</target> </trans-unit>
+      <trans-unit id="2cc7883f354607063407159585d206fe9b059f4c" datatype="html" approved="yes">
+        <source>Fast and easy online payments of utility bills.</source> <target state="translated">Faturaların hızlı ve kolay çevrimiçi ödemeleri.</target> </trans-unit>
+      <trans-unit id="d608cf1b7d95a0663e65566b595afb45740f5007" datatype="html" approved="yes">
+        <source>Our billing system allows you to pay your utility bills through the Internet. This can be done from home or office with access to the Internet, do not need to go to the bank. Operations are conducted instantly and reliably. You have to register at the registration and you can also specify multiple personal accounts. You can customize the service of regular utility bills will remove a certain amount of money from your card.</source> <target state="translated">Moneyfge ödeme sistemi, internet üzerinden tüm faturalarinizi ödeme imkani sağlar. Ödemelerinizi herhangi bir banka şubesine gitmeden internet erişimi olan heryerden hizli ve güvenli bir şekilde yapabilirsiniz. Eğer ayni zamanda kişisel hesaplar sayisini belirtmek için seçeneğiniz vardir, sitede kayit ve giriş yapmaniz gerekiyor. Sen kamu hizmetleri için aylik kartindan para belirli bir miktar silinecektir düzenli faturalar, hizmet özelleştirebilirsiniz.</target> </trans-unit>
+      <trans-unit id="693d14f486a25e86bc515dfcfc4462d5201217ef" datatype="html" approved="yes">
+        <source>Light</source> <target state="translated">Işık</target> </trans-unit>
+      <trans-unit id="e4ef8de89ec37f583998cdc3af19f8d7d01d58b2" datatype="html" approved="yes">
+        <source>Gas</source> <target state="translated">Gaz</target> </trans-unit>
+      <trans-unit id="e7a9a9610cda6079e8fb9e967c7184eee388b401" datatype="html" approved="yes">
+        <source>Water</source> <target state="translated">Su</target> </trans-unit>
+      <trans-unit id="553d10648d6e5f139ed0d4f3ff66e0a7609c1a27" datatype="html" approved="yes">
+        <source>Feedback form</source> <target state="translated">İletişim formu</target> </trans-unit>
+      <trans-unit id="eb442c64a84ed7e4f9c9fc4ad041f8b5e5c91933" datatype="html" approved="yes">
+        <source>First Name*</source> <target state="translated">Adı*</target> </trans-unit>
+      <trans-unit id="6934d8edd276d59e050006fe91b695ebad0218f8" datatype="html" approved="yes">
+        <source>Phone</source> <target state="translated">Telefon</target> </trans-unit>
+      <trans-unit id="9c58852f6befc7bbcd3e31bf5ae00edd05492ed5" datatype="html" approved="yes">
+        <source>Comment*</source> <target state="translated">Yorum*</target> </trans-unit>
+      <trans-unit id="2c5ff8fa9c9aaec93f97e37c9a0edcd797194573" datatype="html" approved="yes">
+        <source>Send</source> <target state="translated">Gönder</target> </trans-unit>
+      <trans-unit id="fbe2a3f23cd1e90c861bfe94efd9c31e21eedf89" datatype="html" approved="yes">
+        <source>Working schedule:</source> <target state="translated">Çalışma saatleri:</target> </trans-unit>
+      <trans-unit id="9240073d1f6f5fa0d6594affadd2939f1273c4a1" datatype="html" approved="yes">
+        <source>From Monday to Friday from 8:30AM to 6:30PM</source> <target state="translated">Hafta içi hergün 08:30 - 18:30</target> </trans-unit>
+      <trans-unit id="6765b4c916060f6bc42d9bb69e80377dbcb5e4e9" datatype="html" approved="yes">
+        <source>Login</source> <target state="translated">Giriş</target> </trans-unit>
+      <trans-unit id="8988fddbdb2920b1a06627a6e6573e8904dc0aa5" datatype="html" approved="yes">
+        <source>Enter your phone number</source> <target state="translated">Telefon numaranızı girin</target> </trans-unit>
+      <trans-unit id="df4da340d016d0d3c0884be8ddc025a723c3fb34" datatype="html" approved="yes">
+        <source>Enter your password</source> <target state="translated">Şifre girişi</target> </trans-unit>
+      <trans-unit id="e33f875169edc640926d4e90e3f378d9ee8fb9a8" datatype="html" approved="yes">
+        <source>The password must contain numbers (0-9), letters in upper and lower case letters (A-Z, a-z)</source> <target state="translated">Şifreniz (0-9) sayılarından ve (A-Z, a-z) latin harflerden oluşmalıdır</target> </trans-unit>
+      <trans-unit id="db3c2aa1a1399501be2b6c03071eaac680a68aea" datatype="html" approved="yes">
+        <source>Password recovery</source> <target state="translated">Şifre Yenileme</target> </trans-unit>
+      <trans-unit id="c40c132843f349c3aa49730405de1d0ca733aef6" datatype="html" approved="yes">
+        <source>Sign up</source> <target state="translated">Kayıt</target> </trans-unit>
+      <trans-unit id="8c2e731ee23fd5de9f7fac6bad93993a5f6ba3a8" datatype="html" approved="yes">
+        <source>Back</source> <target state="translated">Geri</target> </trans-unit>
+      <trans-unit id="aad781c465596635c51c74128a3c70a3d32ee456" datatype="html" approved="yes">
+        <source>Enter code from SMS</source> <target state="translated">SMS'den kodu girin</target> </trans-unit>
+      <trans-unit id="1e85d13bc8171a908046ff1a98d6c8c5a0b1f729" datatype="html" approved="yes">
+        <source>Send SMS again</source> <target state="translated">Tekrar SMS kodu gönder</target> </trans-unit>
+      <trans-unit id="ac10a3d9b59575640797c1a8e6aea642cf5d5e77" datatype="html" approved="yes">
+        <source>Continue</source> <target state="translated">Devam</target> </trans-unit>
+      <trans-unit id="cda31dbd724cf5f4fa7a4274d9120651490c8a8c" datatype="html" approved="yes">
+        <source>Back</source> <target state="translated">Geri</target> </trans-unit>
+      <trans-unit id="7d6573fb998f3a1cf1356623b85850d9d10edaa9" datatype="html" approved="yes">
+        <source>Registration</source> <target state="translated">Kayıt</target> </trans-unit>
+      <trans-unit id="80b1b8a8a06d421dd1a7c1d54856d80dccd3ab92" datatype="html" approved="yes">
+        <source>Enter the code from SMS</source> <target state="translated">SMS'den kodu girin</target> </trans-unit>
+      <trans-unit id="80f49c67c97ccb561f089e36ecb41266c8c806af" datatype="html" approved="yes">
+        <source>Send SMS again</source> <target state="translated">Tekrar SMS kodu gönder</target> </trans-unit>
+      <trans-unit id="5fa5c05063493603a4bba6c2341641a83fb0be18" datatype="html" approved="yes">
+        <source>Enter password</source> <target state="translated">Şifre girişi</target> </trans-unit>
+      <trans-unit id="ccac601bf473fa28c9ac46794f1cd40542f74347" datatype="html" approved="yes">
+        <source>Message</source> <target state="translated">Mesaj</target> </trans-unit>
+      <trans-unit id="355ee942f292ef163f1c984e61802bc8d1fbf073" datatype="html" approved="yes">
+        <source>Sorry for the inconvenience, this method is on reconstruction.</source> <target state="translated">Rahatsızlık verdiğimiz için özür dileriz, bu sayfa yapım aşamasındadır</target> </trans-unit>
+      <trans-unit id="f4e529ae5ffd73001d1ff4bbdeeb0a72e342e5c8" datatype="html" approved="yes">
+        <source>Close</source> <target state="translated">Kapat</target> </trans-unit>
+      <trans-unit id="82ac8ec728fb6d36f85eb9f59d343bc6ea01ab38" datatype="html" approved="yes">
+        <source>Payment</source> <target state="translated">Ödemeler</target> </trans-unit>
+      <trans-unit id="d7a1dba1854c27a3403bd9e7c4e44b4e5cf97211" datatype="html" approved="yes">
+        <source>Transfers</source> <target state="translated">Havaleler</target> </trans-unit>
+      <trans-unit id="84b02fb0d4ce4d700f4a7748dcc8252b93770f3f" datatype="html" approved="yes">
+        <source>Replenishment</source> <target state="translated">Yükleme</target> </trans-unit>
+      <trans-unit id="6540b7f702b8cc4dffd307d8be84a94453493a44" datatype="html" approved="yes">
+        <source>My cards</source> <target state="translated">Hesaplarım</target> </trans-unit>
+      <trans-unit id="efac3af0b32e953279c25b6519cae256811e0fe8" datatype="html" approved="yes">
+        <source>History</source> <target state="translated">Tarih</target> </trans-unit>
+      <trans-unit id="0e2b5b54050202cef420401c7f8af755cbb5a3a5" datatype="html" approved="yes">
+        <source>Bonus</source> <target state="translated">Bonus</target> </trans-unit>
+      <trans-unit id="85b79c9064aed1ead31ace985f31aa1363f6bdaf" datatype="html" approved="yes">
+        <source>Help</source> <target state="translated">Yardım</target> </trans-unit>
+      <trans-unit id="121cc5391cd2a5115bc2b3160379ee5b36cd7716" datatype="html" approved="yes">
+        <source>Settings</source> <target state="translated">Ayarlar</target> </trans-unit>
+      <trans-unit id="85f9b39c841a93a710e2059756498ffab6ee14d8" datatype="html" approved="yes">
+        <source>© Payment system «MoneyFGE™» 2016TM is used under license holder MoneyFGE</source> <target state="translated">© Ödeme sistemi «MoneyFGE ™» 2016 TM, lisans sahibi MoneyFGE ile kullanılır</target> </trans-unit>
+      <trans-unit id="d9e4cf9eeb85c466d32b89f8572e8cce0081eb1b" datatype="html" approved="yes">
+        <source>Enter your email</source> <target state="translated">E-posta girin</target> </trans-unit>
+      <trans-unit id="edc78369826830714c6a6a11a1918bccd43b13f9" datatype="html" approved="yes">
+        <source>ОК</source> <target state="translated">OK</target> </trans-unit>
+      <trans-unit id="16b82b65915bed95bdb5258f476dbb163679b407" datatype="html" approved="yes">
+        <source>Popular categories</source> <target state="translated">En iyi kategoriler</target> </trans-unit>
+      <trans-unit id="4811fe574bff9ca7dcdcae404cf1312958c82d29" datatype="html" approved="yes">
+        <source>All categories</source> <target state="translated">Tüm kategoriler</target> </trans-unit>
+      <trans-unit id="c1300bc6a9069b311772b0114cd29237d748d8f4" datatype="html" approved="yes">
+        <source>Additional options</source> <target state="translated">Tüm seçenekler</target> </trans-unit>
+      <trans-unit id="cef9bee98bcf0fbf36ffb4bb5a9604d4cb1f8145" datatype="html" approved="yes">
+        <source>Games / Entertainment</source> <target state="translated">Oyun / Eğlence</target> </trans-unit>
+      <trans-unit id="0e0105f53dd5c9635367796a2394d67039feb2f1" datatype="html" approved="yes">
+        <source>Making purchases / payments with MONEYFGE you get back up to 30% on your account</source> <target state="translated">MONEYFGE ile alım/ödeme yaparak hesabınıza % 30'a varan miktarı geri alın</target> </trans-unit>
+      <trans-unit id="854b54794dfb1cc09de84973d098e57c476a2f70" datatype="html" approved="yes">
+        <source>All partners</source> <target state="translated">Tüm ortaklar</target> </trans-unit>
+      <trans-unit id="e36774be5979eb483652b1ab5d52ae073a05aa05" datatype="html" approved="yes">
+        <source>We offer you</source> <target state="translated">Geri ödüyoruz</target> </trans-unit>
+      <trans-unit id="ceb3500aadb2fbb772774a941fd744c9f131976f" datatype="html" approved="yes">
+        <source>to 20%</source> <target state="translated">% 20'ye</target> </trans-unit>
+      <trans-unit id="cd416293c46ec9f8aaec938b723805833c7ae8ad" datatype="html" approved="yes">
+        <source>Archive transactions</source> <target state="translated">Geçmiş işlemler</target> </trans-unit>
+      <trans-unit id="21a297203e80642266f1a3f866a97ede05dfc6b8" datatype="html" approved="yes">
+        <source>Go to archive</source> <target state="translated">Arşive git</target> </trans-unit>
+      <trans-unit id="7e892ba15f2c6c17e83510e273b3e10fc32ea016" datatype="html" approved="yes">
+        <source>Search</source> <target state="translated">Arama</target> </trans-unit>
+      <trans-unit id="2aba1e87039819aca3b70faa9aa848c12bf139ca" datatype="html" approved="yes">
+        <source>Show</source> <target state="translated">Göster</target> </trans-unit>
+      <trans-unit id="1d0974afae70914072a4fbf19e53328e517bae73" datatype="html" approved="yes">
+        <source>News</source> <target state="translated">Haberler</target> </trans-unit>
+      <trans-unit id="0d05b49b779578bc05c156f155d723b9898a75fe" datatype="html" approved="yes">
+        <source>All news</source> <target state="translated">Tüm haberler</target> </trans-unit>
+      <trans-unit id="84b8cedc0d0ec6afba8b02f2711a67b8f35160b7" datatype="html" approved="yes">
+        <source>Enter the number</source> <target state="translated">Numarayı girin</target> </trans-unit>
+      <trans-unit id="a7cb037ae894bbcd5a1953095b813202b2214786" datatype="html" approved="yes">
+        <source>Enter amount</source> <target state="translated">Tutarı girin</target> </trans-unit>
+      <trans-unit id="1589ce61e1fef403fbab0057325ec0829a5395dc" datatype="html" approved="yes">
+        <source>Make regular</source> <target state="translated">Kolay işlemler</target> </trans-unit>
+      <trans-unit id="386ea918b3808032a932eaeabf4cd2c9c870cf94" datatype="html" approved="yes">
+        <source>Replenish</source> <target state="translated">Yükleme</target> </trans-unit>
+      <trans-unit id="5e2fb8ce0ce8df646e4863f33aa1da862582ce39" datatype="html" approved="yes">
+        <source>Commission: 2,5%</source> <target state="translated">Komisyon:% 2,5</target> </trans-unit>
+      <trans-unit id="a778d7eeb75d87ed73c3b4b4d25b7b2a71737fdc" datatype="html" approved="yes">
+        <source>Minimum payment: 10 TRY</source> <target state="translated">Yüklenebilecek  minimum tutar: 10 TRY</target> </trans-unit>
+      <trans-unit id="2eefba06c43476ee1fcc0fd5aa00366a1c0f21ce" datatype="html" approved="yes">
+        <source>Maximum payment: 10000 TRY</source> <target state="translated">Yüklenebilecek  maksimum tutar: 10000 TRY</target> </trans-unit>
+      <trans-unit id="c9c42a415f18fa1e6ce2ac7f887e8d597c07ad07" datatype="html" approved="yes">
+        <source>Maximum amount: 10000 TRY</source> <target state="translated">Maksimum ödeme tutarı: 10000 TRY</target> </trans-unit>
+      <trans-unit id="c8979c5531af5dfbf7f3e766948db05b8fc75d3c" datatype="html" approved="yes">
+        <source>Other services</source> <target state="translated">Diğer hizmetler</target> </trans-unit>
+      <trans-unit id="6c73c1c9f73651d3bc7fcb35821bf467240fdbba" datatype="html" approved="yes">
+        <source>Transfers between accounts</source> <target state="translated">Başka hesaba</target> </trans-unit>
+      <trans-unit id="832a3a49024a71caab5dae5473d26b9488ccaebe" datatype="html" approved="yes">
+        <source>Into the bank account</source> <target state="translated">Banka hesabına</target> </trans-unit>
+      <trans-unit id="78d84f42d9548b94b2ca07a6724cbffefe8017cb" datatype="html" approved="yes">
+        <source>Withdrawing money</source> <target state="translated">Para çekme</target> </trans-unit>
+      <trans-unit id="a9377fb734975cbf672296eb78be4146c0724480" datatype="html" approved="yes">
+        <source>From Account</source> <target state="translated">Hesaptan</target> </trans-unit>
+      <trans-unit id="e6a0156afb757d0a2ea410daf2f3a717ea6ebe37" datatype="html" approved="yes">
+        <source>To Account</source> <target state="translated">Hesabına</target> </trans-unit>
+      <trans-unit id="3303ac7781c781babc373c112807a3b96fec3814" datatype="html" approved="yes">
+        <source>Sum</source> <target state="translated">Miktar</target> </trans-unit>
+      <trans-unit id="52c9a103b812f258bcddc3d90a6e3f46871d25fe" datatype="html" approved="yes">
+        <source>Save</source> <target state="translated">Kaydet</target> </trans-unit>
+      <trans-unit id="11f4334bbb40a09c78f16d8e11e68cfd01badd4d" datatype="html" approved="yes">
+        <source>Terminal</source> <target state="translated">Terminal ile</target> </trans-unit>
+      <trans-unit id="e17016f035664e639ea7f095e916f6fce027c236" datatype="html" approved="yes">
+        <source>Bank card</source> <target state="translated">Banka kartı ile</target> </trans-unit>
+      <trans-unit id="a4622d06dd80204e0f93dbd38a94035c6fd7e61d" datatype="html" approved="yes">
+        <source>Bank transfer</source> <target state="translated">Banka havalesiyle</target> </trans-unit>
+      <trans-unit id="f5116416b10dcbee66716d95983941f376e371e6" datatype="html" approved="yes">
+        <source>From your phone</source> <target state="translated">Telefon hesabı üzerinden</target> </trans-unit>
+      <trans-unit id="52f9a8ead65a9c2efe158d229ecc2255aca15ce2" datatype="html" approved="yes">
+        <source>Online loan</source> <target state="translated">Online krediyle</target> </trans-unit>
+      <trans-unit id="3eb47805cd05ab132d4b181174d7d9d6c4f7a0d7" datatype="html" approved="yes">
+        <source>Working with Accounts</source> <target state="translated">Hesaplar ile çalışma</target> </trans-unit>
+      <trans-unit id="d207cc1965ec0c29e594e0e9917f39bfc276ed87" datatype="html" approved="yes">
+        <source>Create an account</source> <target state="translated">Hesap oluştur</target> </trans-unit>
+      <trans-unit id="27e550abc8f53c9ddc6ca8d1091d75b00b1c5c86" datatype="html" approved="yes">
+        <source>Order card</source> <target state="translated">Sipariş kartı</target> </trans-unit>
+      <trans-unit id="225a0f112f18cea917f3276598d0937b458a080a" datatype="html" approved="yes">
+        <source>Orders of cards</source> <target state="translated">Kart siparişleri</target> </trans-unit>
+      <trans-unit id="5aadfc464c8a1e111b98ef1454cabdbfcd59731b" datatype="html" approved="yes">
+        <source>Activate card</source> <target state="translated">Kartı etkinleştir</target> </trans-unit>
+      <trans-unit id="f6901d5997e335a1f353ae33150002e61d9fc8ec" datatype="html" approved="yes">
+        <source>Money transaction</source> <target state="translated">Para transferi</target> </trans-unit>
+      <trans-unit id="31a7496c07c899dfee2d81618f4d6e105ba61072" datatype="html" approved="yes">
+        <source>My Accounts</source> <target state="translated">Hesaplarım</target> </trans-unit>
+      <trans-unit id="b94cd68970c76c91db0dfd3d881828b3f88fe0cf" datatype="html" approved="yes">
+        <source>Active Accounts</source> <target state="translated">Aktif Hesaplar</target> </trans-unit>
+      <trans-unit id="29881a45dafbe5aa05cd9d0441a4c0c2fb06df92" datatype="html" approved="yes">
+        <source>Account</source> <target state="translated">Hesap</target> </trans-unit>
+      <trans-unit id="1b051734b0ee9021991c91b3ed4e81c244322462" datatype="html" approved="yes">
+        <source>Created</source> <target state="translated">Oluşturuldu</target> </trans-unit>
+      <trans-unit id="32072c7fb0469aaf82d256a59b3e0d6ecce973b9" datatype="html" approved="yes">
+        <source>Currency</source> <target state="translated">Alım / satım</target> </trans-unit>
+      <trans-unit id="7e69426bd97a606d8ae6026762858e6e7c86a1fd" datatype="html" approved="yes">
+        <source>Balance</source> <target state="translated">Yükleme</target> </trans-unit>
+      <trans-unit id="030b4423b92167200e39519599f9b863b4f7c62c" datatype="html" approved="yes">
+        <source>Actions</source> <target state="translated">Eylemler</target> </trans-unit>
+      <trans-unit id="f94863641b9244f0298732da591eca94d474d41a" datatype="html" approved="yes">
+        <source>Lock</source> <target state="translated">Kilitleme</target> </trans-unit>
+      <trans-unit id="5660a255705213dcc119fbba55ac96d61859a6aa" datatype="html" approved="yes">
+        <source>Lock Accounts</source> <target state="translated">Hesapları Kilitleyin</target> </trans-unit>
+      <trans-unit id="aac99820b81b63dd081ef9449080e545df8b03cd" datatype="html" approved="yes">
+        <source>Unlock</source> <target state="translated">Kilidini aç</target> </trans-unit>
+      <trans-unit id="69a7a9e0ea787a1247872323260576b64095b34f" datatype="html" approved="yes">
+        <source>Deleted Accounts</source> <target state="translated">Silinen Hesaplar</target> </trans-unit>
       <trans-unit id="79fab0cfec1f5f5d8e52476a2fe3cb69da0f4335" datatype="html">
-        <source>Create account</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="70a67e04629f6d412db0a12d51820b480788d795" datatype="html">
-        <source>Create</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="04c3563becf5b9de9c7dd0e419b8a22379524b26" datatype="html">
-        <source>List outs</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="35c3d47c0a698eed5cee89228802619a55526c47" datatype="html">
-        <source>To System</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="f122f4707847e751d66d1f5d446072c8aad30318" datatype="html">
-        <source>System Account</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="5a5d7ee2acbfa9c91ab7f41d26bda9ff0cafe42f" datatype="html">
-        <source>Comment</source>
-        <target>Yorum</target>
-      </trans-unit>
-      <trans-unit id="b211a9c475cd391d81fcbe9936357b22728148fa" datatype="html">
-        <source>You have no items here.</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="36a26d59a9bccd43b9509f6bbd05373c03c1f6b4" datatype="html">
-        <source>Create first</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="de84b24738cf5465cc5be1c47560752561e2f393" datatype="html">
-        <source>Out Bids</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="8011e20c5bbe51602d459a860fbf29b599b55edd" datatype="html">
-        <source>System</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="81b97b8ea996ad1e4f9fca8415021850214884b1" datatype="html">
-        <source>Status</source>
-        <target>Durumu</target>
-      </trans-unit>
-      <trans-unit id="015e45e21b86e81108cda9cd0e74a9a0cdd986f0" datatype="html">
-        <source>Profile settings</source>
-        <target>Profil Ayarları</target>
-      </trans-unit>
-      <trans-unit id="1eecebc91b4c671d43617b559cf3933275492931" datatype="html">
-        <source>Account settings</source>
-        <target>Ayarlar hesapları</target>
-      </trans-unit>
-      <trans-unit id="0b94b5cba32ebc677589f2009e4a4f820e814452" datatype="html">
-        <source>SMS of the deposits and the expenses</source>
-        <target>SMS hakkında пополнениях ve gider</target>
-      </trans-unit>
-      <trans-unit id="310e2d97ff2f6823c7d2a6fa790e4e32ed63a1d3" datatype="html">
-        <source>The number of purse</source>
-        <target>Numarası cüzdan</target>
-      </trans-unit>
-      <trans-unit id="ae384db284aba1829833ed48e012373f145024be" datatype="html">
-        <source>You can change telephone number</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="ab74fc8dba8edad651407e20f87b1b124f532906" datatype="html">
-        <source>E-mail address</source>
-        <target>E-posta adresi</target>
-      </trans-unit>
-      <trans-unit id="15f9d9df5ac0ff1b09f25b2dd4f85a3b520853d7" datatype="html">
-        <source>You can provide email address</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="81baa3357bebcb29271c8121a87c17915bdbb41f" datatype="html">
-        <source>Social network</source>
-        <target>Sosyal ağlar</target>
-      </trans-unit>
-      <trans-unit id="3bb2abd85b39761fcc0d70d2a60d84e7333efe31" datatype="html">
-        <source>Old Number</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="c569ec150a3435c6fee6784c35c3210f9779f157" datatype="html">
-        <source>Valid phone number</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="a6e34dcfe53e4d75d6cc9dd2128d9541c9b035fe" datatype="html">
-        <source>New Number</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="c32ef07f8803a223a83ed17024b38e8d82292407" datatype="html">
-        <source>Password</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="c2cd691d3ec92f37445b6fc3aac70ea4719f6c78" datatype="html">
-        <source>your password</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="244aae9346da82b0922506c2d2581373a15641cc" datatype="html">
-        <source>Email</source>
-        <target>E-posta</target>
-      </trans-unit>
-      <trans-unit id="be396fdf73b299efbd85efc39c8e51a1ad16dbd3" datatype="html">
-        <source>Valid email address</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="0c8f13c69b8baf8a305d92ce422bbc4ae5360c52" datatype="html">
-        <source>You email address</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="41b27ce8bce895d9043b82d889bec7e9fceaab13" datatype="html">
-        <source>You password</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="5edf054f14aa57bc25a28cb7db01956fee53dac8" datatype="html">
-        <source>Change Password</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="0eb15f32b2b92d7f3103ef3ff032621888a8dc32" datatype="html">
-        <source>Old password</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="148bf57738e644f7a53e730e7eb5712bca492b29" datatype="html">
-        <source>Provide you current password</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="e70e209561583f360b1e9cefd2cbb1fe434b6229" datatype="html">
-        <source>New password</source>
-        <target>Yeni bir şifre</target>
-      </trans-unit>
-      <trans-unit id="5a3ce7440c3762e8f44b172d1698fa11367b3841" datatype="html">
-        <source>Provide your new password</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="5bfd263753c941d51c8c78f789a6d3003b90bdc2" datatype="html">
-        <source>New password again</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="3b6806aa2dbe3f7112eb0e5088409e0e98b2cb67" datatype="html">
-        <source>Repeate your new password</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="49c813101cae2e7bebfaa1d7a5f1d334383a10aa" datatype="html">
-        <source>Confirm SMS Code</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="78127b9332378750a472e6b206e5992578566c9c" datatype="html">
-        <source>SMS code</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="4f20f2d5a6882190892e58b85f6ccbedfa737952" datatype="html">
-        <source>Yes</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="3d3ae7deebc5949b0c1c78b9847886a94321d9fd" datatype="html">
-        <source>No</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="a20c4fb9a78bf68fd6d712b49acc5493464fbe46" datatype="html">
-        <source>Send again</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="c534cb89068cba3ce7bf5ffd836543ef23167197" datatype="html">
-        <source>You have no accounts yet.</source>
-         <target></target>
-      </trans-unit>
-      <trans-unit id="ff4ba5c40d690054a4a338c4b19ca920512069ba" datatype="html">
-        <source>Create first one</source>
-         <target></target>
-      </trans-unit>
+        <source>Create account</source> <target></target> </trans-unit>
+      <trans-unit id="70a67e04629f6d412db0a12d51820b480788d795" datatype="html" approved="yes">
+        <source>Create</source> <target state="translated">Yaratmak</target> </trans-unit>
+      <trans-unit id="04c3563becf5b9de9c7dd0e419b8a22379524b26" datatype="html" approved="yes">
+        <source>List outs</source> <target state="translated">Listeler</target> </trans-unit>
+      <trans-unit id="35c3d47c0a698eed5cee89228802619a55526c47" datatype="html" approved="yes">
+        <source>To System</source> <target state="translated">Sisteme</target> </trans-unit>
+      <trans-unit id="f122f4707847e751d66d1f5d446072c8aad30318" datatype="html" approved="yes">
+        <source>System Account</source> <target state="translated">Sistem Hesabı</target> </trans-unit>
+      <trans-unit id="5a5d7ee2acbfa9c91ab7f41d26bda9ff0cafe42f" datatype="html" approved="yes">
+        <source>Comment</source> <target state="translated">Yorum</target> </trans-unit>
+      <trans-unit id="b211a9c475cd391d81fcbe9936357b22728148fa" datatype="html" approved="yes">
+        <source>You have no items here.</source> <target state="translated">Burada hiç öğeniz yok.</target> </trans-unit>
+      <trans-unit id="36a26d59a9bccd43b9509f6bbd05373c03c1f6b4" datatype="html" approved="yes">
+        <source>Create first</source> <target state="translated">Önce yarat</target> </trans-unit>
+      <trans-unit id="de84b24738cf5465cc5be1c47560752561e2f393" datatype="html" approved="yes">
+        <source>Out Bids</source> <target state="translated">Çıkış Teklifleri</target> </trans-unit>
+      <trans-unit id="8011e20c5bbe51602d459a860fbf29b599b55edd" datatype="html" approved="yes">
+        <source>System</source> <target state="translated">Sistem</target> </trans-unit>
+      <trans-unit id="81b97b8ea996ad1e4f9fca8415021850214884b1" datatype="html" approved="yes">
+        <source>Status</source> <target state="translated">Durumu</target> </trans-unit>
+      <trans-unit id="015e45e21b86e81108cda9cd0e74a9a0cdd986f0" datatype="html" approved="yes">
+        <source>Profile settings</source> <target state="translated">Profil Ayarları</target> </trans-unit>
+      <trans-unit id="1eecebc91b4c671d43617b559cf3933275492931" datatype="html" approved="yes">
+        <source>Account settings</source> <target state="translated">Ayarlar hesapları</target> </trans-unit>
+      <trans-unit id="0b94b5cba32ebc677589f2009e4a4f820e814452" datatype="html" approved="yes">
+        <source>SMS of the deposits and the expenses</source> <target state="translated">Mevduatın SMS'si ve giderleri</target> </trans-unit>
+      <trans-unit id="310e2d97ff2f6823c7d2a6fa790e4e32ed63a1d3" datatype="html" approved="yes">
+        <source>The number of purse</source> <target state="translated">Numarası cüzdan</target> </trans-unit>
+      <trans-unit id="ae384db284aba1829833ed48e012373f145024be" datatype="html" approved="yes">
+        <source>You can change telephone number</source> <target state="translated">Telefon numarasını değiştirebilirsiniz</target> </trans-unit>
+      <trans-unit id="ab74fc8dba8edad651407e20f87b1b124f532906" datatype="html" approved="yes">
+        <source>E-mail address</source> <target state="translated">E-posta adresi</target> </trans-unit>
+      <trans-unit id="15f9d9df5ac0ff1b09f25b2dd4f85a3b520853d7" datatype="html" approved="yes">
+        <source>You can provide email address</source> <target state="translated">E-posta adresi sağlayabilirsiniz</target> </trans-unit>
+      <trans-unit id="81baa3357bebcb29271c8121a87c17915bdbb41f" datatype="html" approved="yes">
+        <source>Social network</source> <target state="translated">Sosyal ağlar</target> </trans-unit>
+      <trans-unit id="3bb2abd85b39761fcc0d70d2a60d84e7333efe31" datatype="html" approved="yes">
+        <source>Old Number</source> <target state="translated">Eski Numara</target> </trans-unit>
+      <trans-unit id="c569ec150a3435c6fee6784c35c3210f9779f157" datatype="html" approved="yes">
+        <source>Valid phone number</source> <target state="translated">Geçerli telefon numarası</target> </trans-unit>
+      <trans-unit id="a6e34dcfe53e4d75d6cc9dd2128d9541c9b035fe" datatype="html" approved="yes">
+        <source>New Number</source> <target state="translated">Yeni numara</target> </trans-unit>
+      <trans-unit id="c32ef07f8803a223a83ed17024b38e8d82292407" datatype="html" approved="yes">
+        <source>Password</source> <target state="translated">Parola</target> </trans-unit>
+      <trans-unit id="c2cd691d3ec92f37445b6fc3aac70ea4719f6c78" datatype="html" approved="yes">
+        <source>your password</source> <target state="translated">şifreniz</target> </trans-unit>
+      <trans-unit id="244aae9346da82b0922506c2d2581373a15641cc" datatype="html" approved="yes">
+        <source>Email</source> <target state="translated">E-posta</target> </trans-unit>
+      <trans-unit id="be396fdf73b299efbd85efc39c8e51a1ad16dbd3" datatype="html" approved="yes">
+        <source>Valid email address</source> <target state="translated">Geçerli E</target> </trans-unit>
+      <trans-unit id="0c8f13c69b8baf8a305d92ce422bbc4ae5360c52" datatype="html" approved="yes">
+        <source>You email address</source> <target state="translated">E-posta adresiniz</target> </trans-unit>
+      <trans-unit id="41b27ce8bce895d9043b82d889bec7e9fceaab13" datatype="html" approved="yes">
+        <source>You password</source> <target state="translated">şifreniz</target> </trans-unit>
+      <trans-unit id="5edf054f14aa57bc25a28cb7db01956fee53dac8" datatype="html" approved="yes">
+        <source>Change Password</source> <target state="translated">Şifre değiştir</target> </trans-unit>
+      <trans-unit id="0eb15f32b2b92d7f3103ef3ff032621888a8dc32" datatype="html" approved="yes">
+        <source>Old password</source> <target state="translated">Eski şifre</target> </trans-unit>
+      <trans-unit id="148bf57738e644f7a53e730e7eb5712bca492b29" datatype="html" approved="yes">
+        <source>Provide you current password</source> <target state="translated">Sana şu anki şifreyi ver</target> </trans-unit>
+      <trans-unit id="e70e209561583f360b1e9cefd2cbb1fe434b6229" datatype="html" approved="yes">
+        <source>New password</source> <target state="translated">Yeni bir şifre</target> </trans-unit>
+      <trans-unit id="5a3ce7440c3762e8f44b172d1698fa11367b3841" datatype="html" approved="yes">
+        <source>Provide your new password</source> <target state="translated">Yeni şifrenizi verin</target> </trans-unit>
+      <trans-unit id="5bfd263753c941d51c8c78f789a6d3003b90bdc2" datatype="html" approved="yes">
+        <source>New password again</source> <target state="translated">Yeni Şifre Tekrar</target> </trans-unit>
+      <trans-unit id="3b6806aa2dbe3f7112eb0e5088409e0e98b2cb67" datatype="html" approved="yes">
+        <source>Repeate your new password</source> <target state="translated">Yeni şifrenizi tekrarlayın</target> </trans-unit>
+      <trans-unit id="49c813101cae2e7bebfaa1d7a5f1d334383a10aa" datatype="html" approved="yes">
+        <source>Confirm SMS Code</source> <target state="translated">SMS Kodunu Onayla</target> </trans-unit>
+      <trans-unit id="78127b9332378750a472e6b206e5992578566c9c" datatype="html" approved="yes">
+        <source>SMS code</source> <target state="translated">SMS kodu</target> </trans-unit>
+      <trans-unit id="4f20f2d5a6882190892e58b85f6ccbedfa737952" datatype="html" approved="yes">
+        <source>Yes</source> <target state="translated">Evet</target> </trans-unit>
+      <trans-unit id="3d3ae7deebc5949b0c1c78b9847886a94321d9fd" datatype="html" approved="yes">
+        <source>No</source> <target state="translated">Hayır</target> </trans-unit>
+      <trans-unit id="a20c4fb9a78bf68fd6d712b49acc5493464fbe46" datatype="html" approved="yes">
+        <source>Send again</source> <target state="translated">Tekrar gönderin</target> </trans-unit>
+      <trans-unit id="c534cb89068cba3ce7bf5ffd836543ef23167197" datatype="html" approved="yes">
+        <source>You have no accounts yet.</source> <target state="translated">Henüz hesabınız yok.</target> </trans-unit>
+      <trans-unit id="ff4ba5c40d690054a4a338c4b19ca920512069ba" datatype="html" approved="yes">
+        <source>Create first one</source> <target state="translated">Birincisi oluştur</target> </trans-unit>
     </body>
   </file>
 </xliff>
