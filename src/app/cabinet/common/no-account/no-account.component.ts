@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
             `
               <div class="text-center" *ngIf="show">
                   <h1 i18n>You have no accounts yet.</h1>
-                  <a [routerLink]="['/en/user/cabinet/score/create']" i18n>Create first one</a>
+                  <a [routerLink]="['/user/cabinet/score/create']" i18n>Create first one</a>
               </div>
             `
 })

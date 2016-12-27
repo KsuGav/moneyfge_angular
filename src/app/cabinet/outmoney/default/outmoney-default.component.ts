@@ -85,7 +85,7 @@ export class OutmoneyDefaultComponent implements OnInit, AfterViewInit, OnDestro
         this.form.value.from
       )
       .subscribe(
-        () => this.router.navigate(['/en/user/cabinet/outmoney/list']),
+        () => this.router.navigate(['/user/cabinet/outmoney/list']),
         err => {
           this.alert.show('danger', err.json().message);
           this.modalService.hideLoader('block');

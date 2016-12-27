@@ -47,14 +47,14 @@ export class HomeHeaderComponent implements OnInit, AfterViewInit, OnDestroy {
   buttons() {
     if (this.loggedInGuard.isLoggedIn()) {
       this.loginText = 'Profile';
-      this.loginUrl = '/en/user/cabinet';
+      this.loginUrl = '/user/cabinet';
       this.registerText = 'Sign Out';
       this.registerUrl = '';
     } else {
       this.loginText = 'Login';
-      this.loginUrl = '/en/user/sign-in/login';
+      this.loginUrl = '/user/sign-in/login';
       this.registerText = 'Registration';
-      this.registerUrl = '/en/site/register';
+      this.registerUrl = '/site/register';
     }
   }
 

@@ -40,7 +40,7 @@ export class SitePasswordComponent implements OnInit {
         res => {
           this.appState.set('sms', null);
           this.appState.set('telephone', null);
-          this.router.navigate(['/en/user/sign-in/login']);
+          this.router.navigate(['/user/sign-in/login']);
           return;
         },
         err => this.errorMsg = err.json().message

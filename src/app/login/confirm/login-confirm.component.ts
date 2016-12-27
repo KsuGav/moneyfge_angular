@@ -88,7 +88,7 @@ export class LoginConfirmComponent implements OnInit, OnDestroy {
           sessionStorage.setItem('aToken', res.access_token);
           sessionStorage.setItem('loggedIn', 'true');
 
-          this.router.navigate(['/en/user/cabinet']);
+          this.router.navigate(['/user/cabinet']);
         },
         err => {
           this.errorMsg = err.json().message;

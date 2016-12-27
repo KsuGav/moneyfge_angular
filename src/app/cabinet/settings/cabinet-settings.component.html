@@ -15,11 +15,11 @@
             <div class="info-block-content">
               <ul class="links-list">
                 <li [ngClass]="{'active': activeLink === 'profile'}">
-                  <a [routerLink]="['/en/user/cabinet/settings/profile']" (click)="profileClick()" i18n>Profile settings</a>
+                  <a [routerLink]="['/user/cabinet/settings/profile']" (click)="profileClick()" i18n>Profile settings</a>
                 </li>
                 <li><a href="#" class="under-construction" i18n>Account settings</a></li>
 
-                <li [ngClass]="{'active': activeLink === 'password'}"><a [routerLink]="['/en/user/cabinet/settings/password']" (click)="passwordClick()">New password</a></li>
+                <li [ngClass]="{'active': activeLink === 'password'}"><a [routerLink]="['/user/cabinet/settings/password']" (click)="passwordClick()">New password</a></li>
                 <li class="modal_error"><a href="#" class="under-construction" i18n>Settings</a></li>
               </ul>
             </div>
