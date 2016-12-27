@@ -29,8 +29,11 @@
               </div>
             </div>
           </div>
-          <a class="btn btn-fill reg" [routerLink]="[registerUrl]" (click)="logout($event)">{{registerText}}</a>
-          <a class="btn btn-fill reg login" [routerLink]="[loginUrl]">{{loginText}}</a>
+          <a class="btn btn-fill reg" *ngIf="isLoggedIn()" [routerLink]="['']" (click)="logout($event)" i18n>Profile</a>
+          <a class="btn btn-fill reg login" *ngIf="isLoggedIn()" [routerLink]="['/user/cabinet']" i18n>Sign Out</a>
+
+          <a class="btn btn-fill reg" *ngIf="!isLoggedIn()" [routerLink]="['/site/register']" (click)="logout($event)" i18n>Login</a>
+          <a class="btn btn-fill reg login"  *ngIf="!isLoggedIn()" [routerLink]="['/user/sign-in/login']" i18n>Registration</a>
         </div>
       </div>
       <div class="col-xs-12">

@@ -34,29 +34,33 @@ export class HomeHeaderComponent implements OnInit, AfterViewInit, OnDestroy {
 
   }
 
+  isLoggedIn() {
+    return this.loggedInGuard.isLoggedIn();
+  }
+
   ngAfterViewInit() {
     this.modalService.showUnderConstruction();
     this.setupDropdownMenu();
-    this.buttons();
+    //this.buttons();
   }
 
   ngOnDestroy () {
 
   }
 
-  buttons() {
-    if (this.loggedInGuard.isLoggedIn()) {
-      this.loginText = 'Profile';
-      this.loginUrl = '/user/cabinet';
-      this.registerText = 'Sign Out';
-      this.registerUrl = '';
-    } else {
-      this.loginText = 'Login';
-      this.loginUrl = '/user/sign-in/login';
-      this.registerText = 'Registration';
-      this.registerUrl = '/site/register';
-    }
-  }
+  //buttons() {
+  //  if (this.loggedInGuard.isLoggedIn()) {
+  //    this.loginText = 'Profile';
+  //    this.loginUrl = '/user/cabinet';
+  //    this.registerText = 'Sign Out';
+  //    this.registerUrl = '';
+  //  } else {
+  //    this.loginText = 'Login';
+  //    this.loginUrl = '/user/sign-in/login';
+  //    this.registerText = 'Registration';
+  //    this.registerUrl = '/site/register';
+  //  }
+  //}
 
   logout(event) {
     // event.preventDefault();
