@@ -2,12 +2,13 @@ import { TRANSLATIONS, TRANSLATIONS_FORMAT, LOCALE_ID} from '@angular/core';
 
 export function getTranslationProviders(): Object[]{
   //Get the locale from browser
-  let locale = detectLocale(['ru','ua'], 'en');
+  let locale = detectLocale(['ru', 'uk', 'tr'], 'en');
 
   //Load messages by webpack
   let translations = {
-    'ru' : require('./locale/messages.ru.xlf'),
-    'ua' : require('./locale/messages.ua.xlf')
+    'ru': require('./locale/messages.ru.xlf'),
+    'uk': require('./locale/messages.uk.xlf'),
+    'tr': require('./locale/messages.tr.xlf')
   };
 
   //No locale, no messages, or en: no translation providers
@@ -32,7 +33,6 @@ export function getTranslationProviders(): Object[]{
 
 function detectLocale( available: string[], base: string){
   let w: any = window;
-  // console.log(w.location.href);
   let language = sessionStorage.getItem('locale') || w.navigator.language;
   if(language.indexOf('-') !== -1){
     language = language.split('-')[0];

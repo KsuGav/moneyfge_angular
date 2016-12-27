@@ -41,23 +41,23 @@ import { DataResolver } from './app.resolver';
 
 export const ROUTES: Routes = [
   { path: '', component: HomeComponent }
-  , { path: ':locale/site/about', component: HomeAboutComponent }
-  , { path: ':locale/current-account/page1', component: MobilePaymentsComponent }
-  , { path: ':locale/current-account/page2', component: MoneyTransferComponent }
-  , { path: ':locale/current-account/page3', component: CreditPaymentsComponent }
-  , { path: ':locale/current-account/page4', component: GamesEntertainmentComponent }
-  , { path: ':locale/current-account/page5', component: InternetTvComponent }
-  , { path: ':locale/current-account/page7', component: OnlinePaymentsComponent }
-  , { path: ':locale/current-account/page8', component: BillsComponent }
-  , { path: ':locale/site/contacts', component: ContactsComponent }
-  , { path: ':locale/user/sign-in/login', component: LoginComponent }
-  , { path: ':locale/user/sign-in/confirm', component: LoginConfirmComponent }
-  , { path: ':locale/site/reset-password', component: SiteRecoveryComponent }
-  , { path: ':locale/site/register', component: SiteRegisterComponent }
-  , { path: ':locale/site/confirm', component: SiteConfirmComponent }
-  , { path: ':locale/site/password', component: SitePasswordComponent }
+  , { path: 'site/about', component: HomeAboutComponent }
+  , { path: 'current-account/page1', component: MobilePaymentsComponent }
+  , { path: 'current-account/page2', component: MoneyTransferComponent }
+  , { path: 'current-account/page3', component: CreditPaymentsComponent }
+  , { path: 'current-account/page4', component: GamesEntertainmentComponent }
+  , { path: 'current-account/page5', component: InternetTvComponent }
+  , { path: 'current-account/page7', component: OnlinePaymentsComponent }
+  , { path: 'current-account/page8', component: BillsComponent }
+  , { path: 'site/contacts', component: ContactsComponent }
+  , { path: 'user/sign-in/login', component: LoginComponent }
+  , { path: 'user/sign-in/confirm', component: LoginConfirmComponent }
+  , { path: 'site/reset-password', component: SiteRecoveryComponent }
+  , { path: 'site/register', component: SiteRegisterComponent }
+  , { path: 'site/confirm', component: SiteConfirmComponent }
+  , { path: 'site/password', component: SitePasswordComponent }
   , {
-    path: ':locale/user/cabinet',
+    path: 'user/cabinet',
     component: CabinetComponent,
     canActivate: [ LoggedInGuard ],
     children: [

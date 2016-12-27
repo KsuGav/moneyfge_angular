@@ -4,7 +4,7 @@
     <body>
       <trans-unit id="b39084dad0338d1587fc39af49f910033bc3f945" datatype="html">
         <source>Easy mobile payments online</source>
-         <target></target>
+         <target>Удобная оплата&lt;br class=&quot;hidden-sm hidden-xs&quot;&gt; мобильного соединения онлайн&lt;br class=&quot;hidden-sm hidden-xs&quot;&gt;</target>
       </trans-unit>
       <trans-unit id="1eb444364f1acf2cf51dc0d149b1940578ffaacd" datatype="html">
         <source>Instant online transfers into  more than 140 countries</source>
@@ -24,7 +24,7 @@
       </trans-unit>
       <trans-unit id="a67bd3d8a0cc79f96ceea456d75b35c828b778df" datatype="html">
         <source>Payments due</source>
-         <target></target>
+         <target>Оплата &lt;br class=&quot;hidden-sm hidden-xs&quot;&gt;связи</target>
       </trans-unit>
       <trans-unit id="31364005f20ca564b326d700c4361c0f734b3e72" datatype="html">
         <source>Remittances</source>
@@ -44,7 +44,7 @@
       </trans-unit>
       <trans-unit id="f9e44b74ae526bfb145f1c558227603cea99cf01" datatype="html">
         <source>Mobile payments:</source>
-         <target></target>
+         <target>Оплата мобильной связи</target>
       </trans-unit>
       <trans-unit id="817a402ba80874cba70243a9bf00c0ef77bb6334" datatype="html">
         <source>Mobile Payment Service</source>
@@ -52,11 +52,11 @@
       </trans-unit>
       <trans-unit id="464631983f46ccad41bdaa080423325e60710668" datatype="html">
         <source>With this service, you can replenish/recharge your mobile phones accounts when you have access to the Internet, PC and mobile devices. This service can be used by contract customers and prepaid subscribers. All transactions with mobile payment accounts occur within minutes.</source>
-         <target></target>
+         <target>С помощью этой услуги Вы можете пополнять счета мобильных телефонов при наличии доступа в интернет, компьютера и мобильных устройств. Данной услугой могут пользоваться абоненты как контрактной, так и предоплаченной связи. Все операции по оплате мобильных счетов происходят в течении нескольких минут.</target>
       </trans-unit>
       <trans-unit id="54c028ad959c6c0197ceb8092130f6587f12884d" datatype="html">
         <source>Money transfer:</source>
-         <target></target>
+         <target>Перевести</target>
       </trans-unit>
       <trans-unit id="80f4a01fc7c0cfb422f2eb5a3429f1fa9c6118d0" datatype="html">
         <source>Sending and receiving money quickly and securely</source>
@@ -68,7 +68,7 @@
       </trans-unit>
       <trans-unit id="e02a0235e26fce6cdc2c6e4f6984ec745f501666" datatype="html">
         <source>Credit payments:</source>
-         <target></target>
+         <target>Погашение кредитов</target>
       </trans-unit>
       <trans-unit id="2c3d5b6162df0f8005172c6fe45fa7365345d572" datatype="html">
         <source>To repay loans</source>
@@ -80,7 +80,7 @@
       </trans-unit>
       <trans-unit id="2d6c69dc91bfc6ce365da306152e0631b64b6c30" datatype="html">
         <source>Bills:</source>
-         <target></target>
+         <target>Комунальные платежи</target>
       </trans-unit>
       <trans-unit id="3f7c6fe65534ce468b938b2214795bf0b9369222" datatype="html">
         <source>Utility payments</source>
@@ -92,7 +92,7 @@
       </trans-unit>
       <trans-unit id="3df669bed0d3658bdb53340c31d355e7363d0cb7" datatype="html">
         <source>Online payments:</source>
-         <target></target>
+         <target>Онлайн платежи</target>
       </trans-unit>
       <trans-unit id="40a0d7237b44048e13ffffa2afa68e518069daec" datatype="html">
         <source>Online Payment Service</source>
@@ -100,7 +100,7 @@
       </trans-unit>
       <trans-unit id="29a431c144b5427194a7bc0acc93cfb5399dc545" datatype="html">
         <source>MoneyFGE payment system provides payment services via the Internet, television, telephony online. You can easily perform these operations without leaving home. This can be done from anywhere in the world with Internet access, a computer or mobile device.</source>
-         <target></target>
+         <target>Осуществление быстрых и безопасных платежей с помощью MoneyFGE! Наш сервис является надёжным партнёром для Вас по производству онлайн платежей. Ежедневно, двадцать четыре часа в сутки тысячи людей нам доверяют решение своих финансовых вопросов. Наша система обладает высокой степенью безопасности, применяет новейшие степени защиты Ваших личных данных.</target>
       </trans-unit>
       <trans-unit id="65005f7502e8b6c0a7fef4fbb314eb8735f6654a" datatype="html">
         <source>Our services</source>
@@ -128,7 +128,7 @@
       </trans-unit>
       <trans-unit id="9d1e08c6f5e0b1a5d2b7d74e7f9d8a6a3d085bab" datatype="html">
         <source>WORLD FGE</source>
-         <target></target>
+         <target>Мир fge</target>
       </trans-unit>
       <trans-unit id="6875bab07c9bb276ae1e5b940ea339b7dc47adad" datatype="html">
         <source>EXCHANGE MARKET FGE</source>
@@ -156,11 +156,11 @@
       </trans-unit>
       <trans-unit id="2b210f7e594f9dd967e5a9dde43aa12fd685a072" datatype="html">
         <source>© Payment system «MoneyFGE™» 2016 TM is used under license holder MoneyFGE</source>
-         <target></target>
+         <target>© Платежная система «MoneyFGE™» 2016 TM работает под лицензией MoneyFGE</target>
       </trans-unit>
       <trans-unit id="02e4ed79f33b1b2b4c47e1dacdf271d72ce84ddc" datatype="html">
         <source>Do a quick easy online payments</source>
-         <target></target>
+         <target>Делай быстрые и&lt;br class=&quot;hidden-sm hidden-xs&quot;&gt; удобные онлайн&lt;br class=&quot;hidden-sm hidden-xs&quot;&gt; платежи</target>
       </trans-unit>
       <trans-unit id="464277459576337f90a73c510b5c05d9119323c5" datatype="html">
         <source>About the company</source>
@@ -184,7 +184,7 @@
       </trans-unit>
       <trans-unit id="222fb65d5108cbf9c423936c626392b54e7d46c4" datatype="html">
         <source>All payment data in our system  is confidential.</source>
-         <target></target>
+         <target>Все платёжные данные в нашей системе конфиденциальны и находятся в безопасности.</target>
       </trans-unit>
       <trans-unit id="2e290ce9ae3538766d212811b959b2fa588dd973" datatype="html">
         <source>MoneyFGE offers the most favorable terms to its customers and is a handy assistant payments to your business.</source>
@@ -216,7 +216,7 @@
       </trans-unit>
       <trans-unit id="5ec08749d35eece34b47ca353e6ad0b3d91f8c6a" datatype="html">
         <source>Game payments quickly and easily with MoneyFGE</source>
-         <target></target>
+         <target>Оплата игр -&lt;br class=&quot;hidden-sm hidden-xs&quot;&gt;&lt;small&gt;просто и быстро с MoneyFGE&lt;/small&gt;</target>
       </trans-unit>
       <trans-unit id="d8ee6aa599761eb38b9c2e57bdbcb1f8c3b1fe1d" datatype="html">
         <source>Games, Entertainment</source>
@@ -228,7 +228,7 @@
       </trans-unit>
       <trans-unit id="681f904ab183fad02666f952f0fa2d1973898e89" datatype="html">
         <source>Payment for games and entertainment will take very little time to put money into the account can be done  from the computer and at any convenient time of the day or night. You can pay with us all the most popular online games.</source>
-         <target></target>
+         <target>Оплата игр и развлечений займёт совсем мало времени, положить деньги на игровой счёт можно не вставая из-за компьютера и в любое удобное для Вас время дня или ночи. Все самые известные онлайн-игры вы можете оплатить у нас.</target>
       </trans-unit>
       <trans-unit id="8bb5b2073697f3f4378c44a49b7524934c9268f4" datatype="html">
         <source>For example:</source>
@@ -240,7 +240,7 @@
       </trans-unit>
       <trans-unit id="f7f501488f6ff4cec9f61d79bc80dcb89e328263" datatype="html">
         <source>Pay online  for TV, internet, telephone - easily and comfortably, without leaving your home!</source>
-         <target></target>
+         <target>Онлайн оплата ТВ,&lt;br class=&quot;hidden-sm hidden-xs&quot;&gt; интернет, телефонии -&lt;br class=&quot;hidden-sm hidden-xs&quot;&gt;&lt;small&gt;легко и комфортно, не выходя из дома!&lt;/small&gt;</target>
       </trans-unit>
       <trans-unit id="a695d167a2dba69ff2c1a747b87cdd047023151a" datatype="html">
         <source>Service payment for Internet, television, telephones</source>
@@ -268,7 +268,7 @@
       </trans-unit>
       <trans-unit id="2cc7883f354607063407159585d206fe9b059f4c" datatype="html">
         <source>Fast and easy online payments of utility bills.</source>
-         <target></target>
+         <target>Быстрая&lt;br class=&quot;hidden-sm hidden-xs&quot;&gt;и удобная оплата &lt;br class=&quot;hidden-sm hidden-xs&quot;&gt;&lt;small&gt;коммунальных платежей онлайн&lt;/small&gt;</target>
       </trans-unit>
       <trans-unit id="d608cf1b7d95a0663e65566b595afb45740f5007" datatype="html">
         <source>Our billing system allows you to pay your utility bills through the Internet. This can be done from home or office with access to the Internet, do not need to go to the bank. Operations are conducted instantly and reliably. You have to register at the registration and you can also specify multiple personal accounts. You can customize the service of regular utility bills  will remove a certain amount of money from your card.</source>
@@ -292,7 +292,7 @@
       </trans-unit>
       <trans-unit id="eb442c64a84ed7e4f9c9fc4ad041f8b5e5c91933" datatype="html">
         <source>First Name*</source>
-         <target></target>
+         <target>Имя</target>
       </trans-unit>
       <trans-unit id="6934d8edd276d59e050006fe91b695ebad0218f8" datatype="html">
         <source>Phone</source>
@@ -300,7 +300,7 @@
       </trans-unit>
       <trans-unit id="9c58852f6befc7bbcd3e31bf5ae00edd05492ed5" datatype="html">
         <source>Comment*</source>
-         <target></target>
+         <target>Комментарий</target>
       </trans-unit>
       <trans-unit id="2c5ff8fa9c9aaec93f97e37c9a0edcd797194573" datatype="html">
         <source>Send</source>
@@ -308,7 +308,7 @@
       </trans-unit>
       <trans-unit id="fbe2a3f23cd1e90c861bfe94efd9c31e21eedf89" datatype="html">
         <source>Working schedule:</source>
-         <target></target>
+         <target>График работы</target>
       </trans-unit>
       <trans-unit id="9240073d1f6f5fa0d6594affadd2939f1273c4a1" datatype="html">
         <source>From Monday to Friday from 8:30AM to 6:30PM</source>
@@ -340,15 +340,15 @@
       </trans-unit>
       <trans-unit id="8c2e731ee23fd5de9f7fac6bad93993a5f6ba3a8" datatype="html">
         <source> Back</source>
-         <target></target>
+         <target>Назад</target>
       </trans-unit>
       <trans-unit id="aad781c465596635c51c74128a3c70a3d32ee456" datatype="html">
         <source>Enter code from SMS</source>
-         <target></target>
+         <target>Ввести код из СМС</target>
       </trans-unit>
       <trans-unit id="1e85d13bc8171a908046ff1a98d6c8c5a0b1f729" datatype="html">
         <source>Send SMS again </source>
-         <target></target>
+         <target>Отправить СМС еще раз</target>
       </trans-unit>
       <trans-unit id="ac10a3d9b59575640797c1a8e6aea642cf5d5e77" datatype="html">
         <source>Continue</source>
@@ -372,7 +372,7 @@
       </trans-unit>
       <trans-unit id="5fa5c05063493603a4bba6c2341641a83fb0be18" datatype="html">
         <source>Enter password</source>
-         <target></target>
+         <target>Введите пароль</target>
       </trans-unit>
       <trans-unit id="ccac601bf473fa28c9ac46794f1cd40542f74347" datatype="html">
         <source>Message</source>
@@ -380,7 +380,7 @@
       </trans-unit>
       <trans-unit id="355ee942f292ef163f1c984e61802bc8d1fbf073" datatype="html">
         <source>Sorry for the inconvenience, this method is on reconstruction.</source>
-         <target></target>
+         <target>Извините за неудобства, данный способ находится на реконструкции</target>
       </trans-unit>
       <trans-unit id="f4e529ae5ffd73001d1ff4bbdeeb0a72e342e5c8" datatype="html">
         <source>Close</source>
@@ -396,7 +396,7 @@
       </trans-unit>
       <trans-unit id="84b02fb0d4ce4d700f4a7748dcc8252b93770f3f" datatype="html">
         <source>Replenishment</source>
-         <target></target>
+         <target>Пополнение</target>
       </trans-unit>
       <trans-unit id="6540b7f702b8cc4dffd307d8be84a94453493a44" datatype="html">
         <source>My cards</source>
@@ -420,7 +420,7 @@
       </trans-unit>
       <trans-unit id="85f9b39c841a93a710e2059756498ffab6ee14d8" datatype="html">
         <source>© Payment system «MoneyFGE™» 2016TM is used under license holder MoneyFGE</source>
-         <target></target>
+         <target>© Платежная система «MoneyFGE™» 2016 TM работает под лицензией MoneyFGE</target>
       </trans-unit>
       <trans-unit id="d9e4cf9eeb85c466d32b89f8572e8cce0081eb1b" datatype="html">
         <source>Enter your email</source>
@@ -428,7 +428,7 @@
       </trans-unit>
       <trans-unit id="edc78369826830714c6a6a11a1918bccd43b13f9" datatype="html">
         <source>ОК</source>
-         <target></target>
+         <target>ОК</target>
       </trans-unit>
       <trans-unit id="16b82b65915bed95bdb5258f476dbb163679b407" datatype="html">
         <source>Popular categories</source>
@@ -440,7 +440,7 @@
       </trans-unit>
       <trans-unit id="c1300bc6a9069b311772b0114cd29237d748d8f4" datatype="html">
         <source>Additional options</source>
-         <target></target>
+         <target>Все варианты</target>
       </trans-unit>
       <trans-unit id="cef9bee98bcf0fbf36ffb4bb5a9604d4cb1f8145" datatype="html">
         <source>Games / Entertainment</source>
@@ -460,7 +460,7 @@
       </trans-unit>
       <trans-unit id="ceb3500aadb2fbb772774a941fd744c9f131976f" datatype="html">
         <source>to 20%</source>
-         <target></target>
+         <target>до 20%</target>
       </trans-unit>
       <trans-unit id="cd416293c46ec9f8aaec938b723805833c7ae8ad" datatype="html">
         <source>Archive transactions</source>
@@ -504,19 +504,19 @@
       </trans-unit>
       <trans-unit id="5e2fb8ce0ce8df646e4863f33aa1da862582ce39" datatype="html">
         <source>Commission: 2,5%</source>
-         <target></target>
+         <target>Комиссия: 2,5%</target>
       </trans-unit>
       <trans-unit id="a778d7eeb75d87ed73c3b4b4d25b7b2a71737fdc" datatype="html">
         <source>Minimum payment: 10 TRY</source>
-         <target></target>
+         <target>Минимальная сумма пополнения: 10 TRY</target>
       </trans-unit>
       <trans-unit id="2eefba06c43476ee1fcc0fd5aa00366a1c0f21ce" datatype="html">
         <source>Maximum payment: 10000 TRY</source>
-         <target></target>
+         <target>Максимальная сумма пополнения: 10000 TRY</target>
       </trans-unit>
       <trans-unit id="c9c42a415f18fa1e6ce2ac7f887e8d597c07ad07" datatype="html">
         <source>Maximum amount: 10000 TRY</source>
-         <target></target>
+         <target>Максимальная сумма перевода: 10000 TRY</target>
       </trans-unit>
       <trans-unit id="c8979c5531af5dfbf7f3e766948db05b8fc75d3c" datatype="html">
         <source>Other services</source>
@@ -536,11 +536,11 @@
       </trans-unit>
       <trans-unit id="a9377fb734975cbf672296eb78be4146c0724480" datatype="html">
         <source>From Account</source>
-         <target></target>
+         <target>Со счета</target>
       </trans-unit>
       <trans-unit id="e6a0156afb757d0a2ea410daf2f3a717ea6ebe37" datatype="html">
         <source>To Account</source>
-         <target></target>
+         <target>На счет</target>
       </trans-unit>
       <trans-unit id="3303ac7781c781babc373c112807a3b96fec3814" datatype="html">
         <source>Sum</source>
@@ -576,19 +576,19 @@
       </trans-unit>
       <trans-unit id="d207cc1965ec0c29e594e0e9917f39bfc276ed87" datatype="html">
         <source>Create an account</source>
-         <target></target>
+         <target>Создать счет</target>
       </trans-unit>
       <trans-unit id="27e550abc8f53c9ddc6ca8d1091d75b00b1c5c86" datatype="html">
         <source>Order card</source>
-         <target></target>
+         <target>Заказать карту</target>
       </trans-unit>
       <trans-unit id="225a0f112f18cea917f3276598d0937b458a080a" datatype="html">
         <source>Orders of cards</source>
-         <target></target>
+         <target>Закази по карте</target>
       </trans-unit>
       <trans-unit id="5aadfc464c8a1e111b98ef1454cabdbfcd59731b" datatype="html">
         <source>Activate card</source>
-         <target></target>
+         <target>Активировать карту</target>
       </trans-unit>
       <trans-unit id="f6901d5997e335a1f353ae33150002e61d9fc8ec" datatype="html">
         <source>Money transaction</source>
@@ -596,11 +596,11 @@
       </trans-unit>
       <trans-unit id="31a7496c07c899dfee2d81618f4d6e105ba61072" datatype="html">
         <source>My Accounts</source>
-         <target></target>
+         <target>Мои счета</target>
       </trans-unit>
       <trans-unit id="b94cd68970c76c91db0dfd3d881828b3f88fe0cf" datatype="html">
         <source>Active Accounts</source>
-         <target></target>
+         <target>Активные счета</target>
       </trans-unit>
       <trans-unit id="29881a45dafbe5aa05cd9d0441a4c0c2fb06df92" datatype="html">
         <source>Account</source>
@@ -608,7 +608,7 @@
       </trans-unit>
       <trans-unit id="1b051734b0ee9021991c91b3ed4e81c244322462" datatype="html">
         <source>Created</source>
-         <target></target>
+         <target>Созданные</target>
       </trans-unit>
       <trans-unit id="32072c7fb0469aaf82d256a59b3e0d6ecce973b9" datatype="html">
         <source>Currency</source>
@@ -620,27 +620,27 @@
       </trans-unit>
       <trans-unit id="030b4423b92167200e39519599f9b863b4f7c62c" datatype="html">
         <source>Actions</source>
-         <target></target>
+         <target>Действия</target>
       </trans-unit>
       <trans-unit id="f94863641b9244f0298732da591eca94d474d41a" datatype="html">
         <source>Lock</source>
-         <target></target>
+         <target>Заблокировать</target>
       </trans-unit>
       <trans-unit id="5660a255705213dcc119fbba55ac96d61859a6aa" datatype="html">
         <source>Lock Accounts</source>
-         <target></target>
+         <target>Заблокировать счет</target>
       </trans-unit>
       <trans-unit id="aac99820b81b63dd081ef9449080e545df8b03cd" datatype="html">
         <source>Unlock</source>
-         <target></target>
+         <target>Разблокировать</target>
       </trans-unit>
       <trans-unit id="69a7a9e0ea787a1247872323260576b64095b34f" datatype="html">
         <source>Deleted Accounts</source>
-         <target></target>
+         <target>Удалить счет</target>
       </trans-unit>
       <trans-unit id="79fab0cfec1f5f5d8e52476a2fe3cb69da0f4335" datatype="html">
         <source>Create account</source>
-         <target></target>
+         <target>Создать счет</target>
       </trans-unit>
       <trans-unit id="70a67e04629f6d412db0a12d51820b480788d795" datatype="html">
         <source>Create</source>
@@ -648,15 +648,15 @@
       </trans-unit>
       <trans-unit id="04c3563becf5b9de9c7dd0e419b8a22379524b26" datatype="html">
         <source>List outs</source>
-         <target></target>
+         <target>Список выводов</target>
       </trans-unit>
       <trans-unit id="35c3d47c0a698eed5cee89228802619a55526c47" datatype="html">
         <source>To System</source>
-         <target></target>
+         <target>Для системы</target>
       </trans-unit>
       <trans-unit id="f122f4707847e751d66d1f5d446072c8aad30318" datatype="html">
         <source>System Account</source>
-         <target></target>
+         <target>Системный счет</target>
       </trans-unit>
       <trans-unit id="5a5d7ee2acbfa9c91ab7f41d26bda9ff0cafe42f" datatype="html">
         <source>Comment</source>
@@ -664,19 +664,19 @@
       </trans-unit>
       <trans-unit id="b211a9c475cd391d81fcbe9936357b22728148fa" datatype="html">
         <source>You have no items here.</source>
-         <target></target>
+         <target>У вас нет позиций здесь</target>
       </trans-unit>
       <trans-unit id="36a26d59a9bccd43b9509f6bbd05373c03c1f6b4" datatype="html">
         <source>Create first</source>
-         <target></target>
+         <target>Создать первый</target>
       </trans-unit>
       <trans-unit id="de84b24738cf5465cc5be1c47560752561e2f393" datatype="html">
         <source>Out Bids</source>
-         <target></target>
+         <target>Заявка на вывод</target>
       </trans-unit>
       <trans-unit id="8011e20c5bbe51602d459a860fbf29b599b55edd" datatype="html">
         <source>System</source>
-         <target></target>
+         <target>Система</target>
       </trans-unit>
       <trans-unit id="81b97b8ea996ad1e4f9fca8415021850214884b1" datatype="html">
         <source>Status</source>
@@ -700,7 +700,7 @@
       </trans-unit>
       <trans-unit id="ae384db284aba1829833ed48e012373f145024be" datatype="html">
         <source>You can change telephone number</source>
-         <target></target>
+         <target>Вы можете изменить номер телефона</target>
       </trans-unit>
       <trans-unit id="ab74fc8dba8edad651407e20f87b1b124f532906" datatype="html">
         <source>E-mail address</source>
@@ -708,7 +708,7 @@
       </trans-unit>
       <trans-unit id="15f9d9df5ac0ff1b09f25b2dd4f85a3b520853d7" datatype="html">
         <source>You can provide email address</source>
-         <target></target>
+         <target>Вы можете предоставить email</target>
       </trans-unit>
       <trans-unit id="81baa3357bebcb29271c8121a87c17915bdbb41f" datatype="html">
         <source>Social network</source>
@@ -716,15 +716,15 @@
       </trans-unit>
       <trans-unit id="3bb2abd85b39761fcc0d70d2a60d84e7333efe31" datatype="html">
         <source>Old Number</source>
-         <target></target>
+         <target>Старый номер</target>
       </trans-unit>
       <trans-unit id="c569ec150a3435c6fee6784c35c3210f9779f157" datatype="html">
         <source>Valid phone number</source>
-         <target></target>
+         <target>Действительный номер телефона</target>
       </trans-unit>
       <trans-unit id="a6e34dcfe53e4d75d6cc9dd2128d9541c9b035fe" datatype="html">
         <source>New Number</source>
-         <target></target>
+         <target>Новый номер</target>
       </trans-unit>
       <trans-unit id="c32ef07f8803a223a83ed17024b38e8d82292407" datatype="html">
         <source>Password</source>
@@ -732,7 +732,7 @@
       </trans-unit>
       <trans-unit id="c2cd691d3ec92f37445b6fc3aac70ea4719f6c78" datatype="html">
         <source>your password</source>
-         <target></target>
+         <target>ваш пароль</target>
       </trans-unit>
       <trans-unit id="244aae9346da82b0922506c2d2581373a15641cc" datatype="html">
         <source>Email</source>
@@ -740,27 +740,27 @@
       </trans-unit>
       <trans-unit id="be396fdf73b299efbd85efc39c8e51a1ad16dbd3" datatype="html">
         <source>Valid email address</source>
-         <target></target>
+         <target>Действительный email</target>
       </trans-unit>
       <trans-unit id="0c8f13c69b8baf8a305d92ce422bbc4ae5360c52" datatype="html">
         <source>You email address</source>
-         <target></target>
+         <target>Ваш email</target>
       </trans-unit>
       <trans-unit id="41b27ce8bce895d9043b82d889bec7e9fceaab13" datatype="html">
         <source>You password</source>
-         <target></target>
+         <target>Ваш пароль</target>
       </trans-unit>
       <trans-unit id="5edf054f14aa57bc25a28cb7db01956fee53dac8" datatype="html">
         <source>Change Password</source>
-         <target></target>
+         <target>Изменить пароль</target>
       </trans-unit>
       <trans-unit id="0eb15f32b2b92d7f3103ef3ff032621888a8dc32" datatype="html">
         <source>Old password</source>
-         <target></target>
+         <target>Старый пароль</target>
       </trans-unit>
       <trans-unit id="148bf57738e644f7a53e730e7eb5712bca492b29" datatype="html">
         <source>Provide you current password</source>
-         <target></target>
+         <target>Предоставить вам текущий пароль</target>
       </trans-unit>
       <trans-unit id="e70e209561583f360b1e9cefd2cbb1fe434b6229" datatype="html">
         <source>New password</source>
@@ -768,43 +768,43 @@
       </trans-unit>
       <trans-unit id="5a3ce7440c3762e8f44b172d1698fa11367b3841" datatype="html">
         <source>Provide your new password</source>
-         <target></target>
+         <target>Предоставить вам новый пароль</target>
       </trans-unit>
       <trans-unit id="5bfd263753c941d51c8c78f789a6d3003b90bdc2" datatype="html">
         <source>New password again</source>
-         <target></target>
+         <target>Новый пароль еще раз</target>
       </trans-unit>
       <trans-unit id="3b6806aa2dbe3f7112eb0e5088409e0e98b2cb67" datatype="html">
         <source>Repeate your new password</source>
-         <target></target>
+         <target>Повторите новый пароль</target>
       </trans-unit>
       <trans-unit id="49c813101cae2e7bebfaa1d7a5f1d334383a10aa" datatype="html">
         <source>Confirm SMS Code</source>
-         <target></target>
+         <target>Подтвердите SMS-код</target>
       </trans-unit>
       <trans-unit id="78127b9332378750a472e6b206e5992578566c9c" datatype="html">
         <source>SMS code</source>
-         <target></target>
+         <target>SMS-код</target>
       </trans-unit>
       <trans-unit id="4f20f2d5a6882190892e58b85f6ccbedfa737952" datatype="html">
         <source>Yes</source>
-         <target></target>
+         <target>Да</target>
       </trans-unit>
       <trans-unit id="3d3ae7deebc5949b0c1c78b9847886a94321d9fd" datatype="html">
         <source>No</source>
-         <target></target>
+         <target>Нет</target>
       </trans-unit>
       <trans-unit id="a20c4fb9a78bf68fd6d712b49acc5493464fbe46" datatype="html">
         <source>Send again</source>
-         <target></target>
+         <target>Отправьте еще раз</target>
       </trans-unit>
       <trans-unit id="c534cb89068cba3ce7bf5ffd836543ef23167197" datatype="html">
         <source>You have no accounts yet.</source>
-         <target></target>
+         <target>У вас нет счета пока</target>
       </trans-unit>
       <trans-unit id="ff4ba5c40d690054a4a338c4b19ca920512069ba" datatype="html">
         <source>Create first one</source>
-         <target></target>
+         <target>Создать первый</target>
       </trans-unit>
     </body>
   </file>

@@ -95,6 +95,5 @@ export class HomeHeaderComponent implements OnInit, AfterViewInit, OnDestroy {
     event.preventDefault();
     sessionStorage.setItem('locale', lang);
     window.location.reload();
-    // console.log('Selected: ' + lang);
   }
 }
