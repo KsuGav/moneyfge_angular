@@ -4,20 +4,27 @@ export function getTranslationProviders(): Object[]{
   //Get the locale from browser
   let locale = detectLocale(['ru', 'uk', 'tr'], 'en');
 
-  //Load messages by webpack
-  let translations = {
-    'ru': require('./locale/messages.ru.xlf'),
-    'uk': require('./locale/messages.uk.xlf'),
-    'tr': require('./locale/messages.tr.xlf')
-  };
-
   //No locale, no messages, or en: no translation providers
-  if((!locale || locale === 'en') && !translations[locale]){
+  if((!locale || locale === 'en')){
     return [];
   }
   else {
+    let translate = null;
+    switch (locale) {
+      case 'ru':
+        translate = require('./locale/messages.ru.xlf');
+        break;
+      case 'tr':
+        translate = require('./locale/messages.tr.xlf');
+        break;
+      case 'uk':
+        translate = require('./locale/messages.uk.xlf');
+        break;
+      default:
+        break;
+    }
     return[
-      {provide: TRANSLATIONS, useValue: translations[locale]},
+      {provide: TRANSLATIONS, useValue: translate},
       {provide: TRANSLATIONS_FORMAT, useValue: 'xlf'},
       {provide: LOCALE_ID, useValue: locale}
     ];

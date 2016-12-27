@@ -22,12 +22,23 @@ export class HomeHeaderComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private registerUrl: string;
 
+  private activeLang: string = 'English';
+
   constructor(
     private router: Router,
     private loggedInGuard: LoggedInGuard,
     private modalService: ModalService
   ) {
-
+    const locale = sessionStorage.getItem('locale');
+    const locales = {
+      'ru': 'Русский',
+      'en': 'English',
+      'tr': 'Türkçe',
+      'uk': 'Українська'
+    };
+    if (locale) {
+      this.activeLang = locales[locale];
+    }
   }
 
   ngOnInit() {
