@@ -4,7 +4,7 @@
       <div class="col-md-3 col-sm-4 col-xs-12">
         <div class="visible-xs">
           <div class="lang dropdown-lang">
-            English
+            {{ activeLang }}
             <div class="dropdown-content">
               <a href="#" (click)="changeLang($event, 'en')">English</a>
               <a href="#" (click)="changeLang($event, 'ru')">Русский</a>
@@ -20,7 +20,7 @@
         <div class="top-right-info">
           <div class="hidden-xs">
             <div class="lang dropdown-lang">
-              English
+              {{ activeLang }}
               <div class="dropdown-content">
                 <a href="#" (click)="changeLang($event, 'en')">English</a>
                 <a href="#" (click)="changeLang($event, 'ru')">Русский</a>

@@ -26,7 +26,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.loggedInGuard.guestToken();
-    // $('#body').fadeIn();
   }
 
 }
