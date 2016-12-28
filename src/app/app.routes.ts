@@ -2,8 +2,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { LoggedInGuard } from './services/logged-in.guard';
 
-import { HomeComponent } from './home/home';
-import { HomeAboutComponent } from './home/about';
+// import { HomeComponent } from './home/home';
+// import { HomeAboutComponent } from './home/about';
 import { MobilePaymentsComponent } from './home/mobile-payments';
 import { MoneyTransferComponent } from './home/money-transfer';
 import { CreditPaymentsComponent } from './home/credit-payments';
@@ -36,12 +36,28 @@ import { SettingsProfileComponent } from './cabinet/settings/profile';
 import { SettingsPasswordComponent } from './cabinet/settings/password';
 import { NoContentComponent } from './no-content';
 
-import { DataResolver } from './app.resolver';
+// New template components
+import { Article1Component } from './home-new/article/article-1/article-1.component';
+import { Article2Component } from './home-new/article/article-2/article-2.component';
+import { Article3Component } from './home-new/article/article-3/article-3.component';
+import { BusinessComponent } from './home-new/business/business.component';
+import { IndexComponent } from './home-new/index/index.component';
+import { KomissiaComponent } from './home-new/komissia/komissia.component';
+import { CareersComponent } from './home-new/careers/careers.component';
+
+import { NewAboutComponent } from './home-new/main-menu/about/new-about.component';
 
 
 export const ROUTES: Routes = [
-  { path: '', component: HomeComponent }
-  , { path: 'site/about', component: HomeAboutComponent }
+  // { path: '', component: HomeComponent }
+  { path: '', component: IndexComponent }
+  , { path: 'business', component: BusinessComponent }
+  , { path: 'article-1', component: Article1Component }
+  , { path: 'article-2', component: Article2Component }
+  , { path: 'article-3', component: Article3Component }
+  , { path: 'careers', component: CareersComponent }
+  , { path: 'commission', component: KomissiaComponent }
+  , { path: 'site/about', component: NewAboutComponent }
   , { path: 'current-account/page1', component: MobilePaymentsComponent }
   , { path: 'current-account/page2', component: MoneyTransferComponent }
   , { path: 'current-account/page3', component: CreditPaymentsComponent }

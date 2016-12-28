@@ -1,0 +1,98 @@
+
+.adv-block .vacancies-icon{
+    margin-bottom: 15px;
+    width: 100%;
+    height: 90px;
+    text-align: center;
+}
+
+.adv-block-div{
+    height: 190px;
+}
+
+.adv-block .vacancies-text{
+    width: 100%;
+    text-align: center;
+}
+
+.header-vacancies{
+    margin-bottom: 25px;
+}
+
+#bg-vacancies{
+    background-image: url('../img/bg-vacancies.png');
+    width: 100%;
+    height: 300px;
+    margin-top: -25px;
+}
+
+#vacancies-list{
+    margin-top: 20px;
+}
+
+#vacancies-list>li{
+    height: 55px;
+    margin-bottom: 10px;
+}
+
+.vacancies-list-item{
+    float: left;
+    height: 55px;
+    margin-bottom: 8px;
+}
+
+.name-vacancies{
+    width: 90%;
+    background-color: #e6e6e6;
+    position: absolute;
+    color: black;
+    font-weight: 600;
+    height: 100%;
+    padding-top: 17px;
+    padding-left: 30px;
+    font-weight: 600;
+}
+@media only screen and (max-width: 768px){
+    .vac-text {
+        text-align: center!important;
+    }
+}
+
+.number-vacancies{
+    text-decoration: underline;
+}
+
+.name-vacancies:hover,.name-vacancies:focus, .name-vacancies:active{
+    color: black;
+}
+
+.vacancies-list-text{
+    width: 90%;
+    background-color: #e6e6e6;
+    position: absolute;
+    height: 100%;
+    padding-top: 17px;
+    padding-left: 30px;
+}
+@media only screen and (max-width: 400px){
+    .name-vacancies, .vacancies-list-text {
+        text-align: center!important;
+        padding-left: 0px;
+    }
+}
+.send-cv{
+    background: #fbb700;
+    color: white;
+    position: absolute;
+    width: 90%;
+    height: 100%;
+    padding-top: 17px;
+    text-align: center;
+}
+.send-cv:hover,.send-cv:focus, .send-cv:active {
+    color: white;
+}
+
+.margin-top-x2 {
+    margin-top: 100px;
+}

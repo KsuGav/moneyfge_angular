@@ -1,0 +1,77 @@
+<simple-header-component></simple-header-component>
+
+<section class="main-sect sect-grey page-content">
+  <div class="container">
+    <div class="page-content-heading">
+      <div class="row">
+        <div class="col-xs-12">
+          <ul class="breadcrumbs">
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">Новости</a></li>
+          </ul>
+        </div>
+        <div class="col-xs-12">
+          <h1 class="page-title">Новости</h1>
+        </div>
+      </div>
+    </div>
+    <div class="page-content-main-wrapper">
+      <div class="row">
+
+        <div class="col-md-3">
+          <div class="left-sidebar">
+            <ul class="news-list-menu">
+              <li>
+                <div class="news-list-menu-item clearfix">
+                  <div class="news-list-menu-date">
+                    <span class="day">31</span>
+                    <span class="month">дек</span>
+                    <span class="year">2016</span>
+                  </div>
+                  <div class="news-list-menu-title"><a [routerLink]="['/article-1']">Euro rose against the US dollar</a></div>
+                </div>
+              </li>
+              <li>
+                <div class="news-list-menu-item clearfix">
+                  <div class="news-list-menu-date">
+                    <span class="day">31</span>
+                    <span class="month">дек</span>
+                    <span class="year">2016</span>
+                  </div>
+                  <div class="news-list-menu-title"><a [routerLink]="['/article-2']">Shopping on the Internet totaled 6% of global ...</a></div>
+                </div>
+              </li>
+              <li class="active">
+                <div class="news-list-menu-item clearfix">
+                  <div class="news-list-menu-date">
+                    <span class="day">31</span>
+                    <span class="month">дек</span>
+                    <span class="year">2016</span>
+                  </div>
+                  <div class="news-list-menu-title"><a [routerLink]="['/article-3']">MasterCArd introduced payment service ...</a></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-9">
+          <div class="main-content">
+            <article>
+              <h2 class="article-title">MasterCArd introduced payment service through selfie</h2>
+              <div class="article-text">
+                <p>With Identity Check Mobile applications can be completed online purchase without enter a PIN, password or confirmation code.
+                  This MasterCard application that makes it possible to confirm the purchase through selfie.
+                  By 2017, this service will be available around the world.
+                  Since most of the payments made through mobile devices, it was create this app.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer-component></footer-component>

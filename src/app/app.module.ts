@@ -58,16 +58,30 @@ import { SettingsProfileComponent } from './cabinet/settings/profile';
 import { PhoneFormComponent } from './cabinet/settings/profile/phone-form';
 import { EmailFormComponent } from './cabinet/settings/profile/email-form';
 import { SettingsPasswordComponent } from './cabinet/settings/password';
-
 import { NoAccountComponent } from './cabinet/common/no-account';
-
 import { SmsCodeDialogComponent } from './common/sms-code-dialog/sms-code-dialog.component';
 import { ConfirmDialogComponent } from './common/confirm-dialog';
 import { AlertDialogComponent } from './common/alert-dialog/alert-dialog.component';
 import { LinkCounterComponent } from './common/link-counter/link-counter.component';
 import { AlertComponent } from './common/alert';
-
 import { NoContentComponent } from './no-content';
+
+// New template components
+import { Article1Component } from './home-new/article/article-1/article-1.component';
+import { Article2Component } from './home-new/article/article-2/article-2.component';
+import { Article3Component } from './home-new/article/article-3/article-3.component';
+import { BusinessComponent } from './home-new/business/business.component';
+import { BusinessHeaderComponent } from './home-new/business-header/business-header.component';
+import { CareersComponent } from './home-new/careers/careers.component';
+import { FooterComponent } from './home-new/footer/footer.component';
+import { IndexComponent } from './home-new/index/index.component';
+import { KomissiaComponent } from './home-new/komissia/komissia.component';
+import { LogoLineComponent } from './home-new/logo-line/logo-line.component';
+import { NavLineComponent } from './home-new/nav-line/nav-line.component';
+import { NewsComponent } from './home-new/news/news.component';
+import { PrivateHeaderComponent } from './home-new/private-header/private-header.component';
+import { SimpleHeaderComponent } from './home-new/simple-header/simple-header.component';
+import { TopLineComponent } from './home-new/top-line/top-line.component';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -126,16 +140,30 @@ type StoreType = {
     , PhoneFormComponent
     , EmailFormComponent
     , SettingsPasswordComponent
-
     , SmsCodeDialogComponent
     , ConfirmDialogComponent
     , AlertDialogComponent
     , LinkCounterComponent
     , AlertComponent
-
     , NoAccountComponent
-
     , NoContentComponent
+
+    // New template components
+    , Article1Component
+    , Article2Component
+    , Article3Component
+    , BusinessComponent
+    , BusinessHeaderComponent
+    , CareersComponent
+    , FooterComponent
+    , IndexComponent
+    , KomissiaComponent
+    , LogoLineComponent
+    , NavLineComponent
+    , NewsComponent
+    , PrivateHeaderComponent
+    , SimpleHeaderComponent
+    , TopLineComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,
