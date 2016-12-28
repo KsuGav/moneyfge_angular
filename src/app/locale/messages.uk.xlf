@@ -34,7 +34,7 @@
       </trans-unit>
       <trans-unit id="d6e0e791264c6ab64c66a1286ec06a7a292febc3" datatype="html" approved="no">
         <source>Bills</source>
-        <target state="needs-translation">Коммунальні&lt;br class="hidden-sm hidden-xs"&gt;платежі</target>
+        <target state="needs-translation">Комунальні платежі</target>
       </trans-unit>
       <trans-unit id="a258e0741dafbe9aff5e0cef7b90d4a7f8bbefeb" datatype="html" approved="no">
         <source>Online payments</source>
@@ -50,7 +50,7 @@
       </trans-unit>
       <trans-unit id="464631983f46ccad41bdaa080423325e60710668" datatype="html" approved="no">
         <source>With this service, you can replenish/recharge your mobile phones accounts when you have access to the Internet, PC and mobile devices. This service can be used by contract customers and prepaid subscribers. All transactions with mobile payment accounts occur within minutes.</source>
-        <target state="needs-translation">З допомогою цієї послуги Ви можете поповнювати рахунки мобільних телефонів при наявності доступу в інтернет, комп'ютера і мобільних пристроїв. Даною послугою можуть користуватися як абоненти контрактні, так і передплаченого зв'язку. Всі операції з оплати мобільних рахунків відбуваються протягом декількох хвилин.</target>
+        <target state="needs-translation">За допомогою цієї послуги Ви можете поповнювати рахунки мобільних телефонів при наявності доступу в інтернет, комп'ютера і мобільних пристроїв. Даною послугою можуть користуватися як абоненти контрактні, так і передплаченого зв'язку. Всі операції з оплати мобільних рахунків відбуваються протягом декількох хвилин.</target>
       </trans-unit>
       <trans-unit id="54c028ad959c6c0197ceb8092130f6587f12884d" datatype="html" approved="no">
         <source>Money transfer:</source>
@@ -101,9 +101,13 @@
         <target state="needs-translation">Здійснення швидких і безпечних платежів з допомогою MoneyFGE! Наш сервіс є надійним партнером для Вас по виробництву онлайн платежів. Щодня, двадцять чотири години на добу тисячі людей нам довіряють вирішення своїх фінансових питань. Наша система володіє високим ступенем безпеки, застосовує новітні ступеня захисту Ваших особистих даних.</target>
       </trans-unit>
       <trans-unit id="994363f08f9fbfa3b3994ff7b35c6904fdff18d8" datatype="html" approved="yes">
-        <source>Profile</source> <target state="translated">Профіль</target> </trans-unit>
+        <source>Profile</source>
+        <target state="translated">Профіль</target>
+      </trans-unit>
       <trans-unit id="640eec093c685babaa3265137215e3cc92ad704d" datatype="html" approved="yes">
-        <source>Sign Out</source> <target state="translated">Вийти</target> </trans-unit>
+        <source>Sign Out</source>
+        <target state="translated">Вийти</target>
+      </trans-unit>
       <trans-unit id="6765b4c916060f6bc42d9bb69e80377dbcb5e4e9" datatype="html" approved="no">
         <source>Login</source>
         <target state="needs-translation">Вхід</target>
@@ -202,7 +206,7 @@
       </trans-unit>
       <trans-unit id="f9421eb17bf9a309ff16584b286a6463b2f91f66" datatype="html" approved="no">
         <source>With this service, you can replenish their accounts of mobile phones when you have access to the Internet, PC and mobile devices. This service can be used by contract customers and prepaid subscribers. All transactions with mobile payment accounts occur within minutes. For the transaction enter your mobile phone number and the amount that you want to update your account with. This service is available to all operators. Use our service for mobile communications, it is convenient and easy!</source>
-        <target state="needs-translation">З допомогою цієї послуги Ви можете поповнювати рахунки мобільних телефонів при наявності доступу в інтернет, комп'ютера і мобільних пристроїв. Даною послугою можуть користуватися абоненти як контрактні, так і передплаченого зв'язку. Всі операції з оплати мобільних рахунків відбуваються протягом декількох хвилин. Для здійснення операції достатньо ввести номер мобільного телефону і суму, на яку бажаєте поповнити рахунок. Ця послуга доступна для всіх операторів. Скористайтеся нашою послугою оплати мобільного зв'язку, це зручно та просто!</target>
+        <target state="needs-translation">За допомогою цієї послуги Ви можете поповнювати рахунки мобільних телефонів при наявності доступу в інтернет, комп'ютера і мобільних пристроїв. Даною послугою можуть користуватися абоненти як контрактні, так і передплаченого зв'язку. Всі операції з оплати мобільних рахунків відбуваються протягом декількох хвилин. Для здійснення операції достатньо ввести номер мобільного телефону і суму, на яку бажаєте поповнити рахунок. Ця послуга доступна для всіх операторів. Скористайтеся нашою послугою оплати мобільного зв'язку, це зручно та просто!</target>
       </trans-unit>
       <trans-unit id="accae4a6b267c69a8f2cae27bbd2391a2136e718" datatype="html" approved="no">
         <source>Mobile operators</source>
@@ -214,7 +218,7 @@
       </trans-unit>
       <trans-unit id="04f4ae6e5fe8fde1ea080ff98f967fd02be88c30" datatype="html" approved="no">
         <source>MoneyFGE performs various types of payments and transfers in various currencies and carries deposition and transfer funds. All transactions are done quickly, conveniently and securely. Receive and send money from any location in the world.  By card or cash. Money transfer is able to reach  destination  within a few minutes. Our payment system offers its customers the optimum scheme of transfer of funds for you, your family and friends. In order to receive money you must have a passport or ID. To get all the information about currency transactions please contact our manager.</source>
-        <target state="needs-translation">MoneyFGE виконує різні види платежів і переказів у різних валютах, також здійснює операції по зарахуванню та переказу грошових коштів. Всі переклади відбуваються швидко, зручно та надійно. Одержувати і відправляти грошові кошти можна в будь-якій точці світу. Це робиться за допомогою картки, або готівкою. Грошовий переказ доступний для одержання адресатом через кілька хвилин після його відправлення. Наша платіжна система пропонує для своїх клієнтів оптимальну схему переказу грошових коштів для Вас, Ваших рідних і близьких. Для того, щоб отримати грошовий переказ необхідно мати при собі паспорт або документ, який підтверджує особу. Щоб отримати всю необхідну інформацію про перекладах та отримання валюти зв'яжіться з нашим менеджером.</target>
+        <target state="needs-translation">MoneyFGE виконує різні види платежів і переказів у різних валютах, також здійснює операції по зарахуванню та переказу грошових коштів. Всі перекази відбуваються швидко, зручно та надійно. Одержувати і відправляти грошові кошти можна в будь-якій точці світу. Це робиться за допомогою картки, або готівкою. Грошовий переказ доступний для отримання адресатом через кілька хвилин після його відправлення. Наша платіжна система пропонує для своїх клієнтів оптимальну схему переказу грошових коштів для Вас, Ваших рідних і близьких. Для того, щоб отримати грошовий переказ необхідно мати при собі паспорт або документ, який підтверджує особу. Щоб отримати всю необхідну інформацію про переклади та отримання валюти зв'яжіться з нашим менеджером.</target>
       </trans-unit>
       <trans-unit id="323511e5abee355aa1bbcd6c1c3d72f0cb852ad9" datatype="html" approved="no">
         <source>Money transfer system</source>
@@ -296,6 +300,10 @@
         <source>Water</source>
         <target state="needs-translation">Вода</target>
       </trans-unit>
+      <trans-unit id="e84de756fdd6870a5f97d483fa3b680827f5bed6" datatype="html" approved="yes">
+        <source>Contact information</source> <target state="translated">Контактна інформація</target> </trans-unit>
+      <trans-unit id="0d53e45c4846df5f5a45f1850516dcc7ce210b1f" datatype="html" approved="yes">
+        <source>You can contact us Monday through Friday from 8:30 to 18:30</source> <target state="translated">Ви можете зв'язатися з нами з понеділка по п'ятницю з 8:30 до 18:30</target> </trans-unit>
       <trans-unit id="553d10648d6e5f139ed0d4f3ff66e0a7609c1a27" datatype="html" approved="no">
         <source>Feedback form</source>
         <target state="needs-translation">Форма зворотнього зв'язку</target>

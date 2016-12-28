@@ -19,7 +19,7 @@
                 </li>
                 <li><a href="#" class="under-construction" i18n>Account settings</a></li>
 
-                <li [ngClass]="{'active': activeLink === 'password'}"><a [routerLink]="['/user/cabinet/settings/password']" (click)="passwordClick()">New password</a></li>
+                <li [ngClass]="{'active': activeLink === 'password'}"><a [routerLink]="['/user/cabinet/settings/password']" (click)="passwordClick()" i18n>New password</a></li>
                 <li class="modal_error"><a href="#" class="under-construction" i18n>Settings</a></li>
               </ul>
             </div>
