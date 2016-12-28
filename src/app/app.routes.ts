@@ -1,16 +1,7 @@
-import { Routes, RouterModule } from '@angular/router';
+import { Routes } from '@angular/router';
 
 import { LoggedInGuard } from './services/logged-in.guard';
 
-// import { HomeComponent } from './home/home';
-// import { HomeAboutComponent } from './home/about';
-import { MobilePaymentsComponent } from './home/mobile-payments';
-import { MoneyTransferComponent } from './home/money-transfer';
-import { CreditPaymentsComponent } from './home/credit-payments';
-import { GamesEntertainmentComponent } from './home/games-entertainment';
-import { InternetTvComponent } from './home/internet-tv';
-import { OnlinePaymentsComponent } from './home/online-payments';
-import { BillsComponent } from './home/bills';
 import { ContactsComponent } from './home/contacts';
 import { LoginComponent } from './login/login';
 import { LoginConfirmComponent } from './login/confirm';
@@ -37,6 +28,7 @@ import { SettingsPasswordComponent } from './cabinet/settings/password';
 import { NoContentComponent } from './no-content';
 
 // New template components
+import { AboutComponent } from './home-new/about/about.component';
 import { Article1Component } from './home-new/article/article-1/article-1.component';
 import { Article2Component } from './home-new/article/article-2/article-2.component';
 import { Article3Component } from './home-new/article/article-3/article-3.component';
@@ -44,8 +36,13 @@ import { BusinessComponent } from './home-new/business/business.component';
 import { IndexComponent } from './home-new/index/index.component';
 import { KomissiaComponent } from './home-new/komissia/komissia.component';
 import { CareersComponent } from './home-new/careers/careers.component';
-
-import { NewAboutComponent } from './home-new/main-menu/about/new-about.component';
+import { MobilePaymentsComponent } from './home-new/mobile-payments/mobile-payments.component';
+import { MoneyTransferComponent } from './home-new/money-transfer/money-transfer.component';
+import { CreditPaymentsComponent } from './home-new/credit-payments/credit-payments.component';
+import { GamesIntertainmentComponent } from './home-new/games-intertainment/games-intertainment.component';
+import { InternetTvComponent } from './home-new/internet-tv/internet-tv.component';
+import { OnlinePaymentsComponent } from './home-new/online-payments/online-payments.component';
+import { BillsComponent } from './home-new/bills/bills.component';
 
 
 export const ROUTES: Routes = [
@@ -57,14 +54,14 @@ export const ROUTES: Routes = [
   , { path: 'article-3', component: Article3Component }
   , { path: 'careers', component: CareersComponent }
   , { path: 'commission', component: KomissiaComponent }
-  , { path: 'site/about', component: NewAboutComponent }
-  , { path: 'current-account/page1', component: MobilePaymentsComponent }
-  , { path: 'current-account/page2', component: MoneyTransferComponent }
-  , { path: 'current-account/page3', component: CreditPaymentsComponent }
-  , { path: 'current-account/page4', component: GamesEntertainmentComponent }
-  , { path: 'current-account/page5', component: InternetTvComponent }
-  , { path: 'current-account/page7', component: OnlinePaymentsComponent }
-  , { path: 'current-account/page8', component: BillsComponent }
+  , { path: 'about', component: AboutComponent }
+  , { path: 'mobile-payments', component: MobilePaymentsComponent }
+  , { path: 'money-transfer', component: MoneyTransferComponent }
+  , { path: 'credit-payments', component: CreditPaymentsComponent }
+  , { path: 'games', component: GamesIntertainmentComponent }
+  , { path: 'internet', component: InternetTvComponent }
+  , { path: 'online', component: OnlinePaymentsComponent }
+  , { path: 'bills', component: BillsComponent }
   , { path: 'site/contacts', component: ContactsComponent }
   , { path: 'user/sign-in/login', component: LoginComponent }
   , { path: 'user/sign-in/confirm', component: LoginConfirmComponent }

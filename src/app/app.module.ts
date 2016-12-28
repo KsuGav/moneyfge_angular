@@ -24,13 +24,6 @@ import { HomeComponent } from './home/home';
 import { HomeHeaderComponent } from './home/header';
 import { HomeFooterComponent } from './home/footer';
 import { HomeAboutComponent } from './home/about';
-import { MobilePaymentsComponent } from './home/mobile-payments';
-import { MoneyTransferComponent } from './home/money-transfer';
-import { CreditPaymentsComponent } from './home/credit-payments';
-import { GamesEntertainmentComponent } from './home/games-entertainment';
-import { InternetTvComponent } from './home/internet-tv';
-import { OnlinePaymentsComponent } from './home/online-payments';
-import { BillsComponent } from './home/bills';
 import { ContactsComponent } from './home/contacts';
 import { LoginComponent } from './login/login';
 import { LoginConfirmComponent } from './login/confirm';
@@ -67,6 +60,7 @@ import { AlertComponent } from './common/alert';
 import { NoContentComponent } from './no-content';
 
 // New template components
+import { AboutComponent } from './home-new/about/about.component';
 import { Article1Component } from './home-new/article/article-1/article-1.component';
 import { Article2Component } from './home-new/article/article-2/article-2.component';
 import { Article3Component } from './home-new/article/article-3/article-3.component';
@@ -82,6 +76,13 @@ import { NewsComponent } from './home-new/news/news.component';
 import { PrivateHeaderComponent } from './home-new/private-header/private-header.component';
 import { SimpleHeaderComponent } from './home-new/simple-header/simple-header.component';
 import { TopLineComponent } from './home-new/top-line/top-line.component';
+import { MobilePaymentsComponent } from './home-new/mobile-payments/mobile-payments.component';
+import { MoneyTransferComponent } from './home-new/money-transfer/money-transfer.component';
+import { CreditPaymentsComponent } from './home-new/credit-payments/credit-payments.component';
+import { GamesIntertainmentComponent } from './home-new/games-intertainment/games-intertainment.component';
+import { InternetTvComponent } from './home-new/internet-tv/internet-tv.component';
+import { OnlinePaymentsComponent } from './home-new/online-payments/online-payments.component';
+import { BillsComponent } from './home-new/bills/bills.component';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -106,13 +107,6 @@ type StoreType = {
     , HomeHeaderComponent
     , HomeFooterComponent
     , HomeAboutComponent
-    , MobilePaymentsComponent
-    , MoneyTransferComponent
-    , CreditPaymentsComponent
-    , GamesEntertainmentComponent
-    , InternetTvComponent
-    , OnlinePaymentsComponent
-    , BillsComponent
     , ContactsComponent
     , LoginComponent
     , LoginConfirmComponent
@@ -149,6 +143,7 @@ type StoreType = {
     , NoContentComponent
 
     // New template components
+    , AboutComponent
     , Article1Component
     , Article2Component
     , Article3Component
@@ -164,6 +159,13 @@ type StoreType = {
     , PrivateHeaderComponent
     , SimpleHeaderComponent
     , TopLineComponent
+    , MobilePaymentsComponent
+    , MoneyTransferComponent
+    , CreditPaymentsComponent
+    , GamesIntertainmentComponent
+    , InternetTvComponent
+    , OnlinePaymentsComponent
+    , BillsComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,
