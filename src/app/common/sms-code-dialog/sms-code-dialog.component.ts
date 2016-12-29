@@ -16,7 +16,7 @@ export class SmsCodeDialogComponent implements OnInit {
   sendCode: EventEmitter<SmsModel> = new EventEmitter<SmsModel>();
 
   @Input()
-  public sms: SmsModel = new SmsModel();
+  public sms: SmsModel;
 
   @Input()
   public id: string = 'default';
@@ -57,13 +57,13 @@ export class SmsCodeDialogComponent implements OnInit {
 
   }
 
-  changeValue(event){
-    event.preventDefault();
-    if(!isNaN(event.key)){
-      if(this.smsDialogInput.val().length>=4){ return; }
-      this.smsDialogInput.val(this.smsDialogInput.val() + event.key);
-    }
-
-  }
+  // changeValue(event){
+  //   event.preventDefault();
+  //   if(!isNaN(event.key)){
+  //     if(this.smsDialogInput.val().length>=4){ return; }
+  //     this.smsDialogInput.val(this.smsDialogInput.val() + event.key);
+  //   }
+  //
+  // }
 
 }

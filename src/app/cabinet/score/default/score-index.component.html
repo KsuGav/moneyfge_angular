@@ -1,4 +1,4 @@
-<sms-code-dialog-component [id]="'unlock'" [sms]="smsModel" (sendCode)="closeSmsDialog()"></sms-code-dialog-component>
+<sms-code-dialog-component [id]="'unlock'" [sms]="smsModel" (sendCode)="closeSmsDialog($event)"></sms-code-dialog-component>
 
 <confirm-dialog-component [dialogId]="'lock'" [message]="'Are you sure?'"
   (accept)="lockAccount()"></confirm-dialog-component>

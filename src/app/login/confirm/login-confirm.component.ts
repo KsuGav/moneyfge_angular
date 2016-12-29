@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
 import { OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { User } from '../../services/service.user';
@@ -9,7 +9,6 @@ import { ModalService } from '../../services/modal.service';
 @Component({
   selector: 'login-confirm-component',
   templateUrl: './login-confirm.component.html',
-  // encapsulation: ViewEncapsulation.None,
   styleUrls: [
     '../css/login.css'
   ]
@@ -88,7 +87,7 @@ export class LoginConfirmComponent implements OnInit, OnDestroy {
           sessionStorage.setItem('aToken', res.access_token);
           sessionStorage.setItem('loggedIn', 'true');
 
-          this.router.navigate(['/user/cabinet']);
+          this.router.navigate(['/user/dashboard']);
         },
         err => {
           this.errorMsg = err.json().message;

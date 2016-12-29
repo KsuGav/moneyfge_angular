@@ -86,16 +86,16 @@ export class PhoneFormComponent implements OnInit {
     ;
   }
 
-  closeSmsDialog() {
-    if (this.smsModel.smsCode === '') {
+  closeSmsDialog(smsModel) {
+    if (smsModel.smsCode === '') {
       return;
     }
     this.modalService.showLoader('phone-form');
     this.userService
       .changeUserNumberStep2(
-        this.smsModel.smsId,
+        smsModel.smsId,
         this.history,
-        +this.smsModel.smsCode
+        +smsModel.smsCode
       )
       .subscribe(
         () => {

@@ -110,10 +110,13 @@ export class ScoreIndexComponent implements OnInit, AfterViewInit, OnDestroy {
     ;
   }
 
-  closeSmsDialog() {
+  closeSmsDialog(smsModel) {
+    if (smsModel.smsCode === '') {
+      return;
+    }
     this.modalService.showLoader('locked');
     this.accountService
-      .unlockAccountStep2(this.accId, this.smsModel.smsId, +this.smsModel.smsCode)
+      .unlockAccountStep2(this.accId, smsModel.smsId, +smsModel.smsCode)
       .subscribe(
         () => {
           this.getAccounts();
