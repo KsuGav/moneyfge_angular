@@ -1,0 +1,495 @@
+<new-cabinet-header-component></new-cabinet-header-component>
+
+<section class="sect-grey padding-small">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="dashboard-left-sidebar equal-height-column">
+          <div class="dashboard-left-sidebar-header">
+            <h3 class="dashboard-left-sidebar-header__title">My accounts</h3>
+            <div class="dashboard-left-sidebar-header__icons">
+              <ul>
+                <li><img src="/assets/new_assets/img/dasboard-icon-1.png" alt="Icon"></li>
+                <li><img src="/assets/new_assets/img/dasboard-icon-2.png" alt="Icon"></li>
+                <li><img src="/assets/new_assets/img/dasboard-icon-3.png" alt="Icon"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="dashboard-left-sidebar-content">
+            <div class="dashboard-account-list">
+              <ul>
+                <li>
+                  <div class="left-part">
+                    <h3 class="dashboard-account-list__title"><a href="#" (click)="false">Money FGA <span>$</span></a></h3>
+                    <div class="dashboard-account-list__card-number">
+                      <img src="/assets/new_assets/img/flag-usa.png" alt="USA">
+                      <span>0000 0000 0000 0001</span>
+                    </div>
+                  </div>
+                  <h4 class="dashboard-account-list__total">10.890 <span>USD</span></h4>
+                </li>
+                <li>
+                  <div class="left-part">
+                    <h3 class="dashboard-account-list__title"><a href="#" (click)="false">Money FGA <span>$</span></a></h3>
+                    <div class="dashboard-account-list__card-number">
+                      <img src="/assets/new_assets/img/flag-euro.png" alt="EURO">
+                      <span>0000 0000 0000 0002</span>
+                    </div>
+                  </div>
+                  <h4 class="dashboard-account-list__total">20.400 <span>EUR</span></h4>
+                </li>
+              </ul>
+            </div>
+            <div class="dashboard-btn-group">
+              <ul>
+                <li>
+                  <a href="#" (click)="false">
+                    <div class="dashboard-btn-group__icon">
+                      <img src="/assets/new_assets/img/dasboard-icon-4.png" alt="Icon">
+                    </div>
+                    <span class="dashboard-btn-group__text">Snap the card</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" (click)="false">
+                    <div class="dashboard-btn-group__icon">
+                      <img src="/assets/new_assets/img/dasboard-icon-4.png" alt="Icon">
+                    </div>
+                    <span class="dashboard-btn-group__text">New account</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="dashboard-main-content equal-height-column">
+          <div class="clearfix"></div>
+          <div class="money-course">
+            <p>
+              Exchange rate:
+              <span>$: 26.400 / 27.248</span>
+              <span>€:  27.80 / 28.41</span>
+            </p>
+          </div>
+
+          <div class="expenses-cash-panel clearfix">
+            <div class="expenses-cash-panel-left">
+              <div class="expenses-cash-panel-heading">
+                <h4 class="expenses-cash-panel-heading__title">Sum</h4>
+                <div class="expenses-cash-panel-heading__datepicker calendar">
+                  <span>on</span>
+                  <input type="text" id="mytarget" value="12.12.2016">
+                  <div class="monthly" id="mycalendar1" style="display:none;"></div>
+                </div>
+              </div>
+              <div class="expenses-cash-panel-content">
+                <ul class="expenses-cash-panel-cashlist">
+                  <li>
+                    <div class="expenses-cash-panel-cashlist__icon">
+                      <img src="/assets/new_assets/img/cash-panel-icon-1.png" alt="Icon">
+                    </div>
+                    <p class="expenses-cash-panel-cashlist__title">Available</p>
+                    <p class="expenses-cash-panel-cashlist__summa">10 000 000 $</p>
+                  </li>
+                  <li>
+                    <div class="expenses-cash-panel-cashlist__icon">
+                      <img src="/assets/new_assets/img/cash-panel-icon-2.png" alt="Icon">
+                    </div>
+                    <p class="expenses-cash-panel-cashlist__title">Costs</p>
+                    <p class="expenses-cash-panel-cashlist__summa small">- 200 000 $</p>
+                  </li>
+                  <li>
+                    <div class="expenses-cash-panel-cashlist__icon">
+                      <img src="/assets/new_assets/img/cash-panel-icon-3.png" alt="Icon">
+                    </div>
+                    <p class="expenses-cash-panel-cashlist__title">Comes</p>
+                    <p class="expenses-cash-panel-cashlist__summa small">+ 4 000 000 $</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="expenses-cash-panel-right">
+              <div class="expenses-cash-panel-heading">
+                <h4 class="expenses-cash-panel-heading__title">Costs</h4>
+                <div class="expenses-cash-panel-heading__datepicker calendar">
+                  <input type="text" id="mytarget2" value="Desember 2016">
+                  <div class="monthly" id="mycalendar2" style="display:none;"></div>
+                </div>
+                <div class="expenses-cash-panel-heading__icons">
+                  <ul>
+                    <li><img src="/assets/new_assets/img/cash-panel-icon-5.png" alt="Icon"></li>
+                    <li><img src="/assets/new_assets/img/cash-panel-icon-7.png" alt="Icon"></li>
+                    <li><img src="/assets/new_assets/img/cash-panel-icon-10.png" alt="Icon"></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="expenses-cash-panel-content">
+                <div class="pie-chart">
+                  <div id="canvas-holder">
+                    <canvas id="chart-area"></canvas>
+                  </div>
+                </div>
+                <div class="cash-list-panel">
+                  <ul>
+                    <li>
+                      <span class="cash-list-panel__title">Products</span>
+                      <span class="cash-list-panel__percent">00%</span>
+                      <span class="cash-list-panel__total">- $ 00 000</span>
+                      <span class="cash-list-panel__limit">Limit $ 00 000</span>
+                      <input type="range" class="cash-list-panel__range" value="30" min="1" max="100" step="1">
+                    </li>
+                    <li>
+                      <span class="cash-list-panel__title">Products</span>
+                      <span class="cash-list-panel__percent">00%</span>
+                      <span class="cash-list-panel__total">- $ 00 000</span>
+                      <span class="cash-list-panel__limit">Limit $ 00 000</span>
+                      <input type="range" class="cash-list-panel__range" value="80">
+                    </li>
+                    <li>
+                      <span class="cash-list-panel__title">Products</span>
+                      <span class="cash-list-panel__percent">00%</span>
+                      <span class="cash-list-panel__total">- $ 00 000</span>
+                      <span class="cash-list-panel__limit">Limit $ 00 000</span>
+                      <input type="range" class="cash-list-panel__range" value="20">
+                    </li>
+                    <li>
+                      <span class="cash-list-panel__title">Products</span>
+                      <span class="cash-list-panel__percent">00%</span>
+                      <span class="cash-list-panel__total">- $ 00 000</span>
+                      <span class="cash-list-panel__limit">Limit $ 00 000</span>
+                      <input type="range" class="cash-list-panel__range" value="60">
+                    </li>
+                  </ul>
+                </div>
+                <div class="cash-list-panel ml15">
+                  <ul>
+                    <li>
+                      <span class="cash-list-panel__title">Products</span>
+                      <span class="cash-list-panel__percent">00%</span>
+                      <span class="cash-list-panel__total">- $ 00 000</span>
+                      <span class="cash-list-panel__limit">Limit $ 00 000</span>
+                      <input type="range" class="cash-list-panel__range" value="30">
+                    </li>
+                    <li>
+                      <span class="cash-list-panel__title">Products</span>
+                      <span class="cash-list-panel__percent">00%</span>
+                      <span class="cash-list-panel__total">- $ 00 000</span>
+                      <span class="cash-list-panel__limit">Limit $ 00 000</span>
+                      <input type="range" class="cash-list-panel__range" value="80">
+                    </li>
+                    <li>
+                      <span class="cash-list-panel__title">Products</span>
+                      <span class="cash-list-panel__percent">00%</span>
+                      <span class="cash-list-panel__total">- $ 00 000</span>
+                      <span class="cash-list-panel__limit">Limit $ 00 000</span>
+                      <input type="range" class="cash-list-panel__range" value="20">
+                    </li>
+                    <li>
+                      <span class="cash-list-panel__title">Products</span>
+                      <span class="cash-list-panel__percent">00%</span>
+                      <span class="cash-list-panel__total">- $ 00 000</span>
+                      <span class="cash-list-panel__limit">Limit $ 00 000</span>
+                      <input type="range" class="cash-list-panel__range" value="60">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="expenses-latest-bills">
+            <div class="expenses-latest-bills_header">
+              <img src="/assets/new_assets/img/cash-panel-icon-4.png" alt="Icon" class="expenses-latest-bills_header__icon">
+              <span class="expenses-latest-bills_header__date">Today, 12.12.2016</span>
+              <span class="expenses-latest-bills_header__sum-in">+ 000 000$</span>
+              <span class="expenses-latest-bills_header__sum-out">- 000 000$</span>
+              <div class="expenses-latest-bills_header__right">
+                <form>
+                  <input type="text" placeholder="Search">
+                  <button type="submit" class="search"><img src="/assets/new_assets/img/cash-panel-icon-12.png" alt="Icon"></button>
+                </form>
+                <div class="expenses-latest-bills_header__setting-btn">
+                  <img src="/assets/new_assets/img/cash-panel-icon-9.png" alt="Icon">
+                </div>
+              </div>
+            </div>
+            <div class="expenses-latest-bills_content">
+              <ul class="expenses-latest-bills_content__bill-list">
+                <li>
+                  <div class="expenses-latest-bills_content__icon"><img src="/assets/new_assets/img/cash-panel-icon-13.png" alt="Icon"></div>
+                  <p class="expenses-latest-bills_content__time">Today 12:30</p>
+                  <p class="expenses-latest-bills_content__bill">
+                    Payment for the goods in №10 from 12.02.2016 some text missing
+                  </p>
+                  <p class="expenses-latest-bills_content__total">-0000 $</p>
+                </li>
+                <li>
+                  <div class="expenses-latest-bills_content__icon"><img src="/assets/new_assets/img/cash-panel-icon-13.png" alt="Icon"></div>
+                  <p class="expenses-latest-bills_content__time">Today 12:30</p>
+                  <p class="expenses-latest-bills_content__bill">
+                    Payment for the goods in №10 from 12.02.2016 some text missing
+                  </p>
+                  <p class="expenses-latest-bills_content__total">-0000 $</p>
+                </li>
+                <li>
+                  <div class="expenses-latest-bills_content__icon"><img src="/assets/new_assets/img/cash-panel-icon-13.png" alt="Icon"></div>
+                  <p class="expenses-latest-bills_content__time">Today 12:30</p>
+                  <p class="expenses-latest-bills_content__bill">
+                    Payment for the goods in №10 from 12.02.2016 some text missing
+                  </p>
+                  <p class="expenses-latest-bills_content__total">-0000 $</p>
+                </li>
+                <li>
+                  <div class="expenses-latest-bills_content__icon"><img src="/assets/new_assets/img/cash-panel-icon-13.png" alt="Icon"></div>
+                  <p class="expenses-latest-bills_content__time">Today 12:30</p>
+                  <p class="expenses-latest-bills_content__bill">
+                    Payment for the goods in №10 from 12.02.2016 some text missing
+                  </p>
+                  <p class="expenses-latest-bills_content__total">-0000 $</p>
+                </li>
+              </ul>
+            </div>
+            <div class="expenses-latest-bills_footer">
+              <div class="expenses-latest-bills_footer__showmore">
+                <i class="fa fa-arrow-down"></i>
+                <span>More</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="block-type-1 popular-services">
+            <h5 class="block-type-1__title">Popular services</h5>
+            <div class="popular-services--blocks">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="popular-services--block">
+                    <h4 class="popular-services--block__title">Taxes</h4>
+                    <p class="popular-services--block__subtitle">verification and payment</p>
+                    <div class="popular-services--block__icon">
+                      <img src="/assets/new_assets/img/popular-services-icon-4.png" alt="Icon">
+                    </div>
+                    <a href="#" (click)="false" class="popular-services--block__readmore">
+                      More
+                      <i class="fa fa-arrow-right"></i></a>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="popular-services--block">
+                    <h4 class="popular-services--block__title">Fines</h4>
+                    <p class="popular-services--block__subtitle">verification and payment</p>
+                    <div class="popular-services--block__icon">
+                      <img src="/assets/new_assets/img/popular-services-icon-6.png" alt="Icon">
+                    </div>
+                    <a href="#" (click)="false" class="popular-services--block__readmore">
+                      More
+                      <i class="fa fa-arrow-right"></i></a>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="popular-services--block">
+                    <h4 class="popular-services--block__title">Loans</h4>
+                    <p class="popular-services--block__subtitle">verification and payment</p>
+                    <div class="popular-services--block__icon">
+                      <img src="/assets/new_assets/img/popular-services-icon-5.png" alt="Icon">
+                    </div>
+                    <a href="#" (click)="false" class="popular-services--block__readmore">
+                      More
+                      <i class="fa fa-arrow-right"></i></a>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="popular-services--block">
+                    <h4 class="popular-services--block__title">Receipts</h4>
+                    <p class="popular-services--block__subtitle">verification and payment</p>
+                    <div class="popular-services--block__icon">
+                      <img src="/assets/new_assets/img/popular-services-icon-1.png" alt="Icon">
+                    </div>
+                    <a href="#" (click)="false" class="popular-services--block__readmore">
+                      More
+                      <i class="fa fa-arrow-right"></i></a>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="popular-services--block">
+                    <h4 class="popular-services--block__title">Mobile</h4>
+                    <p class="popular-services--block__subtitle">verification and payment</p>
+                    <div class="popular-services--block__icon">
+                      <img src="/assets/new_assets/img/popular-services-icon-3.png" alt="Icon">
+                    </div>
+                    <a href="#" (click)="false" class="popular-services--block__readmore">
+                      More
+                      <i class="fa fa-arrow-right"></i></a>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="popular-services--block">
+                    <h4 class="popular-services--block__title">Credits</h4>
+                    <p class="popular-services--block__subtitle">verification and payment</p>
+                    <div class="popular-services--block__icon">
+                      <img src="/assets/new_assets/img/popular-services-icon-2.png" alt="Icon">
+                    </div>
+                    <a href="#" (click)="false" class="popular-services--block__readmore">
+                      More
+                      <i class="fa fa-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="block-type-1 catalog-categories">
+            <h5 class="block-type-1__title">Directory categories</h5>
+            <div class="catalog-categories__form">
+              <input type="text" placeholder="Shop, company, product... ">
+              <button class="search-btn">
+                <img src="/assets/new_assets/img/catalog-block-icons/cat-categories-icon-8.png" alt="Icon">
+                Search
+              </button>
+            </div>
+            <div class="catalog-categories--items">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="catalog-categories--item">
+                    <div class="catalog-categories--item__icon">
+                      <img src="/assets/new_assets/img/catalog-block-icons/cat-categories-icon-5.png" alt="Icon">
+                    </div>
+                    <div class="catalog-categories--item__text">
+                      <h5 class="catalog-categories--item__title"><a href="#" (click)="false">Bills</a></h5>
+                      <p class="catalog-categories--item__subtitle">Public services, fines, taxes</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="catalog-categories--item">
+                    <div class="catalog-categories--item__icon">
+                      <img src="/assets/new_assets/img/catalog-block-icons/cat-categories-icon-10.png" alt="Icon">
+                    </div>
+                    <div class="catalog-categories--item__text">
+                      <h5 class="catalog-categories--item__title"><a href="#" (click)="false">Phones</a></h5>
+                      <p class="catalog-categories--item__subtitle">Public services, fines, taxes</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="catalog-categories--item">
+                    <div class="catalog-categories--item__icon">
+                      <img src="/assets/new_assets/img/catalog-block-icons/cat-categories-icon-3.png" alt="Icon">
+                    </div>
+                    <div class="catalog-categories--item__text">
+                      <h5 class="catalog-categories--item__title"><a href="#" (click)="false">Internet</a></h5>
+                      <p class="catalog-categories--item__subtitle">Public services, fines, taxes</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="catalog-categories--item">
+                    <div class="catalog-categories--item__icon">
+                      <img src="/assets/new_assets/img/catalog-block-icons/cat-categories-icon-1.png" alt="Icon">
+                    </div>
+                    <div class="catalog-categories--item__text">
+                      <h5 class="catalog-categories--item__title"><a href="#" (click)="false">Television</a></h5>
+                      <p class="catalog-categories--item__subtitle">Public services, fines, taxes</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="catalog-categories--item">
+                    <div class="catalog-categories--item__icon">
+                      <img src="/assets/new_assets/img/catalog-block-icons/cat-categories-icon-2.png" alt="Icon">
+                    </div>
+                    <div class="catalog-categories--item__text">
+                      <h5 class="catalog-categories--item__title"><a href="#" (click)="false">Games</a></h5>
+                      <p class="catalog-categories--item__subtitle">Public services, fines, taxes</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="catalog-categories--item">
+                    <div class="catalog-categories--item__icon">
+                      <img src="/assets/new_assets/img/catalog-block-icons/cat-categories-icon-11.png" alt="Icon">
+                    </div>
+                    <div class="catalog-categories--item__text">
+                      <h5 class="catalog-categories--item__title"><a href="#" (click)="false">Goods</a></h5>
+                      <p class="catalog-categories--item__subtitle">Public services, fines, taxes</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="catalog-categories--item">
+                    <div class="catalog-categories--item__icon">
+                      <img src="/assets/new_assets/img/catalog-block-icons/cat-categories-icon-6.png" alt="Icon">
+                    </div>
+                    <div class="catalog-categories--item__text">
+                      <h5 class="catalog-categories--item__title"><a href="#" (click)="false">Online services</a></h5>
+                      <p class="catalog-categories--item__subtitle">Public services, fines, taxes</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="catalog-categories--item">
+                    <div class="catalog-categories--item__icon">
+                      <img src="/assets/new_assets/img/catalog-block-icons/cat-categories-icon-9.png" alt="Icon">
+                    </div>
+                    <div class="catalog-categories--item__text">
+                      <h5 class="catalog-categories--item__title"><a href="#"v>Entertainment</a></h5>
+                      <p class="catalog-categories--item__subtitle">Public services, fines, taxes</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="catalog-categories--item">
+                    <div class="catalog-categories--item__icon">
+                      <img src="/assets/new_assets/img/catalog-block-icons/cat-categories-icon-13.png" alt="Icon">
+                    </div>
+                    <div class="catalog-categories--item__text">
+                      <h5 class="catalog-categories--item__title"><a href="#" (click)="false">Finances</a></h5>
+                      <p class="catalog-categories--item__subtitle">Public services, fines, taxes</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="catalog-categories--item">
+                    <div class="catalog-categories--item__icon">
+                      <img src="/assets/new_assets/img/catalog-block-icons/cat-categories-icon-7.png" alt="Icon">
+                    </div>
+                    <div class="catalog-categories--item__text">
+                      <h5 class="catalog-categories--item__title"><a href="#" (click)="false">Programs</a></h5>
+                      <p class="catalog-categories--item__subtitle">Public services, fines, taxes</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="catalog-categories--item">
+                    <div class="catalog-categories--item__icon">
+                      <img src="/assets/new_assets/img/catalog-block-icons/cat-categories-icon-12.png" alt="Icon">
+                    </div>
+                    <div class="catalog-categories--item__text">
+                      <h5 class="catalog-categories--item__title"><a href="#" (click)="false">Transports</a></h5>
+                      <p class="catalog-categories--item__subtitle">Public services, fines, taxes</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="catalog-categories--item">
+                    <div class="catalog-categories--item__icon">
+                      <img src="/assets/new_assets/img/catalog-block-icons/cat-categories-icon-4.png" alt="Icon">
+                    </div>
+                    <div class="catalog-categories--item__text">
+                      <h5 class="catalog-categories--item__title"><a href="#" (click)="false">Charity</a></h5>
+                      <p class="catalog-categories--item__subtitle">Public services, fines, taxes</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer-component></footer-component>

@@ -1,0 +1,64 @@
+<simple-header-component></simple-header-component>
+
+<section class="sect-grey">
+  <div class="main">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <!--<h1 class="page-title">Contact information You can contact us Monday through Friday from 8:30 to 18:30</h1>-->
+          <h1 class="page-title"><span i18n>Contact information</span><br>
+            <small i18n>You can contact us Monday through Friday from 8:30 to 18:30</small></h1>
+          <div class="main-text">
+            <h4 class="sub-title" i18n>Feedback form</h4>
+
+            <form id="user_form" class="contact-form" action="/site/contacts" method="post">
+              <div class="table">
+              <div class="tr">
+                <div class="td" i18n>First Name*</div>
+                <div class="td"><input type="text" id="feedbackform-name" name="FeedbackForm[name]" required=""></div>
+              </div>
+              <div class="tr">
+                <div class="td">Email*</div>
+                <div class="td"><input type="text" id="feedbackform-email" name="FeedbackForm[email]" required=""></div>
+              </div>
+              <div class="tr">
+                <div class="td" i18n>Phone</div>
+                <div class="td"><input type="text" id="feedbackform-phone" name="FeedbackForm[phone]"></div>
+              </div>
+              <div class="tr">
+                <div class="td" i18n>Comment*</div>
+                <div class="td"><textarea id="feedbackform-body" name="FeedbackForm[body]" required=""></textarea></div>
+              </div>
+            </div>
+              <div class="text-center">
+                <button class="btn btn-fill" type="submit" i18n>Send</button>
+              </div>
+            </form>                </div>
+        </div>
+
+        <div class="col-md-5">
+          <table class="table table-contacts">
+            <tbody><tr><th i18n>Contacts</th>
+              <th></th>
+
+            </tr><tr class="main-info second-tr">
+              <td>Email:</td>
+              <td><a href="mailto:info@moneyfge.com">info@moneyfge.com</a></td>
+            </tr>
+            <tr>
+
+            </tr><tr>
+              <td>Skype:</td>
+              <td>moneyfge</td>
+            </tr>
+            <tr><td i18n>Working schedule:</td>
+              <td i18n>From Monday to Friday from 8:30AM to 6:30PM</td>
+            </tr>
+            </tbody></table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer-component></footer-component>

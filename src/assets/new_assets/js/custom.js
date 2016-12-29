@@ -44,13 +44,11 @@ $(function() {
 			$('.'+id).slideToggle(); 
 		});
 	}
-
-
+	
 	$('.hamburger').click(function () {
 		$(this).toggleClass('is-active');
 		$('.main-menu').slideToggle();
 	});
-
 
 	$('#mycalendar1').monthly({
 		weekStart: 'Mon',
@@ -96,12 +94,10 @@ $(function() {
 	//Pie chart start
 
 	window.chartColors = {
-		red: 'rgb(255, 99, 132)',
-		orange: 'rgb(255, 159, 64)',
-		yellow: 'rgb(255, 205, 86)',
-		green: 'rgb(75, 192, 192)',
-		blue: 'rgb(54, 162, 235)',
-		purple: 'rgb(153, 102, 255)',
+		white: '#fff',
+		orange: '#f7b403',
+		blue: '#6e82a1',
+		darkblue: '#345382',
 		grey: 'rgb(231,233,237)'
 	};
 
@@ -122,23 +118,20 @@ $(function() {
 				randomScalingFactor(),
 				randomScalingFactor(),
 				randomScalingFactor(),
-				randomScalingFactor(),
 				],
 				backgroundColor: [
-				window.chartColors.red,
+				window.chartColors.darkblue,
 				window.chartColors.orange,
-				window.chartColors.yellow,
-				window.chartColors.green,
+				window.chartColors.white,
 				window.chartColors.blue,
 				],
 				label: 'Dataset 1'
 			}],
 			labels: [
-			"Red",
-			"Orange",
-			"Yellow",
-			"Green",
-			"Blue"
+			"Продукты",
+			"Здоровье",
+			"Покупки",
+			"Послуги",
 			]
 		},
 		options: {
@@ -148,6 +141,8 @@ $(function() {
 
 	Chart.defaults.global.legend.display = false;
 
+	Chart.defaults.global.tooltips.enabled = false;
+
 	window.onload = function() {
 		var ctx = document.getElementById("chart-area").getContext("2d");
 		window.myPie = new Chart(ctx, config);
@@ -156,6 +151,13 @@ $(function() {
 
 	//Pie chart end
 
+$('.equal-height-column').equalHeights();
+
+});
+
+$(window).resize(function () {
+	$('.equal-height-column').css('height','auto');
+	$('.equal-height-column').equalHeights();
 });
 
 

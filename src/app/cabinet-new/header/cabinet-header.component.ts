@@ -1,19 +1,16 @@
 import { Component } from '@angular/core';
+
 import { LoggedInGuard } from '../../services/logged-in.guard';
 
 @Component({
-  selector: 'logo-line-component',
-  templateUrl: './logo-line.component.html'
+  selector: 'new-cabinet-header-component',
+  templateUrl: 'cabinet-header.component.html'
 })
-export class LogoLineComponent {
+export class NewCabinetHeaderComponent {
 
   constructor(
     private loggedInGuard: LoggedInGuard
   ) { }
-
-  isLoggedIn() {
-    return this.loggedInGuard.isLoggedIn();
-  }
 
   logout(event) {
     event.preventDefault();

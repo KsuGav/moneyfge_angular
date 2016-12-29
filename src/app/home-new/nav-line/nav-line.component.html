@@ -36,14 +36,14 @@
                   </div>
                 </li>
                 <li  data-id="d3">
-                  <a href="#" i18n>Contacts</a>
+                  <a [routerLink]="['/contacts']" i18n>Contacts</a>
                 </li>
               </ul>
             </div>
             <div class="col-md-4 col-xs-12">
               <ul class="nav_block_second clearfix">
-                <li class="birza"><a href="#"><i class="fa fa-line-chart"></i>Exchange</a></li>
-                <li class="torg"><a href="#"><i class="fa fa-cart-plus"></i>Marketplace</a></li>
+                <li class="birza"><a href="#" (click)="false"><i class="fa fa-line-chart"></i>Exchange</a></li>
+                <li class="torg"><a href="#" (click)="false"><i class="fa fa-cart-plus"></i>Marketplace</a></li>
               </ul>
             </div>
             <div class="clearfix"></div>

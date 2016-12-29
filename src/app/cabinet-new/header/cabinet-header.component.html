@@ -1,0 +1,44 @@
+<header class="dashboard-header">
+
+  <div class="top-line">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-3 col-sm-4 col-xs-12">
+          <a [routerLink]="['']" class="top-logo">
+            <img src="/assets/new_assets/img/logo.png" alt="MoneyFGE">
+          </a>
+        </div>
+
+        <div class="col-md-6 col-xs-12">
+          <ul class="dash-main-menu">
+            <li><a [routerLink]="['/user/cabinet']">Dashboard</a></li>
+            <li><a [routerLink]="['/user/cabinet/transfer/index']">Transfers</a></li>
+            <li><a [routerLink]="['/user/cabinet/score/index']">My cards</a></li>
+            <li><a [routerLink]="['/user/cabinet/outmoney']">Cashouts</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-3 col-sm-8 col-xs-12">
+          <div class="top-profile">
+            <div class="profile">
+              <div class="profile-img" style="background-image: url('/assets/new_assets/img/ava.jpg')"></div>
+              <span class="profile-name">Kravec Anastasija</span>
+              <i class="fa fa-caret-down"></i>
+              <div class="profile-menu">
+                <ul>
+                  <li><a href="#"><i class="fa fa-history"></i> History</a></li>
+                  <li><a href="#"><i class="fa fa-gift"></i> Bonus</a></li>
+                  <li><a href="#"><i class="fa fa-info"></i> Help</a></li>
+                  <li><a href="#"><i class="fa fa-gear"></i> Settings</a></li>
+                </ul>
+              </div>
+            </div>
+            <a href="#" class="logout" (click)="logout($event)" ><i class="fa fa-sign-out"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>

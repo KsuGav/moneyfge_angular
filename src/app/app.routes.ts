@@ -2,7 +2,6 @@ import { Routes } from '@angular/router';
 
 import { LoggedInGuard } from './services/logged-in.guard';
 
-import { ContactsComponent } from './home/contacts';
 import { LoginComponent } from './login/login';
 import { LoginConfirmComponent } from './login/confirm';
 import { SiteRecoveryComponent } from './site/recovery';
@@ -43,6 +42,8 @@ import { GamesIntertainmentComponent } from './home-new/games-intertainment/game
 import { InternetTvComponent } from './home-new/internet-tv/internet-tv.component';
 import { OnlinePaymentsComponent } from './home-new/online-payments/online-payments.component';
 import { BillsComponent } from './home-new/bills/bills.component';
+import { ContactComponent } from './home-new/contact/contact.component';
+import { DashboardComponent } from './cabinet-new/dashboard/dashboard.component';
 
 
 export const ROUTES: Routes = [
@@ -62,13 +63,14 @@ export const ROUTES: Routes = [
   , { path: 'internet', component: InternetTvComponent }
   , { path: 'online', component: OnlinePaymentsComponent }
   , { path: 'bills', component: BillsComponent }
-  , { path: 'site/contacts', component: ContactsComponent }
+  , { path: 'contacts', component: ContactComponent }
   , { path: 'user/sign-in/login', component: LoginComponent }
   , { path: 'user/sign-in/confirm', component: LoginConfirmComponent }
   , { path: 'site/reset-password', component: SiteRecoveryComponent }
   , { path: 'site/register', component: SiteRegisterComponent }
   , { path: 'site/confirm', component: SiteConfirmComponent }
   , { path: 'site/password', component: SitePasswordComponent }
+  , {path: 'user/dashboard', component: DashboardComponent, canActivate: [ LoggedInGuard ]}
   , {
     path: 'user/cabinet',
     component: CabinetComponent,

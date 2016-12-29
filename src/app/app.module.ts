@@ -24,7 +24,6 @@ import { HomeComponent } from './home/home';
 import { HomeHeaderComponent } from './home/header';
 import { HomeFooterComponent } from './home/footer';
 import { HomeAboutComponent } from './home/about';
-import { ContactsComponent } from './home/contacts';
 import { LoginComponent } from './login/login';
 import { LoginConfirmComponent } from './login/confirm';
 import { SiteRecoveryComponent } from './site/recovery';
@@ -83,6 +82,9 @@ import { GamesIntertainmentComponent } from './home-new/games-intertainment/game
 import { InternetTvComponent } from './home-new/internet-tv/internet-tv.component';
 import { OnlinePaymentsComponent } from './home-new/online-payments/online-payments.component';
 import { BillsComponent } from './home-new/bills/bills.component';
+import { ContactComponent } from './home-new/contact/contact.component';
+import { NewCabinetHeaderComponent } from './cabinet-new/header/cabinet-header.component';
+import { DashboardComponent } from './cabinet-new/dashboard/dashboard.component';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -107,7 +109,6 @@ type StoreType = {
     , HomeHeaderComponent
     , HomeFooterComponent
     , HomeAboutComponent
-    , ContactsComponent
     , LoginComponent
     , LoginConfirmComponent
     , SiteRecoveryComponent
@@ -166,6 +167,9 @@ type StoreType = {
     , InternetTvComponent
     , OnlinePaymentsComponent
     , BillsComponent
+    , ContactComponent
+    , NewCabinetHeaderComponent
+    , DashboardComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,

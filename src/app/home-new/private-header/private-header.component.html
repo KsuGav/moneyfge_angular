@@ -19,7 +19,10 @@
             </div>
           </div>
           <div class="col-lg-3">
-            <div><a href="" class="go_start">Start now</a></div>
+            <div>
+              <a *ngIf="isLoggedIn()" [routerLink]="['/user/dashboard']" class="go_start">Start now</a>
+              <a *ngIf="!isLoggedIn()" [routerLink]="['/user/sign-in/login']" class="go_start">Start now</a>
+            </div>
           </div>
         </div>
       </div>

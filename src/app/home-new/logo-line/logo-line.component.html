@@ -1,7 +1,9 @@
 <div class="row">
 
   <div class="col-md-4 col-sm-12">
-    <div class="logo_img_block" [routerLink]="['']"><img src="/assets/new_assets/img/logo.png" alt="Logo"></div>
+    <div class="logo_img_block">
+      <a [routerLink]="['']"><img src="/assets/new_assets/img/logo.png" alt="Logo"></a>
+    </div>
   </div>
 
   <div class="col-md-4 col-sm-12">
@@ -15,10 +17,10 @@
 
   <div class="col-md-4 col-sm-12">
     <ul class="auth_block">
-      <li><a *ngIf="isLoggedIn()" [routerLink]="['/user/cabinet']" (click)="logout($event)"  class="login_btn" i18n>Profile</a></li>
-      <li><a *ngIf="isLoggedIn()" [routerLink]="['']"  class="login_btn" i18n>Sign Out</a></li>
+      <li><a *ngIf="isLoggedIn()" [routerLink]="['/user/dashboard']" class="login_btn" i18n>Profile</a></li>
+      <li><a *ngIf="isLoggedIn()" href="#" class="register_btn" (click)="logout($event)" i18n>Sign Out</a></li>
 
-      <li><a *ngIf="!isLoggedIn()" [routerLink]="['/user/sign-in/login']"  class="login_btn" (click)="logout($event)" i18n>Login</a></li>
+      <li><a *ngIf="!isLoggedIn()" [routerLink]="['/user/sign-in/login']"  class="login_btn" i18n>Login</a></li>
       <li><a *ngIf="!isLoggedIn()" [routerLink]="['/site/register']"  class="register_btn" i18n>Registration</a></li>
     </ul>
   </div>

@@ -21,7 +21,6 @@ export class NavLineComponent implements AfterViewInit {
       });
     }
     else {
-
       $('.hamburger').show();
       $('.main-menu').hide();
 
@@ -31,6 +30,11 @@ export class NavLineComponent implements AfterViewInit {
         $('.'+id).slideToggle();
       });
     }
+
+    $('.hamburger').click(function () {
+      $(this).toggleClass('is-active');
+      $('.main-menu').slideToggle();
+    });
   }
 
 }

@@ -25,7 +25,8 @@
     </div>
     <div class="col-lg-12">
       <div class="border_block">
-        <a href="#" class="start_now_btn">Start now</a>
+        <a *ngIf="isLoggedIn()" [routerLink]="['/user/dashboard']" class="start_now_btn">Start now</a>
+        <a *ngIf="!isLoggedIn()" [routerLink]="['/user/sign-in/login']" class="start_now_btn">Start now</a>
       </div>
     </div>
   </div>

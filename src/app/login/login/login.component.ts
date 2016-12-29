@@ -77,7 +77,7 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
           sessionStorage.setItem('aToken', res.access_token);
           sessionStorage.setItem('loggedIn', 'true');
 
-          this.router.navigate(['/user/cabinet']);
+          this.router.navigate(['/user/dashboard']);
           return;
         },
         (err: any) => {
