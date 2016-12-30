@@ -35,15 +35,19 @@ import { BusinessComponent } from './home-new/business/business.component';
 import { IndexComponent } from './home-new/index/index.component';
 import { KomissiaComponent } from './home-new/komissia/komissia.component';
 import { CareersComponent } from './home-new/careers/careers.component';
-import { MobilePaymentsComponent } from './home-new/mobile-payments/mobile-payments.component';
-import { MoneyTransferComponent } from './home-new/money-transfer/money-transfer.component';
-import { CreditPaymentsComponent } from './home-new/credit-payments/credit-payments.component';
-import { GamesIntertainmentComponent } from './home-new/games-intertainment/games-intertainment.component';
-import { InternetTvComponent } from './home-new/internet-tv/internet-tv.component';
-import { OnlinePaymentsComponent } from './home-new/online-payments/online-payments.component';
-import { BillsComponent } from './home-new/bills/bills.component';
+
+import { MainServicesComponent } from './home-new/our_serviсes/main_services.component';
+import { MoneyTransferComponent } from './home-new/our_serviсes/money-transfer/money-transfer.component';
+import { MobilePaymentsComponent } from './home-new/our_serviсes/mobile-payments/mobile-payments.component';
+import { CreditPaymentsComponent } from './home-new/our_serviсes/credit-payments/credit-payments.component';
+import { GamesIntertainmentComponent } from './home-new/our_serviсes/games-intertainment/games-intertainment.component';
+import { InternetTvComponent } from './home-new/our_serviсes/internet-tv/internet-tv.component';
+import { OnlinePaymentsComponent } from './home-new/our_serviсes/online-payments/online-payments.component';
+import { BillsComponent } from './home-new/our_serviсes/bills/bills.component';
+
 import { ContactComponent } from './home-new/contact/contact.component';
 import { DashboardComponent } from './cabinet-new/dashboard/dashboard.component';
+import {MainServicesComponent} from "./home-new/our_serviсes/main_services";
 
 
 export const ROUTES: Routes = [
@@ -56,13 +60,26 @@ export const ROUTES: Routes = [
   , { path: 'careers', component: CareersComponent }
   , { path: 'commission', component: KomissiaComponent }
   , { path: 'about', component: AboutComponent }
-  , { path: 'mobile-payments', component: MobilePaymentsComponent }
-  , { path: 'money-transfer', component: MoneyTransferComponent }
-  , { path: 'credit-payments', component: CreditPaymentsComponent }
-  , { path: 'games', component: GamesIntertainmentComponent }
-  , { path: 'internet', component: InternetTvComponent }
-  , { path: 'online', component: OnlinePaymentsComponent }
-  , { path: 'bills', component: BillsComponent }
+
+  , { path: 'our-services',
+    component: MainServicesComponent,
+    children: [
+      { path: 'bills', component: BillsComponent }
+      , { path: 'online', component: OnlinePaymentsComponent }
+      , { path: 'internet', component: InternetTvComponent }
+      , { path: 'games', component: GamesIntertainmentComponent }
+      , { path: 'credit-payments', component: CreditPaymentsComponent }
+      , { path: 'money-transfer', component: MoneyTransferComponent }
+      , { path: 'mobile-payments', component: MobilePaymentsComponent }
+    ]}
+  //, { path: 'mobile-payments', component: MobilePaymentsComponent }
+  //, { path: 'money-transfer', component: MoneyTransferComponent }
+  //, { path: 'credit-payments', component: CreditPaymentsComponent }
+  //, { path: 'games', component: GamesIntertainmentComponent }
+  //, { path: 'internet', component: InternetTvComponent }
+  //, { path: 'online', component: OnlinePaymentsComponent }
+  //, { path: 'bills', component: BillsComponent }
+
   , { path: 'contacts', component: ContactComponent }
   , { path: 'user/sign-in/login', component: LoginComponent }
   , { path: 'user/sign-in/confirm', component: LoginConfirmComponent }
