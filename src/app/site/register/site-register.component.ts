@@ -1,6 +1,7 @@
-import { Component, ViewEncapsulation } from '@angular/core';
-import { OnInit,AfterViewInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { OnInit, AfterViewInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from '../../services/service.user';
 import { AppState } from '../../app.service';
 import { ModalService } from '../../services/modal.service';
@@ -10,7 +11,6 @@ declare const $: any;
 @Component({
   selector: 'site-register-component',
   templateUrl: './site-register.component.html',
-  // encapsulation: ViewEncapsulation.None,
   styleUrls: [
     '../css/login.css'
   ]
@@ -18,18 +18,22 @@ declare const $: any;
 
 export class SiteRegisterComponent implements OnInit, AfterViewInit {
 
-  private telephone: string;
+  @ViewChild('terms') terms: ElementRef;
 
-  private errorMsg: string;
+  telephone: string;
+
+  errorMsg: string;
+
+  form: FormGroup;
 
   constructor(
+    private fb: FormBuilder,
     private userService: User,
-    private route: ActivatedRoute,
     private router: Router,
     private appState: AppState,
     private modalService: ModalService
   ) {
-
+    this.createForm();
   }
 
   ngOnInit() {
@@ -40,17 +44,28 @@ export class SiteRegisterComponent implements OnInit, AfterViewInit {
     this.modalService.setupTelMask();
   }
 
-  register(event) {
-    event.preventDefault();
-    if (!this.telephone) {
+  createForm() {
+    this.form = this.fb.group({
+      telephone: ['', [Validators.required, Validators.pattern('[+|0-9]+')]]
+    });
+  }
+
+  register() {
+    if (!this.form.valid) {
+      this.errorMsg = 'Form is invalid';
       return;
     }
-    if (this.telephone[0] === '+') {
-      this.telephone = this.telephone.substring(1);
+    if (!this.terms.nativeElement.checked) {
+      this.errorMsg = 'Please, accept terms';
+      return;
     }
-    this.modalService.showLoader('form')
+    let telephone = this.form.value.telephone;
+    if (telephone[0] === '+') {
+      telephone = telephone.substring(1);
+    }
+    this.modalService.showLoader('form');
     this.userService
-      .registStep1(this.telephone)
+      .registStep1(telephone)
       .subscribe(
         res => {
           this.modalService.hideLoader('form');

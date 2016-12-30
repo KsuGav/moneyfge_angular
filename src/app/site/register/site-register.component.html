@@ -5,14 +5,19 @@
       <h3 i18n>Registration</h3>
     </div>
     <div id="form" class="info-block-content">
-      <form (submit)="register($event)">
-        <div class="alert alert-danger" *ngIf="errorMsg">
-          {{ errorMsg }}
-        </div>
+      <div class="alert alert-danger" *ngIf="errorMsg">
+        {{ errorMsg }}
+      </div>
+      <form (ngSubmit)="register()" [formGroup]="form">
         <label i18n>Enter your phone number</label>
         <div class="input-group">
-          <input type="text" required="" class="phone-input-ua" name="telephone" [(ngModel)]="telephone" />
+          <input type="text" required="required" class="phone-input-ua" name="telephone" formControlName="telephone" />
           <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" i18n-title title="Enter your phone number"></i>
+        </div>
+        <div class="input-group text-left" style="margin-top:20px">
+          <label>
+            <input #terms type="checkbox" required="required" /><span i18n>I accept terms</span>
+          </label>
         </div>
         <button type="submit" class="btn btn-accent btn-big" i18n>Continue</button>
       </form>
