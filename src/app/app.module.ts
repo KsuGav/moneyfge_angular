@@ -37,8 +37,6 @@ import { AlertDialogComponent } from './common/alert-dialog/alert-dialog.compone
 import { LinkCounterComponent } from './common/link-counter/link-counter.component';
 import { AlertComponent } from './common/alert/alert.component';
 import { NoContentComponent } from './no-content/no-content.component';
-import { AccountComponent } from './cabinet-new/dashboard/account/account.component';
-import { AccountsComponent } from './cabinet-new/dashboard/accounts/accounts.component';
 
 // Application wide providers
 const APP_PROVIDERS = [
