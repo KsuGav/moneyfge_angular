@@ -135,30 +135,6 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
   //
   //  })
   //
-  //  //$('#contactForm').formValidation({
-  //  //  //framework: 'bootstrap',
-  //  //  icon: {
-  //  //    valid: 'glyphicon glyphicon-ok',
-  //  //    invalid: 'glyphicon glyphicon-remove',
-  //  //    validating: 'glyphicon glyphicon-refresh'
-  //  //  },
-  //  //  fields: {
-  //  //    username: {
-  //  //      validators: {
-  //  //        callback: {
-  //  //          message: 'The phone number is not valid',
-  //  //          callback: function(value, validator, $field) {
-  //  //            return value === '' || $field.intlTelInput('isValidNumber');
-  //  //          }
-  //  //        }
-  //  //      }
-  //  //    }
-  //  //  }
-  //  //})
-  //  //// Revalidate the number when changing the country
-  //  //.on('click', '.country-list', function() {
-  //  //  $('#contactForm').formValidation('revalidateField', 'username');
-  //  //});
   //}
 
   showHidePassword(){
