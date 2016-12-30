@@ -88,6 +88,11 @@ import { BillsComponent } from './home-new/static/bills/bills.component';
 import { ContactComponent } from './home-new/static/contact/contact.component';
 import { NewCabinetHeaderComponent } from './cabinet-new/header/cabinet-header.component';
 import { DashboardComponent } from './cabinet-new/dashboard/dashboard.component';
+import { SidebarComponent } from './cabinet-new/dashboard/sidebar/sidebar.component';
+
+import { AccountComponent } from './cabinet-new/dashboard/account/account.component';
+import { AccountsComponent } from './cabinet-new/dashboard/accounts/accounts.component';
+// import { n_AccountService } from './app.services/Account.service';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -174,6 +179,10 @@ type StoreType = {
     , ContactComponent
     , NewCabinetHeaderComponent
     , DashboardComponent
+    , SidebarComponent
+
+    , AccountComponent
+    , AccountsComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,
@@ -189,6 +198,7 @@ type StoreType = {
     LoggedInGuard,
     ModalService,
     AccountService,
+    // n_AccountService,
     OutbidService
   ]
 })
