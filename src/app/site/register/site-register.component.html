@@ -15,9 +15,7 @@
           <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" i18n-title title="Enter your phone number"></i>
         </div>
         <div class="input-group text-left" style="margin-top:20px">
-          <label>
-            <input #terms type="checkbox" required="required" /><span i18n>I accept terms</span>
-          </label>
+          <input #terms type="checkbox" required="required" /><span i18n>I accept <a href="#" style="text-decoration: underline" (click)="openTerms($event)">terms</a></span>
         </div>
         <button type="submit" class="btn btn-accent btn-big" i18n>Continue</button>
       </form>
@@ -25,3 +23,20 @@
     </div>
   </div>
 </header>
+
+<div id="terms-dialog" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" i18n>Terms</h4>
+      </div>
+      <div class="modal-body">
+        <p>One fine body&hellip;</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" i18n>Close</button>
+      </div>
+    </div>
+  </div>
+</div>
