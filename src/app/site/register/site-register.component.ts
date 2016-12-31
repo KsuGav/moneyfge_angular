@@ -26,6 +26,8 @@ export class SiteRegisterComponent implements OnInit, AfterViewInit {
 
   form: FormGroup;
 
+  private termsDialog: any;
+
   constructor(
     private fb: FormBuilder,
     private userService: User,
@@ -42,6 +44,7 @@ export class SiteRegisterComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.modalService.setupTelMask();
+    this.termsDialog = $('#terms-dialog');
   }
 
   createForm() {
@@ -80,6 +83,11 @@ export class SiteRegisterComponent implements OnInit, AfterViewInit {
         }
       )
     ;
+  }
+
+  openTerms(event) {
+    event.preventDefault();
+    this.termsDialog.modal('show');
   }
 
 }
