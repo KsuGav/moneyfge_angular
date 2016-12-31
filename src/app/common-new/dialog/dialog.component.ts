@@ -8,9 +8,22 @@ declare const $: any;
 })
 export class DialogComponent {
 
+  private _size: string = '';
+
   @ViewChild('dialog') dialog: ElementRef;
 
   @Input() title: string = 'Dialog title';
+
+  @Input()
+  set size(val: string) {
+    this._size = val;
+  }
+
+  get size() {
+    return this._size ? `modal-${this._size}` : '';
+  }
+
+  private _size: string = '';
 
   open() {
     $(this.dialog.nativeElement).modal('show');

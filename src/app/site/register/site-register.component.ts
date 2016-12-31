@@ -2,9 +2,11 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { OnInit, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
+
 import { User } from '../../services/service.user';
 import { AppState } from '../../app.service';
 import { ModalService } from '../../services/modal.service';
+import { DialogComponent } from '../../common-new/dialog/dialog.component';
 
 declare const $: any;
 
@@ -17,6 +19,8 @@ declare const $: any;
 })
 
 export class SiteRegisterComponent implements OnInit, AfterViewInit {
+
+  @ViewChild('termsDialog') termsDialog: DialogComponent;
 
   @ViewChild('terms') terms: ElementRef;
 
@@ -44,7 +48,6 @@ export class SiteRegisterComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.modalService.setupTelMask();
-    this.termsDialog = $('#terms-dialog');
   }
 
   createForm() {
@@ -85,9 +88,9 @@ export class SiteRegisterComponent implements OnInit, AfterViewInit {
     ;
   }
 
-  openTerms(event) {
+  openTermsDialog(event) {
     event.preventDefault();
-    this.termsDialog.modal('show');
+    this.termsDialog.open();
   }
 
 }
