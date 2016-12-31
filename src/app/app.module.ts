@@ -23,6 +23,7 @@ import { HOMENEW } from './app.modules/home_new.module';
 import { CABINETNEW } from './app.modules/cabinet_new.module';
 import { CABINET } from './app.modules/cabinet.module';
 import { COMMON } from './app.modules/common.modules';
+import { COMMON_NEW } from './app.modules/common_new.modules';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login/login.component';
@@ -60,7 +61,7 @@ type StoreType = {
     , SitePasswordComponent
     , NoContentComponent
 
-  ].concat(HOMENEW, CABINETNEW, CABINET, COMMON),
+  ].concat(HOMENEW, CABINETNEW, CABINET, COMMON, COMMON_NEW),
   imports: [ // import Angular's modules
     BrowserModule,
     FormsModule,
