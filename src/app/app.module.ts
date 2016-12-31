@@ -21,8 +21,8 @@ import { LoggedInGuard } from './services/logged-in.guard';
 
 import { HOMENEW } from './app.modules/home_new.module';
 import { CABINETNEW } from './app.modules/cabinet_new.module';
-import { HOME } from './app.modules/home.module';
 import { CABINET } from './app.modules/cabinet.module';
+import { COMMON } from './app.modules/common.modules';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login/login.component';
@@ -31,11 +31,6 @@ import { SiteRecoveryComponent } from './site/recovery/site-recovery.component';
 import { SiteRegisterComponent } from './site/register/site-register.component';
 import { SiteConfirmComponent } from './site/confirm/site-confirm.component';
 import { SitePasswordComponent } from './site/password/site-password.component';
-import { SmsCodeDialogComponent } from './common/sms-code-dialog/sms-code-dialog.component';
-import { ConfirmDialogComponent } from './common/confirm-dialog/confirm-dialog.component';
-import { AlertDialogComponent } from './common/alert-dialog/alert-dialog.component';
-import { LinkCounterComponent } from './common/link-counter/link-counter.component';
-import { AlertComponent } from './common/alert/alert.component';
 import { NoContentComponent } from './no-content/no-content.component';
 
 // Application wide providers
@@ -63,14 +58,9 @@ type StoreType = {
     , SiteRegisterComponent
     , SiteConfirmComponent
     , SitePasswordComponent
-    , SmsCodeDialogComponent
-    , ConfirmDialogComponent
-    , AlertDialogComponent
-    , LinkCounterComponent
-    , AlertComponent
     , NoContentComponent
 
-  ].concat(HOMENEW, CABINETNEW, HOME, CABINET),
+  ].concat(HOMENEW, CABINETNEW, CABINET, COMMON),
   imports: [ // import Angular's modules
     BrowserModule,
     FormsModule,
