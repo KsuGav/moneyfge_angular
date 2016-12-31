@@ -30,8 +30,6 @@ export class SiteRegisterComponent implements OnInit, AfterViewInit {
 
   form: FormGroup;
 
-  private termsDialog: any;
-
   constructor(
     private fb: FormBuilder,
     private userService: User,

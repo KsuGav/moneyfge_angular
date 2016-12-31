@@ -23,8 +23,6 @@ export class DialogComponent {
     return this._size ? `modal-${this._size}` : '';
   }
 
-  private _size: string = '';
-
   open() {
     $(this.dialog.nativeElement).modal('show');
   }
