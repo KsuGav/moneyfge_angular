@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+
+import { NewAccountDialogComponent } from '../new-account-dialog/new-account-dialog.component';
 
 @Component({
   selector: 'sidebar-component',
@@ -6,6 +8,10 @@ import { Component } from '@angular/core';
 })
 export class SidebarComponent {
 
+  @ViewChild('newAccountDialog') newAccountDialog: NewAccountDialogComponent;
 
+  newAccount() {
+    this.newAccountDialog.open();
+  }
 
 }

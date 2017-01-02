@@ -1,3 +1,5 @@
+<new-account-dialog-component #newAccountDialog></new-account-dialog-component>
+
 <div class="dashboard-left-sidebar equal-height-column">
   <div class="dashboard-left-sidebar-header">
     <h3 class="dashboard-left-sidebar-header__title">My accounts</h3>
@@ -15,22 +17,8 @@
 
     <div class="dashboard-btn-group">
       <ul>
-        <li>
-          <a href="#" (click)="false">
-            <div class="dashboard-btn-group__icon">
-              <img src="/assets/new_assets/img/dasboard-icon-4.png" alt="Icon">
-            </div>
-            <span class="dashboard-btn-group__text">Snap the card</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" (click)="false">
-            <div class="dashboard-btn-group__icon">
-              <img src="/assets/new_assets/img/dasboard-icon-4.png" alt="Icon">
-            </div>
-            <span class="dashboard-btn-group__text">New account</span>
-          </a>
-        </li>
+        <new-button-component (onClick)="newAccount()"></new-button-component>
+        <new-button-component [text]="'Bind card'"></new-button-component>
       </ul>
     </div>
   </div>

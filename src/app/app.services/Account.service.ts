@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { AppState } from '../app.service';
 import 'rxjs/add/operator/map';
@@ -7,8 +7,21 @@ import 'rxjs/add/observable/throw';
 
 import { Account } from '../app.models/Account.model';
 
+export const CURRENCIES: string[] = [
+  'USD',
+  'EUR',
+  'UAH',
+  'RUB'
+];
+
 @Injectable()
 export class n_AccountService {
+
+  requestAccounts: EventEmitter<any> = new EventEmitter<any>();
+
+  receiveAccounts: EventEmitter<any> = new EventEmitter<any>();
+
+  receiveAccountsError: EventEmitter<String> = new EventEmitter<String>();
 
   constructor(
     private http: Http,
@@ -18,6 +31,7 @@ export class n_AccountService {
   }
 
   getAllAccounts() {
+    this.requestAccounts.emit('request accounts');
     const headers = new Headers();
     headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
 
@@ -29,15 +43,25 @@ export class n_AccountService {
         let active = [];
         let lock = [];
         let deleted = [];
-        res.active.map((acc: any) => active.push(new Account(acc.id, acc.user.id, acc.currency, acc.sum)));
-        res.lock.map((acc: any) => lock.push(new Account(acc.id, acc.user.id, acc.currency, acc.sum)));
-        res.deleted.map((acc: any) => deleted.push(new Account(acc.id, acc.user.id, acc.currency, acc.sum)));
+        res.active.map((acc: any) => active.push(new Account(
+          acc.id, acc.user.id, acc.currency, acc.sum, acc.lock, acc.delete, !(acc.lock || acc.delete)
+        )));
+        res.lock.map((acc: any) => lock.push(new Account(
+          acc.id, acc.user.id, acc.currency, acc.sum, acc.lock, acc.delete, !(acc.lock || acc.delete)
+        )));
+        res.deleted.map((acc: any) => deleted.push(new Account(
+          acc.id, acc.user.id, acc.currency, acc.sum, acc.lock, acc.delete, !(acc.lock || acc.delete)
+        )));
         return {active, lock, deleted};
       })
+      .subscribe(
+        (res: any) => this.receiveAccounts.emit(res),
+        err => this.receiveAccountsError.emit(err.json().message)
+      )
     ;
   }
 
-  createCard(currency, types) {
+  createCard(currency: string, types: string = 'card') {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
@@ -51,6 +75,9 @@ export class n_AccountService {
     return this.http
       .post(locUrl, JSON.stringify(localData), {headers: headers})
       .map(res => res.json())
+      .map((res: any) => new Account(
+        res.id, res.user.id, res.currency, res.sum, res.lock, res.delete, !(res.lock || res.delete)
+      ))
     ;
   }
 

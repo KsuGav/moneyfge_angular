@@ -1,9 +1,21 @@
 <li>
   <div class="left-part">
-    <h3 class="dashboard-account-list__title"><a href="#" (click)="false">Money FGE <span>$</span></a></h3>
+    <div [ngSwitch]="account?.currency">
+      <h3 *ngSwitchCase="'USD'" class="dashboard-account-list__title"><a href="#" (click)="false">Money FGE <span>$</span></a></h3>
+      <h3 *ngSwitchCase="'EUR'" class="dashboard-account-list__title"><a href="#" (click)="false">Money FGE <span>&#8364;</span></a></h3>
+      <h3 *ngSwitchCase="'UAH'" class="dashboard-account-list__title"><a href="#" (click)="false">Money FGE <span>&#x20B4;</span></a></h3>
+      <h3 *ngSwitchCase="'RUB'" class="dashboard-account-list__title"><a href="#" (click)="false">Money FGE <span>&#x20bd;</span></a></h3>
+    </div>
     <div class="dashboard-account-list__card-number">
-      <img src="/assets/new_assets/img/flag-usa.png" alt="USA">
-      <span>{{ account?.id }}</span>
+      <span [ngSwitch]="account?.currency">
+        <img *ngSwitchCase="'USD'" src="/assets/new_assets/img/flag-usa.png" alt="USA" />
+        <img *ngSwitchCase="'EUR'" src="/assets/new_assets/img/flag-euro.png" alt="EUR" />
+        <img *ngSwitchCase="'UAH'" src="/assets/new_assets/img/flag_uk.png" alt="UAH" />
+        <img *ngSwitchCase="'RUB'" src="/assets/new_assets/img/flag_ru.png" alt="RUB" />
+      </span>
+      <!--<span>{{ account?.id }}</span>-->
+      <span *ngIf="account?.active">{{ account?.id }} <a href="#" (click)="handleLock($event, account?.id)">Lock</a></span>
+      <span *ngIf="account?.locked">{{ account?.id }} <a href="#" (click)="handleUnlock($event, account?.id)">Unlock</a></span>
     </div>
   </div>
   <h4 class="dashboard-account-list__total">{{ account?.sum }} <span>{{ account?.currency }}</span></h4>

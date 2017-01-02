@@ -11,13 +11,16 @@ import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularcla
 import { ENV_PROVIDERS } from './environment';
 import { ROUTES } from './app.routes';
 // App is our top level component
-import { APP_RESOLVER_PROVIDERS } from './app.resolver';
-import { AppState, InternalStateType } from './app.service';
-import { User } from './services/service.user';
-import { ModalService } from './services/modal.service';
-import { AccountService } from './services/account.service';
-import { OutbidService } from './services/outbid.service';
-import { LoggedInGuard } from './services/logged-in.guard';
+import { APP_RESOLVER_PROVIDERS } from './app.resolver'; // OLD
+import { AppState, InternalStateType } from './app.service'; // OLD
+import { AppService } from './app.services/App.service';
+import { User } from './services/service.user'; // OLD
+import { UserService } from './app.services/User.service';
+import { ModalService } from './services/modal.service'; // OLD
+import { AccountService } from './services/account.service'; // OLD
+import { n_AccountService } from './app.services/Account.service';
+import { OutbidService } from './services/outbid.service'; // OLD
+import { LoggedInGuard } from './services/logged-in.guard'; // OLD
 
 import { HOMENEW } from './app.modules/home_new.module';
 import { CABINETNEW } from './app.modules/cabinet_new.module';
@@ -63,20 +66,23 @@ type StoreType = {
 
   ].concat(HOMENEW, CABINETNEW, CABINET, COMMON, COMMON_NEW),
   imports: [ // import Angular's modules
-    BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpModule,
-    RouterModule.forRoot(ROUTES, { useHash: false, preloadingStrategy: PreloadAllModules })
+    BrowserModule
+    , FormsModule
+    , ReactiveFormsModule
+    , HttpModule
+    , RouterModule.forRoot(ROUTES, { useHash: false, preloadingStrategy: PreloadAllModules })
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
-    ENV_PROVIDERS,
-    APP_PROVIDERS,
-    User,
-    LoggedInGuard,
-    ModalService,
-    AccountService,
-    OutbidService
+    ENV_PROVIDERS // OLD
+    , APP_PROVIDERS // OLD
+    , User // OLD
+    , UserService
+    , AppService
+    , LoggedInGuard // OLD
+    , ModalService // OLD
+    , AccountService // OLD
+    , n_AccountService
+    , OutbidService // OLD
   ]
 })
 export class AppModule {

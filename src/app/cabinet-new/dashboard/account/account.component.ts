@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { Account } from '../../../app.models/Account.model';
 
@@ -9,5 +9,19 @@ import { Account } from '../../../app.models/Account.model';
 export class AccountComponent {
 
   @Input() account: Account;
+
+  @Output() onLock: EventEmitter<number> = new EventEmitter<number>();
+
+  @Output() onUnlock: EventEmitter<number> = new EventEmitter<number>();
+
+  handleLock(event: Event, id: number) {
+    event.preventDefault();
+    this.onLock.emit(id);
+  }
+
+  handleUnlock(event: Event, id: number) {
+    event.preventDefault();
+    this.onUnlock.emit(id);
+  }
 
 }

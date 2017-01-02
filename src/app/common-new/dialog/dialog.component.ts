@@ -1,4 +1,5 @@
-import { Component, ViewChild, ElementRef, Input } from '@angular/core';
+import { Component, ViewChild, ElementRef, Input, Output, EventEmitter } from '@angular/core';
+import { AfterViewInit } from '@angular/core';
 
 declare const $: any;
 
@@ -6,7 +7,7 @@ declare const $: any;
   selector: 'dialog-component',
   templateUrl: 'dialog.component.html'
 })
-export class DialogComponent {
+export class DialogComponent implements AfterViewInit {
 
   private _size: string = '';
 
@@ -21,6 +22,15 @@ export class DialogComponent {
 
   get size() {
     return this._size ? `modal-${this._size}` : '';
+  }
+
+  @Output() onClosed: EventEmitter<String> = new EventEmitter<String>();
+
+  @Output() onOpen: EventEmitter<String> = new EventEmitter<String>();
+
+  ngAfterViewInit() {
+    $(this.dialog.nativeElement).on('show.bs.modal', () => this.onOpen.emit('open'));
+    $(this.dialog.nativeElement).on('hidden.bs.modal', () => this.onClosed.emit('closed'));
   }
 
   open() {

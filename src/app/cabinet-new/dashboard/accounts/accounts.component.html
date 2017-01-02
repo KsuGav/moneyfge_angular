@@ -1,5 +1,24 @@
-<div class="dashboard-account-list">
-  <ul>
-    <account-component *ngFor="let acc of active" [account]="acc"></account-component>
-  </ul>
-</div>
+<dialog-component #confirmLock [title]="'Confirmation'" [size]="'sm'">
+  <div dialog-body>
+    <p>Do you want to lock your account?</p>
+  </div>
+  <div dialog-footer>
+    <button type="button" class="btn btn-danger" (click)="handleLock()">Lock Account</button>
+    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+  </div>
+</dialog-component>
+
+<sms-dialog-component #smsDialog (onSendCode)="unlockStep2($event)"></sms-dialog-component>
+
+<loader-component #accountsLoader>
+  <div class="dashboard-account-list">
+    <ul>
+      <account-component *ngFor="let acc of active" [account]="acc" (onLock)="handleConfirmLock($event)"></account-component>
+    </ul>
+  </div>
+  <div class="dashboard-account-list">
+    <ul>
+      <account-component *ngFor="let acc of lock" [account]="acc" (onUnlock)="unlockStep1($event)"></account-component>
+    </ul>
+  </div>
+</loader-component>

@@ -1,0 +1,4 @@
+<a href="#" (click)="handleClick($event)" [ngStyle]="{'cursor': seconds > 1 ? 'default' : 'pointer'}">
+  {{ text }}
+  <span *ngIf="seconds > 1">( {{ seconds }} )</span>
+</a>
