@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 declare const $: any;
 
@@ -10,8 +10,16 @@ declare const $: any;
   ]
 })
 
-export class MarketComponent {
+export class MarketComponent implements OnInit {
 
+ngOnInit(){
+  this.timer()
+}
 
+  timer(){
+    $('.clock').timeTo({
+      timeTo: new Date(new Date('April 14 2017 00:00:00 GMT+0200 (EET)'))
+    });
 
+  }
 }
