@@ -18,6 +18,7 @@ import { User } from './services/service.user'; // OLD
 import { UserService } from './app.services/User.service';
 import { ModalService } from './services/modal.service'; // OLD
 import { AccountService } from './services/account.service'; // OLD
+import { ReplenishService } from './app.services/Replenish.service';
 import { n_AccountService } from './app.services/Account.service';
 import { OutbidService } from './services/outbid.service'; // OLD
 import { BirgaComponent } from './site/birga/birga.component';
@@ -82,6 +83,7 @@ type StoreType = {
     , User // OLD
     , UserService
     , AppService
+    , ReplenishService
     , LoggedInGuard // OLD
     , ModalService // OLD
     , AccountService // OLD

@@ -7,6 +7,7 @@ import { CabinetTransferComponent } from '../cabinet/transfer/cabinet-transfer.c
 import { TransferDefaultComponent } from '../cabinet/transfer/default/transfer-default.component';
 import { TransferAccountComponent } from '../cabinet/transfer/account/transfer-account.component';
 import { CabinetFillComponent } from '../cabinet/fill/cabinet-fill.component';
+import { FillOzonComponent } from '../cabinet/fill/ozon/fill-ozon.component';
 import { CabinetScoreComponent } from '../cabinet/score/cabinet-score.component';
 import { ScoreIndexComponent } from '../cabinet/score/default/score-index.component';
 import { ScoreCreateComponent } from '../cabinet/score/create/score-create.component';
@@ -30,6 +31,7 @@ export const CABINET: any[]=[
   , TransferDefaultComponent
   , TransferAccountComponent
   , CabinetFillComponent
+  , FillOzonComponent
   , CabinetScoreComponent
   , ScoreIndexComponent
   , ScoreCreateComponent
