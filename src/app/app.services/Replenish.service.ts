@@ -14,6 +14,7 @@ export class ReplenishService {
   ozon(amount: number, currency: string) {
     const headers = new Headers();
     headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
+    // headers.append('Authorization', `Bearer YjRiM2UyZWM1YmY1MDlmMDc3ZjNjYTZhNTZjZThjMTA4Y2Q0YTY1MWFiZGM0ODAxNGMzN2QyODA0NTk0ZjM4ZA`);
     headers.append('Content-Type', 'application/json');
 
     const data = {
@@ -22,7 +23,9 @@ export class ReplenishService {
     };
 
     const url = `${this._appService.get('apiEndpoint')}/ozon/`;
-    return this._http.post(url, JSON.stringify(data), {headers})
+    // const url = 'https://moneyfge.com/backend/web/app_dev.php/api/v1/ozon/';
+    return this._http
+      .post(url, JSON.stringify(data), {headers})
       .map(res => res.json())
     ;
   }

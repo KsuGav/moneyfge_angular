@@ -9,8 +9,8 @@ export class AppService {
   _state: InternalStateType = { };
 
   constructor() {
-     // this.set('siteEndpoint', 'https://moneyfge.com/backend/web/app_dev.php');
-    this.set('siteEndpoint', 'http://moneyfge-new.localhost/app_dev.php');
+     this.set('siteEndpoint', 'https://moneyfge.com/backend/web/app_dev.php');
+    // this.set('siteEndpoint', 'http://moneyfge-new.localhost/app_dev.php');
     this.set('apiEndpoint', `${this.get('siteEndpoint')}/api/v1`);
     this.set('clientId', '3_p08hEG4THmS3TPlOpS9cYqsh9Aj3vxGUYN8XtmxWLjVtfzoqHg');
     this.set('clientSecret', '7LYlYxmWBhyjosH3RvRybyCyogmOODppWo6YTLOgBljujlmHSB');

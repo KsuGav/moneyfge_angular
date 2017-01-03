@@ -9,10 +9,10 @@
         </div>
 
       <form class="hide" #ozonForm action="https://testgateway.moneyfgepayment.com/payment/welcome" method="POST" name="form">
-        <input type="text" name="amount" value="<?php echo $amount ?>">
-        <input type="text" name="currency" value="<?php echo $currency ?>">
+        <input type="text" name="amount" #ozonAmount />
+        <input type="text" name="currency" #ozonCurrency />
         <input type="hidden" name="paymentMethod" value="VISA">
-        <input type="hidden" name="apiKey" value="<?php echo  $apiKey?>">
+        <input type="hidden" name="apiKey" #ozonApiKey />
         <input type="hidden" name="billingFirstName" value="John">
         <input type="hidden" name="billingLastName" value="Doe">
         <input type="hidden" name="language" value="en">
@@ -21,33 +21,41 @@
         <input type="hidden" name="billingPostcode" value="07070">
         <input type="hidden" name="email" value="welcometo@moneyfgepayment.com">
         <input type="hidden" name="billingAddress1" value="My address">
-        <input type="hidden" name="timestamp" value="<?php echo $timestamp ?>">
-        <input type="hidden" name="referenceNo" value="<?php echo $referenceNo ?>">
+        <input type="hidden" name="timestamp" #ozonTimestamp />
+        <input type="hidden" name="referenceNo" #ozonReferenceNo />
         <input type="hidden" name="birthday" value="1990-10-10">
-        <input type="hidden" name="token" value="<?php echo  $token ?>">
-        <input type="hidden" name="returnUrl" value="<?php echo $url ?>">
-        <input type="submit">
+        <input type="hidden" name="token" #ozonToken />
+        <input type="hidden" name="returnUrl" #ozonReturnUrl />
       </form>
 
         <div class="four-col-blocks">
             <div class="row">
               <div class="col-lg-3">
                 <div class="alert alert-danger" *ngIf="errorMsg">
+                  <button type="button" class="close" (click)="closeAlert()">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                   {{ errorMsg }}
                 </div>
-                <form [formGroup]="form" (ngSubmit)="handleSubmit()">
-                  <div class="form-group">
-                    <label class="control-label" for="currency">Currency</label>
+                <form id="form" [formGroup]="form" (ngSubmit)="handleSubmit()">
+                  <div [ngClass]="{'form-group': true, 'has-error': !(form.get('currency').valid || form.get('currency').pristine)}">
+                    <label class="control-label" for="currency">
+                      Currency
+                      <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" i18n-title title="Select currency"></i>
+                    </label>
                     <select name="currency" id="currency" class="form-control" formControlName="currency">
                       <option [value]="currency">{{ currency }}</option>
                     </select>
                   </div>
-                  <div class="form-group">
-                    <label class="control-label" for="amount">Amount</label>
+                  <div [ngClass]="{'form-group': true, 'has-error': !(form.get('amount').valid || form.get('amount').pristine)}">
+                    <label class="control-label" for="amount">
+                      Amount
+                      <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" i18n-title title="Provide amount"></i>
+                    </label>
                     <input type="number" id="amount" name="amount" class="form-control" formControlName="amount" />
                   </div>
                   <div class="form-group">
-                    <button type="button" class="btn btn-accent">Submit</button>
+                    <button type="submit" class="btn btn-accent">Submit</button>
                   </div>
                 </form>
               </div>
