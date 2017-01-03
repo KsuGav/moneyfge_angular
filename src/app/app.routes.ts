@@ -25,6 +25,8 @@ import { CabinetSettingsComponent} from './cabinet/settings/cabinet-settings.com
 import { SettingsProfileComponent } from './cabinet/settings/profile/settings-profile.component';
 import { SettingsPasswordComponent } from './cabinet/settings/password/settings-password.component';
 import { NoContentComponent } from './no-content/no-content.component';
+import { BirgaComponent } from './site/birga/birga.component';
+import { MarketComponent } from './site/market/market.component';
 
 // New template components
 import { AboutComponent } from './home-new/static/about/about.component';
@@ -77,6 +79,8 @@ export const ROUTES: Routes = [
   , { path: 'site/register', component: SiteRegisterComponent }
   , { path: 'site/confirm', component: SiteConfirmComponent }
   , { path: 'site/password', component: SitePasswordComponent }
+  , { path: 'birga', component: BirgaComponent }
+  , { path: 'market', component: MarketComponent }
   , {path: 'user/dashboard', component: DashboardComponent, canActivate: [ LoggedInGuard ]}
   , {
     path: 'user/cabinet',

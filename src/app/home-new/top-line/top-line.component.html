@@ -10,10 +10,10 @@
         </ul>
       </div>
       <div class="col-md-3 col-sm-6 col-xs-12">
-        <div class="lang_block">
+        <div class="lang_block" style="width: 132px;">
           <div class="current_lang">
             <span class="long_name">English</span>
-            <img class="flag" src="/assets/new_assets/img/flag-usa.png" alt="">
+            <img class="flag" src="/assets/new_assets/img/flag_us_lang.png" alt="">
             <span class="short_name">/ EN</span>
             <img src="/assets/new_assets/img/arrow_orange.png" alt="" class="arrow_down">
           </div>
@@ -21,21 +21,21 @@
             <li>
               <a href="#">
                 <span class="long_name">Українська</span>
-                <img class="flag" src="/assets/new_assets/img/flag_uk.png" alt="">
+                <img class="flag" src="/assets/new_assets/img/flag_uk_lang.png" alt="">
                 <span class="short_name">/ UKR</span>
               </a>
             </li>
             <li>
               <a href="#">
                 <span class="long_name">Русский</span>
-                <img class="flag" src="/assets/new_assets/img/flag_uk.png" alt="">
+                <img class="flag" src="/assets/new_assets/img/flag_ru_lang.png" alt="">
                 <span class="short_name">/ RU</span>
               </a>
             </li>
             <li>
               <a href="#">
                 <span class="long_name">Türkçe</span>
-                <img class="flag" src="/assets/new_assets/img/flag_uk.png" alt="">
+                <img class="flag" src="/assets/new_assets/img/flag_tr_lang.png" alt="">
                 <span class="short_name">/ TR</span>
               </a>
             </li>
@@ -44,11 +44,12 @@
       </div>
       <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="ak_chek clearfix">
-          <div class="s1" [routerLink]="['']">Private persons</div>
+          <div class="s1" (click)="handleClientClick()">For Clients</div>
           <div class="s2">
             <div class="dot"></div>
-            <div class="line"></div></div>
-          <div class="s3" [routerLink]="['/business']">For Business</div>
+            <div class="line"></div>
+          </div>
+          <div class="s3" (click)="handleBusinessClick()">For Business</div>
         </div>
       </div>
     </div>

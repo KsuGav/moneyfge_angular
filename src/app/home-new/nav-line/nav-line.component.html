@@ -24,15 +24,23 @@
                   <a>Our Services</a>
                   <div class="d2">
                     <div class="m_arrow" style=""><img style="left: 148px" src="/assets/new_assets/img/m_arrow.png" alt=""></div>
-                    <ul class="d_menu_block">
-                      <li><a [routerLink]="['/static/mobile-payments']" i18n>Mobile Payments</a></li>
-                      <li><a [routerLink]="['/static/money-transfer']" i18n>Money Transfer</a></li>
-                      <li><a [routerLink]="['/static/credit-payments']" i18n>Credit Payments</a></li>
-                      <li><a [routerLink]="['/static/games']" i18n>Games/Entertainment</a></li>
-                      <li><a [routerLink]="['/static/internet']" i18n>Internet / TV / Telephone</a></li>
-                      <li><a [routerLink]="['/static/online']" i18n>Online payments</a></li>
-                      <li><a [routerLink]="['/static/bills']" i18n>Bills</a></li>
-                    </ul>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <ul class="d_menu_block">
+                          <li><a [routerLink]="['/static/mobile-payments']" i18n>Mobile Payments</a></li>
+                          <li><a [routerLink]="['/static/money-transfer']" i18n>Money Transfer</a></li>
+                          <li><a [routerLink]="['/static/credit-payments']" i18n>Credit Payments</a></li>
+                          <li><a [routerLink]="['/static/games']" i18n>Games/Entertainment</a></li>
+                        </ul>
+                      </div>
+                      <div class="col-md-6">
+                        <ul class="d_menu_block">
+                          <li><a [routerLink]="['/static/internet']" i18n>Internet / TV / Telephone</a></li>
+                          <li><a [routerLink]="['/static/online']" i18n>Online payments</a></li>
+                          <li><a [routerLink]="['/static/bills']" i18n>Bills</a></li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </li>
                 <li  data-id="d3">
@@ -42,8 +50,8 @@
             </div>
             <div class="col-md-4 col-xs-12">
               <ul class="nav_block_second clearfix">
-                <li class="birza"><a href="#" (click)="false"><i class="fa fa-line-chart"></i>Exchange</a></li>
-                <li class="torg"><a href="#" (click)="false"><i class="fa fa-cart-plus"></i>Marketplace</a></li>
+                <li class="birza"><a [routerLink]="['/birga']"><i class="fa fa-line-chart"></i>Exchange</a></li>
+                <li class="torg"><a [routerLink]="['/market']"><i class="fa fa-cart-plus"></i>Marketplace</a></li>
               </ul>
             </div>
             <div class="clearfix"></div>

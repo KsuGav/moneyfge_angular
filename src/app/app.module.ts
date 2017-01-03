@@ -20,6 +20,8 @@ import { ModalService } from './services/modal.service'; // OLD
 import { AccountService } from './services/account.service'; // OLD
 import { n_AccountService } from './app.services/Account.service';
 import { OutbidService } from './services/outbid.service'; // OLD
+import { BirgaComponent } from './site/birga/birga.component';
+import { MarketComponent } from './site/market/market.component';
 import { LoggedInGuard } from './services/logged-in.guard'; // OLD
 
 import { HOMENEW } from './app.modules/home_new.module';
@@ -62,6 +64,8 @@ type StoreType = {
     , SiteRegisterComponent
     , SiteConfirmComponent
     , SitePasswordComponent
+    , BirgaComponent
+    , MarketComponent
     , NoContentComponent
 
   ].concat(HOMENEW, CABINETNEW, CABINET, COMMON, COMMON_NEW),
