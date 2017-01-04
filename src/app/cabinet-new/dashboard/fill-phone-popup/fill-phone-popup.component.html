@@ -1,0 +1,87 @@
+<div class="account-fill-block clearfix zoom-anim-dialog mfp-hide" id="AccBLock3">
+  <div class="account-fill-block--left account-fill-equal-3">
+    <h4 class="account-fill-block--left__header">
+      Поповнення телефону
+    </h4>
+    <div class="account-fill-block--left__content">
+      <div class="dashboard-btn-group">
+        <ul class="account-fill-tabs tabs-second">
+          <li class="active">
+            <div class="dashboard-btn-group__icon">
+              <img src="/assets/new_assets/img/dasboard-icon-5.png" alt="Icon">
+            </div>
+            <div class="dashboard-btn-group__text">
+              +000 00 0000000 <br>
+              +000 00 0000000
+            </div>
+          </li>
+          <li class="active">
+            <div class="dashboard-btn-group__label">
+              Телефонна книга
+            </div>
+            <select id="Phones1" class="custom-select" data-placeholder="Введіть ім’я або прізвище">
+              <option></option>
+              <option value="1">Иванов Петр</option>
+              <option value="2">Васильев Петр</option>
+              <option value="3">Петров Петр</option>
+            </select>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="account-fill-block--right account-fill-equal-3 active">
+    <form class="account-fill-form phone-fill-form">
+      <p class="account-fill-form__subtitle">Виберіть номер рахунку</p>
+      <div class="account-fill-helper">
+        <div class="credit-card-inputs-wrap no-padding">
+          <div class="credit-card--inputs">
+            <select id="AccountNumber" class="custom-select select-medium" data-placeholder="0000  0000  0000  0000" required>
+              <option></option>
+              <option value="0">0000  0000  0000  0000</option>
+              <option value="1">0000  0000  0000  0000</option>
+              <option value="2">0000  0000  0000  0000</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <p class="account-fill-form__subtitle">Виберіть номер телефону</p>
+      <div class="account-fill-helper">
+        <div class="credit-card-inputs-wrap no-padding">
+          <div class="credit-card--inputs">
+            <select id="PhoneNumber" class="custom-select select-medium" data-placeholder="+380 00 0000000" required>
+              <option></option>
+              <option value="0">0000  0000  0000  0000</option>
+              <option value="1">0000  0000  0000  0000</option>
+              <option value="2">0000  0000  0000  0000</option>
+            </select>
+            <span class="form-info">Для поповнення підходять номера: <br>Київстар, МТС, Лайфсел</span>
+          </div>
+        </div>
+      </div>
+      <p class="account-fill-form__subtitle">Сума поповнення</p>
+      <div class="account-fill-helper">
+        <input type="text" class="input-white input-medium pay-sum" placeholder="12 023.12" required>
+        <span class="form-info">
+																																			З карти спишеться<br>ця сума плюс комісія - 1%
+																																		</span>
+        <button type="submit" class="btn btn-medium btn-accent">Поповнити</button>
+        <div class="clearfix"></div>
+        <span class="form-info">Призначити масове поповнення</span>
+      </div>
+    </form>
+  </div>
+
+  <div class="account-fill-msg msg-success">
+    <div class="thumb"><i class="fa fa-thumbs-o-up"></i></div>
+    <h3 class="account-fill-msg__title">УСПІШНО!</h3>
+    <p class="account-fill-msg__text">Ваш платіж прийнято в обробку</p>
+  </div>
+  <div class="account-fill-msg msg-error">
+    <div class="thumb"><i class="fa fa-thumbs-o-down"></i></div>
+    <h3 class="account-fill-msg__title">ПОМИЛКА!</h3>
+    <p class="account-fill-msg__text">При оформленні платежа</p>
+  </div>
+
+</div>

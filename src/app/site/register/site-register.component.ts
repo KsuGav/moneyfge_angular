@@ -46,6 +46,26 @@ export class SiteRegisterComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.modalService.setupTelMask();
+
+    $('.open-popup-link').magnificPopup({
+      type:'inline',
+      midClick: true,
+      closeMarkup: '<button title="%title%" type="button" class="mfp-close big">&#215;</button>'
+    });
+
+    $('.close-popup').click(function(event){
+      event.preventDefault();
+      $.magnificPopup.close();
+    });
+
+    $('.popup-content-scroll').mCustomScrollbar({
+      theme: 'minimal-dark',
+      autoHideScrollbar: false,
+      mouseWheel:
+        {
+          scrollAmount: 150
+        }
+    });
   }
 
   createForm() {
@@ -84,11 +104,6 @@ export class SiteRegisterComponent implements OnInit, AfterViewInit {
         }
       )
     ;
-  }
-
-  openTermsDialog(event) {
-    event.preventDefault();
-    this.termsDialog.open();
   }
 
 }

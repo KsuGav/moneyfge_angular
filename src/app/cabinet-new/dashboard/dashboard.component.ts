@@ -12,108 +12,73 @@ declare const document: any;
 export class DashboardComponent implements AfterViewInit {
 
   ngAfterViewInit() {
-    this.setupIcons();
-    this.setupCalendars();
-    this.setupChart();
+    this.setupAdaptive();
+    this.setupSelects();
+    this.setupCheckboxes();
+    this.setupPaymentsCards();
   }
 
-  setupCalendars() {
-    $('#mycalendar1').monthly({
-      weekStart: 'Mon',
-      mode: 'picker',
-      // The element that will have its value set to the date you picked
-      target: '#mytarget',
-      // Set to true if you want monthly to appear on click
-      startHidden: true,
-      // Element that you click to make it appear
-      showTrigger: '#mytarget',
-      // Add a style to days in the past
-      stylePast: true,
-      // Disable clicking days in the past
-      disablePast: false
-    });
+  setupAdaptive() {
+    let id = null;
+    if ($(window).width() > 992) {
+      $('.nav_block_first>li').hover(function () {
 
-    $('#mycalendar2').monthly({
-      weekStart: 'Mon',
-      mode: 'picker',
-      // The element that will have its value set to the date you picked
-      target: '#mytarget2',
-      // Set to true if you want monthly to appear on click
-      startHidden: true,
-      // Element that you click to make it appear
-      showTrigger: '#mytarget2',
-      // Add a style to days in the past
-      stylePast: true,
-      // Disable clicking days in the past
-      disablePast: false
-    });
-  }
-
-  setupIcons() {
-    $(".expenses-cash-panel-heading__icons img").hover(function(){
-      $(this).attr("src", function(index, attr){
-        return attr.replace(".png", "-w.png");
+        id = $(this).attr('data-id');
+        $('.'+id).show();
+      },function () {
+        $('.'+id).hide();
       });
-    }, function(){
-      $(this).attr("src", function(index, attr){
-        return attr.replace("-w.png", ".png");
+    } else {
+      $('.hamburger').show();
+      $('.main-menu').hide();
+
+      $('.nav_block_first>li').on( "click", function() {
+        $(this).toggleClass('opened');
+        id = $(this).attr('data-id');
+        $('.'+id).slideToggle();
       });
-    });
-  }
-
-  setupChart() {
-    window.chartColors = {
-      white: '#fff',
-      orange: '#f7b403',
-      blue: '#6e82a1',
-      darkblue: '#345382',
-      grey: 'rgb(231,233,237)'
-    };
-
-    window.randomScalingFactor = function() {
-      return (Math.random() > 0.5 ? 1.0 : -1.0) * Math.round(Math.random() * 100);
     }
 
-    var randomScalingFactor = function() {
-      return Math.round(Math.random() * 100);
-    };
+    $('.hamburger').click(function () {
+      $(this).toggleClass('is-active');
+      $('.main-menu, .dash-main-menu').slideToggle();
+    });
 
-    var config = {
-      type: 'pie',
-      data: {
-        datasets: [{
-          data: [
-            randomScalingFactor(),
-            randomScalingFactor(),
-            randomScalingFactor(),
-            randomScalingFactor(),
-          ],
-          backgroundColor: [
-            window.chartColors.darkblue,
-            window.chartColors.orange,
-            window.chartColors.white,
-            window.chartColors.blue,
-          ],
-          label: 'Dataset 1'
-        }],
-        labels: [
-          "Продукты",
-          "Здоровье",
-          "Покупки",
-          "Послуги",
-        ]
-      },
-      options: {
-        responsive: true
+    $(window).on('resize', function(){
+      var win = $(this); //this = window
+      if (win.width() <= 992) {
+        $('.main-menu, .dash-main-menu').hide();
+        $('.hamburger').removeClass('is-active');
+        $('.d1, .d2, .d3, .d4').hide();
       }
-    };
+      if (win.width() > 992) {
+        $('.main-menu, .dash-main-menu').show();
+      }
+    });
+  }
 
-    Chart.defaults.global.legend.display = false;
+  setupSelects() {
+    $("#Phones1").select2();
+    $(".select-medium").select2({
+      minimumResultsForSearch: Infinity
+    });
+  }
 
-    Chart.defaults.global.tooltips.enabled = false;
+  setupCheckboxes() {
+    $.fn.toggleCheckbox = function () {
+      this.attr('checked', !this.attr('checked'));
+    }
+    $('.checkbox').on('click', function () {
+      $(this).find(':checkbox').toggleCheckbox();
+      $(this).toggleClass('checked-box');
+    });
+  }
 
-    var ctx = document.getElementById("chart-area").getContext("2d");
-    window.myPie = new Chart(ctx, config);
+  setupPaymentsCards() {
+    $('#CreditCardInput').payment('formatCardNumber');
+    $('#CreditCardInput2').payment('formatCardNumber');
+    $('#CVC').payment('formatCardCVC');
+    $('#CVC2').payment('formatCardCVC');
   }
 
 }

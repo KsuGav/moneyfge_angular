@@ -4,6 +4,12 @@ import { SidebarComponent } from '../cabinet-new/dashboard/sidebar/sidebar.compo
 import { AccountComponent } from '../cabinet-new/dashboard/account/account.component';
 import { AccountsComponent } from '../cabinet-new/dashboard/accounts/accounts.component';
 import { NewButtonComponent } from '../cabinet-new/dashboard/new-button/new-button.component';
+import { CashPanelComponent } from '../cabinet-new/dashboard/cash-panel/cash-panel.component';
+import { FastBtnsComponent } from '../cabinet-new/dashboard/fast-btns/fast-btns.component';
+import { FillPhonePopupComponent } from '../cabinet-new/dashboard/fill-phone-popup/fill-phone-popup.component';
+import { FillAccountPopupComponent } from '../cabinet-new/dashboard/fill-account-popup/fill-account-popup.component';
+import { TransferPopupComponent } from '../cabinet-new/dashboard/transfer-popup/transfer-popup.component';
+
 import { NewAccountDialogComponent } from '../cabinet-new/dashboard/new-account-dialog/new-account-dialog.component';
 
 export const CABINETNEW: any[]=[
@@ -13,5 +19,11 @@ export const CABINETNEW: any[]=[
   , AccountComponent
   , AccountsComponent
   , NewButtonComponent
+  , CashPanelComponent
+  , FastBtnsComponent
+  , FillPhonePopupComponent
+  , FillAccountPopupComponent
+  , TransferPopupComponent
+
   , NewAccountDialogComponent
 ];

@@ -1,0 +1,150 @@
+<div class="expenses-cash-panel clearfix">
+  <div class="expenses-cash-panel-left equal-expenses">
+    <div class="expenses-cash-panel-heading">
+      <h4 class="expenses-cash-panel-heading__title">Сума</h4>
+      <div class="expenses-cash-panel-heading__datepicker calendar">
+        <span>на</span>
+        <input type="text" id="mytarget" value="12.12.2016">
+        <div class="monthly" id="mycalendar1" style="display:none;"></div>
+      </div>
+    </div>
+    <div class="expenses-cash-panel-content">
+      <ul class="expenses-cash-panel-cashlist">
+        <li>
+          <div class="expenses-cash-panel-cashlist__icon">
+            <img src="/assets/new_assets/img/cash-panel-icon-1.png" alt="Icon">
+          </div>
+          <p class="expenses-cash-panel-cashlist__title">Доступно</p>
+          <div class="expenses-cash-panel-cashlist__summa">
+            <span>10 000 000 $</span>
+            <i class="fa fa-caret-down summa-list-btn"></i>
+            <ul class="expenses-cash-panel-cashlist__currency-list">
+              <li>EUR</li>
+              <li>USD</li>
+              <li>TRY</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="expenses-cash-panel-cashlist__icon">
+            <img src="/assets/new_assets/img/cash-panel-icon-2.png" alt="Icon">
+          </div>
+          <p class="expenses-cash-panel-cashlist__title">Витрати</p>
+          <p class="expenses-cash-panel-cashlist__summa small">- 200 000 $</p>
+        </li>
+        <li>
+          <div class="expenses-cash-panel-cashlist__icon">
+            <img src="/assets/new_assets/img/cash-panel-icon-3.png" alt="Icon">
+          </div>
+          <p class="expenses-cash-panel-cashlist__title">Приход</p>
+          <p class="expenses-cash-panel-cashlist__summa small">+ 4 000 000 $</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="expenses-cash-panel-right equal-expenses">
+    <div class="expenses-cash-panel-heading">
+      <h4 class="expenses-cash-panel-heading__title">Витрати</h4>
+      <div class="expenses-cash-panel-heading__datepicker calendar">
+        <input type="text" id="mytarget2" value="Грудень 2016">
+        <div class="monthly" id="mycalendar2" style="display:none;"></div>
+      </div>
+      <div class="expenses-cash-panel-heading__icons">
+        <ul>
+          <li class="active" data-id="Graph1"><img src="/assets/new_assets/img/cash-panel-icon-5-w.png" alt="Icon"></li>
+          <li data-id="Graph2"><img src="/assets/new_assets/img/cash-panel-icon-7.png" alt="Icon"></li>
+          <li data-id="Graph3"><img src="/assets/new_assets/img/cash-panel-icon-10.png" alt="Icon"></li>
+        </ul>
+      </div>
+    </div>
+    <div class="expenses-cash-panel-content graph-content active" id="Graph1">
+      <div class="pie-chart">
+        <div id="canvas-holder">
+          <canvas id="chart-area"></canvas>
+        </div>
+      </div>
+      <div class="cash-list-panel">
+        <ul>
+          <li data-color="1">
+            <span class="cash-list-panel__title">Продукти</span>
+            <span class="cash-list-panel__percent">00%</span>
+            <span class="cash-list-panel__total">- $ 00 000</span>
+            <span class="cash-list-panel__limit">Лимит $ 00 000</span>
+            <div class="clearfix"></div>
+            <input type="range" class="cash-list-panel__range" value="30" min="0" max="100" step="1">
+          </li>
+          <li data-color="2">
+            <span class="cash-list-panel__title">Продукти</span>
+            <span class="cash-list-panel__percent">00%</span>
+            <span class="cash-list-panel__total">- $ 00 000</span>
+            <span class="cash-list-panel__limit">Лимит $ 00 000</span>
+            <div class="clearfix"></div>
+            <input type="range" class="cash-list-panel__range" min="0" max="100" value="80">
+          </li>
+          <li data-color="3">
+            <span class="cash-list-panel__title">Продукти</span>
+            <span class="cash-list-panel__percent">00%</span>
+            <span class="cash-list-panel__total">- $ 00 000</span>
+            <span class="cash-list-panel__limit">Лимит $ 00 000</span>
+            <div class="clearfix"></div>
+            <input type="range" class="cash-list-panel__range" min="0" max="100" value="20">
+          </li>
+          <li data-color="4">
+            <span class="cash-list-panel__title">Продукти</span>
+            <span class="cash-list-panel__percent">00%</span>
+            <span class="cash-list-panel__total">- $ 00 000</span>
+            <span class="cash-list-panel__limit">Лимит $ 00 000</span>
+            <div class="clearfix"></div>
+            <input type="range" class="cash-list-panel__range" min="0" max="100" value="60">
+          </li>
+        </ul>
+      </div>
+      <div class="cash-list-panel ml15">
+        <ul>
+          <li data-color="5">
+            <span class="cash-list-panel__title">Продукти</span>
+            <span class="cash-list-panel__percent">00%</span>
+            <span class="cash-list-panel__total">- $ 00 000</span>
+            <span class="cash-list-panel__limit">Лимит $ 00 000</span>
+            <div class="clearfix"></div>
+            <input type="range" class="cash-list-panel__range" min="0" max="100" value="30">
+          </li>
+          <li data-color="6">
+            <span class="cash-list-panel__title">Продукти</span>
+            <span class="cash-list-panel__percent">00%</span>
+            <span class="cash-list-panel__total">- $ 00 000</span>
+            <span class="cash-list-panel__limit">Лимит $ 00 000</span>
+            <div class="clearfix"></div>
+            <input type="range" class="cash-list-panel__range" min="0" max="100" value="80">
+          </li>
+          <li data-color="7">
+            <span class="cash-list-panel__title">Продукти</span>
+            <span class="cash-list-panel__percent">00%</span>
+            <span class="cash-list-panel__total">- $ 00 000</span>
+            <span class="cash-list-panel__limit">Лимит $ 00 000</span>
+            <div class="clearfix"></div>
+            <input type="range" class="cash-list-panel__range" min="0" max="100" value="20">
+          </li>
+          <li data-color="8">
+            <span class="cash-list-panel__title">Продукти</span>
+            <span class="cash-list-panel__percent">00%</span>
+            <span class="cash-list-panel__total">- $ 00 000</span>
+            <span class="cash-list-panel__limit">Лимит $ 00 000</span>
+            <div class="clearfix"></div>
+            <input type="range" class="cash-list-panel__range" min="0" max="100" value="60">
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="expenses-cash-panel-content graph-content" id="Graph2">
+      <div class="line-chart">
+        <div id="line-canvas-holder">
+          <canvas id="line-chart-area" width="300" height="185px"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="expenses-cash-panel-content graph-content" id="Graph3">
+      567856
+    </div>
+  </div>
+</div>
