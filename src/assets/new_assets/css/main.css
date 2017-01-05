@@ -1375,7 +1375,7 @@ img {
   padding: 7px 21px; }
 
 .bottom_line {
-  margin-top: 15px; }
+  margin-top: 10x; }
 
 .midle-text {
   margin-top: 69px;
@@ -1834,6 +1834,7 @@ img {
       margin-right: 10px; }
     .top-line .profile .profile-name {
       float: left;
+      margin-top: 10px;
       font-weight: 500;
       margin-right: 10px;
       width: 90px;
@@ -1980,7 +1981,7 @@ img {
     .dashboard-btn-group a:hover {
       background-color: #eaeaea; }
   .dashboard-btn-group__icon {
-    width: 80px;
+    width: 60px;
     height: 80px;
     display: inline-block;
     margin-right: 15px; }
@@ -2062,7 +2063,7 @@ img {
         font-size: 11px;
         position: relative; }
         .expenses-cash-panel .expenses-cash-panel-right .expenses-cash-panel-heading__datepicker input {
-          width: 80px; }
+          width: 90px; }
         .expenses-cash-panel .expenses-cash-panel-right .expenses-cash-panel-heading__datepicker .monthly {
           left: 0;
           top: 26px; }
@@ -2131,7 +2132,7 @@ img {
   pointer-events: none; }
 
 .pie-chart {
-  width: 150px;
+  width: 135px;
   height: 150px;
   float: left;
   margin-top: 20px;
@@ -2285,7 +2286,7 @@ input[type="range"] {
       padding: 0; }
   .expenses-latest-bills_content {
     background-color: #fff;
-    padding: 30px 35px 20px; }
+    padding: 15px 35px 5px; }
     .expenses-latest-bills_content__bill-list li {
       margin-bottom: 20px;
       position: relative; }
@@ -2297,7 +2298,7 @@ input[type="range"] {
         height: 6px;
         -webkit-border-radius: 10px;
                 border-radius: 10px;
-        background-color: #26bd00;
+        /*background-color: #26bd00;*/
         position: absolute;
         left: 35px;
         top: 21px; }
@@ -2320,6 +2321,9 @@ input[type="range"] {
       float: left;
       margin-top: 13px;
       margin-right: 40px; }
+    #no_payments_img{
+      margin-left: 2px;
+    }
       .expenses-latest-bills_content__icon:after {
         content: '';
         display: inline-block;
