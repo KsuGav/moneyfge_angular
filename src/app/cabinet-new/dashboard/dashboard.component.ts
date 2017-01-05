@@ -15,6 +15,7 @@ export class DashboardComponent implements AfterViewInit {
     this.setupIcons();
     this.setupCalendars();
     this.setupChart();
+    this.setupColor();
   }
 
   setupCalendars() {
@@ -60,6 +61,14 @@ export class DashboardComponent implements AfterViewInit {
       });
     });
   }
+
+  setupColor() {
+    let colors = ['#f6bc2c', '#ffffff', '#26bd00', '#38cffd', '#ff4040', '#4fa5c6', '#e57c00', '#f4f4f4'];
+    for(var i=0,links=$('.cash-list-panel li:before').length; i<links;i++){
+      $('.cash-list-panel li:before')[i].css({'background-color': colors[i]})
+    }
+  }
+
 
   setupChart() {
     window.chartColors = {

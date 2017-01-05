@@ -1,0 +1,120 @@
+.cash-list-panel__percent {
+    color: #718bab;
+    margin-left: 15px; }
+
+.cash-list-panel__limit {
+
+    color: #718bab; }
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background: #718bab;
+}
+input[type="range"]::-webkit-slider-thumb {
+    border: 1px solid #718bab;
+}
+input[type="range"]:focus::-webkit-slider-runnable-track {
+    background: #718bab;
+}
+
+input[type="range"]::-moz-range-thumb {
+    border: 1px solid #718bab;
+    }
+input[type="range"]::-moz-range-progress {
+    background: #718bab;
+}
+
+input[type="range"]::-ms-fill-lower {
+    background: #718bab;
+}
+
+input[type="range"]::-ms-thumb {
+    border: 1px solid #718bab;
+    }
+
+.profile-menu {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -150px;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    z-index: 10;
+    visibility: hidden;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    border-radius: 2px;
+    box-shadow: 0 0 5px 0 rgba(76, 76, 75, 0.33)}
+
+#caret-list{
+    width: 15px;
+    height: 15px;
+    background: white;
+    box-shadow: 0 0 5px 0 rgba(76, 76, 75, 0.33);
+    position: absolute;
+    margin-top: -132px;
+    margin-left: 125px;
+    -webkit-transform: rotate(35deg) skewY(23deg);
+    -moz-transform: rotate(35deg) skewY(23deg);
+    -ms-transform: rotate(35deg) skewY(23deg);
+    -o-transform: rotate(35deg) skewY(23deg);
+    transform: rotate(35deg) skewY(23deg)
+}
+#caret-list2{
+    position: absolute;
+    width: 25px;
+    height: 15px;
+    background: white;
+    top: 0px;
+    left: 136px;
+}
+#caret-up{
+    float: right;
+    position: relative;
+    top: -16px;
+    right: 56px;
+}
+#list_cash{
+    min-width: 45px;
+    color: rgba(0, 0, 0, 0.61);
+    font-size: 12px;
+    position: absolute;
+    margin-left: 90px;
+    margin-top: -8px;
+}
+#list_cash>li{
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    padding-top: 4px;
+    cursor: pointer;
+    padding: 0 10px;
+}
+#list_cash>li:hover{
+    background: rgba(76, 76, 75, 0.1);
+    width:100%;
+}
+.expenses-latest-bills_content {
+    background-color: #fff;
+    padding: 5px 35px 5px; }
+#no_payments_img{
+    margin-left: 2px;
+}
+.expenses-cash-panel .expenses-cash-panel-right .expenses-cash-panel-heading__datepicker input {
+    width: 90px; }
+.pie-chart {
+    width: 135px;
+    height: 150px;
+    float: left;
+    margin-top: 20px;
+    margin-right: 15px; }
+.expenses-latest-bills_content {
+    background-color: #fff;
+    padding: 5px 35px 5px; }
+.expenses-latest-bills_content__bill-list li {
+    margin-bottom: 5px;
+    position: relative; }
+.expenses-latest-bills_content__icon {
+    margin-top: 7px;
+     }
+.profile-menu a {
+    color: #4d4d4c;
+}

@@ -1860,12 +1860,14 @@ img {
   width: 100%;
   left: 0;
   bottom: -140px;
-  background-color: #3c3c3b;
+  background-color: #ffffff;
   padding: 10px 20px;
   z-index: 10;
   visibility: hidden;
   -webkit-transition: all 0.25s ease;
-  transition: all 0.25s ease; }
+  transition: all 0.25s ease;
+  border-radius: 2px;
+  box-shadow: 0 0 5px 0 rgba(76, 76, 75, 0.33)}
   .profile-menu ul li {
     display: block;
     margin: 7px 0; }
@@ -2189,9 +2191,10 @@ input[type="range"] {
     width: 100%;
     height: 1px;
     cursor: pointer;
-    background: #f6bc2c; }
+    background: #718bab;
+  }
   input[type="range"]::-webkit-slider-thumb {
-    border: 1px solid #f6bc2c;
+    border: 1px solid #718bab;
     height: 6px;
     width: 6px;
     -webkit-border-radius: 30px;
@@ -2201,21 +2204,23 @@ input[type="range"] {
     -webkit-appearance: none;
     margin-top: -2.5px; }
   input[type="range"]:focus::-webkit-slider-runnable-track {
-    background: #fbb800; }
+    background: #718bab;
+  }
   input[type="range"]::-moz-range-track {
     width: 100%;
     height: 1px;
     cursor: pointer;
     background: rgba(255, 255, 255, 0.2); }
   input[type="range"]::-moz-range-thumb {
-    border: 1px solid #f6bc2c;
+    border: 1px solid #718bab;
     height: 5px;
     width: 5px;
     border-radius: 3px;
     background: #3d5e8b;
     cursor: pointer; }
   input[type="range"]::-moz-range-progress {
-    background: #fbb800; }
+    background: #718bab;
+  }
   input[type="range"]::-ms-track {
     width: 100%;
     height: 1px;
@@ -2224,7 +2229,8 @@ input[type="range"] {
     border-color: transparent;
     color: transparent; }
   input[type="range"]::-ms-fill-lower {
-    background: #fbb800; }
+    background: #718bab;
+  }
   input[type="range"]::-ms-fill-upper {
     background: #ffffff;
     border: 0px solid #010101;
@@ -2232,7 +2238,7 @@ input[type="range"] {
     box-shadow: 0px 0px 0px #4b0000, 0px 0px 0px #650000; }
   input[type="range"]::-ms-thumb {
     box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
-    border: 1px solid #f6bc2c;
+    border: 1px solid #718bab;
     height: 6px;
     width: 6px;
     border-radius: 3px;

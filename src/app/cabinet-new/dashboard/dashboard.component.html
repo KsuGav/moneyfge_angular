@@ -29,12 +29,20 @@
               </div>
               <div class="expenses-cash-panel-content">
                 <ul class="expenses-cash-panel-cashlist">
-                  <li>
+                  <li class="dropdown">
                     <div class="expenses-cash-panel-cashlist__icon">
                       <img src="/assets/new_assets/img/cash-panel-icon-1.png" alt="Icon">
                     </div>
-                    <p class="expenses-cash-panel-cashlist__title">Available</p>
-                    <p class="expenses-cash-panel-cashlist__summa">0.00 $</p>
+                    <div>
+                      <p class="expenses-cash-panel-cashlist__title">Available</p>
+                      <p class="expenses-cash-panel-cashlist__summa">0.00 $</p>
+                    </div>
+                    <i class="fa fa-caret-up dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="caret-up"></i>
+                    <ul class="dropdown-menu" id="list_cash">
+                      <li>EUR</li>
+                      <li>USD</li>
+                      <li>TRY</li>
+                    </ul>
                   </li>
                   <li>
                     <div class="expenses-cash-panel-cashlist__icon">
@@ -72,7 +80,7 @@
                 <div class="pie-chart">
                   <div id="canvas-holder">
                     <!--<canvas id="chart-area"></canvas>-->
-                    <img src="/assets/new_assets/img/no_transfer.png">
+                    <img src="/assets/new_assets/img/Chart.png">
                   </div>
                 </div>
                 <div class="cash-list-panel">
@@ -82,28 +90,28 @@
                       <span class="cash-list-panel__percent">00%</span>
                       <span class="cash-list-panel__total">- $ 0.00</span><br/>
                       <span class="cash-list-panel__limit">Limit $ 0.00</span>
-                      <input type="range" class="cash-list-panel__range" value="30" min="1" max="100" step="1">
+                      <input type="range" class="cash-list-panel__range" value="0" min="1" max="100" step="1">
                     </li>
                     <li>
                       <span class="cash-list-panel__title">Transfers</span>
                       <span class="cash-list-panel__percent">00%</span>
                       <span class="cash-list-panel__total">- $ 0.00</span><br/>
                       <span class="cash-list-panel__limit">Limit $ 0.00</span>
-                      <input type="range" class="cash-list-panel__range" value="80">
+                      <input type="range" class="cash-list-panel__range" value="0">
                     </li>
                     <li>
                       <span class="cash-list-panel__title">Connections</span>
                       <span class="cash-list-panel__percent">00%</span>
                       <span class="cash-list-panel__total">- $ 0.00</span><br/>
                       <span class="cash-list-panel__limit">Limit $ 0.00</span>
-                      <input type="range" class="cash-list-panel__range" value="20">
+                      <input type="range" class="cash-list-panel__range" value="0">
                     </li>
                     <li>
                       <span class="cash-list-panel__title">IP-telephony</span>
                       <span class="cash-list-panel__percent">00%</span>
                       <span class="cash-list-panel__total">- $ 0.00</span><br/>
                       <span class="cash-list-panel__limit">Limit $ 0.00</span>
-                      <input type="range" class="cash-list-panel__range" value="60">
+                      <input type="range" class="cash-list-panel__range" value="0">
                     </li>
                   </ul>
                 </div>
@@ -114,28 +122,28 @@
                       <span class="cash-list-panel__percent">00%</span>
                       <span class="cash-list-panel__total">- $ 0.00</span>
                       <span class="cash-list-panel__limit">Limit $ 0.00</span>
-                      <input type="range" class="cash-list-panel__range" value="30">
+                      <input type="range" class="cash-list-panel__range" value="0">
                     </li>
                     <li>
                       <span class="cash-list-panel__title">Utilities</span>
                       <span class="cash-list-panel__percent">00%</span>
                       <span class="cash-list-panel__total">- $ 0.00</span>
                       <span class="cash-list-panel__limit">Limit $ 0.00</span>
-                      <input type="range" class="cash-list-panel__range" value="80">
+                      <input type="range" class="cash-list-panel__range" value="0">
                     </li>
                     <li>
                       <span class="cash-list-panel__title">Tickets</span>
                       <span class="cash-list-panel__percent">00%</span>
                       <span class="cash-list-panel__total">- $ 0.00</span>
                       <span class="cash-list-panel__limit">Limit $ 0.00</span>
-                      <input type="range" class="cash-list-panel__range" value="20">
+                      <input type="range" class="cash-list-panel__range" value="0">
                     </li>
                     <li>
                       <span class="cash-list-panel__title">Charity</span>
                       <span class="cash-list-panel__percent">00%</span>
                       <span class="cash-list-panel__total">- $ 0.00</span>
                       <span class="cash-list-panel__limit">Limit $ 0.00</span>
-                      <input type="range" class="cash-list-panel__range" value="60">
+                      <input type="range" class="cash-list-panel__range" value="0">
                     </li>
                   </ul>
                 </div>
