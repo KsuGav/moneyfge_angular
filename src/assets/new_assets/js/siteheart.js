@@ -1,6 +1,6 @@
 window.onload = (function(){
     var widget_id = 853271;
-    _shcp =[{widget_id : widget_id}];
+    _shcp =[{widget_id : widget_id, side: 'left', position: 'bottom'}];
     /*var lang =(navigator.language || navigator.systemLanguage
      || navigator.userLanguage ||"en")
      .substr(0,2).toLowerCase();
