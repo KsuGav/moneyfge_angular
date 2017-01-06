@@ -6,30 +6,30 @@
 
     color: #718bab; }
 
-input[type="range"]::-webkit-slider-runnable-track {
-    background: #718bab;
-}
-input[type="range"]::-webkit-slider-thumb {
-    border: 1px solid #718bab;
-}
-input[type="range"]:focus::-webkit-slider-runnable-track {
-    background: #718bab;
-}
+/*input[type="range"]::-webkit-slider-runnable-track {*/
+    /*background: #718bab;*/
+/*}*/
+/*input[type="range"]::-webkit-slider-thumb {*/
+    /*border: 1px solid #718bab;*/
+/*}*/
+/*input[type="range"]:focus::-webkit-slider-runnable-track {*/
+    /*background: #718bab;*/
+/*}*/
 
-input[type="range"]::-moz-range-thumb {
-    border: 1px solid #718bab;
-    }
-input[type="range"]::-moz-range-progress {
-    background: #718bab;
-}
+/*input[type="range"]::-moz-range-thumb {*/
+    /*border: 1px solid #718bab;*/
+    /*}*/
+/*input[type="range"]::-moz-range-progress {*/
+    /*background: #718bab;*/
+/*}*/
 
-input[type="range"]::-ms-fill-lower {
-    background: #718bab;
-}
+/*input[type="range"]::-ms-fill-lower {*/
+    /*background: #718bab;*/
+/*}*/
 
-input[type="range"]::-ms-thumb {
-    border: 1px solid #718bab;
-    }
+/*input[type="range"]::-ms-thumb {*/
+    /*border: 1px solid #718bab;*/
+    /*}*/
 
 .profile-menu {
     position: absolute;
@@ -117,4 +117,7 @@ input[type="range"]::-ms-thumb {
      }
 .profile-menu a {
     color: #4d4d4c;
+}
+.expenses-latest-bills_content__bill:before{
+    background-color: transparent;
 }
