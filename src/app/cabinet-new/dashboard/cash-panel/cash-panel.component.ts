@@ -16,8 +16,8 @@ export class CashPanelComponent implements AfterViewInit {
     this.setupIcons();
     this.setupCurrencyListToggle();
     this.setupCalendars();
-    this.setupPieChart();
-    this.setupLineChart();
+    // this.setupPieChart();
+    // this.setupLineChart();
   }
 
   setupIcons() {
