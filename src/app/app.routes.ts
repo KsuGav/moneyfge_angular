@@ -65,6 +65,6 @@ export const ROUTES: Routes = [
   , { path: 'birga', component: BirgaComponent }
   , { path: 'market', component: MarketComponent }
   , {path: 'user/dashboard', component: DashboardComponent, canActivate: [ LoggedInGuard ]}
-  , { path: 'user/cabinet', loadChildren: './cabinet/cabinet.routes#CabinetModule' }
+  , { path: 'user/cabinet', loadChildren: './cabinet/cabinet.module#CabinetModule' }
   , { path: '**',    component: NoContentComponent }
 ];
