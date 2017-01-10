@@ -15,6 +15,7 @@ import { NewsComponent } from '../home-new/news/news.component';
 import { PrivateHeaderComponent } from '../home-new/private-header/private-header.component';
 import { SimpleHeaderComponent } from '../home-new/simple-header/simple-header.component';
 import { TopLineComponent } from '../home-new/top-line/top-line.component';
+import { HomeMoneyCourseComponent } from '../cabinet-new/dashboard/money-course/home-money-course.component';
 
 import {StaticComponent } from '../home-new/static/static.component';
 import { MobilePaymentsComponent } from '../home-new/static/mobile-payments/mobile-payments.component';
@@ -51,4 +52,5 @@ export const HOMENEW: any[]=[
   , InternetTvComponent
   , OnlinePaymentsComponent
   , BillsComponent
+  , HomeMoneyCourseComponent
 ];
