@@ -101,8 +101,8 @@
 .expenses-cash-panel .expenses-cash-panel-right .expenses-cash-panel-heading__datepicker input {
     width: 90px; }
 .pie-chart {
-    width: 135px;
-    height: 150px;
+    /*width: 145px;*/
+    /*height: 150px;*/
     float: left;
     margin-top: 20px;
     margin-right: 15px; }
@@ -120,4 +120,10 @@
 }
 .expenses-latest-bills_content__bill:before{
     background-color: transparent;
+}
+.img-responsive{
+    float: left;
+}
+.protect img {
+    margin-right: 30px;
 }

@@ -18,6 +18,7 @@ export class CashPanelComponent implements AfterViewInit {
     this.setupCalendars();
     this.setupPieChart();
     this.setupLineChart();
+    this.setupRange();
   }
 
   setupIcons() {
@@ -49,6 +50,27 @@ export class CashPanelComponent implements AfterViewInit {
       $('.expenses-cash-panel-cashlist__currency-list').slideUp();
     });
   }
+
+
+  setupRange(){
+    //Range Thumb
+    $('.cash-list-panel__range').each(function() {
+      if ( $(this).attr('value') == '0' ) {
+        $(this).addClass('null');
+      } else {
+        $(this).removeClass('null');
+      }
+    }).on('input', function(e){
+      var min = e.target.min,
+          max = e.target.max,
+          val = e.target.value;
+
+      $(e.target).css({
+        'backgroundSize': (val - min) * 100 / (max - min) + '% 100%'
+      });
+    }).trigger('input');
+  }
+
 
   setupCalendars() {
     $('#mycalendar1').monthly({

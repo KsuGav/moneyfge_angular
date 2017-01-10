@@ -16,6 +16,9 @@
               <span>€:  27.80 / 28.41</span>
             </p>
           </div>
+          <div class="fl-right">
+            <a href="#" class="btn-small btn-accent merch-btn">Mercant</a>
+          </div>
 
           <cash-panel-component></cash-panel-component>
 
@@ -35,7 +38,8 @@
                 </div>
               </div>
             </div>
-            <div class="expenses-latest-bills_content">
+            <div class="expenses-latest-bills_content no-bills">
+              <div class="no-bills-message">You have no payments</div>
               <ul class="expenses-latest-bills_content__bill-list">
                 <li>
                   <div class="expenses-latest-bills_content__icon">
@@ -48,119 +52,120 @@
                   </p>
                   <!--<p class="expenses-latest-bills_content__total">-0.00 $</p>-->
                 </li>
-                <!--<li>-->
-                  <!--<div class="expenses-latest-bills_content__icon"><img src="/assets/new_assets/img/cash-panel-icon-13.png" alt="Icon"></div>-->
-                  <!--<p class="expenses-latest-bills_content__time">Today 12:30</p>-->
-                  <!--<p class="expenses-latest-bills_content__bill">-->
-                    <!--Payment for the goods in №10 from 12.02.2016 some text missing-->
-                  <!--</p>-->
-                  <!--<p class="expenses-latest-bills_content__total">-0000 $</p>-->
-                <!--</li>-->
-                <!--<li>-->
-                  <!--<div class="expenses-latest-bills_content__icon"><img src="/assets/new_assets/img/cash-panel-icon-13.png" alt="Icon"></div>-->
-                  <!--<p class="expenses-latest-bills_content__time">Today 12:30</p>-->
-                  <!--<p class="expenses-latest-bills_content__bill">-->
-                    <!--Payment for the goods in №10 from 12.02.2016 some text missing-->
-                  <!--</p>-->
-                  <!--<p class="expenses-latest-bills_content__total">-0000 $</p>-->
-                <!--</li>-->
-                <!--<li>-->
-                  <!--<div class="expenses-latest-bills_content__icon"><img src="/assets/new_assets/img/cash-panel-icon-13.png" alt="Icon"></div>-->
-                  <!--<p class="expenses-latest-bills_content__time">Today 12:30</p>-->
-                  <!--<p class="expenses-latest-bills_content__bill">-->
-                    <!--Payment for the goods in №10 from 12.02.2016 some text missing-->
-                  <!--</p>-->
-                  <!--<p class="expenses-latest-bills_content__total">-0000 $</p>-->
-                <!--</li>-->
+                <li>
+                  <div class="expenses-latest-bills_content__icon"><img src="/assets/new_assets/img/cash-panel-icon-13.png" alt="Icon"></div>
+                  <p class="expenses-latest-bills_content__time">Today 12:30</p>
+                  <p class="expenses-latest-bills_content__bill">
+                    Payment for the goods in №10 from 12.02.2016 some text missing
+                  </p>
+                  <p class="expenses-latest-bills_content__total">-0000 $</p>
+                </li>
+                <li>
+                  <div class="expenses-latest-bills_content__icon"><img src="/assets/new_assets/img/cash-panel-icon-13.png" alt="Icon"></div>
+                  <p class="expenses-latest-bills_content__time">Today 12:30</p>
+                  <p class="expenses-latest-bills_content__bill">
+                    Payment for the goods in №10 from 12.02.2016 some text missing
+                  </p>
+                  <p class="expenses-latest-bills_content__total">-0000 $</p>
+                </li>
+                <li>
+                  <div class="expenses-latest-bills_content__icon"><img src="/assets/new_assets/img/cash-panel-icon-13.png" alt="Icon"></div>
+                  <p class="expenses-latest-bills_content__time">Today 12:30</p>
+                  <p class="expenses-latest-bills_content__bill">
+                    Payment for the goods in №10 from 12.02.2016 some text missing
+                  </p>
+                  <p class="expenses-latest-bills_content__total">-0000 $</p>
+                </li>
               </ul>
             </div>
             <div class="expenses-latest-bills_footer">
               <div class="expenses-latest-bills_footer__showmore">
                 <i class="fa fa-arrow-down"></i>
-                <span>More</span>
+                <span id="down">More</span>
+                <span id="up">Less</span>
               </div>
             </div>
           </div>
 
-          <div class="block-type-1 popular-services">
-            <h5 class="block-type-1__title">Popular services</h5>
-            <div class="popular-services--blocks">
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="popular-services--block">
-                    <h4 class="popular-services--block__title">Taxes</h4>
-                    <p class="popular-services--block__subtitle">verification and payment</p>
-                    <div class="popular-services--block__icon">
-                      <img src="/assets/new_assets/img/popular-services-icon-4.png" alt="Icon">
-                    </div>
-                    <a href="#" (click)="false" class="popular-services--block__readmore">
-                      More
-                      <i class="fa fa-arrow-right"></i></a>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="popular-services--block">
-                    <h4 class="popular-services--block__title">Fines</h4>
-                    <p class="popular-services--block__subtitle">verification and payment</p>
-                    <div class="popular-services--block__icon">
-                      <img src="/assets/new_assets/img/popular-services-icon-6.png" alt="Icon">
-                    </div>
-                    <a href="#" (click)="false" class="popular-services--block__readmore">
-                      More
-                      <i class="fa fa-arrow-right"></i></a>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="popular-services--block">
-                    <h4 class="popular-services--block__title">Loans</h4>
-                    <p class="popular-services--block__subtitle">verification and payment</p>
-                    <div class="popular-services--block__icon">
-                      <img src="/assets/new_assets/img/popular-services-icon-5.png" alt="Icon">
-                    </div>
-                    <a href="#" (click)="false" class="popular-services--block__readmore">
-                      More
-                      <i class="fa fa-arrow-right"></i></a>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="popular-services--block">
-                    <h4 class="popular-services--block__title">Receipts</h4>
-                    <p class="popular-services--block__subtitle">verification and payment</p>
-                    <div class="popular-services--block__icon">
-                      <img src="/assets/new_assets/img/popular-services-icon-1.png" alt="Icon">
-                    </div>
-                    <a href="#" (click)="false" class="popular-services--block__readmore">
-                      More
-                      <i class="fa fa-arrow-right"></i></a>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="popular-services--block">
-                    <h4 class="popular-services--block__title">Mobile</h4>
-                    <p class="popular-services--block__subtitle">verification and payment</p>
-                    <div class="popular-services--block__icon">
-                      <img src="/assets/new_assets/img/popular-services-icon-3.png" alt="Icon">
-                    </div>
-                    <a href="#" (click)="false" class="popular-services--block__readmore">
-                      More
-                      <i class="fa fa-arrow-right"></i></a>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="popular-services--block">
-                    <h4 class="popular-services--block__title">Credits</h4>
-                    <p class="popular-services--block__subtitle">verification and payment</p>
-                    <div class="popular-services--block__icon">
-                      <img src="/assets/new_assets/img/popular-services-icon-2.png" alt="Icon">
-                    </div>
-                    <a href="#" (click)="false" class="popular-services--block__readmore">
-                      More
-                      <i class="fa fa-arrow-right"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <!--<div class="block-type-1 popular-services">-->
+            <!--<h5 class="block-type-1__title">Popular services</h5>-->
+            <!--<div class="popular-services&#45;&#45;blocks">-->
+              <!--<div class="row">-->
+                <!--<div class="col-md-4">-->
+                  <!--<div class="popular-services&#45;&#45;block">-->
+                    <!--<h4 class="popular-services&#45;&#45;block__title">Taxes</h4>-->
+                    <!--<p class="popular-services&#45;&#45;block__subtitle">verification and payment</p>-->
+                    <!--<div class="popular-services&#45;&#45;block__icon">-->
+                      <!--<img src="/assets/new_assets/img/popular-services-icon-4.png" alt="Icon">-->
+                    <!--</div>-->
+                    <!--<a href="#" (click)="false" class="popular-services&#45;&#45;block__readmore">-->
+                      <!--More-->
+                      <!--<i class="fa fa-arrow-right"></i></a>-->
+                  <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-md-4">-->
+                  <!--<div class="popular-services&#45;&#45;block">-->
+                    <!--<h4 class="popular-services&#45;&#45;block__title">Fines</h4>-->
+                    <!--<p class="popular-services&#45;&#45;block__subtitle">verification and payment</p>-->
+                    <!--<div class="popular-services&#45;&#45;block__icon">-->
+                      <!--<img src="/assets/new_assets/img/popular-services-icon-6.png" alt="Icon">-->
+                    <!--</div>-->
+                    <!--<a href="#" (click)="false" class="popular-services&#45;&#45;block__readmore">-->
+                      <!--More-->
+                      <!--<i class="fa fa-arrow-right"></i></a>-->
+                  <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-md-4">-->
+                  <!--<div class="popular-services&#45;&#45;block">-->
+                    <!--<h4 class="popular-services&#45;&#45;block__title">Loans</h4>-->
+                    <!--<p class="popular-services&#45;&#45;block__subtitle">verification and payment</p>-->
+                    <!--<div class="popular-services&#45;&#45;block__icon">-->
+                      <!--<img src="/assets/new_assets/img/popular-services-icon-5.png" alt="Icon">-->
+                    <!--</div>-->
+                    <!--<a href="#" (click)="false" class="popular-services&#45;&#45;block__readmore">-->
+                      <!--More-->
+                      <!--<i class="fa fa-arrow-right"></i></a>-->
+                  <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-md-4">-->
+                  <!--<div class="popular-services&#45;&#45;block">-->
+                    <!--<h4 class="popular-services&#45;&#45;block__title">Receipts</h4>-->
+                    <!--<p class="popular-services&#45;&#45;block__subtitle">verification and payment</p>-->
+                    <!--<div class="popular-services&#45;&#45;block__icon">-->
+                      <!--<img src="/assets/new_assets/img/popular-services-icon-1.png" alt="Icon">-->
+                    <!--</div>-->
+                    <!--<a href="#" (click)="false" class="popular-services&#45;&#45;block__readmore">-->
+                      <!--More-->
+                      <!--<i class="fa fa-arrow-right"></i></a>-->
+                  <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-md-4">-->
+                  <!--<div class="popular-services&#45;&#45;block">-->
+                    <!--<h4 class="popular-services&#45;&#45;block__title">Mobile</h4>-->
+                    <!--<p class="popular-services&#45;&#45;block__subtitle">verification and payment</p>-->
+                    <!--<div class="popular-services&#45;&#45;block__icon">-->
+                      <!--<img src="/assets/new_assets/img/popular-services-icon-3.png" alt="Icon">-->
+                    <!--</div>-->
+                    <!--<a href="#" (click)="false" class="popular-services&#45;&#45;block__readmore">-->
+                      <!--More-->
+                      <!--<i class="fa fa-arrow-right"></i></a>-->
+                  <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-md-4">-->
+                  <!--<div class="popular-services&#45;&#45;block">-->
+                    <!--<h4 class="popular-services&#45;&#45;block__title">Credits</h4>-->
+                    <!--<p class="popular-services&#45;&#45;block__subtitle">verification and payment</p>-->
+                    <!--<div class="popular-services&#45;&#45;block__icon">-->
+                      <!--<img src="/assets/new_assets/img/popular-services-icon-2.png" alt="Icon">-->
+                    <!--</div>-->
+                    <!--<a href="#" (click)="false" class="popular-services&#45;&#45;block__readmore">-->
+                      <!--More-->
+                      <!--<i class="fa fa-arrow-right"></i></a>-->
+                  <!--</div>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
 
           <div class="block-type-1 catalog-categories">
             <h5 class="block-type-1__title">Directory categories</h5>
@@ -171,6 +176,8 @@
                 Search
               </button>
             </div>
+
+
             <div class="catalog-categories--items">
               <div class="row">
                 <div class="col-md-4">
@@ -317,7 +324,7 @@
 
 <footer-component></footer-component>
 
-<fast-btns-component></fast-btns-component>
+<!--<fast-btns-component></fast-btns-component>-->
 
 <fill-phone-popup-component></fill-phone-popup-component>
 

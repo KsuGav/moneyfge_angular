@@ -23,7 +23,8 @@ export class User {
     private appState: AppState,
     private router: Router
   ) {
-    this.siteEndpoint = 'http://moneyfge-new.localhost/app_dev.php';
+    // this.siteEndpoint = 'http://moneyfge-new.localhost/app_dev.php';
+    this.siteEndpoint = 'https://moneyfge.com/backend/web/app_dev.php';
     this.apiEndpoint = `${this.siteEndpoint}/api/v1`;
 
     this.clientId = '3_p08hEG4THmS3TPlOpS9cYqsh9Aj3vxGUYN8XtmxWLjVtfzoqHg';
