@@ -10,6 +10,9 @@ import { FillPhonePopupComponent } from '../cabinet-new/dashboard/fill-phone-pop
 import { FillAccountPopupComponent } from '../cabinet-new/dashboard/fill-account-popup/fill-account-popup.component';
 import { TransferPopupComponent } from '../cabinet-new/dashboard/transfer-popup/transfer-popup.component';
 
+
+import { ReplenishComponent } from '../cabinet-new/dashboard/replenishment/replenish.component';
+
 import { NewAccountDialogComponent } from '../cabinet-new/dashboard/new-account-dialog/new-account-dialog.component';
 
 export const CABINETNEW: any[]=[
@@ -24,6 +27,8 @@ export const CABINETNEW: any[]=[
   , FillPhonePopupComponent
   , FillAccountPopupComponent
   , TransferPopupComponent
+
+    ,ReplenishComponent
 
   , NewAccountDialogComponent
 ];

@@ -51,6 +51,10 @@ import { BillsComponent } from './home-new/static/bills/bills.component';
 import { ContactComponent } from './home-new/static/contact/contact.component';
 import { DashboardComponent } from './cabinet-new/dashboard/dashboard.component';
 
+import { ReplenishComponent } from './cabinet-new/dashboard/replenishment/replenish.component';
+
+
+
 
 export const ROUTES: Routes = [
   // { path: '', component: HomeComponent }
@@ -82,7 +86,13 @@ export const ROUTES: Routes = [
   , { path: 'site/password', component: SitePasswordComponent }
   , { path: 'birga', component: BirgaComponent }
   , { path: 'market', component: MarketComponent }
-  , {path: 'user/dashboard', component: DashboardComponent, canActivate: [ LoggedInGuard ]}
+  , { path: 'user/dashboard',
+    component: DashboardComponent,
+    canActivate: [ LoggedInGuard ],
+    }
+  , { path: 'user/replenish',
+    canActivate: [ LoggedInGuard ],
+    component: ReplenishComponent}
   , {
     path: 'user/cabinet',
     component: CabinetComponent,
