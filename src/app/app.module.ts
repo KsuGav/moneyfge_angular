@@ -16,6 +16,7 @@ import { AppState, InternalStateType } from './app.service'; // OLD
 import { AppService } from './app.services/App.service';
 import { User } from './services/service.user'; // OLD
 import { UserService } from './app.services/User.service';
+import { CommonService } from './app.services/Common.service';
 import { ModalService } from './services/modal.service'; // OLD
 import { AccountService } from './services/account.service'; // OLD
 import { ReplenishService } from './app.services/Replenish.service';
@@ -84,6 +85,7 @@ type StoreType = {
     , APP_PROVIDERS // OLD
     , User // OLD
     , UserService
+    , CommonService
     , AppService
     , ReplenishService
     , LoggedInGuard // OLD

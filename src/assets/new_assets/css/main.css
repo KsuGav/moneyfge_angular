@@ -3045,7 +3045,9 @@ img {
     margin-top: 5px;
     margin-bottom: 15px; }
   .money-course span {
-    font-weight: 500; }
+    font-weight: 500;
+    margin-right: 15px;
+  }
 
 .expenses-cash-panel {
   -webkit-border-radius: 5px;
