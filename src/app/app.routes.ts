@@ -52,6 +52,10 @@ import { ContactComponent } from './home-new/static/contact/contact.component';
 import { DashboardComponent } from './cabinet-new/dashboard/dashboard.component';
 
 import { ReplenishComponent } from './cabinet-new/dashboard/replenishment/replenish.component';
+import { TransfersComponent } from './cabinet-new/dashboard/transfers/transfers.component';
+import { Cashouts1Component } from './cabinet-new/dashboard/cashouts1/cashouts1.component';
+import { Cashouts2Component } from './cabinet-new/dashboard/cashouts2/cashouts2.copmonent';
+import { Cashouts3Component } from './cabinet-new/dashboard/cashouts3/cashouts3.component';
 
 
 
@@ -93,6 +97,18 @@ export const ROUTES: Routes = [
   , { path: 'user/replenish',
     canActivate: [ LoggedInGuard ],
     component: ReplenishComponent}
+  , { path: 'user/transfers',
+    canActivate: [ LoggedInGuard ],
+    component: TransfersComponent}
+  , { path: 'user/cashouts1',
+    canActivate: [ LoggedInGuard ],
+    component: Cashouts1Component}
+  , { path: 'user/cashouts2',
+    canActivate: [ LoggedInGuard ],
+    component: Cashouts2Component}
+  , { path: 'user/cashouts3',
+    canActivate: [ LoggedInGuard ],
+    component: Cashouts3Component}
   , {
     path: 'user/cabinet',
     component: CabinetComponent,
