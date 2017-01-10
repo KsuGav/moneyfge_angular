@@ -10,6 +10,7 @@ import { FillPhonePopupComponent } from '../cabinet-new/dashboard/fill-phone-pop
 import { FillAccountPopupComponent } from '../cabinet-new/dashboard/fill-account-popup/fill-account-popup.component';
 import { TransferPopupComponent } from '../cabinet-new/dashboard/transfer-popup/transfer-popup.component';
 import { MoneyCourseComponent } from '../cabinet-new/dashboard/money-course/money-course.component';
+import { AccountHistoryComponent } from '../cabinet-new/dashboard/accounts/account-history.component';
 
 import { NewAccountDialogComponent } from '../cabinet-new/dashboard/new-account-dialog/new-account-dialog.component';
 
@@ -26,6 +27,6 @@ export const CABINETNEW: any[]=[
   , FillAccountPopupComponent
   , TransferPopupComponent
   , MoneyCourseComponent
-
+  , AccountHistoryComponent
   , NewAccountDialogComponent
 ];

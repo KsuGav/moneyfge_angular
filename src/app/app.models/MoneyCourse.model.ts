@@ -1,6 +1,5 @@
 export class MoneyCourse {
 
-    public display: string;
     constructor(
         public id: number,
         public name: string,
@@ -8,7 +7,5 @@ export class MoneyCourse {
         public bid: number,
         public enable: boolean,
     ) {
-        //display =  this.name + ": " + this.ask + " / " + this.bid;
-        this.display = "qwe'";
     }
 }

@@ -6,6 +6,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 
 import { Account } from '../app.models/Account.model';
+import { AccountHistoryRecord } from '../app.models/AccountHistoryRecord.model';
 
 export const CURRENCIES: string[] = [
   'USD',
@@ -18,10 +19,13 @@ export const CURRENCIES: string[] = [
 export class n_AccountService {
 
   requestAccounts: EventEmitter<any> = new EventEmitter<any>();
-
   receiveAccounts: EventEmitter<any> = new EventEmitter<any>();
-
   receiveAccountsError: EventEmitter<String> = new EventEmitter<String>();
+
+  onGetAccountHistory: EventEmitter<any> = new EventEmitter<any>();
+  onGetAccountHistoryError: EventEmitter<any> = new EventEmitter<any>();
+
+  //onSelectAccount: EventEmitter<number> = new EventEmitter<number>();
 
   constructor(
     private http: Http,
@@ -156,4 +160,19 @@ export class n_AccountService {
     ;
   }
 
+  getAccountHistory(account) {
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
+    headers.append('Content-Type', 'application/json');
+
+    const locUrl = `${this.appState.get('apiEndpoint')}/accounts/history/${account}/`;
+    return this.http
+        .get(locUrl, {headers:headers})
+        .map(res => res.json())
+        .subscribe(
+            (res: any) => this.onGetAccountHistory.emit(res),
+            err => this.onGetAccountHistoryError.emit(err.json().message)
+        )
+    ;
+  }
 }
