@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 declare const $: any;
 
@@ -7,10 +7,23 @@ declare const $: any;
     templateUrl: 'transfers.component.html'
 })
 
-export class TransfersComponent implements OnInit {
+export class TransfersComponent implements OnInit, OnDestroy{
 
     ngOnInit(){
-        this.setSelect()
+        this.setSelect();
+        this.activeLink();
+    }
+
+    ngOnDestroy(){
+        this.unActiveLink();
+    }
+
+    activeLink(){
+        $('#transfers_link').addClass('active')
+    }
+
+    unActiveLink(){
+        $('#transfers_link').removeClass('active')
     }
 
     setSelect(){

@@ -14,8 +14,8 @@
         <img *ngSwitchCase="'RUB'" src="/assets/new_assets/img/flag_ru.png" alt="RUB" />
       </span>
       <!--<span>{{ account?.id }}</span>-->
-      <span *ngIf="account?.active">{{ account?.id }} <a href="#" (click)="handleLock($event, account?.id)">Lock</a></span>
-      <span *ngIf="account?.locked">{{ account?.id }} <a href="#" (click)="handleUnlock($event, account?.id)">Unlock</a></span>
+      <span *ngIf="account?.active">{{ account?.id }} <a href="#" (click)="handleLock($event, account?.id)"><img src="/assets/new_assets/img/Lock.png"></a></span>
+      <span *ngIf="account?.locked">{{ account?.id }} <a href="#" (click)="handleUnlock($event, account?.id)"><img src="/assets/new_assets/img/Unlock.png"></a></span>
     </div>
   </div>
   <h4 class="dashboard-account-list__total">{{ account?.sum }} <span>{{ account?.currency }}</span></h4>

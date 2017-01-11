@@ -16,7 +16,7 @@ export class NewCabinetHeaderComponent implements OnInit {
 
   ngOnInit(){
     this.burgerButton();
-    this.activeLinks();
+    // this.activeLinks();
   }
 
 
@@ -66,12 +66,12 @@ export class NewCabinetHeaderComponent implements OnInit {
     });
   }
 
-  activeLinks(){
-    $('.dash-main-menu li').click(function(){
-      $('.dash-main-menu li').removeClass('active');
-      $(this).addClass('active');
-    });
-
-  }
+  // activeLinks(){
+  //   $('.dash-main-menu li').click(function(){
+  //     $('.dash-main-menu li').removeClass('active');
+  //     $(this).addClass('active');
+  //   });
+  //
+  // }
 
 }

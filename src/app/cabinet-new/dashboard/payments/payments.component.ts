@@ -1,10 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+
+declare const $: any;
 
 @Component({
     selector: 'payments-component',
     templateUrl: 'payments.component.html'
 })
 
-export class PaymentsComponent {
+export class PaymentsComponent implements OnInit, OnDestroy {
 
+    ngOnInit(){
+        this.activeLink();
+    }
+
+    ngOnDestroy(){
+        this.unActiveLink();
+    }
+
+    activeLink(){
+        $('#payments_link').addClass('active')
+    }
+
+    unActiveLink(){
+        $('#payments_link').removeClass('active')
+    }
 }
