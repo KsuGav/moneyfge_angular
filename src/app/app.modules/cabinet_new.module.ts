@@ -11,7 +11,7 @@ import { FillAccountPopupComponent } from '../cabinet-new/dashboard/fill-account
 import { TransferPopupComponent } from '../cabinet-new/dashboard/transfer-popup/transfer-popup.component';
 
 
-import { ReplenishComponent } from '../cabinet-new/dashboard/replenishment/replenish.component';
+import { PaymentsComponent } from '../cabinet-new/dashboard/payments/payments.component';
 import { TransfersComponent } from '../cabinet-new/dashboard/transfers/transfers.component';
 import { Cashouts1Component } from '../cabinet-new/dashboard/cashouts1/cashouts1.component';
 import { Cashouts2Component } from '../cabinet-new/dashboard/cashouts2/cashouts2.copmonent';
@@ -32,7 +32,7 @@ export const CABINETNEW: any[]=[
   , FillAccountPopupComponent
   , TransferPopupComponent
 
-    ,ReplenishComponent
+    ,PaymentsComponent
     ,TransfersComponent
     ,Cashouts1Component
     ,Cashouts2Component
