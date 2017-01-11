@@ -1,8 +1,8 @@
-<div (onClosed)="handleOnClosed()" class="white-popup add-bill-small mfp-hide zoom-anim-dialog">
-    <button type="button" (click)="close()" class="mfp-close big">&#215;</button>
-    <h4 class="popup-title">Thanks!</h4>
-    <div class="msg-success">
-        <div class="thumb"><i class="fa fa-thumbs-o-up"></i></div>
-        <p>Operation was <br>SUCCESSFULLY!</p>
+<dialog-component #dialog [title]="'Thanks!'" [size]="'sm'">
+    <div dialog-body>
+        <div class="msg-success">
+            <div class="thumb"><i class="fa fa-thumbs-o-up"></i></div>
+            <p>Operation was <br>SUCCESSFULLY!</p>
+        </div>
     </div>
-</div>
+</dialog-component>

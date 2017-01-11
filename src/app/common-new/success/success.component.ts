@@ -18,9 +18,9 @@ export class SuccessComponent {
         this.dialog.open();
     }
 
-    handleOnClosed() {
-        this.loader.toggle(false);
-    }
+    // handleOnClosed() {
+    //     this.loader.toggle(false);
+    // }
 
     close(){
         this.dialog.close();

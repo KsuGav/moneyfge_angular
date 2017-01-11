@@ -1,6 +1,7 @@
 <success-component #success></success-component>
 
-<dialog-component #dialog [title]="'New account'" (onClosed)="handleOnClosed()">
+<!--<dialog-component #dialog [title]="'New account'" (onClosed)="handleOnClosed()">-->
+<dialog-component #dialog [title]="'New account'" (onClosed)="close()">
   <!--<div dialog-body>-->
     <!--<div class="row">-->
       <!--<div class="col-md-4 col-md-offset-4">-->
@@ -28,7 +29,7 @@
           <!--<p class="account-fill-form__subtitle">Number of new account</p>-->
           <input class="input-medium input-white" id="CreditCardInput3" type="text" placeholder="0000 0000 0000 0000" required>
           <div class="text-right">
-            <button (click)="createAccount()" class="btn btn-medium btn-accent open-popup-link">Create</button>
+            <button (click)="ifSuccess()" class="btn btn-medium btn-accent open-popup-link">Create</button>
           </div>
         </div>
         <div class="col-sm-6">

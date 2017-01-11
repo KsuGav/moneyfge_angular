@@ -176,3 +176,6 @@
     border-top: 1px solid rgba(134, 131, 131, 0.24);
     padding-top: 5px;
 }
+.msg-success p {
+    text-align: center;
+}

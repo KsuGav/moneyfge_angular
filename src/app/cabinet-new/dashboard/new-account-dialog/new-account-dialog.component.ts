@@ -26,6 +26,7 @@ export class NewAccountDialogComponent {
 
   currencies: string[] = CURRENCIES;
 
+
   constructor(
     private fb: FormBuilder,
     private accountService: n_AccountService
@@ -57,7 +58,7 @@ export class NewAccountDialogComponent {
           toastr.error(err.json().message);
         }
       );
-    this.success.open()
+
   }
 
   open() {
@@ -68,8 +69,13 @@ export class NewAccountDialogComponent {
     this.dialog.close();
   }
 
-  handleOnClosed() {
-    this.loader.toggle(false);
+  // handleOnClosed() {
+  //   this.loader.toggle(false);
+  // }
+
+  ifSuccess(){
+    this.success.open();
+    this.dialog.close();
   }
 
 
