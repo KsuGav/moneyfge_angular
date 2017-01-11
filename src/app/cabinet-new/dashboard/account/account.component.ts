@@ -37,4 +37,11 @@ export class AccountComponent {
     //this.onSelect.emit(id);
   }
 
+  selectAccount(element: Element) {
+    //$(element)
+    // make current account active and other non-active
+    element.classList.add('active');
+
+  }
+
 }

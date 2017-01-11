@@ -3211,6 +3211,9 @@ section.padding-small {
   .money-course p {
     margin-top: 5px;
     margin-bottom: 15px; }
+  .money-course span {
+    margin-right: 15px;
+  }
 
 .merch-btn {
   display: inline-block;
@@ -3219,7 +3222,8 @@ section.padding-small {
   font-size: 16px;
   letter-spacing: 0.5px;
   margin: 0;
-  padding: 3px 30px; }
+  padding: 3px 30px;
+  margin-bottom: 10px; }
 
 .expenses-cash-panel {
   -webkit-border-radius: 5px;
@@ -3297,7 +3301,7 @@ section.padding-small {
           margin-left: 10px;
           cursor: pointer; }
   .expenses-cash-panel-content {
-    padding: 20px 15px 15px;
+    padding: 20px 15px 10px 15px;
     color: #fff; }
   .expenses-cash-panel-cashlist > li {
     padding: 7px 0;

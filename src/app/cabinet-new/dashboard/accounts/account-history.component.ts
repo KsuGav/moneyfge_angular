@@ -2,6 +2,7 @@ import { Component, ViewChild  } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { n_AccountService } from '../../../app.services/Account.service';
 import { AccountHistoryRecord } from '../../../app.models/AccountHistoryRecord.model';
+import { LoaderComponent } from "../../../common-new/loader/loader.component";
 
 @Component({
     selector: 'account-history-component',
@@ -10,6 +11,9 @@ import { AccountHistoryRecord } from '../../../app.models/AccountHistoryRecord.m
 export class AccountHistoryComponent implements OnInit {
 
     history: AccountHistoryRecord[] = [];
+    noHistory: Boolean = false;
+
+    @ViewChild('accountHistoryLoader') historyLoader: LoaderComponent;
 
     constructor(
         private accountService: n_AccountService
@@ -17,6 +21,8 @@ export class AccountHistoryComponent implements OnInit {
         this.accountService.onGetAccountHistory.subscribe(
             res => {
                 this.history = res;
+                this.noHistory = !res || res.length < 1;
+                this.historyLoader.toggle(false);
                 console.log('got history for account');
             }
         );
@@ -27,8 +33,8 @@ export class AccountHistoryComponent implements OnInit {
     }
 
     getHistory() {
-        //!todo: got history for current account
-        this.accountService.getAccountHistory(10000018);
+        this.historyLoader.toggle(true);
+        //this.accountService.getAccountHistory(this.accountService.initialAccountId);
     }
 
 }
