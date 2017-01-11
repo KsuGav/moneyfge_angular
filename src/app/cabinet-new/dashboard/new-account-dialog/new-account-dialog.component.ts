@@ -4,6 +4,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { n_AccountService, CURRENCIES } from '../../../app.services/Account.service';
 import { DialogComponent } from '../../../common-new/dialog/dialog.component';
 import { LoaderComponent } from '../../../common-new/loader/loader.component';
+import { SuccessComponent } from '../../../common-new/success/success.component';
+
 
 declare const toastr: any;
 
@@ -16,6 +18,9 @@ export class NewAccountDialogComponent {
   @ViewChild('dialog') dialog: DialogComponent;
 
   @ViewChild('loader') loader: LoaderComponent;
+
+  @ViewChild('success') success: SuccessComponent;
+
 
   form: FormGroup;
 
@@ -52,14 +57,20 @@ export class NewAccountDialogComponent {
           toastr.error(err.json().message);
         }
       );
+    this.success.open()
   }
 
   open() {
     this.dialog.open();
   }
 
+  close() {
+    this.dialog.close();
+  }
+
   handleOnClosed() {
     this.loader.toggle(false);
   }
+
 
 }

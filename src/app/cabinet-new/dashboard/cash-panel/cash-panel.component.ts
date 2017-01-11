@@ -13,7 +13,8 @@ declare const Chart: any;
 export class CashPanelComponent implements AfterViewInit {
 
   ngAfterViewInit() {
-    this.setupIcons();
+    // this.setupIcons();
+    this.hoverSettings();
     this.setupCurrencyListToggle();
     this.setupCalendars();
     // this.setupPieChart();
@@ -21,28 +22,35 @@ export class CashPanelComponent implements AfterViewInit {
     this.setupRange();
   }
 
-  setupIcons() {
-    $('.expenses-cash-panel-heading__icons li').on('click', function() {
-      $(this).siblings().children().attr("src", function(index, attr){
-        return attr.replace("-w.png", ".png");
-      });
-      $(this).children().attr("src", function(index, attr){
-        if(!attr.includes('-w')) {
-          return attr.replace('.png', '-w.png');
-        } else {
-          return attr;
-        }
-      });
-    });
-
-    $('.expenses-cash-panel-heading__icons li').click(function(){
-      var tab_id = $(this).attr('data-id');
-      $('.expenses-cash-panel-heading__icons li').removeClass('active');
-      $('.expenses-cash-panel .graph-content').removeClass('active');
-      $(this).addClass('active');
-      $("#"+tab_id).addClass('active');
-    });
+  hoverSettings(){
+    $('.expenses-cash-panel-heading__icons li').hover(function(){
+      $(this).children().attr('src', '/assets/new_assets/img/cash-panel-icon-10-w.png')
+    }, function(){
+      $(this).children().attr('src', '/assets/new_assets/img/cash-panel-icon-10.png')
+    })
   }
+  // setupIcons() {
+  //   $('.expenses-cash-panel-heading__icons li').on('click', function() {
+  //     $(this).siblings().children().attr("src", function(index, attr){
+  //       return attr.replace("-w.png", ".png");
+  //     });
+  //     $(this).children().attr("src", function(index, attr){
+  //       if(!attr.includes('-w')) {
+  //         return attr.replace('.png', '-w.png');
+  //       } else {
+  //         return attr;
+  //       }
+  //     });
+  //   });
+  //
+  //   $('.expenses-cash-panel-heading__icons li').click(function(){
+  //     var tab_id = $(this).attr('data-id');
+  //     $('.expenses-cash-panel-heading__icons li').removeClass('active');
+  //     $('.expenses-cash-panel .graph-content').removeClass('active');
+  //     $(this).addClass('active');
+  //     $("#"+tab_id).addClass('active');
+  //   });
+  // }
 
   setupCurrencyListToggle() {
     $('.summa-list-btn').click(function (e) {

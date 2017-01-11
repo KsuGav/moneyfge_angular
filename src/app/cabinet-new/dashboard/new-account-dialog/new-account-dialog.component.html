@@ -1,3 +1,5 @@
+<success-component #success></success-component>
+
 <dialog-component #dialog [title]="'New account'" (onClosed)="handleOnClosed()">
   <!--<div dialog-body>-->
     <!--<div class="row">-->
@@ -23,27 +25,26 @@
     <form>
       <div class="row">
         <div class="col-sm-6">
-          <p class="account-fill-form__subtitle">Number of new account</p>
+          <!--<p class="account-fill-form__subtitle">Number of new account</p>-->
           <input class="input-medium input-white" id="CreditCardInput3" type="text" placeholder="0000 0000 0000 0000" required>
           <div class="text-right">
-            <a href="#AddBillPopupSuccess" class="btn btn-medium btn-accent open-popup-link">Create</a>
+            <button (click)="createAccount()" class="btn btn-medium btn-accent open-popup-link">Create</button>
           </div>
         </div>
         <div class="col-sm-6">
-          <p class="account-fill-form__subtitle">Select currency</p>
+          <!--<p class="account-fill-form__subtitle">Select currency</p>-->
           <select id="PhoneNumber" class="custom-select select-medium" data-placeholder="USD - Доллары США" required>
             <option>&nbsp;</option>
             <option value="0">USD - Доллары США</option>
             <option value="1">UAH - Украинские гривны</option>
             <option value="2">EUR - Евро</option>
           </select>
-          <a href="#" class="btn btn-medium btn-grey close-popup">Cancel</a>
+          <button (click)="close()" class="btn btn-medium btn-grey close-popup">Cancel</button>
         </div>
       </div>
     </form>
   </div>
 
-
-
 </dialog-component>
+
 

@@ -7,16 +7,12 @@
                 <div class="dashboard-main-content">
 
                     <div class="clearfix"></div>
-                    <div class="money-course">
-                        <p>
-                            Exchange rate:
-                            <span>$: 26.400 / 27.248</span>
-                            <span>€:  27.80 / 28.41</span>
-                        </p>
-                    </div>
+
+                    <money-course-component></money-course-component>
+
                     <div class="fl-right">
                         <ul class="breadcrumbs">
-                            <li><a href="#">Main</a></li>
+                            <li><a [routerLink]="['/user/dashboard']">Main</a></li>
                             <li><a href="#">Transfers</a></li>
                         </ul>
                     </div>

@@ -3,7 +3,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h4 class="modal-title text-center">{{ title }}</h4>
-        <button title="%title%" type="button" class="mfp-close big">&#215;</button>
+        <button type="button" (click)="close()" class="mfp-close big">&#215;</button>
       </div>
       <div class="modal-body">
         <ng-content select="[dialog-body]"></ng-content>

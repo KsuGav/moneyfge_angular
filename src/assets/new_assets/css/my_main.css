@@ -164,8 +164,15 @@
     font-size: 15px;
     font-weight: normal;
     color: #345382; }
-.select2-container--default .select2-selection--single .select2-selection__rendered{
+.select2-container--default .select2-selection--single .select2-selection__rendered,.input-medium.input-white{
     border: 1px solid rgba(0, 0, 0, 0.1);
     -webkit-box-shadow: none;
     box-shadow: none;
+}
+.expenses-cash-panel .expenses-cash-panel-right{
+        min-height: 266px;
+}
+#header_sign_out{
+    border-top: 1px solid rgba(134, 131, 131, 0.24);
+    padding-top: 5px;
 }

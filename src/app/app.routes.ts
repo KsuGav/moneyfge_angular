@@ -39,6 +39,7 @@ import { TransfersComponent } from './cabinet-new/dashboard/transfers/transfers.
 import { Cashouts1Component } from './cabinet-new/dashboard/cashouts1/cashouts1.component';
 import { Cashouts2Component } from './cabinet-new/dashboard/cashouts2/cashouts2.copmonent';
 import { Cashouts3Component } from './cabinet-new/dashboard/cashouts3/cashouts3.component';
+import { SuccessComponent } from './common-new/success/success.component';
 
 
 
