@@ -170,7 +170,7 @@
     box-shadow: none;
 }
 .expenses-cash-panel .expenses-cash-panel-right{
-        min-height: 266px;
+    min-height: 263px;
 }
 #header_sign_out{
     border-top: 1px solid rgba(134, 131, 131, 0.24);
@@ -178,4 +178,14 @@
 }
 .msg-success p {
     text-align: center;
+}
+
+.money-course span {
+    margin-right: 15px; }
+
+.merch-btn {
+    margin-bottom: 10px; }
+
+.expenses-cash-panel-content {
+    padding: 20px 15px 10px 15px;
 }

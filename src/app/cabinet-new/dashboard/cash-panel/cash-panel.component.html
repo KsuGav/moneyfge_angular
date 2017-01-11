@@ -3,8 +3,8 @@
     <div class="expenses-cash-panel-heading">
       <h4 class="expenses-cash-panel-heading__title">Total</h4>
       <div class="expenses-cash-panel-heading__datepicker calendar">
-        <span>on</span>
-        <input type="text" id="mytarget" value="12.12.2016">
+        <span>as of</span>
+        <input type="text" id="mytarget" value="{{statusDate}}">
         <div class="monthly" id="mycalendar1" style="display:none;"></div>
       </div>
     </div>
@@ -29,14 +29,14 @@
           <div class="expenses-cash-panel-cashlist__icon">
             <img src="/assets/new_assets/img/cash-panel-icon-2.png" alt="Icon">
           </div>
-          <p class="expenses-cash-panel-cashlist__title">Spend</p>
-          <p class="expenses-cash-panel-cashlist__summa small">-0.00 $</p>
+          <p class="expenses-cash-panel-cashlist__title">Expenses</p>
+          <p class="expenses-cash-panel-cashlist__summa small">- 0.00 $</p>
         </li>
         <li>
           <div class="expenses-cash-panel-cashlist__icon">
             <img src="/assets/new_assets/img/cash-panel-icon-3.png" alt="Icon">
           </div>
-          <p class="expenses-cash-panel-cashlist__title">Incoming</p>
+          <p class="expenses-cash-panel-cashlist__title">Income</p>
           <p class="expenses-cash-panel-cashlist__summa small">+ 0.00 $</p>
         </li>
       </ul>
@@ -44,9 +44,9 @@
   </div>
   <div class="expenses-cash-panel-right equal-expenses">
     <div class="expenses-cash-panel-heading">
-      <h4 class="expenses-cash-panel-heading__title">Spend</h4>
+      <h4 class="expenses-cash-panel-heading__title">Expenses</h4>
       <div class="expenses-cash-panel-heading__datepicker calendar">
-        <input type="text" id="mytarget2" value="December 2016">
+        <input type="text" id="mytarget2" value="{{chartPeriod}}">
         <div class="monthly" id="mycalendar2" style="display:none;"></div>
       </div>
       <div class="expenses-cash-panel-heading__icons">

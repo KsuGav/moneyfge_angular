@@ -1,21 +1,45 @@
-<ul class="expenses-latest-bills_content__bill-list">
-    <loader-component #accountHistoryLoader>
-        <li *ngIf="noHistory">
-            <div class="expenses-latest-bills_content__icon">
-                <img id="no_payments_img" src="/assets/new_assets/img/Circled-cross.png">
+<div class="expenses-latest-bills">
+    <div class="expenses-latest-bills_header">
+        <img src="/assets/new_assets/img/cash-panel-icon-4.png" alt="Icon" class="expenses-latest-bills_header__icon">
+        <span class="expenses-latest-bills_header__date">{{todayDate}}</span>
+        <div class="expenses-latest-bills_header__right">
+            <form>
+                <input type="text" placeholder="Search">
+                <button type="submit" class="search"><img src="/assets/new_assets/img/cash-panel-icon-12.png" alt="Icon"></button>
+            </form>
+            <div class="expenses-latest-bills_header__setting-btn">
+                <img src="/assets/new_assets/img/cash-panel-icon-9.png" alt="Icon">
             </div>
-            <p class="expenses-latest-bills_content__bill">
-                You have no payments
-            </p>
-            <p class="expenses-latest-bills_content__total">0.00 $</p>
-        </li>
-        <li *ngFor="let record of history">
-            <div class="expenses-latest-bills_content__icon"><img src="/assets/new_assets/img/cash-panel-icon-13.png" alt="Icon"></div>
-            <p class="expenses-latest-bills_content__time">{{record.date}}</p>
-            <p class="expenses-latest-bills_content__bill">
-                {{record.info}}
-            </p>
-            <p class="expenses-latest-bills_content__total">{{record.znak_sum}}{{record.sum}} {{record.currency}}</p>
-        </li>
-    </loader-component>
-</ul>
+        </div>
+    </div>
+    <div class="expenses-latest-bills_content">
+        <ul class="expenses-latest-bills_content__bill-list">
+            <loader-component #accountHistoryLoader>
+                <li *ngIf="noHistory">
+                    <div class="expenses-latest-bills_content__icon">
+                        <img id="no_payments_img" src="/assets/new_assets/img/Circled-cross.png">
+                    </div>
+                    <p class="expenses-latest-bills_content__bill">
+                        You have no payments
+                    </p>
+                    <p class="expenses-latest-bills_content__total">0.00 $</p>
+                </li>
+                <li *ngFor="let record of history">
+                    <div class="expenses-latest-bills_content__icon"><img src="/assets/new_assets/img/cash-panel-icon-13.png" alt="Icon"></div>
+                    <p class="expenses-latest-bills_content__time">{{record.date}}</p>
+                    <p class="expenses-latest-bills_content__bill">
+                        {{record.info}}
+                    </p>
+                    <p class="expenses-latest-bills_content__total">{{record.znak_sum}}{{record.sum}} {{record.currency}}</p>
+                </li>
+            </loader-component>
+        </ul>
+    </div>
+    <div class="expenses-latest-bills_footer">
+        <div class="expenses-latest-bills_footer__showmore">
+            <i class="fa fa-arrow-down"></i>
+            <span id="down">More</span>
+            <span id="up">Less</span>
+        </div>
+    </div>
+</div>

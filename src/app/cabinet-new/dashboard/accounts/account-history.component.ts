@@ -13,6 +13,10 @@ export class AccountHistoryComponent implements OnInit {
     history: AccountHistoryRecord[] = [];
     noHistory: Boolean = false;
 
+    todayDate: string = `Today, ${new Date().toLocaleDateString()}`;
+    totalPlus: number = 0;
+    totalMinus: number = 0;
+
     @ViewChild('accountHistoryLoader') historyLoader: LoaderComponent;
 
     constructor(
@@ -30,6 +34,11 @@ export class AccountHistoryComponent implements OnInit {
 
     ngOnInit() {
         this.getHistory();
+        this.setupElements();
+    }
+
+    setupElements() {
+
     }
 
     getHistory() {

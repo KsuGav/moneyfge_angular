@@ -83,7 +83,7 @@ export class DashboardComponent implements AfterViewInit {
   }
 
   setupElements() {
-    $('.expenses-latest-bills_header__date').val('qwe');
+    //$('.expenses-latest-bills_header__date').html('qwe');
   }
 
 }

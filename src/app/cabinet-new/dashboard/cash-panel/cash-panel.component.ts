@@ -12,9 +12,19 @@ declare const Chart: any;
 })
 export class CashPanelComponent implements AfterViewInit {
 
+  chartPeriod: string = ``;
+  statusDate: string = 'Today';
+
+  constructor(){
+    let locale = window.navigator.userLanguage || window.navigator.language;
+    let d = new Date();
+    d.setDate(1);
+    d.setMonth(d.getMonth() - 1);
+    this.chartPeriod = `${d.toLocaleString(locale, {month: "long"})} ${d.getFullYear()}`;
+  }
+
   ngAfterViewInit() {
-    // this.setupIcons();
-    this.hoverSettings();
+    //this.setupIcons();
     this.setupCurrencyListToggle();
     this.setupCalendars();
     // this.setupPieChart();

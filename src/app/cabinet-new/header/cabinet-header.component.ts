@@ -27,7 +27,7 @@ export class NewCabinetHeaderComponent implements OnInit {
 
   burgerButton(){
     if ($(window).width() > 992) {
-      var id;
+      let id;
       $('.nav_block_first>li').hover(function () {
 
         id = $(this).attr('data-id');
