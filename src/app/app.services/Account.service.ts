@@ -27,6 +27,8 @@ export class n_AccountService {
 
   //onSelectAccount: EventEmitter<number> = new EventEmitter<number>();
 
+  initialAccountId: number = 0;
+
   constructor(
     private http: Http,
     private appState: AppState
@@ -56,6 +58,15 @@ export class n_AccountService {
         res.deleted.map((acc: any) => deleted.push(new Account(
           acc.id, acc.user.id, acc.currency, acc.sum, acc.lock, acc.delete, !(acc.lock || acc.delete)
         )));
+
+        if('undefined' !== typeof res.active[0]) {
+          this.initialAccountId = res.active[0].id;
+        } else if('undefined' !== typeof res.lock[0]) {
+          this.initialAccountId = res.lock[0].id;
+        }
+
+        this.getAccountHistory(this.initialAccountId);
+
         return {active, lock, deleted};
       })
       .subscribe(
@@ -161,6 +172,10 @@ export class n_AccountService {
   }
 
   getAccountHistory(account) {
+    if(account == 0) {
+      this.onGetAccountHistory.emit([]);
+      return null;
+    }
     const headers = new Headers();
     headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
     headers.append('Content-Type', 'application/json');
