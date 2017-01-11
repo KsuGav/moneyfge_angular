@@ -189,3 +189,7 @@
 .expenses-cash-panel-content {
     padding: 20px 15px 10px 15px;
 }
+
+.transfer-form .input-small-width:read-only {
+    background: #ebebe4;
+}

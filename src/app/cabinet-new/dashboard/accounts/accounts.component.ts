@@ -26,7 +26,7 @@ export class AccountsComponent implements OnInit {
 
   lock: Account[] = [];
 
-  private _id: number;
+  private _id: number; // number of account to be locked / unlocked
 
   constructor(
     private accountService: n_AccountService
