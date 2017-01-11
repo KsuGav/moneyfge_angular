@@ -9,6 +9,8 @@ import { FastBtnsComponent } from '../cabinet-new/dashboard/fast-btns/fast-btns.
 import { FillPhonePopupComponent } from '../cabinet-new/dashboard/fill-phone-popup/fill-phone-popup.component';
 import { FillAccountPopupComponent } from '../cabinet-new/dashboard/fill-account-popup/fill-account-popup.component';
 import { TransferPopupComponent } from '../cabinet-new/dashboard/transfer-popup/transfer-popup.component';
+import { MoneyCourseComponent } from '../cabinet-new/dashboard/money-course/money-course.component';
+import { AccountHistoryComponent } from '../cabinet-new/dashboard/accounts/account-history.component';
 
 
 import { PaymentsComponent } from '../cabinet-new/dashboard/payments/payments.component';
@@ -31,6 +33,8 @@ export const CABINETNEW: any[]=[
   , FillPhonePopupComponent
   , FillAccountPopupComponent
   , TransferPopupComponent
+  , MoneyCourseComponent
+  , AccountHistoryComponent
 
     ,PaymentsComponent
     ,TransfersComponent

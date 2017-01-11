@@ -16,8 +16,8 @@ export class CashPanelComponent implements AfterViewInit {
     this.setupIcons();
     this.setupCurrencyListToggle();
     this.setupCalendars();
-    this.setupPieChart();
-    this.setupLineChart();
+    // this.setupPieChart();
+    // this.setupLineChart();
     this.setupRange();
   }
 
@@ -27,7 +27,11 @@ export class CashPanelComponent implements AfterViewInit {
         return attr.replace("-w.png", ".png");
       });
       $(this).children().attr("src", function(index, attr){
-        return attr.replace(".png", "-w.png");
+        if(!attr.includes('-w')) {
+          return attr.replace('.png', '-w.png');
+        } else {
+          return attr;
+        }
       });
     });
 

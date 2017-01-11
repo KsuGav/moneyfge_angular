@@ -16,6 +16,7 @@ import { AppState, InternalStateType } from './app.service'; // OLD
 import { AppService } from './app.services/App.service';
 import { User } from './services/service.user'; // OLD
 import { UserService } from './app.services/User.service';
+import { CommonService } from './app.services/Common.service';
 import { ModalService } from './services/modal.service'; // OLD
 import { AccountService } from './services/account.service'; // OLD
 import { ReplenishService } from './app.services/Replenish.service';
@@ -27,9 +28,10 @@ import { LoggedInGuard } from './services/logged-in.guard'; // OLD
 
 import { HOMENEW } from './app.modules/home_new.module';
 import { CABINETNEW } from './app.modules/cabinet_new.module';
-import { CABINET } from './app.modules/cabinet.module';
-import { COMMON } from './app.modules/common.modules';
+// import { COMMON } from './app.modules/common.modules';
 import { COMMON_NEW } from './app.modules/common_new.modules';
+
+import { ShareModule } from './common/share.module';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login/login.component';
@@ -69,19 +71,21 @@ type StoreType = {
     , MarketComponent
     , NoContentComponent
 
-  ].concat(HOMENEW, CABINETNEW, CABINET, COMMON, COMMON_NEW),
+  ].concat(HOMENEW, CABINETNEW, COMMON_NEW),
   imports: [ // import Angular's modules
     BrowserModule
     , FormsModule
     , ReactiveFormsModule
     , HttpModule
     , RouterModule.forRoot(ROUTES, { useHash: false, preloadingStrategy: PreloadAllModules })
+    , ShareModule
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS // OLD
     , APP_PROVIDERS // OLD
     , User // OLD
     , UserService
+    , CommonService
     , AppService
     , ReplenishService
     , LoggedInGuard // OLD
