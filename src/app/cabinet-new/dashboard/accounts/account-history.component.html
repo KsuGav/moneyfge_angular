@@ -3,13 +3,11 @@
         <li *ngIf="noHistory">
             <div class="expenses-latest-bills_content__icon">
                 <img id="no_payments_img" src="/assets/new_assets/img/Circled-cross.png">
-                <img src="/assets/new_assets/img/cash-panel-icon-13.png" alt="Icon">
             </div>
-            <p class="expenses-latest-bills_content__time">Today 12:30</p>
             <p class="expenses-latest-bills_content__bill">
                 You have no payments
             </p>
-            <p class="expenses-latest-bills_content__total">-0.00 $</p>
+            <p class="expenses-latest-bills_content__total">0.00 $</p>
         </li>
         <li *ngFor="let record of history">
             <div class="expenses-latest-bills_content__icon"><img src="/assets/new_assets/img/cash-panel-icon-13.png" alt="Icon"></div>
