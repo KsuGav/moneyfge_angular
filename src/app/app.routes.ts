@@ -39,7 +39,8 @@ import { TransfersComponent } from './cabinet-new/dashboard/transfers/transfers.
 import { Cashouts1Component } from './cabinet-new/dashboard/cashouts1/cashouts1.component';
 import { Cashouts2Component } from './cabinet-new/dashboard/cashouts2/cashouts2.copmonent';
 import { Cashouts3Component } from './cabinet-new/dashboard/cashouts3/cashouts3.component';
-import { SuccessComponent } from './common-new/success/success.component';
+import { MerchantPanelComponent } from './cabinet-new/dashboard/merchant-panel/merchant-panel.component';
+import { SettingsComponent } from './cabinet-new/header/settings/settings.component';
 
 
 
@@ -92,6 +93,12 @@ export const ROUTES: Routes = [
   , { path: 'user/cashouts3',
     canActivate: [ LoggedInGuard ],
     component: Cashouts3Component}
+  , { path: 'user/settings',
+    canActivate: [ LoggedInGuard ],
+    component: SettingsComponent}
+  , { path: 'user/merchant-panel',
+    canActivate: [ LoggedInGuard ],
+    component: MerchantPanelComponent}
   , {path: 'user/dashboard', component: DashboardComponent, canActivate: [ LoggedInGuard ]}
   , { path: 'user/cabinet', loadChildren: './cabinet/cabinet.module#CabinetModule' }
   , { path: '**',    component: NoContentComponent }

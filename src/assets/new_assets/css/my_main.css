@@ -193,6 +193,23 @@
 .transfer-form .input-small-width:read-only {
     background: #ebebe4;
 }
+.modal-content{
+    border-radius: 0px;
+}
+.dashboard-header .profile .profile-name{
+    max-width: 100px;
+    margin-left: 5px;
+    margin-top: 15px;
+}
+.dashboard-header .top-profile{
+    margin-left: 35px;
+}
+.dashboard-header .notification-block{
+    margin-left: 30px;
+}
+ul.dash-main-menu.clearfix{
+    padding-left: 20px;
+}
 
 p.expenses-latest-bills_content__bill.no-payment-content {
     top: 15px;
@@ -225,4 +242,14 @@ p.expenses-latest-bills_content__bill.no-payment-content {
     max-width: 320px;
     background-color: #fff;
     padding-left: 30px;
+}
+.lang_block{
+    margin-right: -80px;
+    z-index: 100;
+}
+#popup-content-right{
+    float: right;
+}
+.list-terms{
+    padding-left: 14px;
 }

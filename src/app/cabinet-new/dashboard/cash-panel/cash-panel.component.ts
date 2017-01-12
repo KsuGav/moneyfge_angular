@@ -25,6 +25,7 @@ export class CashPanelComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     //this.setupIcons();
+    this.hoverSettings();
     this.setupCurrencyListToggle();
     this.setupCalendars();
     // this.setupPieChart();

@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 
 import { AppService } from './App.service';
+import { User } from '../app.models/User.model';
+import {Observable} from 'rxjs/Rx';
+
 
 @Injectable()
 export class UserService {
@@ -24,6 +27,18 @@ export class UserService {
       .put(locUrl, null, {headers: headers})
       .map(res => res.json())
     ;
+  }
+
+  getUserInfo(): Observable<User[]>  {
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
+    const locUrl = `${this._appService.get('apiEndpoint')}/user/`;
+    let log = this._http
+        .get(locUrl, {headers: headers})
+        .map(res => res.json());
+        // .map((res: any) => new User());
+    // console.log(log);
+    return log;
   }
 
 }

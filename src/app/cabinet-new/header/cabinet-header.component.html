@@ -10,7 +10,7 @@
           </a>
         </div>
 
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
           <form class="header-search clearfix">
             <input type="text" class="header-search__input" placeholder="Пошук...">
             <button><i class="fa fa-search"></i></button>
@@ -38,7 +38,7 @@
 
         </div>
 
-        <div class="col-lg-2 col-xs-12">
+        <div class="col-lg-3 col-xs-12">
           <div class="user-wrap">
             <div class="user">
               <div class="notification-block">
@@ -58,13 +58,13 @@
               <div class="top-profile">
                 <div class="profile" id="ProfileMenuWrap">
                   <div class="profile-img" style="background-image: url('/assets/new_assets/img/User.png')"></div>
-                  <span class="profile-name">Name<br> </span>
+                  <span class="profile-name">{{user?.telephone}}<br> </span>
                   <div class="profile-menu">
                     <ul>
                       <li><a href="#"><i class="fa fa-history"></i> History</a></li>
                       <li><a href="#"><i class="fa fa-gift"></i> Bonus</a></li>
                       <li><a href="#"><i class="fa fa-info"></i> Help</a></li>
-                      <li><a href="#"><i class="fa fa-gear"></i> Settings</a></li>
+                      <li><a [routerLink]="['/user/settings']"><i class="fa fa-gear"></i> Settings</a></li>
                       <li id="header_sign_out"><a href="#" (click)="logout($event)"><i class="fa fa-sign-out"></i> Sign out</a></li>
                     </ul>
                   </div>
