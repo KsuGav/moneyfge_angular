@@ -37,7 +37,7 @@ export class UserService {
         .get(locUrl, {headers: headers})
         .map(res => res.json());
         // .map((res: any) => new User());
-    console.log(log);
+    // console.log(log);
     return log;
   }
 

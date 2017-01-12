@@ -214,3 +214,6 @@ ul.dash-main-menu.clearfix{
 p.expenses-latest-bills_content__bill.no-payment-content {
     top: 15px;
 }
+.lang_block{
+    margin-right: -60px;
+}
