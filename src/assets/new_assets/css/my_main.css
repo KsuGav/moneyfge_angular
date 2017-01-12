@@ -253,3 +253,8 @@ p.expenses-latest-bills_content__bill.no-payment-content {
 .list-terms{
     padding-left: 14px;
 }
+
+.top_line .overlay-wrapper {
+    position: relative;
+    min-height: 20px;
+}
