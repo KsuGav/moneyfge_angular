@@ -197,3 +197,32 @@
 p.expenses-latest-bills_content__bill.no-payment-content {
     top: 15px;
 }
+
+.transfer-switcher .s1, .transfer-switcher .s2, .transfer-switcher .s3 {
+    cursor: pointer;
+}
+
+.transfer-switcher .s1, .transfer-switcher .s3 {
+    border-bottom: 1px dashed;
+}
+
+.transfer-switcher .s2 {
+    margin-top: 12px;
+    margin-right: 20px;
+}
+
+.transfer-switcher .s2 .dot {
+    height: 20px;
+    width: 20px;
+}
+
+.transfer-switcher .s2 .line {
+    width: 45px;
+    height: 12px;
+}
+
+#transferToInput {
+    max-width: 320px;
+    background-color: #fff;
+    padding-left: 30px;
+}

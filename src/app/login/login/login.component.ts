@@ -61,7 +61,7 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
       .userLoginStep1(this.login, this.password)
       .subscribe(
         (res: any) => {
-          if ('sms' in res) {
+          if (res != null && 'sms' in res) {
             this.appState.set('sms', res.sms);
             this.appState.set('username', res.username);
             this.appState.set('password', res.password);
@@ -69,7 +69,7 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
             this.router.navigate(['/user/sign-in/confirm']);
             return;
           }
-          if ('error' in res) {
+          if (res != null && 'error' in res) {
             this.errorMsg = res.error;
             this.modalService.hideLoader('login-form');
           }

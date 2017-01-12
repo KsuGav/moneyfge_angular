@@ -21,16 +21,22 @@
                     <form class="transfer-form" [formGroup]="form">
                         <div class="card card--lightgrey">
                             <loader-component #transferAccountsLoader>
-                            <p class="select-label">From account</p>
-                            <select formControlName="from" class="select-medium transfer-select" (change)="onFromChange($event.target.value)">
-                                <option disabled selected value="0">Select account</option>
-                                <option *ngFor="let acc of fromAccounts" value="{{acc.id}}" selected>My MoneyFGA &nbsp;&nbsp; {{acc.sum}} {{acc.currency}}</option>
-                            </select>
-                            <p class="select-label">To account</p>
-                            <select formControlName="to" class="select-medium transfer-select" (change)="onToChange($event.target.value)">
-                                <option disabled selected value="0">Select account</option>
-                                <option *ngFor="let acc of toAccounts" value="{{acc.id}}" selected>My MoneyFGA &nbsp;&nbsp; {{acc.sum}} {{acc.currency}}</option>
-                            </select>
+                                <p class="select-label">From account</p>
+                                <select required formControlName="from" class="select-medium transfer-select" id="fromMySelect" (change)="onFromChange($event.target.value)">
+                                    <option *ngFor="let acc of fromAccounts" value="{{acc.id}}">My MoneyFGA &nbsp;&nbsp; {{acc.sum}} {{acc.currency}}</option>
+                                </select>
+                                <div class="clearfix transfer-switcher">
+                                    <div class="s1 select-label" (click)="onOnesAccountSelected()">To one's account</div>
+                                    <div class="s2">
+                                        <div class="dot"></div>
+                                        <div class="line"></div>
+                                    </div>
+                                    <div class="s3 select-label" (click)="onYourAccountSelected()">To my account</div>
+                                </div>
+                                <input [hidden]="toMyAccount" required formControlName="to" class="input-medium input-white" id="transferToInput" (keyup)="onToChange($event.target.value)">
+                                <select [hidden]="!toMyAccount" required formControlName="to" class="select-medium transfer-select" id="toMySelect" (change)="onToChange($event.target.value)">
+                                    <option *ngFor="let acc of toAccounts" value="{{acc.id}}">My MoneyFGA &nbsp;&nbsp; {{acc.sum}} {{acc.currency}}</option>
+                                </select>
                             </loader-component>
                         </div>
 

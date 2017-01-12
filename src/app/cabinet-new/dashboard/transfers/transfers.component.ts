@@ -29,6 +29,7 @@ export class TransfersComponent implements OnInit, OnDestroy, AfterViewInit{
     fromAccountsLoaded: boolean;
     sumToPay: string = '0.00';
     private form: FormGroup;
+    toMyAccount: boolean = true;
 
     toAccount: number;
     subscription: any;
@@ -112,10 +113,6 @@ export class TransfersComponent implements OnInit, OnDestroy, AfterViewInit{
         //Selects
         $("#Phones1").select2();
 
-        $(".select-medium").select2({
-            minimumResultsForSearch: Infinity
-        });
-
         function formatTransfer (bill) {
             var $bill = $(
                 '<span><img src="/assets/new_assets/img/favicon/favicon1.png" class="transfer-img" /> ' + bill.text + '</span>'
@@ -123,10 +120,17 @@ export class TransfersComponent implements OnInit, OnDestroy, AfterViewInit{
             return $bill;
         };
 
-        $(".transfer-select").select2({
+        $("#fromMySelect").select2({
+            placeholder: 'Select account',
             templateResult: formatTransfer,
             templateSelection: formatTransfer,
-            minimumResultsForSearch: Infinity
+            minimumResultsForSearch: Infinity,
+        });
+        $("#toMySelect").select2({
+            placeholder: 'Select account',
+            templateResult: formatTransfer,
+            templateSelection: formatTransfer,
+            minimumResultsForSearch: Infinity,
         });
 
         $('.equal-height-column').equalHeights();
@@ -175,5 +179,15 @@ export class TransfersComponent implements OnInit, OnDestroy, AfterViewInit{
         return sum.toFixed(2).replace(/./g, function(c, i, a) {
             return i && c !== "." && ((a.length - i) % 3 === 0) ? ',' + c : c;
         });
+    }
+
+    onYourAccountSelected() {
+        this.toMyAccount = true;
+        $('#toMySelect').next().show();
+    }
+
+    onOnesAccountSelected() {
+        this.toMyAccount = false;
+        $('#toMySelect').next().hide();
     }
 }
