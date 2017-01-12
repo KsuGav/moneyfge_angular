@@ -1,4 +1,4 @@
-import {Component, OnInit, OnDestroy, ViewChild} from '@angular/core';
+import {Component, OnInit, OnDestroy, ViewChild, AfterViewInit} from '@angular/core';
 import { Account } from '../../../app.models/Account.model';
 import { n_AccountService } from '../../../app.services/Account.service';
 import {LoaderComponent} from "../../../common-new/loader/loader.component";
@@ -15,7 +15,7 @@ declare const $: any;
     templateUrl: 'transfers.component.html'
 })
 
-export class TransfersComponent implements OnInit, OnDestroy{
+export class TransfersComponent implements OnInit, OnDestroy, AfterViewInit{
 
     @ViewChild('transferAccountsLoader') accountsLoader: LoaderComponent;
     @ViewChild(SmsDialogComponent) smsDialog: SmsDialogComponent;
@@ -31,15 +31,16 @@ export class TransfersComponent implements OnInit, OnDestroy{
     private form: FormGroup;
 
     toAccount: number;
+    subscription: any;
 
     constructor(
         private accountService: n_AccountService,
         private fb: FormBuilder,
         private modalService: ModalService
     ) {
-        this.accountService.receiveAccounts.subscribe(
+
+        this.subscription = this.accountService.receiveAccounts.subscribe(
             res => {
-                console.log('accounts received');
                 this.accountsLoader.toggle(false);
                 this.fromAccounts = res.active;
                 this.fromAccountsLoaded = true;
@@ -91,7 +92,11 @@ export class TransfersComponent implements OnInit, OnDestroy{
         this.setScrollOff();
     }
 
+    ngAfterViewInit(){
+    }
+
     ngOnDestroy(){
+        this.subscription.unsubscribe();
         this.unActiveLink();
     }
 
@@ -145,12 +150,15 @@ export class TransfersComponent implements OnInit, OnDestroy{
     }
 
     onFromChange(account) {
+        console.log(account);
         this.toAccounts = [];
         for(let i = 0; i < this.fromAccounts.length; ++i) {
+            console.log(this.fromAccounts[i].id);
             if(this.fromAccounts[i].id != account) {
                 this.toAccounts.push(this.fromAccounts[i]);
             }
         }
+        console.log(this.toAccounts);
     }
 
     onToChange(account) {
