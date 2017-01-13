@@ -27,6 +27,7 @@ export class LoggedInGuard implements CanActivate {
   logout() {
     if (this.isLoggedIn()) {
       sessionStorage.removeItem('aToken');
+      sessionStorage.removeItem('telephone');
       sessionStorage.setItem('loggedIn', 'false');
       this.appState.set('user', null);
       this.router.navigate(['/user/sign-in/login']);

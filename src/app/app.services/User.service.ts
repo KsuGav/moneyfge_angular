@@ -29,16 +29,4 @@ export class UserService {
     ;
   }
 
-  getUserInfo(): Observable<User[]>  {
-    const headers = new Headers();
-    headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
-    const locUrl = `${this._appService.get('apiEndpoint')}/user/`;
-    let log = this._http
-        .get(locUrl, {headers: headers})
-        .map(res => res.json());
-        // .map((res: any) => new User());
-    // console.log(log);
-    return log;
-  }
-
 }
