@@ -1,13 +1,15 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 
 import { Account } from '../../../app.models/Account.model';
 import { n_AccountService } from '../../../app.services/Account.service';
+
+declare const $: any;
 
 @Component({
   selector: 'account-component',
   templateUrl: 'account.component.html'
 })
-export class AccountComponent {
+export class AccountComponent implements OnInit {
 
   constructor(
       private accountService: n_AccountService
@@ -19,6 +21,10 @@ export class AccountComponent {
   @Output() onUnlock: EventEmitter<number> = new EventEmitter<number>();
 
   //@Output() onSelect: EventEmitter<number> = new EventEmitter<number>();
+
+  ngOnInit(){
+    this.accountBg();
+  }
 
   handleLock(event: Event, id: number) {
     event.preventDefault();
@@ -42,6 +48,11 @@ export class AccountComponent {
     // make current account active and other non-active
     element.classList.add('active');
 
+  }
+
+  accountBg(){
+    let first = $('.accounts-item').first();
+    first.css({'background':'#D8D8D8'})
   }
 
 }

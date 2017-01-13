@@ -5070,30 +5070,33 @@ iframe {
     outline: none;
     border-color: rgba(0, 0, 0, 0.1); }
 
-.transfer-page .select2-results__option {
+.select2-results__option {
   color: #99A9C0;
   font-size: 15px;
   white-space: nowrap; }
 
-.transfer-page .select2-results__option--highlighted[aria-selected] {
+.select2-results__option--highlighted[aria-selected] {
   background-color: #F7D279;
   color: #345382; }
 
-.transfer-page .select2-container--default .select2-results__option[aria-selected="true"] {
+.select2-container--default .select2-results__option[aria-selected="true"] {
   background-color: #FFF;
   color: #99A9C0; }
 
-.transfer-page .select2-results__option--highlighted {
+.select2-results__option--highlighted {
   background-color: #F7D279 !important;
   color: #345382 !important; }
 
-.transfer-page .select2-container--default .select2-selection--single .select2-selection__rendered {
+.select2-container--default .select2-selection--single .select2-selection__rendered {
   border: 1px solid rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: inset 0px 1px 1px 0 rgba(0, 0, 0, 0.17);
           box-shadow: inset 0px 1px 1px 0 rgba(0, 0, 0, 0.17); }
 
-.transfer-page .select2-results__option {
+.select2-results__option {
   padding: 6px 15px; }
+
+.select2-container--default .select2-results__option:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
 
 .transfer-select + .select2-container--open .select2-selection--single .select2-selection__rendered {
   border: 1px solid #fbb800;
@@ -5121,7 +5124,7 @@ iframe {
 
 .transfer-form .input-small-width {
   max-width: 180px;
-  text-align: center; }
+  text-align: right; }
   .transfer-form .input-small-width:disabled {
     text-align: right; }
 
@@ -5176,7 +5179,8 @@ iframe {
 
 .select2-container--default .select2-selection--single .select2-selection__arrow b {
   border-color: #345382 transparent transparent transparent;
-  margin-top: 2px; }
+  margin-top: 2px;
+  opacity: 0.6; }
   .select2-container--default .select2-selection--single .select2-selection__arrow b:before {
     content: '';
     display: inline-block;
@@ -5320,7 +5324,7 @@ iframe {
 .sidebar-left-settings-menu a {
   color: inherit;
   display: block;
-  opacity: 0.6; }
+  opacity: 0.8; }
   .sidebar-left-settings-menu a:hover {
     opacity: 1; }
 
@@ -5331,6 +5335,8 @@ iframe {
   text-align: center;
   background-color: #fbb800;
   padding: 0 20px; }
+  .sidebar-left-settings-menu__icon img {
+    max-height: 30px; }
 
 .sidebar-left-settings-menu__title {
   display: inline-block;
@@ -5372,7 +5378,6 @@ iframe {
   text-transform: none;
   font-size: 16px; }
 
-#SMSActive,
 #WalletStep1Block,
 #WalletStep2Block {
   display: none; }
@@ -5395,11 +5400,17 @@ iframe {
   width: 100%;
   max-width: 400px; }
 
-.input-medium:disabled {
+.input-medium:disabled,
+.input-medium.disabled {
   background-color: #F8E5B9;
   -webkit-box-shadow: none;
           box-shadow: none;
   color: #4c4c4b; }
+
+.input-medium.disabled:focus {
+  background-color: #fff;
+  -webkit-box-shadow: inset -1px 1px 2px 0 rgba(251, 184, 0, 0.27), 0 0 0 1px #fbb800;
+          box-shadow: inset -1px 1px 2px 0 rgba(251, 184, 0, 0.27), 0 0 0 1px #fbb800; }
 
 .btn.no-margin {
   margin: 0; }
@@ -5430,7 +5441,8 @@ p + .tooltip-btn {
   display: table-cell;
   min-height: 40px;
   width: 50%;
-  vertical-align: middle; }
+  vertical-align: middle;
+  position: relative; }
   .half-width-input:not(:first-child) {
     padding-left: 10px;
     text-align: center; }
@@ -5455,6 +5467,40 @@ p + .tooltip-btn {
 
 .setting-indicator.active:before {
   background-color: #fbb800; }
+
+.sms-check {
+  visibility: hidden;
+  opacity: 0;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+  -webkit-border-radius: 15px;
+          border-radius: 15px;
+  color: #fff;
+  position: absolute;
+  top: 18px;
+  left: 165px;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease; }
+  .sms-check .fa {
+    font-size: 10px;
+    line-height: 1;
+    vertical-align: top;
+    margin-top: 2px;
+    margin-left: 1px; }
+  .sms-check.yes {
+    background-color: #fbb800;
+    visibility: visible;
+    opacity: 1; }
+    .sms-check.yes .fa-close {
+      display: none; }
+  .sms-check.no {
+    background-color: red;
+    visibility: visible;
+    opacity: 1; }
+    .sms-check.no .fa-check {
+      display: none; }
 
 /* CUSTOM LIBS STYLES */
 .my-mfp-slide-bottom .zoom-anim-dialog {

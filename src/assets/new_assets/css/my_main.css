@@ -225,7 +225,7 @@ p.expenses-latest-bills_content__bill.no-payment-content {
 }
 
 .transfer-switcher .s2 {
-    margin-top: 12px;
+    margin-top: 4px;
     margin-right: 20px;
 }
 
@@ -260,14 +260,13 @@ p.expenses-latest-bills_content__bill.no-payment-content {
     min-height: 20px;
 }
 .dashboard-account-list li:nth-child(odd) {
-    background-color: rgba(76, 76, 75, 0.1);
+    background-color: rgba(76, 76, 75, 0);
 }
-.dashboard-account-list li:first-child(odd) {
-    background-color: #D8D8D8;
-}
-
 #transferToInput {
-    background: #fff url('/assets/new_assets/img/favicon/favicon1.png') no-repeat scroll 15px 11px;
+    background: #fff url(/assets/new_assets/img/favicon/favicon1.png) no-repeat scroll 10px 9px;
     background-size: 20px 20px;
     padding-left: 40px;
+}
+.card--info.email-block{
+    margin-top: 20px;
 }

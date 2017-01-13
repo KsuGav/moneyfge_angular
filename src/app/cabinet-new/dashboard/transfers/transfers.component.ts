@@ -220,15 +220,15 @@ export class TransfersComponent implements OnInit, OnDestroy, AfterViewInit{
     onYourAccountSelected() {
         this.toMyAccount = true;
         $('#toMySelect').next().show();
-        this.onToChange($('#toMySelect').val())
-        $('.dot').css('margin-left', '25px');
+        this.onToChange($('#toMySelect').val());
+        $('.dot').animate({"marginLeft":"0px"}, 500);
     }
 
     onOnesAccountSelected() {
         this.toMyAccount = false;
         $('#toMySelect').next().hide();
         this.onToChange($('#transferToInput').val());
-        $('.dot').css('margin-left', '0px');
+        $('.dot').animate({"marginLeft":"25px"}, 500);
     }
 
     validateForm() {
@@ -240,16 +240,19 @@ export class TransfersComponent implements OnInit, OnDestroy, AfterViewInit{
     }
 
     moveDot(){
+        let self= this;
         $('.s2').on('click', function(){
             if($(this).children().first().css('margin-left')==='0px'){
-                // $('#toMySelect').next().show();
-                // this.toMyAccount = true;
+                $('.dot').animate({"marginLeft":"25px"}, 500);
+                self.toMyAccount = false;
+                $('#toMySelect').next().hide();
+                self.onToChange($('#transferToInput').val());
 
-                $('.dot').css('margin-left', '25px');
             } else{
-                // $('#toMySelect').next().hide();
-                // this.toMyAccount = false;
-                $('.dot').css('margin-left', '0px');
+                self.toMyAccount = true;
+                $('.dot').animate({"marginLeft":"0px"}, 500);
+                $('#toMySelect').next().show();
+                self.onToChange($('#toMySelect').val());
             }
         })
     }
