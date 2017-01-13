@@ -1,5 +1,5 @@
 <new-cabinet-header-component></new-cabinet-header-component>
-<sms-dialog-component [id]="'trans'" (sendCode)="closeSmsDialog()"></sms-dialog-component>
+<sms-dialog-component [id]="'trans'" (onSendCode)="closeSmsDialog($event)"></sms-dialog-component>
 
 <section class="sect-grey padding-small">
     <div class="container">
@@ -19,6 +19,7 @@
                     </div>
 
                     <h2 class="dashboard-page-title">Transfers</h2>
+                    <loader-component #bigLoader>
                     <form class="transfer-form" (submit)="submitForm()">
                         <div class="card card--lightgrey">
                             <loader-component #transferAccountsLoader>
@@ -50,7 +51,7 @@
                                     <input type="number" maxlength="5" class="input-medium input-small-width" placeholder="0.00" (keyup)="onSumChange($event.target.value)">
                                     <span class="form-info-summa">$</span>
                                     <p class="select-label">Sum to pay</p>
-                                    <input type="text" class="input-medium input-small-width" readonly placeholder="{{sumToPay}}$">
+                                    <input type="text" class="input-medium input-small-width" readonly placeholder="0.00$" value="{{sumToPay}}$">
                                     <span class="form-info">Including <br>bank fee 5%</span>
                                     <div class="clearfix"></div>
                                     <button (click)="submitForm()" class="btn btn-medium btn-accent" [disabled]="!formValid">Continue</button>
@@ -62,7 +63,7 @@
                             </div>
                         </div>
                     </form>
-
+                    </loader-component>
                 </div>
             </div>
         </div>

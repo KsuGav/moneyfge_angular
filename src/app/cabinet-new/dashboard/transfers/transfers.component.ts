@@ -5,9 +5,9 @@ import {LoaderComponent} from "../../../common-new/loader/loader.component";
 import {ModalService} from "../../../services/modal.service";
 import {SmsCode} from "../../../app.models/SmsCode.model";
 import {SmsDialogComponent} from "../../../common-new/sms-dialog/sms-dialog.component";
-import {DialogComponent} from "../../../common-new/dialog/dialog.component";
 
 declare const $: any;
+declare const toastr: any;
 
 @Component({
     selector: 'transfers-component',
@@ -17,11 +17,10 @@ declare const $: any;
 export class TransfersComponent implements OnInit, OnDestroy, AfterViewInit{
 
     @ViewChild('transferAccountsLoader') accountsLoader: LoaderComponent;
+    @ViewChild('bigLoader') bigLoader: LoaderComponent;
     @ViewChild(SmsDialogComponent) smsDialog: SmsDialogComponent;
-    @ViewChild(DialogComponent) alert: DialogComponent;
 
-    private smsModel: SmsCode = new SmsCode(123,123);
-    private smsInfo: number;
+    private smsModel: SmsCode;
 
     fromAccounts: Account[];
     toAccounts: Account[];
@@ -58,49 +57,57 @@ export class TransfersComponent implements OnInit, OnDestroy, AfterViewInit{
         if (!this.formValid) {
             return;
         }
+        this.bigLoader.toggle(true);
         this.modalService.showLoader('block');
-        this.smsDialog.open(123);
-        return;
-        // this.accountService
-        //     .createTransactionStep1(
-        //         this.fromAccount,
-        //         this.toAccount,
-        //         this.sum,
-        //         //this.form.value.comment
-        //     )
-        //     .subscribe(
-        //         (res: any) => {
-        //             this.smsModel.smsId = res.sms;
-        //             this.smsInfo = res.info;
-        //             this.smsDialog.open(this.smsModel.smsId);
-        //         },
-        //         err => {
-        //             this.modalService.hideLoader('block');
-        //             //this.alert.show('danger', err.json().message);
-        //         }
-        //     )
-        // ;
+        this.accountService
+            .createTransactionStep1(
+                this.fromAccount,
+                this.toAccount,
+                this.sum,
+            )
+            .subscribe(
+                (res: any) => {
+                    this.bigLoader.toggle(false);
+                    this.smsModel = new SmsCode(res.sms, res.info, 0);
+                    this.smsDialog.open(this.smsModel.smsId);
+                },
+                err => {
+                    this.bigLoader.toggle(false);
+                    this.modalService.hideLoader('block');
+                    toastr.error(err.json().message);
+                }
+            )
+        ;
     }
 
-    closeSmsDialog() {
+    closeSmsDialog(code: SmsCode) {
+        this.smsModel.smsCode = code.smsCode;
         this.modalService.showLoader('block');
+        this.bigLoader.toggle(true);
         this.accountService
             .createTransactionStep2(
                 this.smsModel.smsId,
-                this.smsInfo,
+                this.smsModel.smsInfo,
                 +this.smsModel.smsCode
             )
             .subscribe(
-                //() => this.router.navigate(['/user/cabinet/score/index']),
+                () => {
+                    this.bigLoader.toggle(false);
+                    toastr.success("Transfer was successfully conducted.");
+                    this.ngOnInit();
+                    this.toAccounts = [];
+                },
+
                 err => {
                     this.modalService.hideLoader('block');
-                    //this.alert.show('danger', err.json().message);
+                    toastr.error(err.json().message);
                 }
             )
         ;
     }
 
     ngOnInit(){
+        this.toMyAccount = true;
         this.accountsLoader.toggle(true);
         this.accountService.getAllAccounts();
         this.setSelect();
@@ -161,6 +168,8 @@ export class TransfersComponent implements OnInit, OnDestroy, AfterViewInit{
         $('.account-fill-equal-1').equalHeights();
         $('.account-fill-equal-2').equalHeights();
         $('.account-fill-equal-3').equalHeights();
+
+        $('input').val('');
     }
 
     setScrollOff() {

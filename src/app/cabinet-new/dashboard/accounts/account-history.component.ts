@@ -13,16 +13,14 @@ export class AccountHistoryComponent implements OnInit {
     history: AccountHistoryRecord[] = [];
     noHistory: Boolean = false;
 
-    todayDate: string = `Today, ${new Date().toLocaleDateString()}`;
-    totalPlus: number = 0;
-    totalMinus: number = 0;
+    subscription;
 
     @ViewChild('accountHistoryLoader') historyLoader: LoaderComponent;
 
     constructor(
         private accountService: n_AccountService
     ){
-        this.accountService.onGetAccountHistory.subscribe(
+        this.subscription = this.accountService.onGetAccountHistory.subscribe(
             res => {
                 this.history = res;
                 this.noHistory = !res || res.length < 1;
