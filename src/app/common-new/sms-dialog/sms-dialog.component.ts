@@ -17,7 +17,7 @@ export class SmsDialogComponent {
     private _userService: UserService
   ) { }
 
-  private _smsCode: SmsCode = new SmsCode(0, 0);
+  private _smsCode: SmsCode = new SmsCode(0,0,0);
 
   @Output() onSendCode: EventEmitter<SmsCode> = new EventEmitter<SmsCode>();
 
@@ -41,6 +41,9 @@ export class SmsDialogComponent {
       return;
     }
     this._smsCode.smsCode = +code;
+    console.log(this._smsCode);
+    console.log('before emit');
+    console.log(this._smsCode);
     this.onSendCode.emit(this._smsCode);
     this.dialog.close();
   }
