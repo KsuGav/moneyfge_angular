@@ -9,8 +9,11 @@ declare const $: any;
 
 export class SettingsComponent implements OnInit {
 
+    userName: any;
+
     ngOnInit(){
         this.settings();
+        this.userName = sessionStorage.getItem('telephone');
     }
 
     settings(){

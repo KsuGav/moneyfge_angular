@@ -259,3 +259,9 @@ p.expenses-latest-bills_content__bill.no-payment-content {
     position: relative;
     min-height: 20px;
 }
+.dashboard-account-list li:nth-child(odd) {
+    background-color: rgba(76, 76, 75, 0.1);
+}
+.dashboard-account-list li:first-child(odd) {
+    background-color: #D8D8D8;
+}
