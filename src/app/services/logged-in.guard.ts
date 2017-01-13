@@ -6,6 +6,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 import { AppState } from '../app.service';
+import { CommonService } from '../app.services/Common.service';
 import { User } from '../services/service.user';
 
 @Injectable()
@@ -15,7 +16,8 @@ export class LoggedInGuard implements CanActivate {
     private appState: AppState,
     private router: Router,
     private http: Http,
-    private userService: User
+    private userService: User,
+    private commonService: CommonService
   ) {}
 
   isLoggedIn() {
@@ -51,6 +53,7 @@ export class LoggedInGuard implements CanActivate {
       .subscribe(
         (res: any) => {
           sessionStorage.setItem('gToken', res.access_token);
+          this.commonService.getMoneyCourse();
         }
       )
       ;
