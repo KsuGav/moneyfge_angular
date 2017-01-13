@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import {Component, ViewChild, OnInit} from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { n_AccountService, CURRENCIES } from '../../../app.services/Account.service';
@@ -6,25 +6,24 @@ import { DialogComponent } from '../../../common-new/dialog/dialog.component';
 import { LoaderComponent } from '../../../common-new/loader/loader.component';
 import { SuccessComponent } from '../../../common-new/success/success.component';
 
-
+declare const $: any;
 declare const toastr: any;
 
 @Component({
   selector: 'new-account-dialog-component',
   templateUrl: 'new-account-dialog.component.html'
 })
-export class NewAccountDialogComponent {
+export class NewAccountDialogComponent implements OnInit{
 
   @ViewChild('dialog') dialog: DialogComponent;
 
-  @ViewChild('loader') loader: LoaderComponent;
+  @ViewChild('newAccLoader') loader: LoaderComponent;
 
   @ViewChild('success') success: SuccessComponent;
 
 
   form: FormGroup;
-
-  currencies: string[] = CURRENCIES;
+  currencies = CURRENCIES;
 
 
   constructor(
@@ -34,9 +33,19 @@ export class NewAccountDialogComponent {
     this.createForm();
   }
 
+  ngOnInit() {
+    let thisObj = this;
+    $("#PhoneNumber").select2({
+      placeholder: 'Select currency',
+      minimumResultsForSearch: Infinity,
+    }).on("change", function(e) {
+      thisObj.form.patchValue({currency:e.currentTarget.value});
+    });
+  }
+
   createForm() {
     this.form = this.fb.group({
-      currency: [CURRENCIES[0], Validators.required]
+      currency: [CURRENCIES[0][0], Validators.required]
     });
   }
 
@@ -66,17 +75,8 @@ export class NewAccountDialogComponent {
   }
 
   close() {
+    this.loader.toggle(false);
     this.dialog.close();
   }
-
-  // handleOnClosed() {
-  //   this.loader.toggle(false);
-  // }
-
-  ifSuccess(){
-    this.success.open();
-    this.dialog.close();
-  }
-
 
 }

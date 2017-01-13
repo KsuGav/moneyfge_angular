@@ -258,3 +258,9 @@ p.expenses-latest-bills_content__bill.no-payment-content {
     position: relative;
     min-height: 20px;
 }
+
+#transferToInput {
+    background: #fff url('/assets/new_assets/img/favicon/favicon1.png') no-repeat scroll 15px 11px;
+    background-size: 20px 20px;
+    padding-left: 40px;
+}
