@@ -13,16 +13,17 @@ export class SettingsComponent implements OnInit {
         this.settings();
     }
 
-
     settings(){
         // Settings Page Functions
         $('#SMSActivate').click(function () {
-            $('#SMSActive').slideDown();
+            if($(this).hasClass('btn-accent')){
+                $(this).removeClass('btn-accent').addClass('btn-grey').text('Disabled');
+                $('.setting-indicator').addClass('active').text('The service is activate');
+            } else{
+                $(this).removeClass('btn-grey').addClass('btn-accent').text('Activate');
+                $('.setting-indicator').removeClass('active').text('The service is disabled');
+            }
         });
-        $('#SMSDeActivate').click(function () {
-            $('#SMSActive').slideUp();
-        });
-
         $('#WalletStep1').click(function () {
             $('#WalletStep1Block').slideDown();
         });
@@ -34,6 +35,7 @@ export class SettingsComponent implements OnInit {
             $('.wallet-block.success').fadeIn();
         });
     }
+
 
 }
 
