@@ -2,7 +2,87 @@
 
 <section class="sect-grey padding-small">
     <div class="container">
-        <p>MERCHANT PANEL PAGE</p>
+        <div class="row">
+            <div class="col-md-9 centered col-xs-12">
+                <div class="dashboard-main-content">
+
+                    <div class="clearfix"></div>
+
+                    <money-course-component></money-course-component>
+
+                    <div class="fl-right">
+                        <ul class="breadcrumbs">
+                            <li><a [routerLink]="['/user/dashboard']">Main</a></li>
+                            <li><a href="#">Merchant</a></li>
+                        </ul>
+                    </div>
+
+                    <form class="transfer-form">
+
+                        <div class="card card--darkgrey card-big">
+                            <p class="select-label">Підключення до каси</p>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="input-medium-wrap">
+                                        <label>Країна</label>
+                                        <select class="select-medium transfer-select country">
+                                            <option value="USA" selected>USA</option>
+                                            <option value="Euro">Europe</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-medium-wrap">
+                                        <label>Тип організації</label>
+                                        <select class="select-medium transfer-select">
+                                            <option value="Entity" selected>Entity</option>
+                                            <option value="Entity">Entity</option>
+                                            <option value="Entity">Entity</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-medium-wrap">
+                                        <label>Адреса сайту</label>
+                                        <input type="text" class="input-medium">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card card--lightgrey card-big">
+                            <p class="select-label">Аккаунт у особистому кабінеті</p>
+
+                            <div class="input-medium-wrap">
+                                <label>Ім`я</label>
+                                <input type="text" class="input-medium" required>
+                            </div>
+                            <div class="input-medium-wrap">
+                                <label>Прізвище</label>
+                                <input type="text" class="input-medium">
+                            </div>
+                            <div class="input-medium-wrap">
+                                <label>Почта</label>
+                                <input type="text" class="input-medium">
+                            </div>
+                            <div class="input-medium-wrap">
+                                <label>Телефон</label>
+                                <input type="text" class="input-medium">
+                            </div>
+                            <div class="info-medium-wrap clearfix">
+                                <div class="file-upload-sect__icon">
+                                    <img src="/assets/new_assets/img/sain.png" alt="Upload File">
+                                </div>
+                                <p class="card--info">
+                                    <span class="accent-color">Умови!</span>
+                                    Натискаючи на кнопку, ви приймаєте умови угоди особистого кабінету і даєте згоду <br>
+                                    на обробку своїх даних за правилами конфіденційності.
+                                </p>
+                            </div>
+                            <button class="btn btn-medium btn-accent">Продовжити</button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 

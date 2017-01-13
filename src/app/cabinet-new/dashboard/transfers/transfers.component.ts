@@ -94,6 +94,7 @@ export class TransfersComponent implements OnInit, OnDestroy, AfterViewInit{
     }
 
     ngAfterViewInit(){
+        this.moveDot();
     }
 
     ngOnDestroy(){
@@ -183,11 +184,30 @@ export class TransfersComponent implements OnInit, OnDestroy, AfterViewInit{
 
     onYourAccountSelected() {
         this.toMyAccount = true;
+        console.log(this);
         $('#toMySelect').next().show();
+        $('.dot').css('margin-left', '25px');
     }
 
     onOnesAccountSelected() {
         this.toMyAccount = false;
         $('#toMySelect').next().hide();
+        $('.dot').css('margin-left', '0px');
     }
+
+    moveDot(){
+        $('.s2').on('click', function(){
+            if($(this).children().first().css('margin-left')==='0px'){
+                // $('#toMySelect').next().show();
+                // this.toMyAccount = true;
+
+                $('.dot').css('margin-left', '25px');
+            } else{
+                // $('#toMySelect').next().hide();
+                // this.toMyAccount = false;
+                $('.dot').css('margin-left', '0px');
+            }
+        })
+    }
+
 }
