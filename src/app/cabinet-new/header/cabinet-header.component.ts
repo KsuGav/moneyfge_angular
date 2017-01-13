@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { LoggedInGuard } from '../../services/logged-in.guard';
 
@@ -14,28 +14,24 @@ declare const $: any;
 })
 export class NewCabinetHeaderComponent implements OnInit {
 
-  user: User[] = [];
-
+  userName: any;
 
   constructor(
-    private loggedInGuard: LoggedInGuard,
-    private userService: UserService
+    private loggedInGuard: LoggedInGuard
+    // private userService: UserService
+
   ) { }
 
-  // @Input() user: User;
 
   ngOnInit(){
     this.burgerButton();
+    this.userName = sessionStorage.getItem('telephone');
     // this.activeLinks();
-    this.userService.getUserInfo()
-        .subscribe(user => {
-          this.user = user;
-        });
-
-    // this.userService.getUsers()
-    //     .subscribe(users => {
-    //       this.users = users;
+    // this.userService.getUserInfo()
+    //     .subscribe(user => {
+    //       this.user = user;
     //     });
+
   }
 
 
@@ -43,11 +39,6 @@ export class NewCabinetHeaderComponent implements OnInit {
     event.preventDefault();
     this.loggedInGuard.logout();
   }
-
-  // getNumber(){
-  //   let number = this.userInfo.getUserInfo();
-  //   return number;
-  // }
 
   burgerButton(){
     if ($(window).width() > 992) {

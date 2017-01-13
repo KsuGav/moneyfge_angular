@@ -109,6 +109,7 @@ export class TransfersComponent implements OnInit, OnDestroy, AfterViewInit{
     }
 
     ngAfterViewInit(){
+        this.moveDot();
     }
 
     ngOnDestroy(){
@@ -220,12 +221,14 @@ export class TransfersComponent implements OnInit, OnDestroy, AfterViewInit{
         this.toMyAccount = true;
         $('#toMySelect').next().show();
         this.onToChange($('#toMySelect').val())
+        $('.dot').css('margin-left', '25px');
     }
 
     onOnesAccountSelected() {
         this.toMyAccount = false;
         $('#toMySelect').next().hide();
         this.onToChange($('#transferToInput').val());
+        $('.dot').css('margin-left', '0px');
     }
 
     validateForm() {
@@ -235,4 +238,20 @@ export class TransfersComponent implements OnInit, OnDestroy, AfterViewInit{
             this.sum > 0);
         // console.log(this.formValid);
     }
+
+    moveDot(){
+        $('.s2').on('click', function(){
+            if($(this).children().first().css('margin-left')==='0px'){
+                // $('#toMySelect').next().show();
+                // this.toMyAccount = true;
+
+                $('.dot').css('margin-left', '25px');
+            } else{
+                // $('#toMySelect').next().hide();
+                // this.toMyAccount = false;
+                $('.dot').css('margin-left', '0px');
+            }
+        })
+    }
+
 }
