@@ -23,14 +23,13 @@
     <!--<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>-->
   <!--</div>-->
     <div dialog-body>
-    <form>
+    <form [formGroup]="form">
+      <loader-component #newAccLoader>
       <div class="row">
         <div class="col-xs-12 col-md-6 col-md-offset-3">
-          <select id="PhoneNumber" class="custom-select select-medium" data-placeholder="USD - U.S. dollars" required>
-            <option>&nbsp;</option>
-            <option value="0">USD - U.S. dollars</option>
-            <option value="1">UAH - Ukrainian hryvnia</option>
-            <option value="2">EUR - Euros</option>
+          <select formControlName="currency" id="PhoneNumber" class="custom-select">
+            <option></option>
+            <option *ngFor="let currency of currencies" value="{{currency[0]}}">{{currency[0]}} - {{currency[1]}}</option>
           </select>
         </div>
       </div>
@@ -39,7 +38,7 @@
           <!--<p class="account-fill-form__subtitle">Number of new account</p>-->
           <!--<input class="input-medium input-white" id="CreditCardInput3" type="text" placeholder="0000 0000 0000 0000" required>-->
           <div class="text-right">
-            <button (click)="ifSuccess()" class="btn btn-medium btn-accent open-popup-link">Create</button>
+            <button (click)="createAccount()" class="btn btn-medium btn-accent open-popup-link">Create</button>
           </div>
         </div>
         <div class="col-sm-6">
@@ -47,6 +46,7 @@
           <button (click)="close()" class="btn btn-medium btn-grey close-popup">Cancel</button>
         </div>
       </div>
+      </loader-component>
     </form>
   </div>
 

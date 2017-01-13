@@ -8,11 +8,11 @@ import 'rxjs/add/observable/throw';
 import { Account } from '../app.models/Account.model';
 import { AccountHistoryRecord } from '../app.models/AccountHistoryRecord.model';
 
-export const CURRENCIES: string[] = [
-  'USD',
-  'EUR',
-  'UAH',
-  'RUB'
+export const CURRENCIES = [
+  ['USD', 'US dollar'],
+  ['EUR', 'Euro'],
+  ['UAH', 'Ukrainian Hryvnia'],
+  ['RUB', 'Russian Ruble']
 ];
 
 @Injectable()

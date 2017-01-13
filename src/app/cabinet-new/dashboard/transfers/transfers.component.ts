@@ -2,7 +2,6 @@ import {Component, OnInit, OnDestroy, ViewChild, AfterViewInit} from '@angular/c
 import { Account } from '../../../app.models/Account.model';
 import { n_AccountService } from '../../../app.services/Account.service';
 import {LoaderComponent} from "../../../common-new/loader/loader.component";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ModalService} from "../../../services/modal.service";
 import {SmsCode} from "../../../app.models/SmsCode.model";
 import {SmsDialogComponent} from "../../../common-new/sms-dialog/sms-dialog.component";
@@ -27,16 +26,20 @@ export class TransfersComponent implements OnInit, OnDestroy, AfterViewInit{
     fromAccounts: Account[];
     toAccounts: Account[];
     fromAccountsLoaded: boolean;
-    sumToPay: string = '0.00';
-    private form: FormGroup;
     toMyAccount: boolean = true;
+    sumToPay: string = '0.00';
 
-    toAccount: number;
+    fromAccount: number = 0;
+    toAccount: number = 0;
+    sum: number = 0.0;
+    formValid: boolean = false;
+
+    comment: string = '';
+
     subscription: any;
 
     constructor(
         private accountService: n_AccountService,
-        private fb: FormBuilder,
         private modalService: ModalService
     ) {
 
@@ -47,36 +50,48 @@ export class TransfersComponent implements OnInit, OnDestroy, AfterViewInit{
                 this.fromAccountsLoaded = true;
             }
         );
-        this.generateForm();
-    }
-
-    generateForm() {
-        this.form = this.fb.group({
-            from: ['', Validators.required],
-            to: ['', [Validators.required]],
-            sum: ['', [Validators.required, Validators.pattern('[0-9\.\,]+')]],
-            comment: ['']
-        });
     }
 
     submitForm() {
-        if (!this.form.valid) {
+        event.preventDefault();
+        this.validateForm();
+        if (!this.formValid) {
             return;
         }
         this.modalService.showLoader('block');
+        this.smsDialog.open(123);
+        return;
+        // this.accountService
+        //     .createTransactionStep1(
+        //         this.fromAccount,
+        //         this.toAccount,
+        //         this.sum,
+        //         //this.form.value.comment
+        //     )
+        //     .subscribe(
+        //         (res: any) => {
+        //             this.smsModel.smsId = res.sms;
+        //             this.smsInfo = res.info;
+        //             this.smsDialog.open(this.smsModel.smsId);
+        //         },
+        //         err => {
+        //             this.modalService.hideLoader('block');
+        //             //this.alert.show('danger', err.json().message);
+        //         }
+        //     )
+        // ;
+    }
+
+    closeSmsDialog() {
+        this.modalService.showLoader('block');
         this.accountService
-            .createTransactionStep1(
-                this.form.value.from,
-                this.form.value.to,
-                this.form.value.sum,
-                //this.form.value.comment
+            .createTransactionStep2(
+                this.smsModel.smsId,
+                this.smsInfo,
+                +this.smsModel.smsCode
             )
             .subscribe(
-                (res: any) => {
-                    this.smsModel.smsId = res.sms;
-                    this.smsInfo = res.info;
-                    //this.smsDialog.openCode();
-                },
+                //() => this.router.navigate(['/user/cabinet/score/index']),
                 err => {
                     this.modalService.hideLoader('block');
                     //this.alert.show('danger', err.json().message);
@@ -121,17 +136,24 @@ export class TransfersComponent implements OnInit, OnDestroy, AfterViewInit{
             return $bill;
         };
 
+        let thisObj = this;
+
         $("#fromMySelect").select2({
             placeholder: 'Select account',
             templateResult: formatTransfer,
             templateSelection: formatTransfer,
             minimumResultsForSearch: Infinity,
+        }).on("change", function(e) {
+            thisObj.onFromChange(e.currentTarget.value);
         });
+
         $("#toMySelect").select2({
             placeholder: 'Select account',
             templateResult: formatTransfer,
             templateSelection: formatTransfer,
             minimumResultsForSearch: Infinity,
+        }).on("change", function(e) {
+            thisObj.onToChange(e.currentTarget.value);
         });
 
         $('.equal-height-column').equalHeights();
@@ -155,25 +177,38 @@ export class TransfersComponent implements OnInit, OnDestroy, AfterViewInit{
     }
 
     onFromChange(account) {
-        console.log(account);
         this.toAccounts = [];
         for(let i = 0; i < this.fromAccounts.length; ++i) {
-            console.log(this.fromAccounts[i].id);
             if(this.fromAccounts[i].id != account) {
                 this.toAccounts.push(this.fromAccounts[i]);
             }
         }
-        console.log(this.toAccounts);
+        this.fromAccount = account;
+        if(this.toMyAccount) {
+            this.toAccount = 0;
+        }
+        this.validateForm();
     }
 
     onToChange(account) {
-        if(account) {
-
+        this.toAccount = 0;
+        if(account && account.length == 8) {
+            this.toAccount = account;
         }
+        this.validateForm();
     }
 
     onSumChange(sum) {
-        this.sumToPay = this.formatMoney(1.05 * sum)
+        sum = parseFloat(sum);
+        this.sum = sum;
+        this.validateForm();
+        if(!sum || sum == 0) {
+            this.sumToPay = this.formatMoney(0);
+            return;
+        }
+        this.sumToPay = this.formatMoney(
+            Math.max(1.05 * sum, sum + 0.01)
+        );
     }
 
     formatMoney(sum) {
@@ -184,15 +219,24 @@ export class TransfersComponent implements OnInit, OnDestroy, AfterViewInit{
 
     onYourAccountSelected() {
         this.toMyAccount = true;
-        console.log(this);
         $('#toMySelect').next().show();
+        this.onToChange($('#toMySelect').val())
         $('.dot').css('margin-left', '25px');
     }
 
     onOnesAccountSelected() {
         this.toMyAccount = false;
         $('#toMySelect').next().hide();
+        this.onToChange($('#transferToInput').val());
         $('.dot').css('margin-left', '0px');
+    }
+
+    validateForm() {
+        // console.log([this.toAccount, this.fromAccount, this.sum]);
+        this.formValid = (this.toAccount > 10000000 && this.toAccount < 99999999 &&
+            this.fromAccount > 10000000 && this.fromAccount < 99999999 &&
+            this.sum > 0);
+        // console.log(this.formValid);
     }
 
     moveDot(){
