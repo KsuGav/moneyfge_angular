@@ -17,6 +17,7 @@ export class DashboardComponent implements AfterViewInit {
     this.setupCheckboxes();
     this.setupPaymentsCards();
     this.setupElements();
+    this.unactiveLinks();
   }
 
   setupAdaptive() {
@@ -86,4 +87,9 @@ export class DashboardComponent implements AfterViewInit {
     //$('.expenses-latest-bills_header__date').html('qwe');
   }
 
+  unactiveLinks(){
+    $('.catalog-categories--item__title a').click(function(){
+      return false;
+    })
+  }
 }

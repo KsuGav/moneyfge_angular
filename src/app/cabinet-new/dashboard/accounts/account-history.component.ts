@@ -25,6 +25,11 @@ export class AccountHistoryComponent implements OnInit, OnDestroy {
         this.getSubscription = this.accountService.onGetAccountHistory.subscribe(
             res => {
                 this.history = res;
+                console.log(res.length);
+                // let a = JSON.parse(this.history[0].info).CardFrom
+
+                //     console.log('card '+a);
+                // }
                 this.noHistory = !res || res.length < 1;
                 this.historyLoader.toggle(false);
             }
@@ -40,7 +45,6 @@ export class AccountHistoryComponent implements OnInit, OnDestroy {
     ngOnInit() {
         this.getHistory();
         if(this.isForAll) {
-            console.log('get history for all');
             this.accountService.getAccountHistory(undefined);
         }
     }

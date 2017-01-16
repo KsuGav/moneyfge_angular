@@ -52,6 +52,7 @@ export class SitePasswordComponent implements OnInit {
             .subscribe(
               (res: any) => {
                 sessionStorage.setItem('aToken', res.access_token);
+                  sessionStorage.setItem('telephone', res.userName);
                 sessionStorage.setItem('loggedIn', 'true');
                 this.accountService
                   .createCard('USD')

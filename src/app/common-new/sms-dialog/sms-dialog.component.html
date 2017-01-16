@@ -5,6 +5,6 @@
     <timer-link-component #timerLink [text]="'Send SMS again'" (onClick)="handleSendSmsAgain()"></timer-link-component>
   </div>
   <div class="text-center" dialog-footer>
-    <button type="button" class="btn btn-primary btn-block" (click)="sendCode()">Continue</button>
+    <button type="button" class="btn btn-accent btn-block" id="sms-dialog_btn" (click)="sendCode()">Continue</button>
   </div>
 </dialog-component>
