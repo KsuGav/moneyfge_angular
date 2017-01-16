@@ -27,9 +27,16 @@ export class AccountHistoryComponent implements OnInit, OnDestroy {
         this.getSubscription = this.accountService.onGetAccountHistory.subscribe(
             res => {
                 this.history = res;
-                console.log(res.length);
-                // let a = JSON.parse(this.history[0].info).CardFrom
-                //     console.log('card '+a);
+
+                // convert infos
+                for(let i in this.history) {
+                    let infoObj = JSON.parse(this.history[i].info);
+
+                    if('undefined' !== typeof infoObj.CardFrom) {
+                        let pre = this.history[i].znak_sum == '+' ? 'Transfer from ' : 'Transfer to ';
+                        this.history[i].info = pre + infoObj.CardFrom;
+                    }
+                }
 
                 this.noHistory = !res || res.length < 1;
                 this.historyLoader.toggle(false);
