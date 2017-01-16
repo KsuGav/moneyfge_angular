@@ -26,7 +26,10 @@ export class HomeMoneyCourseComponent implements OnInit {
 
     ngOnInit() {
         this.exLoader.toggle(true);
-        this.getCourses();
+        const gToken = sessionStorage.getItem('gToken');
+        if('undefined' !== typeof gToken && gToken) {
+            this.getCourses();
+        }
     }
 
     getCourses() {
