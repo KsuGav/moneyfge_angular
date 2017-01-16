@@ -1,4 +1,4 @@
-<li (click)="handleAccountSelection($event, account?.id)" class="accounts-item activeAccount">
+<li (click)="handleAccountSelection($event, account?.id)" class="accounts-item">
   <div class="left-part">
     <div [ngSwitch]="account?.currency">
       <h3 *ngSwitchCase="'USD'" class="dashboard-account-list__title"><a href="#" (click)="false">Money FGE <span>$</span></a></h3>

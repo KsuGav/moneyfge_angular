@@ -4,6 +4,8 @@ import { n_AccountService } from '../../../app.services/Account.service';
 import { AccountHistoryRecord } from '../../../app.models/AccountHistoryRecord.model';
 import { LoaderComponent } from "../../../common-new/loader/loader.component";
 
+declare const $: any;
+
 @Component({
     selector: 'account-history-component',
     templateUrl: 'account-history.component.html'
@@ -27,9 +29,8 @@ export class AccountHistoryComponent implements OnInit, OnDestroy {
                 this.history = res;
                 console.log(res.length);
                 // let a = JSON.parse(this.history[0].info).CardFrom
-
                 //     console.log('card '+a);
-                // }
+
                 this.noHistory = !res || res.length < 1;
                 this.historyLoader.toggle(false);
             }
@@ -44,6 +45,8 @@ export class AccountHistoryComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.getHistory();
+        this.showMore();
+
         if(this.isForAll) {
             this.accountService.getAccountHistory(undefined);
         }
@@ -56,6 +59,13 @@ export class AccountHistoryComponent implements OnInit, OnDestroy {
 
     getHistory() {
         this.historyLoader.toggle(true);
+    }
+
+    showMore(){
+        $('.expenses-latest-bills_footer__showmore').click(function () {
+            $(this).toggleClass('active');
+            $('.expenses-latest-bills_content').toggleClass('opened');
+        });
     }
 
 }
