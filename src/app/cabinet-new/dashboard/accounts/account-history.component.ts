@@ -23,6 +23,11 @@ export class AccountHistoryComponent implements OnInit {
         this.subscription = this.accountService.onGetAccountHistory.subscribe(
             res => {
                 this.history = res;
+                console.log(res.length);
+                // let a = JSON.parse(this.history[0].info).CardFrom
+
+                //     console.log('card '+a);
+                // }
                 this.noHistory = !res || res.length < 1;
                 this.historyLoader.toggle(false);
                 console.log('got history for account');
@@ -33,6 +38,9 @@ export class AccountHistoryComponent implements OnInit {
     ngOnInit() {
         this.getHistory();
         this.setupElements();
+
+        // let res2 = fromJson(result);
+        // console.log('result' + res2);
     }
 
     setupElements() {

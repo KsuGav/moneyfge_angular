@@ -17,7 +17,6 @@ export class SettingsComponent implements OnInit {
     }
 
     settings(){
-
         // Settings Page Functions
         $('#SMSActivate').click(function () {
             $(this).toggleClass('btn-accent').toggleClass('btn-grey').attr('disabled', true);

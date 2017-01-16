@@ -262,6 +262,10 @@ p.expenses-latest-bills_content__bill.no-payment-content {
 .dashboard-account-list li:nth-child(odd) {
     background-color: rgba(76, 76, 75, 0);
 }
+.dashboard-account-list li:hover{
+    cursor: pointer;
+    background: rgb(216, 216, 216);
+}
 #transferToInput {
     background: #fff url(/assets/new_assets/img/favicon/favicon1.png) no-repeat scroll 10px 9px;
     background-size: 20px 20px;
@@ -269,4 +273,19 @@ p.expenses-latest-bills_content__bill.no-payment-content {
 }
 .card--info.email-block{
     margin-top: 20px;
+}
+/*.unactiveAccount{*/
+    /*background:rgba(76, 76, 75, 0);*/
+/*}*/
+/*.activeAccount{*/
+    /*background:#D8D8D8;*/
+/*}*/
+.popular-services--block__readmore:visited{
+    color: white;
+}
+.card-number_flag{
+    width: 25px;
+}
+#sms-dialog_btn{
+    box-shadow: 1px 1px 3px 0 #7f7f7f;
 }

@@ -11,6 +11,7 @@ export class PaymentsComponent implements OnInit, OnDestroy {
 
     ngOnInit(){
         this.activeLink();
+        this.unactiveLinks();
     }
 
     ngOnDestroy(){
@@ -23,5 +24,11 @@ export class PaymentsComponent implements OnInit, OnDestroy {
 
     unActiveLink(){
         $('#payments_link').removeClass('active')
+    }
+
+    unactiveLinks(){
+        $('.catalog-categories--item__title a, .popular-services--block__readmore').click(function(){
+            return false;
+        });
     }
 }

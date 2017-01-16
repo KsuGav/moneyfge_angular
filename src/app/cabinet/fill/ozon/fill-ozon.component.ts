@@ -32,7 +32,8 @@ export class FillOzonComponent {
 
   errorMsg: string = '';
 
-  currency: string = CURRENCIES[1];
+  // currency: string = CURRENCIES[1];
+  currency = CURRENCIES[1];
 
   form: FormGroup;
 

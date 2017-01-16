@@ -42,7 +42,7 @@
           <div class="user-wrap">
             <div class="user">
               <div class="notification-block">
-                <a href="" class="notification-block__icon"> <!-- Add class .with-notif to show circle -->
+                <a href="" (click)="false" class="notification-block__icon"> <!-- Add class .with-notif to show circle -->
                   <img src="/assets/new_assets/img/notif-icon.png" alt="Notification">
                 </a>
                 <div class="notifications">
@@ -61,9 +61,9 @@
                   <span class="profile-name">{{userName}}<br> </span>
                   <div class="profile-menu">
                     <ul>
-                      <li><a href="#"><i class="fa fa-history"></i> History</a></li>
-                      <li><a href="#"><i class="fa fa-gift"></i> Bonus</a></li>
-                      <li><a href="#"><i class="fa fa-info"></i> Help</a></li>
+                      <li><a href="#" (click)="false"><i class="fa fa-history"></i> History</a></li>
+                      <li><a href="#" (click)="false"><i class="fa fa-gift"></i> Bonus</a></li>
+                      <li><a href="#" (click)="false"><i class="fa fa-info"></i> Help</a></li>
                       <li><a [routerLink]="['/user/settings']"><i class="fa fa-gear"></i> Settings</a></li>
                       <li id="header_sign_out"><a href="#" (click)="logout($event)"><i class="fa fa-sign-out"></i> Sign out</a></li>
                     </ul>

@@ -22,13 +22,16 @@
                     <p class="expenses-latest-bills_content__bill no-payment-content">
                         You have no payments
                     </p>
-                    <p class="expenses-latest-bills_content__total">0.00 $</p>
+                    <!--<p class="expenses-latest-bills_content__total">0.00 $</p>-->
                 </li>
                 <li *ngFor="let record of history">
                     <div class="expenses-latest-bills_content__icon"><img src="/assets/new_assets/img/cash-panel-icon-13.png" alt="Icon"></div>
-                    <p class="expenses-latest-bills_content__time">{{record.date}}</p>
-                    <p class="expenses-latest-bills_content__bill">
-                        {{record.info}}
+                    <p class="expenses-latest-bills_content__time">{{record.date| date:"MMMM d, y 'at' h:mma"}}</p>
+                    <p class="expenses-latest-bills_content__bill" *ngIf="record.znak_sum==='+'">
+                        Transfer from {{record.info}}
+                    </p>
+                    <p class="expenses-latest-bills_content__bill" *ngIf="record.znak_sum==='-'">
+                        Transfer to {{record.info}}
                     </p>
                     <p class="expenses-latest-bills_content__total">{{record.znak_sum}}{{record.sum}} {{record.currency}}</p>
                 </li>
