@@ -12,36 +12,56 @@ declare const Chart: any;
 })
 export class CashPanelComponent implements AfterViewInit {
 
+  chartPeriod: string = ``;
+  statusDate: string = 'Today';
+
+  constructor(){
+    let locale = window.navigator.userLanguage || window.navigator.language;
+    let d = new Date();
+    d.setDate(1);
+    d.setMonth(d.getMonth() - 1);
+    this.chartPeriod = `${d.toLocaleString(locale, {month: "long"})} ${d.getFullYear()}`;
+  }
+
   ngAfterViewInit() {
-    this.setupIcons();
+    //this.setupIcons();
+    this.hoverSettings();
     this.setupCurrencyListToggle();
     this.setupCalendars();
     // this.setupPieChart();
     // this.setupLineChart();
+    this.setupRange();
   }
 
-  setupIcons() {
-    $('.expenses-cash-panel-heading__icons li').on('click', function() {
-      $(this).siblings().children().attr("src", function(index, attr){
-        return attr.replace("-w.png", ".png");
-      });
-      $(this).children().attr("src", function(index, attr){
-        if(!attr.includes('-w')) {
-          return attr.replace('.png', '-w.png');
-        } else {
-          return attr;
-        }
-      });
-    });
-
-    $('.expenses-cash-panel-heading__icons li').click(function(){
-      var tab_id = $(this).attr('data-id');
-      $('.expenses-cash-panel-heading__icons li').removeClass('active');
-      $('.expenses-cash-panel .graph-content').removeClass('active');
-      $(this).addClass('active');
-      $("#"+tab_id).addClass('active');
-    });
+  hoverSettings(){
+    $('.expenses-cash-panel-heading__icons li').hover(function(){
+      $(this).children().attr('src', '/assets/new_assets/img/cash-panel-icon-10-w.png')
+    }, function(){
+      $(this).children().attr('src', '/assets/new_assets/img/cash-panel-icon-10.png')
+    })
   }
+  // setupIcons() {
+  //   $('.expenses-cash-panel-heading__icons li').on('click', function() {
+  //     $(this).siblings().children().attr("src", function(index, attr){
+  //       return attr.replace("-w.png", ".png");
+  //     });
+  //     $(this).children().attr("src", function(index, attr){
+  //       if(!attr.includes('-w')) {
+  //         return attr.replace('.png', '-w.png');
+  //       } else {
+  //         return attr;
+  //       }
+  //     });
+  //   });
+  //
+  //   $('.expenses-cash-panel-heading__icons li').click(function(){
+  //     var tab_id = $(this).attr('data-id');
+  //     $('.expenses-cash-panel-heading__icons li').removeClass('active');
+  //     $('.expenses-cash-panel .graph-content').removeClass('active');
+  //     $(this).addClass('active');
+  //     $("#"+tab_id).addClass('active');
+  //   });
+  // }
 
   setupCurrencyListToggle() {
     $('.summa-list-btn').click(function (e) {
@@ -53,6 +73,27 @@ export class CashPanelComponent implements AfterViewInit {
       $('.expenses-cash-panel-cashlist__currency-list').slideUp();
     });
   }
+
+
+  setupRange(){
+    //Range Thumb
+    $('.cash-list-panel__range').each(function() {
+      if ( $(this).attr('value') == '0' ) {
+        $(this).addClass('null');
+      } else {
+        $(this).removeClass('null');
+      }
+    }).on('input', function(e){
+      var min = e.target.min,
+          max = e.target.max,
+          val = e.target.value;
+
+      $(e.target).css({
+        'backgroundSize': (val - min) * 100 / (max - min) + '% 100%'
+      });
+    }).trigger('input');
+  }
+
 
   setupCalendars() {
     $('#mycalendar1').monthly({

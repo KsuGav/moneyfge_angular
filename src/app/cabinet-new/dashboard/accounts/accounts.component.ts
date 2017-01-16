@@ -26,7 +26,7 @@ export class AccountsComponent implements OnInit {
 
   lock: Account[] = [];
 
-  private _id: number;
+  private _id: number; // number of account to be locked / unlocked
 
   constructor(
     private accountService: n_AccountService
@@ -52,7 +52,7 @@ export class AccountsComponent implements OnInit {
 
   getAccounts() {
     this.accountService
-      .getAllAccounts();
+      .getAllAccounts(true);
   }
 
   handleConfirmLock(id: number) {
@@ -67,7 +67,7 @@ export class AccountsComponent implements OnInit {
       .lockAccount(this._id)
       .subscribe(
         () => {
-          this.accountService.getAllAccounts();
+          this.accountService.getAllAccounts(true);
           toastr.success('Account lock successfully');
         },
         err => {
@@ -102,7 +102,7 @@ export class AccountsComponent implements OnInit {
       .unlockAccountStep2(this._id, smsCode.smsId, smsCode.smsCode)
       .subscribe(
         () => {
-          this.accountService.getAllAccounts();
+          this.accountService.getAllAccounts(true);
           toastr.success('Account unlock successfully');
         },
         err => {
@@ -112,4 +112,5 @@ export class AccountsComponent implements OnInit {
       )
     ;
   }
+
 }

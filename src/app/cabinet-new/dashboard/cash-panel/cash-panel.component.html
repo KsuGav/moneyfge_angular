@@ -3,8 +3,8 @@
     <div class="expenses-cash-panel-heading">
       <h4 class="expenses-cash-panel-heading__title">Total</h4>
       <div class="expenses-cash-panel-heading__datepicker calendar">
-        <span>on</span>
-        <input type="text" id="mytarget" value="12.12.2016">
+        <span>as of</span>
+        <input type="text" id="mytarget" value="{{statusDate}}">
         <div class="monthly" id="mycalendar1" style="display:none;"></div>
       </div>
     </div>
@@ -29,14 +29,14 @@
           <div class="expenses-cash-panel-cashlist__icon">
             <img src="/assets/new_assets/img/cash-panel-icon-2.png" alt="Icon">
           </div>
-          <p class="expenses-cash-panel-cashlist__title">Spend</p>
-          <p class="expenses-cash-panel-cashlist__summa small">-0.00 $</p>
+          <p class="expenses-cash-panel-cashlist__title">Expenses</p>
+          <p class="expenses-cash-panel-cashlist__summa small">- 0.00 $</p>
         </li>
         <li>
           <div class="expenses-cash-panel-cashlist__icon">
             <img src="/assets/new_assets/img/cash-panel-icon-3.png" alt="Icon">
           </div>
-          <p class="expenses-cash-panel-cashlist__title">Incoming</p>
+          <p class="expenses-cash-panel-cashlist__title">Income</p>
           <p class="expenses-cash-panel-cashlist__summa small">+ 0.00 $</p>
         </li>
       </ul>
@@ -44,15 +44,15 @@
   </div>
   <div class="expenses-cash-panel-right equal-expenses">
     <div class="expenses-cash-panel-heading">
-      <h4 class="expenses-cash-panel-heading__title">Spend</h4>
+      <h4 class="expenses-cash-panel-heading__title">Expenses</h4>
       <div class="expenses-cash-panel-heading__datepicker calendar">
-        <input type="text" id="mytarget2" value="December 2016">
+        <input type="text" id="mytarget2" value="{{chartPeriod}}">
         <div class="monthly" id="mycalendar2" style="display:none;"></div>
       </div>
       <div class="expenses-cash-panel-heading__icons">
         <ul>
-          <li class="active" data-id="Graph1"><img src="/assets/new_assets/img/cash-panel-icon-5-w.png" alt="Icon"></li>
-          <li data-id="Graph2"><img src="/assets/new_assets/img/cash-panel-icon-7.png" alt="Icon"></li>
+          <!--<li class="active" data-id="Graph1"><img src="/assets/new_assets/img/cash-panel-icon-5-w.png" alt="Icon"></li>-->
+          <!--<li data-id="Graph2"><img src="/assets/new_assets/img/cash-panel-icon-7.png" alt="Icon"></li>-->
           <li data-id="Graph3"><img src="/assets/new_assets/img/cash-panel-icon-10.png" alt="Icon"></li>
         </ul>
       </div>
@@ -72,7 +72,7 @@
             <span class="cash-list-panel__total">- $ 0.00</span>
             <span class="cash-list-panel__limit">Limit $ 0.00</span>
             <div class="clearfix"></div>
-            <input type="range" class="cash-list-panel__range" value="0" min="1" max="100" step="1">
+            <input type="range" class="cash-list-panel__range" value="0" min="0" max="100" step="1">
           </li>
           <li data-color="2">
             <span class="cash-list-panel__title">Transfers</span>
@@ -80,7 +80,7 @@
             <span class="cash-list-panel__total">- $ 0.00</span><br/>
             <span class="cash-list-panel__limit">Limit $ 0.00</span>
             <div class="clearfix"></div>
-            <input type="range" class="cash-list-panel__range" value="0">
+            <input type="range" class="cash-list-panel__range" min="0" max="100" value="0">
           </li>
           <li data-color="3">
             <span class="cash-list-panel__title">Connections</span>
@@ -88,7 +88,7 @@
             <span class="cash-list-panel__total">- $ 0.00</span><br/>
             <span class="cash-list-panel__limit">Limit $ 0.00</span>
             <div class="clearfix"></div>
-            <input type="range" class="cash-list-panel__range" value="0">
+            <input type="range" class="cash-list-panel__range" min="0" max="100" value="0">
           </li>
           <li data-color="4">
             <span class="cash-list-panel__title">IP-telephony</span>
@@ -96,7 +96,7 @@
             <span class="cash-list-panel__total">- $ 0.00</span><br/>
             <span class="cash-list-panel__limit">Limit $ 0.00</span>
             <div class="clearfix"></div>
-            <input type="range" class="cash-list-panel__range" value="0">
+            <input type="range" class="cash-list-panel__range" min="0" max="100" value="0">
           </li>
         </ul>
       </div>
@@ -108,7 +108,7 @@
             <span class="cash-list-panel__total">- $ 0.00</span>
             <span class="cash-list-panel__limit">Limit $ 0.00</span>
             <div class="clearfix"></div>
-            <input type="range" class="cash-list-panel__range" value="0">
+            <input type="range" class="cash-list-panel__range" min="0" max="100" value="0">
           </li>
           <li data-color="6">
             <span class="cash-list-panel__title">Utilities</span>
@@ -116,7 +116,7 @@
             <span class="cash-list-panel__total">- $ 0.00</span>
             <span class="cash-list-panel__limit">Limit $ 0.00</span>
             <div class="clearfix"></div>
-            <input type="range" class="cash-list-panel__range" value="0">
+            <input type="range" class="cash-list-panel__range" min="0" max="100" value="0">
           </li>
           <li data-color="7">
             <span class="cash-list-panel__title">Tickets</span>
@@ -124,7 +124,7 @@
             <span class="cash-list-panel__total">- $ 0.00</span>
             <span class="cash-list-panel__limit">Limit $ 0.00</span>
             <div class="clearfix"></div>
-            <input type="range" class="cash-list-panel__range" value="0">
+            <input type="range" class="cash-list-panel__range" min="0" max="100" value="0">
           </li>
           <li data-color="8">
             <span class="cash-list-panel__title">Charity</span>
@@ -132,20 +132,20 @@
             <span class="cash-list-panel__total">- $ 0.00</span>
             <span class="cash-list-panel__limit">Limit $ 0.00</span>
             <div class="clearfix"></div>
-            <input type="range" class="cash-list-panel__range" value="0">
+            <input type="range" class="cash-list-panel__range" min="0" max="100" value="0">
           </li>
         </ul>
       </div>
     </div>
-    <div class="expenses-cash-panel-content graph-content" id="Graph2">
-      <div class="line-chart">
-        <div id="line-canvas-holder">
-          <canvas id="line-chart-area" width="300" height="185px"></canvas>
-        </div>
-      </div>
-    </div>
-    <div class="expenses-cash-panel-content graph-content" id="Graph3">
-      567856
-    </div>
+    <!--<div class="expenses-cash-panel-content graph-content" id="Graph2">-->
+      <!--<div class="line-chart">-->
+        <!--<div id="line-canvas-holder">-->
+          <!--<canvas id="line-chart-area" width="300" height="185px"></canvas>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="expenses-cash-panel-content graph-content" id="Graph3">-->
+      <!--567856-->
+    <!--</div>-->
   </div>
 </div>

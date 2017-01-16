@@ -4,52 +4,133 @@
     <div class="container">
       <div class="row">
 
-        <div class="col-md-3 col-sm-4 col-xs-12">
-          <a [routerLink]="['']" class="top-logo">
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+          <a [routerLink]="['/user/dashboard']" class="top-logo">
             <img src="/assets/new_assets/img/logo.png" alt="MoneyFGE">
           </a>
         </div>
 
-        <div class="col-md-6 col-sm-4">
+        <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+          <form class="header-search clearfix">
+            <input type="text" class="header-search__input" placeholder="Пошук...">
+            <button><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-xs-12">
 
           <div class="nav-mobile-header clearfix">
             <div class="col-xs-12">
               <button class="hamburger hamburger--slider" type="button">
-                <span class="hamburger-box">
-                    <span class="hamburger-inner"></span>
-                </span>
+									<span class="hamburger-box">
+										<span class="hamburger-inner"></span>
+									</span>
               </button>
             </div>
           </div>
 
           <ul class="dash-main-menu clearfix">
-            <li><a [routerLink]="['/user/cabinet']">Dashboard</a></li>
-            <li><a [routerLink]="['/user/cabinet/transfer/index']">Transfers</a></li>
-            <li><a [routerLink]="['/user/cabinet/score/index']">My cards</a></li>
-            <li><a [routerLink]="['/user/cabinet/outmoney']">Cashouts</a></li>
+            <li id="payments_link"><a  [routerLink]="['/user/payments']">Payments</a></li>
+            <li id="transfers_link"><a  [routerLink]="['/user/transfers']">Transfers</a></li>
+            <li id="refill_link"><a [routerLink]="['/user/cashouts1']">Refill</a></li>
+            <li id="cashouts_link"><a [routerLink]="['/user/cashouts']">Cashouts</a></li>
           </ul>
+
         </div>
 
-        <div class="col-md-3 col-sm-4 col-xs-12">
-          <div class="top-profile">
-            <div class="profile">
-              <div class="profile-img" style="background-image: url('/assets/new_assets/img/User.png')"></div>
-              <span class="profile-name">User name</span>
-              <i class="fa fa-caret-down"></i>
-              <div class="profile-menu">
-                <ul>
-                  <li><a href="#" (click)="false"><i class="fa fa-history"></i> History</a></li>
-                  <li><a href="#" (click)="false"><i class="fa fa-gift"></i> Bonus</a></li>
-                  <li><a href="#" (click)="false"><i class="fa fa-info"></i> Help</a></li>
-                  <li><a href="#" (click)="false"><i class="fa fa-gear"></i> Settings</a></li>
-                </ul>
+        <div class="col-lg-3 col-xs-12">
+          <div class="user-wrap">
+            <div class="user">
+              <div class="notification-block">
+                <a href="" class="notification-block__icon"> <!-- Add class .with-notif to show circle -->
+                  <img src="/assets/new_assets/img/notif-icon.png" alt="Notification">
+                </a>
+                <div class="notifications">
+                  <ul>
+                    <li><i class="fa fa-info"></i> Notification</li>
+                    <li><i class="fa fa-info"></i> Notification</li>
+                    <li><i class="fa fa-info"></i> Notification</li>
+                    <li><i class="fa fa-info"></i> Notification long long</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="top-profile">
+                <div class="profile" id="ProfileMenuWrap">
+                  <div class="profile-img" style="background-image: url('/assets/new_assets/img/User.png')"></div>
+                  <span class="profile-name">{{userName}}<br> </span>
+                  <div class="profile-menu">
+                    <ul>
+                      <li><a href="#"><i class="fa fa-history"></i> History</a></li>
+                      <li><a href="#"><i class="fa fa-gift"></i> Bonus</a></li>
+                      <li><a href="#"><i class="fa fa-info"></i> Help</a></li>
+                      <li><a [routerLink]="['/user/settings']"><i class="fa fa-gear"></i> Settings</a></li>
+                      <li id="header_sign_out"><a href="#" (click)="logout($event)"><i class="fa fa-sign-out"></i> Sign out</a></li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
-            <a href="#" class="logout" (click)="logout($event)" ><i class="fa fa-sign-out"></i></a>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+
+
+
+  <!--<div class="top-line">-->
+    <!--<div class="container">-->
+      <!--<div class="row">-->
+
+        <!--<div class="col-md-3 col-sm-4 col-xs-12">-->
+          <!--<a [routerLink]="['']" class="top-logo">-->
+            <!--<img src="/assets/new_assets/img/logo.png" alt="MoneyFGE">-->
+          <!--</a>-->
+        <!--</div>-->
+
+        <!--<div class="col-md-6 col-sm-4">-->
+
+          <!--<div class="nav-mobile-header clearfix">-->
+            <!--<div class="col-xs-12">-->
+              <!--<button class="hamburger hamburger&#45;&#45;slider" type="button">-->
+                <!--<span class="hamburger-box">-->
+                    <!--<span class="hamburger-inner"></span>-->
+                <!--</span>-->
+              <!--</button>-->
+            <!--</div>-->
+          <!--</div>-->
+
+          <!--<ul class="dash-main-menu clearfix">-->
+            <!--<li><a [routerLink]="['/user/replenish']">Replenish</a></li>-->
+            <!--<li><a [routerLink]="['/user/transfers']">Transfers</a></li>-->
+            <!--<li><a [routerLink]="['/user/cashouts1']">Cashouts1</a></li>-->
+            <!--<li><a [routerLink]="['/user/cashouts2']">Cashouts2</a></li>-->
+            <!--<li><a [routerLink]="['/user/cashouts3']">Cashouts3</a></li>-->
+          <!--</ul>-->
+        <!--</div>-->
+
+        <!--<div class="col-md-3 col-sm-4 col-xs-12">-->
+          <!--<div class="top-profile">-->
+            <!--<div class="profile">-->
+              <!--<div class="profile-img" style="background-image: url('/assets/new_assets/img/User.png')"></div>-->
+              <!--<span class="profile-name">User name</span>-->
+              <!--<i class="fa fa-caret-down"></i>-->
+              <!--<div class="profile-menu">-->
+                <!--<ul>-->
+                  <!--<li><a href="#" (click)="false"><i class="fa fa-history"></i> History</a></li>-->
+                  <!--<li><a href="#" (click)="false"><i class="fa fa-gift"></i> Bonus</a></li>-->
+                  <!--<li><a href="#" (click)="false"><i class="fa fa-info"></i> Help</a></li>-->
+                  <!--<li><a href="#" (click)="false"><i class="fa fa-gear"></i> Settings</a></li>-->
+                <!--</ul>-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<a href="#" class="logout" (click)="logout($event)" ><i class="fa fa-sign-out"></i></a>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
 
 </header>

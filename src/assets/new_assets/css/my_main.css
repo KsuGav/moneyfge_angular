@@ -38,6 +38,7 @@
     bottom: -150px;
     background-color: #ffffff;
     padding: 10px 20px;
+    margin-bottom: -10px;
     z-index: 10;
     visibility: hidden;
     -webkit-transition: all 0.25s ease;
@@ -101,8 +102,8 @@
 .expenses-cash-panel .expenses-cash-panel-right .expenses-cash-panel-heading__datepicker input {
     width: 90px; }
 .pie-chart {
-    width: 135px;
-    height: 150px;
+    /*width: 145px;*/
+    /*height: 150px;*/
     float: left;
     margin-top: 20px;
     margin-right: 15px; }
@@ -113,11 +114,159 @@
     margin-bottom: 5px;
     position: relative; }
 .expenses-latest-bills_content__icon {
-    margin-top: 7px;
+    margin-top: 13px;
      }
 .profile-menu a {
     color: #4d4d4c;
 }
 .expenses-latest-bills_content__bill:before{
     background-color: transparent;
+}
+.img-responsive{
+    float: left;
+}
+.protect img {
+    margin-right: 30px;
+}
+.modal-header {
+    padding: 0 15px;
+    border-bottom: 1px solid #e5e5e5;
+}
+.modal-header .modal-title{
+    background-color: #d8d8d8;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 10px 0;
+    padding-top: 40px;
+    position: relative;
+    font-size: 16px;
+    font-weight: 500; }
+.modal-header .modal-title:before {
+    content: '';
+    background-color: #f6bc2c;
+    height: 30px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; }
+.mfp-close {
+    width: 32px;
+    height: 30px;
+    line-height: 32px;
+    color: #4c4c4b;
+}
+.transfer-select, .select2 {
+    max-width: 320px; }
+.transfer-select, .select2 .total {
+    padding-left: 30px; }
+
+.transfer-select, .select2-container--default .select2-selection--single .select2-selection__rendered {
+    font-size: 15px;
+    font-weight: normal;
+    color: #345382; }
+.select2-container--default .select2-selection--single .select2-selection__rendered,.input-medium.input-white{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.expenses-cash-panel .expenses-cash-panel-right{
+    min-height: 263px;
+}
+#header_sign_out{
+    border-top: 1px solid rgba(134, 131, 131, 0.24);
+    padding-top: 5px;
+}
+.msg-success p {
+    text-align: center;
+}
+
+.money-course span {
+    margin-right: 15px; }
+
+.merch-btn {
+    margin-bottom: 10px; }
+
+.expenses-cash-panel-content {
+    padding: 20px 15px 10px 15px;
+}
+
+.transfer-form .input-small-width:read-only {
+    background: #ebebe4;
+}
+.modal-content{
+    border-radius: 0px;
+}
+.dashboard-header .profile .profile-name{
+    max-width: 100px;
+    margin-left: 5px;
+    margin-top: 15px;
+}
+.dashboard-header .top-profile{
+    margin-left: 35px;
+}
+.dashboard-header .notification-block{
+    margin-left: 30px;
+}
+ul.dash-main-menu.clearfix{
+    padding-left: 20px;
+}
+
+p.expenses-latest-bills_content__bill.no-payment-content {
+    top: 15px;
+}
+
+.transfer-switcher .s1, .transfer-switcher .s2, .transfer-switcher .s3 {
+    cursor: pointer;
+}
+
+.transfer-switcher .s1, .transfer-switcher .s3 {
+    border-bottom: 1px dashed;
+}
+
+.transfer-switcher .s2 {
+    margin-top: 4px;
+    margin-right: 20px;
+}
+
+.transfer-switcher .s2 .dot {
+    height: 20px;
+    width: 20px;
+}
+
+.transfer-switcher .s2 .line {
+    width: 45px;
+    height: 12px;
+}
+
+#transferToInput {
+    max-width: 320px;
+    background-color: #fff;
+    padding-left: 30px;
+}
+.lang_block{
+    margin-right: -80px;
+    z-index: 100;
+}
+#popup-content-right{
+    float: right;
+}
+.list-terms{
+    padding-left: 14px;
+}
+
+.top_line .overlay-wrapper {
+    position: relative;
+    min-height: 20px;
+}
+.dashboard-account-list li:nth-child(odd) {
+    background-color: rgba(76, 76, 75, 0);
+}
+#transferToInput {
+    background: #fff url(/assets/new_assets/img/favicon/favicon1.png) no-repeat scroll 10px 9px;
+    background-size: 20px 20px;
+    padding-left: 40px;
+}
+.card--info.email-block{
+    margin-top: 20px;
 }

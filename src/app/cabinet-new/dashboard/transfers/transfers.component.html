@@ -1,0 +1,73 @@
+<new-cabinet-header-component></new-cabinet-header-component>
+<sms-dialog-component [id]="'trans'" (onSendCode)="closeSmsDialog($event)"></sms-dialog-component>
+
+<section class="sect-grey padding-small">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 centered col-xs-12">
+                <div class="dashboard-main-content">
+
+                    <div class="clearfix"></div>
+
+                    <money-course-component></money-course-component>
+
+                    <div class="fl-right">
+                        <ul class="breadcrumbs">
+                            <li><a [routerLink]="['/user/dashboard']">Main</a></li>
+                            <li><a href="#">Transfers</a></li>
+                        </ul>
+                    </div>
+
+                    <h2 class="dashboard-page-title">Transfers</h2>
+                    <loader-component #bigLoader>
+                    <form class="transfer-form" (submit)="submitForm()">
+                        <div class="card card--lightgrey">
+                            <loader-component #transferAccountsLoader>
+                                <p class="select-label">From account</p>
+                                <select class="select-medium transfer-select" id="fromMySelect" (change)="onFromChange($event.target.value)">
+                                    <option></option>
+                                    <option *ngFor="let acc of fromAccounts" value="{{acc.id}}">My MoneyFGA &nbsp;&nbsp; {{acc.sum}} {{acc.currency}}</option>
+                                </select>
+                                <div class="clearfix transfer-switcher">
+                                    <div class="s3 select-label" (click)="onYourAccountSelected()">To my account</div>
+                                    <div class="s2">
+                                        <div class="dot"></div>
+                                        <div class="line"></div>
+                                    </div>
+                                    <div class="s1 select-label" (click)="onOnesAccountSelected()">To one's account</div>
+                                </div>
+                                <input [hidden]="toMyAccount" type="number" max="99999999" required class="input-medium input-white" id="transferToInput" (keyup)="onToChange($event.target.value)">
+                                <select [hidden]="!toMyAccount" class="select-medium transfer-select" id="toMySelect" (change)="onToChange($event.target.value)">
+                                    <option></option>
+                                    <option *ngFor="let acc of toAccounts" value="{{acc.id}}">My MoneyFGA &nbsp;&nbsp; {{acc.sum}} {{acc.currency}}</option>
+                                </select>
+                            </loader-component>
+                        </div>
+
+                        <div class="card card--darkgrey">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <p class="select-label">Sum to receive</p>
+                                    <input type="number" maxlength="5" class="input-medium input-small-width" placeholder="0.00" (keyup)="onSumChange($event.target.value)">
+                                    <span class="form-info-summa">$</span>
+                                    <p class="select-label">Sum to pay</p>
+                                    <input type="text" class="input-medium input-small-width" readonly placeholder="0.00$" value="{{sumToPay}}$">
+                                    <span class="form-info">Including <br>bank fee 5%</span>
+                                    <div class="clearfix"></div>
+                                    <button (click)="submitForm()" class="btn btn-medium btn-accent" [disabled]="!formValid">Continue</button>
+                                </div>
+                                <div class="col-sm-6">
+                                    <p class="select-label grey">Add a comment</p>
+                                    <textarea id="transfer-comment">{{comment}}</textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    </loader-component>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer-component></footer-component>

@@ -1,22 +1,55 @@
-<dialog-component #dialog [title]="'New account'" (onClosed)="handleOnClosed()">
-  <div dialog-body>
-    <div class="row">
-      <div class="col-md-4 col-md-offset-4">
-        <loader-component #loader>
-          <form [formGroup]="form">
-            <div class="form-group">
-              <label class="control-label" for="currency">Currency</label>
-              <select id="currency" name="currency" required="required" class="form-control" formControlName="currency">
-                <option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
-              </select>
-            </div>
-          </form>
-        </loader-component>
+<success-component #success></success-component>
+
+<!--<dialog-component #dialog [title]="'New account'" (onClosed)="handleOnClosed()">-->
+<dialog-component #dialog [title]="'New account'" (onClosed)="close()">
+  <!--<div dialog-body>-->
+    <!--<div class="row">-->
+      <!--<div class="col-md-4 col-md-offset-4">-->
+        <!--<loader-component #loader>-->
+          <!--<form [formGroup]="form">-->
+            <!--<div class="form-group">-->
+              <!--<label class="control-label" for="currency">Currency</label>-->
+              <!--<select id="currency" name="currency" required="required" class="form-control" formControlName="currency">-->
+                <!--<option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>-->
+              <!--</select>-->
+            <!--</div>-->
+          <!--</form>-->
+        <!--</loader-component>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div dialog-footer>-->
+    <!--<button type="button" class="btn btn-primary" (click)="createAccount()">Create Account</button>-->
+    <!--<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>-->
+  <!--</div>-->
+    <div dialog-body>
+    <form [formGroup]="form">
+      <loader-component #newAccLoader>
+      <div class="row">
+        <div class="col-xs-12 col-md-6 col-md-offset-3">
+          <select formControlName="currency" id="PhoneNumber" class="custom-select">
+            <option></option>
+            <option *ngFor="let currency of currencies" value="{{currency[0]}}">{{currency[0]}} - {{currency[1]}}</option>
+          </select>
+        </div>
       </div>
-    </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <!--<p class="account-fill-form__subtitle">Number of new account</p>-->
+          <!--<input class="input-medium input-white" id="CreditCardInput3" type="text" placeholder="0000 0000 0000 0000" required>-->
+          <div class="text-right">
+            <button (click)="createAccount()" class="btn btn-medium btn-accent open-popup-link">Create</button>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <!--<p class="account-fill-form__subtitle">Select currency</p>-->
+          <button (click)="close()" class="btn btn-medium btn-grey close-popup">Cancel</button>
+        </div>
+      </div>
+      </loader-component>
+    </form>
   </div>
-  <div dialog-footer>
-    <button type="button" class="btn btn-primary" (click)="createAccount()">Create Account</button>
-    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-  </div>
+
 </dialog-component>
+
+

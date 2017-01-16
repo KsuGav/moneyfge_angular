@@ -1,10 +1,10 @@
 <dialog-component #dialog [title]="'Sms Code'" [size]="'sm'" (onOpen)="beforeOpen()" (onClosed)="afterClose()">
   <div class="text-center" dialog-body>
-    <input #code type="text" class="form-control text-center" />
+    <input #code type="text" class="form-control text-center" [(ngModel)]="_smsCode.smsCode" />
     <br />
     <timer-link-component #timerLink [text]="'Send SMS again'" (onClick)="handleSendSmsAgain()"></timer-link-component>
   </div>
   <div class="text-center" dialog-footer>
-    <button type="button" class="btn btn-primary btn-block" (click)="sendCode()">Send Code</button>
+    <button type="button" class="btn btn-primary btn-block" (click)="sendCode()">Continue</button>
   </div>
 </dialog-component>

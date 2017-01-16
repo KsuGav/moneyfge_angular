@@ -1,4 +1,6 @@
 import { NewCabinetHeaderComponent } from '../cabinet-new/header/cabinet-header.component';
+import { SettingsComponent } from '../cabinet-new/header/settings/settings.component';
+
 import { DashboardComponent } from '../cabinet-new/dashboard/dashboard.component';
 import { SidebarComponent } from '../cabinet-new/dashboard/sidebar/sidebar.component';
 import { AccountComponent } from '../cabinet-new/dashboard/account/account.component';
@@ -12,10 +14,22 @@ import { TransferPopupComponent } from '../cabinet-new/dashboard/transfer-popup/
 import { MoneyCourseComponent } from '../cabinet-new/dashboard/money-course/money-course.component';
 import { AccountHistoryComponent } from '../cabinet-new/dashboard/accounts/account-history.component';
 
+
+import { PaymentsComponent } from '../cabinet-new/dashboard/payments/payments.component';
+import { TransfersComponent } from '../cabinet-new/dashboard/transfers/transfers.component';
+import { Cashouts1Component } from '../cabinet-new/dashboard/cashouts1/cashouts1.component';
+import { CashoutsComponent } from '../cabinet-new/dashboard/cashouts/cashouts.copmonent';
+import { Cashouts3Component } from '../cabinet-new/dashboard/cashouts3/cashouts3.component';
+import { MerchantPanelComponent } from '../cabinet-new/dashboard/merchant-panel/merchant-panel.component';
+import { SuccessComponent } from '../common-new/success/success.component';
+
+
 import { NewAccountDialogComponent } from '../cabinet-new/dashboard/new-account-dialog/new-account-dialog.component';
 
 export const CABINETNEW: any[]=[
   NewCabinetHeaderComponent
+    ,SettingsComponent
+
   , DashboardComponent
   , SidebarComponent
   , AccountComponent
@@ -28,5 +42,14 @@ export const CABINETNEW: any[]=[
   , TransferPopupComponent
   , MoneyCourseComponent
   , AccountHistoryComponent
+
+    ,PaymentsComponent
+    ,TransfersComponent
+    ,Cashouts1Component
+    ,CashoutsComponent
+    ,Cashouts3Component
+    ,SuccessComponent
+    ,MerchantPanelComponent
+
   , NewAccountDialogComponent
 ];

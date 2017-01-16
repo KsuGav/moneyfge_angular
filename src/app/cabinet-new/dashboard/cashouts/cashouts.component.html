@@ -1,0 +1,111 @@
+<new-cabinet-header-component></new-cabinet-header-component>
+
+<section class="sect-grey padding-small">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 centered col-xs-12">
+                <div class="dashboard-main-content">
+
+                    <div class="clearfix"></div>
+
+                    <money-course-component></money-course-component>
+
+                    <div class="fl-right">
+                        <ul class="breadcrumbs">
+                            <li><a [routerLink]="['/user/dashboard']">Main</a></li>
+                            <li><a href="#">Cashouts</a></li>
+                        </ul>
+                    </div>
+
+                    <form class="transfer-form">
+                        <div class="card card--lightgrey">
+                            <p class="select-label">From account</p>
+                            <select class="select-medium transfer-select bill">
+                                <option value="1" selected>My MoneyFGA &nbsp;&nbsp; 0,000 USD</option>
+                                <option value="2">My MoneyFGA &nbsp;&nbsp; 0,000 RUB</option>
+                                <option value="3">My MoneyFGA &nbsp;&nbsp; 0,000 UAH</option>
+                            </select>
+                        </div>
+
+                        <div class="card card--darkgrey">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <p class="select-label">The amount of refill</p>
+                                    <input type="number" class="input-medium input-small-width" placeholder="0, 000" required>
+                                    <span class="form-info-summa">$</span>
+                                    <p class="select-label">To paying</p>
+                                    <input type="text" class="input-medium input-small-width" disabled placeholder="0, 000 $">
+                                    <span class="form-info">Taking into <br> bank commission 5%</span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="file-upload-sect clearfix">
+                            <div class="file-upload-sect__icon">
+                                <img src="/assets/new_assets/img/download.png" alt="Upload File">
+                            </div>
+                            <p class="file-upload-sect__info">
+                                Add image (scanned copy) of the requisites of the SWIFT-payment. <br>
+                                Before sending, make sure that the requisites in image clearly indicated. <br>
+                                Supported file formats downloaded: jpg, png, tiff, zip, rar, pdf. <br>
+                                The size of uploaded files should not exceed 20MB. <br>
+                            </p>
+                            <div class="custom-file-upload">
+                                <input type="file" id="file" name="myfiles[]" multiple />
+                            </div>
+                        </div>
+
+                        <div class="card card--lightgrey card-big">
+                            <p class="select-label">Add your bank account information</p>
+
+                            <div class="input-medium-wrap">
+                                <label>Bank account/IBAN</label>
+                                <input type="text" class="input-medium">
+                                <a href="" class="tooltip-btn" data-toggle="tooltip" title="Information"><img src="/assets/new_assets/img/help.png" alt="help"></a>
+                            </div>
+                            <div class="input-medium-wrap">
+                                <label>Bank account currency</label>
+                                <select class="select-medium transfer-select">
+                                    <option value="1" selected>USD</option>
+                                    <option value="2">RUB</option>
+                                    <option value="3">UAH</option>
+                                </select>
+                            </div>
+                            <div class="input-medium-wrap">
+                                <label>Bank name</label>
+                                <input type="text" class="input-medium">
+                            </div>
+                            <div class="input-medium-wrap">
+                                <label>Bank city</label>
+                                <input type="text" class="input-medium">
+                            </div>
+                            <div class="input-medium-wrap">
+                                <label>Bank country</label>
+                                <select class="select-medium transfer-select country">
+                                    <option value="USA" selected>USA</option>
+                                    <option value="Euro">Europe</option>
+                                </select>
+                            </div>
+                            <div class="input-medium-wrap">
+                                <label>SWIFT (BIC) code</label>
+                                <input type="text" class="input-medium">
+                                <a href="" class="tooltip-btn" data-toggle="tooltip" title="Information"><img src="/assets/new_assets/img/help.png" alt="help"></a>
+                            </div>
+                            <div class="input-medium-wrap">
+                                <label>Full name</label>
+                                <input type="text" class="input-medium">
+                                <a href="" class="tooltip-btn" data-toggle="tooltip" title="Information"><img src="/assets/new_assets/img/help.png" alt="help"></a>
+                            </div>
+                            <button class="btn btn-medium btn-accent">Continue</button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer-component></footer-component>

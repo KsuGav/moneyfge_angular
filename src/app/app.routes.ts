@@ -34,6 +34,16 @@ import { BillsComponent } from './home-new/static/bills/bills.component';
 import { ContactComponent } from './home-new/static/contact/contact.component';
 import { DashboardComponent } from './cabinet-new/dashboard/dashboard.component';
 
+import { PaymentsComponent } from './cabinet-new/dashboard/payments/payments.component';
+import { TransfersComponent } from './cabinet-new/dashboard/transfers/transfers.component';
+import { Cashouts1Component } from './cabinet-new/dashboard/cashouts1/cashouts1.component';
+import { CashoutsComponent } from './cabinet-new/dashboard/cashouts/cashouts.copmonent';
+import { Cashouts3Component } from './cabinet-new/dashboard/cashouts3/cashouts3.component';
+import { MerchantPanelComponent } from './cabinet-new/dashboard/merchant-panel/merchant-panel.component';
+import { SettingsComponent } from './cabinet-new/header/settings/settings.component';
+
+
+
 
 export const ROUTES: Routes = [
   { path: '', component: IndexComponent }
@@ -64,6 +74,31 @@ export const ROUTES: Routes = [
   , { path: 'site/password', component: SitePasswordComponent }
   , { path: 'birga', component: BirgaComponent }
   , { path: 'market', component: MarketComponent }
+  , { path: 'user/dashboard',
+    component: DashboardComponent,
+    canActivate: [ LoggedInGuard ],
+    }
+  , { path: 'user/payments',
+    canActivate: [ LoggedInGuard ],
+    component: PaymentsComponent}
+  , { path: 'user/transfers',
+    canActivate: [ LoggedInGuard ],
+    component: TransfersComponent}
+  , { path: 'user/cashouts1',
+    canActivate: [ LoggedInGuard ],
+    component: Cashouts1Component}
+  , { path: 'user/cashouts',
+    canActivate: [ LoggedInGuard ],
+    component: CashoutsComponent}
+  , { path: 'user/cashouts3',
+    canActivate: [ LoggedInGuard ],
+    component: Cashouts3Component}
+  , { path: 'user/settings',
+    canActivate: [ LoggedInGuard ],
+    component: SettingsComponent}
+  , { path: 'user/merchant-panel',
+    canActivate: [ LoggedInGuard ],
+    component: MerchantPanelComponent}
   , {path: 'user/dashboard', component: DashboardComponent, canActivate: [ LoggedInGuard ]}
   , { path: 'user/cabinet', loadChildren: './cabinet/cabinet.module#CabinetModule' }
   , { path: '**',    component: NoContentComponent }

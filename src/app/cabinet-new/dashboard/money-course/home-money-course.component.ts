@@ -2,6 +2,7 @@ import { Component, ViewChild  } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { CommonService } from '../../../app.services/Common.service';
 import { MoneyCourse } from '../../../app.models/MoneyCourse.model';
+import {LoaderComponent} from "../../../common-new/loader/loader.component";
 
 @Component({
     selector: 'home-money-course-component',
@@ -9,6 +10,7 @@ import { MoneyCourse } from '../../../app.models/MoneyCourse.model';
 })
 export class HomeMoneyCourseComponent implements OnInit {
 
+    @ViewChild('exRatesLoader') exLoader: LoaderComponent;
     courses: MoneyCourse[] = [];
 
     constructor(
@@ -17,12 +19,17 @@ export class HomeMoneyCourseComponent implements OnInit {
         this.commonService.onGetMoneyCourses.subscribe(
             res => {
                 this.courses = res;
+                this.exLoader.toggle(false);
             }
         );
     }
 
     ngOnInit() {
-        this.getCourses();
+        this.exLoader.toggle(true);
+        const gToken = sessionStorage.getItem('gToken');
+        if('undefined' !== typeof gToken && gToken) {
+            this.getCourses();
+        }
     }
 
     getCourses() {

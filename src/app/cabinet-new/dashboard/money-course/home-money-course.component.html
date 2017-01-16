@@ -1,4 +1,5 @@
     <ul>
-        <li>Exchange rates:</li>
+        <loader-component #exRatesLoader>
         <li *ngFor="let course of courses">{{course.name}}: {{course.bid}}/{{course.ask}}</li>
+        </loader-component>
     </ul>

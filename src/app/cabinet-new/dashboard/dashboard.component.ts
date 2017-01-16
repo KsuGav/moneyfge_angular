@@ -16,6 +16,7 @@ export class DashboardComponent implements AfterViewInit {
     this.setupSelects();
     this.setupCheckboxes();
     this.setupPaymentsCards();
+    this.setupElements();
   }
 
   setupAdaptive() {
@@ -79,6 +80,10 @@ export class DashboardComponent implements AfterViewInit {
     $('#CreditCardInput2').payment('formatCardNumber');
     $('#CVC').payment('formatCardCVC');
     $('#CVC2').payment('formatCardCVC');
+  }
+
+  setupElements() {
+    //$('.expenses-latest-bills_header__date').html('qwe');
   }
 
 }
