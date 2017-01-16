@@ -67,7 +67,6 @@ export class n_AccountService {
         }
 
         if(getHistory) {
-          console.log('getAllAccounts');
           this.getAccountHistory(this.initialAccountId);
         }
 

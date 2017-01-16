@@ -1,22 +1,63 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, OnDestroy, ViewChild} from '@angular/core';
+import {User} from '../../../app.models/User.model';
+import {UserService} from '../../../app.services/User.service';
+import {LoaderComponent} from "../../../common-new/loader/loader.component";
 
 declare const $: any;
+declare const toastr: any;
 
 @Component({
     selector: 'settings-component',
     templateUrl: 'settings.component.html'
 })
 
-export class SettingsComponent implements OnInit {
+export class SettingsComponent implements OnInit, OnDestroy{
 
     userName: any;
+    userInfo: User;
 
-    ngOnInit(){
-        this.settings();
+    @ViewChild('smsLoader') smsLoader: LoaderComponent;
+
+    userInfoSubscription;
+    toggleSmsSubscription;
+
+    constructor(private _userService: UserService) {
+    }
+
+    ngOnInit() {
+        this.userInfoSubscription = this._userService.getUserInfo()
+            .subscribe((res: any) => {
+                    this.userInfo = res;
+                },
+                err => {
+                    toastr.error(err.json().message);
+                });
+        this.initSettings();
         this.userName = sessionStorage.getItem('telephone');
     }
 
-    settings(){
+    ngOnDestroy() {
+        this.userInfoSubscription.unsubscribe();
+    }
+
+    onSmsClick(state: boolean) {
+        if(this.userInfo.is_check_sms == state) {
+            return;
+        }
+
+        this.smsLoader.toggle(true);
+        this.toggleSmsSubscription = this._userService.toggleSmsNotifications()
+            .subscribe((res: any) => {
+                    this._userService.copyUserInfo(res, this.userInfo);
+                    this.smsLoader.toggle(false);
+                    this.toggleSmsSubscription.unsubscribe();
+                },
+                err => {
+                    toastr.error(err.json().message);
+                });
+    }
+
+    initSettings(){
 
         // Settings Page Functions
         $('#SMSActivate').click(function () {
@@ -61,8 +102,6 @@ export class SettingsComponent implements OnInit {
             }
         });
     }
-
-
 }
 
 

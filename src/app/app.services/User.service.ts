@@ -14,6 +14,17 @@ export class UserService {
     private _appService: AppService
   ) { }
 
+  getUserInfo() {
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
+
+    const locUrl = `${this._appService.get('apiEndpoint')}/user/`;
+    return this._http
+        .get(locUrl, {headers: headers})
+        .map(res => res.json())
+        ;
+  }
+
   sendSms(sms: number, isAToken: boolean = false) {
     const headers = new Headers();
     if (isAToken) {
@@ -27,6 +38,21 @@ export class UserService {
       .put(locUrl, null, {headers: headers})
       .map(res => res.json())
     ;
+  }
+
+  toggleSmsNotifications() {
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
+
+    const locUrl = `${this._appService.get('apiEndpoint')}/user/sms`;
+    return this._http
+        .put(locUrl, null, {headers: headers})
+        .map(res => res.json())
+        ;
+  }
+
+  copyUserInfo(source: User, destination: User) {
+    for(let k in source) destination[k] = source[k];
   }
 
 }
