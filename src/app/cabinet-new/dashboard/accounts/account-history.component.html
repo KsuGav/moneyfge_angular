@@ -30,7 +30,7 @@
                     <p class="expenses-latest-bills_content__bill">
                         {{record.info}}
                     </p>
-                    <p class="expenses-latest-bills_content__total">{{record.znak_sum}}{{record.sum}} {{record.currency}}</p>
+                    <p class="expenses-latest-bills_content__total">{{record.znak_sum}}{{record.sum.toFixed(2)}} {{record.currency}}</p>
                 </li>
             </loader-component>
         </ul>

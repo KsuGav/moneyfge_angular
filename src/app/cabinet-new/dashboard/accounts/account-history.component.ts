@@ -1,4 +1,4 @@
-import {Component, ViewChild, OnDestroy} from '@angular/core';
+import {Component, ViewChild, OnDestroy, Input} from '@angular/core';
 import { OnInit } from '@angular/core';
 import { n_AccountService } from '../../../app.services/Account.service';
 import { AccountHistoryRecord } from '../../../app.models/AccountHistoryRecord.model';
@@ -13,34 +13,41 @@ export class AccountHistoryComponent implements OnInit, OnDestroy {
     history: AccountHistoryRecord[] = [];
     noHistory: Boolean = false;
 
-    subscription;
+    getSubscription;
+    reqSubscription;
 
     @ViewChild('accountHistoryLoader') historyLoader: LoaderComponent;
+    @Input() isForAll: boolean = false;
 
     constructor(
         private accountService: n_AccountService
     ){
-        this.subscription = this.accountService.onGetAccountHistory.subscribe(
+        this.getSubscription = this.accountService.onGetAccountHistory.subscribe(
             res => {
                 this.history = res;
                 this.noHistory = !res || res.length < 1;
                 this.historyLoader.toggle(false);
-                console.log('got history for account');
+            }
+        );
+
+        this.reqSubscription = this.accountService.onRequestAccountHistory.subscribe(
+            () => {
+                this.historyLoader.toggle(true);
             }
         );
     }
 
     ngOnInit() {
         this.getHistory();
-        this.setupElements();
+        if(this.isForAll) {
+            console.log('get history for all');
+            this.accountService.getAccountHistory(undefined);
+        }
     }
 
     ngOnDestroy() {
-        this.subscription.unsubscribe();
-    }
-
-    setupElements() {
-
+        this.getSubscription.unsubscribe();
+        this.reqSubscription.unsubscribe();
     }
 
     getHistory() {

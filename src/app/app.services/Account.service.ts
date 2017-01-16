@@ -23,6 +23,7 @@ export class n_AccountService {
   receiveAccountsError: EventEmitter<String> = new EventEmitter<String>();
 
   onGetAccountHistory: EventEmitter<any> = new EventEmitter<any>();
+  onRequestAccountHistory: EventEmitter<any> = new EventEmitter<any>();
   onGetAccountHistoryError: EventEmitter<any> = new EventEmitter<any>();
 
   //onSelectAccount: EventEmitter<number> = new EventEmitter<number>();
@@ -36,7 +37,7 @@ export class n_AccountService {
 
   }
 
-  getAllAccounts() {
+  getAllAccounts(getHistory: boolean = false) {
     this.requestAccounts.emit('request accounts');
     const headers = new Headers();
     headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
@@ -65,7 +66,10 @@ export class n_AccountService {
           this.initialAccountId = res.lock[0].id;
         }
 
-        this.getAccountHistory(this.initialAccountId);
+        if(getHistory) {
+          console.log('getAllAccounts');
+          this.getAccountHistory(this.initialAccountId);
+        }
 
         return {active, lock, deleted};
       })
@@ -171,8 +175,9 @@ export class n_AccountService {
     ;
   }
 
-  getAccountHistory(account) {
-    if(account == 0) {
+  getAccountHistory(account:number) {
+    this.onRequestAccountHistory.emit();
+    if('undefined' !== typeof account && account == 0) {
       this.onGetAccountHistory.emit([]);
       return null;
     }
@@ -180,7 +185,10 @@ export class n_AccountService {
     headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
     headers.append('Content-Type', 'application/json');
 
-    const locUrl = `${this.appState.get('apiEndpoint')}/accounts/history/${account}/`;
+    let locUrl = `${this.appState.get('apiEndpoint')}/accounts/history/`;
+    if('undefined' !== typeof account) {
+      locUrl += `${account}/`;
+    }
     return this.http
         .get(locUrl, {headers:headers})
         .map(res => res.json())
