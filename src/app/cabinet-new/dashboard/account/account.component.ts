@@ -44,8 +44,7 @@ export class AccountComponent implements OnInit{
     console.log(`${id} account was selected.`);
     this.accountService.getAccountHistory(id);
 
-    $('.accounts-item').css({'background':'rgba(76, 76, 75, 0)'});
-    li.css({'background':'#D8D8D8'});
+
     //this.onSelect.emit(id);
     // if(li.hasClass==='unactiveAccount'){
     //   li.addClass('activeAccount')
@@ -72,14 +71,20 @@ export class AccountComponent implements OnInit{
     // $('.accounts-item').mouseover(function(){
     //   $(this).css({'background':'#D8D8D8'});
     // }).mouseout(function(){
-    //   $(this).css({'background':'rgba(76, 76, 75, 0)'});
+    //   $(this).css({'background':'rgba(76, 76, 75, 0)'})
+    // ;
     // })
-    // $('.accounts-item').click(function(){
-    //   console.log($(this));
-    //
-    //   $('.accounts-item').css({'background':'rgba(76, 76, 75, 0)'});
-    //   $(this).css({'background':'#D8D8D8'});
-    // });
+    $('.accounts-item').click(function() {
+      // $('.accounts-item').css({'background': 'rgba(76, 76, 75, 0)'})
+      //     .mouseover(function(){
+      //         $(this).css({'background':'#D8D8D8'});
+      //       }).mouseout(function(){
+      //         $(this).css({'background':'rgba(76, 76, 75, 0)'});
+      //       });
+      // $(this).addClass('activeAccount').removeClass('unactiveAccount');
+        $('.accounts-item').css({'background':'rgba(76, 76, 75, 0)'});
+        $(this).css({'background':'#D8D8D8'});
+    });
 
   }
 
