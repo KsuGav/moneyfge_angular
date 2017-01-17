@@ -1,5 +1,6 @@
 import { NewCabinetHeaderComponent } from '../cabinet-new/header/cabinet-header.component';
 import { SettingsComponent } from '../cabinet-new/header/settings/settings.component';
+import { HistoryComponent } from '../cabinet-new/header/history/history.component';
 
 import { DashboardComponent } from '../cabinet-new/dashboard/dashboard.component';
 import { SidebarComponent } from '../cabinet-new/dashboard/sidebar/sidebar.component';
@@ -17,9 +18,8 @@ import { AccountHistoryComponent } from '../cabinet-new/dashboard/accounts/accou
 
 import { PaymentsComponent } from '../cabinet-new/dashboard/payments/payments.component';
 import { TransfersComponent } from '../cabinet-new/dashboard/transfers/transfers.component';
-import { Cashouts1Component } from '../cabinet-new/dashboard/cashouts1/cashouts1.component';
+import { RefillComponent } from '../cabinet-new/dashboard/refill/refill.component';
 import { CashoutsComponent } from '../cabinet-new/dashboard/cashouts/cashouts.copmonent';
-import { Cashouts3Component } from '../cabinet-new/dashboard/cashouts3/cashouts3.component';
 import { MerchantPanelComponent } from '../cabinet-new/dashboard/merchant-panel/merchant-panel.component';
 import { SuccessComponent } from '../common-new/success/success.component';
 
@@ -29,6 +29,7 @@ import { NewAccountDialogComponent } from '../cabinet-new/dashboard/new-account-
 export const CABINETNEW: any[]=[
   NewCabinetHeaderComponent
     ,SettingsComponent
+    ,HistoryComponent
 
   , DashboardComponent
   , SidebarComponent
@@ -45,9 +46,8 @@ export const CABINETNEW: any[]=[
 
     ,PaymentsComponent
     ,TransfersComponent
-    ,Cashouts1Component
+    ,RefillComponent
     ,CashoutsComponent
-    ,Cashouts3Component
     ,SuccessComponent
     ,MerchantPanelComponent
 

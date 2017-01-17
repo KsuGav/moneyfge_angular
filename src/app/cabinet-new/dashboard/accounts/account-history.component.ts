@@ -14,6 +14,7 @@ export class AccountHistoryComponent implements OnInit {
 
     history: AccountHistoryRecord[] = [];
     noHistory: Boolean = false;
+    today: number = Date.now();
 
     subscription;
 
