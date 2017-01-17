@@ -17,6 +17,7 @@ export class SettingsComponent implements OnInit, OnDestroy{
     userInfo: User;
 
     @ViewChild('smsLoader') smsLoader: LoaderComponent;
+    @ViewChild('settingLoader') settingLoader: LoaderComponent;
 
     userInfoSubscription;
     toggleSmsSubscription;

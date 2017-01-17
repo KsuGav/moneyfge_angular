@@ -46,8 +46,12 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-md-8" *ngIf="!userInfo">
-                Loading...
+                <div class="cssload-container">
+                    <div class="cssload-double-torus"></div>
+                </div>
+
             </div>
             <div class="col-md-8" *ngIf="userInfo">
                 <div class="dashboard-main-content">
@@ -169,7 +173,7 @@
                                 <div class="col-md-7">
                                     <div class="half-width-inputs">
                                         <div class="half-width-input big">
-                                            <span>Новий пароль</span>
+                                            <span>New password</span>
                                         </div>
                                         <div class="half-width-input big">
                                             <input type="password" class="input-medium" required>
@@ -177,7 +181,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-5">
-                                    <p class="card--info pass-block">Пароль повинен містити:  не менш 7 знаків. Цифри і букви латинського алфавіту.</p>
+                                    <p class="card--info pass-block">The password must contain: at least 7 characters. The numbers and letters of the alphabet.</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -204,6 +208,7 @@
 
                 </div>
             </div>
+
         </div>
     </div>
 </section>
