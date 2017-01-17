@@ -1,5 +1,5 @@
     <div class="card card--lightgrey">
-        <h4 class="setting-card-title">Новий рахунок</h4>
+        <h4 class="setting-card-title">New account</h4>
         <p class="select-label">Виберіть валюту</p>
         <div class="row">
             <div class="col-md-7">
@@ -31,7 +31,7 @@
                         <p class="select-label">Номер гаманця</p>
                     </div>
                     <div class="half-width-input big">
-                        <input type="text" class="input-medium" placeholder="+000 000000000" disabled>
+                        <input type="text" class="input-medium" placeholder="+{{userName}}" disabled>
                     </div>
                 </div>
             </div>
@@ -46,7 +46,7 @@
                         <li>
                             <div class="left-part">
                                 <div class="bill__icon"><img src="/assets/new_assets/img/favicon/favicon1.png" alt="Fge"></div>
-                                <h3 class="dashboard-account-list__title"><a href="#">Money FGA <span>$</span></a></h3>
+                                <h3 class="dashboard-account-list__title"><a href="#" (click)="false">Money FGA <span>$</span></a></h3>
                                 <div class="dashboard-account-list__card-number">
                                     <img class="icon-flag" src="/assets/new_assets/img/flag-usa.png" alt="USA">
                                     <span>0000 0000 0000 0001</span>
@@ -62,12 +62,12 @@
                 <div class="account-list-setting-btns">
                     <div class="row">
                         <div class="col-lg-6">
-                            <a href="">Перевод</a>
-                            <a href="">Поповнення</a>
+                            <a href="" (click)="false">Перевод</a>
+                            <a href="" (click)="false">Поповнення</a>
                         </div>
                         <div class="col-lg-6">
-                            <a href="">Історія</a>
-                            <a href="">Заблокувати</a>
+                            <a href="" (click)="false">Історія</a>
+                            <a href="" (click)="false">Заблокувати</a>
                         </div>
                     </div>
                 </div>

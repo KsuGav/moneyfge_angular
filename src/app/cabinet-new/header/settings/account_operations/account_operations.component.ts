@@ -9,8 +9,11 @@ declare const $: any;
 
 export class AccountOperationsComponent implements OnInit{
 
+    userName: any;
+
     ngOnInit() {
-        this.selects()
+        this.selects();
+        this.userName = sessionStorage.getItem('telephone');
     }
 
 

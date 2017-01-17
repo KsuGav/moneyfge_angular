@@ -16,10 +16,10 @@ declare const toastr: any;
 
 export class SettingsComponent implements OnInit, OnDestroy{
 
-    userName: any;
+    // userName: any;
     userInfo: User;
 
-    @ViewChild('smsLoader') smsLoader: LoaderComponent;
+    // @ViewChild('smsLoader') smsLoader: LoaderComponent;
     @ViewChild('settingLoader') settingLoader: LoaderComponent;
     @ViewChild('accountOperations') accountOperations: AccountOperationsComponent;
     @ViewChild('profileSettings') profileSettings: ProfileSettingsComponent;
@@ -41,60 +41,32 @@ export class SettingsComponent implements OnInit, OnDestroy{
                 });
 
         this.initSettings();
-        this.userName = sessionStorage.getItem('telephone');
+        // this.userName = sessionStorage.getItem('telephone');
     }
 
     ngOnDestroy() {
-        this.userInfoSubscription.unsubscribe();
+        // this.userInfoSubscription.unsubscribe();
     }
 
-    onSmsClick(state: boolean) {
-        if(this.userInfo.is_check_sms == state) {
-            return;
-        }
-
-        this.smsLoader.toggle(true);
-        this.toggleSmsSubscription = this._userService.toggleSmsNotifications()
-            .subscribe((res: any) => {
-                    this._userService.copyUserInfo(res, this.userInfo);
-                    this.smsLoader.toggle(false);
-                    this.toggleSmsSubscription.unsubscribe();
-                },
-                err => {
-                    toastr.error(err.json().message);
-                });
-    }
+    // onSmsClick(state: boolean) {
+    //     if(this.userInfo.is_check_sms == state) {
+    //         return;
+    //     }
+    //
+    //     this.smsLoader.toggle(true);
+    //     this.toggleSmsSubscription = this._userService.toggleSmsNotifications()
+    //         .subscribe((res: any) => {
+    //                 this._userService.copyUserInfo(res, this.userInfo);
+    //                 this.smsLoader.toggle(false);
+    //                 this.toggleSmsSubscription.unsubscribe();
+    //             },
+    //             err => {
+    //                 toastr.error(err.json().message);
+    //             });
+    // }
 
     initSettings(){
 
-        // $('.container').on('click', '#WalletStep1', function () {
-        //     $('#WalletStep1Block').slideDown();
-        // });
-        //
-        // $('.container').on('click', '#WalletStep3', function () {
-        //     $('#WalletStep1Block, #WalletStep2Block').slideUp();
-        //     $('.wallet-block.success').fadeIn();
-        // });
-        //
-        // $('.container').on('blur', '.input-sms', function()
-        // {
-        //     if($(this).val().length <= 3) {
-        //         $('#SmsCheck').removeClass('yes');
-        //         $('#SmsCheck').addClass('no');
-        //         $('#WalletStep2').click(function () {
-        //             $('#SmsCheck').removeClass('yes');
-        //             $('.sms-check').addClass('no');
-        //         });
-        //     } else {
-        //         $('#SmsCheck').removeClass('no');
-        //         $('#SmsCheck').addClass('yes');
-        //         $('#WalletStep2').click(function () {
-        //             $('#SmsCheck').removeClass('no');
-        //             $('.sms-check').addClass('yes');
-        //             $('#WalletStep2Block').slideDown();
-        //         });
-        //     }
-        // });
 
         $('#SettingsMenuTabs li').click(function(){
             var tab_id = $(this).attr('data-tab');

@@ -25,25 +25,38 @@ export class ProfileSettingsComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.userInfoSubscription = this._userService.getUserInfo()
+            .subscribe((res: any) => {
+                    this.userInfo = res;
+                },
+                err => {
+                    toastr.error(err.json().message);
+                });
 
+        this.init();
+        this.userName = sessionStorage.getItem('telephone');
     }
 
-    // onSmsClick(state: boolean) {
-    //     if(this.userInfo.is_check_sms == state) {
-    //         return;
-    //     }
-    //
-    //     this.smsLoader.toggle(true);
-    //     this.toggleSmsSubscription = this._userService.toggleSmsNotifications()
-    //         .subscribe((res: any) => {
-    //                 this._userService.copyUserInfo(res, this.userInfo);
-    //                 this.smsLoader.toggle(false);
-    //                 this.toggleSmsSubscription.unsubscribe();
-    //             },
-    //             err => {
-    //                 toastr.error(err.json().message);
-    //             });
-    // }
+    ngOnDestroy() {
+        this.userInfoSubscription.unsubscribe();
+    }
+
+    onSmsClick(state: boolean) {
+        if(this.userInfo.is_check_sms == state) {
+            return;
+        }
+
+        this.smsLoader.toggle(true);
+        this.toggleSmsSubscription = this._userService.toggleSmsNotifications()
+            .subscribe((res: any) => {
+                    this._userService.copyUserInfo(res, this.userInfo);
+                    this.smsLoader.toggle(false);
+                    this.toggleSmsSubscription.unsubscribe();
+                },
+                err => {
+                    toastr.error(err.json().message);
+                });
+    }
 
     init(){
         $('#SMSActivate').click(function () {
