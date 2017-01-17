@@ -14,8 +14,6 @@ declare const toastr: any;
 })
 
 export class SettingsComponent implements OnInit, OnDestroy{
-
-    userName: any;
     userInfo: User;
 
     newNumber: string;
@@ -74,7 +72,6 @@ export class SettingsComponent implements OnInit, OnDestroy{
                 });
 
         this.initSettings();
-        this.userName = sessionStorage.getItem('telephone');
     }
 
     ngOnDestroy() {
@@ -88,7 +85,8 @@ export class SettingsComponent implements OnInit, OnDestroy{
 
         this.smsLoader.toggle(true);
         this.toggleSmsSubscription = this._userService.toggleSmsNotifications()
-            .subscribe((res: any) => {
+            .subscribe(
+                (res: any) => {
                     this._userService.copyUserInfo(res, this.userInfo);
                     this.smsLoader.toggle(false);
                     this.toggleSmsSubscription.unsubscribe();
@@ -99,14 +97,14 @@ export class SettingsComponent implements OnInit, OnDestroy{
     }
 
     onNumberAcceptClick() {
-        if(this.validateNumber(this.newNumber)) {
+        if(SettingsComponent.validateNumber(this.newNumber)) {
             $('#WalletStep2Block').slideDown();
         } else {
             // !todo: show some error
         }
     }
 
-    validateNumber(number) {
+    static validateNumber(number) {
         console.log(number);
         return true;
     }
@@ -125,7 +123,6 @@ export class SettingsComponent implements OnInit, OnDestroy{
                     toastr.error(err.json().message);
                 }
             );
-        // this.userName = new number
         this.numberLoader.toggle(true);
     }
 
@@ -136,10 +133,11 @@ export class SettingsComponent implements OnInit, OnDestroy{
         this.numberStep2Subscription =
             this._userService.changeNumberStep2(this.smsModel.smsId, this.smsHistory, this.smsModel.smsCode)
                 .subscribe(
-                    () => {
+                    (res: any) => {
+                        this._userService.copyUserInfo(res, this.userInfo);
                         this.numberStep2Subscription.unsubscribe();
                         this.numberLoader.toggle(false);
-                        sessionStorage.setItem('telephone', this.newNumber);
+                        sessionStorage.setItem('telephone', this.userInfo.telephone);
                         toastr.success("The number was successfully changed");
                         this.ngOnInit();
                     },

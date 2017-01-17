@@ -41,9 +41,6 @@ export class SmsDialogComponent {
       return;
     }
     this._smsCode.smsCode = +code;
-    console.log(this._smsCode);
-    console.log('before emit');
-    console.log(this._smsCode);
     this.onSendCode.emit(this._smsCode);
     this.dialog.close();
   }
