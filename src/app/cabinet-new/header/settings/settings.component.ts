@@ -19,7 +19,7 @@ export class SettingsComponent implements OnInit, OnDestroy{
     // userName: any;
     userInfo: User;
 
-    // @ViewChild('smsLoader') smsLoader: LoaderComponent;
+    @ViewChild('smsLoader') smsLoader: LoaderComponent;
     @ViewChild('settingLoader') settingLoader: LoaderComponent;
     @ViewChild('accountOperations') accountOperations: AccountOperationsComponent;
     @ViewChild('profileSettings') profileSettings: ProfileSettingsComponent;
@@ -48,22 +48,6 @@ export class SettingsComponent implements OnInit, OnDestroy{
         // this.userInfoSubscription.unsubscribe();
     }
 
-    // onSmsClick(state: boolean) {
-    //     if(this.userInfo.is_check_sms == state) {
-    //         return;
-    //     }
-    //
-    //     this.smsLoader.toggle(true);
-    //     this.toggleSmsSubscription = this._userService.toggleSmsNotifications()
-    //         .subscribe((res: any) => {
-    //                 this._userService.copyUserInfo(res, this.userInfo);
-    //                 this.smsLoader.toggle(false);
-    //                 this.toggleSmsSubscription.unsubscribe();
-    //             },
-    //             err => {
-    //                 toastr.error(err.json().message);
-    //             });
-    // }
 
     initSettings(){
 

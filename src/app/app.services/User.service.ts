@@ -51,6 +51,42 @@ export class UserService {
         ;
   }
 
+  changeNumberStep1(oldNumber, newNumber, password) {
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
+    headers.append('Content-Type', 'application/json');
+
+    const payload = JSON.stringify({
+      "plainPassword": password,
+      "oldTelephone": oldNumber,
+      "telephone": newNumber
+    });
+
+    const locUrl = `${this._appService.get('apiEndpoint')}/user/phone/1`;
+    return this._http
+        .put(locUrl, payload, {headers: headers})
+        .map(res => res.json())
+        ;
+  }
+
+  changeNumberStep2(sms, history, code) {
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
+    headers.append('Content-Type', 'application/json');
+
+    const paylaoad = {
+      "sms": sms,
+      "history": history,
+      "code": code
+    };
+
+    const locUrl = `${this._appService.get('apiEndpoint')}/user/phone/2`;
+    return this._http
+        .patch(locUrl, JSON.stringify(paylaoad), {headers: headers})
+        .map(res => res.json())
+        ;
+  }
+
   copyUserInfo(source: User, destination: User) {
     for(let k in source) destination[k] = source[k];
   }
