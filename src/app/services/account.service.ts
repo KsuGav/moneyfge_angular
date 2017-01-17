@@ -33,7 +33,7 @@ export class AccountService {
     ;
   }
 
-  getAllCard() {
+  getAllCards() {
     const headers = new Headers();
     headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
 

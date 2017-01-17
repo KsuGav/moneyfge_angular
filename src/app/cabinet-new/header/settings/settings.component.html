@@ -85,7 +85,7 @@
 
                     <div class="card card--lightgrey">
                         <h4 class="setting-card-title">Personal information</h4>
-                        <p class="setting-card-subtitle">Number wallet</p>
+                        <p class="setting-card-subtitle">Your phone number</p>
                         <a href="" class="tooltip-btn" data-toggle="tooltip" title="Information"><img src="/assets/new_assets/img/help.png" alt="help"></a>
                         <div class="row">
                             <div class="col-md-7">
@@ -99,49 +99,51 @@
                                 </div>
                             </div>
                             <div class="col-md-5">
-                                <p class="card--info wallet-block success">Wallet number changed successfully!</p>
-                                <p class="card--info wallet-block error">It was not possible to change the number wallet!</p>
+                                <p class="card--info wallet-block success">Number changed successfully!</p>
+                                <p class="card--info wallet-block error">Error changing number.</p>
                             </div>
                         </div>
                         <div class="row" id="WalletStep1Block">
                             <div class="col-md-7">
-                                <p class="setting-card-subtitle">SMS code</p>
+                                <p class="setting-card-subtitle">New number</p>
                                 <form>
                                     <div class="half-width-inputs">
                                         <div class="half-width-input">
-                                            <input type="text" class="input-medium" required>
+                                            <input type="text" class="input-medium" id="settingsNewNumber" required>
                                         </div>
                                         <div class="half-width-input"><button type="button" class="btn btn-medium btn-grey" id="WalletStep2">Accept</button></div>
                                     </div>
                                 </form>
                             </div>
                             <div class="col-md-5">
-                                <p class="card--info personal-block">Your phone will receive a message. <br> Enter the password with SMS</p>
+
                             </div>
                         </div>
                         <div class="row" id="WalletStep2Block">
                             <div class="col-md-7">
-                                <p class="setting-card-subtitle">Enter the new number of wallet</p>
+                                <p class="setting-card-subtitle">Sms Code</p>
                                 <form>
                                     <div class="half-width-inputs">
                                         <div class="half-width-input">
-                                            <input type="text" class="input-medium" required>
+                                            <input type="text" class="input-medium" id="settingsSmsCode" required>
                                         </div>
                                         <div class="half-width-input"><button type="button" class="btn btn-medium btn-accent" id="WalletStep3">Save</button></div>
                                     </div>
                                 </form>
                             </div>
-                            <div class="col-md-5"></div>
+                            <div class="col-md-5">
+                                <p class="card--info personal-block">You will receive a message. <br> Enter the code you received in SMS</p>
+                            </div>
                         </div>
-                        <p class="setting-card-subtitle">Enter Email</p>
+                        <p class="setting-card-subtitle">Your email</p>
                         <div class="row">
                             <form>
                                 <div class="col-md-7">
-                                    <input type="text" class="input-medium full-width" required>
+                                    <input type="text" class="input-medium full-width" id="settingsEmail" required>
                                 </div>
                                 <div class="col-md-5">
                                     <button type="submit" class="btn btn-medium btn-accent no-margin">Save</button>
-                                    <p class="card--info email-block">Email bound to the wallet and provides additional safety in the recovery password</p>
+                                    <p class="card--info email-block">Email is bound to your account and provides additional password recovery methods</p>
                                 </div>
                             </form>
                         </div>

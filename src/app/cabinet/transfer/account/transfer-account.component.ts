@@ -106,7 +106,7 @@ export class TransferAccountComponent implements OnInit, AfterViewInit, OnDestro
 
   getAccounts() {
     this.accountService
-      .getAllCard()
+      .getAllCards()
       .subscribe(
         res => {
           this.modalService.hideLoader('block');

@@ -18,29 +18,30 @@
 
                     <form class="transfer-form cash-in">
                         <div class="card card--lightgrey">
-                            <p class="select-label">From account</p>
+                            <p class="select-label">Select method</p>
                             <select class="select-medium transfer-select custom">
                                 <option value="visa" selected>VISA</option>
                                 <option value="mastercard">MASTERCARD</option>
                                 <option value="visa">PAYPAL</option>
                             </select>
-                            <p class="select-label">On accountк</p>
-                            <select class="select-medium transfer-select bill">
-                                <option value="1" selected>My MoneyFGA &nbsp;&nbsp; 0,000 USD</option>
-                                <option value="2">My MoneyFGA &nbsp;&nbsp; 0,000 RUB</option>
-                                <option value="3">My MoneyFGA &nbsp;&nbsp; 0,000 UAH</option>
-                            </select>
+                            <p class="select-label">Choose account</p>
+                            <loader-component #accountLoader>
+                                <select class="select-medium transfer-select bill" (change)="onToChange($event.target.value)">
+                                    <option></option>
+                                    <option *ngFor="let acc of activeAccounts" value="{{acc.id}}">MoneyFGE {{acc.sum}} {{acc.currency}}</option>
+                                </select>
+                            </loader-component>
                         </div>
 
                         <div class="card card--darkgrey">
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <p class="select-label">Amount of refill</p>
-                                    <input type="number" class="input-medium input-small-width" placeholder="0, 000" required>
+                                    <p class="select-label">Sum to refill</p>
+                                    <input type="number" class="input-medium input-small-width" placeholder="0.00" required (keyup)="onSumChange($event.target.value)">
                                     <span class="form-info-summa">$</span>
-                                    <p class="select-label">To payment</p>
-                                    <input type="text" class="input-medium input-small-width" disabled placeholder="0, 000 $">
-                                    <span class="form-info">Given the <br>bank commission 5%</span>
+                                    <p class="select-label">To pay</p>
+                                    <input type="text" class="input-medium input-small-width" disabled placeholder="{{sumToPay}}$">
+                                    <span class="form-info">Including <br>bank fee 5%</span>
                                     <div class="clearfix"></div>
                                     <button class="btn-image"><img src="/assets/new_assets/img/visa-checkout.png" alt="Checkout"></button>
                                 </div>
