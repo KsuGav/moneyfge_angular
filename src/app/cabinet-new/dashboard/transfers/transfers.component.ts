@@ -241,11 +241,9 @@ export class TransfersComponent implements OnInit, OnDestroy, AfterViewInit{
     }
 
     validateForm() {
-        // console.log([this.toAccount, this.fromAccount, this.sum]);
         this.formValid = (this.toAccount > 10000000 && this.toAccount < 99999999 &&
             this.fromAccount > 10000000 && this.fromAccount < 99999999 &&
             this.sum > 0);
-        // console.log(this.formValid);
     }
 
     moveDot(){

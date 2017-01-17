@@ -33,6 +33,7 @@ export class SettingsComponent implements OnInit, OnDestroy{
                 err => {
                     toastr.error(err.json().message);
                 });
+
         this.initSettings();
         this.userName = sessionStorage.getItem('telephone');
     }
@@ -60,30 +61,16 @@ export class SettingsComponent implements OnInit, OnDestroy{
 
     initSettings(){
 
-        // Settings Page Functions
-        $('#SMSActivate').click(function () {
-            $(this).toggleClass('btn-accent').toggleClass('btn-grey').attr('disabled', true);
-            $(this).parent().prev().children().toggleClass('active');
-            $('#SMSDeActivate').toggleClass('btn-grey').toggleClass('btn-accent').attr('disabled', false);
-            $('#SMSDeActivate').parent().prev().children().toggleClass('active');
-        });
-        $('#SMSDeActivate').click(function () {
-            $(this).toggleClass('btn-accent').toggleClass('btn-grey').attr('disabled', true);
-            $(this).parent().prev().children().toggleClass('active');
-            $('#SMSActivate').toggleClass('btn-grey').toggleClass('btn-accent').attr('disabled', false);
-            $('#SMSActivate').parent().prev().children().toggleClass('active');
-        });
-
-        $('#WalletStep1').click(function () {
+        $('.container').on('click', '#WalletStep1', function () {
             $('#WalletStep1Block').slideDown();
         });
 
-        $('#WalletStep3').click(function () {
+        $('.container').on('click', '#WalletStep3', function () {
             $('#WalletStep1Block, #WalletStep2Block').slideUp();
             $('.wallet-block.success').fadeIn();
         });
 
-        $('.input-sms').blur(function()
+        $('.container').on('blur', '.input-sms', function()
         {
             if($(this).val().length <= 3) {
                 $('#SmsCheck').removeClass('yes');

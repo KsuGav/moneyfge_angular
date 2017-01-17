@@ -296,6 +296,10 @@ p.expenses-latest-bills_content__bill.no-payment-content {
     text-align: left;
 }
 
+ul.dash-main-menu.clearfix {
+    padding-left: 0px;
+}
+
 /*LOADER*/
 
 .cssload-container {

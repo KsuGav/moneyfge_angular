@@ -52,7 +52,7 @@ export class ScoreIndexComponent implements OnInit, AfterViewInit, OnDestroy {
 
   getAccounts() {
     this.accountService
-      .getAllCard()
+      .getAllCards()
       .subscribe(
         res => {
           this.cards = res;

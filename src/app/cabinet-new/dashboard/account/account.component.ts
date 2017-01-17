@@ -41,7 +41,6 @@ export class AccountComponent implements OnInit {
   handleAccountSelection(event: Event, id: number) {
     event.preventDefault();
     let li=$(event.target);
-    console.log(`${id} account was selected.`);
     this.accountService.getAccountHistory(id);
 
 
