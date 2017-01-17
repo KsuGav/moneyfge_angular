@@ -295,3 +295,7 @@ p.expenses-latest-bills_content__bill.no-payment-content {
 .bills-history th:first-child, .bills-history td:first-child{
     text-align: left;
 }
+
+ul.dash-main-menu.clearfix {
+    padding-left: 0px;
+}

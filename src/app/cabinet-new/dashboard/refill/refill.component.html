@@ -40,7 +40,7 @@
                                     <input type="number" class="input-medium input-small-width" placeholder="0.00" required (keyup)="onSumChange($event.target.value)">
                                     <span class="form-info-summa">$</span>
                                     <p class="select-label">To pay</p>
-                                    <input type="text" class="input-medium input-small-width" disabled placeholder="{{sumToPay}}$">
+                                    <input type="text" class="input-medium input-small-width" disabled value="{{sumToPay}}$">
                                     <span class="form-info">Including <br>bank fee 5%</span>
                                     <div class="clearfix"></div>
                                     <button class="btn-image"><img src="/assets/new_assets/img/visa-checkout.png" alt="Checkout"></button>

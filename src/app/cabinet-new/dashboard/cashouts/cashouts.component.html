@@ -20,22 +20,23 @@
                     <form class="transfer-form">
                         <div class="card card--lightgrey">
                             <p class="select-label">From account</p>
-                            <select class="select-medium transfer-select bill">
-                                <option value="1" selected>My MoneyFGA &nbsp;&nbsp; 0,000 USD</option>
-                                <option value="2">My MoneyFGA &nbsp;&nbsp; 0,000 RUB</option>
-                                <option value="3">My MoneyFGA &nbsp;&nbsp; 0,000 UAH</option>
-                            </select>
+                            <loader-component #accountLoader>
+                                <select class="select-medium transfer-select bill" (change)="onToChange($event.target.value)">
+                                    <option></option>
+                                    <option *ngFor="let acc of activeAccounts" value="{{acc.id}}">MoneyFGE {{acc.sum}} {{acc.currency}}</option>
+                                </select>
+                            </loader-component>
                         </div>
 
                         <div class="card card--darkgrey">
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <p class="select-label">The amount of refill</p>
-                                    <input type="number" class="input-medium input-small-width" placeholder="0, 000" required>
+                                    <p class="select-label">Sum to withdraw</p>
+                                    <input type="number" class="input-medium input-small-width" placeholder="0.00" required (keyup)="onSumChange($event.target.value)">
                                     <span class="form-info-summa">$</span>
-                                    <p class="select-label">To paying</p>
-                                    <input type="text" class="input-medium input-small-width" disabled placeholder="0, 000 $">
-                                    <span class="form-info">Taking into <br> bank commission 5%</span>
+                                    <p class="select-label">Sum to pay</p>
+                                    <input type="text" class="input-medium input-small-width" disabled value="{{sumToPay}}$">
+                                    <span class="form-info">Including <br>bank fee 5%</span>
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
@@ -97,7 +98,7 @@
                                 <input type="text" class="input-medium">
                                 <a href="" class="tooltip-btn" data-toggle="tooltip" title="Information"><img src="/assets/new_assets/img/help.png" alt="help"></a>
                             </div>
-                            <button class="btn btn-medium btn-accent">Continue</button>
+                            <button class="btn btn-medium btn-accent" disabled>Continue</button>
                         </div>
 
                     </form>

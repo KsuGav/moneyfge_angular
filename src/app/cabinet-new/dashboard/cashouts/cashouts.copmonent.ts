@@ -1,4 +1,7 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import {Component, OnInit, OnDestroy, ViewChild} from '@angular/core';
+import {Account} from "../../../app.models/Account.model";
+import {LoaderComponent} from "../../../common-new/loader/loader.component";
+import {n_AccountService} from "../../../app.services/Account.service";
 
 declare const $: any;
 
@@ -9,10 +12,42 @@ declare const $: any;
 
 export class CashoutsComponent implements OnInit, OnDestroy {
 
+    activeAccounts: Account[];
+    getAccountsSubscription;
+    reqAccountsSubscription;
+
+    toAccount: number;
+    sum: number;
+    sumToPay: string = '0.00';
+    formValid: boolean;
+
+    @ViewChild('accountLoader') accountLoader: LoaderComponent;
+
+    constructor(
+        public accountService: n_AccountService,
+    ) {}
+
     ngOnInit(){
         this.activeLink();
         this.select();
         this.downloadFile();
+
+        this.accountLoader.toggle(true);
+
+        this.accountService.getAllAccounts();
+
+        this.reqAccountsSubscription = this.accountService.requestAccounts
+            .subscribe(() => {
+                this.accountLoader.toggle(true);
+            });
+
+        this.getAccountsSubscription = this.accountService.receiveAccounts
+            .subscribe(
+                res => {
+                    this.accountLoader.toggle(false);
+                    this.activeAccounts = res.active;
+                }
+            )
     }
 
     ngOnDestroy(){
@@ -29,7 +64,8 @@ export class CashoutsComponent implements OnInit, OnDestroy {
 
     select(){
         $(".select-medium").select2({
-            minimumResultsForSearch: Infinity
+            minimumResultsForSearch: Infinity,
+            placeholder: 'Select account '
         });
 
         function formatTransfer (bill) {
@@ -42,7 +78,8 @@ export class CashoutsComponent implements OnInit, OnDestroy {
         $(".transfer-select.bill").select2({
             templateResult: formatTransfer,
             templateSelection: formatTransfer,
-            minimumResultsForSearch: Infinity
+            minimumResultsForSearch: Infinity,
+            placeholder: 'Select account '
         });
     }
 
@@ -59,7 +96,7 @@ export class CashoutsComponent implements OnInit, OnDestroy {
                         $wrap = $('<div class="file-upload-wrapper">'),
                         $input = $('<input type="text" class="file-upload-input" disabled />'),
                         // Button that will be used in non-IE browsers
-                        $button = $('<button type="button" class="btn btn-upload">Download</button>'),
+                        $button = $('<button type="button" class="btn btn-upload">Upload</button>'),
                         // Hack for IE
                         $label = $('<label class="file-upload-button" for="'+ $file[0].id +'">Select a File</label>');
 
@@ -168,6 +205,38 @@ export class CashoutsComponent implements OnInit, OnDestroy {
                 });
             }
         $('input[type=file]').customFile();
+    }
+
+    onToChange(account) {
+        this.toAccount = 0;
+        if(account && account.length == 8) {
+            this.toAccount = account;
+        }
+        this.validateForm();
+    }
+
+    onSumChange(sum) {
+        sum = parseFloat(sum);
+        this.sum = sum;
+        this.validateForm();
+        if(!sum || sum == 0) {
+            this.sumToPay = this.formatMoney(0);
+            return;
+        }
+        this.sumToPay = this.formatMoney(
+            Math.max(1.05 * sum, sum + 0.01)
+        );
+    }
+
+    validateForm() {
+        this.formValid = (this.toAccount > 10000000 && this.toAccount < 99999999 &&
+        this.sum > 0);
+    }
+
+    formatMoney(sum) {
+        return sum.toFixed(2).replace(/./g, function(c, i, a) {
+            return i && c !== "." && ((a.length - i) % 3 === 0) ? ',' + c : c;
+        });
     }
 }
 
