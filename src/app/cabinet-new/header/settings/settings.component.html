@@ -1,5 +1,5 @@
 <new-cabinet-header-component></new-cabinet-header-component>
-
+<sms-dialog-component #smsDialog (onSendCode)="changeNumberStep2($event)"></sms-dialog-component>
 <section class="sect-grey padding-small">
     <div class="container">
         <div class="row">
@@ -88,6 +88,7 @@
                     </div>
 
                     <div class="card card--lightgrey">
+                        <loader-component #numberLoader>
                         <h4 class="setting-card-title">Personal information</h4>
                         <p class="setting-card-subtitle">Your phone number</p>
                         <a href="" class="tooltip-btn" data-toggle="tooltip" title="Information"><img src="/assets/new_assets/img/help.png" alt="help"></a>
@@ -113,9 +114,9 @@
                                 <form>
                                     <div class="half-width-inputs">
                                         <div class="half-width-input">
-                                            <input type="text" class="input-medium" id="settingsNewNumber" required>
+                                            <input type="text" class="input-medium" id="settingsNewNumber" [(ngModel)]="newNumber" [ngModelOptions]="{standalone: true}" required>
                                         </div>
-                                        <div class="half-width-input"><button type="button" class="btn btn-medium btn-grey" id="WalletStep2">Accept</button></div>
+                                        <div class="half-width-input"><button type="button" class="btn btn-medium btn-grey" id="WalletStep2" (click)="onNumberAcceptClick()">Accept</button></div>
                                     </div>
                                 </form>
                             </div>
@@ -125,13 +126,15 @@
                         </div>
                         <div class="row" id="WalletStep2Block">
                             <div class="col-md-7">
-                                <p class="setting-card-subtitle">Sms Code</p>
+                                <p class="setting-card-subtitle">Your password</p>
                                 <form>
                                     <div class="half-width-inputs">
                                         <div class="half-width-input">
-                                            <input type="text" class="input-medium" id="settingsSmsCode" required>
+                                            <input type="password" class="input-medium" id="settingsPassword" required [(ngModel)]="passwordForNumberChange" [ngModelOptions]="{standalone: true}">
                                         </div>
-                                        <div class="half-width-input"><button type="button" class="btn btn-medium btn-accent" id="WalletStep3">Save</button></div>
+                                        <div class="half-width-input">
+                                            <button type="button" class="btn btn-medium btn-accent" id="WalletStep3" (click)="onNumberSaveClick()">Save</button>
+                                        </div>
                                     </div>
                                 </form>
                             </div>
@@ -151,6 +154,7 @@
                                 </div>
                             </form>
                         </div>
+                        </loader-component>
                     </div>
 
                     <div class="card card--lightgrey">

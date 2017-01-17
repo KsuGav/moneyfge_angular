@@ -2,6 +2,8 @@ import {Component, OnInit, OnDestroy, ViewChild} from '@angular/core';
 import {User} from '../../../app.models/User.model';
 import {UserService} from '../../../app.services/User.service';
 import {LoaderComponent} from "../../../common-new/loader/loader.component";
+import {SmsDialogComponent} from "../../../common-new/sms-dialog/sms-dialog.component";
+import {SmsCode} from "../../../app.models/SmsCode.model";
 
 declare const $: any;
 declare const toastr: any;
@@ -16,13 +18,50 @@ export class SettingsComponent implements OnInit, OnDestroy{
     userName: any;
     userInfo: User;
 
+    newNumber: string;
+    smsCode: string;
+    passwordForNumberChange: string;
+    smsModel: SmsCode;
+    smsHistory: number;
+
     @ViewChild('smsLoader') smsLoader: LoaderComponent;
     @ViewChild('settingLoader') settingLoader: LoaderComponent;
+    @ViewChild('numberLoader') numberLoader: LoaderComponent;
+    @ViewChild('smsDialog') smsDialog: SmsDialogComponent;
 
     userInfoSubscription;
     toggleSmsSubscription;
+    numberStep1Subscription;
+    numberStep2Subscription;
 
     constructor(private _userService: UserService) {
+    }
+
+    initSettings(){
+
+        $('.container').on('click', '#WalletStep1', function () {
+            $('#WalletStep1Block').slideDown();
+        });
+
+        $('.container').on('blur', '.input-sms', function()
+        {
+            if($(this).val().length <= 3) {
+                $('#SmsCheck').removeClass('yes');
+                $('#SmsCheck').addClass('no');
+                $('#WalletStep2').click(function () {
+                    $('#SmsCheck').removeClass('yes');
+                    $('.sms-check').addClass('no');
+                });
+            } else {
+                $('#SmsCheck').removeClass('no');
+                $('#SmsCheck').addClass('yes');
+                $('#WalletStep2').click(function () {
+                    $('#SmsCheck').removeClass('no');
+                    $('.sms-check').addClass('yes');
+                    $('#WalletStep2Block').slideDown();
+                });
+            }
+        });
     }
 
     ngOnInit() {
@@ -59,36 +98,58 @@ export class SettingsComponent implements OnInit, OnDestroy{
                 });
     }
 
-    initSettings(){
+    onNumberAcceptClick() {
+        if(this.validateNumber(this.newNumber)) {
+            $('#WalletStep2Block').slideDown();
+        } else {
+            // !todo: show some error
+        }
+    }
 
-        $('.container').on('click', '#WalletStep1', function () {
-            $('#WalletStep1Block').slideDown();
-        });
+    validateNumber(number) {
+        console.log(number);
+        return true;
+    }
 
-        $('.container').on('click', '#WalletStep3', function () {
-            $('#WalletStep1Block, #WalletStep2Block').slideUp();
-            $('.wallet-block.success').fadeIn();
-        });
+    onNumberSaveClick() {
+        this.numberLoader.toggle(true);
+        this.numberStep1Subscription = this._userService.changeNumberStep1(this.userInfo.telephone, this.newNumber, this.passwordForNumberChange)
+            .subscribe(
+                (res: any) => {
+                    this.numberLoader.toggle(false);
+                    this.smsHistory = res.history;
+                    this.smsDialog.open(res.sms);
+                },
+                err => {
+                    this.numberLoader.toggle(false);
+                    toastr.error(err.json().message);
+                }
+            );
+        // this.userName = new number
+        this.numberLoader.toggle(true);
+    }
 
-        $('.container').on('blur', '.input-sms', function()
-        {
-            if($(this).val().length <= 3) {
-                $('#SmsCheck').removeClass('yes');
-                $('#SmsCheck').addClass('no');
-                $('#WalletStep2').click(function () {
-                    $('#SmsCheck').removeClass('yes');
-                    $('.sms-check').addClass('no');
-                });
-            } else {
-                $('#SmsCheck').removeClass('no');
-                $('#SmsCheck').addClass('yes');
-                $('#WalletStep2').click(function () {
-                    $('#SmsCheck').removeClass('no');
-                    $('.sms-check').addClass('yes');
-                    $('#WalletStep2Block').slideDown();
-                });
-            }
-        });
+    changeNumberStep2(code: SmsCode) {
+        this.smsModel = code;
+        this.numberLoader.toggle(true);
+        this.numberStep1Subscription.unsubscribe();
+        this.numberStep2Subscription =
+            this._userService.changeNumberStep2(this.smsModel.smsId, this.smsHistory, this.smsModel.smsCode)
+                .subscribe(
+                    () => {
+                        this.numberStep2Subscription.unsubscribe();
+                        this.numberLoader.toggle(false);
+                        sessionStorage.setItem('telephone', this.newNumber);
+                        toastr.success("The number was successfully changed");
+                        this.ngOnInit();
+                    },
+
+                    err => {
+                        this.numberStep2Subscription.unsubscribe();
+                        this.numberLoader.toggle(false);
+                        toastr.error(err.json().message);
+                    }
+                )
     }
 }
 
