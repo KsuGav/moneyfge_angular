@@ -289,3 +289,9 @@ p.expenses-latest-bills_content__bill.no-payment-content {
 #sms-dialog_btn{
     box-shadow: 1px 1px 3px 0 #7f7f7f;
 }
+.bills-history th{
+    text-align: center;
+}
+.bills-history th:first-child, .bills-history td:first-child{
+    text-align: left;
+}

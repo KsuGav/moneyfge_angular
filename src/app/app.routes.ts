@@ -36,11 +36,11 @@ import { DashboardComponent } from './cabinet-new/dashboard/dashboard.component'
 
 import { PaymentsComponent } from './cabinet-new/dashboard/payments/payments.component';
 import { TransfersComponent } from './cabinet-new/dashboard/transfers/transfers.component';
-import { Cashouts1Component } from './cabinet-new/dashboard/cashouts1/cashouts1.component';
+import { RefillComponent } from './cabinet-new/dashboard/refill/refill.component';
 import { CashoutsComponent } from './cabinet-new/dashboard/cashouts/cashouts.copmonent';
-import { Cashouts3Component } from './cabinet-new/dashboard/cashouts3/cashouts3.component';
 import { MerchantPanelComponent } from './cabinet-new/dashboard/merchant-panel/merchant-panel.component';
 import { SettingsComponent } from './cabinet-new/header/settings/settings.component';
+import { HistoryComponent } from './cabinet-new/header/history/history.component';
 
 
 
@@ -84,15 +84,15 @@ export const ROUTES: Routes = [
   , { path: 'user/transfers',
     canActivate: [ LoggedInGuard ],
     component: TransfersComponent}
-  , { path: 'user/cashouts1',
+  , { path: 'user/refill',
     canActivate: [ LoggedInGuard ],
-    component: Cashouts1Component}
+    component: RefillComponent}
   , { path: 'user/cashouts',
     canActivate: [ LoggedInGuard ],
     component: CashoutsComponent}
-  , { path: 'user/cashouts3',
+  , { path: 'user/history',
     canActivate: [ LoggedInGuard ],
-    component: Cashouts3Component}
+    component: HistoryComponent}
   , { path: 'user/settings',
     canActivate: [ LoggedInGuard ],
     component: SettingsComponent}

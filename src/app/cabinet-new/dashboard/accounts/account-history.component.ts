@@ -14,6 +14,7 @@ export class AccountHistoryComponent implements OnInit, OnDestroy {
 
     history: AccountHistoryRecord[] = [];
     noHistory: Boolean = false;
+    today: number = Date.now();
 
     getSubscription;
     reqSubscription;

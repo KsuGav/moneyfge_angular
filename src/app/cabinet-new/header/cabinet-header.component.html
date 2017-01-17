@@ -32,7 +32,7 @@
           <ul class="dash-main-menu clearfix">
             <li id="payments_link"><a  [routerLink]="['/user/payments']">Payments</a></li>
             <li id="transfers_link"><a  [routerLink]="['/user/transfers']">Transfers</a></li>
-            <li id="refill_link"><a [routerLink]="['/user/cashouts1']">Refill</a></li>
+            <li id="refill_link"><a [routerLink]="['/user/refill']">Refill</a></li>
             <li id="cashouts_link"><a [routerLink]="['/user/cashouts']">Cashouts</a></li>
           </ul>
 
@@ -61,7 +61,7 @@
                   <span class="profile-name">{{userName}}<br> </span>
                   <div class="profile-menu">
                     <ul>
-                      <li><a href="#" (click)="false"><i class="fa fa-history"></i> History</a></li>
+                      <li><a [routerLink]="['/user/history']" ><i class="fa fa-history"></i> History</a></li>
                       <li><a href="#" (click)="false"><i class="fa fa-gift"></i> Bonus</a></li>
                       <li><a href="#" (click)="false"><i class="fa fa-info"></i> Help</a></li>
                       <li><a [routerLink]="['/user/settings']"><i class="fa fa-gear"></i> Settings</a></li>
