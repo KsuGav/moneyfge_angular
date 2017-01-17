@@ -1,0 +1,121 @@
+    <div class="card card--lightgrey">
+        <h4 class="setting-card-title">Новий рахунок</h4>
+        <p class="select-label">Виберіть валюту</p>
+        <div class="row">
+            <div class="col-md-7">
+                <div class="half-width-inputs">
+                    <div class="half-width-input big">
+                        <select class="select-medium transfer-select small">
+                            <option value="1" selected>USD</option>
+                            <option value="2">RUB</option>
+                            <option value="3">UAH</option>
+                        </select>
+                    </div>
+                    <div class="half-width-input big">
+                        <button type="button" class="btn btn-medium btn-accent no-margin">Підключити</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <p class="card--info pass-block">Створити новий рахунок в новій валюті для більшої зручності.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card card--lightgrey">
+        <h4 class="setting-card-title">Список рахунків</h4>
+        <div class="row">
+            <div class="col-md-7">
+                <div class="half-width-inputs">
+                    <div class="half-width-input big">
+                        <p class="select-label">Номер гаманця</p>
+                    </div>
+                    <div class="half-width-input big">
+                        <input type="text" class="input-medium" placeholder="+000 000000000" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <p class="card--info pass-block">Номер гаманця привязаний до вашого телефону.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-7">
+                <div class="dashboard-account-list">
+                    <ul>
+                        <li>
+                            <div class="left-part">
+                                <div class="bill__icon"><img src="/assets/new_assets/img/favicon/favicon1.png" alt="Fge"></div>
+                                <h3 class="dashboard-account-list__title"><a href="#">Money FGA <span>$</span></a></h3>
+                                <div class="dashboard-account-list__card-number">
+                                    <img class="icon-flag" src="/assets/new_assets/img/flag-usa.png" alt="USA">
+                                    <span>0000 0000 0000 0001</span>
+                                    <img class="icon-lock" src="/assets/new_assets/img/bill-lock.png" alt="lock">
+                                </div>
+                            </div>
+                            <h4 class="dashboard-account-list__total">10.890 <span>USD</span></h4>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="account-list-setting-btns">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <a href="">Перевод</a>
+                            <a href="">Поповнення</a>
+                        </div>
+                        <div class="col-lg-6">
+                            <a href="">Історія</a>
+                            <a href="">Заблокувати</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form class="transfer-form">
+        <div class="card card--lightgrey">
+            <h4 class="setting-card-title">Переказ між рахунками</h4>
+            <div class="row">
+                <div class="col-md-7">
+                    <p class="select-label">З рахунку</p>
+                    <select class="select-medium transfer-select bill">
+                        <option value="1" selected>Мій MoneyFGA &nbsp;&nbsp; 0,000 USD</option>
+                        <option value="2">Мій MoneyFGA &nbsp;&nbsp; 0,000 RUB</option>
+                        <option value="3">Мій MoneyFGA &nbsp;&nbsp; 0,000 UAH</option>
+                    </select>
+                    <p class="select-label">На рахунок</p>
+                    <select class="select-medium transfer-select bill">
+                        <option value="1" selected>Мій MoneyFGA &nbsp;&nbsp; 0,000 USD</option>
+                        <option value="2">Мій MoneyFGA &nbsp;&nbsp; 0,000 RUB</option>
+                        <option value="3">Мій MoneyFGA &nbsp;&nbsp; 0,000 UAH</option>
+                    </select>
+                </div>
+                <div class="col-md-5">
+                    <p class="card--info transfer-block">Інформація  про рахунки. <br>Додаткові функції.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="card card--darkgrey">
+            <div class="row">
+                <div class="col-sm-6">
+                    <p class="select-label">Сума поповнення</p>
+                    <input type="number" class="input-medium input-small-width" placeholder="0, 000" required>
+                    <span class="form-info-summa">$</span>
+                    <p class="select-label">До сплати</p>
+                    <input type="text" class="input-medium input-small-width" disabled placeholder="0, 000 $">
+                    <span class="form-info">З врахуванням <br>комісії банку 5%</span>
+                    <div class="clearfix"></div>
+                    <button class="btn btn-medium btn-accent">Продовжити</button>
+                </div>
+                <div class="col-sm-6">
+                    <p class="select-label grey">Добавити коментар</p>
+                    <textarea></textarea>
+                </div>
+            </div>
+        </div>
+    </form>

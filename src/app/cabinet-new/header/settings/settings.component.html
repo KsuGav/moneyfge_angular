@@ -15,26 +15,26 @@
                 <div class="dashboard-left-sidebar">
 
                     <div class="dashboard-left-sidebar-content">
-                        <div class="sidebar-left-settings-menu">
+                        <div class="sidebar-left-settings-menu" id="SettingsMenuTabs">
                             <ul>
-                                <li class="active">
-                                    <a href="" (click)="false" class="clearfix">
+                                <li class="active" data-tab="ProfileSettingsTab">
+                                    <a>
                                         <div class="sidebar-left-settings-menu__icon">
                                             <img src="/assets/new_assets/img/settings-icon-1.png" alt="Settings">
                                         </div>
                                         <div class="sidebar-left-settings-menu__title">Profile settings</div>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="" (click)="false">
+                                <li data-tab="BillSettingsTab">
+                                    <a>
                                         <div class="sidebar-left-settings-menu__icon">
                                             <img src="/assets/new_assets/img/settings-icon-2.png" alt="Settings">
                                         </div>
                                         <div class="sidebar-left-settings-menu__title">Account operations</div>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="" (click)="false">
+                                <li data-tab="SecuritySettingsTab">
+                                    <a>
                                         <div class="sidebar-left-settings-menu__icon">
                                             <img src="/assets/new_assets/img/settings-icon-3.png" alt="Settings">
                                         </div>
@@ -55,159 +55,16 @@
             </div>
             <div class="col-md-8" *ngIf="userInfo">
                 <div class="dashboard-main-content">
-                    <div class="card card--lightgrey">
-                        <h4 class="setting-card-title">Notice</h4>
-                        <p class="setting-card-subtitle">SMS about replenishment and costs</p>
-                        <loader-component #smsLoader>
-                            <div class="row">
-                                <div class="col-md-7">
-                                    <div class="half-width-inputs">
-                                        <div class="half-width-input big">
-                                            <span class="setting-indicator" [ngClass]="{'active': !userInfo.is_check_sms}">The service is disabled</span>
-                                        </div>
-                                        <div class="half-width-input big">
-                                            <button type="button" [ngClass]="{'btn': true, 'btn-medium': true, 'btn-accent': !userInfo.is_check_sms, 'btn-gray': userInfo.is_check_sms}" [disabled]="!userInfo.is_check_sms" id="SMSActivate" (click)="onSmsClick(false)">Activate</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-5">
-                                    <p class="card--info sms-block">Cost of services - 00 USD month. <br> Get instant SMS from refill and costs.</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-7">
-                                    <div class="half-width-inputs">
-                                        <div class="half-width-input big"><span class="setting-indicator" [ngClass]="{'active': userInfo.is_check_sms}">The service is active</span></div>
-                                        <div class="half-width-input big"><button type="button" [ngClass]="{'btn': true, 'btn-medium': true, 'btn-accent': userInfo.is_check_sms, 'btn-gray': !userInfo.is_check_sms}" [disabled]="userInfo.is_check_sms" id="SMSDeActivate" (click)="onSmsClick(true)">Disable</button></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-5">
-                                </div>
-                            </div>
-                        </loader-component>
+
+                    <div class="settings-tab active" id="ProfileSettingsTab">
+                        <profile-settings-component #profileSettings></profile-settings-component>
                     </div>
-
-                    <div class="card card--lightgrey">
-                        <h4 class="setting-card-title">Personal information</h4>
-                        <p class="setting-card-subtitle">Your phone number</p>
-                        <a href="" class="tooltip-btn" data-toggle="tooltip" title="Information"><img src="/assets/new_assets/img/help.png" alt="help"></a>
-                        <div class="row">
-                            <div class="col-md-7">
-                                <div class="half-width-inputs">
-                                    <div class="half-width-input">
-                                        <input type="text" class="input-medium" placeholder="+{{userName}}" disabled>
-                                    </div>
-                                    <div class="half-width-input">
-                                        <button type="button" class="btn btn-medium btn-accent" id="WalletStep1">Change</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-5">
-                                <p class="card--info wallet-block success">Number changed successfully!</p>
-                                <p class="card--info wallet-block error">Error changing number.</p>
-                            </div>
-                        </div>
-                        <div class="row" id="WalletStep1Block">
-                            <div class="col-md-7">
-                                <p class="setting-card-subtitle">New number</p>
-                                <form>
-                                    <div class="half-width-inputs">
-                                        <div class="half-width-input">
-                                            <input type="text" class="input-medium" id="settingsNewNumber" required>
-                                        </div>
-                                        <div class="half-width-input"><button type="button" class="btn btn-medium btn-grey" id="WalletStep2">Accept</button></div>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="col-md-5">
-
-                            </div>
-                        </div>
-                        <div class="row" id="WalletStep2Block">
-                            <div class="col-md-7">
-                                <p class="setting-card-subtitle">Sms Code</p>
-                                <form>
-                                    <div class="half-width-inputs">
-                                        <div class="half-width-input">
-                                            <input type="text" class="input-medium" id="settingsSmsCode" required>
-                                        </div>
-                                        <div class="half-width-input"><button type="button" class="btn btn-medium btn-accent" id="WalletStep3">Save</button></div>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="col-md-5">
-                                <p class="card--info personal-block">You will receive a message. <br> Enter the code you received in SMS</p>
-                            </div>
-                        </div>
-                        <p class="setting-card-subtitle">Your email</p>
-                        <div class="row">
-                            <form>
-                                <div class="col-md-7">
-                                    <input type="text" class="input-medium full-width" id="settingsEmail" required>
-                                </div>
-                                <div class="col-md-5">
-                                    <button type="submit" class="btn btn-medium btn-accent no-margin">Save</button>
-                                    <p class="card--info email-block">Email is bound to your account and provides additional password recovery methods</p>
-                                </div>
-                            </form>
-                        </div>
+                    <div class="settings-tab " id="BillSettingsTab">
+                        <account-operations-component #accountOperations></account-operations-component>
                     </div>
-
-                    <div class="card card--lightgrey">
-                        <h4 class="setting-card-title">New password</h4>
-                        <p class="setting-card-subtitle">Enter new password. It wouldn't coincide with any of the previously used on the site.</p>
-                        <form>
-                            <div class="row">
-                                <div class="col-md-7">
-                                    <div class="half-width-inputs">
-                                        <div class="half-width-input big">
-                                            <span>Old password</span>
-                                        </div>
-                                        <div class="half-width-input big">
-                                            <input type="text" class="input-medium disabled" placeholder="*********">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-5"></div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-7">
-                                    <div class="half-width-inputs">
-                                        <div class="half-width-input big">
-                                            <span>New password</span>
-                                        </div>
-                                        <div class="half-width-input big">
-                                            <input type="password" class="input-medium" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-5">
-                                    <p class="card--info pass-block">The password must contain: at least 7 characters. The numbers and letters of the alphabet.</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-7">
-                                    <div class="half-width-inputs">
-                                        <div class="half-width-input big">
-                                            <span>Please reenter password</span>
-                                        </div>
-                                        <div class="half-width-input big">
-                                            <input type="password" class="input-medium" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-5"></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-7">
-                                    <div class="text-right"><button type="submit" class="btn btn-medium btn-accent" id="SavePass">Save</button></div>
-                                </div>
-                                <div class="col-md-5"></div>
-                            </div>
-                        </form>
+                    <div class="settings-tab" id="SecuritySettingsTab">
+                        <security-settings-component #securitySettings></security-settings-component>
                     </div>
-
                 </div>
             </div>
 

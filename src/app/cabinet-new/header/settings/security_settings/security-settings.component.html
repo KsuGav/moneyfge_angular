@@ -1,0 +1,67 @@
+
+    <div class="card card--lightgrey">
+        <h4 class="setting-card-title">Безпека</h4>
+        <p class="setting-card-subtitle">Ви можете управляти способами доступу до вашого аккаунту. <br>У разі якщо ви вимкніть будь-який з пунктів, даний вид доступу буде блокований.</p>
+    </div>
+
+    <div class="card card--lightgrey">
+        <div class="row">
+            <div class="col-md-7">
+                <h4 class="setting-card-title">Підтвердження платежів по sms</h4>
+                <p class="setting-card-subtitle">Безкоштовне підтвердження платежу - опція, що дозволяє максимально убезпечити кошти.</p>
+            </div>
+            <div class="col-md-5">
+                <div class="switch" id="SMSBLockBtn">
+                    <input type="checkbox" name="switch" class="switch-checkbox" id="SmsNotifSwitch" checked>
+                    <label class="btn btn-medium btn-with-icon" for="SmsNotifSwitch">
+												<span class="on clearfix">
+													<span class="left-part"><i class="fa fa-comment-o"></i></span>
+													<span class="right-part">Підключено</span>
+												</span>
+                        <span class="off clearfix">
+													<span class="left-part"><i class="fa fa-comment-o"></i></span>
+													<span class="right-part">Відключено</span>
+												</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card card--lightgrey">
+        <div class="row">
+            <div class="col-md-7">
+                <h4 class="setting-card-title">Прив'язка пошти</h4>
+                <p class="setting-card-subtitle">Пошта, прив'язана до аккаунту, використовується для забезпечення додаткової безпеки при відновленні пароля.</p>
+            </div>
+            <div class="col-md-5">
+                <div class="switch" id="EmailLinkBLockBtn">
+                    <input type="checkbox" name="switch" class="switch-checkbox" id="EmailLinkSwitch">
+                    <label class="btn btn-medium btn-with-icon" for="EmailLinkSwitch">
+												<span class="on clearfix">
+													<span class="left-part"><i class="fa fa-envelope-o"></i></span>
+													<span class="right-part">Підключено</span>
+												</span>
+                        <span class="off clearfix">
+													<span class="left-part"><i class="fa fa-envelope-o"></i></span>
+													<span class="right-part">Відключено</span>
+												</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="EmailLinkBLock">
+            <form>
+                <div class="col-md-7">
+                    <p class="setting-card-subtitle">Введіть адресу електронної пошти.</p>
+                    <input type="email" class="input-medium fullwidth" id="EmailLinkInput">
+                </div>
+                <div class="col-md-5">
+                    <button type="button" class="btn btn-medium btn-grey btn-email-link" id="EmailLinkSubmit">
+                        Прив'язати
+                    </button>
+                    <p class="card--info email-link-block">Додаючи пошту, Ви також погоджуєтеся на отримання повідомлень про корисні функції сервісу, акціях і нові послуги.</p>
+                </div>
+            </form>
+        </div>
+    </div>

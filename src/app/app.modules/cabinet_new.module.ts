@@ -1,5 +1,11 @@
 import { NewCabinetHeaderComponent } from '../cabinet-new/header/cabinet-header.component';
+
 import { SettingsComponent } from '../cabinet-new/header/settings/settings.component';
+import { AccountOperationsComponent } from '../cabinet-new/header/settings/account_operations/account_operations.component';
+import { ProfileSettingsComponent } from '../cabinet-new/header/settings/profile_settings/profile-settings.component';
+import { SecuritySettingsComponent } from '../cabinet-new/header/settings/security_settings/security-settings.component';
+
+
 import { HistoryComponent } from '../cabinet-new/header/history/history.component';
 
 import { DashboardComponent } from '../cabinet-new/dashboard/dashboard.component';
@@ -29,6 +35,10 @@ import { NewAccountDialogComponent } from '../cabinet-new/dashboard/new-account-
 export const CABINETNEW: any[]=[
   NewCabinetHeaderComponent
     ,SettingsComponent
+    ,AccountOperationsComponent
+    ,ProfileSettingsComponent
+    ,SecuritySettingsComponent
+
     ,HistoryComponent
 
   , DashboardComponent
