@@ -11,7 +11,7 @@ declare const toastr: any;
 
 @Component({
     selector: 'settings-component',
-    templateUrl: 'settings.component.html'
+    templateUrl: './settings.component.html'
 })
 
 export class SettingsComponent implements OnInit, OnDestroy{

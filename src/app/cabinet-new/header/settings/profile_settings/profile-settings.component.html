@@ -1,6 +1,13 @@
 <sms-dialog-component #smsDialog (onSendCode)="changeNumberStep2($event)"></sms-dialog-component>
 
-<div class="card card--lightgrey">
+<div class="col-md-8" *ngIf="!userInfo">
+    <div class="cssload-container">
+        <div class="cssload-double-torus"></div>
+    </div>
+
+</div>
+
+<div class="card card--lightgrey" *ngIf="userInfo">
     <h4 class="setting-card-title">Notice</h4>
     <p class="setting-card-subtitle">SMS about replenishment and costs</p>
     <loader-component #smsLoader>
@@ -32,7 +39,7 @@
     </loader-component>
 </div>
 
-<div class="card card--lightgrey">
+<div class="card card--lightgrey" *ngIf="userInfo">
     <loader-component #numberLoader>
         <h4 class="setting-card-title">Personal information</h4>
         <p class="setting-card-subtitle">Your phone number</p>
@@ -102,7 +109,7 @@
     </loader-component>
 </div>
 
-<div class="card card--lightgrey">
+<div class="card card--lightgrey" *ngIf="userInfo">
     <h4 class="setting-card-title">New password</h4>
     <p class="setting-card-subtitle">Enter new password. It wouldn't coincide with any of the previously used on the site.</p>
     <form>

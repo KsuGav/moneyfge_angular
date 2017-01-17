@@ -9,8 +9,8 @@ declare const $: any;
 declare const toastr: any;
 
 @Component({
-    selector: 'settings-component',
-    templateUrl: 'settings.component.html'
+    selector: 'profile-settings-component',
+    templateUrl: 'profile-settings.component.html'
 })
 
 export class ProfileSettingsComponent implements OnInit, OnDestroy{
