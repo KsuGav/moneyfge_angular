@@ -1,99 +1,47 @@
-import {Component, OnInit, ViewChild } from '@angular/core';
+import {Component, OnInit, OnDestroy, ViewChild} from '@angular/core';
 import {User} from '../../../../app.models/User.model';
 import {UserService} from '../../../../app.services/User.service';
 import {LoaderComponent} from "../../../../common-new/loader/loader.component";
+import {SmsDialogComponent} from "../../../../common-new/sms-dialog/sms-dialog.component";
+import {SmsCode} from "../../../../app.models/SmsCode.model";
 
 declare const $: any;
 declare const toastr: any;
 
 @Component({
-    selector: 'profile-settings-component',
-    templateUrl: 'profile-settings.component.html'
+    selector: 'settings-component',
+    templateUrl: 'settings.component.html'
 })
 
-export class ProfileSettingsComponent implements OnInit {
-
-    userName: any;
+export class ProfileSettingsComponent implements OnInit, OnDestroy{
     userInfo: User;
 
+    newNumber: string;
+    smsCode: string;
+    passwordForNumberChange: string;
+    smsModel: SmsCode;
+    smsHistory: number;
+
     @ViewChild('smsLoader') smsLoader: LoaderComponent;
+    @ViewChild('settingLoader') settingLoader: LoaderComponent;
+    @ViewChild('numberLoader') numberLoader: LoaderComponent;
+    @ViewChild('smsDialog') smsDialog: SmsDialogComponent;
 
     userInfoSubscription;
     toggleSmsSubscription;
+    numberStep1Subscription;
+    numberStep2Subscription;
 
     constructor(private _userService: UserService) {
     }
 
-    ngOnInit() {
-        this.userInfoSubscription = this._userService.getUserInfo()
-            .subscribe((res: any) => {
-                    this.userInfo = res;
-                },
-                err => {
-                    toastr.error(err.json().message);
-                });
+    initSettings(){
 
-        this.init();
-        this.userName = sessionStorage.getItem('telephone');
-    }
-
-    ngOnDestroy() {
-        this.userInfoSubscription.unsubscribe();
-    }
-
-    onSmsClick(state: boolean) {
-        if(this.userInfo.is_check_sms == state) {
-            return;
-        }
-
-        this.smsLoader.toggle(true);
-        this.toggleSmsSubscription = this._userService.toggleSmsNotifications()
-            .subscribe((res: any) => {
-                    this._userService.copyUserInfo(res, this.userInfo);
-                    this.smsLoader.toggle(false);
-                    this.toggleSmsSubscription.unsubscribe();
-                },
-                err => {
-                    toastr.error(err.json().message);
-                });
-    }
-
-    init(){
-        $('#SMSActivate').click(function () {
-            $(this).toggleClass('btn-accent').toggleClass('btn-grey').attr('disabled', true);
-            $(this).parent().prev().children().toggleClass('active');
-            $('#SMSDeActivate').toggleClass('btn-grey').toggleClass('btn-accent').attr('disabled', false);
-            $('#SMSDeActivate').parent().prev().children().toggleClass('active');
-        });
-        $('#SMSDeActivate').click(function () {
-            $(this).toggleClass('btn-accent').toggleClass('btn-grey').attr('disabled', true);
-            $(this).parent().prev().children().toggleClass('active');
-            $('#SMSActivate').toggleClass('btn-grey').toggleClass('btn-accent').attr('disabled', false);
-            $('#SMSActivate').parent().prev().children().toggleClass('active');
-        });
-
-        $('#WalletStep1').click(function () {
+        $('.container').on('click', '#WalletStep1', function () {
             $('#WalletStep1Block').slideDown();
         });
 
-        $('#WalletStep3').click(function () {
-            $('#WalletStep1Block, #WalletStep2Block').slideUp();
-            $('.wallet-block.success').fadeIn();
-        });
-
-        $('#EmailLinkBLockBtn').click(function () {
-            if ( !$("#EmailLinkSwitch").is(":checked") ) {
-                $('#EmailLinkBLock').slideDown();
-            }
-        });
-
-        $('#EmailLinkSubmit').click(function () {
-            if( $('#EmailLinkInput').val().length >= 5 ) {
-                $('#EmailLinkBLock').slideUp();
-            }
-        });
-
-        $('.input-sms').blur(function()
+        $('.container').on('blur', '.input-sms', function()
         {
             if($(this).val().length <= 3) {
                 $('#SmsCheck').removeClass('yes');
@@ -112,5 +60,93 @@ export class ProfileSettingsComponent implements OnInit {
                 });
             }
         });
+    }
+
+    ngOnInit() {
+        this.userInfoSubscription = this._userService.getUserInfo()
+            .subscribe((res: any) => {
+                    this.userInfo = res;
+                },
+                err => {
+                    toastr.error(err.json().message);
+                });
+
+        this.initSettings();
+    }
+
+    ngOnDestroy() {
+        this.userInfoSubscription.unsubscribe();
+    }
+
+    onSmsClick(state: boolean) {
+        if(this.userInfo.is_check_sms == state) {
+            return;
+        }
+
+        this.smsLoader.toggle(true);
+        this.toggleSmsSubscription = this._userService.toggleSmsNotifications()
+            .subscribe(
+                (res: any) => {
+                    this._userService.copyUserInfo(res, this.userInfo);
+                    this.smsLoader.toggle(false);
+                    this.toggleSmsSubscription.unsubscribe();
+                },
+                err => {
+                    toastr.error(err.json().message);
+                });
+    }
+
+    onNumberAcceptClick() {
+        if(ProfileSettingsComponent.validateNumber(this.newNumber)) {
+            $('#WalletStep2Block').slideDown();
+        } else {
+            // !todo: show some error
+        }
+    }
+
+    static validateNumber(number) {
+        console.log(number);
+        return true;
+    }
+
+    onNumberSaveClick() {
+        this.numberLoader.toggle(true);
+        this.numberStep1Subscription = this._userService.changeNumberStep1(this.userInfo.telephone, this.newNumber, this.passwordForNumberChange)
+            .subscribe(
+                (res: any) => {
+                    this.numberLoader.toggle(false);
+                    this.smsHistory = res.history;
+                    this.smsDialog.open(res.sms);
+                },
+                err => {
+                    this.numberLoader.toggle(false);
+                    toastr.error(err.json().message);
+                }
+            );
+        this.numberLoader.toggle(true);
+    }
+
+    changeNumberStep2(code: SmsCode) {
+        this.smsModel = code;
+        this.numberLoader.toggle(true);
+        this.numberStep1Subscription.unsubscribe();
+        this.numberStep2Subscription =
+            this._userService.changeNumberStep2(this.smsModel.smsId, this.smsHistory, this.smsModel.smsCode)
+                .subscribe(
+                    (res: any) => {
+                        this._userService.copyUserInfo(res, this.userInfo);
+                        this.numberStep2Subscription.unsubscribe();
+                        this.numberLoader.toggle(false);
+                        sessionStorage.setItem('telephone', this.userInfo.telephone);
+                        toastr.success("The number was successfully changed");
+                        this.ngOnInit();
+                    },
+
+                    err => {
+                        this.numberStep2Subscription.unsubscribe();
+                        this.numberLoader.toggle(false);
+                        toastr.error(err.json().message);
+                    }
+                )
     }
 }
