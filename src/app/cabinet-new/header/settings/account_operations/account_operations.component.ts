@@ -1,10 +1,11 @@
 import {Component, OnInit, OnDestroy, ViewChild, AfterViewInit} from '@angular/core';
 import { Account } from '../../../../app.models/Account.model';
-import { n_AccountService } from '../../../../app.services/Account.service';
+import {n_AccountService, CURRENCIES} from '../../../../app.services/Account.service';
 import {LoaderComponent} from "../../../../common-new/loader/loader.component";
 import {ModalService} from "../../../../services/modal.service";
 import {SmsCode} from "../../../../app.models/SmsCode.model";
 import {SmsDialogComponent} from "../../../../common-new/sms-dialog/sms-dialog.component";
+import {FormGroup, FormBuilder, Validators} from "@angular/forms";
 
 
 declare const $: any;
@@ -17,9 +18,10 @@ declare const toastr: any;
 
 export class AccountOperationsComponent implements OnInit, OnDestroy, AfterViewInit{
 
-    @ViewChild('loader') loader: LoaderComponent;
+    @ViewChild('transfersBigloader') transfersBigloader: LoaderComponent;
     @ViewChild(SmsDialogComponent) smsDialog: SmsDialogComponent;
-    @ViewChild('transferAccountsLoader') accountsLoader: LoaderComponent;
+    @ViewChild('transferAccountsLoader') transferAccountsLoader: LoaderComponent;
+    @ViewChild('newAccountLoader') newAccountLoader: LoaderComponent;
 
     userName: any;
     private smsModel: SmsCode;
@@ -32,48 +34,73 @@ export class AccountOperationsComponent implements OnInit, OnDestroy, AfterViewI
 
     fromAccount: number = 0;
     toAccount: number = 0;
-    sum: number = 0.0;
-    formValid: boolean = false;
-
+    transferSum: number = 0.0;
+    isTransferFormValid: boolean = false;
     comment: string = '';
 
     getAccountsSubscription: any;
+    newAccountForm: FormGroup;
+    currencies = CURRENCIES;
 
     constructor(
         private accountService: n_AccountService,
-        private modalService: ModalService
+        private modalService: ModalService,
+        private fb: FormBuilder,
     ) {
         this.getAccountsSubscription = this.accountService.receiveAccounts.subscribe(
             res => {
-                // this.accountsLoader.toggle(false);
+                this.transferAccountsLoader.toggle(false);
                 this.fromAccounts = res.active;
                 this.fromAccountsLoaded = true;
             }
         );
+        this.createNewAccountForm();
     }
 
-    submitForm() {
+    ngOnInit() {
+        this.initSelects();
+        this.userName = sessionStorage.getItem('telephone');
+        this.toMyAccount = true;
+        this.transferAccountsLoader.toggle(true);
+        this.accountService.getAllAccounts();
+    }
+
+    ngOnDestroy(){
+        this.getAccountsSubscription.unsubscribe();
+    }
+
+    ngAfterViewInit(){
+
+    }
+
+    createNewAccountForm() {
+        this.newAccountForm = this.fb.group({
+            currency: [CURRENCIES[0][0], Validators.required]
+        });
+    }
+
+    submitTransferForm() {
         event.preventDefault();
-        this.validateForm();
-        if (!this.formValid) {
+        this.validateTransferForm();
+        if (!this.isTransferFormValid) {
             return;
         }
-        this.loader.toggle(true);
+        this.transfersBigloader.toggle(true);
         this.modalService.showLoader('block');
         this.accountService
             .createTransactionStep1(
                 this.fromAccount,
                 this.toAccount,
-                this.sum,
+                this.transferSum,
             )
             .subscribe(
                 (res: any) => {
-                    this.loader.toggle(false);
+                    this.transfersBigloader.toggle(false);
                     this.smsModel = new SmsCode(res.sms, res.info, 0);
                     this.smsDialog.open(this.smsModel.smsId);
                 },
                 err => {
-                    this.loader.toggle(false);
+                    this.transfersBigloader.toggle(false);
                     this.modalService.hideLoader('block');
                     toastr.error(err.json().message);
                 }
@@ -84,7 +111,7 @@ export class AccountOperationsComponent implements OnInit, OnDestroy, AfterViewI
     closeSmsDialog(code: SmsCode) {
         this.smsModel.smsCode = code.smsCode;
         this.modalService.showLoader('block');
-        this.loader.toggle(true);
+        this.transfersBigloader.toggle(true);
         this.accountService
             .createTransactionStep2(
                 this.smsModel.smsId,
@@ -93,7 +120,7 @@ export class AccountOperationsComponent implements OnInit, OnDestroy, AfterViewI
             )
             .subscribe(
                 () => {
-                    this.loader.toggle(false);
+                    this.transfersBigloader.toggle(false);
                     toastr.success("Transfer was successfully conducted.");
                     this.ngOnInit();
                     this.toAccounts = [];
@@ -107,26 +134,11 @@ export class AccountOperationsComponent implements OnInit, OnDestroy, AfterViewI
         ;
     }
 
-    ngOnInit() {
-        this.selects();
-        this.userName = sessionStorage.getItem('telephone');
+    /*
+     * Events
+     */
 
-        this.toMyAccount = true;
-        // this.accountsLoader.toggle(true);
-        let a = this.accountService.getAllAccounts();
-
-
-    }
-
-    ngOnDestroy(){
-        this.getAccountsSubscription.unsubscribe();
-    }
-
-    ngAfterViewInit(){
-
-    }
-
-    onFromChange(account) {
+    onTransferFromChange(account) {
         this.toAccounts = [];
         for(let i = 0; i < this.fromAccounts.length; ++i) {
             if(this.fromAccounts[i].id != account) {
@@ -137,52 +149,79 @@ export class AccountOperationsComponent implements OnInit, OnDestroy, AfterViewI
         if(this.toMyAccount) {
             this.toAccount = 0;
         }
-        this.validateForm();
+        this.validateTransferForm();
     }
 
-    onToChange(account) {
+    onTransferToChange(account) {
         this.toAccount = 0;
         if(account && account.length == 8) {
             this.toAccount = account;
         }
-        this.validateForm();
+        this.validateTransferForm();
     }
 
-    onSumChange(sum) {
+    onTransferSumChange(sum) {
         sum = parseFloat(sum);
-        this.sum = sum;
-        this.validateForm();
+        this.transferSum = sum;
+        this.validateTransferForm();
         if(!sum || sum == 0) {
-            this.sumToPay = this.formatMoney(0);
+            this.sumToPay = AccountOperationsComponent.formatMoney(0);
             return;
         }
-        this.sumToPay = this.formatMoney(
+        this.sumToPay = AccountOperationsComponent.formatMoney(
             Math.max(1.05 * sum, sum + 0.01)
         );
     }
 
-    formatMoney(sum) {
-        return sum.toFixed(2).replace(/./g, function(c, i, a) {
-            return i && c !== "." && ((a.length - i) % 3 === 0) ? ',' + c : c;
-        });
-    }
-
-    onYourAccountSelected() {
+    onTransferYourAccountSelected() {
         this.toMyAccount = true;
         $('#toMySelect').next().show();
-        this.onToChange($('#toMySelect').val());
+        this.onTransferToChange($('#toMySelect').val());
 
     }
 
-    validateForm() {
-        this.formValid = (this.toAccount > 10000000 && this.toAccount < 99999999 &&
+    onCreateAccountFormSubmit() {
+        if (!this.newAccountForm.valid) {
+            return;
+        }
+        this.newAccountLoader.toggle(true);
+        this.accountService
+            .createCard(this.newAccountForm.value.currency)
+            .subscribe(
+                () => {
+                    this.newAccountLoader.toggle(false);
+                    toastr.success('New account created successfully');
+                    this.accountService.getAllAccounts();
+                },
+                err => {
+                    this.newAccountLoader.toggle(false);
+                    toastr.error(err.json().message);
+                }
+            );
+    }
+
+    /*
+     * Helpers
+     */
+
+    validateTransferForm() {
+        this.isTransferFormValid = (this.toAccount > 10000000 && this.toAccount < 99999999 &&
         this.fromAccount > 10000000 && this.fromAccount < 99999999 &&
-        this.sum > 0);
+        this.transferSum > 0);
     }
 
-    selects(){
+    initSelects(){
         $(".select-medium").select2({
             minimumResultsForSearch: Infinity
+        });
+
+        $('#currencySelect').select2({
+            templateResult: formatTransfer,
+            templateSelection: formatTransfer,
+            minimumResultsForSearch: Infinity,
+            placeholder: 'Select currency'
+        }).on("change", function(e) {
+            thisObj.newAccountForm.patchValue({currency:e.currentTarget.value});
         });
 
         function formatTransfer (bill) {
@@ -234,7 +273,7 @@ export class AccountOperationsComponent implements OnInit, OnDestroy, AfterViewI
             templateSelection: formatTransfer,
             minimumResultsForSearch: Infinity,
         }).on("change", function(e) {
-            thisObj.onFromChange(e.currentTarget.value);
+            thisObj.onTransferFromChange(e.currentTarget.value);
         });
 
         $("#toMySelect").select2({
@@ -243,7 +282,13 @@ export class AccountOperationsComponent implements OnInit, OnDestroy, AfterViewI
             templateSelection: formatTransfer,
             minimumResultsForSearch: Infinity,
         }).on("change", function(e) {
-            thisObj.onToChange(e.currentTarget.value);
+            thisObj.onTransferToChange(e.currentTarget.value);
+        });
+    }
+
+    static formatMoney(sum) {
+        return sum.toFixed(2).replace(/./g, function(c, i, a) {
+            return i && c !== "." && ((a.length - i) % 3 === 0) ? ',' + c : c;
         });
     }
 }
