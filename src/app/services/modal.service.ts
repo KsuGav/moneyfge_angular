@@ -48,6 +48,7 @@ export class ModalService {
       initialCountry: 'auto',
       defaultCountry: 'tr',
       preferredCountries: ['us','ru','tr','ua'],
+      autoPlaceholder: false,
       //customPlaceholder: function (selectedCountryPlaceholder, selectedCountryData) {
       //  return selectedCountryPlaceholder;
       //}

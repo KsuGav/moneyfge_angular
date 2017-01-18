@@ -204,7 +204,7 @@ export class ProfileSettingsComponent implements OnInit, OnDestroy{
         this.newNumber = '';
         this.passwordForChange = '';
         this.userEmail = '';
-        // !todo: slideup all fields 
+        // !todo: slideup all fields
         // show all changed items
         // clear all fields - done
     }
