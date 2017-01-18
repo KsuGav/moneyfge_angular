@@ -31,7 +31,7 @@ import { CABINETNEW } from './app.modules/cabinet_new.module';
 // import { COMMON } from './app.modules/common.modules';
 import { COMMON_NEW } from './app.modules/common_new.modules';
 
-import { ShareModule } from './common/share.module';
+//import { ShareModule } from './common/share.module';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login/login.component';
@@ -78,7 +78,7 @@ type StoreType = {
     , ReactiveFormsModule
     , HttpModule
     , RouterModule.forRoot(ROUTES, { useHash: false, preloadingStrategy: PreloadAllModules })
-    , ShareModule
+    , //ShareModule
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS // OLD

@@ -57,6 +57,10 @@ export class AccountOperationsComponent implements OnInit, OnDestroy, AfterViewI
         this.createNewAccountForm();
     }
 
+    /*
+     * ngEvents
+     */
+
     ngOnInit() {
         this.initSelects();
         this.userName = sessionStorage.getItem('telephone');
@@ -70,6 +74,14 @@ export class AccountOperationsComponent implements OnInit, OnDestroy, AfterViewI
     }
 
     ngAfterViewInit(){
+
+    }
+
+    /*
+     * Actions
+     */
+
+    getAccountList() {
 
     }
 
