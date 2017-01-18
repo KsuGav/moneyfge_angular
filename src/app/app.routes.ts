@@ -100,6 +100,5 @@ export const ROUTES: Routes = [
     canActivate: [ LoggedInGuard ],
     component: MerchantPanelComponent}
   , {path: 'user/dashboard', component: DashboardComponent, canActivate: [ LoggedInGuard ]}
-  , { path: 'user/cabinet', loadChildren: './cabinet/cabinet.module#CabinetModule' }
   , { path: '**',    component: NoContentComponent }
 ];
