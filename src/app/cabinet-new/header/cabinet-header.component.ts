@@ -7,6 +7,7 @@ import { User } from '../../app.models/User.model';
 import {Observable} from 'rxjs/Rx';
 
 declare const $: any;
+declare const toastr: any;
 
 @Component({
   selector: 'new-cabinet-header-component',
@@ -15,9 +16,13 @@ declare const $: any;
 export class NewCabinetHeaderComponent implements OnInit {
 
   userName: any;
+  userInfo: User;
+
+  getUserSubscription;
 
   constructor(
-    private loggedInGuard: LoggedInGuard
+    private loggedInGuard: LoggedInGuard,
+    private userService: UserService
     // private userService: UserService
 
   ) { }
@@ -25,7 +30,22 @@ export class NewCabinetHeaderComponent implements OnInit {
 
   ngOnInit(){
     this.burgerButton();
-    this.userName = sessionStorage.getItem('telephone');
+    let userName = sessionStorage.getItem('telephone');
+    if('undefined' != typeof userName && userName && 'undefined' != userName) {
+      this.userName = sessionStorage.getItem('telephone');
+    } else {
+      this.getUserSubscription = this.userService.getUserInfo()
+          .subscribe(
+              (res: any) => {
+                this.userInfo = res;
+                this.userName = res.telephone;
+                sessionStorage.setItem('telephone', this.userName);
+              },
+              err => {
+                toastr.error(err.json().message);
+              });
+    }
+
     // this.activeLinks();
     // this.userService.getUserInfo()
     //     .subscribe(user => {
@@ -33,7 +53,6 @@ export class NewCabinetHeaderComponent implements OnInit {
     //     });
 
   }
-
 
   logout(event) {
     event.preventDefault();
