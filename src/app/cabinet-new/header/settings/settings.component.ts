@@ -28,18 +28,15 @@ export class SettingsComponent implements OnInit, OnDestroy{
     userInfoSubscription;
     toggleSmsSubscription;
 
-    constructor(private _userService: UserService) {
+    constructor() {
     }
 
     ngOnInit() {
         this.initSettings();
-        // this.userName = sessionStorage.getItem('telephone');
     }
 
     ngOnDestroy() {
-        // this.userInfoSubscription.unsubscribe();
     }
-
 
     initSettings(){
 
