@@ -36,8 +36,7 @@
                                     </div>
                                     <div class="s1 select-label" (click)="onOnesAccountSelected()">To one's account</div>
                                 </div>
-                                <input [hidden]="toMyAccount" type="number" max="99999999" required class="input-medium input-white" id="transferToInput" (keyup)="onToChange($event.target.value)">
-                                <select [hidden]="!toMyAccount" class="select-medium transfer-select" id="toMySelect" (change)="onToChange($event.target.value)">
+                                <select class="select-medium transfer-select" id="toMySelect" (change)="onToChange($event.target.value)">
                                     <option></option>
                                     <option *ngFor="let acc of toAccounts" value="{{acc.id}}">My MoneyFGA &nbsp;&nbsp; {{acc.sum}} {{acc.currency}}</option>
                                 </select>

@@ -22,7 +22,7 @@ export class SecuritySettingsComponent implements OnInit {
 
     checkboxSmsOn(){
         $('#SMSBLockBtn .on').css({'display':'block'});
-            $('#SMSBLockBtn .off').css({'display':'none'});
+        $('#SMSBLockBtn .off').css({'display':'none'});
 
     }
     checkboxSmsOff(){

@@ -1,4 +1,7 @@
-    <div class="card card--lightgrey">
+<sms-dialog-component [id]="'trans'" (onSendCode)="closeSmsDialog($event)"></sms-dialog-component>
+
+
+<div class="card card--lightgrey">
         <h4 class="setting-card-title">New account</h4>
         <p class="select-label">Select currency</p>
         <div class="row">
@@ -75,92 +78,48 @@
         </div>
     </div>
 
-    <form class="transfer-form">
+    <loader-component #loader>
+    <form class="transfer-form" (submit)="submitForm()">
         <div class="card card--lightgrey">
+            <!--<loader-component #transferAccountsLoader>-->
             <h4 class="setting-card-title">Transfer between accounts</h4>
             <div class="row">
                 <div class="col-md-7">
                     <p class="select-label">From account</p>
-                    <select class="select-medium transfer-select bill">
-                        <option value="1" selected>My MoneyFGA &nbsp;&nbsp; 0,000 USD</option>
-                        <option value="2">My MoneyFGA &nbsp;&nbsp; 0,000 RUB</option>
-                        <option value="3">My MoneyFGA &nbsp;&nbsp; 0,000 UAH</option>
+                    <select class="select-medium transfer-select bill" id="fromMySelect" (change)="onFromChange($event.target.value)">
+                        <option></option>
+                        <option *ngFor="let acc of fromAccounts" value="{{acc.id}}">My MoneyFGA &nbsp;&nbsp; {{acc.sum}} {{acc.currency}}</option>
                     </select>
-                    <p class="select-label">To account</p>
-                    <select class="select-medium transfer-select bill">
-                        <option value="1" selected>My MoneyFGA &nbsp;&nbsp; 0,000 USD</option>
-                        <option value="2">My MoneyFGA &nbsp;&nbsp; 0,000 RUB</option>
-                        <option value="3">My MoneyFGA &nbsp;&nbsp; 0,000 UAH</option>
+                    <p class="s3 select-label" (click)="onYourAccountSelected()">To account</p>
+                    <select class="select-medium transfer-select bill" id="toMySelect" (change)="onToChange($event.target.value)">
+                        <option></option>
+                        <option *ngFor="let acc of toAccounts" value="{{acc.id}}">My MoneyFGA &nbsp;&nbsp; {{acc.sum}} {{acc.currency}}</option>
                     </select>
                 </div>
                 <div class="col-md-5">
                     <p class="card--info transfer-block">Information on the bills. <br>More features.</p>
                 </div>
             </div>
-
+            <!--</loader-component>-->
         </div>
 
         <div class="card card--darkgrey">
             <div class="row">
                 <div class="col-sm-6">
                     <p class="select-label">Sum</p>
-                    <input type="number" class="input-medium input-small-width" placeholder="0, 000" required>
+                    <input type="number" maxlength="5" class="input-medium input-small-width" placeholder="0.00" required (keyup)="onSumChange($event.target.value)">
                     <span class="form-info-summa">$</span>
                     <p class="select-label">To pay</p>
-                    <input type="text" class="input-medium input-small-width" disabled placeholder="0, 000 $">
+                    <input type="text" class="input-medium input-small-width" disabled placeholder="0.00$" value="{{sumToPay}}$">
                     <span class="form-info">Including <br>bank fee 5%</span>
                     <div class="clearfix"></div>
-                    <button class="btn btn-medium btn-accent">Continue</button>
+                    <button (click)="submitForm()" class="btn btn-medium btn-accent" [disabled]="!formValid">Continue</button>
                 </div>
                 <div class="col-sm-6">
                     <p class="select-label grey">Add comment</p>
-                    <textarea></textarea>
+                    <textarea id="transfer-comment">{{comment}}</textarea>
                 </div>
             </div>
         </div>
     </form>
-    <!--<loader-component #bigLoader>-->
-        <!--<form class="transfer-form" (submit)="submitForm()">-->
-            <!--<div class="card card&#45;&#45;lightgrey">-->
-                <!--<loader-component #transferAccountsLoader>-->
-                    <!--<p class="select-label">From account</p>-->
-                    <!--<select class="select-medium transfer-select" id="fromMySelect" (change)="onFromChange($event.target.value)">-->
-                        <!--<option></option>-->
-                        <!--<option *ngFor="let acc of fromAccounts" value="{{acc.id}}">My MoneyFGA &nbsp;&nbsp; {{acc.sum}} {{acc.currency}}</option>-->
-                    <!--</select>-->
-                    <!--<div class="clearfix transfer-switcher">-->
-                        <!--<div class="s3 select-label" (click)="onYourAccountSelected()">To my account</div>-->
-                        <!--<div class="s2">-->
-                            <!--<div class="dot"></div>-->
-                            <!--<div class="line"></div>-->
-                        <!--</div>-->
-                        <!--<div class="s1 select-label" (click)="onOnesAccountSelected()">To one's account</div>-->
-                    <!--</div>-->
-                    <!--<input [hidden]="toMyAccount" type="number" max="99999999" required class="input-medium input-white" id="transferToInput" (keyup)="onToChange($event.target.value)">-->
-                    <!--<select [hidden]="!toMyAccount" class="select-medium transfer-select" id="toMySelect" (change)="onToChange($event.target.value)">-->
-                        <!--<option></option>-->
-                        <!--<option *ngFor="let acc of toAccounts" value="{{acc.id}}">My MoneyFGA &nbsp;&nbsp; {{acc.sum}} {{acc.currency}}</option>-->
-                    <!--</select>-->
-                <!--</loader-component>-->
-            <!--</div>-->
-
-            <!--<div class="card card&#45;&#45;darkgrey">-->
-                <!--<div class="row">-->
-                    <!--<div class="col-sm-6">-->
-                        <!--<p class="select-label">Sum to receive</p>-->
-                        <!--<input type="number" maxlength="5" class="input-medium input-small-width" placeholder="0.00" (keyup)="onSumChange($event.target.value)">-->
-                        <!--<span class="form-info-summa">$</span>-->
-                        <!--<p class="select-label">Sum to pay</p>-->
-                        <!--<input type="text" class="input-medium input-small-width" readonly placeholder="0.00$" value="{{sumToPay}}$">-->
-                        <!--<span class="form-info">Including <br>bank fee 5%</span>-->
-                        <!--<div class="clearfix"></div>-->
-                        <!--<button (click)="submitForm()" class="btn btn-medium btn-accent" [disabled]="!formValid">Continue</button>-->
-                    <!--</div>-->
-                    <!--<div class="col-sm-6">-->
-                        <!--<p class="select-label grey">Add a comment</p>-->
-                        <!--<textarea id="transfer-comment">{{comment}}</textarea>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</form>-->
-    <!--</loader-component>-->
+    </loader-component>
