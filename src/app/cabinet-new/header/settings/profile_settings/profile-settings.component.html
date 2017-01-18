@@ -102,16 +102,18 @@
                 </div>
                 <div class="col-md-5">
                     <button type="button" class="btn btn-medium btn-accent" id="EmailStep2" (click)="onEmailAcceptClick()">Change</button>
-                    <p class="card--info email-block">Email is bound to your account and provides additional password recovery methods</p>
+                    <!--<p class="card&#45;&#45;info email-block">Email is bound to your account and provides additional password recovery methods</p>-->
                 </div>
-                    <div class="col-md-7" id="EmailStep2Block">
+                    <div class="col-md-12" id="EmailStep2Block">
                         <p class="setting-card-subtitle">Your password</p>
                         <form>
                             <div class="half-width-inputs">
-                                <div class="half-width-input">
-                                    <input type="password" class="input-medium" required [(ngModel)]="passwordForChange" [ngModelOptions]="{standalone: true}">
+                                <!--<div class="half-width-input">-->
+                                <div class="col-md-7">
+                                    <input type="password" class="input-medium full-width" required [(ngModel)]="passwordForChange" [ngModelOptions]="{standalone: true}">
                                 </div>
-                                <div class="half-width-input">
+                                <!--<div class="half-width-input">-->
+                                <div class="col-md-5">
                                     <button type="button" class="btn btn-medium btn-accent" (click)="onEmailSaveClick()">Save</button>
                                 </div>
                             </div>

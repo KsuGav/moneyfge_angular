@@ -400,3 +400,7 @@ ul.dash-main-menu.clearfix {
 #EmailStep2Block {
     display:none;
 }
+#EmailStep2Block .btn-accent{
+    margin-top: 0;
+    width: 125px;
+}
