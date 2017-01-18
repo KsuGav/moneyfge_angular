@@ -32,14 +32,6 @@ export class SettingsComponent implements OnInit, OnDestroy{
     }
 
     ngOnInit() {
-        this.userInfoSubscription = this._userService.getUserInfo()
-            .subscribe((res: any) => {
-                    this.userInfo = res;
-                },
-                err => {
-                    toastr.error(err.json().message);
-                });
-
         this.initSettings();
         // this.userName = sessionStorage.getItem('telephone');
     }

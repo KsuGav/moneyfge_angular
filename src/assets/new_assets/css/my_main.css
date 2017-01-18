@@ -392,3 +392,11 @@ ul.dash-main-menu.clearfix {
     color: #A1A1A1;
     background-color: #e3e3e3;
 }
+
+#EmailStep2 {
+    margin-top: 0;
+}
+
+#EmailStep2Block {
+    display:none;
+}

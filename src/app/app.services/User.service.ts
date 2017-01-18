@@ -69,7 +69,7 @@ export class UserService {
         ;
   }
 
-  changeNumberStep2(sms, history, code) {
+  changeStep2(sms, history, code, entity = 'number') {
     const headers = new Headers();
     headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
     headers.append('Content-Type', 'application/json');
@@ -80,7 +80,20 @@ export class UserService {
       "code": code
     };
 
-    const locUrl = `${this._appService.get('apiEndpoint')}/user/phone/2`;
+    let locUrl = "";
+    switch(entity) {
+      case 'number': {
+        locUrl = `${this._appService.get('apiEndpoint')}/user/phone/2`;
+        break;
+      }
+      case 'email': {
+        locUrl = `${this._appService.get('apiEndpoint')}/user/email/2`;
+        break;
+      }
+      default: {
+        throw "ChangeStep2 entity error";
+      }
+    }
     return this._http
         .patch(locUrl, JSON.stringify(paylaoad), {headers: headers})
         .map(res => res.json())
@@ -89,6 +102,40 @@ export class UserService {
 
   copyUserInfo(source: User, destination: User) {
     for(let k in source) destination[k] = source[k];
+  }
+
+  changeEmailStep1(newEmail, password) {
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
+    headers.append('Content-Type', 'application/json');
+
+    const payload = JSON.stringify({
+      "plainPassword": password,
+      "email": newEmail
+    });
+
+    const locUrl = `${this._appService.get('apiEndpoint')}/user/email/1`;
+    return this._http
+        .put(locUrl, payload, {headers: headers})
+        .map(res => res.json())
+        ;
+  }
+
+  changePassword(oldPassword, newPassword) {
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
+    headers.append('Content-Type', 'application/json');
+
+    const payload = JSON.stringify({
+      "plainPassword": [newPassword, newPassword],
+      "oldPassword": oldPassword
+    });
+
+    const locUrl = `${this._appService.get('apiEndpoint')}/user/password`;
+    return this._http
+        .put(locUrl, payload, {headers: headers})
+        .map(res => res.json())
+        ;
   }
 
 }
