@@ -17,7 +17,9 @@ export class ProfileSettingsComponent implements OnInit, OnDestroy{
     userInfo: User;
 
     newNumber: string;
-    newEmail: string = '';
+    userEmail: string = '';
+    newPassword: string;
+    newPassword2: string;
     smsCode: string;
     passwordForChange: string;
     smsModel: SmsCode;
@@ -35,6 +37,7 @@ export class ProfileSettingsComponent implements OnInit, OnDestroy{
     numberStep1Subscription;
     numberStep2Subscription;
     emailStep1Subscription;
+    passwordChnageSubscription;
 
     constructor(private _userService: UserService) {
     }
@@ -70,11 +73,10 @@ export class ProfileSettingsComponent implements OnInit, OnDestroy{
         this.userInfoSubscription = this._userService.getUserInfo()
             .subscribe((res: any) => {
                     this.userInfo = res;
-                    this.newEmail = this.userInfo.email;
+                    this.userEmail = this.userInfo.email;
                     if(this.userInfo.email == this.userInfo.telephone || !this.userInfo.email.includes('@')) {
-                        this.newEmail = '';
+                        this.userEmail = '';
                     }
-                    console.log(this.newEmail);
                 },
                 err => {
                     toastr.error(err.json().message);
@@ -144,7 +146,7 @@ export class ProfileSettingsComponent implements OnInit, OnDestroy{
     }
 
     onEmailAcceptClick() {
-        if(ProfileSettingsComponent.validateEmail(this.newEmail)) {
+        if(ProfileSettingsComponent.validateEmail(this.userEmail)) {
             $('#EmailStep2Block').slideDown();
         } else {
             // !todo: show some error
@@ -154,7 +156,7 @@ export class ProfileSettingsComponent implements OnInit, OnDestroy{
     onEmailSaveClick() {
         this.numberLoader.toggle(true);
         this.changingParam = 'email';
-        this.emailStep1Subscription = this._userService.changeEmailStep1(this.newEmail, this.passwordForChange)
+        this.emailStep1Subscription = this._userService.changeEmailStep1(this.userEmail, this.passwordForChange)
             .subscribe(
                 (res: any) => {
                     this.emailStep1Subscription.unsubscribe();
@@ -195,8 +197,30 @@ export class ProfileSettingsComponent implements OnInit, OnDestroy{
     }
 
     afterStep2() {
+        this.passwordForChange = '';
         // !todo: slideup all fields
         // show all changed items
+        // clear all fields
     }
 
+    onNewPasswordChange(event) {
+        //!todo: validate password
+    }
+
+    onPasswordChangeClick() {
+        if(this.newPassword != this.newPassword2) {
+            toastr.error('Password confirmarion doesn\'t match the password');
+            return;
+        }
+        this.passwordChnageSubscription = this._userService.changePassword(this.passwordForChange, this.newPassword)
+            .subscribe(
+                () => {
+                    this.passwordChnageSubscription.unsubscribe();
+                    toastr.success(`The password was successfully changed`);
+                    this.afterStep2();
+                },
+                err => {
+                    toastr.error(err.json().message);
+                })
+    }
 }

@@ -98,7 +98,7 @@
         <div class="row">
             <form>
                 <div class="col-md-7">
-                    <input type="text" class="input-medium full-width" id="settingsEmail" [(ngModel)]="newEmail" [ngModelOptions]="{standalone: true}" required>
+                    <input type="text" class="input-medium full-width" id="settingsEmail" [(ngModel)]="userEmail" [ngModelOptions]="{standalone: true}" required>
                 </div>
                 <div class="col-md-5">
                     <button type="button" class="btn btn-medium btn-accent" id="EmailStep2" (click)="onEmailAcceptClick()">Change</button>
@@ -133,7 +133,7 @@
                         <span>Old password</span>
                     </div>
                     <div class="half-width-input big">
-                        <input type="text" class="input-medium disabled" placeholder="*********">
+                        <input type="password" class="input-medium disabled" placeholder="*********" [(ngModel)]="passwordForChange" [ngModelOptions]="{standalone: true}">
                     </div>
                 </div>
             </div>
@@ -147,7 +147,7 @@
                         <span>New password</span>
                     </div>
                     <div class="half-width-input big">
-                        <input type="password" class="input-medium" required>
+                        <input type="password" class="input-medium" required [(ngModel)]="newPassword" [ngModelOptions]="{standalone: true}" (keyup)="onNewPasswordChange($event)">
                     </div>
                 </div>
             </div>
@@ -162,7 +162,7 @@
                         <span>Please reenter password</span>
                     </div>
                     <div class="half-width-input big">
-                        <input type="password" class="input-medium" required>
+                        <input type="password" class="input-medium" required [(ngModel)]="newPassword2" [ngModelOptions]="{standalone: true}">
                     </div>
                 </div>
             </div>
@@ -170,7 +170,7 @@
         </div>
         <div class="row">
             <div class="col-md-7">
-                <div class="text-right"><button type="submit" class="btn btn-medium btn-accent" id="SavePass">Save</button></div>
+                <div class="text-right"><button type="submit" class="btn btn-medium btn-accent" id="SavePass" (click)="onPasswordChangeClick()">Save</button></div>
             </div>
             <div class="col-md-5"></div>
         </div>

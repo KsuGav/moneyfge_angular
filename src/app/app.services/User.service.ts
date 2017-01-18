@@ -121,4 +121,21 @@ export class UserService {
         ;
   }
 
+  changePassword(oldPassword, newPassword) {
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
+    headers.append('Content-Type', 'application/json');
+
+    const payload = JSON.stringify({
+      "plainPassword": [newPassword, newPassword],
+      "oldPassword": oldPassword
+    });
+
+    const locUrl = `${this._appService.get('apiEndpoint')}/user/password`;
+    return this._http
+        .put(locUrl, payload, {headers: headers})
+        .map(res => res.json())
+        ;
+  }
+
 }
