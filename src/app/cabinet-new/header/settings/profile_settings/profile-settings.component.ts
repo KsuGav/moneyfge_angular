@@ -17,10 +17,13 @@ export class ProfileSettingsComponent implements OnInit, OnDestroy{
     userInfo: User;
 
     newNumber: string;
+    newEmail: string = '';
     smsCode: string;
-    passwordForNumberChange: string;
+    passwordForChange: string;
     smsModel: SmsCode;
     smsHistory: number;
+
+    changingParam = '';
 
     @ViewChild('smsLoader') smsLoader: LoaderComponent;
     @ViewChild('settingLoader') settingLoader: LoaderComponent;
@@ -31,6 +34,7 @@ export class ProfileSettingsComponent implements OnInit, OnDestroy{
     toggleSmsSubscription;
     numberStep1Subscription;
     numberStep2Subscription;
+    emailStep1Subscription;
 
     constructor(private _userService: UserService) {
     }
@@ -66,6 +70,11 @@ export class ProfileSettingsComponent implements OnInit, OnDestroy{
         this.userInfoSubscription = this._userService.getUserInfo()
             .subscribe((res: any) => {
                     this.userInfo = res;
+                    this.newEmail = this.userInfo.email;
+                    if(this.userInfo.email == this.userInfo.telephone || !this.userInfo.email.includes('@')) {
+                        this.newEmail = '';
+                    }
+                    console.log(this.newEmail);
                 },
                 err => {
                     toastr.error(err.json().message);
@@ -109,16 +118,24 @@ export class ProfileSettingsComponent implements OnInit, OnDestroy{
         return true;
     }
 
+    static validateEmail(email) {
+        console.log(email);
+        return email;
+    }
+
     onNumberSaveClick() {
         this.numberLoader.toggle(true);
-        this.numberStep1Subscription = this._userService.changeNumberStep1(this.userInfo.telephone, this.newNumber, this.passwordForNumberChange)
+        this.changingParam = 'number';
+        this.numberStep1Subscription = this._userService.changeNumberStep1(this.userInfo.telephone, this.newNumber, this.passwordForChange)
             .subscribe(
                 (res: any) => {
+                    this.numberStep1Subscription.unsubscribe();
                     this.numberLoader.toggle(false);
                     this.smsHistory = res.history;
                     this.smsDialog.open(res.sms);
                 },
                 err => {
+                    this.numberStep1Subscription.unsubscribe();
                     this.numberLoader.toggle(false);
                     toastr.error(err.json().message);
                 }
@@ -126,20 +143,47 @@ export class ProfileSettingsComponent implements OnInit, OnDestroy{
         this.numberLoader.toggle(true);
     }
 
-    changeNumberStep2(code: SmsCode) {
+    onEmailAcceptClick() {
+        if(ProfileSettingsComponent.validateEmail(this.newEmail)) {
+            $('#EmailStep2Block').slideDown();
+        } else {
+            // !todo: show some error
+        }
+    }
+
+    onEmailSaveClick() {
+        this.numberLoader.toggle(true);
+        this.changingParam = 'email';
+        this.emailStep1Subscription = this._userService.changeEmailStep1(this.newEmail, this.passwordForChange)
+            .subscribe(
+                (res: any) => {
+                    this.emailStep1Subscription.unsubscribe();
+                    this.numberLoader.toggle(false);
+                    this.smsHistory = res.history;
+                    this.smsDialog.open(res.sms);
+                },
+                err => {
+                    this.emailStep1Subscription.unsubscribe();
+                    this.numberLoader.toggle(false);
+                    toastr.error(err.json().message);
+                }
+            );
+    }
+
+    changeStep2(code: SmsCode) {
         this.smsModel = code;
         this.numberLoader.toggle(true);
-        this.numberStep1Subscription.unsubscribe();
         this.numberStep2Subscription =
-            this._userService.changeNumberStep2(this.smsModel.smsId, this.smsHistory, this.smsModel.smsCode)
+            this._userService.changeStep2(this.smsModel.smsId, this.smsHistory, this.smsModel.smsCode, this.changingParam)
                 .subscribe(
                     (res: any) => {
                         this._userService.copyUserInfo(res, this.userInfo);
                         this.numberStep2Subscription.unsubscribe();
                         this.numberLoader.toggle(false);
                         sessionStorage.setItem('telephone', this.userInfo.telephone);
-                        toastr.success("The number was successfully changed");
+                        toastr.success(`The ${this.changingParam} was successfully changed`);
                         this.ngOnInit();
+                        this.afterStep2();
                     },
 
                     err => {
@@ -149,4 +193,10 @@ export class ProfileSettingsComponent implements OnInit, OnDestroy{
                     }
                 )
     }
+
+    afterStep2() {
+        // !todo: slideup all fields
+        // show all changed items
+    }
+
 }

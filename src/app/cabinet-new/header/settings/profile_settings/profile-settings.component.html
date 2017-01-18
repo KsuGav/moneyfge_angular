@@ -1,4 +1,4 @@
-<sms-dialog-component #smsDialog (onSendCode)="changeNumberStep2($event)"></sms-dialog-component>
+<sms-dialog-component #smsDialog (onSendCode)="changeStep2($event)"></sms-dialog-component>
 
 <div class="col-md-8" *ngIf="!userInfo">
     <div class="cssload-container">
@@ -82,7 +82,7 @@
                 <form>
                     <div class="half-width-inputs">
                         <div class="half-width-input">
-                            <input type="password" class="input-medium" id="settingsPassword" required [(ngModel)]="passwordForNumberChange" [ngModelOptions]="{standalone: true}">
+                            <input type="password" class="input-medium" id="settingsPassword" required [(ngModel)]="passwordForChange" [ngModelOptions]="{standalone: true}">
                         </div>
                         <div class="half-width-input">
                             <button type="button" class="btn btn-medium btn-accent" id="WalletStep3" (click)="onNumberSaveClick()">Save</button>
@@ -98,12 +98,25 @@
         <div class="row">
             <form>
                 <div class="col-md-7">
-                    <input type="text" class="input-medium full-width" id="settingsEmail" required>
+                    <input type="text" class="input-medium full-width" id="settingsEmail" [(ngModel)]="newEmail" [ngModelOptions]="{standalone: true}" required>
                 </div>
                 <div class="col-md-5">
-                    <button type="submit" class="btn btn-medium btn-accent no-margin">Save</button>
+                    <button type="button" class="btn btn-medium btn-accent" id="EmailStep2" (click)="onEmailAcceptClick()">Change</button>
                     <p class="card--info email-block">Email is bound to your account and provides additional password recovery methods</p>
                 </div>
+                    <div class="col-md-7" id="EmailStep2Block">
+                        <p class="setting-card-subtitle">Your password</p>
+                        <form>
+                            <div class="half-width-inputs">
+                                <div class="half-width-input">
+                                    <input type="password" class="input-medium" required [(ngModel)]="passwordForChange" [ngModelOptions]="{standalone: true}">
+                                </div>
+                                <div class="half-width-input">
+                                    <button type="button" class="btn btn-medium btn-accent" (click)="onEmailSaveClick()">Save</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
             </form>
         </div>
     </loader-component>
