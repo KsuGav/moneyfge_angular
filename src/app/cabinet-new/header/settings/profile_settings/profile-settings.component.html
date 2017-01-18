@@ -149,12 +149,12 @@
                         <span>New password</span>
                     </div>
                     <div class="half-width-input big">
-                        <input type="password" class="input-medium" required [(ngModel)]="newPassword" [ngModelOptions]="{standalone: true}" (keyup)="onNewPasswordChange($event)">
+                        <input type="password" class="input-medium" required [(ngModel)]="newPassword" [ngModelOptions]="{standalone: true}" >
                     </div>
                 </div>
             </div>
             <div class="col-md-5">
-                <p class="card--info pass-block">The password must contain: at least 7 characters. The numbers and letters of the alphabet.</p>
+                <p id="msgErrorPas" class="card--info pass-block">The password must contain: at least 7 characters. The numbers and letters of the alphabet.</p>
             </div>
         </div>
         <div class="row">

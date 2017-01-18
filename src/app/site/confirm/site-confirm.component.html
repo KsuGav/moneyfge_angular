@@ -11,7 +11,7 @@
         </div>
         <label i18n>Enter the code from SMS</label>
         <div class="input-group">
-          <input type="text" required="" class="phone-input-ua" name="code" [(ngModel)]="code" />
+          <input type="text" required="" id="site_confirm_input" name="code" [(ngModel)]="code" />
           <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="auto right" i18n-title title="Enter code from SMS"></i>
         </div>
         <a href="#" class="resend" id="sms_retry_btn" (click)="resendSms($event)">

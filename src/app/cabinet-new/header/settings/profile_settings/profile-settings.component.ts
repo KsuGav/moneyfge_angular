@@ -24,6 +24,7 @@ export class ProfileSettingsComponent implements OnInit, OnDestroy{
     passwordForChange: string;
     smsModel: SmsCode;
     smsHistory: number;
+    passwordValid: boolean = false;
 
     changingParam = '';
 
@@ -143,6 +144,8 @@ export class ProfileSettingsComponent implements OnInit, OnDestroy{
                 }
             );
         this.numberLoader.toggle(true);
+        this.afterStep2();
+
     }
 
     onEmailAcceptClick() {
@@ -170,6 +173,7 @@ export class ProfileSettingsComponent implements OnInit, OnDestroy{
                     toastr.error(err.json().message);
                 }
             );
+        this.afterStep2();
     }
 
     changeStep2(code: SmsCode) {
@@ -197,17 +201,25 @@ export class ProfileSettingsComponent implements OnInit, OnDestroy{
     }
 
     afterStep2() {
+        this.newNumber = '';
         this.passwordForChange = '';
-        // !todo: slideup all fields
+        this.userEmail = '';
+        // !todo: slideup all fields 
         // show all changed items
-        // clear all fields
+        // clear all fields - done
     }
 
-    onNewPasswordChange(event) {
-        //!todo: validate password
+    onNewPasswordChange() {
+        let re = /^(?=.*\d)(?=.*[a-zA-Z])(?!.*\s).{7,}$/;
+        this.passwordValid = (re.test(this.newPassword) && re.test(this.newPassword2));
     }
 
     onPasswordChangeClick() {
+        this.onNewPasswordChange();
+        if (!this.passwordValid) {
+            $('#msgErrorPas').css({'display':'block'});
+            return;
+        }
         if(this.newPassword != this.newPassword2) {
             toastr.error('Password confirmarion doesn\'t match the password');
             return;
@@ -221,6 +233,8 @@ export class ProfileSettingsComponent implements OnInit, OnDestroy{
                 },
                 err => {
                     toastr.error(err.json().message);
-                })
+                });
+        $('#msgErrorPas').css({'display':'none'});
+        this.afterStep2();
     }
 }

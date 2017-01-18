@@ -404,3 +404,10 @@ ul.dash-main-menu.clearfix {
     margin-top: 0;
     width: 125px;
 }
+#site_confirm_input{
+    padding: 5px 20px;
+    text-align: center;
+}
+#msgErrorPas{
+    display: none;
+}
