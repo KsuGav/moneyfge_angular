@@ -16,7 +16,6 @@ declare const toastr: any;
 
 export class SettingsComponent implements OnInit, OnDestroy{
 
-    // userName: any;
     userInfo: User;
 
     @ViewChild('smsLoader') smsLoader: LoaderComponent;
