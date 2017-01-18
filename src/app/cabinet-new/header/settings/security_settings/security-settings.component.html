@@ -11,18 +11,17 @@
                 <p class="setting-card-subtitle">Free confirmation of payment - an option that allows to secure funds.</p>
             </div>
             <div class="col-md-5">
-                <div class="switch" id="SMSBLockBtn">
-                    <input type="checkbox" name="switch" class="switch-checkbox" id="SmsNotifSwitch" checked>
-                    <label class="btn btn-medium btn-with-icon" for="SmsNotifSwitch">
-												<span class="on clearfix">
-													<span class="left-part"><i class="fa fa-comment-o"></i></span>
-													<span class="right-part">Enabled</span>
-												</span>
-                        <span class="off clearfix">
-													<span class="left-part"><i class="fa fa-comment-o"></i></span>
-													<span class="right-part">Disabled</span>
-												</span>
-                    </label>
+                <div class="switch" id="SMSBLockBtn" >
+                    <div class="SmsNotifSwitch">
+                        <span class="on clearfix" (click)="checkboxSmsOff()">
+                            <span class="left-part"><i class="fa fa-comment-o"></i></span>
+                            <span class="right-part">Enabled</span>
+                        </span>
+                        <span class="off clearfix" (click)="checkboxSmsOn()">
+                            <span class="left-part"><i class="fa fa-comment-o"></i></span>
+                            <span class="right-part">Disabled</span>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -36,17 +35,15 @@
             </div>
             <div class="col-md-5">
                 <div class="switch" id="EmailLinkBLockBtn">
-                    <input type="checkbox" name="switch" class="switch-checkbox" id="EmailLinkSwitch">
-                    <label class="btn btn-medium btn-with-icon" for="EmailLinkSwitch">
-												<span class="on clearfix">
-													<span class="left-part"><i class="fa fa-envelope-o"></i></span>
-													<span class="right-part">Enabled</span>
-												</span>
-                        <span class="off clearfix">
-													<span class="left-part"><i class="fa fa-envelope-o"></i></span>
-													<span class="right-part">Disabled</span>
-												</span>
-                    </label>
+                    <span class="on clearfix" (click)="checkboxEmailOff()">
+                            <span class="left-part"><i class="fa fa-comment-o"></i></span>
+                            <span class="right-part">Enabled</span>
+                        </span>
+                    <span class="off clearfix" (click)="checkboxEmailOn()">
+                            <span class="left-part"><i class="fa fa-comment-o"></i></span>
+                            <span class="right-part">Disabled</span>
+                        </span>
+
                 </div>
             </div>
         </div>
@@ -57,7 +54,7 @@
                     <input type="email" class="input-medium fullwidth" id="EmailLinkInput">
                 </div>
                 <div class="col-md-5">
-                    <button type="button" class="btn btn-medium btn-grey btn-email-link" id="EmailLinkSubmit">
+                    <button type="button" class="btn btn-medium btn-grey btn-email-link" id="EmailLinkSubmit" (click)="emailSubmit()">
                         Link
                     </button>
                     <p class="card--info email-link-block">Adding mail, you agree to receive messages about the useful features of service, promotions and new services.</p>

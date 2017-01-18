@@ -344,3 +344,51 @@ ul.dash-main-menu.clearfix {
 @-moz-keyframes cssload-spin {
     100%{ -moz-transform: rotate(360deg); transform: rotate(360deg); }
 }
+#SMSBLockBtn{
+    cursor: pointer;
+}
+.switch span.off{
+    display: none;
+}
+.switch span.left-part{
+    float: left;
+    width: 50px;
+    padding: 10px 10px;
+    background-color: #fff;
+    -webkit-border-top-left-radius: 2px;
+    border-top-left-radius: 2px;
+    -webkit-border-bottom-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+.switch span.on span.left-part i{
+    color: #fbb800;
+    font-size: 20px;
+}
+.switch span.off span.left-part i{
+    color: #e3e3e3;
+    font-size: 20px;
+}
+.SmsNotifSwitch{
+    padding: 0;
+    margin: 20px 0 15px;
+    width: auto;
+    background-color: transparent;
+}
+.switch span.right-part{
+    float: left;
+    padding: 10px;
+    text-align: center;
+    width: 180px;
+    -webkit-border-top-right-radius: 2px;
+    border-top-right-radius: 2px;
+    -webkit-border-bottom-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+.switch span.on span.right-part{
+    color: #fff;
+    background-color: #fbb800;
+}
+.switch span.off span.right-part{
+    color: #A1A1A1;
+    background-color: #e3e3e3;
+}
