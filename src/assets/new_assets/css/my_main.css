@@ -415,11 +415,11 @@ ul.dash-main-menu.clearfix {
     display: none;
 }
 .expenses-latest-bills_content {
-    -webkit-transition: max-height 1s;
-    transition: max-height 1s;
+    -webkit-transition: max-height 0.5s;
+    transition: max-height 0.5s;
     overflow: hidden; }
 .expenses-latest-bills_content.opened {
-    max-height: none;
+    max-height: 800px;
     -webkit-transition: max-height 1s;
     transition: max-height 1s; }
 .newNumberSuccess, .newNumberError{

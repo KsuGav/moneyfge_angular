@@ -214,9 +214,8 @@ export class ProfileSettingsComponent implements OnInit, OnDestroy{
         $('#WalletStep2Block').slideUp();
         $('#WalletStep1Block').slideUp();
         $('#EmailStep2Block').slideUp();
-        // !todo: slideup all fields - done
-        // show all changed items
-        // clear all fields - done
+
+        // !todo:show all changed items
     }
 
     onNewPasswordChange() {
