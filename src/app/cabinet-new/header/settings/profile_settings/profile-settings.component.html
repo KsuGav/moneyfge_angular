@@ -55,8 +55,8 @@
                 </div>
             </div>
             <div class="col-md-5">
-                <p class="card--info wallet-block success">Number changed successfully!</p>
-                <p class="card--info wallet-block error">Error changing number.</p>
+                <p class="card--info wallet-block success newNumberSuccess">Number changed successfully!</p>
+                <p class="card--info wallet-block error newNumberError">Error changing number.</p>
             </div>
         </div>
         <div class="row" id="WalletStep1Block">
@@ -101,7 +101,7 @@
                 </div>
                 <div class="col-md-5">
                     <button type="button" class="btn btn-medium btn-accent" id="EmailStep2" (click)="onEmailAcceptClick()">Change</button>
-                    <!--<p class="card&#45;&#45;info email-block">Email is bound to your account and provides additional password recovery methods</p>-->
+                    <p class="card--info email-block emailError">Error email address.</p>
                 </div>
                     <div class="col-md-12" id="EmailStep2Block">
                         <p class="setting-card-subtitle">Your password</p>

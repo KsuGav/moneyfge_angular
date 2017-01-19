@@ -111,19 +111,23 @@ export class ProfileSettingsComponent implements OnInit, OnDestroy{
     onNumberAcceptClick() {
         if(ProfileSettingsComponent.validateNumber(this.newNumber)) {
             $('#WalletStep2Block').slideDown();
+            $('.newNumberError').css({'display':'none'});
         } else {
-            // !todo: show some error
+            $('.newNumberError').css({'display':'block'});
+            return;
         }
     }
 
     static validateNumber(number) {
         console.log(number);
-        return true;
+        let re_num = /^[0-9\-\+]{9,15}$/;
+        return re_num.test(number);
     }
 
     static validateEmail(email) {
         console.log(email);
-        return email;
+        let re_mail = /^[a-z0-9_-]+@[a-z0-9-]+\.([a-z]{1,6}\.)?[a-z]{2,6}$/i;
+        return re_mail.test(email);
     }
 
     onNumberSaveClick() {
@@ -145,14 +149,17 @@ export class ProfileSettingsComponent implements OnInit, OnDestroy{
             );
         this.numberLoader.toggle(true);
         this.afterStep2();
+        //add $('.newNumberSuccess').css({'display':'block'}); if sms code correct
 
     }
 
     onEmailAcceptClick() {
         if(ProfileSettingsComponent.validateEmail(this.userEmail)) {
             $('#EmailStep2Block').slideDown();
+            $('.emailError').css({'display':'none'});
         } else {
-            // !todo: show some error
+            $('.emailError').css({'display':'block'});
+            return;
         }
     }
 
@@ -204,7 +211,10 @@ export class ProfileSettingsComponent implements OnInit, OnDestroy{
         this.newNumber = '';
         this.passwordForChange = '';
         this.userEmail = '';
-        // !todo: slideup all fields
+        $('#WalletStep2Block').slideUp();
+        $('#WalletStep1Block').slideUp();
+        $('#EmailStep2Block').slideUp();
+        // !todo: slideup all fields - done
         // show all changed items
         // clear all fields - done
     }

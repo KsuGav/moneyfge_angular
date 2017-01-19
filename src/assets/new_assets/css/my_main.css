@@ -422,3 +422,10 @@ ul.dash-main-menu.clearfix {
     max-height: none;
     -webkit-transition: max-height 1s;
     transition: max-height 1s; }
+.newNumberSuccess, .newNumberError{
+    display: none;
+}
+.emailError {
+    display: none;
+    float: right;
+}
