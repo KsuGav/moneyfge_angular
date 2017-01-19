@@ -16,7 +16,8 @@ export class CashPanelComponent implements AfterViewInit {
   statusDate: string = 'Today';
 
   constructor(){
-    let locale = window.navigator.userLanguage || window.navigator.language;
+    // let locale = window.navigator.userLanguage || window.navigator.language;
+    let locale = 'en-us';
     let d = new Date();
     d.setDate(1);
     d.setMonth(d.getMonth() - 1);

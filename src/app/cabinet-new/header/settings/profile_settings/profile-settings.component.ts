@@ -40,7 +40,8 @@ export class ProfileSettingsComponent implements OnInit, OnDestroy{
     emailStep1Subscription;
     passwordChnageSubscription;
 
-    constructor(private _userService: UserService) {
+    constructor(
+        private _userService: UserService) {
     }
 
     initSettings(){
@@ -157,6 +158,8 @@ export class ProfileSettingsComponent implements OnInit, OnDestroy{
         if(ProfileSettingsComponent.validateEmail(this.userEmail)) {
             $('#EmailStep2Block').slideDown();
             $('.emailError').css({'display':'none'});
+
+            //add sendSms()
         } else {
             $('.emailError').css({'display':'block'});
             return;

@@ -10,29 +10,25 @@
     <h4 class="setting-card-title">Notice</h4>
     <p class="setting-card-subtitle">SMS about replenishment and costs</p>
     <loader-component #smsLoader>
-        <div class="row">
-            <div class="col-md-7">
+        <div class="row" >
+            <div class="col-md-7" [hidden]="!userInfo.is_check_sms">
                 <div class="half-width-inputs">
                     <div class="half-width-input big">
-                        <span class="setting-indicator" [ngClass]="{'active': !userInfo.is_check_sms}">The service is disabled</span>
+                        <span class="setting-indicator" [ngClass]="('disable')">The service is disabled</span>
                     </div>
                     <div class="half-width-input big">
-                        <button type="button" [ngClass]="{'btn': true, 'btn-medium': true, 'btn-accent': !userInfo.is_check_sms, 'btn-gray': userInfo.is_check_sms}" [disabled]="!userInfo.is_check_sms" id="SMSActivate" (click)="onSmsClick(false)">Activate</button>
+                        <button type="button" class="btn btn-medium btn-accent"  id="SMSActivate" (click)="onSmsClick(false)">Activate</button>
                     </div>
+                </div>
+            </div>
+            <div class="col-md-7" [hidden]="userInfo.is_check_sms">
+                <div class="half-width-inputs">
+                    <div class="half-width-input big"><span class="setting-indicator" [ngClass]="('active')">The service is active</span></div>
+                    <div class="half-width-input big"><button type="button" class="btn btn-medium btn-gray" id="SMSDeActivate" (click)="onSmsClick(true)">Disable</button></div>
                 </div>
             </div>
             <div class="col-md-5">
                 <p class="card--info sms-block">Cost of services - 00 USD month. <br> Get instant SMS from refill and costs.</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-7">
-                <div class="half-width-inputs">
-                    <div class="half-width-input big"><span class="setting-indicator" [ngClass]="{'active': userInfo.is_check_sms}">The service is active</span></div>
-                    <div class="half-width-input big"><button type="button" [ngClass]="{'btn': true, 'btn-medium': true, 'btn-accent': userInfo.is_check_sms, 'btn-gray': !userInfo.is_check_sms}" [disabled]="userInfo.is_check_sms" id="SMSDeActivate" (click)="onSmsClick(true)">Disable</button></div>
-                </div>
-            </div>
-            <div class="col-md-5">
             </div>
         </div>
     </loader-component>

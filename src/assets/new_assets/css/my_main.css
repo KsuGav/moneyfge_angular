@@ -175,7 +175,7 @@
 }
 #header_sign_out{
     border-top: 1px solid rgba(134, 131, 131, 0.24);
-    padding-top: 5px;
+    padding-top: 12px;
 }
 .msg-success p {
     text-align: center;
@@ -429,3 +429,11 @@ ul.dash-main-menu.clearfix {
     display: none;
     float: right;
 }
+.profile-menu ul li {
+    margin: 9px 0;
+}
+#EmailLinkSubmit{
+    margin: 35px 0 15px 0;
+}
+.setting-indicator.disable:before {
+    background-color: #c6c6c6; }
