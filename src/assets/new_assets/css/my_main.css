@@ -437,3 +437,6 @@ ul.dash-main-menu.clearfix {
 }
 .setting-indicator.disable:before {
     background-color: #c6c6c6; }
+.msgLetterEmail{
+    display: none;
+}

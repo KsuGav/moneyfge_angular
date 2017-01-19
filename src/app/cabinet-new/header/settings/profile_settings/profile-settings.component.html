@@ -93,7 +93,7 @@
         <div class="row">
             <form>
                 <div class="col-md-7">
-                    <input type="text" class="input-medium full-width" id="settingsEmail" [(ngModel)]="userEmail" [ngModelOptions]="{standalone: true}" required>
+                    <input type="text" class="input-medium full-width" id="settingsEmail" [(ngModel)]="userEmail" [ngModelOptions]="{standalone: true}" required placeholder="Not set">
                 </div>
                 <div class="col-md-5">
                     <button type="button" class="btn btn-medium btn-accent" id="EmailStep2" (click)="onEmailAcceptClick()">Change</button>
@@ -114,6 +114,9 @@
                             </div>
                         </form>
                     </div>
+                <div class="col-md-7 col-md-offset-2 msgLetterEmail">
+                    <p class="card--info">Letter was sent in your e-mail. Follow the link in the letter to confirm your e-mail.</p>
+                </div>
             </form>
         </div>
     </loader-component>

@@ -183,6 +183,7 @@ export class ProfileSettingsComponent implements OnInit, OnDestroy{
                     toastr.error(err.json().message);
                 }
             );
+        $('.msgLetterEmail').css({'display':'block'});
         this.afterStep2();
     }
 
