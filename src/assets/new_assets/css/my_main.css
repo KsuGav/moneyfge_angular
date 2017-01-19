@@ -264,7 +264,7 @@ p.expenses-latest-bills_content__bill.no-payment-content {
 }
 .dashboard-account-list li:hover{
     cursor: pointer;
-    background: rgb(216, 216, 216);
+    background: rgb(216, 216, 216) !important;
 }
 #transferToInput {
     background: #fff url(/assets/new_assets/img/favicon/favicon1.png) no-repeat scroll 10px 9px;
@@ -344,6 +344,9 @@ ul.dash-main-menu.clearfix {
 @-moz-keyframes cssload-spin {
     100%{ -moz-transform: rotate(360deg); transform: rotate(360deg); }
 }
+
+/*LOADER END*/
+
 #SMSBLockBtn{
     cursor: pointer;
 }
@@ -411,3 +414,11 @@ ul.dash-main-menu.clearfix {
 #msgErrorPas{
     display: none;
 }
+.expenses-latest-bills_content {
+    -webkit-transition: max-height 1s;
+    transition: max-height 1s;
+    overflow: hidden; }
+.expenses-latest-bills_content.opened {
+    max-height: none;
+    -webkit-transition: max-height 1s;
+    transition: max-height 1s; }

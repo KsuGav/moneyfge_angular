@@ -39,7 +39,6 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    //this.setupTelMask();
     this.modalService.setupTelMask();
     this.showHidePassword();
   }
@@ -88,55 +87,6 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
       )
     ;
   }
-
-  //setupTelMask() {
-  //  let input = $('.phone-input-ua');
-  //  var countryData = input.intlTelInput("getSelectedCountryData");
-  //  var isValid = input.intlTelInput("isValidNumber");
-  //  input.intlTelInput({
-  //    utilsScript: "assets/js/intlTelInput/utils.js?5",
-  //    initialCountry: 'auto',
-  //    defaultCountry: 'tr',
-  //    preferredCountries: ['us','ru','tr','ua'],
-  //    //customPlaceholder: function (selectedCountryPlaceholder, selectedCountryData) {
-  //    //  return selectedCountryPlaceholder;
-  //    //}
-  //    //,
-  //    geoIpLookup: function(callback) {
-  //      $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
-  //        var countryCode = (resp && resp.country) ? resp.country : "";
-  //        callback(countryCode);
-  //      });
-  //    }
-  //  });
-  //
-  //
-  //  input.focus();
-  //  $(".country").click(function () {
-  //    this_country();
-  //  });
-  //
-  //  function this_country() {
-  //    input.val('+' + countryData.dialCode);
-  //      return countryData;
-  //    };
-  //
-  //  input.on('keyup change',function(){
-  //    var inputName = input.val();
-  //    var regName = /^([\+0-9-\s]+)$/;
-  //    var true_name = regName.test(inputName);
-  //    if(true_name==false) {
-  //      input.css('box-shadow','0px 0px 4px 0px red')
-  //      .addClass('error');
-  //      console.log("It's not correct number!");
-  //
-  //    }else{
-  //      input.css('box-shadow','none').removeClass('error');
-  //    }
-  //
-  //  })
-  //
-  //}
 
   showHidePassword(){
     $('input[type="password"]').each(function (index, input) {

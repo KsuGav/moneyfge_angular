@@ -71,9 +71,26 @@ export class AccountHistoryComponent implements OnInit, OnDestroy {
 
     showMore(){
         $('.expenses-latest-bills_footer__showmore').click(function () {
-            $(this).toggleClass('active');
+        //       let contentHistory = $('.expenses-latest-bills_content');
+            // $(this).toggleClass('active');
+        $('.expenses-latest-bills_footer__showmore').toggleClass('active');
+            // if(contentHistory.hasClass('opened')){
+            //     contentHistory.removeClass('opened')
+            //         .animate({'height':'225px'},2000)
+            // } else{
+            //     contentHistory.addClass('opened')
+            //         .animate({'height':'400px'},2000)
+            // }
+                // .slideDown("slow",function(){
+                // $('.expenses-latest-bills_content').animate({'max-height':'none'})
+            // });
             $('.expenses-latest-bills_content').toggleClass('opened');
+        //         .slideDown("slow",function(){
+        //         $('.expenses-latest-bills_content').css({'max-height':'none'})
+        //     });
         });
     }
 
 }
+
+
