@@ -27,38 +27,38 @@
         </div>
     </div>
 
-    <div class="card card--lightgrey">
-        <div class="row">
-            <div class="col-md-7">
-                <h4 class="setting-card-title">Email linking</h4>
-                <p class="setting-card-subtitle">Mail bound for the account used for additional security in the recovery password.</p>
-            </div>
-            <div class="col-md-5">
-                <div class="switch" id="EmailLinkBLockBtn">
-                    <span class="on clearfix" (click)="checkboxEmailOff()">
-                            <span class="left-part"><i class="fa fa-comment-o"></i></span>
-                            <span class="right-part">Enabled</span>
-                        </span>
-                    <span class="off clearfix" (click)="checkboxEmailOn()">
-                            <span class="left-part"><i class="fa fa-comment-o"></i></span>
-                            <span class="right-part">Disabled</span>
-                        </span>
+    <!--<div class="card card&#45;&#45;lightgrey">-->
+        <!--<div class="row">-->
+            <!--<div class="col-md-7">-->
+                <!--<h4 class="setting-card-title">Email linking</h4>-->
+                <!--<p class="setting-card-subtitle">Mail bound for the account used for additional security in the recovery password.</p>-->
+            <!--</div>-->
+            <!--<div class="col-md-5">-->
+                <!--<div class="switch" id="EmailLinkBLockBtn">-->
+                    <!--<span class="on clearfix" (click)="checkboxEmailOff()">-->
+                            <!--<span class="left-part"><i class="fa fa-comment-o"></i></span>-->
+                            <!--<span class="right-part">Enabled</span>-->
+                        <!--</span>-->
+                    <!--<span class="off clearfix" (click)="checkboxEmailOn()">-->
+                            <!--<span class="left-part"><i class="fa fa-comment-o"></i></span>-->
+                            <!--<span class="right-part">Disabled</span>-->
+                        <!--</span>-->
 
-                </div>
-            </div>
-        </div>
-        <div class="row" id="EmailLinkBLock">
-            <form>
-                <div class="col-md-7">
-                    <p class="setting-card-subtitle">Enter your email address.</p>
-                    <input type="email" class="input-medium fullwidth" id="EmailLinkInput">
-                </div>
-                <div class="col-md-5">
-                    <button type="button" class="btn btn-medium btn-grey btn-email-link" id="EmailLinkSubmit" (click)="emailSubmit()">
-                        Link
-                    </button>
-                    <p class="card--info email-link-block">Adding mail, you agree to receive messages about the useful features of service, promotions and new services.</p>
-                </div>
-            </form>
-        </div>
-    </div>
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="row" id="EmailLinkBLock">-->
+            <!--<form>-->
+                <!--<div class="col-md-7">-->
+                    <!--<p class="setting-card-subtitle">Enter your email address.</p>-->
+                    <!--<input type="email" class="input-medium fullwidth" id="EmailLinkInput" [(ngModel)]="emailLinking" [ngModelOptions]="{standalone: true}">-->
+                <!--</div>-->
+                <!--<div class="col-md-5">-->
+                    <!--<button type="button" class="btn btn-medium btn-grey btn-email-link" id="EmailLinkSubmit" (click)="emailSubmit()">-->
+                        <!--Link-->
+                    <!--</button>-->
+                    <!--<p class="card&#45;&#45;info email-link-block">Adding mail, you agree to receive messages about the useful features of service, promotions and new services.</p>-->
+                <!--</div>-->
+            <!--</form>-->
+        <!--</div>-->
+    <!--</div>-->

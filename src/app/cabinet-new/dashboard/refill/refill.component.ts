@@ -4,6 +4,7 @@ import {n_AccountService} from "../../../app.services/Account.service";
 import {LoaderComponent} from "../../../common-new/loader/loader.component";
 
 declare const $: any;
+declare const V: any;
 
 @Component({
     selector: 'refill-component',
@@ -28,6 +29,7 @@ export class RefillComponent implements OnInit, OnDestroy {
     ) {}
 
     ngOnInit(){
+        this.onVisaCheckoutReady();
         this.activeLink();
         this.formatcards();
         this.accountLoader.toggle(true);
@@ -124,6 +126,36 @@ export class RefillComponent implements OnInit, OnDestroy {
         return sum.toFixed(2).replace(/./g, function(c, i, a) {
             return i && c !== "." && ((a.length - i) % 3 === 0) ? ',' + c : c;
         });
+    }
+
+    onVisaCheckoutReady() {
+    //var amount = parseFloat(document.getElementById("amount").value);
+    V.init({
+        apikey: "4ZDWBWHMTX2OOMIFORMD21SuvUQu1KZ02Cw9om2qdes8LAfxQ",
+        referenceCallID: "",
+        paymentRequest: {
+            currencyCode: "USD",
+            total: 25
+        },
+        locale: "ua_UA",
+        settings: {
+            locale: "ua_UA",
+            logoUrl: "https://moneyfge.com/assets/new_assets/img/logo.png",
+            displayName: "MoneyFGE"
+        }
+    });
+
+    V.on("payment.success", function(payment) {
+        console.log("success", payment);
+        //вызываем из сервиса функцию визаЧекаут, она возвращает результат. из креате рефилл проверяем, если "status": 1(success),выводим через тоастр Саксес, если 2(эррор) - выводим эррор
+        //пэймент возвращает account and call_id
+    });
+    V.on("payment.cancel", function(payment) {
+        console.log("cancel", payment);
+    });
+    V.on("payment.error", function(payment, error) {
+        console.log("error", payment, error);
+    });
     }
 }
 

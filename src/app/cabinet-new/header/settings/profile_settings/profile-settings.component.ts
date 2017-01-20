@@ -4,6 +4,7 @@ import {UserService} from '../../../../app.services/User.service';
 import {LoaderComponent} from "../../../../common-new/loader/loader.component";
 import {SmsDialogComponent} from "../../../../common-new/sms-dialog/sms-dialog.component";
 import {SmsCode} from "../../../../app.models/SmsCode.model";
+import { DialogComponent } from '../../../../common-new/dialog/dialog.component';
 
 declare const $: any;
 declare const toastr: any;
@@ -32,6 +33,7 @@ export class ProfileSettingsComponent implements OnInit, OnDestroy{
     @ViewChild('settingLoader') settingLoader: LoaderComponent;
     @ViewChild('numberLoader') numberLoader: LoaderComponent;
     @ViewChild('smsDialog') smsDialog: SmsDialogComponent;
+    @ViewChild('dialog') dialog: DialogComponent;
 
     userInfoSubscription;
     toggleSmsSubscription;
@@ -183,7 +185,8 @@ export class ProfileSettingsComponent implements OnInit, OnDestroy{
                     toastr.error(err.json().message);
                 }
             );
-        $('.msgLetterEmail').css({'display':'block'});
+        this.dialog.open(); //if password correct
+        // $('.msgLetterEmail').css({'display':'block'});
         this.afterStep2();
     }
 
@@ -234,6 +237,7 @@ export class ProfileSettingsComponent implements OnInit, OnDestroy{
             return;
         }
         if(this.newPassword != this.newPassword2) {
+            $('#msgErrorPas').css({'display':'none'});
             toastr.error('Password confirmarion doesn\'t match the password');
             return;
         }
@@ -248,6 +252,6 @@ export class ProfileSettingsComponent implements OnInit, OnDestroy{
                     toastr.error(err.json().message);
                 });
         $('#msgErrorPas').css({'display':'none'});
-        this.afterStep2();
+        // this.afterStep2();
     }
 }

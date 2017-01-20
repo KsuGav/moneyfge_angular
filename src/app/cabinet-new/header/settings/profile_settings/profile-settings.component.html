@@ -1,4 +1,10 @@
 <sms-dialog-component #smsDialog (onSendCode)="changeStep2($event)"></sms-dialog-component>
+<dialog-component #dialog [title]="'Confirm your e-mail'" (onClosed)="close()">
+    <div dialog-body>
+        <p>Letter was sent in your e-mail. Follow the link in the letter to confirm your e-mail.</p>
+    </div>
+</dialog-component>
+
 
 <div class="col-md-12" *ngIf="!userInfo">
     <div class="cssload-container">
@@ -38,7 +44,7 @@
     <loader-component #numberLoader>
         <h4 class="setting-card-title">Personal information</h4>
         <p class="setting-card-subtitle">Your phone number</p>
-        <a href="" class="tooltip-btn" data-toggle="tooltip" title="Information"><img src="/assets/new_assets/img/help.png" alt="help"></a>
+        <!--<a href="" class="tooltip-btn" data-toggle="tooltip" title="Information"><img src="/assets/new_assets/img/help.png" alt="help"></a>-->
         <div class="row">
             <div class="col-md-7">
                 <div class="half-width-inputs">

@@ -138,4 +138,21 @@ export class UserService {
         ;
   }
 
+  visaCheckout(account, call_id){
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
+    headers.append('Content-Type', 'application/json');
+
+    const payload = JSON.stringify({
+      "account": account,
+      "call_id": call_id
+    });
+
+    const locUrl = `${this._appService.get('apiEndpoint')}api/v1/refill`;
+    return this._http
+        .post(locUrl, payload, {headers: headers})
+        .map(res => res.json())
+        ;
+  }
+
 }

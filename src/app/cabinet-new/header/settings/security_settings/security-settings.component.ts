@@ -2,7 +2,6 @@ import {Component, OnInit } from '@angular/core';
 
 declare const $: any;
 
-
 @Component({
     selector: 'security-settings-component',
     templateUrl: 'security-settings.component.html'
@@ -14,11 +13,11 @@ export class SecuritySettingsComponent implements OnInit {
 
     }
 
-    emailSubmit() {
-        if ($('#EmailLinkInput').val().length >= 5) {
-            $('#EmailLinkBLock').slideUp();
-        }
-    }
+    // emailSubmit() {
+    //     if ($('#EmailLinkInput').val().length >= 5) {
+    //         $('#EmailLinkBLock').slideUp();
+    //     }
+    // }
 
     checkboxSmsOn(){
         $('#SMSBLockBtn .on').css({'display':'block'});
@@ -40,6 +39,5 @@ export class SecuritySettingsComponent implements OnInit {
         $('#EmailLinkBLockBtn .off').css({'display':'block'});
         $('#EmailLinkBLock').slideDown();
     }
-
 
 }
