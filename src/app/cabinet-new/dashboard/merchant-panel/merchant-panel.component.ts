@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import {UserService} from '../../../app.services/User.service';
 import {Merchant} from '../../../app.models/Merchant.model';
 import {LoaderComponent} from "../../../common-new/loader/loader.component";
+import {AfterViewInit} from "../../../../../node_modules/@angular/core/src/metadata/lifecycle_hooks";
 
 declare const $: any;
 declare const toastr: any;
@@ -11,7 +12,7 @@ declare const toastr: any;
     templateUrl: 'merchant-panel.component.html'
 })
 
-export class MerchantPanelComponent implements OnInit  {
+export class MerchantPanelComponent implements OnInit, AfterViewInit  {
     merchantInfo: Merchant;
 
     country: string;
@@ -37,10 +38,14 @@ export class MerchantPanelComponent implements OnInit  {
     }
 
     ngOnInit(){
-        this.setFlags();
+        //this.setFlags();
         this.loader.toggle(true);
         this.isMerchant();
         this.getMerchantInfo();
+    }
+
+    ngAfterViewInit() {
+        this.setFlags();
     }
 
     setFlags(){
@@ -51,7 +56,7 @@ export class MerchantPanelComponent implements OnInit  {
 
         function formatTransfer (bill) {
             var $bill = $(
-                '<span><img src="/assets/new_assets/img/gerb-fge.png" class="transfer-img" /> ' + bill.text + '</span>'
+                '<span><img src="/assets/new_assets/img/favicon/favicon1.png" class="transfer-img" /> ' + bill.text + '</span>'
             );
             return $bill;
         };
@@ -75,7 +80,7 @@ export class MerchantPanelComponent implements OnInit  {
             templateSelection: formatCountry,
             minimumResultsForSearch: Infinity
         }).on('change', function (e) {
-            e.ta
+            console.log(e);
         });
     }
 
@@ -103,14 +108,16 @@ export class MerchantPanelComponent implements OnInit  {
 
     getMerchantInfo(){
         this.getMerchant = this._userService.getMerchant()
-            .subscribe((res: any)=>{
-                this.merchantInfo = res;
+            .subscribe(
+                (res: any)=>{
+                    this.merchantInfo = res;
                     console.log('res', res);
-                this.getMerchant.unsubscribe();
-            },
+                    this.getMerchant.unsubscribe();
+                },
                 err => {
-                    toastr.error(err.json().message);
-                    console.log("not find")
+                    this.getMerchant.unsubscribe();
+                    //toastr.error(err.json().message);
+                    //console.log("not find")
                 }
             )
     }
