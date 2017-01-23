@@ -3,6 +3,7 @@ import { Http, Headers } from '@angular/http';
 
 import { AppService } from './App.service';
 import { User } from '../app.models/User.model';
+import {Merchant} from '../app.models/Merchant.model';
 import {Observable} from 'rxjs/Rx';
 
 

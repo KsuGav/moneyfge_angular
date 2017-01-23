@@ -77,16 +77,16 @@
                                 <div class="col-sm-6">
                                     <div class="input-medium-wrap">
                                         <label>Country</label>
-                                        <select class="select-medium transfer-select country">
-                                        <!--<select class="select-medium transfer-select country" (change)="onCountryChange($event.target.value)">-->
+                                        <!--<select class="select-medium transfer-select country">-->
+                                        <select class="select-medium transfer-select country" (change)="onCountryChange($event.target.value)">
                                             <option value="USA" selected>USA</option>
                                             <option value="Euro">Europe</option>
                                         </select>
                                     </div>
                                     <div class="input-medium-wrap">
                                         <label>Type of organization</label>
-                                        <select class="select-medium transfer-select">
-                                        <!--<select class="select-medium transfer-select" (change)="onTypeChange($event.target.value)">-->
+                                        <!--<select class="select-medium transfer-select bill">-->
+                                        <select class="select-medium transfer-select bill" (change)="onTypeChange($event.target.value)">
                                             <option value="Entity" selected>1</option>
                                             <option value="Entity">2</option>
                                             <option value="Entity">3</option>

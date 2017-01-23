@@ -28,6 +28,8 @@ export class MerchantPanelComponent implements OnInit  {
     is_merchant;
     merchant_res;
 
+    merchantInfoRes;
+
     @ViewChild('loader') loader: LoaderComponent;
 
     constructor(
@@ -42,7 +44,7 @@ export class MerchantPanelComponent implements OnInit  {
     }
 
     setFlags(){
-
+        console.log('work');
         $(".select-medium").select2({
             minimumResultsForSearch: Infinity
         });
@@ -91,7 +93,6 @@ export class MerchantPanelComponent implements OnInit  {
                     this.merchant_res = res;
                     this.status_merchant = this.merchant_res.exists;
                     this.loader.toggle(false);
-                    console.log(this.status_merchant)
                 },
                 err => {
                     toastr.error(err.json().message);
@@ -103,10 +104,10 @@ export class MerchantPanelComponent implements OnInit  {
             .subscribe((res: any)=>{
                 this.merchantInfo = res;
                 this.getMerchant.unsubscribe();
-                    console.log(this.merchantInfo);
             },
                 err => {
-                    toastr.error(err.json().message);
+                    // toastr.error(err.json().message);
+                    console.log("not find")
                 }
             )
     }
@@ -116,6 +117,8 @@ export class MerchantPanelComponent implements OnInit  {
             .subscribe(
                 (res: any) => {
                     this.merchantInfo = res;
+                    // toastr.success('New account added successfully');
+                    console.log('res', res);
                     this.acceptMerchant.unsubscribe();
                 },
                 err => {
