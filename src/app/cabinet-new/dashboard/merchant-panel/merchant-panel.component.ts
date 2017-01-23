@@ -28,7 +28,7 @@ export class MerchantPanelComponent implements OnInit  {
     is_merchant;
     merchant_res;
 
-    merchantInfoRes;
+    getmerchantInfo;
 
     @ViewChild('loader') loader: LoaderComponent;
 
@@ -74,6 +74,8 @@ export class MerchantPanelComponent implements OnInit  {
             templateResult: formatCountry,
             templateSelection: formatCountry,
             minimumResultsForSearch: Infinity
+        }).on('change', function (e) {
+            e.ta
         });
     }
 
@@ -103,10 +105,11 @@ export class MerchantPanelComponent implements OnInit  {
         this.getMerchant = this._userService.getMerchant()
             .subscribe((res: any)=>{
                 this.merchantInfo = res;
+                    console.log('res', res);
                 this.getMerchant.unsubscribe();
             },
                 err => {
-                    // toastr.error(err.json().message);
+                    toastr.error(err.json().message);
                     console.log("not find")
                 }
             )
@@ -117,8 +120,7 @@ export class MerchantPanelComponent implements OnInit  {
             .subscribe(
                 (res: any) => {
                     this.merchantInfo = res;
-                    // toastr.success('New account added successfully');
-                    console.log('res', res);
+                    toastr.success('New account added successfully');
                     this.acceptMerchant.unsubscribe();
                 },
                 err => {
@@ -126,6 +128,8 @@ export class MerchantPanelComponent implements OnInit  {
                 }
             );
     }
+
+    //add form validate for create merchant
 
 }
 

@@ -198,6 +198,7 @@ export class UserService {
       "email": email,
       "telephone": telephone
     });
+    console.log(info);
     const locUrl = `${this._appService.get('apiEndpoint')}/merchant/`;
     return this._http
         .post(locUrl, info, {headers: headers})
