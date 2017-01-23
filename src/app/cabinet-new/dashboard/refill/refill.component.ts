@@ -33,9 +33,9 @@ export class RefillComponent implements OnInit, OnDestroy {
     ) {}
 
     ngOnInit(){
-        this.onVisaCheckoutReady();
+        this.initVisaCheckout();
         this.activeLink();
-        this.formatcards();
+        this.initUi();
         this.accountLoader.toggle(true);
 
         this.accountService.getAllAccounts();
@@ -66,9 +66,12 @@ export class RefillComponent implements OnInit, OnDestroy {
         $('#refill_link').removeClass('active')
     }
 
-    formatcards(){
+    initUi(){
+        let thisObj = this;
         $(".select-medium").select2({
             minimumResultsForSearch: Infinity
+        }).on("change", function (e) {
+            thisObj.toAccount = e.target.value;
         });
 
         function formatCustom (option) {
@@ -101,6 +104,7 @@ export class RefillComponent implements OnInit, OnDestroy {
     }
 
     onToChange(account) {
+        console.log(account);
         this.toAccount = 0;
         if(account && account.length == 8) {
             this.toAccount = account;
@@ -119,6 +123,8 @@ export class RefillComponent implements OnInit, OnDestroy {
         this.sumToPay = this.formatMoney(
             Math.max(1.05 * sum, sum + 0.01)
         );
+
+        this.initVisaCheckout();
     }
 
     validateForm() {
@@ -133,48 +139,45 @@ export class RefillComponent implements OnInit, OnDestroy {
     }
 
 
-    onVisaCheckoutReady() {
-        let account = 10000028;
-    //var amount = parseFloat(document.getElementById("amount").value);
-
-    V.init({
-        apikey: "4ZDWBWHMTX2OOMIFORMD21SuvUQu1KZ02Cw9om2qdes8LAfxQ",
-        referenceCallID: "",
-        paymentRequest: {
-            currencyCode: "USD",
-            total: 25
-        },
-        locale: "ua_UA",
-        settings: {
+    initVisaCheckout() {
+        //var amount = parseFloat(document.getElementById("amount").value);
+        console.log('initing');
+        let refillObj = this;
+        V.init({
+            apikey: "4ZDWBWHMTX2OOMIFORMD21SuvUQu1KZ02Cw9om2qdes8LAfxQ",
+            referenceCallID: "",
+            paymentRequest: {
+                currencyCode: "USD",
+                total: refillObj.sumToPay
+            },
             locale: "ua_UA",
-            logoUrl: "https://moneyfge.com/assets/new_assets/img/logo.png",
-            displayName: "MoneyFGE"
-        }
-    });
+            settings: {
+                locale: "ua_UA",
+                logoUrl: "https://moneyfge.com/assets/new_assets/img/logo.png",
+                displayName: "MoneyFGE"
+            }
+        });
 
-    V.on("payment.success", function(payment) {
-        console.log("success", payment);
-        console.log("account",account);
-        console.log("id", payment.callid);
-        this.visaCheckoutSubscription = this.userService.visaCheckout(account, payment.callid)
-            .subscribe(
-                (res: any) => {
-                    this.visaCheckoutSubscription.unsubscribe();
-                    console.log('res =', res)
-                },
-                err => {
-                    toastr.error(err.json().message);
-                }
-            );
-        //вызываем из сервиса функцию визаЧекаут, она возвращает результат. из креате рефилл проверяем, если "status": 1(success),выводим через тоастр Саксес, если 2(эррор) - выводим эррор
-        //пэймент возвращает account and call_id
-    });
-    V.on("payment.cancel", function(payment) {
-        console.log("cancel", payment);
-    });
-    V.on("payment.error", function(payment, error) {
-        console.log("error", payment, error);
-    });
+        V.on("payment.success", function(payment) {
+            refillObj.visaCheckoutSubscription = refillObj.userService.visaCheckout(refillObj.toAccount, payment.callid)
+                .subscribe(
+                    (res: any) => {
+                        refillObj.visaCheckoutSubscription.unsubscribe();
+                        console.log('res =', res);
+                    },
+                    err => {
+                        toastr.error(err.json().message);
+                    }
+                );
+            //вызываем из сервиса функцию визаЧекаут, она возвращает результат. из креате рефилл проверяем, если "status": 1(success),выводим через тоастр Саксес, если 2(эррор) - выводим эррор
+            //пэймент возвращает account and call_id
+        });
+        V.on("payment.cancel", function(payment) {
+            console.log("cancel", payment);
+        });
+        V.on("payment.error", function(payment, error) {
+            console.log("error", payment, error);
+        });
     }
 }
 
