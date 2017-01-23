@@ -49,7 +49,6 @@ export class MerchantPanelComponent implements OnInit, AfterViewInit  {
     }
 
     setFlags(){
-        console.log('work');
         $(".select-medium").select2({
             minimumResultsForSearch: Infinity
         });

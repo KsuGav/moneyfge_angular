@@ -25,6 +25,8 @@ export class RefillComponent implements OnInit, OnDestroy {
     sumToPay: string = '0.00';
     formValid: boolean;
 
+    currentAccount: Account;
+
     @ViewChild('accountLoader') accountLoader: LoaderComponent;
 
     constructor(
@@ -33,7 +35,6 @@ export class RefillComponent implements OnInit, OnDestroy {
     ) {}
 
     ngOnInit(){
-        this.initVisaCheckout();
         this.activeLink();
         this.initUi();
         this.accountLoader.toggle(true);
@@ -72,6 +73,13 @@ export class RefillComponent implements OnInit, OnDestroy {
             minimumResultsForSearch: Infinity
         }).on("change", function (e) {
             thisObj.toAccount = e.target.value;
+            thisObj.initVisaCheckout();
+            thisObj.currentAccount = null;
+            for(let i in thisObj.activeAccounts) {
+                if(thisObj.activeAccounts[i].id == e.target.value) {
+                    thisObj.currentAccount = thisObj.activeAccounts[i];
+                }
+            }
         });
 
         function formatCustom (option) {
@@ -130,6 +138,7 @@ export class RefillComponent implements OnInit, OnDestroy {
     validateForm() {
         this.formValid = (this.toAccount > 10000000 && this.toAccount < 99999999 &&
         this.sum > 0);
+        return this.formValid;
     }
 
     formatMoney(sum) {
@@ -140,19 +149,25 @@ export class RefillComponent implements OnInit, OnDestroy {
 
 
     initVisaCheckout() {
-        //var amount = parseFloat(document.getElementById("amount").value);
+        if(!this.formValid) {
+            return;
+        }
         console.log('initing');
+
+        let currency = this.currentAccount.currency;
+        let sum = Math.max(1.05 * this.sum, this.sum + 0.01);
+
         let refillObj = this;
         V.init({
             apikey: "4ZDWBWHMTX2OOMIFORMD21SuvUQu1KZ02Cw9om2qdes8LAfxQ",
             referenceCallID: "",
             paymentRequest: {
-                currencyCode: "USD",
-                total: refillObj.sumToPay
+                currencyCode: currency,
+                total: sum
             },
-            locale: "ua_UA",
+            locale: "en_US",
             settings: {
-                locale: "ua_UA",
+                locale: "en_US",
                 logoUrl: "https://moneyfge.com/assets/new_assets/img/logo.png",
                 displayName: "MoneyFGE"
             }
