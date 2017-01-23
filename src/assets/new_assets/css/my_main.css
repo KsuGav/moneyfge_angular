@@ -441,3 +441,19 @@ ul.dash-main-menu.clearfix {
 .msgLetterEmail{
     display: none;
 }
+.merchant_table td{
+    border: 1px solid rgba(128, 128, 128, 0.28);
+    padding: 10px 15px;
+}
+.merchant_table th{
+    border: 1px solid rgba(128, 128, 128, 0.28);
+    padding: 10px 15px;
+    width: 300px;
+    background: rgba(230, 230, 230, 0.78);
+}
+.merchant_info{
+    margin-top: 30px;
+}
+.merchant_info td{
+    width: 500px;
+}

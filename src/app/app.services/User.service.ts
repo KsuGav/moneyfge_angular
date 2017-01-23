@@ -138,6 +138,7 @@ export class UserService {
         ;
   }
 
+  //not ready
   visaCheckout(account, call_id){
     const headers = new Headers();
     headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
@@ -147,12 +148,61 @@ export class UserService {
       "account": account,
       "call_id": call_id
     });
-
+    console.log(payload);
     const locUrl = `${this._appService.get('apiEndpoint')}api/v1/refill`;
     return this._http
         .post(locUrl, payload, {headers: headers})
         .map(res => res.json())
         ;
+  }
+
+  //MERCHANT
+
+  getIsMerchant(){
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
+    headers.append('Content-Type', 'application/json');
+
+    const locUrl = `${this._appService.get('apiEndpoint')}/merchant/exists/`;
+    return this._http
+        .get(locUrl, {headers: headers})
+        .map(res => res.json())
+        ;
+
+  }
+
+  getMerchant(){
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
+    headers.append('Content-Type', 'application/json');
+
+    const locUrl = `${this._appService.get('apiEndpoint')}/merchant/`;
+    return this._http
+        .get(locUrl, {headers: headers})
+        .map(res => res.json())
+        ;
+  }
+
+  createMerchant(country,org_type,site_url,f_name,l_name,email,telephone){
+    const headers = new Headers();
+    headers.append('Authorization', `Bearer ${sessionStorage.getItem('aToken')}`);
+    headers.append('Content-Type', 'application/json');
+
+    const info = JSON.stringify({
+      "country": country,
+      "organization_type": org_type,
+      "site_url": site_url,
+      "first_name": f_name,
+      "last_name": l_name,
+      "email": email,
+      "telephone": telephone
+    });
+    const locUrl = `${this._appService.get('apiEndpoint')}/merchant/`;
+    return this._http
+        .post(locUrl, info, {headers: headers})
+        .map(res => res.json())
+        ;
+
   }
 
 }

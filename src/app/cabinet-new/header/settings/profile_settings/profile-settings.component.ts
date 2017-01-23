@@ -143,6 +143,7 @@ export class ProfileSettingsComponent implements OnInit, OnDestroy{
                     this.numberLoader.toggle(false);
                     this.smsHistory = res.history;
                     this.smsDialog.open(res.sms);
+
                 },
                 err => {
                     this.numberStep1Subscription.unsubscribe();
@@ -161,7 +162,6 @@ export class ProfileSettingsComponent implements OnInit, OnDestroy{
             $('#EmailStep2Block').slideDown();
             $('.emailError').css({'display':'none'});
 
-            //add sendSms()
         } else {
             $('.emailError').css({'display':'block'});
             return;

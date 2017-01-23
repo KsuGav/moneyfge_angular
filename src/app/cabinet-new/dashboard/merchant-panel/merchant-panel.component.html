@@ -1,6 +1,58 @@
 <new-cabinet-header-component></new-cabinet-header-component>
 
-<section class="sect-grey padding-small">
+<loader-component #loader>
+<section *ngIf="status_merchant" >
+    <div class="container">
+        <div class="col-md-9 centered col-xs-12">
+        <div class="card card--lightgrey card-big">
+            <table class="merchant_table">
+                <tr>
+                    <th>Merchant id</th>
+                    <th>Secret key</th>
+                    <th>Secret id</th>
+                </tr>
+                <tr>
+                    <td>{{merchantInfo.id}}</td>
+                    <td>2235453ty523sr {{merchantInfo.secret_key}}</td>
+                    <td>312334hj {{merchantInfo.secret_id}}</td>
+                </tr>
+            </table >
+            <table class="merchant_info merchant_table">
+                <tr>
+                    <th>Country</th>
+                    <td>{{merchantInfo.country}}</td>
+                </tr>
+                <tr>
+                    <th>Organization type</th>
+                    <td>{{merchantInfo.organization_type}}</td>
+                </tr>
+                <tr>
+                    <th>Website</th>
+                    <td>{{merchantInfo.site_url}}</td>
+                </tr>
+                <tr>
+                    <th>First name</th>
+                    <td>{{merchantInfo.first_name}}</td>
+                </tr>
+                <tr>
+                    <th>Last name</th>
+                    <td>{{merchantInfo.last_name}}</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>{{merchantInfo.email}}</td>
+                </tr>
+                <tr>
+                    <th>Telephone</th>
+                    <td>{{merchantInfo.telephone}}</td>
+                </tr>
+            </table>
+        </div>
+        </div>
+    </div>
+</section>
+
+<section *ngIf="!status_merchant" class="sect-grey padding-small">
     <div class="container">
         <div class="row">
             <div class="col-md-9 centered col-xs-12">
@@ -26,6 +78,7 @@
                                     <div class="input-medium-wrap">
                                         <label>Country</label>
                                         <select class="select-medium transfer-select country">
+                                        <!--<select class="select-medium transfer-select country" (change)="onCountryChange($event.target.value)">-->
                                             <option value="USA" selected>USA</option>
                                             <option value="Euro">Europe</option>
                                         </select>
@@ -33,14 +86,15 @@
                                     <div class="input-medium-wrap">
                                         <label>Type of organization</label>
                                         <select class="select-medium transfer-select">
-                                            <option value="Entity" selected>Entity</option>
-                                            <option value="Entity">Entity</option>
-                                            <option value="Entity">Entity</option>
+                                        <!--<select class="select-medium transfer-select" (change)="onTypeChange($event.target.value)">-->
+                                            <option value="Entity" selected>1</option>
+                                            <option value="Entity">2</option>
+                                            <option value="Entity">3</option>
                                         </select>
                                     </div>
                                     <div class="input-medium-wrap">
                                         <label>Website address</label>
-                                        <input type="text" class="input-medium">
+                                        <input type="text" class="input-medium" [(ngModel)]="site_url" [ngModelOptions]="{standalone: true}">
                                     </div>
                                 </div>
                             </div>
@@ -51,19 +105,19 @@
 
                             <div class="input-medium-wrap">
                                 <label>First name</label>
-                                <input type="text" class="input-medium" required>
+                                <input type="text" class="input-medium" required [(ngModel)]="f_name" [ngModelOptions]="{standalone: true}">
                             </div>
                             <div class="input-medium-wrap">
                                 <label>Last name</label>
-                                <input type="text" class="input-medium">
+                                <input type="text" class="input-medium" [(ngModel)]="l_name" [ngModelOptions]="{standalone: true}">
                             </div>
                             <div class="input-medium-wrap">
                                 <label>Mail</label>
-                                <input type="text" class="input-medium">
+                                <input type="text" class="input-medium" [(ngModel)]="mail" [ngModelOptions]="{standalone: true}">
                             </div>
                             <div class="input-medium-wrap">
                                 <label>Telephone</label>
-                                <input type="text" class="input-medium">
+                                <input type="text" class="input-medium" [(ngModel)]="telephone" [ngModelOptions]="{standalone: true}">
                             </div>
                             <div class="info-medium-wrap clearfix">
                                 <div class="file-upload-sect__icon">
@@ -75,7 +129,7 @@
                                     processing of your data with privacy policies.
                                 </p>
                             </div>
-                            <button class="btn btn-medium btn-accent">Continue</button>
+                            <button class="btn btn-medium btn-accent" (click)="createMerchant()">Continue</button>
                         </div>
 
                     </form>
@@ -86,4 +140,5 @@
     </div>
 </section>
 
+</loader-component>
 <footer-component></footer-component>

@@ -26,7 +26,7 @@
                             </select>
                             <p class="select-label">Choose account</p>
                             <loader-component #accountLoader>
-                                <select class="select-medium transfer-select bill" (change)="onToChange($event.target.value)">
+                                <select class="select-medium transfer-select bill" id="account" (change)="onToChange($event.target.value)">
                                     <option></option>
                                     <option *ngFor="let acc of activeAccounts" value="{{acc.id}}">MoneyFGE {{acc.sum}} {{acc.currency}}</option>
                                 </select>
@@ -43,7 +43,7 @@
                                     <input type="text" class="input-medium input-small-width" disabled value="{{sumToPay}}$">
                                     <span class="form-info">Including <br>bank fee 5%</span>
                                     <div class="clearfix"></div>
-                                    <img alt="Visa Checkout" class="v-button" role="button" src="/assets/new_assets/img/visa-checkout.png" alt="Checkout">
+                                    <img alt="Visa Checkout" class="v-button" role="button" id="{{toAccount}}" src="/assets/new_assets/img/visa-checkout.png" alt="Checkout">
                                 </div>
                             </div>
                         </div>

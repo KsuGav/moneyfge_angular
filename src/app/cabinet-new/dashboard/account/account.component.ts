@@ -67,20 +67,7 @@ export class AccountComponent implements OnInit {
   }
 
   accountActive(){
-    // $('.accounts-item').mouseover(function(){
-    //   $(this).css({'background':'#D8D8D8'});
-    // }).mouseout(function(){
-    //   $(this).css({'background':'rgba(76, 76, 75, 0)'})
-    // ;
-    // })
     $('.accounts-item').click(function() {
-      // $('.accounts-item').css({'background': 'rgba(76, 76, 75, 0)'})
-      //     .mouseover(function(){
-      //         $(this).css({'background':'#D8D8D8'});
-      //       }).mouseout(function(){
-      //         $(this).css({'background':'rgba(76, 76, 75, 0)'});
-      //       });
-      // $(this).addClass('activeAccount').removeClass('unactiveAccount');
         $('.accounts-item').css({'background':'rgba(76, 76, 75, 0)'});
         $(this).css({'background':'#D8D8D8'});
     });

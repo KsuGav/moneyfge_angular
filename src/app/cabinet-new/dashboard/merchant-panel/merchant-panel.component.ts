@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import {UserService} from '../../../app.services/User.service';
+import {Merchant} from '../../../app.models/Merchant.model';
+import {LoaderComponent} from "../../../common-new/loader/loader.component";
 
 declare const $: any;
+declare const toastr: any;
 
 @Component({
     selector: 'merchant-panel-component',
@@ -8,9 +12,33 @@ declare const $: any;
 })
 
 export class MerchantPanelComponent implements OnInit  {
+    merchantInfo: Merchant;
+
+    country: string;
+    type: string;
+    site_url: string;
+    f_name: string;
+    l_name: string;
+    mail: string;
+    telephone: number;
+    status_merchant:boolean;
+
+    acceptMerchant;
+    getMerchant;
+    is_merchant;
+    merchant_res;
+
+    @ViewChild('loader') loader: LoaderComponent;
+
+    constructor(
+        private _userService: UserService) {
+    }
 
     ngOnInit(){
         this.setFlags();
+        this.loader.toggle(true);
+        this.isMerchant();
+        this.getMerchantInfo();
     }
 
     setFlags(){
@@ -45,6 +73,55 @@ export class MerchantPanelComponent implements OnInit  {
             templateSelection: formatCountry,
             minimumResultsForSearch: Infinity
         });
+    }
+
+    onCountryChange(country){
+        this.country = country;
+        console.log(country);
+    }
+
+    onTypeChange(type){
+        this.type = type;
+        console.log(type);
+    }
+
+    isMerchant(){
+        this.is_merchant = this._userService.getIsMerchant()
+            .subscribe((res: any) => {
+                    this.merchant_res = res;
+                    this.status_merchant = this.merchant_res.exists;
+                    this.loader.toggle(false);
+                    console.log(this.status_merchant)
+                },
+                err => {
+                    toastr.error(err.json().message);
+                });
+    }
+
+    getMerchantInfo(){
+        this.getMerchant = this._userService.getMerchant()
+            .subscribe((res: any)=>{
+                this.merchantInfo = res;
+                this.getMerchant.unsubscribe();
+                    console.log(this.merchantInfo);
+            },
+                err => {
+                    toastr.error(err.json().message);
+                }
+            )
+    }
+
+    createMerchant(){
+        this.acceptMerchant = this._userService.createMerchant(this.country,this.type,this.site_url,this.f_name,this.l_name,this.mail,this.telephone)
+            .subscribe(
+                (res: any) => {
+                    this.merchantInfo = res;
+                    this.acceptMerchant.unsubscribe();
+                },
+                err => {
+                    toastr.error(err.json().message);
+                }
+            );
     }
 
 }

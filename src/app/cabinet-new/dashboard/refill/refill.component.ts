@@ -1,10 +1,12 @@
 import {Component, OnInit, OnDestroy, ViewChild} from '@angular/core';
 import {Account} from "../../../app.models/Account.model";
 import {n_AccountService} from "../../../app.services/Account.service";
+import {UserService} from "../../../app.services/User.service";
 import {LoaderComponent} from "../../../common-new/loader/loader.component";
 
 declare const $: any;
 declare const V: any;
+declare const toastr: any;
 
 @Component({
     selector: 'refill-component',
@@ -16,6 +18,7 @@ export class RefillComponent implements OnInit, OnDestroy {
     activeAccounts: Account[];
     getAccountsSubscription;
     reqAccountsSubscription;
+    visaCheckoutSubscription;
 
     toAccount: number;
     sum: number;
@@ -26,6 +29,7 @@ export class RefillComponent implements OnInit, OnDestroy {
 
     constructor(
         public accountService: n_AccountService,
+        public userService: UserService,
     ) {}
 
     ngOnInit(){
@@ -128,8 +132,11 @@ export class RefillComponent implements OnInit, OnDestroy {
         });
     }
 
+
     onVisaCheckoutReady() {
+        let account = 10000028;
     //var amount = parseFloat(document.getElementById("amount").value);
+
     V.init({
         apikey: "4ZDWBWHMTX2OOMIFORMD21SuvUQu1KZ02Cw9om2qdes8LAfxQ",
         referenceCallID: "",
@@ -147,6 +154,18 @@ export class RefillComponent implements OnInit, OnDestroy {
 
     V.on("payment.success", function(payment) {
         console.log("success", payment);
+        console.log("account",account);
+        console.log("id", payment.callid);
+        this.visaCheckoutSubscription = this.userService.visaCheckout(account, payment.callid)
+            .subscribe(
+                (res: any) => {
+                    this.visaCheckoutSubscription.unsubscribe();
+                    console.log('res =', res)
+                },
+                err => {
+                    toastr.error(err.json().message);
+                }
+            );
         //вызываем из сервиса функцию визаЧекаут, она возвращает результат. из креате рефилл проверяем, если "status": 1(success),выводим через тоастр Саксес, если 2(эррор) - выводим эррор
         //пэймент возвращает account and call_id
     });
