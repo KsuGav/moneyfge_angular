@@ -36,8 +36,12 @@ export class AccountHistoryComponent implements OnInit, OnDestroy {
                     if('undefined' !== typeof infoObj.CardFrom) {
                         let pre = this.history[i].znak_sum == '+' ? 'Transfer from ' : 'Transfer to ';
                         this.history[i].info = pre + infoObj.CardFrom;
+                    } else if('undefined' !== typeof infoObj.callId){
+                        this.history[i].info = `Refill (id: ${infoObj.callId})`;
                     }
                 }
+
+                this.history = this.history.reverse();
 
                 this.noHistory = !res || res.length < 1;
                 this.historyLoader.toggle(false);
