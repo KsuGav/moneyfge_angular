@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { AfterViewInit } from '@angular/core';
+import { AfterViewInit, OnDestroy } from '@angular/core';
+import { n_AccountService } from '../../../app.services/Account.service';
 
 declare const $: any;
 declare const window: any;
@@ -10,18 +11,57 @@ declare const Chart: any;
   selector: 'cash-panel-component',
   templateUrl: 'cash-panel.component.html'
 })
-export class CashPanelComponent implements AfterViewInit {
+export class CashPanelComponent implements AfterViewInit, OnDestroy {
 
   chartPeriod: string = ``;
   statusDate: string = 'Today';
 
-  constructor(){
+  getSubscription;
+  history;
+
+  sumTansfers;
+  sumRefill;
+  sumAll;
+  transferPersent;
+  refillPersent;
+
+  constructor(
+      private accountService: n_AccountService
+  ){
     // let locale = window.navigator.userLanguage || window.navigator.language;
     let locale = 'en-us';
     let d = new Date();
     d.setDate(1);
     d.setMonth(d.getMonth() - 1);
     this.chartPeriod = `${d.toLocaleString(locale, {month: "long"})} ${d.getFullYear()}`;
+
+    this.getSubscription = this.accountService.onGetAccountHistory.subscribe(
+        res => {
+          this.history = res;
+          let sumT = 0;
+          let sumR = 0;
+          // convert infos
+          for (let i in this.history) {
+            let infoObj = this.history[i].type;
+            if (infoObj === 'Transaction') {
+              let pre = this.history[i].sum;
+              sumT += pre;
+
+            } else if (infoObj === 'VisaCheckout') {
+              let pre = +this.history[i].sum;
+              sumR += pre;
+            }
+
+          }
+          let sumAll = sumT + sumR;
+
+          this.sumAll = sumAll;
+          this.sumTansfers = sumT.toFixed(2);
+          this.sumRefill = sumR.toFixed(2);
+          this.transferPersent = (sumT / sumAll * 100).toFixed(0);
+          this.refillPersent = (sumR / sumAll * 100).toFixed(0);
+        }
+    );
   }
 
   ngAfterViewInit() {
@@ -29,9 +69,13 @@ export class CashPanelComponent implements AfterViewInit {
     this.hoverSettings();
     this.setupCurrencyListToggle();
     this.setupCalendars();
-    // this.setupPieChart();
+    this.setupPieChart();
     // this.setupLineChart();
     this.setupRange();
+  }
+
+  ngOnDestroy(){
+    this.getSubscription.unsubscribe();
   }
 
   hoverSettings(){
@@ -129,17 +173,16 @@ export class CashPanelComponent implements AfterViewInit {
   }
 
   setupPieChart() {
-    window.chartColors = {
+        window.chartColors = {
       white: '#fff',
       orange: '#f7b403',
-      blue: '#6e82a1',
-      darkblue: '#345382',
-      grey: 'rgb(231,233,237)'
+      green: '#26bd00',
+      blue: '#38cffd'
     };
 
     window.randomScalingFactor = function() {
       return (Math.random() > 0.5 ? 1.0 : -1.0) * Math.round(Math.random() * 100);
-    }
+    };
 
     var randomScalingFactor = function() {
       return Math.round(Math.random() * 100);
@@ -150,24 +193,28 @@ export class CashPanelComponent implements AfterViewInit {
       data: {
         datasets: [{
           data: [
-            randomScalingFactor(),
-            randomScalingFactor(),
-            randomScalingFactor(),
-            randomScalingFactor(),
+              30,
+            20,
+            20,
+              30,
+            // randomScalingFactor(),
+            // randomScalingFactor(),
+            // randomScalingFactor(),
+            // randomScalingFactor(),
           ],
           backgroundColor: [
-            window.chartColors.darkblue,
-            window.chartColors.orange,
             window.chartColors.white,
+            window.chartColors.orange,
+            window.chartColors.green,
             window.chartColors.blue,
           ],
           label: 'Dataset 1'
         }],
         labels: [
-          "Продукты",
-          "Здоровье",
-          "Покупки",
-          "Послуги",
+          "Transfers",
+          "Payments",
+          "Refill",
+          "Cashouts",
         ]
       },
       options: {

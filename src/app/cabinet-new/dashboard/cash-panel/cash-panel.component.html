@@ -60,8 +60,8 @@
     <div class="expenses-cash-panel-content graph-content active" id="Graph1">
       <div class="pie-chart">
         <div id="canvas-holder">
-          <!--<canvas id="chart-area"></canvas>-->
-          <img src="/assets/new_assets/img/Chart.png">
+          <canvas id="chart-area"></canvas>
+          <!--<img src="/assets/new_assets/img/Chart.png">-->
         </div>
       </div>
       <div class="cash-list-panel">
@@ -69,34 +69,34 @@
           <li data-color="1">
             <span class="cash-list-panel__title">Payments</span>
             <span class="cash-list-panel__percent">00%</span>
-            <span class="cash-list-panel__total">- $ 0.00</span>
+            <span class="cash-list-panel__total">$ 0.00</span>
             <span class="cash-list-panel__limit">Limit $ 0.00</span>
             <div class="clearfix"></div>
             <input type="range" class="cash-list-panel__range" value="0" min="0" max="100" step="1">
           </li>
           <li data-color="2">
             <span class="cash-list-panel__title">Transfers</span>
-            <span class="cash-list-panel__percent">00%</span>
-            <span class="cash-list-panel__total">- $ 0.00</span><br/>
+            <span class="cash-list-panel__percent">{{transferPersent}}%</span>
+            <span class="cash-list-panel__total">$ {{sumTansfers}}</span><br/>
             <span class="cash-list-panel__limit">Limit $ 0.00</span>
             <div class="clearfix"></div>
-            <input type="range" class="cash-list-panel__range" min="0" max="100" value="0">
+            <input type="range" class="cash-list-panel__range" value="{{transferPersent}}" min="0" max="100">
           </li>
           <li data-color="3">
-            <span class="cash-list-panel__title">Connections</span>
-            <span class="cash-list-panel__percent">00%</span>
-            <span class="cash-list-panel__total">- $ 0.00</span><br/>
+            <span class="cash-list-panel__title">Refill</span>
+            <span class="cash-list-panel__percent">{{refillPersent}}%</span>
+            <span class="cash-list-panel__total">$ {{sumRefill}}</span><br/>
             <span class="cash-list-panel__limit">Limit $ 0.00</span>
             <div class="clearfix"></div>
-            <input type="range" class="cash-list-panel__range" min="0" max="100" value="0">
+            <input type="range" class="cash-list-panel__range" value="{{refillPersent}}" min="0" max="100">
           </li>
           <li data-color="4">
-            <span class="cash-list-panel__title">IP-telephony</span>
+            <span class="cash-list-panel__title">Cashouts</span>
             <span class="cash-list-panel__percent">00%</span>
-            <span class="cash-list-panel__total">- $ 0.00</span><br/>
+            <span class="cash-list-panel__total">$ 0.00</span><br/>
             <span class="cash-list-panel__limit">Limit $ 0.00</span>
             <div class="clearfix"></div>
-            <input type="range" class="cash-list-panel__range" min="0" max="100" value="0">
+            <input type="range" class="cash-list-panel__range" value="0" min="0" max="100">
           </li>
         </ul>
       </div>
@@ -105,7 +105,7 @@
           <li data-color="5">
             <span class="cash-list-panel__title">Internet/TV</span>
             <span class="cash-list-panel__percent">00%</span>
-            <span class="cash-list-panel__total">- $ 0.00</span>
+            <span class="cash-list-panel__total">$ 0.00</span>
             <span class="cash-list-panel__limit">Limit $ 0.00</span>
             <div class="clearfix"></div>
             <input type="range" class="cash-list-panel__range" min="0" max="100" value="0">
@@ -113,7 +113,7 @@
           <li data-color="6">
             <span class="cash-list-panel__title">Utilities</span>
             <span class="cash-list-panel__percent">00%</span>
-            <span class="cash-list-panel__total">- $ 0.00</span>
+            <span class="cash-list-panel__total">$ 0.00</span>
             <span class="cash-list-panel__limit">Limit $ 0.00</span>
             <div class="clearfix"></div>
             <input type="range" class="cash-list-panel__range" min="0" max="100" value="0">
@@ -121,7 +121,7 @@
           <li data-color="7">
             <span class="cash-list-panel__title">Tickets</span>
             <span class="cash-list-panel__percent">00%</span>
-            <span class="cash-list-panel__total">- $ 0.00</span>
+            <span class="cash-list-panel__total">$ 0.00</span>
             <span class="cash-list-panel__limit">Limit $ 0.00</span>
             <div class="clearfix"></div>
             <input type="range" class="cash-list-panel__range" min="0" max="100" value="0">
@@ -129,7 +129,7 @@
           <li data-color="8">
             <span class="cash-list-panel__title">Charity</span>
             <span class="cash-list-panel__percent">00%</span>
-            <span class="cash-list-panel__total">- $ 0.00</span>
+            <span class="cash-list-panel__total">$ 0.00</span>
             <span class="cash-list-panel__limit">Limit $ 0.00</span>
             <div class="clearfix"></div>
             <input type="range" class="cash-list-panel__range" min="0" max="100" value="0">

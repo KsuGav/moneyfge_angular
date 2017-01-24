@@ -174,6 +174,18 @@ export class n_AccountService {
     ;
   }
 
+  // getChartsData() {
+  //   let account = this.getAccountHistory(undefined);
+  //   console.log(account+'account');
+  //   // for(var i=0;i<account.length;i++){
+  //   //   if(account[i].type==='VisaCheckout'){
+  //   //     let d = +account[i].sum;
+  //   //     console.log(d)
+  //   //   }
+  //   // }
+  //   // [{type: 'refill', sum: 123}, {type:'transfers', sum: 34}]
+  //   }
+
   getAccountHistory(account:number) {
     this.onRequestAccountHistory.emit();
     if('undefined' !== typeof account && account == 0) {
@@ -192,7 +204,9 @@ export class n_AccountService {
         .get(locUrl, {headers:headers})
         .map(res => res.json())
         .subscribe(
-            (res: any) => this.onGetAccountHistory.emit(res),
+            (res: any) =>  {
+              this.onGetAccountHistory.emit(res);
+            },
             err => this.onGetAccountHistoryError.emit(err.json().message)
         )
     ;
