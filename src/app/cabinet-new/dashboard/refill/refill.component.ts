@@ -178,12 +178,13 @@ export class RefillComponent implements OnInit, OnDestroy {
                 .subscribe(
                     (res: any) => {
                         refillObj.visaCheckoutSubscription.unsubscribe();
-                        console.log('res =', res);
+
                     },
                     err => {
                         toastr.error(err.json().message);
                     }
                 );
+            toastr.success(`The refill was successfully`);
             //вызываем из сервиса функцию визаЧекаут, она возвращает результат. из креате рефилл проверяем, если "status": 1(success),выводим через тоастр Саксес, если 2(эррор) - выводим эррор
             //пэймент возвращает account and call_id
         });
