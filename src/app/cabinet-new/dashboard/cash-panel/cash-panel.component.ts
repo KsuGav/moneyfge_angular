@@ -60,6 +60,8 @@ export class CashPanelComponent implements AfterViewInit, OnDestroy {
           this.sumRefill = sumR.toFixed(2);
           this.transferPersent = (sumT / sumAll * 100).toFixed(0);
           this.refillPersent = (sumR / sumAll * 100).toFixed(0);
+            this.setupPieChart();
+
         }
     );
   }
@@ -69,9 +71,9 @@ export class CashPanelComponent implements AfterViewInit, OnDestroy {
     this.hoverSettings();
     this.setupCurrencyListToggle();
     this.setupCalendars();
-    this.setupPieChart();
+    // this.setupPieChart();
     // this.setupLineChart();
-    this.setupRange();
+    // this.setupRange();
   }
 
   ngOnDestroy(){
@@ -180,23 +182,23 @@ export class CashPanelComponent implements AfterViewInit, OnDestroy {
       blue: '#38cffd'
     };
 
-    window.randomScalingFactor = function() {
-      return (Math.random() > 0.5 ? 1.0 : -1.0) * Math.round(Math.random() * 100);
-    };
-
-    var randomScalingFactor = function() {
-      return Math.round(Math.random() * 100);
-    };
+    // window.randomScalingFactor = function() {
+    //   return (Math.random() > 0.5 ? 1.0 : -1.0) * Math.round(Math.random() * 100);
+    // };
+    //
+    // var randomScalingFactor = function() {
+    //   return Math.round(Math.random() * 100);
+    // };
 
     var config = {
       type: 'pie',
       data: {
         datasets: [{
           data: [
-              30,
-            20,
-            20,
-              30,
+              0,
+              this.transferPersent,
+              this.refillPersent,
+              0,
             // randomScalingFactor(),
             // randomScalingFactor(),
             // randomScalingFactor(),
@@ -217,9 +219,9 @@ export class CashPanelComponent implements AfterViewInit, OnDestroy {
           "Cashouts",
         ]
       },
-      options: {
-        responsive: true
-      }
+      // options: {
+      //   responsive: true
+      // }
     };
 
     Chart.defaults.global.legend.display = false;
@@ -227,15 +229,35 @@ export class CashPanelComponent implements AfterViewInit, OnDestroy {
     var ctx = document.getElementById("chart-area").getContext("2d");
     window.myPie = new Chart(ctx, config);
 
-    $('input[type=range]').on('input', function(e){
-      var min = e.target.min,
-        max = e.target.max,
-        val = e.target.value;
+    // $('input[type=range]').on('input', function(e){
+    //   var min = e.target.min,
+    //     max = e.target.max,
+    //     val = e.target.value;
+    //
+    //   $(e.target).css({
+    //     'backgroundSize': (val - min) * 100 / (max - min) + '% 100%'
+    //   });
+    // }).trigger('input');
 
-      $(e.target).css({
-        'backgroundSize': (val - min) * 100 / (max - min) + '% 100%'
-      });
-    }).trigger('input');
+      // //Range Thumb
+      $('.cash-list-panel__range')
+          .each(function() {
+          if ( $(this).attr('value') == '0' ) {
+              $(this).addClass('null');
+          } else {
+              $(this).removeClass('null');
+          }
+      })
+          .on('input', function(e){
+          var min = e.target.min,
+              max = e.target.max,
+              val = e.target.value;
+          console.log(val);
+
+          $(e.target).css({
+              'backgroundSize': (val - min) * 100 / (max - min) + '% 100%'
+          });
+      }).trigger('input');
   }
 
   setupLineChart() {
