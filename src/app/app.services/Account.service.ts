@@ -174,17 +174,28 @@ export class n_AccountService {
     ;
   }
 
-  // getChartsData() {
-  //   let account = this.getAccountHistory(undefined);
-  //   console.log(account+'account');
-  //   // for(var i=0;i<account.length;i++){
-  //   //   if(account[i].type==='VisaCheckout'){
-  //   //     let d = +account[i].sum;
-  //   //     console.log(d)
-  //   //   }
-  //   // }
-  //   // [{type: 'refill', sum: 123}, {type:'transfers', sum: 34}]
-  //   }
+  getRangesData() {
+    let account = this.currentHistory;
+    let r=0,
+        t=0;
+    console.log(this.currentHistory+' account');
+    for(var i=0;i<account.length;i++){
+      if(account[i].type==='VisaCheckout'){
+        let pre = account[i].sum;
+         r += pre;
+      }
+      if(account[i].type==='Transaction'){
+        let pre = account[i].sum;
+        t += pre;
+      }
+    }
+    let sumAll = r + t;
+    let array = [{type: 'refill', sum: r, percent: (r / sumAll * 100).toFixed(0)}, {type:'transfers', sum: t, percent: (t / sumAll * 100).toFixed(0)}];
+    // return [{type: 'refill', sum: 123}, {type:'transfers', sum: 34}];
+    return array;
+    }
+
+  currentHistory: AccountHistoryRecord[];
 
   getAccountHistory(account:number) {
     this.onRequestAccountHistory.emit();
@@ -205,6 +216,8 @@ export class n_AccountService {
         .map(res => res.json())
         .subscribe(
             (res: any) =>  {
+              this.currentHistory =res;
+              console.log(res);
               this.onGetAccountHistory.emit(res);
             },
             err => this.onGetAccountHistoryError.emit(err.json().message)

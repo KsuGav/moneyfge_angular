@@ -3562,7 +3562,9 @@ img {
     margin-left: 12px; }
 
 input[type="range"].null::-webkit-slider-thumb {
-  border: 1px solid #637ea2; }
+  border: 1px solid #637ea2;
+
+}
 
 input[type="range"] {
   margin: auto;
@@ -3573,11 +3575,12 @@ input[type="range"] {
   margin-left: 12px;
   height: 1px;
   background-color: rgba(255, 255, 255, 0.2);
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fbb800), color-stop(100%, #fbb800));
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #fbb800), color-stop(100%, #fbb800));
   background-image: -webkit-linear-gradient(#fbb800, #fbb800);
   background-image: -webkit-gradient(linear, left top, left bottom, from(#fbb800), to(#fbb800));
   background-image: linear-gradient(#fbb800, #fbb800);
-  background-size: 50% 100%;
+  background-size: 0% 0%;
+  /*background-size: 50% 100%;*/
   background-repeat: no-repeat;
   -webkit-border-radius: 1px;
           border-radius: 1px;
